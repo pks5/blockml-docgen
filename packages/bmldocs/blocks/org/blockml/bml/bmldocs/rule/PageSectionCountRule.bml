@@ -9,8 +9,7 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:brule="org.blockml.bml.bmldocs.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:stage="org.blockml.bml.docgen.stage">
+  xmlns:rule="org.blockml.bml.docgen.rule">
 
   <name>PageSectionCountRule</name>
   <type>brule:PageSectionCountRule</type>
@@ -41,19 +40,13 @@
       <value>Prefer five substantive content sections per page, excluding navigation sections.</value>
     </summary>
 
-    <instruction override="true">
+    <instructions override="true">
       <value>Structure each documentation page around approximately five substantive content
         sections. Prefer five sections, while allowing four to six when the subject naturally
         requires less or more structure. Do not introduce artificial sections to satisfy the
         target count and do not merge distinct topics merely to reduce the count. Exclude
         navigation-only sections such as Next Page from the section count.</value>
-    </instruction>
+    </instructions>
   </properties>
-
-  <aggregations>
-    <appliesToStages>
-      <stage:PageAuthoringStage/>
-    </appliesToStages>
-  </aggregations>
 
 </block>

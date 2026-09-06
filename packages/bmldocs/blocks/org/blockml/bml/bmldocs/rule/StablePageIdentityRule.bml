@@ -9,8 +9,7 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:brule="org.blockml.bml.bmldocs.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:stage="org.blockml.bml.docgen.stage">
+  xmlns:rule="org.blockml.bml.docgen.rule">
 
   <name>StablePageIdentityRule</name>
   <type>brule:StablePageIdentityRule</type>
@@ -54,7 +53,7 @@
         fundamentally changed.</value>
     </summary>
 
-    <instruction override="true">
+    <instructions override="true">
       <value>When updating an existing DocSetPlan, preserve the PagePlan.name (relative to
         pageBasePackage) of every Page that still represents the same conceptual Page. Do not
         assign a new name merely because scopes are refined, position changes, or later content is
@@ -62,13 +61,7 @@
         fundamentally different responsibility, intentionally split or merged, or otherwise
         transformed into a genuinely different Page. Prefer stable names so DocSetStructuringStage
         can recognize and update existing Pages instead of creating unnecessary replacements.</value>
-    </instruction>
+    </instructions>
   </properties>
-
-  <aggregations>
-    <appliesToStages>
-      <stage:DocSetPlanningStage/>
-    </appliesToStages>
-  </aggregations>
 
 </block>

@@ -1,14 +1,15 @@
 <!--
   BlockML Documentation — cohesive BlockML core documentation set
 
-  FQN: org.blockml.bml.bmldocs.docset.BmlDocSet
+  FQN: org.blockml.bml.bmldocs.a02_structuring.BmlDocSet
 -->
 <block
   xmlns="http://blockml.org/bml"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
-  xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:structuring="org.blockml.bml.bmldocs.a02_structuring"
+  xmlns:plan="org.blockml.bml.bmldocs.a01_planning"
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
   xmlns:pgroup="org.blockml.bml.bmldocs.page"
   xmlns:brule="org.blockml.bml.bmldocs.rule"
@@ -16,7 +17,7 @@
   xmlns:blockml="org.blockml.bml">
 
   <name>BmlDocSet</name>
-  <type>docset:BmlDocSet</type>
+  <type>structuring:BmlDocSet</type>
   <baseType>dcore:DocSet</baseType>
   <is>The BlockML core documentation set</is>
   <isnot>A single DocPage or a bml-core narrative Documentation Block</isnot>
@@ -44,7 +45,7 @@
     <see type="pgroup:RootPageGroup" relation="Requires">
       Top-level page group referenced by rootPageGroup.
     </see>
-    <see type="docset:BmlDocSetPlan" relation="Requires">
+    <see type="plan:BmlDocSetPlan" relation="Requires">
       Preliminary DocSet plan referenced by plan.
     </see>
     <see type="brule:CodeStyleRule" relation="Requires">
@@ -101,7 +102,7 @@
       <value>page:TableOfContents</value>
     </homePage>
     <plan override="true">
-      <value>docset:BmlDocSetPlan</value>
+      <value>plan:BmlDocSetPlan</value>
     </plan>
     <rootPath override="true">
       <value>/docs</value>

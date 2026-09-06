@@ -14,6 +14,7 @@
   xmlns:stage="org.blockml.bml.docgen.stage"
   xmlns:bmldocs="org.blockml.bml.bmldocs"
   xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:structuring="org.blockml.bml.bmldocs.a02_structuring"
   xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation">
 
   <name>ArchitectureOverview</name>
@@ -42,7 +43,7 @@
     4. stage:PageRenderingStage — resolve authoritativeSources and emit the target
        manifestation (for example JSON or HTML).
 
-    org.blockml.bml.bmldocs is the site layer. docset:BmlDocSet extends dcore:DocSet
+    org.blockml.bml.bmldocs is the site layer. structuring:BmlDocSet extends dcore:DocSet
     for BlockML core documentation on blockml.org (rootPath /docs, homePage
     TableOfContents, rootPageGroup RootPageGroup). Concrete pages extend
     docset:BmlDocPage and point at bml-core narrative Blocks. Site rules specialize
@@ -62,7 +63,7 @@
     <see type="stage:DocSetStructuringStage" relation="SeeAlso" />
     <see type="stage:PageAuthoringStage" relation="SeeAlso" />
     <see type="stage:PageRenderingStage" relation="SeeAlso" />
-    <see type="docset:BmlDocSet" relation="SeeAlso" />
+    <see type="structuring:BmlDocSet" relation="SeeAlso" />
     <see type="docgen:Library" relation="SeeAlso" />
     <see type="bmldocs:Library" relation="SeeAlso" />
   </references>

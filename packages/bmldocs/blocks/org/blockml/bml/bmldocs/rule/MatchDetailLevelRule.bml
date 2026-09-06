@@ -9,8 +9,7 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:brule="org.blockml.bml.bmldocs.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:stage="org.blockml.bml.docgen.stage">
+  xmlns:rule="org.blockml.bml.docgen.rule">
 
   <name>MatchDetailLevelRule</name>
   <type>brule:MatchDetailLevelRule</type>
@@ -37,20 +36,12 @@
     <summary override="true">
       <value>Generated detail must match the declared DetailLevel.</value>
     </summary>
-    <instruction override="true">
+    <instructions override="true">
       <value>For introductory or overview content, omit internal type names, parser structures,
         diagnostic identifiers, version-specific behavior, and implementation-status notes.
         Include such details only at Detailed, Reference, Exhaustive, or Implementation level.</value>
-    </instruction>
+    </instructions>
   </properties>
 
 
-  <aggregations>
-    <appliesToStages override="true">
-      <composition>
-        <stage:PageAuthoringStage />
-        <stage:PageRenderingStage />
-      </composition>
-    </appliesToStages>
-  </aggregations>
 </block>

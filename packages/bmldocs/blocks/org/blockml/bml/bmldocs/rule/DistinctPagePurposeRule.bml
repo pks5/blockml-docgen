@@ -9,8 +9,7 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:brule="org.blockml.bml.bmldocs.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:stage="org.blockml.bml.docgen.stage">
+  xmlns:rule="org.blockml.bml.docgen.rule">
 
   <name>DistinctPagePurposeRule</name>
   <type>brule:DistinctPagePurposeRule</type>
@@ -49,7 +48,7 @@
       <value>Ensure that every planned Page fulfills a unique purpose within the DocSet.</value>
     </summary>
 
-    <instruction override="true">
+    <instructions override="true">
       <value>Define the purpose of every planned Page so that it has a clear and unique
         responsibility within the DocSet. Compare each Page purpose with the purposes of all
         other planned Pages and avoid unnecessary overlap or duplication. Closely related
@@ -57,13 +56,7 @@
         objective or role. If two planned Pages serve essentially the same purpose, either
         merge them or redefine their purposes until each Page has a clearly distinguishable
         responsibility.</value>
-    </instruction>
+    </instructions>
   </properties>
-
-  <aggregations>
-    <appliesToStages>
-      <stage:DocSetPlanningStage/>
-    </appliesToStages>
-  </aggregations>
 
 </block>

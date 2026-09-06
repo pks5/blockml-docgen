@@ -9,8 +9,7 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:brule="org.blockml.bml.bmldocs.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:stage="org.blockml.bml.docgen.stage">
+  xmlns:rule="org.blockml.bml.docgen.rule">
 
   <name>ConceptBeforeImplementationRule</name>
   <type>brule:ConceptBeforeImplementationRule</type>
@@ -36,19 +35,11 @@
     <summary override="true">
       <value>Explain the conceptual model before implementation details.</value>
     </summary>
-    <instruction override="true">
+    <instructions override="true">
       <value>Introduce the meaning and purpose of a concept before discussing syntax, validator
         behavior, internal object-model mappings, implementation status, or runtime mechanics.</value>
-    </instruction>
+    </instructions>
   </properties>
 
 
-  <aggregations>
-    <appliesToStages override="true">
-      <composition>
-        <stage:PageAuthoringStage />
-        <stage:PageRenderingStage />
-      </composition>
-    </appliesToStages>
-  </aggregations>
 </block>

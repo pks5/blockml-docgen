@@ -11,7 +11,7 @@
   xmlns:docgen="org.blockml.bml.docgen"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:bmldocs="org.blockml.bml.bmldocs"
-  xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:structuring="org.blockml.bml.bmldocs.a02_structuring"
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
   xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation">
 
@@ -28,7 +28,7 @@
        dcore:Page (DocPage), dcore:PageGroup, dcore:Plan, and
        dcore:ManifestationStage. Stay here for reusable types and the four-stage
        pipeline.
-    3. org.blockml.bml.bmldocs.README — then docset:BmlDocSet, page:TableOfContents,
+    3. org.blockml.bml.bmldocs.README — then structuring:BmlDocSet, page:TableOfContents,
        and concrete pages under org.blockml.bml.bmldocs.page.docs.*. Stay here for
        the blockml.org catalogue, not a 1:1 mirror of the core ReadFirst path.
 
@@ -43,7 +43,7 @@
     <see type="dcore:DocElement" relation="SeeAlso" />
     <see type="dcore:DocSet" relation="SeeAlso" />
     <see type="bmldocs:README" relation="SeeAlso" />
-    <see type="docset:BmlDocSet" relation="SeeAlso" />
+    <see type="structuring:BmlDocSet" relation="SeeAlso" />
     <see type="page:TableOfContents" relation="SeeAlso" />
     <see type="docgen:Library" relation="SeeAlso" />
     <see type="bmldocs:Library" relation="SeeAlso" />

@@ -9,8 +9,7 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:brule="org.blockml.bml.bmldocs.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:stage="org.blockml.bml.docgen.stage">
+  xmlns:rule="org.blockml.bml.docgen.rule">
 
   <name>AppropriatePageGranularityRule</name>
   <type>brule:AppropriatePageGranularityRule</type>
@@ -53,7 +52,7 @@
         unnecessarily fragmented.</value>
     </summary>
 
-    <instruction override="true">
+    <instructions override="true">
       <value>Choose the granularity of planned Pages according to conceptual coherence and
         reader comprehension. Each Page should be substantial enough to justify an independent
         Page and focused enough to serve one clear purpose. Split a Page when its planned
@@ -63,13 +62,7 @@
         Keep minor details, variants, and supporting concepts within a broader Page unless they
         require substantial independent explanation or have a clearly distinct purpose. Do not
         optimize page granularity merely to reach a particular total page count.</value>
-    </instruction>
+    </instructions>
   </properties>
-
-  <aggregations>
-    <appliesToStages>
-      <stage:DocSetPlanningStage/>
-    </appliesToStages>
-  </aggregations>
 
 </block>

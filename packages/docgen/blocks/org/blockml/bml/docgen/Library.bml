@@ -25,7 +25,8 @@
   xmlns:weight="org.blockml.bml.docgen.weight"
   xmlns:rule="org.blockml.bml.docgen.rule"
   xmlns:blockml="org.blockml.bml"
-  xmlns:core="org.blockml.bml.core">
+  xmlns:core="org.blockml.bml.core"
+  xmlns:transformer="org.blockml.bml.transformer">
 
   <name>Library</name>
   <type>docgen:Library</type>
@@ -70,6 +71,7 @@
     <dependencies>
       <composition>
         <blockml:Library />
+        <transformer:Library />
       </composition>
     </dependencies>
 

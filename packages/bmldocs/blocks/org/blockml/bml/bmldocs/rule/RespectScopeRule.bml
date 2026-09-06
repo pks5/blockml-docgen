@@ -9,8 +9,7 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:brule="org.blockml.bml.bmldocs.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:stage="org.blockml.bml.docgen.stage">
+  xmlns:rule="org.blockml.bml.docgen.rule">
 
   <name>RespectScopeRule</name>
   <type>brule:RespectScopeRule</type>
@@ -37,21 +36,13 @@
     <summary override="true">
       <value>Content must remain within the declared Scope.</value>
     </summary>
-    <instruction override="true">
+    <instructions override="true">
       <value>Include only information that directly contributes to the declared Scope and Message
         of the PageElement. Do not add adjacent implementation details, related diagnostics,
         metadata, or architectural internals unless they are explicitly included by Scope or
         SupportingPoint.</value>
-    </instruction>
+    </instructions>
   </properties>
 
 
-  <aggregations>
-    <appliesToStages override="true">
-      <composition>
-        <stage:PageAuthoringStage />
-        <stage:PageRenderingStage />
-      </composition>
-    </appliesToStages>
-  </aggregations>
 </block>

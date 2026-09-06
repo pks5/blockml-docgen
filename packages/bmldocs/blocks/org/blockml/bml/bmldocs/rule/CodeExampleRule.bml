@@ -10,8 +10,7 @@
     xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                         "
     xmlns:brule="org.blockml.bml.bmldocs.rule"
-    xmlns:rule="org.blockml.bml.docgen.rule"
-    xmlns:stage="org.blockml.bml.docgen.stage">
+    xmlns:rule="org.blockml.bml.docgen.rule">
 
     <name>CodeExampleRule</name>
     <type>brule:CodeExampleRule</type>
@@ -45,23 +44,16 @@
                 comment.</value>
         </summary>
 
-        <instruction override="true">
+        <instructions override="true">
             <value>Generate every BlockML code example as a complete Block, never as an isolated
                 snippet. Include the surrounding Block structure necessary to understand the example
                 in context. Immediately before the section that demonstrates the concept being
                 explained, add a concise XML comment that highlights the relevant section. Keep
                 unrelated parts of the Block simple so that they provide context without distracting
                 from the concept being demonstrated.</value>
-        </instruction>
+        </instructions>
 
     </properties>
 
 
-    <aggregations>
-        <appliesToStages override="true">
-            <composition>
-                <stage:PageAuthoringStage />
-            </composition>
-        </appliesToStages>
-    </aggregations>
 </block>

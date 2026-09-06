@@ -9,8 +9,7 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:brule="org.blockml.bml.bmldocs.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:stage="org.blockml.bml.docgen.stage">
+  xmlns:rule="org.blockml.bml.docgen.rule">
 
   <name>CompleteTopicCoverageRule</name>
   <type>brule:CompleteTopicCoverageRule</type>
@@ -49,20 +48,14 @@
         intended documentation scope.</value>
     </summary>
 
-    <instruction override="true">
+    <instructions override="true">
       <value>Plan the DocSet so that all important concepts required by its intended scope,
         audience, and purpose are covered by one or more planned Pages. Do not omit important
         topics because no suitable Page currently exists. Introduce additional Pages whenever
         necessary to achieve complete conceptual coverage. Do not create dedicated Pages for
         every minor detail; instead, incorporate related details into broader Pages whenever
         this results in a clearer and more coherent documentation structure.</value>
-    </instruction>
+    </instructions>
   </properties>
-
-  <aggregations>
-    <appliesToStages>
-      <stage:DocSetPlanningStage/>
-    </appliesToStages>
-  </aggregations>
 
 </block>

@@ -9,8 +9,7 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:brule="org.blockml.bml.bmldocs.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:stage="org.blockml.bml.docgen.stage">
+  xmlns:rule="org.blockml.bml.docgen.rule">
 
   <name>NoFragmentedEnumerationRule</name>
   <type>brule:NoFragmentedEnumerationRule</type>
@@ -36,19 +35,12 @@
     <summary override="true">
       <value>Unstructured enumerations must be represented by an explicit List or Table.</value>
     </summary>
-    <instruction override="true">
+    <instructions override="true">
       <value>When three or more parallel facts, rules, categories, or diagnostics are presented,
         use a List or Table PageElement. Do not encode an implicit list as consecutive sentence
         fragments inside a Paragraph.</value>
-    </instruction>
+    </instructions>
   </properties>
 
 
-  <aggregations>
-    <appliesToStages override="true">
-      <composition>
-        <stage:PageAuthoringStage />
-      </composition>
-    </appliesToStages>
-  </aggregations>
 </block>

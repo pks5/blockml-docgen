@@ -9,8 +9,7 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:brule="org.blockml.bml.bmldocs.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:stage="org.blockml.bml.docgen.stage">
+  xmlns:rule="org.blockml.bml.docgen.rule">
 
   <name>CodeStyleRule</name>
   <type>brule:CodeStyleRule</type>
@@ -39,20 +38,13 @@
       <value>Present code as read-only preformatted text with syntax highlighting and a copy
         control.</value>
     </summary>
-    <instruction override="true">
+    <instructions override="true">
       <value>Render every source listing and code snippet as preformatted text with syntax
         highlighting. Use a platform-appropriate prettify / highlighting plugin when the target
         does not provide this natively. Code must be read-only. Provide a copy button that copies
         the full code to the clipboard.</value>
-    </instruction>
+    </instructions>
   </properties>
 
 
-  <aggregations>
-    <appliesToStages override="true">
-      <composition>
-        <stage:PageRenderingStage />
-      </composition>
-    </appliesToStages>
-  </aggregations>
 </block>

@@ -17,6 +17,8 @@
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
   xmlns:pgroup="org.blockml.bml.bmldocs.page"
   xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:plan="org.blockml.bml.bmldocs.a01_planning"
+  xmlns:structuring="org.blockml.bml.bmldocs.a02_structuring"
   xmlns:brule="org.blockml.bml.bmldocs.rule"
   xmlns:docgen="org.blockml.bml.docgen"
   xmlns:blockml="org.blockml.bml"
@@ -72,8 +74,8 @@
     <blocks>
       <composition>
         <bmldocs:README />
-        <docset:BmlDocSet />
-        <docset:BmlDocSetPlan />
+        <structuring:BmlDocSet />
+        <plan:BmlDocSetPlan />
         <docset:BmlDocPage />
         <brule:CodeStyleRule />
         <brule:CompleteSentenceRule />

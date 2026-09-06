@@ -10,8 +10,7 @@
     xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                         "
     xmlns:brule="org.blockml.bml.bmldocs.rule"
-    xmlns:rule="org.blockml.bml.docgen.rule"
-    xmlns:stage="org.blockml.bml.docgen.stage">
+    xmlns:rule="org.blockml.bml.docgen.rule">
 
     <name>SectionCompletenessRule</name>
     <type>brule:SectionCompletenessRule</type>
@@ -57,7 +56,7 @@
                 they improve understanding.</value>
         </summary>
 
-        <instruction override="true">
+        <instructions override="true">
             <value>Develop every documentation section sufficiently to explain its subject rather
                 than
                 reducing it to a brief mention or one or two summary sentences. Include the
@@ -75,17 +74,9 @@
                 Prefer useful explanation and concrete examples over filler, repetition, or
                 artificial
                 verbosity.</value>
-        </instruction>
+        </instructions>
 
     </properties>
 
 
-    <aggregations>
-        <appliesToStages override="true">
-            <composition>
-                <stage:PageAuthoringStage />
-                <stage:PageRenderingStage />
-            </composition>
-        </appliesToStages>
-    </aggregations>
 </block>

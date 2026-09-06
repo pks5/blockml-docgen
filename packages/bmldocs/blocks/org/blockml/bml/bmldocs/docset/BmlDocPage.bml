@@ -9,6 +9,7 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:structuring="org.blockml.bml.bmldocs.a02_structuring"
   xmlns:dpage="org.blockml.bml.docgen.page">
 
   <name>BmlDocPage</name>
@@ -27,7 +28,7 @@
     <see type="dpage:DocPage" relation="Extends">
       Docgen human-facing documentation page marker.
     </see>
-    <see type="docset:BmlDocSet" relation="Requires">
+    <see type="structuring:BmlDocSet" relation="Requires">
       Documentation set bound via docset.
     </see>
   </references>
@@ -36,7 +37,7 @@
 
   <properties>
     <docset override="true">
-      <value>docset:BmlDocSet</value>
+      <value>structuring:BmlDocSet</value>
     </docset>
   </properties>
 

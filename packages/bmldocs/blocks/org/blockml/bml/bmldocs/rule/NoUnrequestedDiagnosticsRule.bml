@@ -9,8 +9,7 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:brule="org.blockml.bml.bmldocs.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:stage="org.blockml.bml.docgen.stage">
+  xmlns:rule="org.blockml.bml.docgen.rule">
 
   <name>NoUnrequestedDiagnosticsRule</name>
   <type>brule:NoUnrequestedDiagnosticsRule</type>
@@ -36,19 +35,12 @@
     <summary override="true">
       <value>Diagnostic codes appear only when explicitly requested.</value>
     </summary>
-    <instruction override="true">
+    <instructions override="true">
       <value>Do not include validator or compiler diagnostic identifiers unless the PageElement
         has Reference or Troubleshooting semantics, or explicitly lists those diagnostics as
         required SupportingPoints.</value>
-    </instruction>
+    </instructions>
   </properties>
 
 
-  <aggregations>
-    <appliesToStages override="true">
-      <composition>
-        <stage:PageRenderingStage />
-      </composition>
-    </appliesToStages>
-  </aggregations>
 </block>

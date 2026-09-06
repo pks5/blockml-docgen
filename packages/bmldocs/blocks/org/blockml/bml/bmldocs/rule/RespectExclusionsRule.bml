@@ -9,8 +9,7 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:brule="org.blockml.bml.bmldocs.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:stage="org.blockml.bml.docgen.stage">
+  xmlns:rule="org.blockml.bml.docgen.rule">
 
   <name>RespectExclusionsRule</name>
   <type>brule:RespectExclusionsRule</type>
@@ -36,20 +35,12 @@
     <summary override="true">
       <value>Explicit Exclusions must never appear in generated content.</value>
     </summary>
-    <instruction override="true">
+    <instructions override="true">
       <value>Treat every Exclusion as a hard negative constraint. Do not mention, summarize,
         imply, or introduce excluded concepts, terms, error codes, implementation details, or
         source sections.</value>
-    </instruction>
+    </instructions>
   </properties>
 
 
-  <aggregations>
-    <appliesToStages override="true">
-      <composition>
-        <stage:PageAuthoringStage />
-        <stage:PageRenderingStage />
-      </composition>
-    </appliesToStages>
-  </aggregations>
 </block>

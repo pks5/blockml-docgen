@@ -9,8 +9,7 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:brule="org.blockml.bml.bmldocs.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:stage="org.blockml.bml.docgen.stage">
+  xmlns:rule="org.blockml.bml.docgen.rule">
 
   <name>AudienceVocabularyRule</name>
   <type>brule:AudienceVocabularyRule</type>
@@ -37,20 +36,12 @@
     <summary override="true">
       <value>Use only terminology appropriate to the declared Audience.</value>
     </summary>
-    <instruction override="true">
+    <instructions override="true">
       <value>Do not use internal FQNs, implementation type names, compiler-stage terminology,
         directive syntax, or unresolved abbreviations unless the Audience is expected to understand
         them or the terms are introduced within the Page.</value>
-    </instruction>
+    </instructions>
   </properties>
 
 
-  <aggregations>
-    <appliesToStages override="true">
-      <composition>
-        <stage:PageAuthoringStage />
-        <stage:PageRenderingStage />
-      </composition>
-    </appliesToStages>
-  </aggregations>
 </block>

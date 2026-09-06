@@ -9,8 +9,7 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:brule="org.blockml.bml.bmldocs.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:stage="org.blockml.bml.docgen.stage">
+  xmlns:rule="org.blockml.bml.docgen.rule">
 
   <name>ProgressivePageOrderRule</name>
   <type>brule:ProgressivePageOrderRule</type>
@@ -54,7 +53,7 @@
         or deepen them.</value>
     </summary>
 
-    <instruction override="true">
+    <instructions override="true">
       <value>Order the planned Pages as a coherent learning path. Place introductory and
         foundational Pages before Pages that depend on, specialize, combine, or apply their
         concepts. Avoid requiring readers to understand concepts that are introduced only on
@@ -63,13 +62,7 @@
         reader comprehension and conceptual dependencies rather than on source-file, package, or
         implementation order. Where Pages have no strict dependency, choose the sequence that
         provides the most natural progression and minimizes abrupt topic changes.</value>
-    </instruction>
+    </instructions>
   </properties>
-
-  <aggregations>
-    <appliesToStages>
-      <stage:DocSetPlanningStage/>
-    </appliesToStages>
-  </aggregations>
 
 </block>

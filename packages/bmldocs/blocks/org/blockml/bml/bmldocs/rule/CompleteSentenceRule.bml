@@ -9,8 +9,7 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:brule="org.blockml.bml.bmldocs.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:stage="org.blockml.bml.docgen.stage">
+  xmlns:rule="org.blockml.bml.docgen.rule">
 
   <name>CompleteSentenceRule</name>
   <type>brule:CompleteSentenceRule</type>
@@ -37,20 +36,13 @@
     <summary override="true">
       <value>Generated prose must use complete grammatical sentences.</value>
     </summary>
-    <instruction override="true">
+    <instructions override="true">
       <value>Do not emit headings, labels, error codes, source fragments, or noun phrases as
         standalone prose unless the PageElement explicitly requests a list, table, glossary, or
         reference index. Paragraphs must consist of complete sentences with a clear subject and
         predicate.</value>
-    </instruction>
+    </instructions>
   </properties>
 
 
-  <aggregations>
-    <appliesToStages override="true">
-      <composition>
-        <stage:PageRenderingStage />
-      </composition>
-    </appliesToStages>
-  </aggregations>
 </block>

@@ -15,8 +15,9 @@
     "LICENSE"
   ],
   "dependencies": {
-    "@blockml/core": "^1.1.1",
-    "@blockml/docgen": "^0.1.0"
+    "@blockml/core": "^1.1.2",
+    "@blockml/docgen": "^0.1.0",
+    "@blockml/transformer": "^0.9.4"
   },
   "engines": {
     "node": ">=20"

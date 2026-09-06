@@ -9,8 +9,7 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:brule="org.blockml.bml.bmldocs.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:stage="org.blockml.bml.docgen.stage">
+  xmlns:rule="org.blockml.bml.docgen.rule">
 
   <name>AvoidContentRepetitionRule</name>
   <type>brule:AvoidContentRepetitionRule</type>
@@ -57,7 +56,7 @@
         content already established nearby.</value>
     </summary>
 
-    <instruction override="true">
+    <instructions override="true">
       <value>When rendering a Page, treat preceding Page and Section content as established
         context. Do not regenerate definitions, introductions, explanations, or arguments that
         have already been sufficiently stated merely because a subsequent heading concerns the
@@ -68,13 +67,7 @@
         deliberately reframes earlier information for a new purpose. Before completing a
         Section, compare its main statements with the immediately preceding content and revise
         any passage whose primary contribution is merely a restatement.</value>
-    </instruction>
+    </instructions>
   </properties>
-
-  <aggregations>
-    <appliesToStages>
-      <stage:PageRenderingStage/>
-    </appliesToStages>
-  </aggregations>
 
 </block>

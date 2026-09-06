@@ -9,8 +9,7 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:brule="org.blockml.bml.bmldocs.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:stage="org.blockml.bml.docgen.stage">
+  xmlns:rule="org.blockml.bml.docgen.rule">
 
   <name>ClearPagePurposeRule</name>
   <type>brule:ClearPagePurposeRule</type>
@@ -51,20 +50,14 @@
       <value>Define a clear and specific purpose for every planned documentation page.</value>
     </summary>
 
-    <instruction override="true">
+    <instructions override="true">
       <value>During documentation planning, define a clear purpose for every planned Page.
         The purpose must explain why the Page exists within the DocSet and what responsibility
         it has in the overall documentation. Keep the purpose focused on a single objective
         and avoid combining unrelated goals. The purpose should guide all later stages,
         including page structuring, authoring, and rendering, but should not prescribe the
         detailed structure or content of the Page.</value>
-    </instruction>
+    </instructions>
   </properties>
-
-  <aggregations>
-    <appliesToStages>
-      <stage:DocSetPlanningStage/>
-    </appliesToStages>
-  </aggregations>
 
 </block>

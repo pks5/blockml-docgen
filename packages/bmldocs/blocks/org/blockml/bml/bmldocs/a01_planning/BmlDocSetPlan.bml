@@ -1,20 +1,21 @@
 <!--
   BlockML Documentation — DocSet plan for BlockML core docs
 
-  FQN: org.blockml.bml.bmldocs.docset.BmlDocSetPlan
+  FQN: org.blockml.bml.bmldocs.a01_planning.BmlDocSetPlan
 -->
 <block
   xmlns="http://blockml.org/bml"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
-  xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:plan="org.blockml.bml.bmldocs.a01_planning"
+  xmlns:structuring="org.blockml.bml.bmldocs.a02_structuring"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:dplan="org.blockml.bml.docgen.plan"
   xmlns:blockml="org.blockml.bml">
 
   <name>BmlDocSetPlan</name>
-  <type>docset:BmlDocSetPlan</type>
+  <type>plan:BmlDocSetPlan</type>
   <baseType>dplan:DocSetPlan</baseType>
   <is>The DocSetPlan for the BlockML core documentation set</is>
   <isnot>A concrete BmlDocSet or a documentation Page</isnot>
@@ -31,7 +32,7 @@
     <see type="dplan:DocSetPlan" relation="Extends">
       Docgen abstract DocSet plan.
     </see>
-    <see type="docset:BmlDocSet" relation="Requires">
+    <see type="structuring:BmlDocSet" relation="Requires">
       Concrete DocSet this plan describes.
     </see>
     <see type="dplan:PageGroupPlan" relation="Requires">

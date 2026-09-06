@@ -9,8 +9,7 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:brule="org.blockml.bml.bmldocs.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:stage="org.blockml.bml.docgen.stage">
+  xmlns:rule="org.blockml.bml.docgen.rule">
 
   <name>OnePrimaryMessageRule</name>
   <type>brule:OnePrimaryMessageRule</type>
@@ -36,20 +35,12 @@
     <summary override="true">
       <value>Every ContentElement communicates one primary message.</value>
     </summary>
-    <instruction override="true">
+    <instructions override="true">
       <value>Generate each ContentElement around exactly one central factual or conceptual
         statement. Supporting details may clarify that statement, but unrelated topics must be
         moved into separate ContentElements or omitted.</value>
-    </instruction>
+    </instructions>
   </properties>
 
 
-  <aggregations>
-    <appliesToStages override="true">
-      <composition>
-        <stage:PageAuthoringStage />
-        <stage:PageRenderingStage />
-      </composition>
-    </appliesToStages>
-  </aggregations>
 </block>

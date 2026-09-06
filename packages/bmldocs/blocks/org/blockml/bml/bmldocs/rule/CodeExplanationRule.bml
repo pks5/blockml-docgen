@@ -9,8 +9,7 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:brule="org.blockml.bml.bmldocs.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:stage="org.blockml.bml.docgen.stage">
+  xmlns:rule="org.blockml.bml.docgen.rule">
 
   <name>CodeExplanationRule</name>
   <type>brule:CodeExplanationRule</type>
@@ -49,7 +48,7 @@
         to the concept being taught.</value>
     </summary>
 
-    <instruction override="true">
+    <instructions override="true">
       <value>After every code block, provide explanatory text that relates the example directly
         to the concept introduced in the surrounding section. Refer to the concrete names,
         elements, properties, aggregations, instances, expressions, or other constructs used in
@@ -58,14 +57,7 @@
         the code or repeat the introductory text. Interpret the example and connect it back to
         the section's explanation. Focus on the parts relevant to the example's teaching goal;
         do not explain every line unless necessary.</value>
-    </instruction>
+    </instructions>
   </properties>
-
-  <aggregations>
-    <appliesToStages>
-      <stage:PageAuthoringStage/>
-      <stage:PageRenderingStage/>
-    </appliesToStages>
-  </aggregations>
 
 </block>
