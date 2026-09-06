@@ -7,35 +7,45 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
-  xmlns:blockml="org.blockml.bml"
   xmlns:core="org.blockml.bml.core"
-  xmlns:def="org.blockml.bml.definition"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:workspace="org.blockml.bml.docgen.workspace"
-  xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation"
-  xmlns:doc="org.blockml.bml.documentation">
+  xmlns:docgen="org.blockml.bml.docgen"
+  xmlns:bmldocs="org.blockml.bml.bmldocs"
+  xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation">
 
   <name>Introduction</name>
   <type>wsdocumentation:Introduction</type>
   <baseType>core:Documentation</baseType>
   <is>Purpose and scope of the BlockML Docgen workspace library</is>
 
-  <documentation>This repository is the BlockML Docgen monorepo. It authors two @blockml/*
-    packages: @blockml/docgen (generic tools that turn other BML libraries into
-    structured documents) and @blockml/bmldocs (the library that generates the
-    documentation published on blockml.org).
+  <documentation>
+    This repository is the BlockML Docgen monorepo. It authors two @blockml/* packages
+    whose BML libraries are the product:
+
+    @blockml/docgen (org.blockml.bml.docgen.Library) is the standalone documentation-
+    generation library. It defines how human-facing documentation is modelled and
+    manifested from BlockML — DocSet, Page, PageGroup, Plans, manifestation stages,
+    page and content types, roles, rules, and semantic annotations — without tying
+    those types to one website.
+
+    @blockml/bmldocs (org.blockml.bml.bmldocs.Library) is the first concrete site
+    library. It models the blockml.org documentation set: table of contents, URL
+    paths, DocPage markers, page groups, and site rules. It depends on docgen and
+    treats org.blockml.bml.documentation.* / org.blockml.bml.task.* as narrative SSOT.
 
     This workspace library (org.blockml.bml.docgen.workspace.*) is the monorepo
     documentation hub and SSOT entry for humans and LLMs. It links each package
-    BML library via Library.dependencies (workspace → packages only). Per-package
-    contracts remain in those libraries; this hub does not re-export their blocks.
+    library via Library.dependencies (workspace → packages only). Per-package
+    contracts stay in those libraries; this hub does not re-export their blocks.
 
-    Root README.md points here.</documentation>
+    Root README.md points here.
+  </documentation>
 
   <references>
     <see type="wsdocumentation:PackageMap" relation="ReadNext" />
     <see type="wsdocumentation:ArchitectureOverview" relation="SeeAlso" />
     <see type="wsdocumentation:LinkingRules" relation="SeeAlso" />
+    <see type="docgen:Library" relation="SeeAlso" />
+    <see type="bmldocs:Library" relation="SeeAlso" />
   </references>
 
 </block>

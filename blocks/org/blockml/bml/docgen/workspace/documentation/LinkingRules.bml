@@ -8,18 +8,15 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:core="org.blockml.bml.core"
-  xmlns:def="org.blockml.bml.definition"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:workspace="org.blockml.bml.docgen.workspace"
-  xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation"
-  xmlns:doc="org.blockml.bml.documentation">
+  xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation">
 
   <name>LinkingRules</name>
   <type>wsdocumentation:LinkingRules</type>
   <baseType>core:Documentation</baseType>
   <is>Normative monorepo BML linking and SSOT rules</is>
 
-  <documentation>Normative rules for this monorepo:
+  <documentation>
+    Normative rules for this monorepo:
 
     1. Workspace → packages only. org.blockml.bml.docgen.workspace.Library may list
        package libraries in dependencies. Package Library.bml files must never
@@ -31,11 +28,19 @@
     4. Hub SSOT. The root package.json blockml.library points at this workspace
        Library — the entry for monorepo documentation and orientation.
     5. Dependency direction. @blockml/bmldocs may depend on @blockml/docgen.
-       @blockml/docgen must not depend on @blockml/bmldocs.</documentation>
+       @blockml/docgen must not depend on @blockml/bmldocs.
+    6. Layering. docgen types are site-orthogonal. bmldocs specializes them for
+       blockml.org and must not re-implement DocSet, Page, PageElement, Plan, or
+       ManifestationStage in a parallel type tree.
+    7. Narrative SSOT. Page prose for BlockML itself stays in org.blockml.bml
+       (documentation.* and task.*). bmldocs DocPages reference those sources;
+       they do not duplicate that narrative.
+  </documentation>
 
   <references>
     <see type="wsdocumentation:Introduction" relation="SeeAlso" />
     <see type="wsdocumentation:PackageMap" relation="SeeAlso" />
+    <see type="wsdocumentation:ArchitectureOverview" relation="SeeAlso" />
   </references>
 
 </block>

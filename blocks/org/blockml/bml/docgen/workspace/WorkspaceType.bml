@@ -8,17 +8,18 @@
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
   xmlns:core="org.blockml.bml.core"
-  xmlns:def="org.blockml.bml.definition"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:workspace="org.blockml.bml.docgen.workspace"
-  xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation">
+  xmlns:workspace="org.blockml.bml.docgen.workspace">
 
   <name>WorkspaceType</name>
   <type>workspace:WorkspaceType</type>
   <baseType>core:Entity</baseType>
   <is>Abstract marker for workspace hub documentation blocks</is>
 
-  <documentation>Marker for org.blockml.bml.docgen.workspace.* hub types. This library is documentation-only; it does not export capabilities or runtime APIs.</documentation>
+  <documentation>
+    Marker for org.blockml.bml.docgen.workspace.* hub types. This library is
+    documentation-only; it does not export capabilities, DocSet types, or runtime APIs.
+    Package contracts live in org.blockml.bml.docgen and org.blockml.bml.bmldocs.
+  </documentation>
   <abstract>true</abstract>
 
 </block>

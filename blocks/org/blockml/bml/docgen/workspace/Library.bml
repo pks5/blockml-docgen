@@ -9,8 +9,6 @@
                       "
   xmlns:blockml="org.blockml.bml"
   xmlns:core="org.blockml.bml.core"
-  xmlns:def="org.blockml.bml.definition"
-  xmlns:type="org.blockml.bml.type"
   xmlns:docgen="org.blockml.bml.docgen"
   xmlns:bmldocs="org.blockml.bml.bmldocs"
   xmlns:workspace="org.blockml.bml.docgen.workspace"
@@ -22,10 +20,24 @@
   <is>The BlockML Docgen monorepo workspace library catalog</is>
 
   <documentation>
-    Documentation and SSOT hub for the BlockML Docgen monorepo. Links package
-    BML libraries (workspace → packages only). Membership is defined exclusively
-    by this blocks list. Package libraries must not depend back on this library.
+    Documentation and SSOT hub for the BlockML Docgen monorepo.
+
+    Linked libraries:
+
+    - org.blockml.bml.docgen.Library (`@blockml/docgen`)
+    - org.blockml.bml.bmldocs.Library (`@blockml/bmldocs`)
+    - org.blockml.bml.Library (`@blockml/core`)
+
+    Direction is workspace → packages only. Membership is defined exclusively by
+    this blocks list. This hub does not re-export package blocks; package libraries
+    must not depend back on this library.
   </documentation>
+
+  <references>
+    <see type="workspace:README" relation="ReadFirst">
+      Human/LLM reading entry for this library.
+    </see>
+  </references>
 
   <version>0.1.0</version>
 

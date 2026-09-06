@@ -1,13 +1,13 @@
 # BlockML Docgen
 
-Monorepo for **structured document generation** from BlockML libraries.
+Monorepo for **documentation generation** from BlockML libraries.
 
 This workspace authors two publishable BML libraries:
 
 | Package | Role |
 |---|---|
-| **[@blockml/docgen](packages/docgen)** | Tools for generating structured documents from other BML libraries |
-| **[@blockml/bmldocs](packages/bmldocs)** | Library that produces the documentation published on [blockml.org](https://blockml.org) |
+| **[@blockml/docgen](packages/docgen)** | Reusable documentation-generation types and four-stage pipeline (DocSet, Page, Plan, manifestation stages) |
+| **[@blockml/bmldocs](packages/bmldocs)** | blockml.org documentation set — DocSet, pages, page groups, and site rules |
 
 BML is the source of truth. Companion artifacts (HTML, Markdown, site output, …) are generated from the model.
 

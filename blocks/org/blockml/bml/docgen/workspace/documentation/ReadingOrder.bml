@@ -7,32 +7,44 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
                       "
-  xmlns:blockml="org.blockml.bml"
   xmlns:core="org.blockml.bml.core"
-  xmlns:def="org.blockml.bml.definition"
-  xmlns:type="org.blockml.bml.type"
   xmlns:docgen="org.blockml.bml.docgen"
+  xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:bmldocs="org.blockml.bml.bmldocs"
-  xmlns:workspace="org.blockml.bml.docgen.workspace"
-  xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation"
-  xmlns:doc="org.blockml.bml.documentation">
+  xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:page="org.blockml.bml.bmldocs.page.docs"
+  xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation">
 
   <name>ReadingOrder</name>
   <type>wsdocumentation:ReadingOrder</type>
   <baseType>core:Documentation</baseType>
   <is>Recommended reading path across package libraries</is>
 
-  <documentation>Suggested order for onboarding (each library README → Introduction chain):
+  <documentation>
+    Suggested order for onboarding:
 
-    1. This hub — workspace Introduction → PackageMap → ArchitectureOverview
-    2. org.blockml.bml.docgen — generic document-generation tools (@blockml/docgen)
-    3. org.blockml.bml.bmldocs — blockml.org documentation library (@blockml/bmldocs)
+    1. This hub — Introduction → PackageMap → ArchitectureOverview → LinkingRules.
+    2. org.blockml.bml.docgen.README — then dcore:DocElement, dcore:DocSet,
+       dcore:Page (DocPage), dcore:PageGroup, dcore:Plan, and
+       dcore:ManifestationStage. Stay here for reusable types and the four-stage
+       pipeline.
+    3. org.blockml.bml.bmldocs.README — then docset:BmlDocSet, page:TableOfContents,
+       and concrete pages under org.blockml.bml.bmldocs.page.docs.*. Stay here for
+       the blockml.org catalogue, not a 1:1 mirror of the core ReadFirst path.
 
     Dive into a package library only for that package's contracts; return here for
-    monorepo orientation.</documentation>
+    monorepo orientation. Narrative language SSOT remains in org.blockml.bml
+    (documentation.* and task.*).
+  </documentation>
 
   <references>
     <see type="wsdocumentation:LinkingRules" relation="ReadNext" />
+    <see type="docgen:README" relation="SeeAlso" />
+    <see type="dcore:DocElement" relation="SeeAlso" />
+    <see type="dcore:DocSet" relation="SeeAlso" />
+    <see type="bmldocs:README" relation="SeeAlso" />
+    <see type="docset:BmlDocSet" relation="SeeAlso" />
+    <see type="page:TableOfContents" relation="SeeAlso" />
     <see type="docgen:Library" relation="SeeAlso" />
     <see type="bmldocs:Library" relation="SeeAlso" />
   </references>
