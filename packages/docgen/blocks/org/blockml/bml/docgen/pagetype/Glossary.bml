@@ -1,0 +1,69 @@
+<!--
+  BlockML DocGen — Glossary page type
+
+  FQN: org.blockml.bml.docgen.pagetype.Glossary
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:level="org.blockml.bml.docgen.level">
+
+  <name>Glossary</name>
+  <type>ptype:Glossary</type>
+  <baseType>dcore:PageType</baseType>
+  <is>A page type that defines terminology</is>
+
+  <documentation>
+    Defines terminology — concise definitions of important terms and abbreviations used
+    throughout the documentation.
+
+    Typical characteristics: alphabetical; short definitions; terminology only.
+
+    Examples: Block; BOM; Capability; Manifestation.
+
+    Core question: What does this term mean?
+  </documentation>
+
+  <references>
+    <see type="dcore:PageType" relation="Extends">
+      Editorial page-kind branch root.
+    </see>
+    <see type="ptype:Concept" relation="ContrastsWith">
+      Concept explains one idea in depth; Glossary gives short term definitions.
+    </see>
+    <see type="ptype:FAQ" relation="ContrastsWith">
+      FAQ answers questions; Glossary defines words.
+    </see>
+  </references>
+
+  <properties>
+    <displayName override="true">
+      <value>Glossary</value>
+    </displayName>
+    <defaultDetailLevel override="true">
+      <value>level:Reference</value>
+    </defaultDetailLevel>
+    <maxPrimaryConcepts override="true">
+      <value>0</value>
+    </maxPrimaryConcepts>
+  </properties>
+
+  <aggregations>
+    <recommendedRoles override="true">
+      <composition>
+        <role:Definition />
+      </composition>
+    </recommendedRoles>
+    <forbiddenRoles override="true">
+      <composition>
+        <role:Instruction />
+      </composition>
+    </forbiddenRoles>
+  </aggregations>
+
+</block>

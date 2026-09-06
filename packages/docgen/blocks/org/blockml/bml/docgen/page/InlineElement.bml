@@ -1,0 +1,33 @@
+<!--
+  BlockML DocGen — abstract inline page content element
+
+  FQN: org.blockml.bml.docgen.page.InlineElement
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:page="org.blockml.bml.docgen.page"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:core="org.blockml.bml.core">
+
+  <name>InlineElement</name>
+  <type>page:InlineElement</type>
+  <baseType>dcore:PageElement</baseType>
+  <is>An inline documentation content element</is>
+
+  <documentation>
+    Abstract base for runs of inline content inside a paragraph — primarily Text.
+    Aggregated as Paragraph.content. Block-level images use page:Image (ContentElement).
+  </documentation>
+
+  <references>
+    <see type="dcore:PageElement" relation="Extends">
+      Shared page content element root.
+    </see>
+  </references>
+
+  <abstract>true</abstract>
+
+</block>

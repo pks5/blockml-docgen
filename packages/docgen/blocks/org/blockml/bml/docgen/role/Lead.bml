@@ -1,0 +1,63 @@
+<!--
+  BlockML DocGen — Lead content role
+
+  FQN: org.blockml.bml.docgen.role.Lead
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:level="org.blockml.bml.docgen.level"
+  xmlns:weight="org.blockml.bml.docgen.weight">
+
+  <name>Lead</name>
+  <type>role:Lead</type>
+  <baseType>dcore:ContentRole</baseType>
+  <is>A content role that opens a section or page with first orientation</is>
+
+  <documentation>
+    Opens a section or page and gives the reader a first orientation. A Lead does not
+    explain in depth; it supplies the mental entry point. It typically answers: What is this
+    about? Why does it matter? What should I roughly expect?
+
+    Distinguishes from Summary (nothing has been summarized yet), Explanation (no deep
+    explanation yet), and Context (Lead is more immediate and entry-focused).
+
+    Typical rules: keep it short; no details; avoid new specialized terms; do not enumerate
+    technical edge cases.
+  </documentation>
+
+  <references>
+    <see type="dcore:ContentRole" relation="Extends">
+      Rhetorical / content-role branch root.
+    </see>
+    <see type="role:Summary" relation="ContrastsWith">
+      Summary densifies content after it has been introduced; Lead opens.
+    </see>
+    <see type="role:Explanation" relation="ContrastsWith">
+      Explanation explains how or why; Lead only orients.
+    </see>
+    <see type="role:Context" relation="ContrastsWith">
+      Context situates in a larger frame; Lead focuses on immediate entry.
+    </see>
+  </references>
+
+  <properties>
+    <displayName override="true">
+      <value>Lead</value>
+    </displayName>
+    <defaultDetailLevel override="true">
+      <value>level:Overview</value>
+    </defaultDetailLevel>
+    <defaultWeight override="true">
+      <value>weight:Primary</value>
+    </defaultWeight>
+    <allowsNewConcepts override="true">
+      <value>false</value>
+    </allowsNewConcepts>
+  </properties>
+
+</block>

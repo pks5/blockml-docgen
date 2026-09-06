@@ -1,0 +1,67 @@
+<!--
+  BlockML Docgen Workspace Library
+  FQN: org.blockml.bml.docgen.workspace.Library
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:blockml="org.blockml.bml"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:def="org.blockml.bml.definition"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:docgen="org.blockml.bml.docgen"
+  xmlns:bmldocs="org.blockml.bml.bmldocs"
+  xmlns:workspace="org.blockml.bml.docgen.workspace"
+  xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation">
+
+  <name>Library</name>
+  <type>workspace:Library</type>
+  <baseType>core:BlockLibrary</baseType>
+  <is>The BlockML Docgen monorepo workspace library catalog</is>
+
+  <documentation>
+    Documentation and SSOT hub for the BlockML Docgen monorepo. Links package
+    BML libraries (workspace → packages only). Membership is defined exclusively
+    by this blocks list. Package libraries must not depend back on this library.
+  </documentation>
+
+  <version>0.1.0</version>
+
+  <language>
+    <English />
+  </language>
+
+  <properties>
+    <description override="true">
+      <value>BlockML Docgen workspace monorepo library</value>
+    </description>
+  </properties>
+
+  <aggregations>
+    <readMe>
+      <composition>
+        <workspace:README />
+      </composition>
+    </readMe>
+    <dependencies>
+      <composition>
+        <blockml:Library />
+        <docgen:Library />
+        <bmldocs:Library />
+      </composition>
+    </dependencies>
+    <blocks>
+      <composition>
+        <workspace:WorkspaceType />
+        <wsdocumentation:Introduction />
+        <wsdocumentation:PackageMap />
+        <wsdocumentation:ArchitectureOverview />
+        <wsdocumentation:ReadingOrder />
+        <wsdocumentation:LinkingRules />
+      </composition>
+    </blocks>
+  </aggregations>
+
+</block>

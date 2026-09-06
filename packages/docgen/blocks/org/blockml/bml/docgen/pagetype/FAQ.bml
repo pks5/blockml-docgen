@@ -1,0 +1,66 @@
+<!--
+  BlockML DocGen — FAQ page type
+
+  FQN: org.blockml.bml.docgen.pagetype.FAQ
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:level="org.blockml.bml.docgen.level">
+
+  <name>FAQ</name>
+  <type>ptype:FAQ</type>
+  <baseType>dcore:PageType</baseType>
+  <is>A page type that answers frequently asked questions</is>
+
+  <documentation>
+    Answers frequently asked questions with concise replies, without requiring the reader to
+    navigate the full conceptual documentation.
+
+    Typical characteristics: question/answer; concise; independent entries.
+
+    Examples: Why XML?; Why BOM?; Why Blocks?
+
+    Core question: What are the common questions and answers?
+  </documentation>
+
+  <references>
+    <see type="dcore:PageType" relation="Extends">
+      Editorial page-kind branch root.
+    </see>
+    <see type="ptype:Glossary" relation="ContrastsWith">
+      Glossary defines terms; FAQ answers questions.
+    </see>
+    <see type="ptype:Troubleshooting" relation="ContrastsWith">
+      Troubleshooting diagnoses failures; FAQ answers common questions.
+    </see>
+  </references>
+
+  <properties>
+    <displayName override="true">
+      <value>FAQ</value>
+    </displayName>
+    <defaultDetailLevel override="true">
+      <value>level:Practical</value>
+    </defaultDetailLevel>
+    <maxPrimaryConcepts override="true">
+      <value>0</value>
+    </maxPrimaryConcepts>
+  </properties>
+
+  <aggregations>
+    <recommendedRoles override="true">
+      <composition>
+        <role:Explanation />
+        <role:Rationale />
+        <role:Warning />
+      </composition>
+    </recommendedRoles>
+  </aggregations>
+
+</block>

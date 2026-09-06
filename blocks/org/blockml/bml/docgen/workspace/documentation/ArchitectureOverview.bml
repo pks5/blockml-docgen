@@ -1,0 +1,45 @@
+<!--
+  Workspace Documentation — ArchitectureOverview
+  FQN: org.blockml.bml.docgen.workspace.documentation.ArchitectureOverview
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:blockml="org.blockml.bml"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:def="org.blockml.bml.definition"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:docgen="org.blockml.bml.docgen"
+  xmlns:bmldocs="org.blockml.bml.bmldocs"
+  xmlns:workspace="org.blockml.bml.docgen.workspace"
+  xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <name>ArchitectureOverview</name>
+  <type>wsdocumentation:ArchitectureOverview</type>
+  <baseType>core:Documentation</baseType>
+  <is>High-level document-generation pipeline</is>
+
+  <documentation>Document-generation data flow:
+
+    Other BML libraries (npm / workspace packages)
+    → @blockml/docgen tools (inspect a library, project a StructuredDocument)
+    → structured document model
+    → render / publish companions
+
+    @blockml/bmldocs specializes that pipeline for blockml.org: it names the site
+    documents and site map, then uses @blockml/docgen to generate them from the
+    BlockML toolchain and core libraries.
+
+    The workspace hub orients the monorepo. It does not re-export package blocks
+    or own generation capabilities.</documentation>
+
+  <references>
+    <see type="wsdocumentation:ReadingOrder" relation="ReadNext" />
+    <see type="docgen:Library" relation="SeeAlso" />
+    <see type="bmldocs:Library" relation="SeeAlso" />
+  </references>
+
+</block>

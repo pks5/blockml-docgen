@@ -1,0 +1,47 @@
+<!--
+  BlockML DocGen — documentation understanding-weight classifier
+
+  FQN: org.blockml.bml.docgen.core.Weight
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:weight="org.blockml.bml.docgen.weight"
+  xmlns:core="org.blockml.bml.core">
+
+  <name>Weight</name>
+  <type>dcore:Weight</type>
+  <baseType>dcore:DocElement</baseType>
+  <is>A documentation understanding-weight classifier</is>
+
+  <documentation>
+    Abstract base for how important a documentation element is for understanding. Prefer this name
+    over Importance — the axis answers “how central to comprehension?”, independent of how detailed
+    the explanation should be (see DetailLevel). Renderers may prioritize, demote, or drop elements
+    by Weight. Concrete weights live in org.blockml.bml.docgen.weight (Primary … Advanced).
+  </documentation>
+
+  <references>
+    <see type="dcore:DocElement" relation="Extends">
+      Semantic base for all docgen domain Blocks (except Library / README).
+    </see>
+    <see type="dcore:DetailLevel" relation="SeeAlso">
+      Complementary axis — how detailed the explanation should be.
+    </see>
+    <see type="weight:Primary" relation="SeeAlso">
+      Central page statement — every reader should understand.
+    </see>
+    <see type="weight:Advanced" relation="SeeAlso">
+      Deepening for experienced readers — not required for the page.
+    </see>
+    <see type="dcore:PageElement" relation="SeeAlso">
+      Visible page content that may be governed by a Weight.
+    </see>
+  </references>
+
+  <abstract>true</abstract>
+
+</block>

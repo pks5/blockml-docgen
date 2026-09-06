@@ -1,0 +1,57 @@
+<!--
+  BlockML DocGen — documentation page group
+
+  FQN: org.blockml.bml.docgen.core.PageGroup
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:type="org.blockml.bml.type">
+
+  <name>PageGroup</name>
+  <type>dcore:PageGroup</type>
+  <baseType>dcore:DocElement</baseType>
+  <is>A documentation page group for navigation and structure</is>
+
+  <documentation>
+    Groups documentation pages that belong together thematically or in navigation — for example
+    “Getting Started”. title is the visible group label.
+
+    pages holds TypeReferenceEntity links to pages in this group. landingPage is an optional
+    TypeReference to the overview page for the group. parentGroup is an optional TypeReference for
+    nesting (for example Language → Type System → Primitive Types).
+  </documentation>
+
+  <references>
+    <see type="dcore:DocElement" relation="Extends">
+      Semantic base for all docgen domain Blocks (except Library / README).
+    </see>
+    <see type="dcore:Page" relation="Requires">
+      Pages via pages aggregation and optional landingPage property.
+    </see>
+  </references>
+
+  <properties>
+    <title type="Text">
+      <documentation>Visible label of the group (for example “Getting Started”).</documentation>
+    </title>
+    <parentGroup type="type:TypeReference(dcore:PageGroup)">
+      <documentation>Optional type reference to the parent group for nesting (for example Type
+        System under Language).</documentation>
+    </parentGroup>
+    <landingPage type="type:TypeReference(dcore:Page)">
+      <documentation>Optional type reference to the overview / landing page for this group.</documentation>
+    </landingPage>
+  </properties>
+
+  <aggregations>
+    <pages type="type:TypeReferenceEntity(dcore:Page)[]">
+      <documentation>Type references to pages that belong to this group thematically or in
+        navigation.</documentation>
+    </pages>
+  </aggregations>
+
+</block>

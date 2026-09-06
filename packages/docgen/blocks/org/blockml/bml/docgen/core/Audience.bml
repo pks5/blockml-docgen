@@ -1,0 +1,66 @@
+<!--
+  BlockML DocGen — Intended readers of the documentation
+
+  FQN: org.blockml.bml.docgen.core.Audience
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:type="org.blockml.bml.type">
+
+  <name>Audience</name>
+  <type>dcore:Audience</type>
+  <baseType>dcore:DocElement</baseType>
+  <is>Intended readers of the documentation</is>
+
+  <documentation>
+    Describes who the documentation is for (role, experience, goals). Informs tone, examples, and
+    depth without appearing as a default visible page block. defaultDetailLevel selects the usual
+    explanation depth for this audience; aggregations capture assumed versus excluded knowledge
+    via owned Scope and Exclusion instances.
+  </documentation>
+
+  <references>
+    <see type="dcore:DocElement" relation="Extends">
+      Semantic base for all docgen domain Blocks (except Library / README).
+    </see>
+    <see type="dcore:DetailLevel" relation="Requires">
+      Target branch for defaultDetailLevel.
+    </see>
+    <see type="sem:Scope" relation="Requires">
+      Assumed knowledge via assumedKnowledge aggregation.
+    </see>
+    <see type="sem:Exclusion" relation="Requires">
+      Excluded topics via exclusions aggregation.
+    </see>
+  </references>
+
+
+  <properties>
+    <displayName type="Text">
+      <documentation>Stable human-readable display name of this definitional semantic element (for
+        catalogue identity, linking, and generation).</documentation>
+    </displayName>
+    <defaultDetailLevel type="type:TypeReference(dcore:DetailLevel)">
+      <documentation>Default detail level appropriate for this audience (reference into the
+        DetailLevel branch, for example Introductory or Practical).</documentation>
+    </defaultDetailLevel>
+  </properties>
+
+  <aggregations>
+    <assumedKnowledge type="sem:Scope[]">
+      <documentation>Owned Scope instances describing knowledge this audience is assumed to have —
+        direct instances, not type references.</documentation>
+    </assumedKnowledge>
+    <exclusions type="sem:Exclusion[]">
+      <documentation>Owned Exclusion instances describing topics this audience should not be
+        burdened with — direct instances, not type references.</documentation>
+    </exclusions>
+  </aggregations>
+
+</block>

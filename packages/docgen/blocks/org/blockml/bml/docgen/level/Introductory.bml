@@ -1,0 +1,30 @@
+<!--
+  BlockML DocGen — an introductory detail level for beginners
+
+  FQN: org.blockml.bml.docgen.level.Introductory
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:level="org.blockml.bml.docgen.level"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:core="org.blockml.bml.core">
+
+  <name>Introductory</name>
+  <type>level:Introductory</type>
+  <baseType>dcore:DetailLevel</baseType>
+  <is>An introductory detail level for beginners</is>
+
+  <documentation>
+    For beginners. Explains the concept without internals or special cases. Introduces vocabulary and mental models; omits design history, edge cases, and advanced configuration.
+  </documentation>
+
+  <references>
+    <see type="dcore:DetailLevel" relation="Extends">
+      Detail-level classification axis under DocElement.
+    </see>
+  </references>
+
+</block>

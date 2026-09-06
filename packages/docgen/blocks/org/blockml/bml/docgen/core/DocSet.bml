@@ -1,0 +1,125 @@
+<!--
+  BlockML DocGen — cohesive documentation-set container
+
+  FQN: org.blockml.bml.docgen.core.DocSet
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:dplan="org.blockml.bml.docgen.plan"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:page="org.blockml.bml.docgen.page"
+  xmlns:bmlcore="org.blockml.bml.core"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:type="org.blockml.bml.type">
+
+  <name>DocSet</name>
+  <type>dcore:DocSet</type>
+  <baseType>dcore:DocElement</baseType>
+  <is>A cohesive documentation set for a product, project, or domain</is>
+  <isnot>A bml-core narrative Documentation Block (bmlcore:Documentation) or a single documentation
+    page</isnot>
+
+  <documentation>
+    Container for one coherent documentation set — of a product, project, library, or similar.
+    The BlockML website documentation is the first concrete example: a site-specific DocSet
+    instance owns pages, page groups, learning paths, and global rules.
+
+    title, summary, version, homePage, rootPath, rootPageGroup, and plan identify the
+    documentation set; pageMapping lists every publishable page with pageKey and path; remaining
+    aggregations hold TypeReferenceEntity catalogues (learning paths, global rules) used when
+    generating or rendering that documentation.
+
+    Distinction from bmlcore:Documentation (org.blockml.bml.core.Documentation): bml-core
+    Documentation is the narrative SSOT branch for explaining BlockML itself — prose Blocks under
+    org.blockml.bml.documentation.* that DocPages reference via see/Requires. dcore:DocSet
+    is the docgen catalogue container for a publishable human-facing documentation set (website,
+    handbook, product docs): it owns page mappings and related catalogues, and is not a substitute
+    for those narrative core Documentation Blocks.
+  </documentation>
+
+  <references>
+    <see type="dcore:DocElement" relation="Extends">
+      Semantic base for all docgen domain Blocks (except Library / README).
+    </see>
+    <see type="bmlcore:Documentation" relation="ContrastsWith">
+      bml-core narrative Documentation — language/model SSOT prose, not a docgen DocSet
+      container.
+    </see>
+    <see type="dcore:Page" relation="Requires">
+      Pages via homePage and PageMapping.page.
+    </see>
+    <see type="dcore:PageGroup" relation="Requires">
+      Root page group via rootPageGroup — nested groups hang off that tree.
+    </see>
+    <see type="sem:LearningPath" relation="Requires">
+      Learning paths via learningPaths aggregation.
+    </see>
+    <see type="bmlcore:Block" relation="Requires">
+      Authoritative source Blocks via authoritativeSources aggregation.
+    </see>
+    <see type="page:DocPage" relation="Requires">
+      Typical concrete page markers referenced from PageMapping.page.
+    </see>
+    <see type="dcore:PageMapping" relation="Requires">
+      Mapping of a Page to stable pageKey and site path — used by pageMapping.
+    </see>
+    <see type="dplan:DocSetPlan" relation="Requires">
+      Preliminary plan referenced by plan — may precede or guide this DocSet.
+    </see>
+  </references>
+
+  <properties>
+    <title type="Text">
+      <documentation>Display title of this documentation set.</documentation>
+    </title>
+    <summary type="Text">
+      <documentation>Short summary of what this documentation covers.</documentation>
+    </summary>
+    <version type="Text">
+      <documentation>Content version of the documentation represented by this DocSet — the
+        editorial/revision level of the docs themselves. Fully independent of any Library version
+        (framework catalogue version); the two must not be assumed equal or coupled.</documentation>
+    </version>
+    <homePage type="type:TypeReference(dcore:Page)">
+      <documentation>Type reference to the entry / home page of this documentation set.</documentation>
+    </homePage>
+    <plan type="type:TypeReference(dplan:DocSetPlan)">
+      <documentation>Type reference to the DocSetPlan that defines or guides the intended structure
+        of this DocSet.</documentation>
+    </plan>
+    <rootPath type="Text">
+      <documentation>Base URL path of this documentation set on the site (for example /docs). Full
+        page URLs are rootPath + PageMapping.path.</documentation>
+    </rootPath>
+    <rootPageGroup type="type:TypeReference(dcore:PageGroup)">
+      <documentation>Type reference to the top-level PageGroup of this documentation set. Nested
+        groups are reached via PageGroup.parentGroup links under this root.</documentation>
+    </rootPageGroup>
+  </properties>
+
+  <aggregations>
+    <pageMapping type="dcore:PageMapping[]">
+      <documentation>Authoritative mappings of pages that belong to this DocSet. Each entry binds a
+        Page to pageKey and path. The library may contain additional page types (drafts,
+        experiments, retired pages) that are not part of this DocSet — those must not be published
+        with it. Renderers must only consider pages listed here; if a page is linked from an index,
+        navigation, or another page and is not in this list, emit an error or warning. Full site
+        URL = rootPath + path.</documentation>
+    </pageMapping>
+    <learningPaths type="type:TypeReferenceEntity(sem:LearningPath)[]">
+      <documentation>List of all available and active learning paths for this DocSet.</documentation>
+    </learningPaths>
+    <globalRules type="type:TypeReferenceEntity(dcore:Rule)[]">
+      <documentation>Rules that apply globally to everything within this DocSet.</documentation>
+    </globalRules>
+    <authoritativeSources type="type:TypeReferenceEntity(bmlcore:Block)[]">
+      <documentation>Authoritative source Blocks for this DocSet — typically libraries or other
+        Blocks that are the SSOT for generated content.</documentation>
+    </authoritativeSources>
+  </aggregations>
+
+</block>

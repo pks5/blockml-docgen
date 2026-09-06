@@ -1,0 +1,60 @@
+<!--
+  BlockML DocGen — Reference content role
+
+  FQN: org.blockml.bml.docgen.role.Reference
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:level="org.blockml.bml.docgen.level"
+  xmlns:weight="org.blockml.bml.docgen.weight">
+
+  <name>Reference</name>
+  <type>role:Reference</type>
+  <baseType>dcore:ContentRole</baseType>
+  <is>A content role that supplies precise technical facts for lookup</is>
+
+  <documentation>
+    Supplies precise technical facts for lookup — less narrative, deliberately denser and
+    more complete. Examples: allowed attributes, syntax variants, diagnostic codes, member
+    tables, mapping rules, full option lists.
+
+    Marks that technical density is desired here. An introductory Explanation must not be
+    written like Reference material.
+
+    Distinguishes from Explanation (narrative understanding) by prioritizing completeness
+    and lookup density.
+  </documentation>
+
+  <references>
+    <see type="dcore:ContentRole" relation="Extends">
+      Rhetorical / content-role branch root.
+    </see>
+    <see type="role:Explanation" relation="ContrastsWith">
+      Explanation stays narrative; Reference is dense lookup material.
+    </see>
+    <see type="role:Example" relation="ContrastsWith">
+      Example illustrates one case; Reference enumerates complete facts.
+    </see>
+  </references>
+
+  <properties>
+    <displayName override="true">
+      <value>Reference</value>
+    </displayName>
+    <defaultDetailLevel override="true">
+      <value>level:Reference</value>
+    </defaultDetailLevel>
+    <defaultWeight override="true">
+      <value>weight:Supporting</value>
+    </defaultWeight>
+    <allowsNewConcepts override="true">
+      <value>true</value>
+    </allowsNewConcepts>
+  </properties>
+
+</block>

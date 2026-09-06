@@ -1,0 +1,30 @@
+<!--
+  BlockML DocGen — a comprehensive detailed explanation level
+
+  FQN: org.blockml.bml.docgen.level.Detailed
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:level="org.blockml.bml.docgen.level"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:core="org.blockml.bml.core">
+
+  <name>Detailed</name>
+  <type>level:Detailed</type>
+  <baseType>dcore:DetailLevel</baseType>
+  <is>A comprehensive detailed explanation level</is>
+
+  <documentation>
+    Comprehensive explanation including background and design decisions. Suitable when the reader needs to understand why the model is shaped as it is, not only how to use it.
+  </documentation>
+
+  <references>
+    <see type="dcore:DetailLevel" relation="Extends">
+      Detail-level classification axis under DocElement.
+    </see>
+  </references>
+
+</block>

@@ -1,0 +1,646 @@
+<!--
+  BlockML Documentation — Annotations and directives
+
+  FQN: org.blockml.bml.bmldocs.page.docs.AnnotationsAndDirectives
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:page="org.blockml.bml.bmldocs.page.docs"
+  xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:weight="org.blockml.bml.docgen.weight"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <name>AnnotationsAndDirectives</name>
+  <type>page:AnnotationsAndDirectives</type>
+  <baseType>docset:BmlDocPage</baseType>
+  <is>A website page for annotations and bml: directives</is>
+
+  <documentation>
+    Marker page: annotation namespaces vs directives, then a short tour of bml:each, bml:if,
+    bml:container, bml:with, and bml:xml — examples over taxonomy tables.
+
+    content is a structural scaffold only; generate prose and examples from referenced core
+    documentation (doc:AnnotationModel, doc:BmlDirectives).
+  </documentation>
+
+  <references>
+    <see type="doc:AnnotationModel" relation="Requires">
+      Primary content — annotation namespaces and facets.
+    </see>
+    <see type="doc:BmlDirectives" relation="Requires">
+      Primary content — bml:each, bml:if, bml:container, bml:with, bml:xml.
+    </see>
+  </references>
+
+  <properties>
+    <title>
+      <value>Annotations and directives</value>
+    </title>
+
+    <purpose>
+      <value>
+        Frame annotations as directive namespaces orthogonal to Definition members.
+      </value>
+    </purpose>
+
+    <detailLevel>
+      <value>
+        dlevel:Introductory
+      </value>
+    </detailLevel>
+
+    <pageType>
+      <value>
+        ptype:Concept
+      </value>
+    </pageType>
+  </properties>
+
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <doc:AnnotationModel />
+        <doc:BmlDirectives />
+      </composition>
+    </authoritativeSources>
+
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>
+            Treat annotation namespaces as orthogonal to Definition members and recognize the
+            principal bml: directive roles at a conceptual level.
+          </summary>
+          <authoritativeSources>
+            <doc:AnnotationModel />
+            <doc:BmlDirectives />
+          </authoritativeSources>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>
+            The reader can distinguish Annotation namespaces from Definition structure.
+          </summary>
+          <authoritativeSources>
+            <doc:AnnotationModel />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+
+        <sem:ReaderOutcome>
+          <summary>
+            The reader can name the conceptual jobs of each, if, container, with, and xml.
+          </summary>
+          <authoritativeSources>
+            <doc:BmlDirectives />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>
+            Introduce annotation namespaces, their orthogonality to Definition members, value and
+            example Annotation facets, and a conceptual tour of common bml: directives.
+          </summary>
+          <authoritativeSources>
+            <doc:AnnotationModel />
+            <doc:BmlDirectives />
+          </authoritativeSources>
+        </sem:Scope>
+      </composition>
+    </scopes>
+
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>
+            Exhaustive directive attribute reference.
+          </summary>
+          <reason>
+            This page frames roles; attribute catalogues belong in dedicated references.
+          </reason>
+        </sem:Exclusion>
+
+        <sem:Exclusion>
+          <summary>
+            Validator codes.
+          </summary>
+          <reason>
+            Diagnostic identifiers belong on reference and troubleshooting pages.
+          </reason>
+        </sem:Exclusion>
+
+        <sem:Exclusion>
+          <summary>
+            Implementation status.
+          </summary>
+          <reason>
+            The conceptual model should stay free of project-status notes.
+          </reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+
+    <content override="true">
+      <composition>
+
+        <!-- 1. Lead -->
+
+        <dpage:Section
+          heading="Annotations sit beside Definition structure"
+          purpose="Frame annotations as directive namespaces orthogonal to Definition">
+
+          <content>
+            <dpage:Paragraph
+              purpose="Introduce annotations as directive namespaces">
+
+              <role>role:Lead</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                Annotations provide directive namespaces that sit orthogonal to ordinary
+                Definition members instead of describing block structure themselves.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Directives steer authoring and processing without becoming properties or
+                    aggregations of the Definition.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:AnnotationModel />
+                    <doc:BmlDirectives />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Annotation namespaces classify directive form; they are not another member
+                    kind in the model tree.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:AnnotationModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Common bml: directives cover repetition, condition, containment, binding,
+                    and serialization hints.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:BmlDirectives />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+
+        <!-- 2. Annotation vs Definition -->
+
+        <dpage:Section
+          heading="Annotation versus Definition"
+          purpose="Explain the orthogonality of annotation namespaces">
+
+          <content>
+
+            <dpage:Paragraph
+              purpose="Contrast Annotation namespaces with Definition members">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                Annotations do not describe block structure; naming overlap with Definition
+                concepts only classifies directive form, not membership in the model tree.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Keep structural members and directive namespaces conceptually separate.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:AnnotationModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    A directive may appear near members without becoming a property,
+                    aggregation, or association itself.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:AnnotationModel />
+                    <doc:BmlDirectives />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+
+            <dpage:Paragraph
+              purpose="Explain why xmlns:bml binds the directive namespace">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                Authors bind xmlns:bml to the annotation namespace so directive attributes and
+                elements are recognized without polluting Definition membership.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Namespace binding keeps directive vocabulary explicit and portable.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:BmlDirectives />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+
+          </content>
+        </dpage:Section>
+
+        <!-- 3. Common directives -->
+
+        <dpage:Section
+          heading="Common bml: directives"
+          purpose="Summarize principal directive roles without syntax tutorials">
+
+          <content>
+
+            <dpage:Paragraph
+              purpose="Prepare the reader for the common directive roles">
+
+              <role>role:Transition</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                A small set of bml: directives covers the everyday authoring controls without
+                requiring a full attribute catalogue here.
+              </message>
+            </dpage:Paragraph>
+
+            <dpage:List
+              purpose="Present common directives as conceptual messages">
+
+              <role>role:Summary</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                These directives cover repetition, condition, containment, binding, and
+                serialization hints.
+              </message>
+
+              <items>
+                <dpage:ListItem
+                  text="each"
+                  purpose="Describe bml:each for repetition">
+
+                  <message>
+                    each expresses repetition over a collection in authoring flow.
+                  </message>
+                </dpage:ListItem>
+
+                <dpage:ListItem
+                  text="if"
+                  purpose="Describe bml:if for conditional inclusion">
+
+                  <message>
+                    if includes or omits content based on a condition.
+                  </message>
+                </dpage:ListItem>
+
+                <dpage:ListItem
+                  text="container"
+                  purpose="Describe bml:container as a general virtual container">
+
+                  <message>
+                    container provides a general virtual container without becoming a Definition
+                    member.
+                  </message>
+                </dpage:ListItem>
+
+                <dpage:ListItem
+                  text="with"
+                  purpose="Describe bml:with for binding context">
+
+                  <message>
+                    with binds a temporary context for nested authoring.
+                  </message>
+                </dpage:ListItem>
+
+                <dpage:ListItem
+                  text="xml"
+                  purpose="Describe bml:xml for serialization hints">
+
+                  <message>
+                    xml carries serialization hints for XML-oriented processing.
+                  </message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+
+          </content>
+        </dpage:Section>
+
+        <!-- 4. Annotation facets -->
+
+        <dpage:Section
+          heading="Value and example Annotation facets"
+          purpose="Explain Annotation facets as orthogonal multipliers beside canonical slots">
+
+          <content>
+
+            <dpage:Paragraph
+              purpose="Explain that Annotation facets multiply values and examples by namespace">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                Annotation facets multiply property values and examples along an Annotation
+                namespace axis; they never replace the required canonical value, documentation,
+                or examples slots.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    A prefixed value under a property is a Value facet for that property
+                    identity, not a renamed Definition member.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:AnnotationModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Prefixed example children under examples are Annotation.Example siblings of
+                    the canonical unprefixed example element.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:AnnotationModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    preferredAlias remains an authoring convention; the Canonical BOM stores the
+                    Annotation FQN, never the XML prefix alone.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:AnnotationModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>
+                    Exhaustive attribute reference, validator codes, and implementation status.
+                  </summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+
+            <dpage:Paragraph
+              purpose="Prepare the reader for facet versus canonical slot roles">
+
+              <role>role:Transition</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                Keep canonical Definition slots and Annotation facets conceptually separate.
+              </message>
+            </dpage:Paragraph>
+
+            <dpage:List
+              purpose="Present facet versus canonical roles as a concise summary">
+
+              <role>role:Summary</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                These roles keep facets orthogonal to required Definition slots.
+              </message>
+
+              <items>
+                <dpage:ListItem
+                  text="Canonical slots"
+                  purpose="Keep required value and examples on the Definition">
+
+                  <message>
+                    Canonical value, documentation, and examples remain required Definition
+                    slots.
+                  </message>
+                </dpage:ListItem>
+
+                <dpage:ListItem
+                  text="Value facets"
+                  purpose="Describe Annotation value facets beside a property">
+
+                  <message>
+                    Value facets add namespace-specific property values beside the canonical
+                    value.
+                  </message>
+                </dpage:ListItem>
+
+                <dpage:ListItem
+                  text="Example facets"
+                  purpose="Describe Annotation example facets beside canonical examples">
+
+                  <message>
+                    Example facets pair target-specific examples with canonical ones without
+                    becoming Definition members.
+                  </message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+
+          </content>
+        </dpage:Section>
+
+        <!-- 5. Minimal example -->
+
+        <dpage:Section
+          heading="Binding xmlns:bml and a directive"
+          purpose="Connect the concept to a small directive sketch">
+
+          <content>
+
+            <dpage:Paragraph
+              purpose="Introduce xmlns:bml binding with a flow-control directive">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                A short fragment binds xmlns:bml to the annotation namespace and uses a
+                flow-control directive such as if or each.
+              </message>
+
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>
+                    Exhaustive attribute reference, validator codes, and implementation status.
+                  </summary>
+                  <reason>
+                    The example teaches namespace binding and one directive role, not a catalogue.
+                  </reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+
+            <dpage:CodeBlock
+              purpose="Illustrate xmlns:bml with a directive attribute">
+
+              <role>role:Example</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                A fragment binds xmlns:bml to the annotation namespace and uses a flow-control
+                directive such as if or each.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Highlight the xmlns:bml namespace binding on the fragment.
+                  </summary>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Highlight the if or each directive that steers inclusion or repetition
+                    without becoming a Definition member.
+                  </summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>
+                    Exhaustive attribute reference, validator codes, and implementation status.
+                  </summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:CodeBlock>
+
+            <dpage:Paragraph
+              purpose="Interpret the xmlns:bml binding and directive in the example">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                In the example, xmlns:bml opens the annotation namespace, and the if or each
+                directive controls authoring flow beside ordinary members rather than as one.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    The directive demonstrates annotation orthogonality: it steers processing
+                    without describing Block structure.
+                  </summary>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Other directives such as container, with, and xml follow the same namespace
+                    idea with different jobs.
+                  </summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+
+          </content>
+        </dpage:Section>
+
+        <!-- 6. Continuation -->
+
+        <dpage:Section
+          heading="Continue with composition"
+          purpose="Direct the reader to Composition for container relationships">
+
+          <content>
+            <dpage:Navigation
+              purpose="Continue the learning sequence">
+
+              <title>Next</title>
+
+              <items>
+                <dpage:NavigationItem
+                  label="Composition basics"
+                  summary="Relate containers and composition to ordinary Definition structure.">
+
+                  <target>
+                    page:CompositionBasics
+                  </target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+
+      </composition>
+    </content>
+  </aggregations>
+
+</block>

@@ -1,0 +1,30 @@
+<!--
+  BlockML DocGen — a supporting understanding-weight classifier
+
+  FQN: org.blockml.bml.docgen.weight.Supporting
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:weight="org.blockml.bml.docgen.weight"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:core="org.blockml.bml.core">
+
+  <name>Supporting</name>
+  <type>weight:Supporting</type>
+  <baseType>dcore:Weight</baseType>
+  <is>A supporting understanding-weight classifier</is>
+
+  <documentation>
+    Supports or elaborates the main statement. Important, but not central. Helps the reader internalize Primary content without being required to grasp the page’s core message alone.
+  </documentation>
+
+  <references>
+    <see type="dcore:Weight" relation="Extends">
+      Understanding-weight classification axis under DocElement.
+    </see>
+  </references>
+
+</block>

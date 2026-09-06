@@ -1,0 +1,67 @@
+<!--
+  BlockML DocGen — How-to page type
+
+  FQN: org.blockml.bml.docgen.pagetype.HowTo
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:level="org.blockml.bml.docgen.level">
+
+  <name>HowTo</name>
+  <type>ptype:HowTo</type>
+  <baseType>dcore:PageType</baseType>
+  <is>A page type that solves a specific practical task</is>
+
+  <documentation>
+    Solves a specific practical task. Unlike a Tutorial, assumes the reader already
+    understands the basics and explains how to accomplish one concrete objective as
+    efficiently as possible.
+
+    Typical characteristics: task oriented; procedural; minimal theory.
+
+    Examples: Create a custom Renderer; Configure a Library; Publish a Block Repository.
+
+    Core question: How do I accomplish this concrete task?
+  </documentation>
+
+  <references>
+    <see type="dcore:PageType" relation="Extends">
+      Editorial page-kind branch root.
+    </see>
+    <see type="ptype:Tutorial" relation="ContrastsWith">
+      Tutorial teaches; HowTo executes one known task efficiently.
+    </see>
+    <see type="ptype:Reference" relation="ContrastsWith">
+      Reference lists complete facts; HowTo gives a procedure.
+    </see>
+  </references>
+
+  <properties>
+    <displayName override="true">
+      <value>How-to</value>
+    </displayName>
+    <defaultDetailLevel override="true">
+      <value>level:Practical</value>
+    </defaultDetailLevel>
+    <maxPrimaryConcepts override="true">
+      <value>2</value>
+    </maxPrimaryConcepts>
+  </properties>
+
+  <aggregations>
+    <recommendedRoles override="true">
+      <composition>
+        <role:Instruction />
+        <role:Example />
+        <role:Warning />
+      </composition>
+    </recommendedRoles>
+  </aggregations>
+
+</block>

@@ -1,0 +1,51 @@
+<!--
+  BlockML DocGen — base for structural planning elements
+
+  FQN: org.blockml.bml.docgen.plan.StructurePlan
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:dplan="org.blockml.bml.docgen.plan"
+  xmlns:dcore="org.blockml.bml.docgen.core">
+
+  <name>StructurePlan</name>
+  <type>dplan:StructurePlan</type>
+  <baseType>dcore:Plan</baseType>
+  <is>A structural documentation-planning element</is>
+  <isnot>A DocSetPlan or a concrete Page / PageGroup</isnot>
+
+  <documentation>
+    Abstract base for structural planning elements within a DocSetPlan — PagePlan and
+    PageGroupPlan. name is the concrete Block local path relative to DocSetPlan.pageBasePackage
+    (for example docs.Intro or GettingStartedPageGroup). Full FQN = pageBasePackage + "." + name.
+    Used by DocSetPlanningStage; materialized by DocSetStructuringStage.
+  </documentation>
+
+  <references>
+    <see type="dcore:Plan" relation="Extends">
+      Planning-element base for DocSetPlanningStage.
+    </see>
+    <see type="dplan:DocSetPlan" relation="SeeAlso">
+      DocSet-level plan — owns pageBasePackage; contrasts with structural entries.
+    </see>
+    <see type="dplan:PagePlan" relation="SeeAlso">
+      Planned-page specialization.
+    </see>
+    <see type="dplan:PageGroupPlan" relation="SeeAlso">
+      Planned page-group specialization.
+    </see>
+  </references>
+
+  <abstract>true</abstract>
+
+  <properties>
+    <name type="Text">
+      <documentation>Concrete Block name relative to DocSetPlan.pageBasePackage (for example
+        docs.Intro, GettingStartedPageGroup). Full FQN = pageBasePackage + "." + name.</documentation>
+    </name>
+  </properties>
+
+</block>

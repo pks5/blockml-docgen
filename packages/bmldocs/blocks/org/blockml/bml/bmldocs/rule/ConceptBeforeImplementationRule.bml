@@ -1,0 +1,54 @@
+<!--
+  BlockML Documentation — concept before implementation learning rule
+
+  FQN: org.blockml.bml.bmldocs.rule.ConceptBeforeImplementationRule
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:brule="org.blockml.bml.bmldocs.rule"
+  xmlns:rule="org.blockml.bml.docgen.rule"
+  xmlns:stage="org.blockml.bml.docgen.stage">
+
+  <name>ConceptBeforeImplementationRule</name>
+  <type>brule:ConceptBeforeImplementationRule</type>
+  <baseType>rule:LearningRule</baseType>
+  <is>A learning rule requiring concept explanation before implementation details</is>
+
+  <documentation>
+    Requires that the conceptual model is explained before implementation details. Meaning and
+    purpose come first; syntax, validator behavior, internal object-model mappings, implementation
+    status, and runtime mechanics follow only after the concept is established.
+  </documentation>
+
+  <references>
+    <see type="rule:LearningRule" relation="Extends">
+      Documentation learning-rule branch.
+    </see>
+  </references>
+
+  <properties>
+    <name override="true">
+      <value>Concept before implementation</value>
+    </name>
+    <summary override="true">
+      <value>Explain the conceptual model before implementation details.</value>
+    </summary>
+    <instruction override="true">
+      <value>Introduce the meaning and purpose of a concept before discussing syntax, validator
+        behavior, internal object-model mappings, implementation status, or runtime mechanics.</value>
+    </instruction>
+  </properties>
+
+
+  <aggregations>
+    <appliesToStages override="true">
+      <composition>
+        <stage:PageAuthoringStage />
+        <stage:PageRenderingStage />
+      </composition>
+    </appliesToStages>
+  </aggregations>
+</block>

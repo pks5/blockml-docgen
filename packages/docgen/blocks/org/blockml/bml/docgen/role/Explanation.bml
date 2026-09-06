@@ -1,0 +1,63 @@
+<!--
+  BlockML DocGen — Explanation content role
+
+  FQN: org.blockml.bml.docgen.role.Explanation
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:level="org.blockml.bml.docgen.level"
+  xmlns:weight="org.blockml.bml.docgen.weight">
+
+  <name>Explanation</name>
+  <type>role:Explanation</type>
+  <baseType>dcore:ContentRole</baseType>
+  <is>A content role that explains a relationship, behaviour, or meaning</is>
+
+  <documentation>
+    Explains a relationship, behaviour, or meaning — often the most common content role.
+    Answers questions such as how BML and BOM relate, why renderers exist, how aggregation
+    works semantically, or what lossless round-trip means.
+
+    Distinguishes from Definition (what X is), and from Rationale (why X was deliberately
+    designed that way).
+
+    Typical rules: focus on understanding connections and behaviour; stay aligned with the
+    page detail level; do not drift into dense reference catalogues.
+  </documentation>
+
+  <references>
+    <see type="dcore:ContentRole" relation="Extends">
+      Rhetorical / content-role branch root.
+    </see>
+    <see type="role:Definition" relation="ContrastsWith">
+      Definition states what X is; Explanation shows how/why it works.
+    </see>
+    <see type="role:Rationale" relation="ContrastsWith">
+      Rationale justifies a design choice; Explanation describes behaviour.
+    </see>
+    <see type="role:Reference" relation="ContrastsWith">
+      Reference is dense lookup material; Explanation stays narrative.
+    </see>
+  </references>
+
+  <properties>
+    <displayName override="true">
+      <value>Explanation</value>
+    </displayName>
+    <defaultDetailLevel override="true">
+      <value>level:Practical</value>
+    </defaultDetailLevel>
+    <defaultWeight override="true">
+      <value>weight:Primary</value>
+    </defaultWeight>
+    <allowsNewConcepts override="true">
+      <value>true</value>
+    </allowsNewConcepts>
+  </properties>
+
+</block>

@@ -1,0 +1,67 @@
+<!--
+  BlockML Documentation — code example content rule
+
+  FQN: org.blockml.bml.bmldocs.rule.CodeExampleRule
+-->
+
+<block
+    xmlns="http://blockml.org/bml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                        "
+    xmlns:brule="org.blockml.bml.bmldocs.rule"
+    xmlns:rule="org.blockml.bml.docgen.rule"
+    xmlns:stage="org.blockml.bml.docgen.stage">
+
+    <name>CodeExampleRule</name>
+    <type>brule:CodeExampleRule</type>
+    <baseType>rule:ContentRule</baseType>
+    <is>A content rule for complete and focused BlockML code examples</is>
+
+    <documentation>
+        Defines how BlockML code examples must be constructed. Every example must show a complete,
+        valid Block rather than an isolated snippet. The example must provide enough surrounding
+        structure to make the illustrated construct understandable in its real BlockML context.
+
+        The part of the example that demonstrates the concept currently being explained must be
+        explicitly highlighted using an XML comment immediately before the relevant section. The
+        comment should briefly identify why the following section is important without duplicating
+        the surrounding documentation.
+    </documentation>
+
+    <references>
+        <see type="rule:ContentRule" relation="Extends">
+            Documentation content-rule branch.
+        </see>
+    </references>
+
+    <properties>
+        <name override="true">
+            <value>Code examples</value>
+        </name>
+
+        <summary override="true">
+            <value>Use complete BlockML Blocks and highlight the relevant section with an XML
+                comment.</value>
+        </summary>
+
+        <instruction override="true">
+            <value>Generate every BlockML code example as a complete Block, never as an isolated
+                snippet. Include the surrounding Block structure necessary to understand the example
+                in context. Immediately before the section that demonstrates the concept being
+                explained, add a concise XML comment that highlights the relevant section. Keep
+                unrelated parts of the Block simple so that they provide context without distracting
+                from the concept being demonstrated.</value>
+        </instruction>
+
+    </properties>
+
+
+    <aggregations>
+        <appliesToStages override="true">
+            <composition>
+                <stage:PageAuthoringStage />
+            </composition>
+        </appliesToStages>
+    </aggregations>
+</block>

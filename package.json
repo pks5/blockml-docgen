@@ -1,0 +1,27 @@
+{
+  "name": "blockml-docgen",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "blockml": {
+    "library": "./blocks/org/blockml/bml/docgen/workspace/Library.bml"
+  },
+  "dependencies": {
+    "@blockml/core": "^1.1.2"
+  },
+  "devDependencies": {
+    "@blockml/bmldocs": "workspace:*",
+    "@blockml/cli": "^0.9.4",
+    "@blockml/docgen": "workspace:*"
+  },
+  "scripts": {
+    "validate": "blockml validate",
+    "search:index": "blockml search index"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

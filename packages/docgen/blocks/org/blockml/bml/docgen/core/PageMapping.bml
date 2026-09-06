@@ -1,0 +1,62 @@
+<!--
+  BlockML DocGen — mapping from a Page to pageKey and site path
+
+  FQN: org.blockml.bml.docgen.core.PageMapping
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:dplan="org.blockml.bml.docgen.plan"
+  xmlns:page="org.blockml.bml.docgen.page"
+  xmlns:type="org.blockml.bml.type">
+
+  <name>PageMapping</name>
+  <type>dcore:PageMapping</type>
+  <baseType>dcore:DocElement</baseType>
+  <is>A mapping from a Page to its pageKey and site path</is>
+  <isnot>An in-page NavigationItem or a preliminary PagePlan</isnot>
+
+  <documentation>
+    Associates a Page (typically a DocPage) with a stable routing key and a site-relative path
+    under DocSet.rootPath. pageKey uses underscores for lookup and generators; path is the
+    hyphenated URL segment used in site routing. Distinct from NavigationItem, which carries
+    navigation labels and optional nested menu structure without owning pageKey/path. Used by
+    DocSet.pageMapping.
+  </documentation>
+
+  <references>
+    <see type="dcore:DocElement" relation="Extends">
+      Semantic base for all docgen domain Blocks (except Library / README).
+    </see>
+    <see type="dcore:Page" relation="Requires">
+      Page referenced by page.
+    </see>
+    <see type="dcore:DocSet" relation="SeeAlso">
+      Documentation set whose pageMapping aggregation holds instances of this Block.
+    </see>
+    <see type="dplan:PagePlan" relation="ContrastsWith">
+      Preliminary planned page entry — precedes this concrete mapping.
+    </see>
+    <see type="page:NavigationItem" relation="ContrastsWith">
+      In-page menu node — label plus optional nesting; not a flat pageKey/path map entry.
+    </see>
+  </references>
+
+  <properties>
+    <page type="type:TypeReference(dcore:Page)">
+      <documentation>Type reference to the Page this mapping identifies.</documentation>
+    </page>
+    <pageKey type="Text">
+      <documentation>Stable key for routing and lookup using underscores (for example intro,
+        first_block). Distinct from path; used by generators and nav state.</documentation>
+    </pageKey>
+    <path type="Text">
+      <documentation>Site-relative path for this page, typically hyphenated and with a leading
+        slash (for example /intro, /first-block).</documentation>
+    </path>
+  </properties>
+
+</block>

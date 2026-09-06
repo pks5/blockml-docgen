@@ -1,0 +1,23 @@
+{
+  "name": "@blockml/docgen",
+  "version": "0.1.0",
+  "description": "BlockML library with tools for generating structured documents from other BML libraries",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "blockml": {
+    "library": "./blocks/org/blockml/bml/docgen/Library.bml"
+  },
+  "files": [
+    "blocks",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "@blockml/core": "^1.1.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

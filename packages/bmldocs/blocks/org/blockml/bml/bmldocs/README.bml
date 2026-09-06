@@ -1,0 +1,60 @@
+<!--
+  BlockML Documentation Library — README / library reading entry point
+
+  FQN: org.blockml.bml.bmldocs.README
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:bmldocs="org.blockml.bml.bmldocs"
+  xmlns:page="org.blockml.bml.bmldocs.page.docs"
+  xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:docgen="org.blockml.bml.docgen"
+  xmlns:core="org.blockml.bml.core">
+
+  <name>README</name>
+  <type>bmldocs:README</type>
+  <baseType>core:ReadMe</baseType>
+  <is>A bmldocs library reading entry point</is>
+
+  <documentation>
+    README for the BlockML documentation library (org.blockml.bml.bmldocs). This library models how
+    blockml.org presents BlockML documentation to humans — TableOfContents menu page and concrete
+    DocPage markers. Concrete pages extend docset:BmlDocPage (docset fixed to BmlDocSet).
+    Page structure types live in org.blockml.bml.docgen.page (dependency
+    docgen:Library). Narrative content stays in bml-core; each DocPage points at those sources
+    via references/see (Requires = primary content, SeeAlso = optional context). Routing keys and
+    paths live on DocSet.pageMapping.
+
+    Start with page:TableOfContents and concrete pages under org.blockml.bml.bmldocs.page.docs.* —
+    introductions, examples, cheat-sheets — not a 1:1 mirror of the core ReadFirst path.
+  </documentation>
+
+  <references>
+    <see type="page:TableOfContents" relation="ReadFirst">
+      Documentation menu page for blockml.org (Navigation tree).
+    </see>
+    <see type="docset:BmlDocSet" relation="ReadFirst">
+      BlockML core DocSet — pageMapping catalogue and learning-path intent.
+    </see>
+    <see type="docset:BmlDocPage" relation="Requires">
+      Abstract bmldocs DocPage base — sets docset to BmlDocSet for all concrete pages.
+    </see>
+    <see type="dpage:DocPage" relation="Requires">
+      Docgen page marker — baseType of BmlDocPage.
+    </see>
+    <see type="dpage:Navigation" relation="Requires">
+      In-page navigation block used by TableOfContents and other DocPages.
+    </see>
+    <see type="docgen:Library" relation="Requires">
+      Documentation-generation library providing page and content types.
+    </see>
+    <see type="bmldocs:Library" relation="SeeAlso">
+      Published catalog of exported bmldocs blocks.
+    </see>
+  </references>
+
+</block>

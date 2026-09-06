@@ -1,0 +1,602 @@
+<!--
+  BlockML Documentation — Constraints basics
+
+  FQN: org.blockml.bml.bmldocs.page.docs.ConstraintsBasics
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:page="org.blockml.bml.bmldocs.page.docs"
+  xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:weight="org.blockml.bml.docgen.weight"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <name>ConstraintsBasics</name>
+  <type>page:ConstraintsBasics</type>
+  <baseType>docset:BmlDocPage</baseType>
+  <is>A website intro to constraints</is>
+
+  <documentation>
+    Marker page: attach a simple constraint, understand severity vs suggestions — one MinLength-
+    style example is enough for the first pass.
+
+    content is a structural scaffold only; generate prose and examples from referenced core
+    documentation (doc:ConstraintsModel, doc:ValueTypeConfiguration).
+  </documentation>
+
+  <references>
+    <see type="doc:ConstraintsModel" relation="Requires">
+      Primary content — constraints, suggestions, and Enum rules.
+    </see>
+  </references>
+
+  <properties>
+    <title>
+      <value>Constraints</value>
+    </title>
+
+    <purpose>
+      <value>
+        Introduce reusable validation rules on constrainable definition elements.
+      </value>
+    </purpose>
+
+    <detailLevel>
+      <value>
+        dlevel:Introductory
+      </value>
+    </detailLevel>
+
+    <pageType>
+      <value>
+        ptype:Concept
+      </value>
+    </pageType>
+  </properties>
+
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <doc:ConstraintsModel />
+        <doc:ValueTypeConfiguration />
+      </composition>
+    </authoritativeSources>
+
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>
+            Attach reusable constraints through a single context-bound constraints container
+            without a separate target property.
+          </summary>
+          <authoritativeSources>
+            <doc:ConstraintsModel />
+            <doc:ValueTypeConfiguration />
+          </authoritativeSources>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>
+            The reader can explain that embedding context binds a constraint automatically.
+          </summary>
+          <authoritativeSources>
+            <doc:ConstraintsModel />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+
+        <sem:ReaderOutcome>
+          <summary>
+            The reader can distinguish constraint branches, suggestions, and Enum-related rules
+            at a conceptual level.
+          </summary>
+          <authoritativeSources>
+            <doc:ConstraintsModel />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>
+            Introduce constraints on constrainable definition elements, the single context-bound
+            container, validation severity versus metadata-only rules, preference for inline
+            ValueType configuration where intrinsic, and the related ideas of branches,
+            suggestions, and Enums.
+          </summary>
+          <authoritativeSources>
+            <doc:ConstraintsModel />
+            <doc:ValueTypeConfiguration />
+          </authoritativeSources>
+        </sem:Scope>
+      </composition>
+    </scopes>
+
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>
+            Full constraint branch catalogue.
+          </summary>
+          <reason>
+            An introductory page should teach the attachment model, not list every branch.
+          </reason>
+        </sem:Exclusion>
+
+        <sem:Exclusion>
+          <summary>
+            Diagnostic identifiers.
+          </summary>
+          <reason>
+            Diagnostic identifiers belong on reference and troubleshooting pages.
+          </reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+
+    <content override="true">
+      <composition>
+
+        <!-- 1. Lead -->
+
+        <dpage:Section
+          heading="Reusable validation on definition elements"
+          purpose="Give readers an immediate orientation to constraints">
+
+          <content>
+            <dpage:Paragraph
+              purpose="Introduce reusable validation rules on ConstrainableDefinition elements">
+
+              <role>role:Lead</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                Constraints are reusable validation rules attached to constrainable definition
+                elements such as properties and related members.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Suggestions remain related authoring help beside those validation rules.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:ConstraintsModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Constraints travel with the definition element they constrain rather than
+                    living as free-floating rules.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:ConstraintsModel />
+                    <doc:ValueTypeConfiguration />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Branches, suggestions, and Enum-related patterns organize how those rules
+                    appear in authoring.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:ConstraintsModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+
+        <!-- 2. Context-bound container -->
+
+        <dpage:Section
+          heading="One constraints container, context-bound"
+          purpose="Explain that embedding context binds the constraint without a target property">
+
+          <content>
+
+            <dpage:Paragraph
+              purpose="Explain the single constraints container and missing target property">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                A definition uses a single constraints container, and embedding context binds
+                each constraint automatically without a target= property.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Placement under the constrained element supplies the binding context.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:ConstraintsModel />
+                    <doc:ValueTypeConfiguration />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Authors do not name the target separately because the surrounding element
+                    already is the target.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:ConstraintsModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>
+                    Full constraint branch catalogue and diagnostic identifiers.
+                  </summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+
+            <dpage:Paragraph
+              purpose="Relate constraints to ValueType configuration on members">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                Constraints often appear beside ValueType configuration on the same member,
+                keeping validation next to the typed value they guard.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Co-location helps readers see type shape and validation together.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:ValueTypeConfiguration />
+                    <doc:ConstraintsModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+
+          </content>
+        </dpage:Section>
+
+        <!-- 3. Branches summary -->
+
+        <dpage:Section
+          heading="Branches, suggestions, and Enums"
+          purpose="Summarize the related constraint topics readers should retain">
+
+          <content>
+
+            <dpage:Paragraph
+              purpose="Prepare the reader for related constraint topics">
+
+              <role>role:Transition</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                Constraint branches, suggestions, and Enum-related patterns frame how rules
+                and authoring help appear together.
+              </message>
+            </dpage:Paragraph>
+
+            <dpage:List
+              purpose="Present constraint topics as a concise summary">
+
+              <role>role:Summary</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                These topics frame how constraints and related help appear in authoring.
+              </message>
+
+              <items>
+                <dpage:ListItem
+                  text="Branches"
+                  purpose="Mention constraint branches and genericTypes">
+
+                  <message>
+                    Constraint branches and genericTypes organize reusable rule kinds.
+                  </message>
+                </dpage:ListItem>
+
+                <dpage:ListItem
+                  text="Suggestions"
+                  purpose="Mention suggestions as related authoring help">
+
+                  <message>
+                    Suggestions provide related authoring help beside validation rules.
+                  </message>
+                </dpage:ListItem>
+
+                <dpage:ListItem
+                  text="Enums"
+                  purpose="Mention Enum-related constraint patterns">
+
+                  <message>
+                    Enum-related patterns constrain allowed values without a separate language.
+                  </message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+
+          </content>
+        </dpage:Section>
+
+        <!-- 4. Validation severity -->
+
+        <dpage:Section
+          heading="Validation severity and metadata-only rules"
+          purpose="Explain optional validation levels and the preference for inline type config">
+
+          <content>
+
+            <dpage:Paragraph
+              purpose="Explain optional validation severity on constraints">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                A constraint may declare an optional validation severity — Error, Warning, or
+                Information — and when validation is omitted the rule remains metadata only.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Error fails compilation on violation; Warning and Information report without
+                    the same hard stop.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:ConstraintsModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Metadata-only constraints still travel with the definition element for
+                    editors and later processing even when the validator does not enforce them.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:ConstraintsModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>
+                    Full branch catalogue and diagnostic identifiers.
+                  </summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+
+            <dpage:Paragraph
+              purpose="Prefer ValueType configuration for type-intrinsic thresholds">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                Prefer ValueType curly-brace configuration for type-intrinsic thresholds, and
+                keep Constraints for contextual or composable rules beside that type shape.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    A Text{maxLength: 100} style configuration expresses an intrinsic limit on
+                    the typed value itself.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:ValueTypeConfiguration />
+                    <doc:ConstraintsModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Constraints remain the place for reusable Min, Pattern, and structural rules
+                    that compose across contexts.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:ConstraintsModel />
+                    <doc:ValueTypeConfiguration />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+
+          </content>
+        </dpage:Section>
+
+        <!-- 5. Minimal example -->
+
+        <dpage:Section
+          heading="A Min or Pattern style constraint"
+          purpose="Connect the concept to a small constraints sketch">
+
+          <content>
+
+            <dpage:Paragraph
+              purpose="Introduce a property constraints container with a simple rule">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                A property can host a constraints container with a simple MinLength- or
+                Pattern-style rule bound by that property's context.
+              </message>
+
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>
+                    Full branch catalogue and diagnostic identifiers.
+                  </summary>
+                  <reason>
+                    The example teaches attachment, not every constraint branch.
+                  </reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+
+            <dpage:CodeBlock
+              purpose="Illustrate a constraints container with a Min or Pattern example">
+
+              <role>role:Example</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                A property constraints container can host a simple Min or Pattern style rule.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Highlight the property that owns the constraints container.
+                  </summary>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Highlight the MinLength- or Pattern-style constraint child bound by
+                    embedding context without a target= attribute.
+                  </summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>
+                    Full branch catalogue and diagnostic identifiers.
+                  </summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:CodeBlock>
+
+            <dpage:Paragraph
+              purpose="Interpret the constraints container and rule in the example">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                In the example, the property's constraints container holds the rule, and
+                placement under that property binds the constraint without a separate target=
+                property.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    The MinLength- or Pattern-style child demonstrates a reusable rule kind
+                    attached to one member.
+                  </summary>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Suggestions, if shown nearby, remain authoring help rather than the same
+                    validation rule.
+                  </summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+
+          </content>
+        </dpage:Section>
+
+        <!-- 6. Continuation -->
+
+        <dpage:Section
+          heading="Continue with types and modeling guidelines"
+          purpose="Direct the reader to related pages">
+
+          <content>
+            <dpage:Navigation
+              purpose="Continue the learning sequence">
+
+              <title>Next</title>
+
+              <items>
+                <dpage:NavigationItem
+                  label="Configuring types"
+                  summary="See how ValueType configuration relates to constrained members.">
+
+                  <target>
+                    page:ConfiguringTypes
+                  </target>
+                </dpage:NavigationItem>
+
+                <dpage:NavigationItem
+                  label="Modeling guidelines"
+                  summary="Apply practical patterns for constraints alongside other modeling choices.">
+
+                  <target>
+                    page:ModelingGuidelinesPage
+                  </target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+
+      </composition>
+    </content>
+  </aggregations>
+
+</block>

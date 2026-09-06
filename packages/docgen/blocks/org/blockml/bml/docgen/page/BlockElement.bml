@@ -1,0 +1,42 @@
+<!--
+  BlockML DocGen — abstract block-level page content element
+
+  FQN: org.blockml.bml.docgen.page.BlockElement
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:page="org.blockml.bml.docgen.page"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:core="org.blockml.bml.core">
+
+  <name>BlockElement</name>
+  <type>page:BlockElement</type>
+  <baseType>dcore:PageElement</baseType>
+  <is>A block-level documentation content element</is>
+
+  <documentation>
+    Abstract base for vertical/flow content: sections and ContentElements (paragraphs, lists,
+    code blocks, images). Aggregated as DocPage.content, Section.content, and ListItem.content.
+  </documentation>
+
+  <references>
+    <see type="dcore:PageElement" relation="Extends">
+      Shared page content element root.
+    </see>
+    <see type="page:ContentElement" relation="SeeAlso">
+      Leaf content specializations under this branch.
+    </see>
+    <see type="page:Section" relation="SeeAlso">
+      Structural grouping of BlockElements.
+    </see>
+    <see type="page:Navigation" relation="SeeAlso">
+      In-page navigation list of page links.
+    </see>
+  </references>
+
+  <abstract>true</abstract>
+
+</block>

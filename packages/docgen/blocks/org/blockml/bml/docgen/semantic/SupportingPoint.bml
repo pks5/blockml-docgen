@@ -1,0 +1,30 @@
+<!--
+  BlockML DocGen — a supporting argument or detail that backs a claim
+
+  FQN: org.blockml.bml.docgen.semantic.SupportingPoint
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:core="org.blockml.bml.core">
+
+  <name>SupportingPoint</name>
+  <type>sem:SupportingPoint</type>
+  <baseType>dcore:SemanticAnnotation</baseType>
+  <is>A supporting argument or detail that backs a claim</is>
+
+  <documentation>
+    Records a supporting point that reinforces a concept, outcome, or section intent without prescribing how it is rendered on the page.
+  </documentation>
+
+  <references>
+    <see type="dcore:SemanticAnnotation" relation="Extends">
+      Annotative semantic metadata branch.
+    </see>
+  </references>
+
+</block>

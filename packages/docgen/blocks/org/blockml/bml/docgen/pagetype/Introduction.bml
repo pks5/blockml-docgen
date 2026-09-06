@@ -1,0 +1,81 @@
+<!--
+  BlockML DocGen — Introduction page type
+
+  FQN: org.blockml.bml.docgen.pagetype.Introduction
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:level="org.blockml.bml.docgen.level">
+
+  <name>Introduction</name>
+  <type>ptype:Introduction</type>
+  <baseType>dcore:PageType</baseType>
+  <is>A page type that introduces a topic for readers with little prior knowledge</is>
+
+  <documentation>
+    Introduces a topic for readers with little or no prior knowledge. Establishes the
+    initial mental model, explains motivation, and prepares readers for more detailed
+    documentation. Focuses on orientation rather than completeness.
+
+    Typical characteristics: gentle entry; conceptual overview; minimal terminology; few
+    implementation details; broad audience.
+
+    Examples: What is BlockML?; What is MachineBlocks?; Getting Started.
+
+    Core question: What is this about at all?
+  </documentation>
+
+  <references>
+    <see type="dcore:PageType" relation="Extends">
+      Editorial page-kind branch root.
+    </see>
+    <see type="ptype:Concept" relation="ContrastsWith">
+      Concept deepens one idea; Introduction orients broadly.
+    </see>
+    <see type="ptype:Tutorial" relation="ContrastsWith">
+      Tutorial teaches step by step; Introduction only prepares.
+    </see>
+    <see type="ptype:Reference" relation="ContrastsWith">
+      Reference is exhaustive lookup; Introduction stays light.
+    </see>
+    <see type="ptype:Index" relation="ContrastsWith">
+      Index navigates; Introduction explains the starting mental model.
+    </see>
+  </references>
+
+  <properties>
+    <displayName override="true">
+      <value>Introduction</value>
+    </displayName>
+    <defaultDetailLevel override="true">
+      <value>level:Introductory</value>
+    </defaultDetailLevel>
+    <maxPrimaryConcepts override="true">
+      <value>2</value>
+    </maxPrimaryConcepts>
+  </properties>
+
+  <aggregations>
+    <recommendedRoles override="true">
+      <composition>
+        <role:Lead />
+        <role:Explanation />
+        <role:Summary />
+        <role:Transition />
+        <role:Example />
+      </composition>
+    </recommendedRoles>
+    <forbiddenRoles override="true">
+      <composition>
+        <role:Reference />
+      </composition>
+    </forbiddenRoles>
+  </aggregations>
+
+</block>

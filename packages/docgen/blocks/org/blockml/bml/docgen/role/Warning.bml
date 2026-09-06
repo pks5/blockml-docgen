@@ -1,0 +1,55 @@
+<!--
+  BlockML DocGen — Warning content role
+
+  FQN: org.blockml.bml.docgen.role.Warning
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:level="org.blockml.bml.docgen.level"
+  xmlns:weight="org.blockml.bml.docgen.weight">
+
+  <name>Warning</name>
+  <type>role:Warning</type>
+  <baseType>dcore:ContentRole</baseType>
+  <is>A content role that highlights information whose neglect causes harm</is>
+
+  <documentation>
+    Highlights information whose neglect can cause misunderstanding, errors, or harmful
+    results. Examples: a composition must not be authored standalone; do not use deprecated
+    syntax; this configuration cannot be overridden safely.
+
+    A merely important statement is not automatically a Warning — there should be a concrete
+    negative consequence. For purely informative callouts, a separate Note role may be added
+    later; Warning is sufficient for V1.
+  </documentation>
+
+  <references>
+    <see type="dcore:ContentRole" relation="Extends">
+      Rhetorical / content-role branch root.
+    </see>
+    <see type="role:Explanation" relation="ContrastsWith">
+      Explanation informs; Warning signals a concrete negative consequence.
+    </see>
+  </references>
+
+  <properties>
+    <displayName override="true">
+      <value>Warning</value>
+    </displayName>
+    <defaultDetailLevel override="true">
+      <value>level:Practical</value>
+    </defaultDetailLevel>
+    <defaultWeight override="true">
+      <value>weight:Primary</value>
+    </defaultWeight>
+    <allowsNewConcepts override="true">
+      <value>false</value>
+    </allowsNewConcepts>
+  </properties>
+
+</block>

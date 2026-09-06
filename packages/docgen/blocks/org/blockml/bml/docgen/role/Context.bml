@@ -1,0 +1,59 @@
+<!--
+  BlockML DocGen — Context content role
+
+  FQN: org.blockml.bml.docgen.role.Context
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:level="org.blockml.bml.docgen.level"
+  xmlns:weight="org.blockml.bml.docgen.weight">
+
+  <name>Context</name>
+  <type>role:Context</type>
+  <baseType>dcore:ContentRole</baseType>
+  <is>A content role that situates a topic in a larger frame</is>
+
+  <documentation>
+    Situates a topic in a larger frame — background, preconditions, or embedding — without
+    itself explaining the central concept. Useful when background is needed without turning
+    it into the primary claim.
+
+    Distinguishes from Lead (opens), and Explanation (explains substantively).
+
+    Typical rules: provide embedding or background only; avoid becoming the main technical
+    explanation; keep secondary to the page message.
+  </documentation>
+
+  <references>
+    <see type="dcore:ContentRole" relation="Extends">
+      Rhetorical / content-role branch root.
+    </see>
+    <see type="role:Lead" relation="ContrastsWith">
+      Lead opens; Context situates within an ongoing argument.
+    </see>
+    <see type="role:Explanation" relation="ContrastsWith">
+      Explanation explains substantively; Context only frames.
+    </see>
+  </references>
+
+  <properties>
+    <displayName override="true">
+      <value>Context</value>
+    </displayName>
+    <defaultDetailLevel override="true">
+      <value>level:Introductory</value>
+    </defaultDetailLevel>
+    <defaultWeight override="true">
+      <value>weight:Supporting</value>
+    </defaultWeight>
+    <allowsNewConcepts override="true">
+      <value>false</value>
+    </allowsNewConcepts>
+  </properties>
+
+</block>

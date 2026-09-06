@@ -1,0 +1,189 @@
+<!--
+  BlockML Documentation — cohesive BlockML core documentation set
+
+  FQN: org.blockml.bml.bmldocs.docset.BmlDocSet
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:page="org.blockml.bml.bmldocs.page.docs"
+  xmlns:pgroup="org.blockml.bml.bmldocs.page"
+  xmlns:brule="org.blockml.bml.bmldocs.rule"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:blockml="org.blockml.bml">
+
+  <name>BmlDocSet</name>
+  <type>docset:BmlDocSet</type>
+  <baseType>dcore:DocSet</baseType>
+  <is>The BlockML core documentation set</is>
+  <isnot>A single DocPage or a bml-core narrative Documentation Block</isnot>
+
+  <documentation>
+    The complete documentation set for BlockML core — syntax, rules, examples, best practices,
+    and use cases. Aimed at developers: some material targets junior readers, other parts serve
+    advanced and senior developers. The set follows a clear learning path: quick start, fast first
+    results, then deeper study when needed.
+
+    pageMapping lists every publishable page with pageKey and path. rootPath is /docs; homePage
+    points at the TableOfContents menu page; rootPageGroup is RootPageGroup.
+  </documentation>
+
+  <references>
+    <see type="dcore:DocSet" relation="Extends">
+      Docgen DocSet container.
+    </see>
+    <see type="page:Intro" relation="Requires">
+      Entry content page of this documentation set.
+    </see>
+    <see type="page:TableOfContents" relation="Requires">
+      Documentation menu page for blockml.org — also homePage.
+    </see>
+    <see type="pgroup:RootPageGroup" relation="Requires">
+      Top-level page group referenced by rootPageGroup.
+    </see>
+    <see type="docset:BmlDocSetPlan" relation="Requires">
+      Preliminary DocSet plan referenced by plan.
+    </see>
+    <see type="brule:CodeStyleRule" relation="Requires">
+      Global rule for code and snippet presentation.
+    </see>
+    <see type="brule:CompleteSentenceRule" relation="Requires">
+      Global rule requiring complete grammatical sentences in generated prose.
+    </see>
+    <see type="brule:OnePrimaryMessageRule" relation="Requires">
+      Global rule requiring one primary message per ContentElement.
+    </see>
+    <see type="brule:RespectScopeRule" relation="Requires">
+      Global rule requiring content to remain within declared Scope.
+    </see>
+    <see type="brule:RespectExclusionsRule" relation="Requires">
+      Global rule forbidding excluded material in generated content.
+    </see>
+    <see type="brule:NoSourceDumpRule" relation="Requires">
+      Global rule requiring synthesis of sources instead of unordered dumps.
+    </see>
+    <see type="brule:NoUnrequestedDiagnosticsRule" relation="Requires">
+      Global rule restricting diagnostic codes to explicitly requested contexts.
+    </see>
+    <see type="brule:MatchDetailLevelRule" relation="Requires">
+      Global rule requiring generated detail to match DetailLevel.
+    </see>
+    <see type="brule:ConceptBeforeImplementationRule" relation="Requires">
+      Global rule requiring concept explanation before implementation details.
+    </see>
+    <see type="brule:NoFragmentedEnumerationRule" relation="Requires">
+      Global rule requiring List or Table for unstructured enumerations.
+    </see>
+    <see type="brule:AudienceVocabularyRule" relation="Requires">
+      Global rule requiring terminology appropriate to the declared Audience.
+    </see>
+    <see type="blockml:Library" relation="Requires">
+      Authoritative BlockML core library source for this documentation set.
+    </see>
+  </references>
+
+  <properties>
+    <title override="true">
+      <value>BlockML Documentation</value>
+    </title>
+    <summary override="true">
+      <value>Complete BlockML core documentation — syntax, rules, examples, best practices, and
+        use cases — with a learning path from quick start to deep study for junior through senior
+        developers.</value>
+    </summary>
+    <version override="true">
+      <value>0.1.0</value>
+    </version>
+    <homePage override="true">
+      <value>page:TableOfContents</value>
+    </homePage>
+    <plan override="true">
+      <value>docset:BmlDocSetPlan</value>
+    </plan>
+    <rootPath override="true">
+      <value>/docs</value>
+    </rootPath>
+    <rootPageGroup override="true">
+      <value>pgroup:RootPageGroup</value>
+    </rootPageGroup>
+  </properties>
+
+  <aggregations>
+    <pageMapping override="true">
+      <composition>
+        <dcore:PageMapping pageKey="docs" path="/" page="page:TableOfContents" />
+
+        <dcore:PageMapping pageKey="intro" path="/intro" page="page:Intro" />
+        <dcore:PageMapping pageKey="first_block" path="/first-block" page="page:FirstBlock" />
+        <dcore:PageMapping pageKey="file_anatomy" path="/file-anatomy" page="page:FileAnatomy" />
+
+        <dcore:PageMapping pageKey="everything_is_a_block" path="/everything-is-a-block" page="page:EverythingIsABlockPage" />
+        <dcore:PageMapping pageKey="definition_and_instance" path="/definition-and-instance" page="page:DefinitionAndInstance" />
+        <dcore:PageMapping pageKey="composition" path="/composition" page="page:CompositionBasics" />
+
+        <dcore:PageMapping pageKey="types_overview" path="/types-overview" page="page:TypesOverview" />
+        <dcore:PageMapping pageKey="type_expressions" path="/type-expressions" page="page:TypeExpressionsBasics" />
+        <dcore:PageMapping pageKey="generics" path="/generics" page="page:GenericsBriefly" />
+        <dcore:PageMapping pageKey="configuring_types" path="/configuring-types" page="page:ConfiguringTypes" />
+
+        <dcore:PageMapping pageKey="capabilities" path="/capabilities" page="page:CapabilitiesIntro" />
+        <dcore:PageMapping pageKey="expressions" path="/expressions" page="page:ExpressionsIntro" />
+        <dcore:PageMapping pageKey="embedded_expressions" path="/embedded-expressions" page="page:EmbeddedExpressionsIntro" />
+
+        <dcore:PageMapping pageKey="libraries" path="/libraries" page="page:LibrariesAndPackages" />
+        <dcore:PageMapping pageKey="readme_and_bootstrap" path="/readme-and-bootstrap" page="page:ReadmeAndBootstrap" />
+
+        <dcore:PageMapping pageKey="modeling_guidelines" path="/modeling-guidelines" page="page:ModelingGuidelinesPage" />
+        <dcore:PageMapping pageKey="visibility" path="/visibility" page="page:VisibilityBasics" />
+        <dcore:PageMapping pageKey="overrides" path="/overrides" page="page:OverridesBasics" />
+        <dcore:PageMapping pageKey="constraints" path="/constraints" page="page:ConstraintsBasics" />
+        <dcore:PageMapping pageKey="annotations_and_directives" path="/annotations-and-directives" page="page:AnnotationsAndDirectives" />
+
+        <dcore:PageMapping pageKey="sub_blocks" path="/sub-blocks" page="page:SubBlocksIntro" />
+        <dcore:PageMapping pageKey="contracts" path="/contracts" page="page:ContractsIntro" />
+        <dcore:PageMapping pageKey="compiler" path="/compiler" page="page:CompilerOverview" />
+
+        <dcore:PageMapping pageKey="author_a_new_block" path="/author-a-new-block" page="page:AuthorNewBlockGuide" />
+      </composition>
+    </pageMapping>
+    <globalRules override="true">
+      <composition>
+        <!-- Planning rules -->
+        <brule:ClearPagePurposeRule />
+        <brule:DistinctPagePurposeRule />
+        <brule:CompleteTopicCoverageRule />
+        <brule:AppropriatePageGranularityRule />
+        <brule:ProgressivePageOrderRule />
+        <brule:StablePageIdentityRule />
+        
+        <!-- Other rules -->
+        <brule:CodeExampleRule />
+        <brule:CodeStyleRule />
+        <brule:AvoidContentRepetitionRule />
+        <brule:CompleteSentenceRule />
+        <brule:OnePrimaryMessageRule />
+        <brule:RespectScopeRule />
+        <brule:RespectExclusionsRule />
+        <brule:NoSourceDumpRule />
+        <brule:NoUnrequestedDiagnosticsRule />
+        <brule:MatchDetailLevelRule />
+        <brule:ConceptBeforeImplementationRule />
+        <brule:NoFragmentedEnumerationRule />
+        <brule:AudienceVocabularyRule />
+        <brule:SectionCompletenessRule />
+        <brule:PageSectionCountRule />
+        
+
+      </composition>
+    </globalRules>
+    <authoritativeSources override="true">
+      <composition>
+        <blockml:Library />
+      </composition>
+    </authoritativeSources>
+  </aggregations>
+
+</block>

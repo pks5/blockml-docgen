@@ -1,0 +1,56 @@
+<!--
+  BlockML DocGen — Summary content role
+
+  FQN: org.blockml.bml.docgen.role.Summary
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:level="org.blockml.bml.docgen.level"
+  xmlns:weight="org.blockml.bml.docgen.weight">
+
+  <name>Summary</name>
+  <type>role:Summary</type>
+  <baseType>dcore:ContentRole</baseType>
+  <is>A content role that densifies already introduced content</is>
+
+  <documentation>
+    Densifies already introduced content to the essential points. Suitable for lists of key
+    principles after they have been established.
+
+    Typical rules: no new concepts; only already introduced information; densify rather than
+    merely repeat; prioritize core claims.
+
+    Distinguishes from Lead (before the content) — Summary comes after or within content
+    that has already been explained.
+  </documentation>
+
+  <references>
+    <see type="dcore:ContentRole" relation="Extends">
+      Rhetorical / content-role branch root.
+    </see>
+    <see type="role:Lead" relation="ContrastsWith">
+      Lead opens before content; Summary densifies after introduction.
+    </see>
+  </references>
+
+  <properties>
+    <displayName override="true">
+      <value>Summary</value>
+    </displayName>
+    <defaultDetailLevel override="true">
+      <value>level:Overview</value>
+    </defaultDetailLevel>
+    <defaultWeight override="true">
+      <value>weight:Primary</value>
+    </defaultWeight>
+    <allowsNewConcepts override="true">
+      <value>false</value>
+    </allowsNewConcepts>
+  </properties>
+
+</block>

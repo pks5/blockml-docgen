@@ -1,0 +1,66 @@
+<!--
+  BlockML DocGen — DocSet structuring manifestation stage
+
+  FQN: org.blockml.bml.docgen.stage.DocSetStructuringStage
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:stage="org.blockml.bml.docgen.stage"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:dplan="org.blockml.bml.docgen.plan">
+
+  <name>DocSetStructuringStage</name>
+  <type>stage:DocSetStructuringStage</type>
+  <baseType>dcore:ManifestationStage</baseType>
+  <is>The manifestation stage that materializes a DocSet from an abstract DocSetPlan</is>
+
+  <documentation>
+    Translates the abstract DocSetPlan into a concrete DocSet structure — Pages, PageGroups, and
+    related catalogue entries — or synchronizes an existing DocSet with the plan.
+
+    Responsibilities include:
+    - resolving each StructurePlan.name against DocSetPlan.pageBasePackage to the concrete Block
+      FQN and creating missing Pages / PageGroups
+    - creating or updating PageGroups from PageGroupPlans when those plans exist
+    - mapping PagePlan.scopes into the concrete Page’s purpose and documentation
+    - preserving and reusing as much existing Page content as possible when a planned page still
+      corresponds to an existing Page (prefer update over recreate)
+    - creating new Pages only as structural BML skeletons when no reusable Page exists
+    - updating DocSet-level structure (pageMapping, rootPageGroup tree, ordering) according to
+      the plan
+    - copying DocSetPlan.authoritativeSources onto DocSet.authoritativeSources
+    - marking Pages that no longer occur in the plan for deletion by renaming
+      &lt;page&gt;.bml to &lt;page&gt;.bml.deleted
+
+    Prefer reuse of existing content over rewriting. Full semantic authoring of Page body content
+    remains the responsibility of later stages (for example PageAuthoringStage).
+  </documentation>
+
+  <references>
+    <see type="dcore:ManifestationStage" relation="Extends">
+      Manifestation-stage classification axis under DocElement.
+    </see>
+    <see type="dplan:DocSetPlan" relation="Requires">
+      Abstract plan that drives structuring.
+    </see>
+    <see type="dplan:PagePlan" relation="Requires">
+      Abstract planned pages whose name and scopes are materialized here.
+    </see>
+    <see type="dcore:DocSet" relation="Requires">
+      Concrete DocSet created or synchronized from the plan.
+    </see>
+    <see type="dcore:PageGroup" relation="Requires">
+      Concrete page groups created or synchronized from the plan.
+    </see>
+    <see type="stage:DocSetPlanningStage" relation="SeeAlso">
+      Prior stage — creates the abstract DocSetPlan.
+    </see>
+    <see type="stage:PageAuthoringStage" relation="SeeAlso">
+      Next stage — authors semantic Page models after structure exists.
+    </see>
+  </references>
+
+</block>

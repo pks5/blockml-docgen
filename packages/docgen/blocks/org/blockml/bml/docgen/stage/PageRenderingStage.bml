@@ -1,0 +1,42 @@
+<!--
+  BlockML DocGen — page-rendering manifestation stage
+
+  FQN: org.blockml.bml.docgen.stage.PageRenderingStage
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:stage="org.blockml.bml.docgen.stage"
+  xmlns:dcore="org.blockml.bml.docgen.core">
+
+  <name>PageRenderingStage</name>
+  <type>stage:PageRenderingStage</type>
+  <baseType>dcore:ManifestationStage</baseType>
+  <is>The manifestation stage that transforms authored BML Pages into the target manifestation</is>
+
+  <documentation>
+    Transforms authored BML Pages into the target manifestation.
+
+    Responsibilities include:
+    - resolving the authoritativeSources referenced by the Page
+    - generating the actual explanatory content required by the authored Page structure
+    - filling Paragraphs, code explanations, lists, and other renderable content
+    - applying rendering and presentation rules
+    - producing the requested target format such as JSON, HTML, or another manifestation
+
+    The renderer follows the semantic structure defined by the BML Page. It may elaborate
+    existing content elements, but should not independently redesign the Page structure.
+  </documentation>
+
+  <references>
+    <see type="dcore:ManifestationStage" relation="Extends">
+      Manifestation-stage classification axis under DocElement.
+    </see>
+    <see type="stage:PageAuthoringStage" relation="SeeAlso">
+      Prior stage — defines the semantic BML Page model to render.
+    </see>
+  </references>
+
+</block>

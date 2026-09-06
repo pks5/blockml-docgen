@@ -1,0 +1,43 @@
+<!--
+  BlockML Documentation — abstract bmldocs DocPage base
+
+  FQN: org.blockml.bml.bmldocs.docset.BmlDocPage
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:dpage="org.blockml.bml.docgen.page">
+
+  <name>BmlDocPage</name>
+  <type>docset:BmlDocPage</type>
+  <baseType>dpage:DocPage</baseType>
+  <is>A DocPage belonging to the BlockML core documentation set</is>
+  <isnot>A narrative bml-core Documentation Block or a DocPage outside BmlDocSet</isnot>
+
+  <documentation>
+    Abstract base for all concrete blockml.org documentation pages under
+    org.blockml.bml.bmldocs.page.docs.*. Fixes docset to BmlDocSet so every page belongs to the
+    BlockML core documentation set; pageKey and path remain on BmlDocSet.pageMapping.
+  </documentation>
+
+  <references>
+    <see type="dpage:DocPage" relation="Extends">
+      Docgen human-facing documentation page marker.
+    </see>
+    <see type="docset:BmlDocSet" relation="Requires">
+      Documentation set bound via docset.
+    </see>
+  </references>
+
+  <abstract>true</abstract>
+
+  <properties>
+    <docset override="true">
+      <value>docset:BmlDocSet</value>
+    </docset>
+  </properties>
+
+</block>

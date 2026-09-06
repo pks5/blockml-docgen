@@ -1,0 +1,54 @@
+<!--
+  BlockML Documentation — no fragmented enumeration structure rule
+
+  FQN: org.blockml.bml.bmldocs.rule.NoFragmentedEnumerationRule
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:brule="org.blockml.bml.bmldocs.rule"
+  xmlns:rule="org.blockml.bml.docgen.rule"
+  xmlns:stage="org.blockml.bml.docgen.stage">
+
+  <name>NoFragmentedEnumerationRule</name>
+  <type>brule:NoFragmentedEnumerationRule</type>
+  <baseType>rule:StructureRule</baseType>
+  <is>A structure rule requiring explicit List or Table for unstructured enumerations</is>
+
+  <documentation>
+    Requires that unstructured enumerations of three or more parallel facts, rules, categories, or
+    diagnostics use an explicit List or Table PageElement. Implicit lists must not be encoded as
+    consecutive sentence fragments inside a Paragraph.
+  </documentation>
+
+  <references>
+    <see type="rule:StructureRule" relation="Extends">
+      Documentation structure-rule branch.
+    </see>
+  </references>
+
+  <properties>
+    <name override="true">
+      <value>No fragmented enumeration</value>
+    </name>
+    <summary override="true">
+      <value>Unstructured enumerations must be represented by an explicit List or Table.</value>
+    </summary>
+    <instruction override="true">
+      <value>When three or more parallel facts, rules, categories, or diagnostics are presented,
+        use a List or Table PageElement. Do not encode an implicit list as consecutive sentence
+        fragments inside a Paragraph.</value>
+    </instruction>
+  </properties>
+
+
+  <aggregations>
+    <appliesToStages override="true">
+      <composition>
+        <stage:PageAuthoringStage />
+      </composition>
+    </appliesToStages>
+  </aggregations>
+</block>

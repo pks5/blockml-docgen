@@ -1,0 +1,52 @@
+<!--
+  BlockML DocGen — page-authoring manifestation stage
+
+  FQN: org.blockml.bml.docgen.stage.PageAuthoringStage
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:stage="org.blockml.bml.docgen.stage"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:dplan="org.blockml.bml.docgen.plan">
+
+  <name>PageAuthoringStage</name>
+  <type>stage:PageAuthoringStage</type>
+  <baseType>dcore:ManifestationStage</baseType>
+  <is>The manifestation stage that creates or updates the semantic BML model of each Page</is>
+
+  <documentation>
+    Creates or updates the semantic BML model of each Page.
+
+    Responsibilities include:
+    - creating and organizing PageElements and Sections
+    - defining semantic elements and annotations
+    - defining purpose, message, roles, scopes, learning objectives, and related Page metadata
+    - defining where Paragraphs, Code elements, Lists, Images, and other content elements belong
+    - providing small authored values where they are inherently structural or semantic,
+      such as headings, labels, purpose, and message
+    - adapting existing Pages to the intent defined by the DocSetPlan
+    - permanently deleting Pages previously marked with .bml.deleted
+
+    This stage defines what content a Page should contain and how that content is structured.
+    It does not normally generate the final explanatory prose or other fully rendered content.
+  </documentation>
+
+  <references>
+    <see type="dcore:ManifestationStage" relation="Extends">
+      Manifestation-stage classification axis under DocElement.
+    </see>
+    <see type="dplan:DocSetPlan" relation="SeeAlso">
+      Plan that may drive adaptation of existing Pages.
+    </see>
+    <see type="stage:DocSetStructuringStage" relation="SeeAlso">
+      Prior stage — provides structural Page skeletons and DocSet membership.
+    </see>
+    <see type="stage:PageRenderingStage" relation="SeeAlso">
+      Next stage — generates published content from the authored Page model.
+    </see>
+  </references>
+
+</block>

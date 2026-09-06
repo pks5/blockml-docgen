@@ -1,0 +1,135 @@
+<!--
+  BlockML DocGen — abstract documentation page branch root
+
+  FQN: org.blockml.bml.docgen.core.Page
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:page="org.blockml.bml.docgen.page"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:type="org.blockml.bml.type">
+
+  <name>Page</name>
+  <type>dcore:Page</type>
+  <baseType>dcore:DocElement</baseType>
+  <is>A documentation-generation page branch root</is>
+
+  <documentation>
+    Abstract root for documentation-generation page structures. Specialized by page:DocPage
+    (content pages, including index/menu pages). Content elements branch from
+    dcore:PageElement (specializations in org.blockml.bml.docgen.page). Site or domain libraries
+    depend on org.blockml.bml.docgen and fill concrete catalogues / page markers under this branch.
+    Page-local rules apply in addition to DocSet.globalRules. authoritativeSources and
+    audiences on the page apply to the whole page (element-level catalogues remain on
+    ContentElement). docset points at the DocSet this page belongs to. Site routing uses
+    DocSet.rootPath + PageMapping.path.
+  </documentation>
+
+  <references>
+    <see type="dcore:DocElement" relation="Extends">
+      Semantic base for all docgen domain Blocks (except Library / README).
+    </see>
+    <see type="page:DocPage" relation="SeeAlso">
+      Human-facing documentation page marker with content aggregation.
+    </see>
+    <see type="dcore:PageGroup" relation="SeeAlso">
+      Nested navigational groups that organize Pages.
+    </see>
+    <see type="dcore:DocSet" relation="Requires">
+      DocSet this page belongs to via docset; pageMapping owns pageKey and path;
+      globalRules apply in addition to this page's rules.
+    </see>
+    <see type="dcore:Rule" relation="Requires">
+      Page-local rules via rules aggregation; apply in addition to DocSet.globalRules.
+    </see>
+    <see type="core:Block" relation="Requires">
+      Authoritative source Blocks via authoritativeSources TypeReferenceEntity aggregation —
+      page-wide.
+    </see>
+    <see type="dcore:Audience" relation="Requires">
+      Audiences via audiences TypeReferenceEntity aggregation — page-wide.
+    </see>
+    <see type="dcore:PageType" relation="Requires">
+      Editorial page kind via pageType TypeReference property.
+    </see>
+    <see type="sem:SupportingPoint" relation="Requires">
+      Owned supporting-point instances on supportingPoints — page-wide.
+    </see>
+    <see type="sem:ReaderOutcome" relation="Requires">
+      Owned reader-outcome instances on readerOutcomes — page-wide.
+    </see>
+    <see type="sem:LearningObjective" relation="Requires">
+      Owned learning-objective instances on learningObjectives — page-wide.
+    </see>
+    <see type="sem:Scope" relation="Requires">
+      Owned scope instances on scopes — page-wide.
+    </see>
+    <see type="sem:Exclusion" relation="Requires">
+      Owned exclusion instances on exclusions — page-wide.
+    </see>
+  </references>
+
+  <abstract>true</abstract>
+
+  <properties>
+    <title type="Text">
+      <documentation>Title of this page.</documentation>
+    </title>
+    <docset type="type:TypeReference(dcore:DocSet)">
+      <documentation>Type reference to the DocSet this page belongs to.</documentation>
+    </docset>
+    <pageType type="type:TypeReference(dcore:PageType)">
+      <documentation>Editorial kind of this page (concrete types in
+        org.blockml.bml.docgen.pagetype).</documentation>
+    </pageType>
+    <purpose type="Text">
+      <documentation>Purpose of this page for the documentation renderer — why it is present and
+        what it should accomplish. Not reader-facing page copy.</documentation>
+    </purpose>
+    <detailLevel type="type:TypeReference(dcore:DetailLevel)">
+      <documentation>Optional reference to how detailed this page should be explained overall
+        (concrete levels in org.blockml.bml.docgen.level).</documentation>
+    </detailLevel>
+  </properties>
+
+  <aggregations>
+    <rules type="type:TypeReferenceEntity(dcore:Rule)[]">
+      <documentation>      Rules that apply to this page. They apply in addition to the global rules on
+        DocSet.</documentation>
+    </rules>
+    <authoritativeSources type="type:TypeReferenceEntity(core:Block)[]">
+      <documentation>Authoritative source Blocks this page relates to — apply to the whole
+        page.</documentation>
+    </authoritativeSources>
+    <audiences type="type:TypeReferenceEntity(dcore:Audience)[]">
+      <documentation>Type references to audiences this page is intended for — apply to the whole
+        page.</documentation>
+    </audiences>
+    <supportingPoints type="sem:SupportingPoint[]">
+      <documentation>Owned supporting points that reinforce this page’s purpose — direct
+        instances, not type references.</documentation>
+    </supportingPoints>
+    <readerOutcomes type="sem:ReaderOutcome[]">
+      <documentation>Owned reader outcomes this page should produce — direct instances, not type
+        references.</documentation>
+    </readerOutcomes>
+    <learningObjectives type="sem:LearningObjective[]">
+      <documentation>Owned learning objectives this page should produce — direct instances, not
+        type references.</documentation>
+    </learningObjectives>
+    <scopes type="sem:Scope[]">
+      <documentation>Owned in-scope bounds for this page — direct instances, not type
+        references.</documentation>
+    </scopes>
+    <exclusions type="sem:Exclusion[]">
+      <documentation>Owned out-of-scope exclusions for this page — direct instances, not type
+        references.</documentation>
+    </exclusions>
+  </aggregations>
+
+</block>

@@ -1,0 +1,66 @@
+<!--
+  BlockML DocGen — Release notes page type
+
+  FQN: org.blockml.bml.docgen.pagetype.ReleaseNotes
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:level="org.blockml.bml.docgen.level">
+
+  <name>ReleaseNotes</name>
+  <type>ptype:ReleaseNotes</type>
+  <baseType>dcore:PageType</baseType>
+  <is>A page type that describes changes between versions</is>
+
+  <documentation>
+    Describes changes between versions — additions, improvements, fixes, deprecations, and
+    compatibility changes.
+
+    Typical characteristics: chronological; version specific; change focused.
+
+    Examples: BlockML 1.2; MachineBlocks V3.
+
+    Core question: What has changed?
+  </documentation>
+
+  <references>
+    <see type="dcore:PageType" relation="Extends">
+      Editorial page-kind branch root.
+    </see>
+    <see type="ptype:Troubleshooting" relation="ContrastsWith">
+      Troubleshooting fixes problems; ReleaseNotes records version changes.
+    </see>
+    <see type="ptype:Guide" relation="ContrastsWith">
+      Guide advises architecture; ReleaseNotes lists deltas.
+    </see>
+  </references>
+
+  <properties>
+    <displayName override="true">
+      <value>Release notes</value>
+    </displayName>
+    <defaultDetailLevel override="true">
+      <value>level:Practical</value>
+    </defaultDetailLevel>
+    <maxPrimaryConcepts override="true">
+      <value>0</value>
+    </maxPrimaryConcepts>
+  </properties>
+
+  <aggregations>
+    <recommendedRoles override="true">
+      <composition>
+        <role:Summary />
+        <role:Warning />
+        <role:Reference />
+      </composition>
+    </recommendedRoles>
+  </aggregations>
+
+</block>

@@ -1,0 +1,24 @@
+{
+  "name": "@blockml/bmldocs",
+  "version": "0.1.0",
+  "description": "BlockML library for generating the documentation published on blockml.org",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "blockml": {
+    "library": "./blocks/org/blockml/bml/bmldocs/Library.bml"
+  },
+  "files": [
+    "blocks",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "@blockml/core": "^1.1.1",
+    "@blockml/docgen": "^0.1.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

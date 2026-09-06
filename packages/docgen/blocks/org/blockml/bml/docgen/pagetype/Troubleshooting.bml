@@ -1,0 +1,67 @@
+<!--
+  BlockML DocGen — Troubleshooting page type
+
+  FQN: org.blockml.bml.docgen.pagetype.Troubleshooting
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:level="org.blockml.bml.docgen.level">
+
+  <name>Troubleshooting</name>
+  <type>ptype:Troubleshooting</type>
+  <baseType>dcore:PageType</baseType>
+  <is>A page type that helps diagnose and resolve problems</is>
+
+  <documentation>
+    Helps readers diagnose and resolve problems — common failures, diagnostic messages, and
+    recovery steps.
+
+    Typical characteristics: symptoms; causes; solutions; diagnostics.
+
+    Examples: Unknown Type; Validation Errors; Renderer Problems.
+
+    Core question: How do I fix this problem?
+  </documentation>
+
+  <references>
+    <see type="dcore:PageType" relation="Extends">
+      Editorial page-kind branch root.
+    </see>
+    <see type="ptype:FAQ" relation="ContrastsWith">
+      FAQ answers common questions; Troubleshooting diagnoses failures.
+    </see>
+    <see type="ptype:HowTo" relation="ContrastsWith">
+      HowTo achieves a happy-path task; Troubleshooting recovers from failure.
+    </see>
+  </references>
+
+  <properties>
+    <displayName override="true">
+      <value>Troubleshooting</value>
+    </displayName>
+    <defaultDetailLevel override="true">
+      <value>level:Practical</value>
+    </defaultDetailLevel>
+    <maxPrimaryConcepts override="true">
+      <value>2</value>
+    </maxPrimaryConcepts>
+  </properties>
+
+  <aggregations>
+    <recommendedRoles override="true">
+      <composition>
+        <role:Warning />
+        <role:Instruction />
+        <role:Explanation />
+        <role:Example />
+      </composition>
+    </recommendedRoles>
+  </aggregations>
+
+</block>

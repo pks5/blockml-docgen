@@ -1,0 +1,167 @@
+<!--
+  BlockML DocGen Library Descriptor
+
+  Name: Library
+  Filename: Library.bml
+  FQN: org.blockml.bml.docgen.Library
+
+  Standalone library for general documentation generation from BlockML.
+  Block .bml sources live under blocks/org/blockml/bml/docgen/.
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:docgen="org.blockml.bml.docgen"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:dplan="org.blockml.bml.docgen.plan"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:page="org.blockml.bml.docgen.page"
+  xmlns:level="org.blockml.bml.docgen.level"
+  xmlns:stage="org.blockml.bml.docgen.stage"
+  xmlns:weight="org.blockml.bml.docgen.weight"
+  xmlns:rule="org.blockml.bml.docgen.rule"
+  xmlns:blockml="org.blockml.bml"
+  xmlns:core="org.blockml.bml.core">
+
+  <name>Library</name>
+  <type>docgen:Library</type>
+  <baseType>core:BlockLibrary</baseType>
+  <is>A BlockML documentation-generation library catalog</is>
+
+  <documentation>
+    Publishable BlockML documentation-generation library (org.blockml.bml.docgen.Library). Provides
+    the reusable basis for generating human-facing documentation from BlockML definitions —
+    orthogonal to any single website (for example blockml.org). Domain or site libraries depend on
+    this catalogue when they need docgen types and pipelines.
+
+    Membership is defined exclusively by this file's blocks list — not by directory layout.
+    Version 0.1.0 applies to all exported blocks (framework convention: version only on Library.bml).
+  </documentation>
+
+  <references>
+    <see type="docgen:README" relation="ReadFirst">
+      Human/LLM reading entry for this library.
+    </see>
+  </references>
+
+  <version>0.1.0</version>
+
+  <language>
+    <English />
+  </language>
+
+  <properties>
+    <description override="true">
+      <value>BlockML documentation-generation library — general docs generation from BlockML</value>
+    </description>
+  </properties>
+
+  <aggregations>
+    <readMe>
+      <composition>
+        <docgen:README />
+      </composition>
+    </readMe>
+
+    <dependencies>
+      <composition>
+        <blockml:Library />
+      </composition>
+    </dependencies>
+
+    <blocks>
+      <composition>
+        <docgen:README />
+        <dcore:DocElement />
+        <dcore:PageElement />
+        <dcore:Page />
+        <dcore:PageGroup />
+        <dcore:DocSet />
+        <dcore:PageMapping />
+        <dcore:Plan />
+        <dplan:StructurePlan />
+        <dplan:DocSetPlan />
+        <dplan:PagePlan />
+        <dplan:PageGroupPlan />
+        <dcore:Rule />
+        <rule:StructureRule />
+        <rule:ContentRule />
+        <rule:SourceRule />
+        <rule:TerminologyRule />
+        <rule:LearningRule />
+        <rule:StyleRule />
+        <rule:QualityRule />
+        <dcore:DetailLevel />
+        <dcore:Weight />
+        <dcore:ManifestationStage />
+        <level:Overview />
+        <level:Introductory />
+        <level:Practical />
+        <level:Detailed />
+        <level:Reference />
+        <level:Exhaustive />
+        <stage:DocSetPlanningStage />
+        <stage:DocSetStructuringStage />
+        <stage:PageAuthoringStage />
+        <stage:PageRenderingStage />
+        <weight:Primary />
+        <weight:Supporting />
+        <weight:Optional />
+        <weight:Advanced />
+        <page:DocPage />
+        <page:BlockElement />
+        <page:ContentElement />
+        <page:InlineElement />
+        <page:Section />
+        <page:Paragraph />
+        <page:List />
+        <page:ListItem />
+        <page:Navigation />
+        <page:NavigationItem />
+        <page:CodeBlock />
+        <page:Image />
+        <page:Text />
+        <dcore:SemanticAnnotation />
+        <dcore:Audience />
+        <dcore:PageType />
+        <ptype:Introduction />
+        <ptype:Concept />
+        <ptype:Tutorial />
+        <ptype:HowTo />
+        <ptype:Reference />
+        <ptype:Guide />
+        <ptype:Example />
+        <ptype:FAQ />
+        <ptype:Glossary />
+        <ptype:ReleaseNotes />
+        <ptype:Troubleshooting />
+        <ptype:Index />
+        <dcore:ContentRole />
+        <role:Lead />
+        <role:Definition />
+        <role:Explanation />
+        <role:Context />
+        <role:Comparison />
+        <role:Rationale />
+        <role:Example />
+        <role:Instruction />
+        <role:Summary />
+        <role:Transition />
+        <role:Warning />
+        <role:Reference />
+        <dcore:QualityCriterion />
+        <sem:ReaderOutcome />
+        <sem:SupportingPoint />
+        <sem:Scope />
+        <sem:Exclusion />
+        <sem:LearningObjective />
+        <sem:LearningPath />
+      </composition>
+    </blocks>
+  </aggregations>
+
+</block>

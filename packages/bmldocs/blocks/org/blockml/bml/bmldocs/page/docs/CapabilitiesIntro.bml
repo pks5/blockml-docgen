@@ -1,0 +1,596 @@
+<!--
+  BlockML Documentation — Capabilities intro
+
+  FQN: org.blockml.bml.bmldocs.page.docs.CapabilitiesIntro
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:page="org.blockml.bml.bmldocs.page.docs"
+  xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:weight="org.blockml.bml.docgen.weight"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <name>CapabilitiesIntro</name>
+  <type>page:CapabilitiesIntro</type>
+  <baseType>docset:BmlDocPage</baseType>
+  <is>A website intro to Capabilities</is>
+
+  <documentation>
+    Marker page: behaviour as ordinary Capabilities plus how FunctionMapping passes arguments —
+    orientation only, not a package catalogue.
+    content is a structural scaffold only; generate prose and examples from referenced core
+    documentation (doc:CapabilitySemantics, doc:FunctionMappingModel).
+  </documentation>
+
+  <references>
+    <see type="doc:CapabilitySemantics" relation="Requires">
+      Primary content source — behaviour as Capabilities.
+    </see>
+    <see type="doc:FunctionMappingModel" relation="Requires">
+      Primary content source — positional and named Capability call arguments.
+    </see>
+  </references>
+
+  <properties>
+    <title>
+      <value>Capabilities</value>
+    </title>
+
+    <purpose>
+      <value>
+        Show that behaviour is expressed as ordinary Capabilities, not special language constructs.
+      </value>
+    </purpose>
+
+    <detailLevel>
+      <value>
+        dlevel:Introductory
+      </value>
+    </detailLevel>
+
+    <pageType>
+      <value>
+        ptype:Concept
+      </value>
+    </pageType>
+  </properties>
+
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <doc:CapabilitySemantics />
+        <doc:FunctionMappingModel />
+        <core:Block />
+      </composition>
+    </authoritativeSources>
+
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>
+            Establish that BlockML expresses behaviour through ordinary Capabilities rather
+            than special constructor, getter, or render language constructs.
+          </summary>
+          <authoritativeSources>
+            <doc:CapabilitySemantics />
+            <core:Block />
+          </authoritativeSources>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>
+            The reader can explain that familiar operations such as init, getValue, setValue,
+            and render are ordinary Capabilities.
+          </summary>
+          <authoritativeSources>
+            <doc:CapabilitySemantics />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+
+        <sem:ReaderOutcome>
+          <summary>
+            The reader understands that FunctionMapping connects expression calls to
+            Capability inputs and outputs.
+          </summary>
+          <authoritativeSources>
+            <doc:FunctionMappingModel />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>
+            Introduce Capabilities as the ordinary means of expressing behaviour, including
+            FunctionMapping for call arguments.
+          </summary>
+          <authoritativeSources>
+            <doc:CapabilitySemantics />
+            <doc:FunctionMappingModel />
+            <core:Block />
+          </authoritativeSources>
+        </sem:Scope>
+      </composition>
+    </scopes>
+
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>
+            Package-by-package capability catalogue.
+          </summary>
+          <reason>
+            A catalogue would overwhelm the conceptual message that all behaviour is ordinary Capabilities.
+          </reason>
+        </sem:Exclusion>
+
+        <sem:Exclusion>
+          <summary>
+            Specific renderer hooks.
+          </summary>
+          <reason>
+            Renderer integration belongs on renderer-focused pages.
+          </reason>
+        </sem:Exclusion>
+
+        <sem:Exclusion>
+          <summary>
+            Full FunctionMapping grammar.
+          </summary>
+          <reason>
+            This page introduces the role of FunctionMapping, not its complete syntax.
+          </reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+
+    <content override="true">
+      <composition>
+        <!-- 1. Lead -->
+
+        <dpage:Section
+          heading="No special behaviour constructs"
+          purpose="State that BlockML has no special constructor, getter, or render language concepts">
+
+          <content>
+            <dpage:Paragraph
+              purpose="Lead with the absence of special language constructs for behaviour">
+
+              <role>role:Lead</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                BlockML does not introduce special language constructs for constructors,
+                getters, or rendering; behaviour is expressed as ordinary Capabilities.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Behaviour remains part of the same Block model as properties and relationships.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:CapabilitySemantics />
+                    <core:Block />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Familiar operations are Capabilities, not reserved keywords or hidden hooks.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:CapabilitySemantics />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    A Block's public surface is its Capabilities; internal structure is not
+                    the outward API.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:CapabilitySemantics />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+
+        <!-- 2. Ordinary Capabilities -->
+
+        <dpage:Section
+          heading="Ordinary Capabilities express behaviour"
+          purpose="Show that familiar operations are ordinary Capabilities">
+
+          <content>
+            <dpage:Paragraph
+              purpose="Explain that init, getValue, setValue, and render are ordinary Capabilities">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                Operations such as initialization, reading and writing values, and rendering
+                are declared and invoked as ordinary Capabilities.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Initialization is expressed as a Capability rather than a special constructor form.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:CapabilitySemantics />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Reading and writing values are Capabilities such as getValue and setValue.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:CapabilitySemantics />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Rendering is likewise a Capability, not a separate language concept.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:CapabilitySemantics />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Domain-specific operations use the same Capability model as these familiar ones.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:CapabilitySemantics />
+                    <core:Block />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>
+                    Package-by-package capability catalogue and specific renderer hooks.
+                  </summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+
+        <!-- 3. Intent kinds -->
+
+        <dpage:Section
+          heading="Kinds describe intent"
+          purpose="Introduce Inbound, Outbound, and Transformation as intent labels">
+
+          <content>
+            <dpage:Paragraph
+              purpose="Explain Capability kinds as intent descriptions, not runtime objects">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                Capability kinds describe intent — inbound input, outbound output, or
+                transformation — rather than special compiler or runtime constructs.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Inbound Capabilities receive input and declare an inputType.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:CapabilitySemantics />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Outbound Capabilities produce output and declare an outputType.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:CapabilitySemantics />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Transformation Capabilities map input to output and declare both types.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:CapabilitySemantics />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>
+                    Package catalogue and renderer realisation details for each kind.
+                  </summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+
+        <!-- 4. FunctionMapping -->
+
+        <dpage:Section
+          heading="FunctionMapping for call arguments"
+          purpose="Explain how expression calls connect to Capability inputs and outputs">
+
+          <content>
+            <dpage:Paragraph
+              purpose="Explain positional and named arguments via FunctionMapping">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                FunctionMapping describes how call arguments from expressions map to a
+                Capability input and how the Capability output returns to the caller.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Arguments may be positional or named according to the mapping.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:FunctionMappingModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    The mapping keeps expression-call syntax separate from the Capability's
+                    declared input and output types.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:FunctionMappingModel />
+                    <doc:CapabilitySemantics />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>
+                    Full FunctionMapping grammar.
+                  </summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+
+            <dpage:Paragraph
+              purpose="Prepare the reader for the Expression and Capability mapping summary">
+
+              <role>role:Transition</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                Calls and results travel in two directions between expressions and Capabilities.
+              </message>
+            </dpage:Paragraph>
+
+            <dpage:List
+              purpose="Present Expression and Capability mapping directions as a summary">
+
+              <role>role:Summary</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                These two directions describe how calls and results travel.
+              </message>
+
+              <items>
+                <dpage:ListItem
+                  text="Expression → Capability"
+                  purpose="Explain that expression calls map to Capability input">
+
+                  <message>
+                    An expression call supplies arguments that FunctionMapping maps onto
+                    the Capability input.
+                  </message>
+                </dpage:ListItem>
+
+                <dpage:ListItem
+                  text="Capability → Expression"
+                  purpose="Explain that Capability output returns to the caller">
+
+                  <message>
+                    The Capability output becomes the result available to the calling expression.
+                  </message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+          </content>
+        </dpage:Section>
+
+        <!-- 5. Example -->
+
+        <dpage:Section
+          heading="A Capability skeleton"
+          purpose="Connect the concept to a small Capability outline">
+
+          <content>
+            <dpage:Paragraph
+              purpose="Introduce a Capability with input and output types">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                A Capability declares its input and output types and may provide an
+                implementation hook.
+              </message>
+
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>
+                    Package catalogue, renderer hooks, and full FunctionMapping grammar.
+                  </summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+
+            <dpage:CodeBlock
+              purpose="Illustrate a complete Block with a Capability member skeleton">
+
+              <role>role:Example</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                Show a complete root Block that declares a Capability member with input type,
+                output type, and an optional implementation.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Provide a complete Block so the Capability sits under capabilities in a
+                    valid definition context.
+                  </summary>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Highlight the Capability name together with its inputType and outputType,
+                    leaving implementation minimal if present.
+                  </summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>
+                    Host-language tutorials and package-specific capability lists.
+                  </summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:CodeBlock>
+
+            <dpage:Paragraph
+              purpose="Interpret the Capability member types in the example">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                In the example, the Capability is an ordinary member: its name identifies the
+                behaviour, and inputType and outputType declare what the call accepts and returns.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Notice that there is no special constructor or getter keyword — only a
+                    Capability declaration under capabilities.
+                  </summary>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Any implementation present is a host-language body for that Capability,
+                    not a separate language construct for behaviour.
+                  </summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+
+        <!-- 6. Navigation -->
+
+        <dpage:Section
+          heading="Continue with expressions"
+          purpose="Direct the reader to expression and embed pages">
+
+          <content>
+            <dpage:Navigation
+              purpose="Continue the behaviour learning sequence">
+
+              <title>Next</title>
+
+              <items>
+                <dpage:NavigationItem
+                  label="Expressions"
+                  summary="Learn how \${ } expressions supply dynamic member values and call Capabilities.">
+
+                  <target>
+                    page:ExpressionsIntro
+                  </target>
+                </dpage:NavigationItem>
+
+                <dpage:NavigationItem
+                  label="Embedded expressions"
+                  summary="See how embeds appear inside Capability implementation bodies.">
+
+                  <target>
+                    page:EmbeddedExpressionsIntro
+                  </target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+
+      </composition>
+    </content>
+  </aggregations>
+
+</block>

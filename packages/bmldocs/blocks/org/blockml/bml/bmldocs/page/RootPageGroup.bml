@@ -1,0 +1,39 @@
+<!--
+  BlockML Documentation — top-level root page group
+
+  FQN: org.blockml.bml.bmldocs.page.RootPageGroup
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:pgroup="org.blockml.bml.bmldocs.page"
+  xmlns:dcore="org.blockml.bml.docgen.core">
+
+  <name>RootPageGroup</name>
+  <type>pgroup:RootPageGroup</type>
+  <baseType>dcore:PageGroup</baseType>
+  <is>The top-level container for all blockml.org page groups and pages</is>
+
+  <documentation>
+    Outermost page group for the BlockML site. Child PageGroups (for example DocsPageGroup) nest
+    under this group via parentGroup. Does not list pages yet.
+  </documentation>
+
+  <references>
+    <see type="dcore:PageGroup" relation="Extends">
+      Docgen page group base.
+    </see>
+    <see type="pgroup:DocsPageGroup" relation="Requires">
+      Documentation subtree nested under this root.
+    </see>
+  </references>
+
+  <properties>
+    <title override="true">
+      <value>Root</value>
+    </title>
+  </properties>
+
+</block>

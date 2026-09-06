@@ -1,0 +1,33 @@
+<!--
+  BlockML DocGen — a documentation style rule
+
+  FQN: org.blockml.bml.docgen.rule.StyleRule
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:rule="org.blockml.bml.docgen.rule"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:core="org.blockml.bml.core">
+
+  <name>StyleRule</name>
+  <type>rule:StyleRule</type>
+  <baseType>dcore:Rule</baseType>
+  <is>A documentation style rule</is>
+
+  <documentation>
+    Defines requirements for the linguistic and editorial presentation of documentation. Style Rules govern tone, sentence structure, wording, readability, formatting conventions, and general writing style. They focus on how content is expressed, not on the information being communicated.
+
+    Distinction in one sentence: How is the information written?
+  </documentation>
+
+  <references>
+    <see type="dcore:Rule" relation="Extends">
+      Documentation-generation rule branch under DocElement.
+    </see>
+  </references>
+
+
+</block>

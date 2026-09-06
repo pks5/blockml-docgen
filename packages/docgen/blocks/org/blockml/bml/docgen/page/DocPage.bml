@@ -1,0 +1,68 @@
+<!--
+  BlockML DocGen — abstract documentation page marker
+
+  FQN: org.blockml.bml.docgen.page.DocPage
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:page="org.blockml.bml.docgen.page"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <name>DocPage</name>
+  <type>page:DocPage</type>
+  <baseType>dcore:Page</baseType>
+  <is>A human-facing documentation page marker</is>
+
+  <documentation>
+    Abstract base for human-facing documentation pages generated from BlockML. A DocPage marks that
+    a website page exists and describes what part of BlockML it explains and how (short intro,
+    example, cheat-sheet). Content elements are dcore:PageElement specializations in this package
+    (BlockElement, Section, Paragraph, List, CodeBlock, …). content holds the ordered page body.
+    Narrative SSOT remains bml-core documentation and task blocks referenced via
+    &lt;references&gt;&lt;see&gt;.
+
+    Convention for see relations:
+    • Requires — primary content source(s) used to generate this page
+    • SeeAlso — optional related background
+
+    Site routing uses DocSet.rootPath + PageMapping.path (for example /docs + /intro →
+    /docs/intro). Concrete children add see links to org.blockml.bml.documentation.* or
+    org.blockml.bml.task.*.
+  </documentation>
+
+  <references>
+    <see type="dcore:Page" relation="Extends">
+      Documentation-generation page branch root.
+    </see>
+    <see type="page:BlockElement" relation="Requires">
+      Block-level content element type for content aggregation.
+    </see>
+    <see type="page:Navigation" relation="SeeAlso">
+      In-page navigation lists — used for Next links and menu DocPages.
+    </see>
+    <see type="dcore:DocSet" relation="SeeAlso">
+      DocSet whose pageMapping owns pageKey and path for DocPages.
+    </see>
+    <see type="core:Documentation" relation="ContrastsWith">
+      bml-core narrative documentation — SSOT for page content, not the website page marker.
+    </see>
+    <see type="doc:DocumentationModel" relation="SeeAlso">
+      Core documentation model — is, documentation, references.
+    </see>
+  </references>
+
+  <abstract>true</abstract>
+
+  <aggregations>
+    <content type="page:BlockElement[]">
+      <documentation>Ordered block-level body of this documentation page (sections, paragraphs,
+        lists, code blocks).</documentation>
+    </content>
+  </aggregations>
+
+</block>

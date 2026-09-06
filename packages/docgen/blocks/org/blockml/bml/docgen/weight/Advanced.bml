@@ -1,0 +1,30 @@
+<!--
+  BlockML DocGen — an advanced understanding-weight classifier
+
+  FQN: org.blockml.bml.docgen.weight.Advanced
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:weight="org.blockml.bml.docgen.weight"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:core="org.blockml.bml.core">
+
+  <name>Advanced</name>
+  <type>weight:Advanced</type>
+  <baseType>dcore:Weight</baseType>
+  <is>An advanced understanding-weight classifier</is>
+
+  <documentation>
+    Deepening for experienced readers. Not required to understand the page. Suitable for edge cases, expert techniques, and material that Primary/Supporting readers can safely ignore.
+  </documentation>
+
+  <references>
+    <see type="dcore:Weight" relation="Extends">
+      Understanding-weight classification axis under DocElement.
+    </see>
+  </references>
+
+</block>

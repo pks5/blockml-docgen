@@ -1,0 +1,649 @@
+<!--
+  BlockML Documentation — Libraries and packages
+
+  FQN: org.blockml.bml.bmldocs.page.docs.LibrariesAndPackages
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:page="org.blockml.bml.bmldocs.page.docs"
+  xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:weight="org.blockml.bml.docgen.weight"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <name>LibrariesAndPackages</name>
+  <type>page:LibrariesAndPackages</type>
+  <baseType>docset:BmlDocPage</baseType>
+  <is>A website page for libraries and packages</is>
+
+  <documentation>
+    Marker page: Library.bml membership, packages under &lt;domain&gt;.bml.*, and namespace layout —
+    enough to publish a small library without the full core reading path.
+
+    content is a structural scaffold only; generate prose and examples from referenced core
+    documentation (doc:LibrarySystem, doc:BmlNamespace).
+  </documentation>
+
+  <references>
+    <see type="doc:LibrarySystem" relation="Requires">
+      Primary content — libraries, packages, versioning, and blocks membership.
+    </see>
+    <see type="doc:BmlNamespace" relation="Requires">
+      Primary content — org.blockml.bml.* layout and domain conventions.
+    </see>
+  </references>
+
+  <properties>
+    <title>
+      <value>Libraries and packages</value>
+    </title>
+
+    <purpose>
+      <value>
+        Explain Library as the publishable unit and the domain bml package convention.
+      </value>
+    </purpose>
+
+    <detailLevel>
+      <value>
+        dlevel:Introductory
+      </value>
+    </detailLevel>
+
+    <pageType>
+      <value>
+        ptype:Concept
+      </value>
+    </pageType>
+  </properties>
+
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <doc:LibrarySystem />
+        <doc:BmlNamespace />
+        <core:Block />
+      </composition>
+    </authoritativeSources>
+
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>
+            Recognize Library as the publishable unit that groups Blocks through explicit
+            membership rather than directory discovery.
+          </summary>
+          <authoritativeSources>
+            <doc:LibrarySystem />
+            <core:Block />
+          </authoritativeSources>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>
+            The reader can explain that Library.blocks membership is exclusive and explicit.
+          </summary>
+          <authoritativeSources>
+            <doc:LibrarySystem />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+
+        <sem:ReaderOutcome>
+          <summary>
+            The reader can place a definition under the domain bml package convention.
+          </summary>
+          <authoritativeSources>
+            <doc:BmlNamespace />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>
+            Introduce Library membership, FQN derivation from package path, and the domain
+            bml namespace layout used for publishable packages.
+          </summary>
+          <authoritativeSources>
+            <doc:LibrarySystem />
+            <doc:BmlNamespace />
+            <core:Block />
+          </authoritativeSources>
+        </sem:Scope>
+      </composition>
+    </scopes>
+
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>
+            npm package layout.
+          </summary>
+          <reason>
+            BlockML libraries are not described in terms of npm package conventions.
+          </reason>
+        </sem:Exclusion>
+
+        <sem:Exclusion>
+          <summary>
+            Physical filesystem edge cases.
+          </summary>
+          <reason>
+            Membership and namespace rules matter more than filesystem quirks at this level.
+          </reason>
+        </sem:Exclusion>
+
+        <sem:Exclusion>
+          <summary>
+            Diagnostic codes.
+          </summary>
+          <reason>
+            Diagnostic identifiers belong on reference and troubleshooting pages.
+          </reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+
+    <content override="true">
+      <composition>
+
+        <!-- 1. Lead -->
+
+        <dpage:Section
+          heading="Libraries group publishable Blocks"
+          purpose="Give readers an immediate orientation to Library as the publishable unit">
+
+          <content>
+            <dpage:Paragraph
+              purpose="Introduce Library as the unit that groups Blocks and ValueTypes">
+
+              <role>role:Lead</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                A Library is the publishable unit that groups Blocks and related types for
+                reuse across a World.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Membership is declared explicitly, not inferred from folders alone.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:LibrarySystem />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Publishable content stays intentional and reviewable because membership is
+                    authored, not discovered.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:LibrarySystem />
+                    <core:Block />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Package path and namespace conventions keep Library identity stable for tools.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:BmlNamespace />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+
+        <!-- 2. Membership and FQN -->
+
+        <dpage:Section
+          heading="Membership and identity"
+          purpose="Explain exclusive Library membership and FQN derivation from package path">
+
+          <content>
+
+            <dpage:Paragraph
+              purpose="Explain that Library.blocks membership is exclusive">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                A Block belongs to a Library only when it is listed in that Library's blocks
+                composition; scanning directories is not membership.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Explicit composition keeps publishable content intentional and reviewable.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:LibrarySystem />
+                    <core:Block />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Exclusive membership means a Block is published through one intentional
+                    Library list rather than ambient folder presence.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:LibrarySystem />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+
+            <dpage:Paragraph
+              purpose="Explain FQN derivation from the file package path">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                The Library FQN follows the package path of its file, ending in Library for
+                that package.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Stable package paths keep Library identity predictable across tools.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:LibrarySystem />
+                    <doc:BmlNamespace />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Readers can predict the Library type name from the package layout without
+                    inventing a second identity scheme.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:BmlNamespace />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+
+          </content>
+        </dpage:Section>
+
+        <!-- 3. Namespace conventions -->
+
+        <dpage:Section
+          heading="Domain bml package conventions"
+          purpose="Summarize where definitions live under the domain bml namespace">
+
+          <content>
+
+            <dpage:Paragraph
+              purpose="Explain that every definition resides under the domain bml package">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                Every definition resides under a domain bml package so framework, domain, and
+                user content share one namespace pattern.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    The convention separates framework packages from domain and user packages.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:BmlNamespace />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Shared shape makes FQNs readable across Libraries without special cases.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:BmlNamespace />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+
+            <dpage:Paragraph
+              purpose="Prepare the reader for the namespace examples list">
+
+              <role>role:Transition</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                The same bml package pattern appears at framework, domain, and user scales.
+              </message>
+            </dpage:Paragraph>
+
+            <dpage:List
+              purpose="Present namespace examples as a concise summary">
+
+              <role>role:Summary</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                These examples show the same bml package pattern at three scales.
+              </message>
+
+              <items>
+                <dpage:ListItem
+                  text="Framework"
+                  purpose="Name the framework package root">
+
+                  <message>
+                    Framework types live under org.blockml.bml.*.
+                  </message>
+                </dpage:ListItem>
+
+                <dpage:ListItem
+                  text="Domain example"
+                  purpose="Name a domain package example">
+
+                  <message>
+                    A domain package such as com.machineblocks.bml.* follows the same shape.
+                  </message>
+                </dpage:ListItem>
+
+                <dpage:ListItem
+                  text="User domain"
+                  purpose="Name a user-domain package example">
+
+                  <message>
+                    User content uses a domain prefix such as com.example.bml.*.
+                  </message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+
+          </content>
+        </dpage:Section>
+
+        <!-- 4. Minimal example -->
+
+        <dpage:Section
+          heading="Library membership entry"
+          purpose="Connect the concept to a small Library membership sketch">
+
+          <content>
+
+            <dpage:Paragraph
+              purpose="Introduce a Library.blocks membership sketch">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                A short Library sketch shows how published Blocks appear as explicit children
+                under the blocks composition.
+              </message>
+
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>
+                    Versioning metadata and physical file layout details.
+                  </summary>
+                  <reason>
+                    The example should teach membership declaration, not packaging logistics.
+                  </reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+
+            <dpage:CodeBlock
+              purpose="Illustrate Library.blocks composition referencing a Block type">
+
+              <role>role:Example</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                A Library lists each published Block explicitly in its blocks composition.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Highlight the Library root with name, type, and baseType that place it in
+                    the package.
+                  </summary>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Highlight the blocks aggregation and its composition children that name
+                    each published Block type.
+                  </summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>
+                    Versioning metadata and physical file layout details.
+                  </summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:CodeBlock>
+
+            <dpage:Paragraph
+              purpose="Interpret the Library.blocks membership constructs in the example">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                In the example, the Library definition owns a blocks aggregation; each child
+                in its composition is a published Block type, not a folder entry.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    The composition children demonstrate exclusive membership: only listed
+                    types are published by that Library.
+                  </summary>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    The Library's own type identity still follows the package path ending in
+                    Library, matching the FQN rule from earlier.
+                  </summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+
+          </content>
+        </dpage:Section>
+
+        <!-- 5. Package location versus Library publication -->
+
+        <dpage:Section
+          heading="Packages locate; Libraries publish"
+          purpose="Separate package-path identity from Library publication membership">
+
+          <content>
+
+            <dpage:Paragraph
+              purpose="Explain package path as location and FQN identity">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                The domain bml package path locates a definition and derives its FQN; that
+                location alone does not publish the Block.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Package conventions keep framework, domain, and user content readable under
+                    one namespace pattern.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:BmlNamespace />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    A Library's own FQN still follows its package path ending in Library, which
+                    is identity — not membership of other Blocks.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:LibrarySystem />
+                    <doc:BmlNamespace />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Authors can predict where a file lives without assuming every file in that
+                    folder is published.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:LibrarySystem />
+                    <doc:BmlNamespace />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+
+            <dpage:Paragraph
+              purpose="Explain Library.blocks as the exclusive publish gate">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                Library.blocks is the publish gate: only types listed in that composition are
+                published by the Library.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Exclusive membership keeps publishable content intentional and reviewable.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:LibrarySystem />
+                    <core:Block />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Folder presence under a domain bml package never substitutes for an explicit
+                    blocks composition entry.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:LibrarySystem />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>
+                    npm package layout, filesystem edge cases, and diagnostic codes.
+                  </summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+
+          </content>
+        </dpage:Section>
+
+        <!-- 6. Continuation -->
+
+        <dpage:Section
+          heading="Continue with README and Bootstrap"
+          purpose="Direct the reader to the next conceptual page">
+
+          <content>
+            <dpage:Navigation
+              purpose="Continue the learning sequence">
+
+              <title>Next</title>
+
+              <items>
+                <dpage:NavigationItem
+                  label="README and Bootstrap"
+                  summary="Learn how human-facing README differs from compiler bootstrap entry points.">
+
+                  <target>
+                    page:ReadmeAndBootstrap
+                  </target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+
+      </composition>
+    </content>
+  </aggregations>
+
+</block>

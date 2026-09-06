@@ -1,0 +1,48 @@
+<!--
+  BlockML DocGen — base for DocSet planning elements
+
+  FQN: org.blockml.bml.docgen.core.Plan
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:stage="org.blockml.bml.docgen.stage"
+  xmlns:dplan="org.blockml.bml.docgen.plan">
+
+  <name>Plan</name>
+  <type>dcore:Plan</type>
+  <baseType>dcore:DocElement</baseType>
+  <is>A documentation-generation planning element</is>
+  <isnot>A concrete DocSet, Page, or PageGroup</isnot>
+
+  <documentation>
+    Abstract semantic base for all planning elements used by DocSetPlanningStage — for example
+    DocSetPlan and PagePlan in org.blockml.bml.docgen.plan. Planning elements sketch the intended
+    documentation structure before concrete Pages, PageGroups, or mappings exist. They do not
+    hold rendered page content.
+  </documentation>
+
+  <references>
+    <see type="dcore:DocElement" relation="Extends">
+      Semantic base for all docgen domain Blocks (except Library / README).
+    </see>
+    <see type="stage:DocSetPlanningStage" relation="SeeAlso">
+      Stage that creates and updates Plan specializations.
+    </see>
+    <see type="dplan:DocSetPlan" relation="SeeAlso">
+      Abstract DocSet-level plan specialization.
+    </see>
+    <see type="dplan:StructurePlan" relation="SeeAlso">
+      Structural planning base for PagePlan and PageGroupPlan.
+    </see>
+    <see type="dplan:PagePlan" relation="SeeAlso">
+      Abstract planned-page specialization.
+    </see>
+  </references>
+
+  <abstract>true</abstract>
+
+</block>

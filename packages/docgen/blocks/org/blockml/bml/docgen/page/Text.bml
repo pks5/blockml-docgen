@@ -1,0 +1,40 @@
+<!--
+  BlockML DocGen — documentation inline text
+
+  FQN: org.blockml.bml.docgen.page.Text
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:page="org.blockml.bml.docgen.page"
+  xmlns:core="org.blockml.bml.core">
+
+  <name>Text</name>
+  <type>page:Text</type>
+  <baseType>page:InlineElement</baseType>
+  <is>An inline text run in documentation content</is>
+
+  <documentation>
+    Inline text node. FQN page:Text is distinct from the ValueType org.blockml.bml.type.Text used
+    on property type attributes. When text is authored, it is the literal character content.
+    When text is omitted, generate the run from the surrounding semantic information and
+    authoritative sources instead of leaving it empty.
+  </documentation>
+
+  <references>
+    <see type="page:InlineElement" relation="Extends">
+      Inline content element branch — purpose and related context used when text is generated.
+    </see>
+  </references>
+
+  <properties>
+    <text type="Text">
+      <documentation>Optional character content of this inline run. When omitted, generate the text
+        from the provided semantic information and authoritative sources in context (purpose and
+        enclosing content) instead of leaving the run empty.</documentation>
+    </text>
+  </properties>
+
+</block>

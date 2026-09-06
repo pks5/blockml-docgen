@@ -1,0 +1,128 @@
+<!--
+  BlockML Documentation Library Descriptor
+
+  Name: Library
+  Filename: Library.bml
+  FQN: org.blockml.bml.bmldocs.Library
+
+  Models blockml.org site content structure — documentation TOC and page markers.
+  Block .bml sources live under blocks/org/blockml/bml/bmldocs/.
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:bmldocs="org.blockml.bml.bmldocs"
+  xmlns:page="org.blockml.bml.bmldocs.page.docs"
+  xmlns:pgroup="org.blockml.bml.bmldocs.page"
+  xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:brule="org.blockml.bml.bmldocs.rule"
+  xmlns:docgen="org.blockml.bml.docgen"
+  xmlns:blockml="org.blockml.bml"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:type="org.blockml.bml.type">
+
+  <name>Library</name>
+  <type>bmldocs:Library</type>
+  <baseType>core:BlockLibrary</baseType>
+  <is>A BlockML documentation library catalog</is>
+
+  <documentation>
+    Publishable BlockML documentation library (org.blockml.bml.bmldocs.Library). Models the structure of
+    blockml.org documentation — table of contents, URL paths, and DocPage markers that point at
+    bml-core documentation as content SSOT. Does not carry narrative page prose.
+
+    Membership is defined exclusively by this file's blocks list — not by directory layout.
+    Version 0.1.0 applies to all exported blocks (framework convention: version only on Library.bml).
+  </documentation>
+
+  <references>
+    <see type="bmldocs:README" relation="ReadFirst">
+      Human/LLM reading entry for this library.
+    </see>
+  </references>
+
+  <version>0.1.0</version>
+
+  <language>
+    <English />
+  </language>
+
+  <properties>
+    <description override="true">
+      <value>BlockML documentation library — documentation structure for blockml.org</value>
+    </description>
+  </properties>
+
+  <aggregations>
+    <readMe>
+      <composition>
+        <bmldocs:README />
+      </composition>
+    </readMe>
+
+    <dependencies>
+      <composition>
+        <blockml:Library />
+        <docgen:Library />
+      </composition>
+    </dependencies>
+
+    <blocks>
+      <composition>
+        <bmldocs:README />
+        <docset:BmlDocSet />
+        <docset:BmlDocSetPlan />
+        <docset:BmlDocPage />
+        <brule:CodeStyleRule />
+        <brule:CompleteSentenceRule />
+        <brule:OnePrimaryMessageRule />
+        <brule:RespectScopeRule />
+        <brule:RespectExclusionsRule />
+        <brule:NoSourceDumpRule />
+        <brule:NoUnrequestedDiagnosticsRule />
+        <brule:MatchDetailLevelRule />
+        <brule:ConceptBeforeImplementationRule />
+        <brule:NoFragmentedEnumerationRule />
+        <brule:AudienceVocabularyRule />
+        <page:TableOfContents />
+        <page:Intro />
+        <page:FirstBlock />
+        <page:FileAnatomy />
+        <page:EverythingIsABlockPage />
+        <page:DefinitionAndInstance />
+        <page:CompositionBasics />
+        <page:TypesOverview />
+        <page:TypeExpressionsBasics />
+        <page:GenericsBriefly />
+        <page:ConfiguringTypes />
+        <page:CapabilitiesIntro />
+        <page:ExpressionsIntro />
+        <page:EmbeddedExpressionsIntro />
+        <page:LibrariesAndPackages />
+        <page:ReadmeAndBootstrap />
+        <page:ModelingGuidelinesPage />
+        <page:VisibilityBasics />
+        <page:OverridesBasics />
+        <page:ConstraintsBasics />
+        <page:AnnotationsAndDirectives />
+        <page:SubBlocksIntro />
+        <page:ContractsIntro />
+        <page:CompilerOverview />
+        <page:AuthorNewBlockGuide />
+        <pgroup:RootPageGroup />
+        <pgroup:DocsPageGroup />
+        <pgroup:GettingStartedPageGroup />
+        <pgroup:CoreIdeasPageGroup />
+        <pgroup:TypesPageGroup />
+        <pgroup:BehaviourPageGroup />
+        <pgroup:LibrariesPageGroup />
+        <pgroup:AuthoringPageGroup />
+        <pgroup:DeeperTopicsPageGroup />
+        <pgroup:HowToPageGroup />
+      </composition>
+    </blocks>
+  </aggregations>
+
+</block>

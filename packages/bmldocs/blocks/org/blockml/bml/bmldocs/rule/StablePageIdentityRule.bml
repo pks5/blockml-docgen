@@ -1,0 +1,74 @@
+<!--
+  BlockML Documentation — stable page identity rule
+
+  FQN: org.blockml.bml.bmldocs.rule.StablePageIdentityRule
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:brule="org.blockml.bml.bmldocs.rule"
+  xmlns:rule="org.blockml.bml.docgen.rule"
+  xmlns:stage="org.blockml.bml.docgen.stage">
+
+  <name>StablePageIdentityRule</name>
+  <type>brule:StablePageIdentityRule</type>
+  <baseType>rule:StructureRule</baseType>
+  <is>A structure rule requiring existing planned Pages to retain stable identity unless their conceptual role changes</is>
+
+  <documentation>
+    Defines how Page identity should be preserved when an existing DocSetPlan is updated.
+
+    A planned Page that continues to represent the same conceptual Page should retain its
+    existing name (relative to pageBasePackage). The PagePlan.name should not be changed merely
+    because wording, ordering, scopes, detail level, or supporting content evolves.
+
+    Identity should change only when the Page itself has conceptually changed enough that it
+    should be treated as a different Page. Examples include replacing the Page with a different
+    responsibility, splitting one Page into multiple independent Pages, merging several Pages
+    into a new Page, or intentionally relocating the Page as part of a meaningful navigation
+    redesign.
+
+    When refining an existing plan, prefer updating the Page’s scopes and surrounding plan
+    information while preserving its name. This allows DocSetStructuringStage to recognize and
+    reuse the corresponding existing Page instead of unnecessarily creating a replacement.
+
+    Do not preserve identity when doing so would incorrectly imply that a fundamentally new Page
+    is the continuation of an old one.
+  </documentation>
+
+  <references>
+    <see type="rule:StructureRule" relation="Extends">
+      Documentation structure-rule branch.
+    </see>
+  </references>
+
+  <properties>
+    <name override="true">
+      <value>Stable page identity</value>
+    </name>
+
+    <summary override="true">
+      <value>Preserve the identity of existing planned Pages unless their conceptual role has
+        fundamentally changed.</value>
+    </summary>
+
+    <instruction override="true">
+      <value>When updating an existing DocSetPlan, preserve the PagePlan.name (relative to
+        pageBasePackage) of every Page that still represents the same conceptual Page. Do not
+        assign a new name merely because scopes are refined, position changes, or later content is
+        expected to change. Change the name only when the Page has been replaced by a
+        fundamentally different responsibility, intentionally split or merged, or otherwise
+        transformed into a genuinely different Page. Prefer stable names so DocSetStructuringStage
+        can recognize and update existing Pages instead of creating unnecessary replacements.</value>
+    </instruction>
+  </properties>
+
+  <aggregations>
+    <appliesToStages>
+      <stage:DocSetPlanningStage/>
+    </appliesToStages>
+  </aggregations>
+
+</block>

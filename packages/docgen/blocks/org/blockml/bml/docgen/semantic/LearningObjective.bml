@@ -1,0 +1,57 @@
+<!--
+  BlockML DocGen — a learning objective for documentation
+
+  FQN: org.blockml.bml.docgen.semantic.LearningObjective
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:type="org.blockml.bml.type">
+
+  <name>LearningObjective</name>
+  <type>sem:LearningObjective</type>
+  <baseType>dcore:SemanticAnnotation</baseType>
+  <is>A learning objective for the documentation</is>
+
+  <documentation>
+    States an explicit learning objective the documentation aims to achieve. Complements
+    ReaderOutcome (what the reader should take away) by focusing on the instructional goal
+    authors and generators target when shaping content. priority ranks the objective for
+    understanding; prerequisites list authoritative source Blocks needed beforehand.
+  </documentation>
+
+  <references>
+    <see type="dcore:SemanticAnnotation" relation="Extends">
+      Annotative semantic metadata branch.
+    </see>
+    <see type="dcore:Weight" relation="Requires">
+      Target branch for priority.
+    </see>
+    <see type="core:Block" relation="Requires">
+      Prerequisite Blocks via prerequisites TypeReferenceEntity aggregation.
+    </see>
+    <see type="sem:ReaderOutcome" relation="SeeAlso">
+      Reader-facing outcome after consuming the documentation.
+    </see>
+  </references>
+
+  <properties>
+    <priority type="type:TypeReference(dcore:Weight)">
+      <documentation>Understanding priority of this learning objective (reference into the Weight
+        branch).</documentation>
+    </priority>
+  </properties>
+
+  <aggregations>
+    <prerequisites type="type:TypeReferenceEntity(core:Block)[]">
+      <documentation>Type references to Blocks the reader should understand before this objective
+        can be met.</documentation>
+    </prerequisites>
+  </aggregations>
+
+</block>

@@ -1,0 +1,70 @@
+<!--
+  BlockML DocGen — semantic base for documentation-generation blocks
+
+  FQN: org.blockml.bml.docgen.core.DocElement
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:page="org.blockml.bml.docgen.page"
+  xmlns:core="org.blockml.bml.core">
+
+  <name>DocElement</name>
+  <type>dcore:DocElement</type>
+  <baseType>core:Block</baseType>
+  <is>A documentation-generation semantic element</is>
+
+  <documentation>
+    Abstract semantic base for all documentation-generation Blocks in org.blockml.bml.docgen.*
+    except library catalogue types (Library, README). Branch roots include dcore:DocSet
+    (cohesive documentation sets), dcore:Page (page structures), dcore:PageGroup (navigational
+    page groups), dcore:PageElement (content elements), definitional metadata such as
+    dcore:Audience / dcore:PageType / dcore:ContentRole, annotative metadata under
+    dcore:SemanticAnnotation (concrete annotations in org.blockml.bml.docgen.semantic), and
+    classification axes dcore:DetailLevel, dcore:Weight, and dcore:ManifestationStage, and
+    planning elements under dcore:Plan (specializations in org.blockml.bml.docgen.plan). Site or
+    domain libraries depend on docgen:Library and specialize these types for their surfaces.
+  </documentation>
+
+  <references>
+    <see type="dcore:DocSet" relation="SeeAlso">
+      Cohesive DocSet — pages, groups, learning paths, global rules.
+    </see>
+    <see type="dcore:Rule" relation="SeeAlso">
+      Named generation or authoring rule (name, summary, instruction).
+    </see>
+    <see type="dcore:Page" relation="SeeAlso">
+      Page branch — DocPage specializations.
+    </see>
+    <see type="dcore:PageGroup" relation="SeeAlso">
+      Nested navigational groups of pages (title, order, landing page).
+    </see>
+    <see type="dcore:PageElement" relation="SeeAlso">
+      Content-element branch — Section, Paragraph, List, and related types.
+    </see>
+    <see type="dcore:Audience" relation="SeeAlso">
+      Definitional editorial metadata — Audience, PageType, ContentRole, ….
+    </see>
+    <see type="dcore:SemanticAnnotation" relation="SeeAlso">
+      Annotative editorial metadata branch — concrete types in org.blockml.bml.docgen.semantic.
+    </see>
+    <see type="dcore:DetailLevel" relation="SeeAlso">
+      How detailed an explanation should be (prefer over Depth).
+    </see>
+    <see type="dcore:Weight" relation="SeeAlso">
+      How important an element is for understanding (prefer over Importance).
+    </see>
+    <see type="dcore:Plan" relation="SeeAlso">
+      Planning-element base — DocSetPlan, PagePlan, ….
+    </see>
+    <see type="dcore:ManifestationStage" relation="SeeAlso">
+      Whether a concern applies along the DocSet lifecycle (plan, structure, author, render).
+    </see>
+  </references>
+
+  <abstract>true</abstract>
+
+</block>

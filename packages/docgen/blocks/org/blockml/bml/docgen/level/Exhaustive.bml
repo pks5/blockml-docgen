@@ -1,0 +1,30 @@
+<!--
+  BlockML DocGen — an exhaustive documentation detail level
+
+  FQN: org.blockml.bml.docgen.level.Exhaustive
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:level="org.blockml.bml.docgen.level"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:core="org.blockml.bml.core">
+
+  <name>Exhaustive</name>
+  <type>level:Exhaustive</type>
+  <baseType>dcore:DetailLevel</baseType>
+  <is>An exhaustive documentation detail level</is>
+
+  <documentation>
+    Full documentation including special cases, boundary conditions, and historical information. Use when completeness outweighs brevity — for maintainers, auditors, or deep research.
+  </documentation>
+
+  <references>
+    <see type="dcore:DetailLevel" relation="Extends">
+      Detail-level classification axis under DocElement.
+    </see>
+  </references>
+
+</block>

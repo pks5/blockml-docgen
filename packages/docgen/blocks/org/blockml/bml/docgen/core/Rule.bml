@@ -1,0 +1,70 @@
+<!--
+  BlockML DocGen — documentation generation rule
+
+  FQN: org.blockml.bml.docgen.core.Rule
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:rule="org.blockml.bml.docgen.rule"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:type="org.blockml.bml.type">
+
+  <name>Rule</name>
+  <type>dcore:Rule</type>
+  <baseType>dcore:DocElement</baseType>
+  <is>A documentation-generation rule</is>
+
+  <documentation>
+    Named rule that guides how documentation is authored or generated. name identifies the rule;
+    summary states its intent briefly; instruction holds the actionable directive for authors and
+    generators. appliesToStages lists the ManifestationStages this rule targets — for example
+    authoring .bml sources versus rendering published forms. Concrete specializations live in
+    org.blockml.bml.docgen.rule (StructureRule, ContentRule, SourceRule, TerminologyRule,
+    LearningRule, StyleRule, QualityRule).
+  </documentation>
+
+  <references>
+    <see type="dcore:DocElement" relation="Extends">
+      Semantic base for all docgen domain Blocks (except Library / README).
+    </see>
+    <see type="dcore:DocSet" relation="SeeAlso">
+      DocSet that may own or apply rules.
+    </see>
+    <see type="dcore:ManifestationStage" relation="Requires">
+      Stages this rule applies to via appliesToStages.
+    </see>
+    <see type="rule:StructureRule" relation="SeeAlso">
+      Structural organization requirements.
+    </see>
+    <see type="rule:QualityRule" relation="SeeAlso">
+      Overarching quality requirements across dimensions.
+    </see>
+  </references>
+
+  <abstract>true</abstract>
+
+  <properties>
+    <name type="Text">
+      <documentation>Stable name of this rule.</documentation>
+    </name>
+    <summary type="Text">
+      <documentation>Short statement of what this rule requires or prefers.</documentation>
+    </summary>
+    <instruction type="Text">
+      <documentation>Actionable instruction for authors and documentation generators.</documentation>
+    </instruction>
+  </properties>
+
+  <aggregations>
+    <appliesToStages type="type:TypeReferenceEntity(dcore:ManifestationStage)[]">
+      <documentation>Manifestation stages this rule applies to (for example PageAuthoringStage
+        and/or PageRenderingStage; DocSetPlanningStage and DocSetStructuringStage for DocSet-level
+        rules). Empty means stage affinity is unspecified.</documentation>
+    </appliesToStages>
+  </aggregations>
+
+</block>

@@ -1,0 +1,54 @@
+<!--
+  BlockML Documentation — no unrequested diagnostics content rule
+
+  FQN: org.blockml.bml.bmldocs.rule.NoUnrequestedDiagnosticsRule
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:brule="org.blockml.bml.bmldocs.rule"
+  xmlns:rule="org.blockml.bml.docgen.rule"
+  xmlns:stage="org.blockml.bml.docgen.stage">
+
+  <name>NoUnrequestedDiagnosticsRule</name>
+  <type>brule:NoUnrequestedDiagnosticsRule</type>
+  <baseType>rule:ContentRule</baseType>
+  <is>A content rule restricting diagnostic codes to explicitly requested contexts</is>
+
+  <documentation>
+    Requires that validator or compiler diagnostic identifiers appear only when explicitly
+    requested — for example when the PageElement has Reference or Troubleshooting semantics, or
+    lists those diagnostics as required SupportingPoints.
+  </documentation>
+
+  <references>
+    <see type="rule:ContentRule" relation="Extends">
+      Documentation content-rule branch.
+    </see>
+  </references>
+
+  <properties>
+    <name override="true">
+      <value>No unrequested diagnostics</value>
+    </name>
+    <summary override="true">
+      <value>Diagnostic codes appear only when explicitly requested.</value>
+    </summary>
+    <instruction override="true">
+      <value>Do not include validator or compiler diagnostic identifiers unless the PageElement
+        has Reference or Troubleshooting semantics, or explicitly lists those diagnostics as
+        required SupportingPoints.</value>
+    </instruction>
+  </properties>
+
+
+  <aggregations>
+    <appliesToStages override="true">
+      <composition>
+        <stage:PageRenderingStage />
+      </composition>
+    </appliesToStages>
+  </aggregations>
+</block>

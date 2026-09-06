@@ -1,0 +1,56 @@
+<!--
+  BlockML DocGen — documentation manifestation-stage classifier
+
+  FQN: org.blockml.bml.docgen.core.ManifestationStage
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:dplan="org.blockml.bml.docgen.plan"
+  xmlns:stage="org.blockml.bml.docgen.stage"
+  xmlns:core="org.blockml.bml.core">
+
+  <name>ManifestationStage</name>
+  <type>dcore:ManifestationStage</type>
+  <baseType>dcore:DocElement</baseType>
+  <is>A documentation manifestation-stage classifier</is>
+
+  <documentation>
+    Abstract base for which manifestation stage a documentation concern applies to along the
+    DocSet lifecycle — planning a DocSetPlan, structuring a concrete DocSet, authoring Page BML
+    models, or rendering Pages into a published form such as JSON or HTML. Rules and other docgen
+    artefacts may reference a ManifestationStage to declare which stage they constrain. Concrete
+    stages live in org.blockml.bml.docgen.stage (DocSetPlanningStage, DocSetStructuringStage,
+    PageAuthoringStage, PageRenderingStage).
+  </documentation>
+
+  <references>
+    <see type="dcore:DocElement" relation="Extends">
+      Semantic base for all docgen domain Blocks (except Library / README).
+    </see>
+    <see type="dcore:Rule" relation="SeeAlso">
+      Rules that may be scoped to a ManifestationStage.
+    </see>
+    <see type="dplan:DocSetPlan" relation="SeeAlso">
+      Preliminary DocSet model produced in DocSetPlanningStage.
+    </see>
+    <see type="stage:DocSetPlanningStage" relation="SeeAlso">
+      Creates or updates the DocSetPlan.
+    </see>
+    <see type="stage:DocSetStructuringStage" relation="SeeAlso">
+      Synchronizes a DocSet with the DocSetPlan.
+    </see>
+    <see type="stage:PageAuthoringStage" relation="SeeAlso">
+      Creates or updates the semantic BML model of each Page.
+    </see>
+    <see type="stage:PageRenderingStage" relation="SeeAlso">
+      Transforms authored BML Pages into the target manifestation.
+    </see>
+  </references>
+
+  <abstract>true</abstract>
+
+</block>

@@ -1,0 +1,56 @@
+<!--
+  BlockML Documentation — no source dump source rule
+
+  FQN: org.blockml.bml.bmldocs.rule.NoSourceDumpRule
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:brule="org.blockml.bml.bmldocs.rule"
+  xmlns:rule="org.blockml.bml.docgen.rule"
+  xmlns:stage="org.blockml.bml.docgen.stage">
+
+  <name>NoSourceDumpRule</name>
+  <type>brule:NoSourceDumpRule</type>
+  <baseType>rule:SourceRule</baseType>
+  <is>A source rule requiring synthesis instead of unordered source dumps</is>
+
+  <documentation>
+    Requires that source material is synthesized into documentation rather than copied as an
+    unordered fact dump. Sources serve as evidence for Message and SupportingPoints; source order,
+    headings, bullet structure, diagnostics lists, and terminology density must not be reproduced
+    unless the PageElement explicitly requests a reference-style representation.
+  </documentation>
+
+  <references>
+    <see type="rule:SourceRule" relation="Extends">
+      Documentation source-rule branch.
+    </see>
+  </references>
+
+  <properties>
+    <name override="true">
+      <value>No source dump</value>
+    </name>
+    <summary override="true">
+      <value>Source material must be synthesized, not copied as an unordered fact dump.</value>
+    </summary>
+    <instruction override="true">
+      <value>Use source material only as evidence for the declared Message and SupportingPoints.
+        Do not reproduce the order, headings, bullet structure, diagnostics list, or terminology
+        density of the source unless the PageElement explicitly requests a reference-style
+        representation.</value>
+    </instruction>
+  </properties>
+
+
+  <aggregations>
+    <appliesToStages override="true">
+      <composition>
+        <stage:PageRenderingStage />
+      </composition>
+    </appliesToStages>
+  </aggregations>
+</block>

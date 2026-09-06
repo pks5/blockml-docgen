@@ -1,0 +1,625 @@
+<!--
+  BlockML Documentation — Contracts intro
+
+  FQN: org.blockml.bml.bmldocs.page.docs.ContractsIntro
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:page="org.blockml.bml.bmldocs.page.docs"
+  xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:weight="org.blockml.bml.docgen.weight"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <name>ContractsIntro</name>
+  <type>page:ContractsIntro</type>
+  <baseType>docset:BmlDocPage</baseType>
+  <is>A website intro to contracts</is>
+
+  <documentation>
+    Marker page: when to use contracts vs baseType, and how member merge works — conceptual
+    comparison with one small example.
+
+    content is a structural scaffold only; generate prose and examples from referenced core
+    documentation (doc:ContractsModel, doc:PartialMemberOverrides, doc:ModelingGuidelines).
+  </documentation>
+
+  <references>
+    <see type="doc:ContractsModel" relation="Requires">
+      Primary content — contracts, member merge, and type bounds.
+    </see>
+  </references>
+
+  <properties>
+    <title>
+      <value>Contracts</value>
+    </title>
+
+    <purpose>
+      <value>
+        Introduce contracts as reusable partial definitions that merge member fragments.
+      </value>
+    </purpose>
+
+    <detailLevel>
+      <value>
+        dlevel:Introductory
+      </value>
+    </detailLevel>
+
+    <pageType>
+      <value>
+        ptype:Concept
+      </value>
+    </pageType>
+  </properties>
+
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <doc:ContractsModel />
+        <doc:PartialMemberOverrides />
+        <doc:ModelingGuidelines />
+      </composition>
+    </authoritativeSources>
+
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>
+            Use root-level contracts as reusable partial definitions whose member fragments
+            merge into the effective definition.
+          </summary>
+          <authoritativeSources>
+            <doc:ContractsModel />
+            <doc:PartialMemberOverrides />
+            <doc:ModelingGuidelines />
+          </authoritativeSources>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>
+            The reader can explain that contracts are declared only on the document root.
+          </summary>
+          <authoritativeSources>
+            <doc:ContractsModel />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+
+        <sem:ReaderOutcome>
+          <summary>
+            The reader can name merge, bounds, and what contracts ignore at a conceptual level.
+          </summary>
+          <authoritativeSources>
+            <doc:ContractsModel />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>
+            Introduce contracts as reusable partial definitions, root-only declaration, type
+            bounds versus branch membership, and the conceptual topics of merge, bounds, and
+            ignored contract members.
+          </summary>
+          <authoritativeSources>
+            <doc:ContractsModel />
+            <doc:PartialMemberOverrides />
+            <doc:ModelingGuidelines />
+          </authoritativeSources>
+        </sem:Scope>
+      </composition>
+    </scopes>
+
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>
+            Full merge algorithm.
+          </summary>
+          <reason>
+            Introductory pages need the merge idea, not the complete algorithm.
+          </reason>
+        </sem:Exclusion>
+
+        <sem:Exclusion>
+          <summary>
+            Contract implementation packages.
+          </summary>
+          <reason>
+            Package inventory distracts from the reusable partial-definition message.
+          </reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+
+    <content override="true">
+      <composition>
+
+        <!-- 1. Lead -->
+
+        <dpage:Section
+          heading="Reusable partial definitions"
+          purpose="Give readers an immediate orientation to contracts">
+
+          <content>
+            <dpage:Paragraph
+              purpose="Introduce contracts as reusable partial definitions that merge members">
+
+              <role>role:Lead</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                Contracts are reusable partial definitions whose member fragments merge into
+                the effective definition of a Block.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Contracts complement baseType inheritance instead of replacing it.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:ContractsModel />
+                    <doc:ModelingGuidelines />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Member fragments merge into the consuming Block's effective definition.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:ContractsModel />
+                    <doc:PartialMemberOverrides />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Contracts are declared on the document root, not on nested Sub-Blocks.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:ContractsModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+
+        <!-- 2. Root-only -->
+
+        <dpage:Section
+          heading="Root-only contracts"
+          purpose="Explain that contracts are declared only on the document root">
+
+          <content>
+
+            <dpage:Paragraph
+              purpose="Explain root-only contract declaration">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                Contracts are declared only on the document root and are not attached to nested
+                Sub-Blocks.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Root placement keeps composition of partial definitions explicit and local.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:ContractsModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Nested types may use members contributed by root contracts, but they do not
+                    declare their own contracts aggregation.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:ContractsModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+
+            <dpage:Paragraph
+              purpose="Contrast contracts with baseType for reuse choices">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                Prefer contracts when reusable fragments should merge without forcing a single
+                inheritance branch; prefer baseType when the Block is a specialized member of
+                that branch.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Modeling guidelines treat contracts and inheritance as complementary tools.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:ModelingGuidelines />
+                    <doc:ContractsModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+
+          </content>
+        </dpage:Section>
+
+        <!-- 3. Merge summary -->
+
+        <dpage:Section
+          heading="Merge, bounds, and ignored members"
+          purpose="Summarize the principal contract topics">
+
+          <content>
+
+            <dpage:Paragraph
+              purpose="Prepare the reader for merge, bounds, and ignored members">
+
+              <role>role:Transition</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                Contracts contribute member fragments under bounds, and they ignore some
+                structural declarations on the contract type itself.
+              </message>
+            </dpage:Paragraph>
+
+            <dpage:List
+              purpose="Present contract topics as a concise summary">
+
+              <role>role:Summary</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                These points define what contracts contribute and what they ignore.
+              </message>
+
+              <items>
+                <dpage:ListItem
+                  text="Merge"
+                  purpose="Explain member fragment merge into the effective definition">
+
+                  <message>
+                    Member fragments merge into the effective definition of the consuming Block.
+                  </message>
+                </dpage:ListItem>
+
+                <dpage:ListItem
+                  text="Bounds"
+                  purpose="Mention type bounds and contract constraints">
+
+                  <message>
+                    Type bounds and contract constraints limit how a contract may be applied.
+                  </message>
+                </dpage:ListItem>
+
+                <dpage:ListItem
+                  text="Ignored on contracts"
+                  purpose="Explain that subBlocks and compositions on contract types are ignored">
+
+                  <message>
+                    subBlocks and compositions declared on contract types are ignored.
+                  </message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+
+          </content>
+        </dpage:Section>
+
+        <!-- 4. Type bounds versus branch -->
+
+        <dpage:Section
+          heading="Type bounds versus branch membership"
+          purpose="Distinguish satisfiesTypeBound from inBranch baseType checks">
+
+          <content>
+
+            <dpage:Paragraph
+              purpose="Explain satisfiesTypeBound versus inBranch for contracts and inheritance">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                Type bounds ask whether a Block satisfies a bound through its baseType chain or
+                a direct contracts entry, while branch membership checks use the baseType chain
+                only.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    satisfiesTypeBound is true when the bound appears on the baseType chain or
+                    directly in contracts; V1 does not walk a contract's own contracts.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:ContractsModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    inBranch ignores contracts and looks only at single-inheritance baseType
+                    ancestry.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:ContractsModel />
+                    <doc:ModelingGuidelines />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Framework branch markers such as ValueType or Language remain baseType
+                    choices, not duplicated interface contracts.
+                  </summary>
+                  <authoritativeSources>
+                    <doc:ContractsModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>
+                    Full merge algorithm and contract implementation packages.
+                  </summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+
+            <dpage:Paragraph
+              purpose="Prepare the reader for bounds-versus-branch summary">
+
+              <role>role:Transition</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                Keep polymorphism bounds and taxonomy branch checks as separate questions.
+              </message>
+            </dpage:Paragraph>
+
+            <dpage:List
+              purpose="Present type bounds versus branch membership as a concise summary">
+
+              <role>role:Summary</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Primary</weight>
+
+              <message>
+                These checks answer different reuse and typing questions.
+              </message>
+
+              <items>
+                <dpage:ListItem
+                  text="satisfiesTypeBound"
+                  purpose="Explain direct contracts and baseType for type bounds">
+
+                  <message>
+                    Type bounds accept the baseType chain or a direct contracts entry.
+                  </message>
+                </dpage:ListItem>
+
+                <dpage:ListItem
+                  text="inBranch"
+                  purpose="Explain that branch checks ignore contracts">
+
+                  <message>
+                    Branch membership follows the baseType chain and ignores contracts.
+                  </message>
+                </dpage:ListItem>
+
+                <dpage:ListItem
+                  text="Completion"
+                  purpose="Remind that concrete Blocks complete partial contract members">
+
+                  <message>
+                    Concrete Blocks complete partial contract members with override="true"
+                    after the bound is satisfied.
+                  </message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+
+          </content>
+        </dpage:Section>
+
+        <!-- 5. Minimal example -->
+
+        <dpage:Section
+          heading="Listing a contract on a root Block"
+          purpose="Connect the concept to a small contracts sketch">
+
+          <content>
+
+            <dpage:Paragraph
+              purpose="Introduce a root contracts aggregation referencing a contract Block">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                A root Block declares contracts with one contract child whose member fragments
+                merge into the effective definition.
+              </message>
+
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>
+                    Full merge algorithm and contract implementation packages.
+                  </summary>
+                  <reason>
+                    The example teaches declaration shape, not the merge procedure.
+                  </reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+
+            <dpage:CodeBlock
+              purpose="Illustrate a contracts aggregation referencing a contract Block">
+
+              <role>role:Example</role>
+
+              <detailLevel>dlevel:Overview</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                A root Block declares contracts with one contract child that contributes member
+                fragments.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    Highlight the root-level contracts aggregation on the consuming Block.
+                  </summary>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Highlight the contract child type that contributes reusable member
+                    fragments.
+                  </summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>
+                    Full merge algorithm and contract implementation packages.
+                  </summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:CodeBlock>
+
+            <dpage:Paragraph
+              purpose="Interpret the contracts aggregation and contract child in the example">
+
+              <role>role:Explanation</role>
+
+              <detailLevel>dlevel:Introductory</detailLevel>
+
+              <weight>weight:Supporting</weight>
+
+              <message>
+                In the example, the root contracts aggregation lists the contract Block, and
+                that contract's member fragments merge into the consuming definition.
+              </message>
+
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>
+                    The contract child is a reusable partial definition, not a nested Sub-Block
+                    type under subBlocks.
+                  </summary>
+                </sem:SupportingPoint>
+
+                <sem:SupportingPoint>
+                  <summary>
+                    Local members that refine merged fragments later use override="true" as
+                    explained on the overrides page.
+                  </summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+
+          </content>
+        </dpage:Section>
+
+        <!-- 6. Continuation -->
+
+        <dpage:Section
+          heading="Continue with overrides and modeling guidelines"
+          purpose="Direct the reader to related pages">
+
+          <content>
+            <dpage:Navigation
+              purpose="Continue the learning sequence">
+
+              <title>Next</title>
+
+              <items>
+                <dpage:NavigationItem
+                  label="Overrides"
+                  summary="Learn how override=&quot;true&quot; interacts with merged contract members.">
+
+                  <target>
+                    page:OverridesBasics
+                  </target>
+                </dpage:NavigationItem>
+
+                <dpage:NavigationItem
+                  label="Modeling guidelines"
+                  summary="Apply practical advice for when contracts fit better than inheritance.">
+
+                  <target>
+                    page:ModelingGuidelinesPage
+                  </target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+
+      </composition>
+    </content>
+  </aggregations>
+
+</block>

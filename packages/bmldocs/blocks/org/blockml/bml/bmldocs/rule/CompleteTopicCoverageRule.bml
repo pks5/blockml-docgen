@@ -1,0 +1,68 @@
+<!--
+  BlockML Documentation — complete topic coverage rule
+
+  FQN: org.blockml.bml.bmldocs.rule.CompleteTopicCoverageRule
+-->
+<block
+  xmlns="http://blockml.org/bml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
+                      "
+  xmlns:brule="org.blockml.bml.bmldocs.rule"
+  xmlns:rule="org.blockml.bml.docgen.rule"
+  xmlns:stage="org.blockml.bml.docgen.stage">
+
+  <name>CompleteTopicCoverageRule</name>
+  <type>brule:CompleteTopicCoverageRule</type>
+  <baseType>rule:ContentRule</baseType>
+  <is>A content rule requiring the DocSetPlan to cover all important topics within its intended scope</is>
+
+  <documentation>
+    Defines how completely the planned Pages cover the intended subject area of the DocSet.
+
+    The planned Pages should collectively cover all concepts that are important for the
+    intended scope, audience, and purpose of the documentation. Important topics should not
+    be omitted simply because no suitable Page currently exists.
+
+    Coverage does not require every concept to have its own Page. Closely related concepts
+    may be combined when doing so improves the learning experience and maintains a clear
+    Page purpose. Likewise, minor details may intentionally be incorporated into broader
+    Pages instead of receiving dedicated Pages.
+
+    The goal is complete conceptual coverage of the intended documentation scope, not the
+    maximum possible number of Pages.
+  </documentation>
+
+  <references>
+    <see type="rule:ContentRule" relation="Extends">
+      Documentation content-rule branch.
+    </see>
+  </references>
+
+  <properties>
+    <name override="true">
+      <value>Complete topic coverage</value>
+    </name>
+
+    <summary override="true">
+      <value>Ensure that the planned Pages collectively cover all important topics within the
+        intended documentation scope.</value>
+    </summary>
+
+    <instruction override="true">
+      <value>Plan the DocSet so that all important concepts required by its intended scope,
+        audience, and purpose are covered by one or more planned Pages. Do not omit important
+        topics because no suitable Page currently exists. Introduce additional Pages whenever
+        necessary to achieve complete conceptual coverage. Do not create dedicated Pages for
+        every minor detail; instead, incorporate related details into broader Pages whenever
+        this results in a clearer and more coherent documentation structure.</value>
+    </instruction>
+  </properties>
+
+  <aggregations>
+    <appliesToStages>
+      <stage:DocSetPlanningStage/>
+    </appliesToStages>
+  </aggregations>
+
+</block>
