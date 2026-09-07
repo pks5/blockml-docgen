@@ -12,9 +12,9 @@
   <is>
     A planned page for a DocSetPlan
   </is>
-  <isnot>
+  <isNot>
     A concrete documentation Page, PageMapping, or PageGroup
-  </isnot>
+  </isNot>
   <documentation>
     Planned page within a DocSetPlan. Used in DocSetPlanningStage to sketch structure before
     concrete Pages exist. Inherits name from StructurePlan (Block path relative to

@@ -16,9 +16,9 @@
   <is>
     The BlockML core documentation set
   </is>
-  <isnot>
+  <isNot>
     A single DocPage or a bml-core narrative Documentation Block
-  </isnot>
+  </isNot>
   <documentation>
     The complete documentation set for BlockML core — syntax, rules, examples, best practices,
     and use cases. Aimed at developers: some material targets junior readers, other parts serve

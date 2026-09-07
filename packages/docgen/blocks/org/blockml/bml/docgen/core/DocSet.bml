@@ -16,10 +16,10 @@
   <is>
     A cohesive documentation set for a product, project, or domain
   </is>
-  <isnot>
+  <isNot>
     A bml-core narrative Documentation Block (bmlcore:Documentation) or a single documentation
     page
-  </isnot>
+  </isNot>
   <documentation>
     Container for one coherent documentation set — of a product, project, library, or similar.
     The BlockML website documentation is the first concrete example: a site-specific DocSet

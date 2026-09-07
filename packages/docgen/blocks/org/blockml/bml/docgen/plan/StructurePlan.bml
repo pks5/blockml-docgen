@@ -11,9 +11,9 @@
   <is>
     A structural documentation-planning element
   </is>
-  <isnot>
+  <isNot>
     A DocSetPlan or a concrete Page / PageGroup
-  </isnot>
+  </isNot>
   <documentation>
     Abstract base for structural planning elements within a DocSetPlan — PagePlan and
     PageGroupPlan. name is the concrete Block local path relative to DocSetPlan.pageBasePackage

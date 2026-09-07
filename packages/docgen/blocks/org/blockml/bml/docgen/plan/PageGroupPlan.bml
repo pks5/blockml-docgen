@@ -11,9 +11,9 @@
   <is>
     A planned page group for a DocSetPlan
   </is>
-  <isnot>
+  <isNot>
     A concrete PageGroup or a PagePlan
-  </isnot>
+  </isNot>
   <documentation>
     Planned page group within a DocSetPlan. Used in DocSetPlanningStage to sketch thematic or
     navigational groupings before concrete PageGroups exist. Inherits name from StructurePlan

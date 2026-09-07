@@ -12,9 +12,9 @@
   <is>
     A documentation-generation planning element
   </is>
-  <isnot>
+  <isNot>
     A concrete DocSet, Page, or PageGroup
-  </isnot>
+  </isNot>
   <documentation>
     Abstract semantic base for all planning elements used by DocSetPlanningStage — for example
     DocSetPlan and PagePlan in org.blockml.bml.docgen.plan. Planning elements sketch the intended

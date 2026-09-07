@@ -14,9 +14,9 @@
   <is>
     An abstract plan for an intended DocSet
   </is>
-  <isnot>
+  <isNot>
     A concrete DocSet or a documentation Page
-  </isnot>
+  </isNot>
   <documentation>
     Abstract model of an intended DocSet. Defines the coarse topical structure before concrete
     Pages or PageGroups are created. rootPageGroupPlan is the root PageGroupPlan tree — nested

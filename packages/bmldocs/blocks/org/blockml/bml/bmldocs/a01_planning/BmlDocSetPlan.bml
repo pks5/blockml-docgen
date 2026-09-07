@@ -14,9 +14,9 @@
   <is>
     The DocSetPlan for the BlockML core documentation set
   </is>
-  <isnot>
+  <isNot>
     A concrete BmlDocSet or a documentation Page
-  </isnot>
+  </isNot>
   <documentation>
     Abstract plan for BmlDocSet. rootPageGroupPlan mirrors the concrete RootPageGroup /
     DocsPageGroup / section PageGroup tree, with nested PagePlan entries (name relative to pageBasePackage +
