@@ -1,73 +1,63 @@
-<!--
-  BlockML Documentation — avoid content repetition rule
+<!--BlockML Documentation — avoid content repetition rule
 
-  FQN: org.blockml.bml.bmldocs.rule.AvoidContentRepetitionRule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.bmldocs.rule.AvoidContentRepetitionRule-->
+<brule:AvoidContentRepetitionRule xmlns="http://blockml.org/bml"
   xmlns:brule="org.blockml.bml.bmldocs.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
-  <name>AvoidContentRepetitionRule</name>
-  <type>brule:AvoidContentRepetitionRule</type>
-  <baseType>rule:ContentRule</baseType>
-  <is>A content rule preventing rendered sections from repeating information already established nearby without adding new value</is>
-
+  <baseType>
+    rule:ContentRule
+  </baseType>
+  <is>
+    A content rule preventing rendered sections from repeating information already established nearby without adding new value
+  </is>
   <documentation>
     Defines how rendered documentation should avoid unnecessary repetition between Sections and
     other neighboring content elements.
-
+    
     Each rendered Section must advance the explanation. Do not repeat the same definition,
     description, argument, or introductory explanation that was already established immediately
     before it merely because the next Section addresses a closely related aspect of the same
     topic.
-
+    
     When a Section depends on information introduced earlier, refer back to that information
     briefly and continue from it. Restatement is appropriate only when it is necessary for
     comprehension, when the context has substantially changed, or when the repeated information
     is being reframed to support a genuinely new point.
-
+    
     In particular, Section headings must not cause the renderer to independently regenerate a
     generic introduction to the subject when that introduction has already been provided by the
     Page or a preceding Section. The content associated with a more specific heading should
     explain the specific perspective promised by that heading.
-
+    
     Similar wording is not itself the problem. The important criterion is semantic progress:
     every Section should contribute information, interpretation, examples, consequences, or
     relationships that were not already sufficiently communicated by the preceding content.
   </documentation>
-
   <references>
     <see type="rule:ContentRule" relation="Extends">
       Documentation content-rule branch.
     </see>
   </references>
-
   <properties>
     <name override="true">
       <value>Avoid content repetition</value>
     </name>
-
     <summary override="true">
       <value>Ensure that each rendered Section advances the explanation instead of repeating
-        content already established nearby.</value>
+content already established nearby.</value>
     </summary>
-
     <instructions override="true">
       <value>When rendering a Page, treat preceding Page and Section content as established
-        context. Do not regenerate definitions, introductions, explanations, or arguments that
-        have already been sufficiently stated merely because a subsequent heading concerns the
-        same subject. Each Section must add semantic value and address the specific perspective
-        expressed by its heading and authored purpose. When earlier information is required,
-        reference or summarize it only as much as necessary before continuing with new
-        information. Repetition is acceptable only when it materially improves comprehension or
-        deliberately reframes earlier information for a new purpose. Before completing a
-        Section, compare its main statements with the immediately preceding content and revise
-        any passage whose primary contribution is merely a restatement.</value>
+context. Do not regenerate definitions, introductions, explanations, or arguments that
+have already been sufficiently stated merely because a subsequent heading concerns the
+same subject. Each Section must add semantic value and address the specific perspective
+expressed by its heading and authored purpose. When earlier information is required,
+reference or summarize it only as much as necessary before continuing with new
+information. Repetition is acceptable only when it materially improves comprehension or
+deliberately reframes earlier information for a new purpose. Before completing a
+Section, compare its main statements with the immediately preceding content and revise
+any passage whose primary contribution is merely a restatement.</value>
     </instructions>
   </properties>
-
-</block>
+</brule:AvoidContentRepetitionRule>

@@ -1,36 +1,30 @@
-<!--
-  BlockML DocGen — Concept page type
+<!--BlockML DocGen — Concept page type
 
-  FQN: org.blockml.bml.docgen.pagetype.Concept
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.pagetype.Concept-->
+<ptype:Concept xmlns="http://blockml.org/bml"
   xmlns:ptype="org.blockml.bml.docgen.pagetype"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:role="org.blockml.bml.docgen.role"
   xmlns:level="org.blockml.bml.docgen.level">
 
-  <name>Concept</name>
-  <type>ptype:Concept</type>
-  <baseType>dcore:PageType</baseType>
-  <is>A page type that explains a single concept in depth</is>
-
+  <baseType>
+    dcore:PageType
+  </baseType>
+  <is>
+    A page type that explains a single concept in depth
+  </is>
   <documentation>
     Explains a single concept in depth — one idea, principle, or abstraction. Covers what
     the concept is, why it exists, and how it relates to other concepts, without necessarily
     teaching implementation.
-
+    
     Typical characteristics: one central concept; conceptual explanation; relationships;
     rationale; examples.
-
+    
     Examples: Block; Renderer; Capability; Aggregation.
-
+    
     Core question: What is this concept?
   </documentation>
-
   <references>
     <see type="dcore:PageType" relation="Extends">
       Editorial page-kind branch root.
@@ -45,7 +39,6 @@
       Reference lists facts; Concept builds understanding.
     </see>
   </references>
-
   <properties>
     <displayName override="true">
       <value>Concept</value>
@@ -57,7 +50,6 @@
       <value>1</value>
     </maxPrimaryConcepts>
   </properties>
-
   <aggregations>
     <recommendedRoles override="true">
       <composition>
@@ -69,5 +61,4 @@
       </composition>
     </recommendedRoles>
   </aggregations>
-
-</block>
+</ptype:Concept>

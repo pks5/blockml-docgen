@@ -1,35 +1,29 @@
-<!--
-  BlockML DocGen — Definition content role
+<!--BlockML DocGen — Definition content role
 
-  FQN: org.blockml.bml.docgen.role.Definition
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.role.Definition-->
+<role:Definition xmlns="http://blockml.org/bml"
   xmlns:role="org.blockml.bml.docgen.role"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:level="org.blockml.bml.docgen.level"
   xmlns:weight="org.blockml.bml.docgen.weight">
 
-  <name>Definition</name>
-  <type>role:Definition</type>
-  <baseType>dcore:ContentRole</baseType>
-  <is>A content role that introduces a term or bounded concept precisely</is>
-
+  <baseType>
+    dcore:ContentRole
+  </baseType>
+  <is>
+    A content role that introduces a term or bounded concept precisely
+  </is>
   <documentation>
     Introduces a term or clearly bounded concept with a precise statement. Answers: What is
     X? Prefer a stable, concise conceptual claim. Derive substance from
     authoritativeSources; do not invent a competing definition.
-
+    
     Distinguishes from Explanation (how or why something works) and Context (where something
     fits).
-
+    
     Typical rules: exactly one primary concept; no unnecessary implementation detail; prefer
     canonical terminology; keep short and unambiguous.
   </documentation>
-
   <references>
     <see type="dcore:ContentRole" relation="Extends">
       Rhetorical / content-role branch root.
@@ -41,7 +35,6 @@
       Context situates; Definition names the concept itself.
     </see>
   </references>
-
   <properties>
     <displayName override="true">
       <value>Definition</value>
@@ -56,5 +49,4 @@
       <value>true</value>
     </allowsNewConcepts>
   </properties>
-
-</block>
+</role:Definition>

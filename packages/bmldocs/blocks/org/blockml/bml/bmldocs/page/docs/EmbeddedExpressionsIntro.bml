@@ -1,15 +1,9 @@
-<!--
-  BlockML Documentation — Embedded expressions intro
+<!--BlockML Documentation — Embedded expressions intro
 
-  FQN: org.blockml.bml.bmldocs.page.docs.EmbeddedExpressionsIntro
--->
-<block
-  xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs.page.docs.EmbeddedExpressionsIntro-->
+<page:EmbeddedExpressionsIntro xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
   xmlns:docset="org.blockml.bml.bmldocs.docset"
   xmlns:dpage="org.blockml.bml.docgen.page"
@@ -20,18 +14,18 @@
   xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
-  <name>EmbeddedExpressionsIntro</name>
-  <type>page:EmbeddedExpressionsIntro</type>
-  <baseType>docset:BmlDocPage</baseType>
-  <is>A website intro to &lt;$ $&gt; embeds</is>
-
+  <baseType>
+    docset:BmlDocPage
+  </baseType>
+  <is>
+    A website intro to &lt;$ $> embeds
+  </is>
   <documentation>
-    Marker page: how &lt;$ $&gt; embeds sit inside Capability implementations — contrast briefly
+    Marker page: how &lt;$ $> embeds sit inside Capability implementations — contrast briefly
     with \${ } and show one snippet.
     content is a structural scaffold only; generate prose and examples from referenced core
     documentation (doc:EmbeddedExpressions).
   </documentation>
-
   <references>
     <see type="doc:EmbeddedExpressions" relation="Requires">
       Primary content source — embeds inside Capability implementations.
@@ -40,31 +34,20 @@
       Related — \${ } expression language contrast.
     </see>
   </references>
-
   <properties>
     <title override="true">
       <value>Embedded expressions</value>
     </title>
-
     <purpose override="true">
-      <value>
-        Introduce &lt;$ $&gt; embeds inside Capability implementation bodies.
-      </value>
+      <value>Introduce &lt;$ $> embeds inside Capability implementation bodies.</value>
     </purpose>
-
     <detailLevel override="true">
-      <value>
-        dlevel:Introductory
-      </value>
+      <value>dlevel:Introductory</value>
     </detailLevel>
-
     <pageType override="true">
-      <value>
-        ptype:Concept
-      </value>
+      <value>ptype:Concept</value>
     </pageType>
   </properties>
-
   <aggregations>
     <authoritativeSources override="true">
       <composition>
@@ -73,14 +56,9 @@
         <doc:CapabilitySemantics />
       </composition>
     </authoritativeSources>
-
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
-          <summary>
-            Understand embeds as expression inserts inside Capability implementation bodies,
-            distinct from \${ } member expressions by host context.
-          </summary>
           <authoritativeSources>
             <doc:EmbeddedExpressions />
             <doc:Expressions />
@@ -89,24 +67,14 @@
         </sem:LearningObjective>
       </composition>
     </learningObjectives>
-
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
-          <summary>
-            The reader can identify embed delimiters and know that the host language is named
-            on the implementation.
-          </summary>
           <authoritativeSources>
             <doc:EmbeddedExpressions />
           </authoritativeSources>
         </sem:ReaderOutcome>
-
         <sem:ReaderOutcome>
-          <summary>
-            The reader can choose between member expressions and embedded expressions based
-            on context.
-          </summary>
           <authoritativeSources>
             <doc:EmbeddedExpressions />
             <doc:Expressions />
@@ -114,14 +82,9 @@
         </sem:ReaderOutcome>
       </composition>
     </readerOutcomes>
-
     <scopes override="true">
       <composition>
         <sem:Scope>
-          <summary>
-            Introduce &lt;$ $&gt; embeds inside Capability implementation bodies and contrast them
-            with \${ } member expressions.
-          </summary>
           <authoritativeSources>
             <doc:EmbeddedExpressions />
             <doc:Expressions />
@@ -130,77 +93,40 @@
         </sem:Scope>
       </composition>
     </scopes>
-
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
-          <summary>
-            Host-language tutorials.
-          </summary>
-          <reason>
-            Embeds assume a host language; teaching that language is out of scope here.
-          </reason>
+          <reason>Embeds assume a host language; teaching that language is out of scope here.</reason>
         </sem:Exclusion>
-
         <sem:Exclusion>
-          <summary>
-            Full CDATA serialization rules.
-          </summary>
-          <reason>
-            Serialization details belong on reference pages, not this introduction.
-          </reason>
+          <reason>Serialization details belong on reference pages, not this introduction.</reason>
         </sem:Exclusion>
       </composition>
     </exclusions>
-
     <content override="true">
       <composition>
-        <!-- 1. Lead -->
-
-        <dpage:Section
-          heading="Embeds in implementation bodies"
-          purpose="Frame embeds as expression inserts inside Capability implementations">
-
+        <!--1. Lead-->
+        <dpage:Section heading="Embeds in implementation bodies" purpose="Frame embeds as expression inserts inside Capability implementations">
           <content>
-            <dpage:Paragraph
-              purpose="Introduce embeds as Capability references inside implementation bodies">
-
+            <dpage:Paragraph purpose="Introduce embeds as Capability references inside implementation bodies">
               <role>role:Lead</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                Embedded expressions insert Capability references into the host-language
-                body of a Capability implementation.
-              </message>
-
+              <message>Embedded expressions insert Capability references into the host-language
+body of a Capability implementation.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Embeds keep Capability calls explicit inside implementation source.
-                  </summary>
                   <authoritativeSources>
                     <doc:EmbeddedExpressions />
                     <doc:CapabilitySemantics />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    The surrounding text remains host-language source named by the implementation.
-                  </summary>
                   <authoritativeSources>
                     <doc:EmbeddedExpressions />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Embeds are not a separate implementation language and do not replace the
-                    implementation member itself.
-                  </summary>
                   <authoritativeSources>
                     <doc:EmbeddedExpressions />
                   </authoritativeSources>
@@ -209,166 +135,87 @@
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 2. Delimiters and host language -->
-
-        <dpage:Section
-          heading="Delimiters and host language"
-          purpose="Explain embed delimiters and how the host language is named">
-
+        <!--2. Delimiters and host language-->
+        <dpage:Section heading="Delimiters and host language" purpose="Explain embed delimiters and how the host language is named">
           <content>
-            <dpage:Paragraph
-              purpose="Explain opening and closing delimiters and language on implementation">
-
+            <dpage:Paragraph purpose="Explain opening and closing delimiters and language on implementation">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                An embed opens with &lt;$ and closes with $>; the surrounding implementation
-                names its host language.
-              </message>
-
+              <message>An embed opens with &lt;$ and closes with $>; the surrounding implementation
+names its host language.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    The delimiters mark where the expression language is active inside the body.
-                  </summary>
                   <authoritativeSources>
                     <doc:EmbeddedExpressions />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    The host language is declared on the implementation, not invented by the embed.
-                  </summary>
                   <authoritativeSources>
                     <doc:EmbeddedExpressions />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    A body may contain zero, one, or many embed regions among host-language text.
-                  </summary>
                   <authoritativeSources>
                     <doc:EmbeddedExpressions />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Host-language tutorials and full CDATA serialization rules.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 3. Call forms inside embeds -->
-
-        <dpage:Section
-          heading="Call forms inside embeds"
-          purpose="Introduce the main embed call shapes without a full catalogue">
-
+        <!--3. Call forms inside embeds-->
+        <dpage:Section heading="Call forms inside embeds" purpose="Introduce the main embed call shapes without a full catalogue">
           <content>
-            <dpage:Paragraph
-              purpose="Explain common Capability and builtin call forms inside embeds">
-
+            <dpage:Paragraph purpose="Explain common Capability and builtin call forms inside embeds">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                Inside an embed, authors call own Capabilities, builtins, and bound bean
-                Capabilities with the same expression language used elsewhere.
-              </message>
-
+              <message>Inside an embed, authors call own Capabilities, builtins, and bound bean
+Capabilities with the same expression language used elsewhere.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Own Capability calls use an explicit self form such as #this.someCapability(...).
-                  </summary>
                   <authoritativeSources>
                     <doc:EmbeddedExpressions />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Builtin helpers such as #math and #strings remain available inside embeds.
-                  </summary>
                   <authoritativeSources>
                     <doc:EmbeddedExpressions />
                     <doc:Expressions />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Bound bean Capabilities can be called through @bean forms where composition
-                    provides the binding.
-                  </summary>
                   <authoritativeSources>
                     <doc:EmbeddedExpressions />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Exhaustive builtin catalogues and deferred service-binding details.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 4. Contrast with member expressions -->
-
-        <dpage:Section
-          heading="Member expressions versus embeds"
-          purpose="Contrast \${ } member values with embeds in implementation bodies">
-
+        <!--4. Contrast with member expressions-->
+        <dpage:Section heading="Member expressions versus embeds" purpose="Contrast \${ } member values with embeds in implementation bodies">
           <content>
-            <dpage:Paragraph
-              purpose="Explain same language, different host context versus member expressions">
-
+            <dpage:Paragraph purpose="Explain same language, different host context versus member expressions">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                Member expressions and embeds share the same expression language but appear
-                in different host contexts.
-              </message>
-
+              <message>Member expressions and embeds share the same expression language but appear
+in different host contexts.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    \${ } expressions typically supply Block member values.
-                  </summary>
                   <authoritativeSources>
                     <doc:Expressions />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Embeds appear inside Capability implementation source.
-                  </summary>
                   <authoritativeSources>
                     <doc:EmbeddedExpressions />
                     <doc:CapabilitySemantics />
@@ -376,198 +223,87 @@
                 </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
-
-            <dpage:Paragraph
-              purpose="Prepare the reader for the member-versus-embed summary">
-
+            <dpage:Paragraph purpose="Prepare the reader for the member-versus-embed summary">
               <role>role:Transition</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                Choose the form that matches the host context, not a different expression language.
-              </message>
+              <message>Choose the form that matches the host context, not a different expression language.</message>
             </dpage:Paragraph>
-
-            <dpage:List
-              purpose="Present when to use member expressions versus embeds">
-
+            <dpage:List purpose="Present when to use member expressions versus embeds">
               <role>role:Summary</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                These two forms cover the main expression host contexts.
-              </message>
-
+              <message>These two forms cover the main expression host contexts.</message>
               <items>
-                <dpage:ListItem
-                  text="Member expressions"
-                  purpose="Explain \${ } for Block member values">
-
-                  <message>
-                    Use \${ } expressions when a Block member value is dynamic.
-                  </message>
+                <dpage:ListItem text="Member expressions" purpose="Explain \${ } for Block member values">
+                  <message>Use \${ } expressions when a Block member value is dynamic.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="Embedded expressions"
-                  purpose="Explain embeds inside Capability implementation source">
-
-                  <message>
-                    Use &lt;$ $&gt; embeds when a Capability implementation body needs an
-                    expression insert.
-                  </message>
+                <dpage:ListItem text="Embedded expressions" purpose="Explain embeds inside Capability implementation source">
+                  <message>Use &lt;$ $> embeds when a Capability implementation body needs an
+expression insert.</message>
                 </dpage:ListItem>
               </items>
             </dpage:List>
           </content>
         </dpage:Section>
-
-        <!-- 5. Example -->
-
-        <dpage:Section
-          heading="An implementation embed"
-          purpose="Connect the concept to a small implementation fragment">
-
+        <!--5. Example-->
+        <dpage:Section heading="An implementation embed" purpose="Connect the concept to a small implementation fragment">
           <content>
-            <dpage:Paragraph
-              purpose="Introduce an implementation fragment with an embedded Capability call">
-
+            <dpage:Paragraph purpose="Introduce an implementation fragment with an embedded Capability call">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                A short implementation fragment can contain an embedded expression that
-                calls a Capability.
-              </message>
-
+              <message>A short implementation fragment can contain an embedded expression that
+calls a Capability.</message>
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Host-language tutorials and full CDATA serialization rules.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
-
-            <dpage:CodeBlock
-              purpose="Illustrate a complete Block whose Capability implementation contains an embed">
-
+            <dpage:CodeBlock purpose="Illustrate a complete Block whose Capability implementation contains an embed">
               <role>role:Example</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                Show a complete root Block with a Capability implementation whose body contains
-                an &lt;$ $&gt; embed among host-language text.
-              </message>
-
+              <message>Show a complete root Block with a Capability implementation whose body contains
+an &lt;$ $> embed among host-language text.</message>
               <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>
-                    Provide a complete Block so the implementation sits on a real Capability
-                    with an explicit host language attribute.
-                  </summary>
-                </sem:SupportingPoint>
-
-                <sem:SupportingPoint>
-                  <summary>
-                    Highlight the &lt;$ $&gt; delimiters and a small Capability or builtin call
-                    inside the embed region.
-                  </summary>
-                </sem:SupportingPoint>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Complete host-language examples and serialization edge cases.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:CodeBlock>
-
-            <dpage:Paragraph
-              purpose="Interpret the embed delimiters and call inside the example">
-
+            <dpage:Paragraph purpose="Interpret the embed delimiters and call inside the example">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                In the example, the implementation body is host-language source; the &lt;$ $&gt;
-                region is the BlockML expression insert, and the call inside it names the
-                Capability or builtin being referenced.
-              </message>
-
+              <message>In the example, the implementation body is host-language source; the &lt;$ $>
+region is the BlockML expression insert, and the call inside it names the
+Capability or builtin being referenced.</message>
               <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>
-                    Notice that the host language is declared on the implementation, while the
-                    embed only marks the expression fragment.
-                  </summary>
-                </sem:SupportingPoint>
-
-                <sem:SupportingPoint>
-                  <summary>
-                    The surrounding host text remains untouched except where the embed region
-                    will later be replaced by the renderer.
-                  </summary>
-                </sem:SupportingPoint>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
               </supportingPoints>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 6. Navigation -->
-
-        <dpage:Section
-          heading="Return to Capabilities and expressions"
-          purpose="Direct the reader back to related behaviour pages">
-
+        <!--6. Navigation-->
+        <dpage:Section heading="Return to Capabilities and expressions" purpose="Direct the reader back to related behaviour pages">
           <content>
-            <dpage:Navigation
-              purpose="Continue the behaviour learning sequence">
-
+            <dpage:Navigation purpose="Continue the behaviour learning sequence">
               <title>Next</title>
-
               <items>
-                <dpage:NavigationItem
-                  label="Capabilities"
-                  summary="Return to behaviour expressed as ordinary Capabilities.">
-
-                  <target>
-                    page:CapabilitiesIntro
-                  </target>
+                <dpage:NavigationItem label="Capabilities" summary="Return to behaviour expressed as ordinary Capabilities.">
+                  <target>page:CapabilitiesIntro</target>
                 </dpage:NavigationItem>
-
-                <dpage:NavigationItem
-                  label="Expressions"
-                  summary="Review \${ } member expressions that share the same language.">
-
-                  <target>
-                    page:ExpressionsIntro
-                  </target>
+                <dpage:NavigationItem label="Expressions" summary="Review \${ } member expressions that share the same language.">
+                  <target>page:ExpressionsIntro</target>
                 </dpage:NavigationItem>
               </items>
             </dpage:Navigation>
           </content>
         </dpage:Section>
-
       </composition>
     </content>
   </aggregations>
-
-</block>
+</page:EmbeddedExpressionsIntro>

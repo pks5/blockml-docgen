@@ -1,15 +1,9 @@
-<!--
-  BlockML Documentation — Generics briefly
+<!--BlockML Documentation — Generics briefly
 
-  FQN: org.blockml.bml.bmldocs.page.docs.GenericsBriefly
--->
-<block
-  xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs.page.docs.GenericsBriefly-->
+<page:GenericsBriefly xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
   xmlns:docset="org.blockml.bml.bmldocs.docset"
   xmlns:dpage="org.blockml.bml.docgen.page"
@@ -20,48 +14,37 @@
   xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
-  <name>GenericsBriefly</name>
-  <type>page:GenericsBriefly</type>
-  <baseType>docset:BmlDocPage</baseType>
-  <is>A short website intro to generics</is>
-
+  <baseType>
+    docset:BmlDocPage
+  </baseType>
+  <is>
+    A short website intro to generics
+  </is>
   <documentation>
     Marker page: declare a type parameter, bind it on baseType, and see one inheritance example —
     keep advanced constraints for later reading.
     content is a structural scaffold only; generate prose and examples from referenced core
     documentation (doc:GenericsModel).
   </documentation>
-
   <references>
     <see type="doc:GenericsModel" relation="Requires">
       Primary content source — generics declarations and binding.
     </see>
   </references>
-
   <properties>
     <title override="true">
       <value>Generics briefly</value>
     </title>
-
     <purpose override="true">
-      <value>
-        Introduce generics as parameters owned by the declaring Block.
-      </value>
+      <value>Introduce generics as parameters owned by the declaring Block.</value>
     </purpose>
-
     <detailLevel override="true">
-      <value>
-        dlevel:Introductory
-      </value>
+      <value>dlevel:Introductory</value>
     </detailLevel>
-
     <pageType override="true">
-      <value>
-        ptype:Concept
-      </value>
+      <value>ptype:Concept</value>
     </pageType>
   </properties>
-
   <aggregations>
     <authoritativeSources override="true">
       <composition>
@@ -69,14 +52,9 @@
         <doc:TypeExpressions />
       </composition>
     </authoritativeSources>
-
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
-          <summary>
-            Understand that generic parameters belong to the declaring Block and must be
-            bound or forwarded when that Block is used as a base.
-          </summary>
           <authoritativeSources>
             <doc:GenericsModel />
             <doc:TypeExpressions />
@@ -84,37 +62,23 @@
         </sem:LearningObjective>
       </composition>
     </learningObjectives>
-
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
-          <summary>
-            The reader can locate declaration, application, and inheritance binding sites
-            for generics.
-          </summary>
           <authoritativeSources>
             <doc:GenericsModel />
           </authoritativeSources>
         </sem:ReaderOutcome>
-
         <sem:ReaderOutcome>
-          <summary>
-            The reader knows that generic parameters are not inherited implicitly.
-          </summary>
           <authoritativeSources>
             <doc:GenericsModel />
           </authoritativeSources>
         </sem:ReaderOutcome>
       </composition>
     </readerOutcomes>
-
     <scopes override="true">
       <composition>
         <sem:Scope>
-          <summary>
-            Introduce generics as parameters owned by the declaring Block, with the main
-            declaration and binding sites.
-          </summary>
           <authoritativeSources>
             <doc:GenericsModel />
             <doc:TypeExpressions />
@@ -122,75 +86,38 @@
         </sem:Scope>
       </composition>
     </scopes>
-
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
-          <summary>
-            Advanced variance rules.
-          </summary>
-          <reason>
-            Variance details belong after the basic ownership and binding model is clear.
-          </reason>
+          <reason>Variance details belong after the basic ownership and binding model is clear.</reason>
         </sem:Exclusion>
-
         <sem:Exclusion>
-          <summary>
-            Compiler binding internals.
-          </summary>
-          <reason>
-            This page establishes the author-facing model, not compiler machinery.
-          </reason>
+          <reason>This page establishes the author-facing model, not compiler machinery.</reason>
         </sem:Exclusion>
       </composition>
     </exclusions>
-
     <content override="true">
       <composition>
-        <!-- 1. Lead -->
-
-        <dpage:Section
-          heading="Parameters owned by the declaring Block"
-          purpose="Frame generics as Block-owned type parameters">
-
+        <!--1. Lead-->
+        <dpage:Section heading="Parameters owned by the declaring Block" purpose="Frame generics as Block-owned type parameters">
           <content>
-            <dpage:Paragraph
-              purpose="Introduce generics as parameters owned by the declaring Block">
-
+            <dpage:Paragraph purpose="Introduce generics as parameters owned by the declaring Block">
               <role>role:Lead</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                Generics are type parameters owned by the Block that declares them.
-              </message>
-
+              <message>Generics are type parameters owned by the Block that declares them.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    A declaring Block introduces its own parameters; other Blocks do not
-                    share that ownership automatically.
-                  </summary>
                   <authoritativeSources>
                     <doc:GenericsModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Use sites apply those parameters by binding concrete types.
-                  </summary>
                   <authoritativeSources>
                     <doc:TypeExpressions />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Declaration appears under genericTypes on the owning Block definition.
-                  </summary>
                   <authoritativeSources>
                     <doc:GenericsModel />
                   </authoritativeSources>
@@ -199,325 +126,152 @@
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 2. No implicit inheritance -->
-
-        <dpage:Section
-          heading="No implicit inheritance of parameters"
-          purpose="Make binding or forwarding explicit when using a generic base">
-
+        <!--2. No implicit inheritance-->
+        <dpage:Section heading="No implicit inheritance of parameters" purpose="Make binding or forwarding explicit when using a generic base">
           <content>
-            <dpage:Paragraph
-              purpose="Explain that baseType use requires binding or forwarding every base parameter">
-
+            <dpage:Paragraph purpose="Explain that baseType use requires binding or forwarding every base parameter">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                When a Block uses a generic Block as its base type, every base parameter
-                must be bound or forwarded; parameters are not inherited implicitly.
-              </message>
-
+              <message>When a Block uses a generic Block as its base type, every base parameter
+must be bound or forwarded; parameters are not inherited implicitly.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Binding supplies a concrete type for a base parameter.
-                  </summary>
                   <authoritativeSources>
                     <doc:GenericsModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Forwarding re-exposes a base parameter through the derived Block.
-                  </summary>
                   <authoritativeSources>
                     <doc:GenericsModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    All parameters bound yields a concrete derived Block; any forwarded
-                    parameter keeps the derived Block generic.
-                  </summary>
                   <authoritativeSources>
                     <doc:GenericsModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Advanced variance and compiler binding internals.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 3. Application syntax -->
-
-        <dpage:Section
-          heading="Application at use sites"
-          purpose="Explain round-parentheses generic application in type expressions">
-
+        <!--3. Application syntax-->
+        <dpage:Section heading="Application at use sites" purpose="Explain round-parentheses generic application in type expressions">
           <content>
-            <dpage:Paragraph
-              purpose="Explain Type(Args) application syntax and its relationship to ownership">
-
+            <dpage:Paragraph purpose="Explain Type(Args) application syntax and its relationship to ownership">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                At a use site, round parentheses bind type arguments to the parameters owned
-                by the named Block, as in Box(Integer).
-              </message>
-
+              <message>At a use site, round parentheses bind type arguments to the parameters owned
+by the named Block, as in Box(Integer).</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Each argument is itself a type expression and may include unions or
-                    nested generics.
-                  </summary>
                   <authoritativeSources>
                     <doc:TypeExpressions />
                     <doc:GenericsModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Parentheses bind arguments in XML type attributes without using angle
-                    brackets.
-                  </summary>
                   <authoritativeSources>
                     <doc:GenericsModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
-
               <exclusions>
                 <sem:Exclusion>
-                  <summary>
-                    Curly-brace ValueType configuration and multiplicity brackets.
-                  </summary>
-                  <reason>
-                    Those mechanisms are orthogonal and belong on neighboring pages.
-                  </reason>
+                  <reason>Those mechanisms are orthogonal and belong on neighboring pages.</reason>
                 </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 4. Summary of sites -->
-
-        <dpage:Section
-          heading="Where generics appear"
-          purpose="Summarize declaration, application, and inheritance sites">
-
+        <!--4. Summary of sites-->
+        <dpage:Section heading="Where generics appear" purpose="Summarize declaration, application, and inheritance sites">
           <content>
-            <dpage:Paragraph
-              purpose="Prepare the reader for the three-site summary list">
-
+            <dpage:Paragraph purpose="Prepare the reader for the three-site summary list">
               <role>role:Transition</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                Generics show up in three places: declaration, application, and inheritance.
-              </message>
+              <message>Generics show up in three places: declaration, application, and inheritance.</message>
             </dpage:Paragraph>
-
-            <dpage:List
-              purpose="Present the principal generics sites as a concise summary">
-
+            <dpage:List purpose="Present the principal generics sites as a concise summary">
               <role>role:Summary</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                These three sites cover how generics are declared and used.
-              </message>
-
+              <message>These three sites cover how generics are declared and used.</message>
               <items>
-                <dpage:ListItem
-                  text="Declaration"
-                  purpose="Explain genericTypes on the declaring Block">
-
-                  <message>
-                    Declaration introduces type parameters on the Block that owns them.
-                  </message>
+                <dpage:ListItem text="Declaration" purpose="Explain genericTypes on the declaring Block">
+                  <message>Declaration introduces type parameters on the Block that owns them.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="Application"
-                  purpose="Explain Type(Args) at use sites">
-
-                  <message>
-                    Application binds type arguments at use sites in type expressions.
-                  </message>
+                <dpage:ListItem text="Application" purpose="Explain Type(Args) at use sites">
+                  <message>Application binds type arguments at use sites in type expressions.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="Inheritance"
-                  purpose="Explain baseType binding or forwarding in derived Blocks">
-
-                  <message>
-                    Inheritance requires binding or forwarding every parameter of a
-                    generic base type.
-                  </message>
+                <dpage:ListItem text="Inheritance" purpose="Explain baseType binding or forwarding in derived Blocks">
+                  <message>Inheritance requires binding or forwarding every parameter of a
+generic base type.</message>
                 </dpage:ListItem>
               </items>
             </dpage:List>
           </content>
         </dpage:Section>
-
-        <!-- 5. Example -->
-
-        <dpage:Section
-          heading="A generic declaration and binding"
-          purpose="Connect the concept to a small generics example">
-
+        <!--5. Example-->
+        <dpage:Section heading="A generic declaration and binding" purpose="Connect the concept to a small generics example">
           <content>
-            <dpage:Paragraph
-              purpose="Introduce a generic declaration and a concrete binding">
-
+            <dpage:Paragraph purpose="Introduce a generic declaration and a concrete binding">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                A short example shows a Block declaring a type parameter and a use site
-                binding it to a concrete type.
-              </message>
-
+              <message>A short example shows a Block declaring a type parameter and a use site
+binding it to a concrete type.</message>
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Advanced variance and multi-parameter inheritance cases.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
-
-            <dpage:CodeBlock
-              purpose="Illustrate complete Blocks for generic declaration and concrete binding">
-
+            <dpage:CodeBlock purpose="Illustrate complete Blocks for generic declaration and concrete binding">
               <role>role:Example</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                Show complete Blocks: one declaring a type parameter under genericTypes, and
-                one applying or binding that parameter to a concrete type.
-              </message>
-
+              <message>Show complete Blocks: one declaring a type parameter under genericTypes, and
+one applying or binding that parameter to a concrete type.</message>
               <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>
-                    Highlight the genericTypes declaration that owns the parameter on the
-                    declaring Block.
-                  </summary>
-                </sem:SupportingPoint>
-
-                <sem:SupportingPoint>
-                  <summary>
-                    Highlight the Type(Args) application or baseType binding that supplies
-                    the concrete type argument.
-                  </summary>
-                </sem:SupportingPoint>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Compiler binding internals and advanced constraints.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:CodeBlock>
-
-            <dpage:Paragraph
-              purpose="Interpret the declaration and binding constructs in the example">
-
+            <dpage:Paragraph purpose="Interpret the declaration and binding constructs in the example">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                In the example, the declaring Block owns the parameter under genericTypes,
-                and the use site's parentheses bind that parameter to a concrete type rather
-                than inheriting it silently.
-              </message>
-
+              <message>In the example, the declaring Block owns the parameter under genericTypes,
+and the use site's parentheses bind that parameter to a concrete type rather
+than inheriting it silently.</message>
               <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>
-                    Notice that ownership stays with the declaring Block; the derived or
-                    applying site must account for the parameter explicitly.
-                  </summary>
-                </sem:SupportingPoint>
-
-                <sem:SupportingPoint>
-                  <summary>
-                    The concrete argument appears in round parentheses, matching the
-                    application syntax from the earlier section.
-                  </summary>
-                </sem:SupportingPoint>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
               </supportingPoints>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 6. Navigation -->
-
-        <dpage:Section
-          heading="Return to type expressions"
-          purpose="Direct the reader back to combination forms">
-
+        <!--6. Navigation-->
+        <dpage:Section heading="Return to type expressions" purpose="Direct the reader back to combination forms">
           <content>
-            <dpage:Navigation
-              purpose="Continue the type-system learning sequence">
-
+            <dpage:Navigation purpose="Continue the type-system learning sequence">
               <title>Next</title>
-
               <items>
-                <dpage:NavigationItem
-                  label="Type expressions"
-                  summary="See how generics fit among multiplicity, unions, and configuration.">
-
-                  <target>
-                    page:TypeExpressionsBasics
-                  </target>
+                <dpage:NavigationItem label="Type expressions" summary="See how generics fit among multiplicity, unions, and configuration.">
+                  <target>page:TypeExpressionsBasics</target>
                 </dpage:NavigationItem>
               </items>
             </dpage:Navigation>
           </content>
         </dpage:Section>
-
       </composition>
     </content>
   </aggregations>
-
-</block>
+</page:GenericsBriefly>

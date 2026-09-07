@@ -1,35 +1,29 @@
-<!--
-  BlockML DocGen — documentation paragraph
+<!--BlockML DocGen — documentation paragraph
 
-  FQN: org.blockml.bml.docgen.page.Paragraph
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.page.Paragraph-->
+<page:Paragraph xmlns="http://blockml.org/bml"
   xmlns:page="org.blockml.bml.docgen.page"
   xmlns:core="org.blockml.bml.core">
 
-  <name>Paragraph</name>
-  <type>page:Paragraph</type>
-  <baseType>page:ContentElement</baseType>
-  <is>A paragraph of inline documentation content</is>
-
+  <baseType>
+    page:ContentElement
+  </baseType>
+  <is>
+    A paragraph of inline documentation content
+  </is>
   <documentation>
     Block of inline runs (text). Prefer one idea per paragraph.
   </documentation>
-
   <references>
     <see type="page:ContentElement" relation="Extends">
       Block-level leaf content under BlockElement.
     </see>
   </references>
-
   <aggregations>
     <content type="page:InlineElement[]">
-      <documentation>Ordered inline children that make up this paragraph.</documentation>
+      <documentation>
+        Ordered inline children that make up this paragraph.
+      </documentation>
     </content>
   </aggregations>
-
-</block>
+</page:Paragraph>

@@ -1,31 +1,25 @@
-<!--
-  BlockML DocGen — Instruction content role
+<!--BlockML DocGen — Instruction content role
 
-  FQN: org.blockml.bml.docgen.role.Instruction
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.role.Instruction-->
+<role:Instruction xmlns="http://blockml.org/bml"
   xmlns:role="org.blockml.bml.docgen.role"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:level="org.blockml.bml.docgen.level"
   xmlns:weight="org.blockml.bml.docgen.weight">
 
-  <name>Instruction</name>
-  <type>role:Instruction</type>
-  <baseType>dcore:ContentRole</baseType>
-  <is>A content role that tells the reader what to do</is>
-
+  <baseType>
+    dcore:ContentRole
+  </baseType>
+  <is>
+    A content role that tells the reader what to do
+  </is>
   <documentation>
     Tells the reader what to do — typical for how-to and tutorial content. Examples: create
     a new .bml file; add a root block element; reference the base type; run the validator.
-
+    
     Distinguishes from Explanation (builds understanding), and Example (shows a case without
     directing action).
   </documentation>
-
   <references>
     <see type="dcore:ContentRole" relation="Extends">
       Rhetorical / content-role branch root.
@@ -37,7 +31,6 @@
       Example shows a case; Instruction states required steps.
     </see>
   </references>
-
   <properties>
     <displayName override="true">
       <value>Instruction</value>
@@ -52,5 +45,4 @@
       <value>false</value>
     </allowsNewConcepts>
   </properties>
-
-</block>
+</role:Instruction>

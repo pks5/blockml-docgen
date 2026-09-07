@@ -1,45 +1,40 @@
-<!--
-  BlockML DocGen — documentation section
+<!--BlockML DocGen — documentation section
 
-  FQN: org.blockml.bml.docgen.page.Section
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.page.Section-->
+<page:Section xmlns="http://blockml.org/bml"
   xmlns:page="org.blockml.bml.docgen.page"
   xmlns:core="org.blockml.bml.core">
 
-  <name>Section</name>
-  <type>page:Section</type>
-  <baseType>page:BlockElement</baseType>
-  <is>A documentation section grouping block content</is>
-
+  <baseType>
+    page:BlockElement
+  </baseType>
+  <is>
+    A documentation section grouping block content
+  </is>
   <documentation>
     Ordered container of block-level children. Nesting allows hierarchical page structure
     (sections within sections). When heading is omitted, generate it from this section’s
     purpose and other available semantic context instead of leaving the heading empty.
   </documentation>
-
   <references>
     <see type="page:BlockElement" relation="Extends">
       Block-level content element branch.
     </see>
   </references>
-
   <properties>
-    <heading type="Text">
-      <documentation>Optional heading of this section. When omitted, generate the heading from
+    <heading type="org.blockml.bml.type.Text">
+      <documentation>
+        Optional heading of this section. When omitted, generate the heading from
         the provided semantic information (purpose and related page/section context) and
-        authoritative sources instead of leaving it empty.</documentation>
+        authoritative sources instead of leaving it empty.
+      </documentation>
     </heading>
   </properties>
-
   <aggregations>
     <content type="page:BlockElement[]">
-      <documentation>Ordered block-level children of this section.</documentation>
+      <documentation>
+        Ordered block-level children of this section.
+      </documentation>
     </content>
   </aggregations>
-
-</block>
+</page:Section>

@@ -1,30 +1,27 @@
-<!--
-  BlockML DocGen — abstract semantic annotation metadata
+<!--BlockML DocGen — abstract semantic annotation metadata
 
-  FQN: org.blockml.bml.docgen.core.SemanticAnnotation
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.core.SemanticAnnotation-->
+<dcore:SemanticAnnotation xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:core="org.blockml.bml.core"
   xmlns:type="org.blockml.bml.type">
 
-  <name>SemanticAnnotation</name>
-  <type>dcore:SemanticAnnotation</type>
-  <baseType>dcore:DocElement</baseType>
-  <is>An annotative editorial or knowledge metadata element</is>
-
+  <baseType>
+    dcore:DocElement
+  </baseType>
+  <is>
+    An annotative editorial or knowledge metadata element
+  </is>
   <documentation>
     Abstract branch for annotative semantic metadata bound to a page or content argument.
     Concrete specializations live in org.blockml.bml.docgen.semantic — ReaderOutcome,
     SupportingPoint, Scope, Exclusion, LearningObjective, and LearningPath. These mark intent,
     boundaries, learning goals, and paths rather than defining reusable catalogue meanings.
   </documentation>
-
+  <abstract>
+    true
+  </abstract>
   <references>
     <see type="dcore:DocElement" relation="Extends">
       Semantic base for all docgen domain Blocks (except Library / README).
@@ -42,20 +39,19 @@
       Authoritative source Blocks via authoritativeSources TypeReferenceEntity aggregation.
     </see>
   </references>
-
-  <abstract>true</abstract>
-
   <properties>
-    <summary type="Text">
-      <documentation>Short statement of what this annotation asserts — the editorial or knowledge
-        claim itself, not reader-facing page copy.</documentation>
+    <summary type="type:Text">
+      <documentation>
+        Short statement of what this annotation asserts — the editorial or knowledge
+        claim itself, not reader-facing page copy.
+      </documentation>
     </summary>
   </properties>
-
   <aggregations>
     <authoritativeSources type="type:TypeReferenceEntity(core:Block)[]">
-      <documentation>Authoritative source Blocks this annotation relates to or elaborates.</documentation>
+      <documentation>
+        Authoritative source Blocks this annotation relates to or elaborates.
+      </documentation>
     </authoritativeSources>
   </aggregations>
-
-</block>
+</dcore:SemanticAnnotation>

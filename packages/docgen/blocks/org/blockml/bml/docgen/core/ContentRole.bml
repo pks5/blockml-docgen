@@ -1,23 +1,18 @@
-<!--
-  BlockML DocGen — Role of a content fragment in the documentation argument
+<!--BlockML DocGen — Role of a content fragment in the documentation argument
 
-  FQN: org.blockml.bml.docgen.core.ContentRole
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.core.ContentRole-->
+<dcore:ContentRole xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:core="org.blockml.bml.core"
   xmlns:type="org.blockml.bml.type">
 
-  <name>ContentRole</name>
-  <type>dcore:ContentRole</type>
-  <baseType>dcore:DocElement</baseType>
-  <is>Role of a content fragment in the documentation argument</is>
-
+  <baseType>
+    dcore:DocElement
+  </baseType>
+  <is>
+    Role of a content fragment in the documentation argument
+  </is>
   <documentation>
     Labels how a piece of content functions rhetorically (definition, warning, example cue,
     bridge to next topic) independent of its PageElement layout type. Captures default detail
@@ -25,7 +20,6 @@
     typical scope/exclusion bounds. Concrete roles live in org.blockml.bml.docgen.role
     (Lead, Definition, Explanation, …).
   </documentation>
-
   <references>
     <see type="dcore:DocElement" relation="Extends">
       Semantic base for all docgen domain Blocks (except Library / README).
@@ -37,36 +31,44 @@
       Target branch for defaultWeight.
     </see>
   </references>
-
-
   <properties>
-    <displayName type="Text">
-      <documentation>Stable human-readable display name of this definitional semantic element (for
-        catalogue identity, linking, and generation).</documentation>
+    <displayName type="type:Text">
+      <documentation>
+        Stable human-readable display name of this definitional semantic element (for
+        catalogue identity, linking, and generation).
+      </documentation>
     </displayName>
     <defaultDetailLevel type="type:TypeReference(dcore:DetailLevel)">
-      <documentation>Default detail level for content in this role (reference into the DetailLevel
-        branch).</documentation>
+      <documentation>
+        Default detail level for content in this role (reference into the DetailLevel
+        branch).
+      </documentation>
     </defaultDetailLevel>
     <defaultWeight type="type:TypeReference(dcore:Weight)">
-      <documentation>Default understanding weight for content in this role (reference into the
-        Weight branch).</documentation>
+      <documentation>
+        Default understanding weight for content in this role (reference into the
+        Weight branch).
+      </documentation>
     </defaultWeight>
-    <allowsNewConcepts type="Boolean">
-      <documentation>Whether content in this role may introduce concepts not yet established on
-        the page.</documentation>
+    <allowsNewConcepts type="type:Boolean">
+      <documentation>
+        Whether content in this role may introduce concepts not yet established on
+        the page.
+      </documentation>
     </allowsNewConcepts>
   </properties>
-
   <aggregations>
     <scopes type="sem:Scope[]">
-      <documentation>Owned Scope instances typical for this content role — direct instances, not
-        type references.</documentation>
+      <documentation>
+        Owned Scope instances typical for this content role — direct instances, not
+        type references.
+      </documentation>
     </scopes>
     <exclusions type="sem:Exclusion[]">
-      <documentation>Owned Exclusion instances for what this role must not cover — direct
-        instances, not type references.</documentation>
+      <documentation>
+        Owned Exclusion instances for what this role must not cover — direct
+        instances, not type references.
+      </documentation>
     </exclusions>
   </aggregations>
-
-</block>
+</dcore:ContentRole>

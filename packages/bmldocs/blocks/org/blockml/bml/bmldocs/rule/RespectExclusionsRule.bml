@@ -1,33 +1,26 @@
-<!--
-  BlockML Documentation — respect exclusions content rule
+<!--BlockML Documentation — respect exclusions content rule
 
-  FQN: org.blockml.bml.bmldocs.rule.RespectExclusionsRule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.bmldocs.rule.RespectExclusionsRule-->
+<brule:RespectExclusionsRule xmlns="http://blockml.org/bml"
   xmlns:brule="org.blockml.bml.bmldocs.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
-  <name>RespectExclusionsRule</name>
-  <type>brule:RespectExclusionsRule</type>
-  <baseType>rule:ContentRule</baseType>
-  <is>A content rule forbidding excluded material in generated content</is>
-
+  <baseType>
+    rule:ContentRule
+  </baseType>
+  <is>
+    A content rule forbidding excluded material in generated content
+  </is>
   <documentation>
     Requires that every Exclusion is treated as a hard negative constraint. Excluded concepts,
     terms, error codes, implementation details, and source sections must not be mentioned,
     summarized, implied, or introduced in generated content.
   </documentation>
-
   <references>
     <see type="rule:ContentRule" relation="Extends">
       Documentation content-rule branch.
     </see>
   </references>
-
   <properties>
     <name override="true">
       <value>Respect exclusions</value>
@@ -37,10 +30,8 @@
     </summary>
     <instructions override="true">
       <value>Treat every Exclusion as a hard negative constraint. Do not mention, summarize,
-        imply, or introduce excluded concepts, terms, error codes, implementation details, or
-        source sections.</value>
+imply, or introduce excluded concepts, terms, error codes, implementation details, or
+source sections.</value>
     </instructions>
   </properties>
-
-
-</block>
+</brule:RespectExclusionsRule>

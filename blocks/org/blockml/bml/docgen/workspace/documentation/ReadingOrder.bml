@@ -1,12 +1,6 @@
-<!--
-  Workspace Documentation — ReadingOrder
-  FQN: org.blockml.bml.docgen.workspace.documentation.ReadingOrder
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+<!--Workspace Documentation — ReadingOrder
+  FQN: org.blockml.bml.docgen.workspace.documentation.ReadingOrder-->
+<wsdocumentation:ReadingOrder xmlns="http://blockml.org/bml"
   xmlns:core="org.blockml.bml.core"
   xmlns:docgen="org.blockml.bml.docgen"
   xmlns:dcore="org.blockml.bml.docgen.core"
@@ -15,14 +9,15 @@
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
   xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation">
 
-  <name>ReadingOrder</name>
-  <type>wsdocumentation:ReadingOrder</type>
-  <baseType>core:Documentation</baseType>
-  <is>Recommended reading path across package libraries</is>
-
+  <baseType>
+    core:Documentation
+  </baseType>
+  <is>
+    Recommended reading path across package libraries
+  </is>
   <documentation>
     Suggested order for onboarding:
-
+    
     1. This hub — Introduction → PackageMap → ArchitectureOverview → LinkingRules.
     2. org.blockml.bml.docgen.README — then dcore:DocElement, dcore:DocSet,
        dcore:Page (DocPage), dcore:PageGroup, dcore:Plan, and
@@ -31,12 +26,11 @@
     3. org.blockml.bml.bmldocs.README — then structuring:BmlDocSet, page:TableOfContents,
        and concrete pages under org.blockml.bml.bmldocs.page.docs.*. Stay here for
        the blockml.org catalogue, not a 1:1 mirror of the core ReadFirst path.
-
+    
     Dive into a package library only for that package's contracts; return here for
     monorepo orientation. Narrative language SSOT remains in org.blockml.bml
     (documentation.* and task.*).
   </documentation>
-
   <references>
     <see type="wsdocumentation:LinkingRules" relation="ReadNext" />
     <see type="docgen:README" relation="SeeAlso" />
@@ -48,5 +42,4 @@
     <see type="docgen:Library" relation="SeeAlso" />
     <see type="bmldocs:Library" relation="SeeAlso" />
   </references>
-
-</block>
+</wsdocumentation:ReadingOrder>

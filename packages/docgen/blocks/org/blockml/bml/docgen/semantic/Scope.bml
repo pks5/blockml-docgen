@@ -1,30 +1,23 @@
-<!--
-  BlockML DocGen — What the documentation covers
+<!--BlockML DocGen — What the documentation covers
 
-  FQN: org.blockml.bml.docgen.semantic.Scope
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.semantic.Scope-->
+<sem:Scope xmlns="http://blockml.org/bml"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:core="org.blockml.bml.core">
 
-  <name>Scope</name>
-  <type>sem:Scope</type>
-  <baseType>dcore:SemanticAnnotation</baseType>
-  <is>What the documentation covers</is>
-
+  <baseType>
+    dcore:SemanticAnnotation
+  </baseType>
+  <is>
+    What the documentation covers
+  </is>
   <documentation>
     Declares the in-scope topics or bounds of a page, section, or catalogue entry so generators and authors stay within the intended subject area.
   </documentation>
-
   <references>
     <see type="dcore:SemanticAnnotation" relation="Extends">
       Annotative semantic metadata branch.
     </see>
   </references>
-
-</block>
+</sem:Scope>

@@ -1,23 +1,18 @@
-<!--
-  BlockML DocGen — Editorial kind of documentation page
+<!--BlockML DocGen — Editorial kind of documentation page
 
-  FQN: org.blockml.bml.docgen.core.PageType
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.core.PageType-->
+<dcore:PageType xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:core="org.blockml.bml.core"
   xmlns:type="org.blockml.bml.type">
 
-  <name>PageType</name>
-  <type>dcore:PageType</type>
-  <baseType>dcore:DocElement</baseType>
-  <is>Editorial kind of documentation page</is>
-
+  <baseType>
+    dcore:DocElement
+  </baseType>
+  <is>
+    Editorial kind of documentation page
+  </is>
   <documentation>
     Classifies the page form — for example introduction, concept, how-to, reference — so
     generators can choose structure and voice. Distinct from page:DocPage (the page marker type).
@@ -25,7 +20,6 @@
     allowed content roles, learning objectives, and exclusions. Concrete page types live in
     org.blockml.bml.docgen.pagetype (Introduction, Concept, Tutorial, …).
   </documentation>
-
   <references>
     <see type="dcore:DocElement" relation="Extends">
       Semantic base for all docgen domain Blocks (except Library / README).
@@ -40,41 +34,53 @@
       Owned learning objectives for this page kind.
     </see>
   </references>
-
-
   <properties>
-    <displayName type="Text">
-      <documentation>Stable human-readable display name of this definitional semantic element (for
-        catalogue identity, linking, and generation).</documentation>
+    <displayName type="type:Text">
+      <documentation>
+        Stable human-readable display name of this definitional semantic element (for
+        catalogue identity, linking, and generation).
+      </documentation>
     </displayName>
     <defaultDetailLevel type="type:TypeReference(dcore:DetailLevel)">
-      <documentation>Default detail level for pages of this kind (reference into the DetailLevel
-        branch).</documentation>
+      <documentation>
+        Default detail level for pages of this kind (reference into the DetailLevel
+        branch).
+      </documentation>
     </defaultDetailLevel>
-    <maxPrimaryConcepts type="Integer">
-      <documentation>Maximum number of primary concepts a page of this kind should carry.</documentation>
+    <maxPrimaryConcepts type="type:Integer">
+      <documentation>
+        Maximum number of primary concepts a page of this kind should carry.
+      </documentation>
     </maxPrimaryConcepts>
   </properties>
-
   <aggregations>
     <learningObjectives type="sem:LearningObjective[]">
-      <documentation>Owned learning objectives typical for this page kind — direct instances, not
-        type references.</documentation>
+      <documentation>
+        Owned learning objectives typical for this page kind — direct instances, not
+        type references.
+      </documentation>
     </learningObjectives>
     <exclusions type="sem:Exclusion[]">
-      <documentation>Owned exclusions for content that pages of this kind should omit — direct
-        instances, not type references.</documentation>
+      <documentation>
+        Owned exclusions for content that pages of this kind should omit — direct
+        instances, not type references.
+      </documentation>
     </exclusions>
     <requiredRoles type="type:TypeReferenceEntity(dcore:ContentRole)[]">
-      <documentation>Type references to content roles that must appear on pages of this kind.</documentation>
+      <documentation>
+        Type references to content roles that must appear on pages of this kind.
+      </documentation>
     </requiredRoles>
     <recommendedRoles type="type:TypeReferenceEntity(dcore:ContentRole)[]">
-      <documentation>Type references to content roles that are encouraged but not mandatory for
-        this page kind.</documentation>
+      <documentation>
+        Type references to content roles that are encouraged but not mandatory for
+        this page kind.
+      </documentation>
     </recommendedRoles>
     <forbiddenRoles type="type:TypeReferenceEntity(dcore:ContentRole)[]">
-      <documentation>Type references to content roles that must not appear on pages of this kind.</documentation>
+      <documentation>
+        Type references to content roles that must not appear on pages of this kind.
+      </documentation>
     </forbiddenRoles>
   </aggregations>
-
-</block>
+</dcore:PageType>

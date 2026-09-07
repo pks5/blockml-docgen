@@ -1,15 +1,9 @@
-<!--
-  BlockML Documentation — Expressions intro
+<!--BlockML Documentation — Expressions intro
 
-  FQN: org.blockml.bml.bmldocs.page.docs.ExpressionsIntro
--->
-<block
-  xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs.page.docs.ExpressionsIntro-->
+<page:ExpressionsIntro xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
   xmlns:docset="org.blockml.bml.bmldocs.docset"
   xmlns:dpage="org.blockml.bml.docgen.page"
@@ -20,48 +14,37 @@
   xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
-  <name>ExpressionsIntro</name>
-  <type>page:ExpressionsIntro</type>
-  <baseType>docset:BmlDocPage</baseType>
-  <is>A website intro to \${ } expressions</is>
-
+  <baseType>
+    docset:BmlDocPage
+  </baseType>
+  <is>
+    A website intro to \${ } expressions
+  </is>
   <documentation>
     Marker page: where \${ } appears, basic scope, and a few builtins — not the full
     expression grammar.
     content is a structural scaffold only; generate prose and examples from referenced core
     documentation (doc:Expressions).
   </documentation>
-
   <references>
     <see type="doc:Expressions" relation="Requires">
       Primary content source — expression language, scope, and builtins.
     </see>
   </references>
-
   <properties>
     <title override="true">
       <value>Expressions</value>
     </title>
-
     <purpose override="true">
-      <value>
-        Introduce \${ } expressions for dynamic member values.
-      </value>
+      <value>Introduce \${ } expressions for dynamic member values.</value>
     </purpose>
-
     <detailLevel override="true">
-      <value>
-        dlevel:Introductory
-      </value>
+      <value>dlevel:Introductory</value>
     </detailLevel>
-
     <pageType override="true">
-      <value>
-        ptype:Concept
-      </value>
+      <value>ptype:Concept</value>
     </pageType>
   </properties>
-
   <aggregations>
     <authoritativeSources override="true">
       <composition>
@@ -69,14 +52,9 @@
         <doc:CapabilitySemantics />
       </composition>
     </authoritativeSources>
-
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
-          <summary>
-            Understand that \${ } expressions supply dynamic member values and share the same
-            language used inside implementation embeds.
-          </summary>
           <authoritativeSources>
             <doc:Expressions />
             <doc:CapabilitySemantics />
@@ -84,23 +62,14 @@
         </sem:LearningObjective>
       </composition>
     </learningObjectives>
-
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
-          <summary>
-            The reader knows where \${ } expressions appear and can name scope, builtins,
-            and Capability calls as the main topics to remember.
-          </summary>
           <authoritativeSources>
             <doc:Expressions />
           </authoritativeSources>
         </sem:ReaderOutcome>
-
         <sem:ReaderOutcome>
-          <summary>
-            The reader knows to continue with embedded expressions for Capability bodies.
-          </summary>
           <authoritativeSources>
             <doc:Expressions />
             <doc:CapabilitySemantics />
@@ -108,14 +77,9 @@
         </sem:ReaderOutcome>
       </composition>
     </readerOutcomes>
-
     <scopes override="true">
       <composition>
         <sem:Scope>
-          <summary>
-            Introduce \${ } expressions for dynamic member values, including scope, builtins,
-            and Capability calls at a conceptual level.
-          </summary>
           <authoritativeSources>
             <doc:Expressions />
             <doc:CapabilitySemantics />
@@ -123,85 +87,43 @@
         </sem:Scope>
       </composition>
     </scopes>
-
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
-          <summary>
-            Full expression grammar.
-          </summary>
-          <reason>
-            This page introduces the role of expressions, not an exhaustive syntax reference.
-          </reason>
+          <reason>This page introduces the role of expressions, not an exhaustive syntax reference.</reason>
         </sem:Exclusion>
-
         <sem:Exclusion>
-          <summary>
-            Service binding catalogue.
-          </summary>
-          <reason>
-            Service bindings deserve dedicated reference material.
-          </reason>
+          <reason>Service bindings deserve dedicated reference material.</reason>
         </sem:Exclusion>
-
         <sem:Exclusion>
-          <summary>
-            Diagnostic codes.
-          </summary>
-          <reason>
-            Diagnostic identifiers belong on troubleshooting pages.
-          </reason>
+          <reason>Diagnostic identifiers belong on troubleshooting pages.</reason>
         </sem:Exclusion>
       </composition>
     </exclusions>
-
     <content override="true">
       <composition>
-        <!-- 1. Lead -->
-
-        <dpage:Section
-          heading="Dynamic values with \${ }"
-          purpose="Introduce the expression language for dynamic member values">
-
+        <!--1. Lead-->
+        <dpage:Section heading="Dynamic values with \${ }" purpose="Introduce the expression language for dynamic member values">
           <content>
-            <dpage:Paragraph
-              purpose="Introduce \${ } expressions for dynamic member values">
-
+            <dpage:Paragraph purpose="Introduce \${ } expressions for dynamic member values">
               <role>role:Lead</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                \${ } expressions provide dynamic values for Block members instead of
-                fixed literals.
-              </message>
-
+              <message>\${ } expressions provide dynamic values for Block members instead of
+fixed literals.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Expressions compute or derive a value in member context.
-                  </summary>
                   <authoritativeSources>
                     <doc:Expressions />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Expression results may come from scope, builtins, or Capability calls.
-                  </summary>
                   <authoritativeSources>
                     <doc:Expressions />
                     <doc:CapabilitySemantics />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    The language is an extended JSON form inside \${ } delimiters.
-                  </summary>
                   <authoritativeSources>
                     <doc:Expressions />
                   </authoritativeSources>
@@ -210,322 +132,151 @@
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 2. Where they appear -->
-
-        <dpage:Section
-          heading="Where expressions appear"
-          purpose="Explain member use sites for \${ } expressions">
-
+        <!--2. Where they appear-->
+        <dpage:Section heading="Where expressions appear" purpose="Explain member use sites for \${ } expressions">
           <content>
-            <dpage:Paragraph
-              purpose="Explain that derived, computed, or service-bound member values use \${ }">
-
+            <dpage:Paragraph purpose="Explain that derived, computed, or service-bound member values use \${ }">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                Member values that are derived, computed, or service-bound use \${ }
-                expressions rather than literal constants.
-              </message>
-
+              <message>Member values that are derived, computed, or service-bound use \${ }
+expressions rather than literal constants.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Properties and other members can take expression values.
-                  </summary>
                   <authoritativeSources>
                     <doc:Expressions />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Expressions evaluate in the scope of the member and its surrounding composition.
-                  </summary>
                   <authoritativeSources>
                     <doc:Expressions />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Authored expressions are stored as expression values; evaluation belongs
-                    to later processing, not to rewriting the model.
-                  </summary>
                   <authoritativeSources>
                     <doc:Expressions />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Full expression grammar and service binding catalogue.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 3. Shared language with embeds -->
-
-        <dpage:Section
-          heading="Shared language with embeds"
-          purpose="Connect \${ } member expressions to embeds in Capability bodies">
-
+        <!--3. Shared language with embeds-->
+        <dpage:Section heading="Shared language with embeds" purpose="Connect \${ } member expressions to embeds in Capability bodies">
           <content>
-            <dpage:Paragraph
-              purpose="Explain that the same language appears inside embeds in implementations">
-
+            <dpage:Paragraph purpose="Explain that the same language appears inside embeds in implementations">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                The same expression language appears inside embeds in Capability
-                implementation bodies, in a different host context.
-              </message>
-
+              <message>The same expression language appears inside embeds in Capability
+implementation bodies, in a different host context.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Member expressions and embeds share vocabulary and call semantics.
-                  </summary>
                   <authoritativeSources>
                     <doc:Expressions />
                     <doc:CapabilitySemantics />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    \${ } appears on member values; embeds appear inside implementation source.
-                  </summary>
                   <authoritativeSources>
                     <doc:Expressions />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
-
               <exclusions>
                 <sem:Exclusion>
-                  <summary>
-                    Embed delimiter details and host-language tutorials.
-                  </summary>
-                  <reason>
-                    Those details belong on the embedded-expressions page.
-                  </reason>
+                  <reason>Those details belong on the embedded-expressions page.</reason>
                 </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 4. Summary -->
-
-        <dpage:Section
-          heading="Scope, builtins, and calls"
-          purpose="Summarize the expression topics readers should retain">
-
+        <!--4. Summary-->
+        <dpage:Section heading="Scope, builtins, and calls" purpose="Summarize the expression topics readers should retain">
           <content>
-            <dpage:Paragraph
-              purpose="Prepare the reader for the expression-topics summary list">
-
+            <dpage:Paragraph purpose="Prepare the reader for the expression-topics summary list">
               <role>role:Transition</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                Scope, builtins, and Capability calls frame how expression values are resolved.
-              </message>
+              <message>Scope, builtins, and Capability calls frame how expression values are resolved.</message>
             </dpage:Paragraph>
-
-            <dpage:List
-              purpose="Present principal expression topics as a concise summary">
-
+            <dpage:List purpose="Present principal expression topics as a concise summary">
               <role>role:Summary</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                These topics frame how expression values are resolved.
-              </message>
-
+              <message>These topics frame how expression values are resolved.</message>
               <items>
-                <dpage:ListItem
-                  text="Scope"
-                  purpose="Explain scope rules for member and composition context">
-
-                  <message>
-                    Scope determines which names and values an expression can see in its
-                    member or composition context.
-                  </message>
+                <dpage:ListItem text="Scope" purpose="Explain scope rules for member and composition context">
+                  <message>Scope determines which names and values an expression can see in its
+member or composition context.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="Builtins"
-                  purpose="Explain builtin helpers available to authors">
-
-                  <message>
-                    Builtins provide common helpers authors can call from expressions.
-                  </message>
+                <dpage:ListItem text="Builtins" purpose="Explain builtin helpers available to authors">
+                  <message>Builtins provide common helpers authors can call from expressions.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="Calls"
-                  purpose="Explain Capability calls through FunctionMapping">
-
-                  <message>
-                    Capability calls let expressions invoke behaviour and receive results.
-                  </message>
+                <dpage:ListItem text="Calls" purpose="Explain Capability calls through FunctionMapping">
+                  <message>Capability calls let expressions invoke behaviour and receive results.</message>
                 </dpage:ListItem>
               </items>
             </dpage:List>
           </content>
         </dpage:Section>
-
-        <!-- 5. Example -->
-
-        <dpage:Section
-          heading="A property expression"
-          purpose="Connect the concept to a small property value example">
-
+        <!--5. Example-->
+        <dpage:Section heading="A property expression" purpose="Connect the concept to a small property value example">
           <content>
-            <dpage:Paragraph
-              purpose="Introduce a property whose value is an expression rather than a literal">
-
+            <dpage:Paragraph purpose="Introduce a property whose value is an expression rather than a literal">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                A property can take a \${ } expression as its value instead of a fixed literal.
-              </message>
-
+              <message>A property can take a \${ } expression as its value instead of a fixed literal.</message>
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Full grammar, service catalogues, and diagnostic codes.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
-
-            <dpage:CodeBlock
-              purpose="Illustrate a complete Block with a property expression value">
-
+            <dpage:CodeBlock purpose="Illustrate a complete Block with a property expression value">
               <role>role:Example</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                Show a complete root Block whose highlighted property value is a \${ }
-                expression rather than a literal.
-              </message>
-
+              <message>Show a complete root Block whose highlighted property value is a \${ }
+expression rather than a literal.</message>
               <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>
-                    Provide a complete Block so the expression sits on a real property in a
-                    valid definition.
-                  </summary>
-                </sem:SupportingPoint>
-
-                <sem:SupportingPoint>
-                  <summary>
-                    Highlight the \${ } delimiters and a small expression body such as a
-                    property reference or builtin call.
-                  </summary>
-                </sem:SupportingPoint>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Exhaustive builtin lists and service binding examples.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:CodeBlock>
-
-            <dpage:Paragraph
-              purpose="Interpret the \${ } property value in the example">
-
+            <dpage:Paragraph purpose="Interpret the \${ } property value in the example">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                In the example, the property's value is an authored \${ } expression: the
-                delimiters mark the expression language, and the body resolves through scope,
-                builtins, or calls rather than storing a fixed literal.
-              </message>
-
+              <message>In the example, the property's value is an authored \${ } expression: the
+delimiters mark the expression language, and the body resolves through scope,
+builtins, or calls rather than storing a fixed literal.</message>
               <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>
-                    Notice that the surrounding Block identity fields exist only to host the
-                    dynamic property value in a complete definition.
-                  </summary>
-                </sem:SupportingPoint>
-
-                <sem:SupportingPoint>
-                  <summary>
-                    The expression form on the member foreshadows the shared language used
-                    later inside Capability embeds.
-                  </summary>
-                </sem:SupportingPoint>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
               </supportingPoints>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 6. Navigation -->
-
-        <dpage:Section
-          heading="Continue with embedded expressions"
-          purpose="Direct the reader to embeds in Capability bodies">
-
+        <!--6. Navigation-->
+        <dpage:Section heading="Continue with embedded expressions" purpose="Direct the reader to embeds in Capability bodies">
           <content>
-            <dpage:Navigation
-              purpose="Continue the expression learning sequence">
-
+            <dpage:Navigation purpose="Continue the expression learning sequence">
               <title>Next</title>
-
               <items>
-                <dpage:NavigationItem
-                  label="Embedded expressions"
-                  summary="See how the same language appears inside Capability implementation bodies.">
-
-                  <target>
-                    page:EmbeddedExpressionsIntro
-                  </target>
+                <dpage:NavigationItem label="Embedded expressions" summary="See how the same language appears inside Capability implementation bodies.">
+                  <target>page:EmbeddedExpressionsIntro</target>
                 </dpage:NavigationItem>
               </items>
             </dpage:Navigation>
           </content>
         </dpage:Section>
-
       </composition>
     </content>
   </aggregations>
-
-</block>
+</page:ExpressionsIntro>

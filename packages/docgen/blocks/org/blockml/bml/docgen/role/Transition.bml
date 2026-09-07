@@ -1,35 +1,29 @@
-<!--
-  BlockML DocGen — Transition content role
+<!--BlockML DocGen — Transition content role
 
-  FQN: org.blockml.bml.docgen.role.Transition
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.role.Transition-->
+<role:Transition xmlns="http://blockml.org/bml"
   xmlns:role="org.blockml.bml.docgen.role"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:level="org.blockml.bml.docgen.level"
   xmlns:weight="org.blockml.bml.docgen.weight">
 
-  <name>Transition</name>
-  <type>role:Transition</type>
-  <baseType>dcore:ContentRole</baseType>
-  <is>A content role that bridges two sections or thought steps</is>
-
+  <baseType>
+    dcore:ContentRole
+  </baseType>
+  <is>
+    A content role that bridges two sections or thought steps
+  </is>
   <documentation>
     Bridges two sections or thought steps. Carries little subject matter of its own; helps
     the reader see why the next topic follows. Example: with the BML/BOM distinction
     established, the next step is to look at the principles BlockML is designed around.
-
+    
     Distinguishes from Lead (opens a unit) — Transition connects within an ongoing
     narrative.
-
+    
     Typical rules: short; no new concepts; clear link between what came before and what
     follows.
   </documentation>
-
   <references>
     <see type="dcore:ContentRole" relation="Extends">
       Rhetorical / content-role branch root.
@@ -38,7 +32,6 @@
       Lead opens a page or section; Transition connects within the narrative.
     </see>
   </references>
-
   <properties>
     <displayName override="true">
       <value>Transition</value>
@@ -53,5 +46,4 @@
       <value>false</value>
     </allowsNewConcepts>
   </properties>
-
-</block>
+</role:Transition>

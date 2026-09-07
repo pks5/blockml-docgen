@@ -1,15 +1,9 @@
-<!--
-  BlockML Documentation — Everything is a Block
+<!--BlockML Documentation — Everything is a Block
 
-  FQN: org.blockml.bml.bmldocs.page.docs.EverythingIsABlockPage
--->
-<block
-  xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs.page.docs.EverythingIsABlockPage-->
+<page:EverythingIsABlockPage xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
   xmlns:docset="org.blockml.bml.bmldocs.docset"
   xmlns:dpage="org.blockml.bml.docgen.page"
@@ -20,49 +14,38 @@
   xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
-  <name>EverythingIsABlockPage</name>
-  <type>page:EverythingIsABlockPage</type>
-  <baseType>docset:BmlDocPage</baseType>
-  <is>A website page for the everything-is-a-Block idea</is>
-
+  <baseType>
+    docset:BmlDocPage
+  </baseType>
+  <is>
+    A website page for the everything-is-a-Block idea
+  </is>
   <documentation>
     Marker page: one-idea intro to BlockML's central principle — one root, one registry, one
     parser. Keep the metaphor light; deep ontology stays in core documentation.
-
+    
     content is a structural scaffold only; generate prose and examples from referenced core
     documentation (doc:EverythingIsABlock).
   </documentation>
-
   <references>
     <see type="doc:EverythingIsABlock" relation="Requires">
       Primary content source — the central ontological principle.
     </see>
   </references>
-
   <properties>
     <title override="true">
       <value>Everything is a Block</value>
     </title>
-
     <purpose override="true">
-      <value>
-        Establish Block as the universal abstraction of a World's grammar.
-      </value>
+      <value>Establish Block as the universal abstraction of a World's grammar.</value>
     </purpose>
-
     <detailLevel override="true">
-      <value>
-        dlevel:Introductory
-      </value>
+      <value>dlevel:Introductory</value>
     </detailLevel>
-
     <pageType override="true">
-      <value>
-        ptype:Concept
-      </value>
+      <value>ptype:Concept</value>
     </pageType>
   </properties>
-
   <aggregations>
     <authoritativeSources override="true">
       <composition>
@@ -71,13 +54,9 @@
         <doc:WOTFoundation />
       </composition>
     </authoritativeSources>
-
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
-          <summary>
-            Recognize Block as the single universal abstraction behind a World's grammar.
-          </summary>
           <authoritativeSources>
             <doc:EverythingIsABlock />
             <core:Block />
@@ -86,23 +65,15 @@
         </sem:LearningObjective>
       </composition>
     </learningObjectives>
-
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
-          <summary>
-            The reader can state that every construct in a World inherits from one Block root.
-          </summary>
           <authoritativeSources>
             <doc:EverythingIsABlock />
             <core:Block />
           </authoritativeSources>
         </sem:ReaderOutcome>
-
         <sem:ReaderOutcome>
-          <summary>
-            The reader can explain why BlockML rejects parallel ontologies beside that root.
-          </summary>
           <authoritativeSources>
             <doc:EverythingIsABlock />
             <doc:WOTFoundation />
@@ -110,14 +81,9 @@
         </sem:ReaderOutcome>
       </composition>
     </readerOutcomes>
-
     <scopes override="true">
       <composition>
         <sem:Scope>
-          <summary>
-            Introduce the Everything-is-a-Block principle, the single-root grammar path, and
-            what kinds of constructs count as Blocks.
-          </summary>
           <authoritativeSources>
             <doc:EverythingIsABlock />
             <core:Block />
@@ -126,95 +92,46 @@
         </sem:Scope>
       </composition>
     </scopes>
-
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
-          <summary>
-            Compiler internal representations.
-          </summary>
-          <reason>
-            This page establishes the conceptual ontology, not compiler storage.
-          </reason>
+          <reason>This page establishes the conceptual ontology, not compiler storage.</reason>
         </sem:Exclusion>
-
         <sem:Exclusion>
-          <summary>
-            Parallel ontology designs.
-          </summary>
-          <reason>
-            The page rejects parallel ontologies; it does not explore alternative designs.
-          </reason>
+          <reason>The page rejects parallel ontologies; it does not explore alternative designs.</reason>
         </sem:Exclusion>
-
         <sem:Exclusion>
-          <summary>
-            Runtime class hierarchies.
-          </summary>
-          <reason>
-            Runtime mapping belongs to later implementation-oriented pages.
-          </reason>
+          <reason>Runtime mapping belongs to later implementation-oriented pages.</reason>
         </sem:Exclusion>
-
         <sem:Exclusion>
-          <summary>
-            Package-by-package inventory.
-          </summary>
-          <reason>
-            Cataloguing packages would bury the single-root message.
-          </reason>
+          <reason>Cataloguing packages would bury the single-root message.</reason>
         </sem:Exclusion>
       </composition>
     </exclusions>
-
     <content override="true">
       <composition>
-        <!-- 1. Lead -->
-
-        <dpage:Section
-          heading="One grammar for a World"
-          purpose="Give readers an immediate orientation to the universal Block abstraction">
-
+        <!--1. Lead-->
+        <dpage:Section heading="One grammar for a World" purpose="Give readers an immediate orientation to the universal Block abstraction">
           <content>
-            <dpage:Paragraph
-              purpose="Introduce Everything-is-a-Block as the unifying idea">
-
+            <dpage:Paragraph purpose="Introduce Everything-is-a-Block as the unifying idea">
               <role>role:Lead</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                In BlockML, every construct in a World is a Block under one shared grammar.
-              </message>
-
+              <message>In BlockML, every construct in a World is a Block under one shared grammar.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Types, domain models, behaviour, and documentation share that same root.
-                  </summary>
                   <authoritativeSources>
                     <doc:EverythingIsABlock />
                     <core:Block />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    One parser and one registry path cover the whole World because membership
-                    is inheritance from that root.
-                  </summary>
                   <authoritativeSources>
                     <doc:EverythingIsABlock />
                     <doc:WOTFoundation />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Branch differences stay inside the tree; they are not separate ontologies.
-                  </summary>
                   <authoritativeSources>
                     <doc:EverythingIsABlock />
                   </authoritativeSources>
@@ -223,55 +140,29 @@
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 2. One root path -->
-
-        <dpage:Section
-          heading="One root, one parser, one registry path"
-          purpose="Explain the single-root grammar path and reject parallel ontologies">
-
+        <!--2. One root path-->
+        <dpage:Section heading="One root, one parser, one registry path" purpose="Explain the single-root grammar path and reject parallel ontologies">
           <content>
-
-            <dpage:Paragraph
-              purpose="Explain the single root and baseType chain">
-
+            <dpage:Paragraph purpose="Explain the single root and baseType chain">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                Every Block descends from one root through an explicit baseType chain, so one
-                parser and one registry path cover the whole World.
-              </message>
-
+              <message>Every Block descends from one root through an explicit baseType chain, so one
+parser and one registry path cover the whole World.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Membership in the grammar is expressed by inheriting from the Block root.
-                  </summary>
                   <authoritativeSources>
                     <doc:EverythingIsABlock />
                     <core:Block />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    baseType links each Block to its parent until the chain reaches the root.
-                  </summary>
                   <authoritativeSources>
                     <core:Block />
                     <doc:EverythingIsABlock />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    A single registry path follows that chain rather than consulting separate
-                    kind-specific registries.
-                  </summary>
                   <authoritativeSources>
                     <doc:EverythingIsABlock />
                     <doc:WOTFoundation />
@@ -279,381 +170,174 @@
                 </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
-
-            <dpage:Paragraph
-              purpose="Contrast with parallel ontologies that BlockML avoids">
-
+            <dpage:Paragraph purpose="Contrast with parallel ontologies that BlockML avoids">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                BlockML does not maintain a second ontology beside Blocks; branch differences
-                are modeled inside the same tree.
-              </message>
-
+              <message>BlockML does not maintain a second ontology beside Blocks; branch differences
+are modeled inside the same tree.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    ValueTypes, Languages, and domain Blocks are sibling branches, not rival
-                    roots.
-                  </summary>
                   <authoritativeSources>
                     <doc:EverythingIsABlock />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Specialization happens by extending the shared root, never by inventing a
-                    parallel kind hierarchy.
-                  </summary>
                   <authoritativeSources>
                     <doc:EverythingIsABlock />
                     <doc:WOTFoundation />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Designs that introduce parallel root types or separate registries.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
-
           </content>
         </dpage:Section>
-
-        <!-- 3. What counts as a Block -->
-
-        <dpage:Section
-          heading="What counts as a Block"
-          purpose="Summarize the kinds of constructs that belong to the grammar">
-
+        <!--3. What counts as a Block-->
+        <dpage:Section heading="What counts as a Block" purpose="Summarize the kinds of constructs that belong to the grammar">
           <content>
-
-            <dpage:Paragraph
-              purpose="Prepare the reader for the kinds of constructs that count as Blocks">
-
+            <dpage:Paragraph purpose="Prepare the reader for the kinds of constructs that count as Blocks">
               <role>role:Transition</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                Once the single root is clear, the next question is which everyday constructs
-                sit on that tree.
-              </message>
+              <message>Once the single root is clear, the next question is which everyday constructs
+sit on that tree.</message>
             </dpage:Paragraph>
-
-            <dpage:List
-              purpose="Examples of Block kinds in the grammar">
-
+            <dpage:List purpose="Examples of Block kinds in the grammar">
               <role>role:Summary</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                The same Block abstraction covers structure, behaviour, and documentation.
-              </message>
-
+              <message>The same Block abstraction covers structure, behaviour, and documentation.</message>
               <items>
-                <dpage:ListItem
-                  text="Types and domain"
-                  purpose="Name structural Blocks such as ValueTypes and domain models">
-
-                  <message>
-                    ValueTypes and domain Blocks are ordinary members of the grammar.
-                  </message>
+                <dpage:ListItem text="Types and domain" purpose="Name structural Blocks such as ValueTypes and domain models">
+                  <message>ValueTypes and domain Blocks are ordinary members of the grammar.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="Behaviour and targets"
-                  purpose="Name behavioural Blocks such as Languages, Services, and Capabilities">
-
-                  <message>
-                    Languages, Services, and Capabilities are Blocks as well.
-                  </message>
+                <dpage:ListItem text="Behaviour and targets" purpose="Name behavioural Blocks such as Languages, Services, and Capabilities">
+                  <message>Languages, Services, and Capabilities are Blocks as well.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="Docs and tasks"
-                  purpose="Name documentation and task Blocks as first-class citizens">
-
-                  <message>
-                    Documentation and tasks use the same Block model, not a side channel.
-                  </message>
+                <dpage:ListItem text="Docs and tasks" purpose="Name documentation and task Blocks as first-class citizens">
+                  <message>Documentation and tasks use the same Block model, not a side channel.</message>
                 </dpage:ListItem>
               </items>
             </dpage:List>
-
           </content>
         </dpage:Section>
-
-        <!-- 4. Ontology sketch -->
-
-        <dpage:Section
-          heading="Ontology sketch"
-          purpose="Connect the principle to a tiny baseType chain and optional diagram">
-
+        <!--4. Ontology sketch-->
+        <dpage:Section heading="Ontology sketch" purpose="Connect the principle to a tiny baseType chain and optional diagram">
           <content>
-
-            <dpage:Paragraph
-              purpose="Show how a small branch inherits from Block through baseType">
-
+            <dpage:Paragraph purpose="Show how a small branch inherits from Block through baseType">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                A short baseType chain is enough to see how a branch joins the single root.
-              </message>
-
+              <message>A short baseType chain is enough to see how a branch joins the single root.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Each step names its parent until the chain reaches the Block root.
-                  </summary>
                   <authoritativeSources>
                     <core:Block />
                     <doc:EverythingIsABlock />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
-                <sem:SupportingPoint>
-                  <summary>
-                    The sketch stays tiny so the inheritance path remains the only teaching point.
-                  </summary>
-                </sem:SupportingPoint>
+                <sem:SupportingPoint />
               </supportingPoints>
             </dpage:Paragraph>
-
-            <dpage:CodeBlock
-              purpose="Tiny baseType chain illustrating branch membership">
-
+            <dpage:CodeBlock purpose="Tiny baseType chain illustrating branch membership">
               <role>role:Example</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                Each step names its parent until the chain reaches the Block root.
-              </message>
-
+              <message>Each step names its parent until the chain reaches the Block root.</message>
               <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>
-                    Highlight successive baseType links on a short branch that ends at Block.
-                  </summary>
-                </sem:SupportingPoint>
-
-                <sem:SupportingPoint>
-                  <summary>
-                    Keep member bodies empty so the inheritance chain is the highlighted section.
-                  </summary>
-                </sem:SupportingPoint>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Full package trees and optional member declarations.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:CodeBlock>
-
-            <dpage:Paragraph
-              purpose="Interpret the baseType chain shown in the ontology sketch">
-
+            <dpage:Paragraph purpose="Interpret the baseType chain shown in the ontology sketch">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                In the sketch, each Block's baseType points to its parent; following those
-                links reaches the shared Block root and proves the branch is inside one grammar.
-              </message>
-
+              <message>In the sketch, each Block's baseType points to its parent; following those
+links reaches the shared Block root and proves the branch is inside one grammar.</message>
               <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>
-                    Notice that sibling branches would each climb to the same root rather than
-                    to different ontology roots.
-                  </summary>
-                </sem:SupportingPoint>
-
-                <sem:SupportingPoint>
-                  <summary>
-                    The example shows membership by inheritance, not by a separate registry
-                    entry per kind.
-                  </summary>
-                </sem:SupportingPoint>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
               </supportingPoints>
             </dpage:Paragraph>
-
-            <dpage:Image
-              purpose="Diagram of Block root with sibling branches (ValueType, Language, domain) — only if it clarifies the ontology">
-
+            <dpage:Image purpose="Diagram of Block root with sibling branches (ValueType, Language, domain) — only if it clarifies the ontology">
               <role>role:Example</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                Sibling branches share one root; they are not separate ontologies.
-              </message>
+              <message>Sibling branches share one root; they are not separate ontologies.</message>
             </dpage:Image>
-
           </content>
         </dpage:Section>
-
-        <!-- 5. Modeling consequences -->
-
-        <dpage:Section
-          heading="What universality implies for modeling"
-          purpose="Spell out domain-modeling consequences of the single-root principle">
-
+        <!--5. Modeling consequences-->
+        <dpage:Section heading="What universality implies for modeling" purpose="Spell out domain-modeling consequences of the single-root principle">
           <content>
-
-            <dpage:Paragraph
-              purpose="Explain how the single-root grammar shapes domain modeling choices">
-
+            <dpage:Paragraph purpose="Explain how the single-root grammar shapes domain modeling choices">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                Universality means domain concepts join the same grammar as types, behaviour,
-                and documentation — they do not sit beside it in a private ontology.
-              </message>
-
+              <message>Universality means domain concepts join the same grammar as types, behaviour,
+and documentation — they do not sit beside it in a private ontology.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Model a new domain idea as a Block that extends an existing parent, so it
-                    inherits membership in the single root.
-                  </summary>
                   <authoritativeSources>
                     <doc:EverythingIsABlock />
                     <core:Block />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Prefer specialization inside the tree over inventing a parallel kind that
-                    tools would have to treat differently.
-                  </summary>
                   <authoritativeSources>
                     <doc:EverythingIsABlock />
                     <doc:WOTFoundation />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Documentation and tasks stay first-class Blocks, so domain models do not
-                    need a side channel for meaning that the grammar already covers.
-                  </summary>
                   <authoritativeSources>
                     <doc:EverythingIsABlock />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Package-by-package inventories and runtime class hierarchies.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
-
-            <dpage:List
-              purpose="Summarize modeling implications of one shared root">
-
+            <dpage:List purpose="Summarize modeling implications of one shared root">
               <role>role:Summary</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                These implications follow directly from one root, one parser, and one registry path.
-              </message>
-
+              <message>These implications follow directly from one root, one parser, and one registry path.</message>
               <items>
-                <dpage:ListItem
-                  text="Extend, do not fork"
-                  purpose="Specialize by baseType rather than a second ontology">
-
-                  <message>
-                    Introduce domain meaning by extending the shared root, not by forking a
-                    second grammar.
-                  </message>
+                <dpage:ListItem text="Extend, do not fork" purpose="Specialize by baseType rather than a second ontology">
+                  <message>Introduce domain meaning by extending the shared root, not by forking a
+second grammar.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="Same tools apply"
-                  purpose="One registry path covers domain Blocks too">
-
-                  <message>
-                    Domain Blocks reuse the same authoring and registry path as ValueTypes and
-                    Languages.
-                  </message>
+                <dpage:ListItem text="Same tools apply" purpose="One registry path covers domain Blocks too">
+                  <message>Domain Blocks reuse the same authoring and registry path as ValueTypes and
+Languages.</message>
                 </dpage:ListItem>
               </items>
             </dpage:List>
-
           </content>
         </dpage:Section>
-
-        <!-- 6. Continuation -->
-
-        <dpage:Section
-          heading="Continue with definitions and instances"
-          purpose="Direct the reader to the next conceptual page">
-
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with definitions and instances" purpose="Direct the reader to the next conceptual page">
           <content>
-            <dpage:Navigation
-              purpose="Continue the introductory learning sequence">
-
+            <dpage:Navigation purpose="Continue the introductory learning sequence">
               <title>Next</title>
-
               <items>
-                <dpage:NavigationItem
-                  label="Definition and instance"
-                  summary="Learn how Block definitions relate to Block instances.">
-
-                  <target>
-                    page:DefinitionAndInstance
-                  </target>
+                <dpage:NavigationItem label="Definition and instance" summary="Learn how Block definitions relate to Block instances.">
+                  <target>page:DefinitionAndInstance</target>
                 </dpage:NavigationItem>
               </items>
             </dpage:Navigation>
           </content>
         </dpage:Section>
-
       </composition>
     </content>
   </aggregations>
-
-</block>
+</page:EverythingIsABlockPage>

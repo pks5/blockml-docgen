@@ -1,36 +1,30 @@
-<!--
-  BlockML DocGen — What the documentation deliberately omits
+<!--BlockML DocGen — What the documentation deliberately omits
 
-  FQN: org.blockml.bml.docgen.semantic.Exclusion
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.semantic.Exclusion-->
+<sem:Exclusion xmlns="http://blockml.org/bml"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:core="org.blockml.bml.core">
 
-  <name>Exclusion</name>
-  <type>sem:Exclusion</type>
-  <baseType>dcore:SemanticAnnotation</baseType>
-  <is>What the documentation deliberately omits</is>
-
+  <baseType>
+    dcore:SemanticAnnotation
+  </baseType>
+  <is>
+    What the documentation deliberately omits
+  </is>
   <documentation>
     Marks topics, features, or depth levels that are out of scope — complementary to Scope for clear editorial boundaries.
   </documentation>
-
   <references>
     <see type="dcore:SemanticAnnotation" relation="Extends">
       Annotative semantic metadata branch.
     </see>
   </references>
-
   <properties>
-    <reason type="Text">
-      <documentation>Why this topic, feature, or depth is deliberately omitted.</documentation>
+    <reason type="org.blockml.bml.type.Text">
+      <documentation>
+        Why this topic, feature, or depth is deliberately omitted.
+      </documentation>
     </reason>
   </properties>
-
-</block>
+</sem:Exclusion>

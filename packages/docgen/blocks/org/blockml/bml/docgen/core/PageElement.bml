@@ -1,29 +1,26 @@
-<!--
-  BlockML DocGen — abstract page content element
+<!--BlockML DocGen — abstract page content element
 
-  FQN: org.blockml.bml.docgen.core.PageElement
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.core.PageElement-->
+<dcore:PageElement xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:page="org.blockml.bml.docgen.page"
   xmlns:core="org.blockml.bml.core">
 
-  <name>PageElement</name>
-  <type>dcore:PageElement</type>
-  <baseType>dcore:DocElement</baseType>
-  <is>A documentation page content element</is>
-
+  <baseType>
+    dcore:DocElement
+  </baseType>
+  <is>
+    A documentation page content element
+  </is>
   <documentation>
     Abstract base for all documentation page content elements — block-level and inline. Concrete
     specializations live in org.blockml.bml.docgen.page (BlockElement, InlineElement, ListItem,
     Navigation, …). purpose describes why the element exists for the documentation renderer —
     it is renderer-facing metadata, not reader-facing page copy.
   </documentation>
-
+  <abstract>
+    true
+  </abstract>
   <references>
     <see type="dcore:DocElement" relation="Extends">
       Semantic base for all docgen domain Blocks (except Library / README).
@@ -38,14 +35,12 @@
       In-page navigation list of page links.
     </see>
   </references>
-
-  <abstract>true</abstract>
-
   <properties>
-    <purpose type="Text">
-      <documentation>Purpose of this element for the documentation renderer — why it is present
-        and what it should accomplish. Not reader-facing page copy.</documentation>
+    <purpose type="org.blockml.bml.type.Text">
+      <documentation>
+        Purpose of this element for the documentation renderer — why it is present
+        and what it should accomplish. Not reader-facing page copy.
+      </documentation>
     </purpose>
   </properties>
-
-</block>
+</dcore:PageElement>

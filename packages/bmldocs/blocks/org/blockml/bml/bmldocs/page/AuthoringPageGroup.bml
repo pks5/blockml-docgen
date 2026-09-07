@@ -1,28 +1,22 @@
-<!--
-  BlockML Documentation — Authoring page group
+<!--BlockML Documentation — Authoring page group
 
-  FQN: org.blockml.bml.bmldocs.page.AuthoringPageGroup
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.bmldocs.page.AuthoringPageGroup-->
+<pgroup:AuthoringPageGroup xmlns="http://blockml.org/bml"
   xmlns:pgroup="org.blockml.bml.bmldocs.page"
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
   xmlns:dcore="org.blockml.bml.docgen.core">
 
-  <name>AuthoringPageGroup</name>
-  <type>pgroup:AuthoringPageGroup</type>
-  <baseType>dcore:PageGroup</baseType>
-  <is>A documentation page group for Authoring</is>
-
+  <baseType>
+    dcore:PageGroup
+  </baseType>
+  <is>
+    A documentation page group for Authoring
+  </is>
   <documentation>
     Page group corresponding to the “Authoring” TOC section on blockml.org. pages lists the
     section’s leaf NavigationItem targets as page type references. parentGroup is
     DocsPageGroup.
   </documentation>
-
   <references>
     <see type="dcore:PageGroup" relation="Extends">
       Docgen page group base.
@@ -31,7 +25,6 @@
       Parent Documentation root page group.
     </see>
   </references>
-
   <properties>
     <title override="true">
       <value>Authoring</value>
@@ -40,7 +33,6 @@
       <value>pgroup:DocsPageGroup</value>
     </parentGroup>
   </properties>
-
   <aggregations>
     <pages override="true">
       <composition>
@@ -52,5 +44,4 @@
       </composition>
     </pages>
   </aggregations>
-
-</block>
+</pgroup:AuthoringPageGroup>

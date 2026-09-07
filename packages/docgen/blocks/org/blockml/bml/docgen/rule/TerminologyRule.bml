@@ -1,32 +1,25 @@
-<!--
-  BlockML DocGen — a documentation terminology rule
+<!--BlockML DocGen — a documentation terminology rule
 
-  FQN: org.blockml.bml.docgen.rule.TerminologyRule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.rule.TerminologyRule-->
+<rule:TerminologyRule xmlns="http://blockml.org/bml"
   xmlns:rule="org.blockml.bml.docgen.rule"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:core="org.blockml.bml.core">
 
-  <name>TerminologyRule</name>
-  <type>rule:TerminologyRule</type>
-  <baseType>dcore:Rule</baseType>
-  <is>A documentation terminology rule</is>
-
+  <baseType>
+    dcore:Rule
+  </baseType>
+  <is>
+    A documentation terminology rule
+  </is>
   <documentation>
     Defines requirements for the consistent use of terminology throughout the documentation. Terminology Rules govern names, technical terms, abbreviations, synonyms, and preferred vocabulary to ensure that identical concepts are described using consistent language. They focus on which words are used, not on the underlying concepts themselves.
-
+    
     Distinction in one sentence: Which terms are used?
   </documentation>
-
   <references>
     <see type="dcore:Rule" relation="Extends">
       Documentation-generation rule branch under DocElement.
     </see>
   </references>
-
-</block>
+</rule:TerminologyRule>

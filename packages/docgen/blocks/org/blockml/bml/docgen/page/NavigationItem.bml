@@ -1,28 +1,22 @@
-<!--
-  BlockML DocGen — navigation item linking to a page
+<!--BlockML DocGen — navigation item linking to a page
 
-  FQN: org.blockml.bml.docgen.page.NavigationItem
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.page.NavigationItem-->
+<page:NavigationItem xmlns="http://blockml.org/bml"
   xmlns:page="org.blockml.bml.docgen.page"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:type="org.blockml.bml.type">
 
-  <name>NavigationItem</name>
-  <type>page:NavigationItem</type>
-  <baseType>dcore:DocElement</baseType>
-  <is>A single navigation link to a documentation page</is>
-
+  <baseType>
+    dcore:DocElement
+  </baseType>
+  <is>
+    A single navigation link to a documentation page
+  </is>
   <documentation>
     One entry in a Navigation list — reader-facing label and summary plus a type reference to the
     target Page. items nests further NavigationItems for recursive in-page navigation trees
     (sections with children alongside leaf links).
   </documentation>
-
   <references>
     <see type="dcore:DocElement" relation="Extends">
       Semantic base for all docgen domain Blocks (except Library / README).
@@ -34,24 +28,29 @@
       Target page via target TypeReference property.
     </see>
   </references>
-
   <properties>
-    <label type="Text">
-      <documentation>Reader-facing label of this navigation item.</documentation>
+    <label type="type:Text">
+      <documentation>
+        Reader-facing label of this navigation item.
+      </documentation>
     </label>
-    <summary type="Text">
-      <documentation>Short summary of the target page for this navigation item.</documentation>
+    <summary type="type:Text">
+      <documentation>
+        Short summary of the target page for this navigation item.
+      </documentation>
     </summary>
     <target type="type:TypeReference(dcore:Page)">
-      <documentation>Type reference to the documentation page this item links to.</documentation>
+      <documentation>
+        Type reference to the documentation page this item links to.
+      </documentation>
     </target>
   </properties>
-
   <aggregations>
     <items type="page:NavigationItem[]">
-      <documentation>Child navigation items — recursive nesting for hierarchical in-page
-        navigation trees.</documentation>
+      <documentation>
+        Child navigation items — recursive nesting for hierarchical in-page
+        navigation trees.
+      </documentation>
     </items>
   </aggregations>
-
-</block>
+</page:NavigationItem>

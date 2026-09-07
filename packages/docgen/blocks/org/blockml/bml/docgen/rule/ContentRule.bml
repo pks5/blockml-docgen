@@ -1,33 +1,25 @@
-<!--
-  BlockML DocGen — a documentation content rule
+<!--BlockML DocGen — a documentation content rule
 
-  FQN: org.blockml.bml.docgen.rule.ContentRule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.rule.ContentRule-->
+<rule:ContentRule xmlns="http://blockml.org/bml"
   xmlns:rule="org.blockml.bml.docgen.rule"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:core="org.blockml.bml.core">
 
-  <name>ContentRule</name>
-  <type>rule:ContentRule</type>
-  <baseType>dcore:Rule</baseType>
-  <is>A documentation content rule</is>
-
+  <baseType>
+    dcore:Rule
+  </baseType>
+  <is>
+    A documentation content rule
+  </is>
   <documentation>
     Defines requirements for the semantic content of documentation. Content Rules govern what information should be communicated, which topics should be covered, how concepts should be explained, and what information should or should not appear. They focus on what is communicated, independent of structure or writing style.
-
+    
     Distinction in one sentence: What information is communicated?
   </documentation>
-
   <references>
     <see type="dcore:Rule" relation="Extends">
       Documentation-generation rule branch under DocElement.
     </see>
   </references>
-
-
-</block>
+</rule:ContentRule>

@@ -1,34 +1,28 @@
-<!--
-  BlockML DocGen — Example page type
+<!--BlockML DocGen — Example page type
 
-  FQN: org.blockml.bml.docgen.pagetype.Example
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.pagetype.Example-->
+<ptype:Example xmlns="http://blockml.org/bml"
   xmlns:ptype="org.blockml.bml.docgen.pagetype"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:role="org.blockml.bml.docgen.role"
   xmlns:level="org.blockml.bml.docgen.level">
 
-  <name>Example</name>
-  <type>ptype:Example</type>
-  <baseType>dcore:PageType</baseType>
-  <is>A page type that demonstrates concepts through concrete examples</is>
-
+  <baseType>
+    dcore:PageType
+  </baseType>
+  <is>
+    A page type that demonstrates concepts through concrete examples
+  </is>
   <documentation>
     Demonstrates concepts through concrete examples. Primarily illustrates existing concepts
     rather than introducing new ones.
-
+    
     Typical characteristics: practical; concrete; reusable; explanatory.
-
+    
     Examples: Minimal Block; Machine example; Complete Library example.
-
+    
     Core question: What does this look like concretely?
   </documentation>
-
   <references>
     <see type="dcore:PageType" relation="Extends">
       Editorial page-kind branch root.
@@ -43,7 +37,6 @@
       Concept defines the idea; Example shows it applied.
     </see>
   </references>
-
   <properties>
     <displayName override="true">
       <value>Example</value>
@@ -55,7 +48,6 @@
       <value>2</value>
     </maxPrimaryConcepts>
   </properties>
-
   <aggregations>
     <recommendedRoles override="true">
       <composition>
@@ -70,5 +62,4 @@
       </composition>
     </forbiddenRoles>
   </aggregations>
-
-</block>
+</ptype:Example>

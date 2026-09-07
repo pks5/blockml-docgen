@@ -1,39 +1,32 @@
-<!--
-  BlockML DocGen — a documentation quality criterion
+<!--BlockML DocGen — a documentation quality criterion
 
-  FQN: org.blockml.bml.docgen.core.QualityCriterion
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.core.QualityCriterion-->
+<dcore:QualityCriterion xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:core="org.blockml.bml.core">
 
-  <name>QualityCriterion</name>
-  <type>dcore:QualityCriterion</type>
-  <baseType>dcore:DocElement</baseType>
-  <is>A quality criterion for documentation</is>
-
+  <baseType>
+    dcore:DocElement
+  </baseType>
+  <is>
+    A quality criterion for documentation
+  </is>
   <documentation>
     Defines a criterion used to judge documentation quality (clarity, completeness, accuracy,
     consistency, …). Useful for generation checks and editorial standards — not a page layout
     element.
   </documentation>
-
   <references>
     <see type="dcore:DocElement" relation="Extends">
       Semantic base for all docgen domain Blocks (except Library / README).
     </see>
   </references>
-
-
   <properties>
-    <displayName type="Text">
-      <documentation>Stable human-readable display name of this definitional semantic element (for
-        catalogue identity, linking, and generation).</documentation>
+    <displayName type="org.blockml.bml.type.Text">
+      <documentation>
+        Stable human-readable display name of this definitional semantic element (for
+        catalogue identity, linking, and generation).
+      </documentation>
     </displayName>
   </properties>
-
-</block>
+</dcore:QualityCriterion>

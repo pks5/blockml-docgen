@@ -1,30 +1,24 @@
-<!--
-  BlockML Documentation — documentation table of contents
+<!--BlockML Documentation — documentation table of contents
 
-  FQN: org.blockml.bml.bmldocs.page.docs.TableOfContents
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.bmldocs.page.docs.TableOfContents-->
+<page:TableOfContents xmlns="http://blockml.org/bml"
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
   xmlns:docset="org.blockml.bml.bmldocs.docset"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:ptype="org.blockml.bml.docgen.pagetype"
   xmlns:dlevel="org.blockml.bml.docgen.level">
 
-  <name>TableOfContents</name>
-  <type>page:TableOfContents</type>
-  <baseType>docset:BmlDocPage</baseType>
-  <is>The blockml.org documentation table of contents</is>
-
+  <baseType>
+    docset:BmlDocPage
+  </baseType>
+  <is>
+    The blockml.org documentation table of contents
+  </is>
   <documentation>
     DocPage that presents the site documentation menu as a Navigation tree of NavigationItems.
     Routing keys and paths live on DocSet.pageMapping (BmlDocSet), not on this page.
     Section nodes carry only label and nested items; leaf nodes set target to a page marker.
   </documentation>
-
   <references>
     <see type="docset:BmlDocPage" relation="Extends">
       bmldocs DocPage base bound to BmlDocSet.
@@ -36,40 +30,26 @@
       Recursive menu nodes (sections and leaf links).
     </see>
   </references>
-
   <properties>
     <title override="true">
       <value>Documentation</value>
     </title>
-
     <purpose override="true">
-      <value>
-        Present the structured documentation menu so readers can find entry points without
-        introducing new conceptual content.
-      </value>
+      <value>Present the structured documentation menu so readers can find entry points without
+introducing new conceptual content.</value>
     </purpose>
-
     <detailLevel override="true">
-      <value>
-        dlevel:Overview
-      </value>
+      <value>dlevel:Overview</value>
     </detailLevel>
-
     <pageType override="true">
-      <value>
-        ptype:Index
-      </value>
+      <value>ptype:Index</value>
     </pageType>
   </properties>
-
   <aggregations>
     <content override="true">
       <composition>
-        <dpage:Navigation
-          purpose="Site documentation menu for blockml.org">
-
+        <dpage:Navigation purpose="Site documentation menu for blockml.org">
           <title>Contents</title>
-
           <items>
             <dpage:NavigationItem label="Getting Started">
               <items>
@@ -78,7 +58,6 @@
                 <dpage:NavigationItem label="Anatomy of a .bml file" target="page:FileAnatomy" />
               </items>
             </dpage:NavigationItem>
-
             <dpage:NavigationItem label="Core Ideas">
               <items>
                 <dpage:NavigationItem label="Everything is a Block" target="page:EverythingIsABlockPage" />
@@ -86,7 +65,6 @@
                 <dpage:NavigationItem label="Composition" target="page:CompositionBasics" />
               </items>
             </dpage:NavigationItem>
-
             <dpage:NavigationItem label="Types">
               <items>
                 <dpage:NavigationItem label="Types at a glance" target="page:TypesOverview" />
@@ -95,7 +73,6 @@
                 <dpage:NavigationItem label="Configuring ValueTypes" target="page:ConfiguringTypes" />
               </items>
             </dpage:NavigationItem>
-
             <dpage:NavigationItem label="Behaviour">
               <items>
                 <dpage:NavigationItem label="Capabilities" target="page:CapabilitiesIntro" />
@@ -103,14 +80,12 @@
                 <dpage:NavigationItem label="Embedded expressions" target="page:EmbeddedExpressionsIntro" />
               </items>
             </dpage:NavigationItem>
-
             <dpage:NavigationItem label="Libraries">
               <items>
                 <dpage:NavigationItem label="Libraries and packages" target="page:LibrariesAndPackages" />
                 <dpage:NavigationItem label="README and Bootstrap" target="page:ReadmeAndBootstrap" />
               </items>
             </dpage:NavigationItem>
-
             <dpage:NavigationItem label="Authoring">
               <items>
                 <dpage:NavigationItem label="Modeling guidelines" target="page:ModelingGuidelinesPage" />
@@ -120,7 +95,6 @@
                 <dpage:NavigationItem label="Annotations and directives" target="page:AnnotationsAndDirectives" />
               </items>
             </dpage:NavigationItem>
-
             <dpage:NavigationItem label="Deeper Topics">
               <items>
                 <dpage:NavigationItem label="Sub-Blocks" target="page:SubBlocksIntro" />
@@ -128,7 +102,6 @@
                 <dpage:NavigationItem label="How the compiler works" target="page:CompilerOverview" />
               </items>
             </dpage:NavigationItem>
-
             <dpage:NavigationItem label="How-to">
               <items>
                 <dpage:NavigationItem label="Author a new Block" target="page:AuthorNewBlockGuide" />
@@ -139,5 +112,4 @@
       </composition>
     </content>
   </aggregations>
-
-</block>
+</page:TableOfContents>

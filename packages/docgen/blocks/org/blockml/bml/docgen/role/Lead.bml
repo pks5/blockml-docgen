@@ -1,35 +1,29 @@
-<!--
-  BlockML DocGen — Lead content role
+<!--BlockML DocGen — Lead content role
 
-  FQN: org.blockml.bml.docgen.role.Lead
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.role.Lead-->
+<role:Lead xmlns="http://blockml.org/bml"
   xmlns:role="org.blockml.bml.docgen.role"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:level="org.blockml.bml.docgen.level"
   xmlns:weight="org.blockml.bml.docgen.weight">
 
-  <name>Lead</name>
-  <type>role:Lead</type>
-  <baseType>dcore:ContentRole</baseType>
-  <is>A content role that opens a section or page with first orientation</is>
-
+  <baseType>
+    dcore:ContentRole
+  </baseType>
+  <is>
+    A content role that opens a section or page with first orientation
+  </is>
   <documentation>
     Opens a section or page and gives the reader a first orientation. A Lead does not
     explain in depth; it supplies the mental entry point. It typically answers: What is this
     about? Why does it matter? What should I roughly expect?
-
+    
     Distinguishes from Summary (nothing has been summarized yet), Explanation (no deep
     explanation yet), and Context (Lead is more immediate and entry-focused).
-
+    
     Typical rules: keep it short; no details; avoid new specialized terms; do not enumerate
     technical edge cases.
   </documentation>
-
   <references>
     <see type="dcore:ContentRole" relation="Extends">
       Rhetorical / content-role branch root.
@@ -44,7 +38,6 @@
       Context situates in a larger frame; Lead focuses on immediate entry.
     </see>
   </references>
-
   <properties>
     <displayName override="true">
       <value>Lead</value>
@@ -59,5 +52,4 @@
       <value>false</value>
     </allowsNewConcepts>
   </properties>
-
-</block>
+</role:Lead>

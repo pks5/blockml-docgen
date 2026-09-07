@@ -1,28 +1,22 @@
-<!--
-  BlockML DocGen — a learning path through documentation
+<!--BlockML DocGen — a learning path through documentation
 
-  FQN: org.blockml.bml.docgen.semantic.LearningPath
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.semantic.LearningPath-->
+<sem:LearningPath xmlns="http://blockml.org/bml"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:core="org.blockml.bml.core">
 
-  <name>LearningPath</name>
-  <type>sem:LearningPath</type>
-  <baseType>dcore:SemanticAnnotation</baseType>
-  <is>A learning path through a documentation set</is>
-
+  <baseType>
+    dcore:SemanticAnnotation
+  </baseType>
+  <is>
+    A learning path through a documentation set
+  </is>
   <documentation>
     Ordered learning sequence through documentation — prerequisites, steps, and next topics for
     progressive disclosure. Owned by Documentation.learningPaths. Distinct from LearningObjective,
     which annotates a single instructional goal on content or page kinds.
   </documentation>
-
   <references>
     <see type="dcore:SemanticAnnotation" relation="Extends">
       Annotative semantic metadata branch.
@@ -34,5 +28,4 @@
       DocSet that owns learningPaths aggregations.
     </see>
   </references>
-
-</block>
+</sem:LearningPath>

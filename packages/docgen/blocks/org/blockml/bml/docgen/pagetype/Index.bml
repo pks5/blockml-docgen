@@ -1,34 +1,28 @@
-<!--
-  BlockML DocGen — Index page type
+<!--BlockML DocGen — Index page type
 
-  FQN: org.blockml.bml.docgen.pagetype.Index
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.pagetype.Index-->
+<ptype:Index xmlns="http://blockml.org/bml"
   xmlns:ptype="org.blockml.bml.docgen.pagetype"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:role="org.blockml.bml.docgen.role"
   xmlns:level="org.blockml.bml.docgen.level">
 
-  <name>Index</name>
-  <type>ptype:Index</type>
-  <baseType>dcore:PageType</baseType>
-  <is>A page type that provides structured navigation to documentation resources</is>
-
+  <baseType>
+    dcore:PageType
+  </baseType>
+  <is>
+    A page type that provides structured navigation to documentation resources
+  </is>
   <documentation>
     Provides structured navigation to documentation resources. Organizes and links content
     without introducing significant new information.
-
+    
     Typical characteristics: navigation; categorized links; overview.
-
+    
     Examples: Documentation Home; Language Index; API Index.
-
+    
     Core question: Where do I find the information?
   </documentation>
-
   <references>
     <see type="dcore:PageType" relation="Extends">
       Editorial page-kind branch root.
@@ -40,7 +34,6 @@
       Guide explains a subject; Index catalogues entry points.
     </see>
   </references>
-
   <properties>
     <displayName override="true">
       <value>Index</value>
@@ -52,7 +45,6 @@
       <value>0</value>
     </maxPrimaryConcepts>
   </properties>
-
   <aggregations>
     <recommendedRoles override="true">
       <composition>
@@ -67,5 +59,4 @@
       </composition>
     </forbiddenRoles>
   </aggregations>
-
-</block>
+</ptype:Index>

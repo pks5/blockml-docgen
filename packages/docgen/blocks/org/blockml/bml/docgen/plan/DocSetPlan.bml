@@ -1,37 +1,36 @@
-<!--
-  BlockML DocGen — abstract DocSet plan
+<!--BlockML DocGen — abstract DocSet plan
 
-  FQN: org.blockml.bml.docgen.plan.DocSetPlan
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.plan.DocSetPlan-->
+<dplan:DocSetPlan xmlns="http://blockml.org/bml"
   xmlns:dplan="org.blockml.bml.docgen.plan"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:stage="org.blockml.bml.docgen.stage"
   xmlns:bmlcore="org.blockml.bml.core"
   xmlns:type="org.blockml.bml.type">
 
-  <name>DocSetPlan</name>
-  <type>dplan:DocSetPlan</type>
-  <baseType>dcore:Plan</baseType>
-  <is>An abstract plan for an intended DocSet</is>
-  <isnot>A concrete DocSet or a documentation Page</isnot>
-
+  <baseType>
+    dcore:Plan
+  </baseType>
+  <is>
+    An abstract plan for an intended DocSet
+  </is>
+  <isnot>
+    A concrete DocSet or a documentation Page
+  </isnot>
   <documentation>
     Abstract model of an intended DocSet. Defines the coarse topical structure before concrete
     Pages or PageGroups are created. rootPageGroupPlan is the root PageGroupPlan tree — nested
     PageGroupPlan and PagePlan entries under StructurePlan.plans. authoritativeSources lists the
     DocSet-level SSOT Blocks and is copied onto the concrete DocSet in DocSetStructuringStage.
-
+    
     Filled and maintained in DocSetPlanningStage; consumed by DocSetStructuringStage to materialize
     or synchronize a concrete DocSet. pageBasePackage is the package prefix under which concrete
     Page and PageGroup Blocks are placed. This plan does not hold concrete Page content, routing
     keys, or full Block FQNs.
   </documentation>
-
+  <abstract>
+    true
+  </abstract>
   <references>
     <see type="dcore:Plan" relation="Extends">
       Planning-element base for DocSetPlanningStage.
@@ -55,29 +54,30 @@
       Stage that materializes or synchronizes a DocSet from this plan.
     </see>
   </references>
-
-  <abstract>true</abstract>
-
   <properties>
-    <pageBasePackage type="Text">
-      <documentation>Base package for concrete Page and PageGroup Blocks created from this plan
+    <pageBasePackage type="type:Text">
+      <documentation>
+        Base package for concrete Page and PageGroup Blocks created from this plan
         (for example org.blockml.bml.bmldocs.page). DocSetStructuringStage places new Blocks under
-        this package.</documentation>
+        this package.
+      </documentation>
     </pageBasePackage>
   </properties>
-
   <aggregations>
     <rootPageGroupPlan type="dplan:PageGroupPlan">
-      <documentation>Root PageGroupPlan for the DocSet. Nested StructurePlan entries (PageGroupPlan
+      <documentation>
+        Root PageGroupPlan for the DocSet. Nested StructurePlan entries (PageGroupPlan
         and PagePlan) under plans define the full abstract structure. Populated in
         DocSetPlanningStage; materialized into concrete PageGroups and Pages by
-        DocSetStructuringStage.</documentation>
+        DocSetStructuringStage.
+      </documentation>
     </rootPageGroupPlan>
     <authoritativeSources type="type:TypeReferenceEntity(bmlcore:Block)[]">
-      <documentation>Authoritative source Blocks for the planned DocSet — typically libraries or
+      <documentation>
+        Authoritative source Blocks for the planned DocSet — typically libraries or
         other Blocks that are the SSOT for generated content. Copied to DocSet.authoritativeSources
-        in DocSetStructuringStage.</documentation>
+        in DocSetStructuringStage.
+      </documentation>
     </authoritativeSources>
   </aggregations>
-
-</block>
+</dplan:DocSetPlan>

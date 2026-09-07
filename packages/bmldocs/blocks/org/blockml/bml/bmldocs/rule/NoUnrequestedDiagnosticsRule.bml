@@ -1,33 +1,26 @@
-<!--
-  BlockML Documentation — no unrequested diagnostics content rule
+<!--BlockML Documentation — no unrequested diagnostics content rule
 
-  FQN: org.blockml.bml.bmldocs.rule.NoUnrequestedDiagnosticsRule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.bmldocs.rule.NoUnrequestedDiagnosticsRule-->
+<brule:NoUnrequestedDiagnosticsRule xmlns="http://blockml.org/bml"
   xmlns:brule="org.blockml.bml.bmldocs.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
-  <name>NoUnrequestedDiagnosticsRule</name>
-  <type>brule:NoUnrequestedDiagnosticsRule</type>
-  <baseType>rule:ContentRule</baseType>
-  <is>A content rule restricting diagnostic codes to explicitly requested contexts</is>
-
+  <baseType>
+    rule:ContentRule
+  </baseType>
+  <is>
+    A content rule restricting diagnostic codes to explicitly requested contexts
+  </is>
   <documentation>
     Requires that validator or compiler diagnostic identifiers appear only when explicitly
     requested — for example when the PageElement has Reference or Troubleshooting semantics, or
     lists those diagnostics as required SupportingPoints.
   </documentation>
-
   <references>
     <see type="rule:ContentRule" relation="Extends">
       Documentation content-rule branch.
     </see>
   </references>
-
   <properties>
     <name override="true">
       <value>No unrequested diagnostics</value>
@@ -37,10 +30,8 @@
     </summary>
     <instructions override="true">
       <value>Do not include validator or compiler diagnostic identifiers unless the PageElement
-        has Reference or Troubleshooting semantics, or explicitly lists those diagnostics as
-        required SupportingPoints.</value>
+has Reference or Troubleshooting semantics, or explicitly lists those diagnostics as
+required SupportingPoints.</value>
     </instructions>
   </properties>
-
-
-</block>
+</brule:NoUnrequestedDiagnosticsRule>

@@ -1,32 +1,25 @@
-<!--
-  BlockML DocGen — a documentation quality rule
+<!--BlockML DocGen — a documentation quality rule
 
-  FQN: org.blockml.bml.docgen.rule.QualityRule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.rule.QualityRule-->
+<rule:QualityRule xmlns="http://blockml.org/bml"
   xmlns:rule="org.blockml.bml.docgen.rule"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:core="org.blockml.bml.core">
 
-  <name>QualityRule</name>
-  <type>rule:QualityRule</type>
-  <baseType>dcore:Rule</baseType>
-  <is>A documentation quality rule</is>
-
+  <baseType>
+    dcore:Rule
+  </baseType>
+  <is>
+    A documentation quality rule
+  </is>
   <documentation>
     Defines overarching quality requirements that evaluate documentation as a whole. Quality Rules govern characteristics such as clarity, completeness, consistency, correctness, maintainability, and audience suitability. Unlike specialized rule types, Quality Rules combine multiple quality aspects and provide criteria for assessing the overall quality of documentation.
-
+    
     Distinction in one sentence: How good is the documentation overall?
   </documentation>
-
   <references>
     <see type="dcore:Rule" relation="Extends">
       Documentation-generation rule branch under DocElement.
     </see>
   </references>
-
-</block>
+</rule:QualityRule>

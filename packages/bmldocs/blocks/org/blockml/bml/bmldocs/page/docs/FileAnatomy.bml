@@ -1,15 +1,9 @@
-<!--
-  BlockML Documentation — Anatomy of a .bml file
+<!--BlockML Documentation — Anatomy of a .bml file
 
-  FQN: org.blockml.bml.bmldocs.page.docs.FileAnatomy
--->
-<block
-  xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs.page.docs.FileAnatomy-->
+<page:FileAnatomy xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
   xmlns:docset="org.blockml.bml.bmldocs.docset"
   xmlns:dpage="org.blockml.bml.docgen.page"
@@ -20,18 +14,18 @@
   xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
-  <name>FileAnatomy</name>
-  <type>page:FileAnatomy</type>
-  <baseType>docset:BmlDocPage</baseType>
-  <is>A .bml file anatomy cheat-sheet</is>
-
+  <baseType>
+    docset:BmlDocPage
+  </baseType>
+  <is>
+    A .bml file anatomy cheat-sheet
+  </is>
   <documentation>
     Marker page: walk through the required identity fields, is/documentation, and naming
     conventions for a root .bml document — short labeled anatomy, not a full style guide.
     content is a structural scaffold only; generate prose and examples from referenced core
     documentation (doc:DocumentationModel, doc:BlockNameConvention).
   </documentation>
-
   <references>
     <see type="doc:DocumentationModel" relation="Requires">
       Primary content — is, documentation, references, examples.
@@ -40,31 +34,20 @@
       Primary content — PascalCase name rules and type identity.
     </see>
   </references>
-
   <properties>
     <title override="true">
       <value>Anatomy of a .bml file</value>
     </title>
-
     <purpose override="true">
-      <value>
-        Give readers a structural cheat-sheet for the ordered fields of a root Block document.
-      </value>
+      <value>Give readers a structural cheat-sheet for the ordered fields of a root Block document.</value>
     </purpose>
-
     <detailLevel override="true">
-      <value>
-        dlevel:Introductory
-      </value>
+      <value>dlevel:Introductory</value>
     </detailLevel>
-
     <pageType override="true">
-      <value>
-        ptype:Guide
-      </value>
+      <value>ptype:Guide</value>
     </pageType>
   </properties>
-
   <aggregations>
     <authoritativeSources override="true">
       <composition>
@@ -73,59 +56,39 @@
         <core:Block />
       </composition>
     </authoritativeSources>
-
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
-          <summary>
-            Recognize the ordered identity and documentation fields of a root Block document.
-          </summary>
           <authoritativeSources>
             <doc:DocumentationModel />
             <core:Block />
           </authoritativeSources>
         </sem:LearningObjective>
-
         <sem:LearningObjective>
-          <summary>
-            Apply PascalCase Block naming rules at a conceptual level.
-          </summary>
           <authoritativeSources>
             <doc:BlockNameConvention />
           </authoritativeSources>
         </sem:LearningObjective>
       </composition>
     </learningObjectives>
-
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
-          <summary>
-            The reader can map the main ordered fields of a typical root .bml file.
-          </summary>
           <authoritativeSources>
             <doc:DocumentationModel />
             <core:Block />
           </authoritativeSources>
         </sem:ReaderOutcome>
-
         <sem:ReaderOutcome>
-          <summary>
-            The reader can state valid versus invalid Block name forms without diagnostic codes.
-          </summary>
           <authoritativeSources>
             <doc:BlockNameConvention />
           </authoritativeSources>
         </sem:ReaderOutcome>
       </composition>
     </readerOutcomes>
-
     <scopes override="true">
       <composition>
         <sem:Scope>
-          <summary>
-            Provide a structural cheat-sheet for the ordered fields of a root Block document.
-          </summary>
           <authoritativeSources>
             <doc:DocumentationModel />
             <doc:BlockNameConvention />
@@ -134,85 +97,43 @@
         </sem:Scope>
       </composition>
     </scopes>
-
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
-          <summary>
-            Full style-guide advice beyond file anatomy and naming.
-          </summary>
-          <reason>
-            This page is a short labeled map, not a modeling style guide.
-          </reason>
+          <reason>This page is a short labeled map, not a modeling style guide.</reason>
         </sem:Exclusion>
-
         <sem:Exclusion>
-          <summary>
-            Validator diagnostic identifiers and detailed validation behavior.
-          </summary>
-          <reason>
-            Diagnostic details belong on reference and troubleshooting pages.
-          </reason>
+          <reason>Diagnostic details belong on reference and troubleshooting pages.</reason>
         </sem:Exclusion>
-
         <sem:Exclusion>
-          <summary>
-            Capabilities, constraints, and versioning noise in the skeleton example.
-          </summary>
-          <reason>
-            The annotated skeleton should show identity, documentation, properties, and references.
-          </reason>
+          <reason>The annotated skeleton should show identity, documentation, properties, and references.</reason>
         </sem:Exclusion>
       </composition>
     </exclusions>
-
     <content override="true">
       <composition>
-        <!-- 1. Lead -->
-
-        <dpage:Section
-          heading="A structural map of a Block document"
-          purpose="Introduce the page as a .bml anatomy cheat-sheet">
-
+        <!--1. Lead-->
+        <dpage:Section heading="A structural map of a Block document" purpose="Introduce the page as a .bml anatomy cheat-sheet">
           <content>
-            <dpage:Paragraph
-              purpose="Explain this page as a structural map of a root Block document">
-
+            <dpage:Paragraph purpose="Explain this page as a structural map of a root Block document">
               <role>role:Lead</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                This page is a short structural map of the ordered fields in a root Block
-                document, not a full style guide.
-              </message>
-
+              <message>This page is a short structural map of the ordered fields in a root Block
+document, not a full style guide.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Identity fields come first, then documentation fields, then ordinary members.
-                  </summary>
                   <authoritativeSources>
                     <core:Block />
                     <doc:DocumentationModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Naming conventions keep the local Block name readable and valid.
-                  </summary>
                   <authoritativeSources>
                     <doc:BlockNameConvention />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    An annotated skeleton ties the ordered fields together in one view.
-                  </summary>
                   <authoritativeSources>
                     <core:Block />
                     <doc:DocumentationModel />
@@ -222,97 +143,52 @@
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 2. Identity before prose -->
-
-        <dpage:Section
-          heading="Identity before prose"
-          purpose="Place identity fields ahead of documentation prose">
-
+        <!--2. Identity before prose-->
+        <dpage:Section heading="Identity before prose" purpose="Place identity fields ahead of documentation prose">
           <content>
-            <dpage:Paragraph
-              purpose="Cover is, documentation, references, and examples from doc:DocumentationModel">
-
+            <dpage:Paragraph purpose="Cover is, documentation, references, and examples from doc:DocumentationModel">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                After identity, a definition carries is, documentation, references, and
-                optional examples that explain the Block for humans and tools.
-              </message>
-
+              <message>After identity, a definition carries is, documentation, references, and
+optional examples that explain the Block for humans and tools.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    is states the Block in one short sentence.
-                  </summary>
                   <authoritativeSources>
                     <doc:DocumentationModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    documentation expands intent for humans and tools beyond that one-liner.
-                  </summary>
                   <authoritativeSources>
                     <doc:DocumentationModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    references and examples point to related material without replacing the
-                    Block's own documentation.
-                  </summary>
                   <authoritativeSources>
                     <doc:DocumentationModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
-
-            <dpage:Paragraph
-              purpose="Stress identity first: name, type, baseType before prose">
-
+            <dpage:Paragraph purpose="Stress identity first: name, type, baseType before prose">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                Name, type, and baseType come first so the Block is identifiable before any
-                prose is read.
-              </message>
-
+              <message>Name, type, and baseType come first so the Block is identifiable before any
+prose is read.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    name is the local Block identifier in the file.
-                  </summary>
                   <authoritativeSources>
                     <core:Block />
                     <doc:BlockNameConvention />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    type and baseType place the Block in the type system and inheritance chain.
-                  </summary>
                   <authoritativeSources>
                     <core:Block />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Prose fields follow only after that identity trio is present.
-                  </summary>
                   <authoritativeSources>
                     <doc:DocumentationModel />
                     <core:Block />
@@ -322,334 +198,147 @@
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 3. Naming -->
-
-        <dpage:Section
-          heading="Naming the Block"
-          purpose="Summarize PascalCase Block name rules">
-
+        <!--3. Naming-->
+        <dpage:Section heading="Naming the Block" purpose="Summarize PascalCase Block name rules">
           <content>
-            <dpage:Paragraph
-              purpose="Summarize PascalCase name rules from doc:BlockNameConvention">
-
+            <dpage:Paragraph purpose="Summarize PascalCase name rules from doc:BlockNameConvention">
               <role>role:Transition</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                Block names follow a simple PascalCase convention that keeps type identity readable.
-              </message>
-
+              <message>Block names follow a simple PascalCase convention that keeps type identity readable.</message>
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Validator diagnostic identifiers for invalid names.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
-
-            <dpage:List
-              purpose="Name rules to remember">
-
+            <dpage:List purpose="Name rules to remember">
               <role>role:Summary</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                Remember the valid format and the forms that fail the naming convention.
-              </message>
-
+              <message>Remember the valid format and the forms that fail the naming convention.</message>
               <items>
-                <dpage:ListItem
-                  text="PascalCase format"
-                  purpose="Letters and digits only; start with uppercase">
-
-                  <message>
-                    Use letters and digits only, and start the name with an uppercase letter.
-                  </message>
+                <dpage:ListItem text="PascalCase format" purpose="Letters and digits only; start with uppercase">
+                  <message>Use letters and digits only, and start the name with an uppercase letter.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="Invalid forms"
-                  purpose="Invalid: hyphens, underscores, spaces, leading digits">
-
-                  <message>
-                    Hyphens, underscores, spaces, and leading digits are invalid Block name forms.
-                  </message>
+                <dpage:ListItem text="Invalid forms" purpose="Invalid: hyphens, underscores, spaces, leading digits">
+                  <message>Hyphens, underscores, spaces, and leading digits are invalid Block name forms.</message>
                 </dpage:ListItem>
               </items>
             </dpage:List>
           </content>
         </dpage:Section>
-
-        <!-- 4. Annotated skeleton -->
-
-        <dpage:Section
-          heading="Annotated skeleton"
-          purpose="Show the ordered fields of a typical root .bml">
-
+        <!--4. Annotated skeleton-->
+        <dpage:Section heading="Annotated skeleton" purpose="Show the ordered fields of a typical root .bml">
           <content>
-            <dpage:Paragraph
-              purpose="Walk through the ordered fields of a typical root .bml">
-
+            <dpage:Paragraph purpose="Walk through the ordered fields of a typical root .bml">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                A typical root .bml orders identity, documentation fields, properties, and
-                references in a stable skeleton.
-              </message>
-
+              <message>A typical root .bml orders identity, documentation fields, properties, and
+references in a stable skeleton.</message>
               <exclusions>
                 <sem:Exclusion>
-                  <summary>
-                    Capabilities, constraints, and versioning in the skeleton.
-                  </summary>
-                  <reason>
-                    The annotated example should stay focused on the cheat-sheet fields.
-                  </reason>
+                  <reason>The annotated example should stay focused on the cheat-sheet fields.</reason>
                 </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
-
-            <dpage:CodeBlock
-              purpose="Annotated skeleton showing identity, documentation, properties, references">
-
+            <dpage:CodeBlock purpose="Annotated skeleton showing identity, documentation, properties, references">
               <role>role:Example</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                Illustrate an annotated root Block skeleton with identity, documentation,
-                properties, and references.
-              </message>
-
+              <message>Illustrate an annotated root Block skeleton with identity, documentation,
+properties, and references.</message>
               <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>
-                    Highlight the ordered identity trio name, type, and baseType at the top
-                    of the root Block.
-                  </summary>
-                </sem:SupportingPoint>
-
-                <sem:SupportingPoint>
-                  <summary>
-                    Highlight is, documentation, and references as the documentation-model
-                    fields that follow identity.
-                  </summary>
-                </sem:SupportingPoint>
-
-                <sem:SupportingPoint>
-                  <summary>
-                    Highlight a small properties section as the first ordinary member area
-                    in the skeleton.
-                  </summary>
-                </sem:SupportingPoint>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Capabilities, constraints, and versioning noise.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:CodeBlock>
-
-            <dpage:Paragraph
-              purpose="Interpret the annotated skeleton's field order and roles">
-
+            <dpage:Paragraph purpose="Interpret the annotated skeleton's field order and roles">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                Read the skeleton top to bottom: name, type, and baseType identify the Block,
-                is and documentation explain it, references point outward, and properties
-                begin the ordinary member area.
-              </message>
-
+              <message>Read the skeleton top to bottom: name, type, and baseType identify the Block,
+is and documentation explain it, references point outward, and properties
+begin the ordinary member area.</message>
               <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>
-                    Notice that prose fields never precede identity — the Block is named
-                    before it is described.
-                  </summary>
-                </sem:SupportingPoint>
-
-                <sem:SupportingPoint>
-                  <summary>
-                    The properties section shows where members live without introducing
-                    capabilities or constraints into the cheat-sheet.
-                  </summary>
-                </sem:SupportingPoint>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
               </supportingPoints>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 5. Field-order checklist implications -->
-
-        <dpage:Section
-          heading="Common field-order mistakes"
-          purpose="Summarize overview-depth mistakes that break the ordered anatomy">
-
+        <!--5. Field-order checklist implications-->
+        <dpage:Section heading="Common field-order mistakes" purpose="Summarize overview-depth mistakes that break the ordered anatomy">
           <content>
-
-            <dpage:Paragraph
-              purpose="Explain why the ordered checklist matters in practice">
-
+            <dpage:Paragraph purpose="Explain why the ordered checklist matters in practice">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                The ordered skeleton is a checklist: when fields appear in the wrong place or
-                under the wrong name form, the document stops reading as a clear Block anatomy.
-              </message>
-
+              <message>The ordered skeleton is a checklist: when fields appear in the wrong place or
+under the wrong name form, the document stops reading as a clear Block anatomy.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Identity must precede prose so name, type, and baseType identify the Block
-                    before is or documentation explain it.
-                  </summary>
                   <authoritativeSources>
                     <core:Block />
                     <doc:DocumentationModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    PascalCase naming mistakes are anatomy errors, not merely style nits, because
-                    the local name is part of type identity.
-                  </summary>
                   <authoritativeSources>
                     <doc:BlockNameConvention />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Stuffing capabilities, constraints, or versioning into a first skeleton
-                    hides the cheat-sheet fields this page is meant to teach.
-                  </summary>
                   <authoritativeSources>
                     <doc:DocumentationModel />
                     <core:Block />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Validator diagnostic identifiers and full style-guide advice.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
-
-            <dpage:List
-              purpose="Checklist of overview-depth mistakes to avoid">
-
+            <dpage:List purpose="Checklist of overview-depth mistakes to avoid">
               <role>role:Summary</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                Avoid these field-order and naming mistakes when sketching a root .bml.
-              </message>
-
+              <message>Avoid these field-order and naming mistakes when sketching a root .bml.</message>
               <items>
-                <dpage:ListItem
-                  text="Prose before identity"
-                  purpose="Mistake: is or documentation ahead of name, type, baseType">
-
-                  <message>
-                    Do not place is or documentation ahead of name, type, and baseType.
-                  </message>
+                <dpage:ListItem text="Prose before identity" purpose="Mistake: is or documentation ahead of name, type, baseType">
+                  <message>Do not place is or documentation ahead of name, type, and baseType.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="Invalid name forms"
-                  purpose="Mistake: hyphens, underscores, spaces, or leading digits">
-
-                  <message>
-                    Do not use hyphens, underscores, spaces, or leading digits in the Block name.
-                  </message>
+                <dpage:ListItem text="Invalid name forms" purpose="Mistake: hyphens, underscores, spaces, or leading digits">
+                  <message>Do not use hyphens, underscores, spaces, or leading digits in the Block name.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="Skeleton overload"
-                  purpose="Mistake: capabilities and constraints crowding the first map">
-
-                  <message>
-                    Do not crowd a first anatomy sketch with capabilities, constraints, or
-                    versioning before the identity and documentation fields are clear.
-                  </message>
+                <dpage:ListItem text="Skeleton overload" purpose="Mistake: capabilities and constraints crowding the first map">
+                  <message>Do not crowd a first anatomy sketch with capabilities, constraints, or
+versioning before the identity and documentation fields are clear.</message>
                 </dpage:ListItem>
               </items>
             </dpage:List>
-
           </content>
         </dpage:Section>
-
-        <!-- 6. Navigation -->
-
-        <dpage:Section
-          heading="Continue with practice and guidelines"
-          purpose="Direct the reader to related pages">
-
+        <!--6. Navigation-->
+        <dpage:Section heading="Continue with practice and guidelines" purpose="Direct the reader to related pages">
           <content>
-            <dpage:Navigation
-              purpose="Continue from the file anatomy cheat-sheet">
-
+            <dpage:Navigation purpose="Continue from the file anatomy cheat-sheet">
               <title>Next</title>
-
               <items>
-                <dpage:NavigationItem
-                  label="Your first Block"
-                  summary="Walk through a first Block definition with a tiny example.">
-
-                  <target>
-                    page:FirstBlock
-                  </target>
+                <dpage:NavigationItem label="Your first Block" summary="Walk through a first Block definition with a tiny example.">
+                  <target>page:FirstBlock</target>
                 </dpage:NavigationItem>
-
-                <dpage:NavigationItem
-                  label="Modeling guidelines"
-                  summary="Apply broader authoring guidance after the file map.">
-
-                  <target>
-                    page:ModelingGuidelinesPage
-                  </target>
+                <dpage:NavigationItem label="Modeling guidelines" summary="Apply broader authoring guidance after the file map.">
+                  <target>page:ModelingGuidelinesPage</target>
                 </dpage:NavigationItem>
               </items>
             </dpage:Navigation>
           </content>
         </dpage:Section>
-
       </composition>
     </content>
   </aggregations>
-
-</block>
+</page:FileAnatomy>

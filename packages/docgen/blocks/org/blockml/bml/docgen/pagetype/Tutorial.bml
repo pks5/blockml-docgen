@@ -1,36 +1,30 @@
-<!--
-  BlockML DocGen — Tutorial page type
+<!--BlockML DocGen — Tutorial page type
 
-  FQN: org.blockml.bml.docgen.pagetype.Tutorial
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.pagetype.Tutorial-->
+<ptype:Tutorial xmlns="http://blockml.org/bml"
   xmlns:ptype="org.blockml.bml.docgen.pagetype"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:role="org.blockml.bml.docgen.role"
   xmlns:level="org.blockml.bml.docgen.level">
 
-  <name>Tutorial</name>
-  <type>ptype:Tutorial</type>
-  <baseType>dcore:PageType</baseType>
-  <is>A page type that teaches through a structured learning experience</is>
-
+  <baseType>
+    dcore:PageType
+  </baseType>
+  <is>
+    A page type that teaches through a structured learning experience
+  </is>
   <documentation>
     Teaches the reader through a structured learning experience. Guides through a sequence
     of steps while gradually introducing new concepts. Primary goal is learning rather than
     reference.
-
+    
     Typical characteristics: sequential; beginner friendly; hands-on; builds knowledge
     incrementally.
-
+    
     Examples: Build your first Block; Create your first Machine.
-
+    
     Core question: How do I learn this step by step?
   </documentation>
-
   <references>
     <see type="dcore:PageType" relation="Extends">
       Editorial page-kind branch root.
@@ -42,7 +36,6 @@
       Introduction orients; Tutorial practices.
     </see>
   </references>
-
   <properties>
     <displayName override="true">
       <value>Tutorial</value>
@@ -54,7 +47,6 @@
       <value>3</value>
     </maxPrimaryConcepts>
   </properties>
-
   <aggregations>
     <recommendedRoles override="true">
       <composition>
@@ -71,5 +63,4 @@
       </composition>
     </forbiddenRoles>
   </aggregations>
-
-</block>
+</ptype:Tutorial>

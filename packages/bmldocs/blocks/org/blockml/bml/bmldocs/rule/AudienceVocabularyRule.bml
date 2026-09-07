@@ -1,34 +1,27 @@
-<!--
-  BlockML Documentation — audience vocabulary terminology rule
+<!--BlockML Documentation — audience vocabulary terminology rule
 
-  FQN: org.blockml.bml.bmldocs.rule.AudienceVocabularyRule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.bmldocs.rule.AudienceVocabularyRule-->
+<brule:AudienceVocabularyRule xmlns="http://blockml.org/bml"
   xmlns:brule="org.blockml.bml.bmldocs.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
-  <name>AudienceVocabularyRule</name>
-  <type>brule:AudienceVocabularyRule</type>
-  <baseType>rule:TerminologyRule</baseType>
-  <is>A terminology rule requiring vocabulary appropriate to the declared Audience</is>
-
+  <baseType>
+    rule:TerminologyRule
+  </baseType>
+  <is>
+    A terminology rule requiring vocabulary appropriate to the declared Audience
+  </is>
   <documentation>
     Requires that page content use only terminology appropriate to the declared Audience. Internal
     FQNs, implementation type names, compiler-stage terminology, directive syntax, and unresolved
     abbreviations are disallowed unless the Audience is expected to understand them or the terms
     are introduced within the Page.
   </documentation>
-
   <references>
     <see type="rule:TerminologyRule" relation="Extends">
       Documentation terminology-rule branch.
     </see>
   </references>
-
   <properties>
     <name override="true">
       <value>Audience vocabulary</value>
@@ -38,10 +31,8 @@
     </summary>
     <instructions override="true">
       <value>Do not use internal FQNs, implementation type names, compiler-stage terminology,
-        directive syntax, or unresolved abbreviations unless the Audience is expected to understand
-        them or the terms are introduced within the Page.</value>
+directive syntax, or unresolved abbreviations unless the Audience is expected to understand
+them or the terms are introduced within the Page.</value>
     </instructions>
   </properties>
-
-
-</block>
+</brule:AudienceVocabularyRule>

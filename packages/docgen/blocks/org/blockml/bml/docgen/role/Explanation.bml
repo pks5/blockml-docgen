@@ -1,35 +1,29 @@
-<!--
-  BlockML DocGen — Explanation content role
+<!--BlockML DocGen — Explanation content role
 
-  FQN: org.blockml.bml.docgen.role.Explanation
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.role.Explanation-->
+<role:Explanation xmlns="http://blockml.org/bml"
   xmlns:role="org.blockml.bml.docgen.role"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:level="org.blockml.bml.docgen.level"
   xmlns:weight="org.blockml.bml.docgen.weight">
 
-  <name>Explanation</name>
-  <type>role:Explanation</type>
-  <baseType>dcore:ContentRole</baseType>
-  <is>A content role that explains a relationship, behaviour, or meaning</is>
-
+  <baseType>
+    dcore:ContentRole
+  </baseType>
+  <is>
+    A content role that explains a relationship, behaviour, or meaning
+  </is>
   <documentation>
     Explains a relationship, behaviour, or meaning — often the most common content role.
     Answers questions such as how BML and BOM relate, why renderers exist, how aggregation
     works semantically, or what lossless round-trip means.
-
+    
     Distinguishes from Definition (what X is), and from Rationale (why X was deliberately
     designed that way).
-
+    
     Typical rules: focus on understanding connections and behaviour; stay aligned with the
     page detail level; do not drift into dense reference catalogues.
   </documentation>
-
   <references>
     <see type="dcore:ContentRole" relation="Extends">
       Rhetorical / content-role branch root.
@@ -44,7 +38,6 @@
       Reference is dense lookup material; Explanation stays narrative.
     </see>
   </references>
-
   <properties>
     <displayName override="true">
       <value>Explanation</value>
@@ -59,5 +52,4 @@
       <value>true</value>
     </allowsNewConcepts>
   </properties>
-
-</block>
+</role:Explanation>

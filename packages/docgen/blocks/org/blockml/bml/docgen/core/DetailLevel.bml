@@ -1,29 +1,26 @@
-<!--
-  BlockML DocGen — documentation detail-level classifier
+<!--BlockML DocGen — documentation detail-level classifier
 
-  FQN: org.blockml.bml.docgen.core.DetailLevel
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.core.DetailLevel-->
+<dcore:DetailLevel xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:level="org.blockml.bml.docgen.level"
   xmlns:core="org.blockml.bml.core">
 
-  <name>DetailLevel</name>
-  <type>dcore:DetailLevel</type>
-  <baseType>dcore:DocElement</baseType>
-  <is>A documentation detail-level classifier</is>
-
+  <baseType>
+    dcore:DocElement
+  </baseType>
+  <is>
+    A documentation detail-level classifier
+  </is>
   <documentation>
     Abstract base for how detailed a documentation element should be explained. Prefer this name
     over Depth — the axis answers “how much detail?”, not nesting depth in the page tree. Used by
     renderers and generators to expand, compress, or omit material. Concrete levels live in
     org.blockml.bml.docgen.level (Overview … Exhaustive).
   </documentation>
-
+  <abstract>
+    true
+  </abstract>
   <references>
     <see type="dcore:DocElement" relation="Extends">
       Semantic base for all docgen domain Blocks (except Library / README).
@@ -41,7 +38,4 @@
       Visible page content that may be governed by a DetailLevel.
     </see>
   </references>
-
-  <abstract>true</abstract>
-
-</block>
+</dcore:DetailLevel>

@@ -1,34 +1,27 @@
-<!--
-  BlockML Documentation — match declared detail level content rule
+<!--BlockML Documentation — match declared detail level content rule
 
-  FQN: org.blockml.bml.bmldocs.rule.MatchDetailLevelRule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.bmldocs.rule.MatchDetailLevelRule-->
+<brule:MatchDetailLevelRule xmlns="http://blockml.org/bml"
   xmlns:brule="org.blockml.bml.bmldocs.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
-  <name>MatchDetailLevelRule</name>
-  <type>brule:MatchDetailLevelRule</type>
-  <baseType>rule:ContentRule</baseType>
-  <is>A content rule requiring generated detail to match DetailLevel</is>
-
+  <baseType>
+    rule:ContentRule
+  </baseType>
+  <is>
+    A content rule requiring generated detail to match DetailLevel
+  </is>
   <documentation>
     Requires that generated detail matches the declared DetailLevel. Introductory and overview
     content must omit internal type names, parser structures, diagnostic identifiers,
     version-specific behavior, and implementation-status notes. Such details belong only at
     Detailed, Reference, Exhaustive, or Implementation level.
   </documentation>
-
   <references>
     <see type="rule:ContentRule" relation="Extends">
       Documentation content-rule branch.
     </see>
   </references>
-
   <properties>
     <name override="true">
       <value>Match detail level</value>
@@ -38,10 +31,8 @@
     </summary>
     <instructions override="true">
       <value>For introductory or overview content, omit internal type names, parser structures,
-        diagnostic identifiers, version-specific behavior, and implementation-status notes.
-        Include such details only at Detailed, Reference, Exhaustive, or Implementation level.</value>
+diagnostic identifiers, version-specific behavior, and implementation-status notes.
+Include such details only at Detailed, Reference, Exhaustive, or Implementation level.</value>
     </instructions>
   </properties>
-
-
-</block>
+</brule:MatchDetailLevelRule>

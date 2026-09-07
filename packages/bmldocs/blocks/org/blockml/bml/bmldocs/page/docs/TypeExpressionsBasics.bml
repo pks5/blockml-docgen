@@ -1,15 +1,9 @@
-<!--
-  BlockML Documentation — Type expressions basics
+<!--BlockML Documentation — Type expressions basics
 
-  FQN: org.blockml.bml.bmldocs.page.docs.TypeExpressionsBasics
--->
-<block
-  xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs.page.docs.TypeExpressionsBasics-->
+<page:TypeExpressionsBasics xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
   xmlns:docset="org.blockml.bml.bmldocs.docset"
   xmlns:dpage="org.blockml.bml.docgen.page"
@@ -20,48 +14,37 @@
   xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
-  <name>TypeExpressionsBasics</name>
-  <type>page:TypeExpressionsBasics</type>
-  <baseType>docset:BmlDocPage</baseType>
-  <is>A website cheat-sheet for type expressions</is>
-
+  <baseType>
+    docset:BmlDocPage
+  </baseType>
+  <is>
+    A website cheat-sheet for type expressions
+  </is>
   <documentation>
     Marker page: bite-sized type expression patterns — multiplicity, unions, match order — as a
     cheat-sheet with examples, not a complete specification.
     content is a structural scaffold only; generate prose and examples from referenced core
     documentation (doc:TypeExpressions).
   </documentation>
-
   <references>
     <see type="doc:TypeExpressions" relation="Requires">
       Primary content source — multiplicity, unions, and match order.
     </see>
   </references>
-
   <properties>
     <title override="true">
       <value>Type expressions</value>
     </title>
-
     <purpose override="true">
-      <value>
-        Cheat-sheet for combining named types into type expressions.
-      </value>
+      <value>Cheat-sheet for combining named types into type expressions.</value>
     </purpose>
-
     <detailLevel override="true">
-      <value>
-        dlevel:Introductory
-      </value>
+      <value>dlevel:Introductory</value>
     </detailLevel>
-
     <pageType override="true">
-      <value>
-        ptype:Guide
-      </value>
+      <value>ptype:Guide</value>
     </pageType>
   </properties>
-
   <aggregations>
     <authoritativeSources override="true">
       <composition>
@@ -69,14 +52,9 @@
         <doc:TypeSystemOverview />
       </composition>
     </authoritativeSources>
-
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
-          <summary>
-            Distinguish a named ValueType from a TypeExpression that combines named types
-            with multiplicity, unions, generics, or configuration.
-          </summary>
           <authoritativeSources>
             <doc:TypeExpressions />
             <doc:TypeSystemOverview />
@@ -84,23 +62,14 @@
         </sem:LearningObjective>
       </composition>
     </learningObjectives>
-
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
-          <summary>
-            The reader can recognize common type-expression forms and know they combine
-            named types rather than invent new type classes.
-          </summary>
           <authoritativeSources>
             <doc:TypeExpressions />
           </authoritativeSources>
         </sem:ReaderOutcome>
-
         <sem:ReaderOutcome>
-          <summary>
-            The reader knows where to continue for generics and ValueType configuration.
-          </summary>
           <authoritativeSources>
             <doc:TypeExpressions />
             <doc:TypeSystemOverview />
@@ -108,14 +77,9 @@
         </sem:ReaderOutcome>
       </composition>
     </readerOutcomes>
-
     <scopes override="true">
       <composition>
         <sem:Scope>
-          <summary>
-            Provide a short cheat-sheet for combining named types into everyday type
-            expressions.
-          </summary>
           <authoritativeSources>
             <doc:TypeExpressions />
             <doc:TypeSystemOverview />
@@ -123,87 +87,43 @@
         </sem:Scope>
       </composition>
     </scopes>
-
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
-          <summary>
-            Full generic inheritance rules.
-          </summary>
-          <reason>
-            Generics deserve a focused page; inheritance details would overwhelm this cheat-sheet.
-          </reason>
+          <reason>Generics deserve a focused page; inheritance details would overwhelm this cheat-sheet.</reason>
         </sem:Exclusion>
-
         <sem:Exclusion>
-          <summary>
-            Validator codes and diagnostic identifiers.
-          </summary>
-          <reason>
-            Diagnostics belong on reference and troubleshooting pages.
-          </reason>
+          <reason>Diagnostics belong on reference and troubleshooting pages.</reason>
         </sem:Exclusion>
-
         <sem:Exclusion>
-          <summary>
-            Exhaustive type-expression grammar.
-          </summary>
-          <reason>
-            This page is a usage map, not a complete specification.
-          </reason>
+          <reason>This page is a usage map, not a complete specification.</reason>
         </sem:Exclusion>
       </composition>
     </exclusions>
-
     <content override="true">
       <composition>
-        <!-- 1. Lead -->
-
-        <dpage:Section
-          heading="Combining named types"
-          purpose="Position this page as a cheat-sheet for type expressions">
-
+        <!--1. Lead-->
+        <dpage:Section heading="Combining named types" purpose="Position this page as a cheat-sheet for type expressions">
           <content>
-            <dpage:Paragraph
-              purpose="Introduce type expressions as usage of named types, not new type classes">
-
+            <dpage:Paragraph purpose="Introduce type expressions as usage of named types, not new type classes">
               <role>role:Lead</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                Type expressions combine named types into the forms authors write on
-                properties and other typed members.
-              </message>
-
+              <message>Type expressions combine named types into the forms authors write on
+properties and other typed members.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Named types supply meaning; expressions supply how that meaning is
-                    combined at a use site.
-                  </summary>
                   <authoritativeSources>
                     <doc:TypeExpressions />
                     <doc:TypeSystemOverview />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    This page is a cheat-sheet for common patterns, not a full grammar.
-                  </summary>
                   <authoritativeSources>
                     <doc:TypeExpressions />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Everything beyond the four ValueType kinds is still a use of named types,
-                    not a new BlockML type class.
-                  </summary>
                   <authoritativeSources>
                     <doc:TypeExpressions />
                   </authoritativeSources>
@@ -212,338 +132,155 @@
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 2. ValueType vs TypeExpression -->
-
-        <dpage:Section
-          heading="ValueType versus TypeExpression"
-          purpose="Establish the distinction between named meaning and combination forms">
-
+        <!--2. ValueType vs TypeExpression-->
+        <dpage:Section heading="ValueType versus TypeExpression" purpose="Establish the distinction between named meaning and combination forms">
           <content>
-            <dpage:Paragraph
-              purpose="Explain ValueType as named semantic meaning versus TypeExpression as combination">
-
+            <dpage:Paragraph purpose="Explain ValueType as named semantic meaning versus TypeExpression as combination">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                A ValueType names semantic meaning; a TypeExpression applies multiplicity,
-                unions, generic application, or configuration to named types at a use site.
-              </message>
-
+              <message>A ValueType names semantic meaning; a TypeExpression applies multiplicity,
+unions, generic application, or configuration to named types at a use site.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Declaring a ValueType defines reusable meaning.
-                  </summary>
                   <authoritativeSources>
                     <doc:TypeSystemOverview />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Writing a TypeExpression selects and shapes that meaning for a particular member.
-                  </summary>
                   <authoritativeSources>
                     <doc:TypeExpressions />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Multiplicity brackets are metadata on the type reference; they do not
-                    invent a separate Array type class.
-                  </summary>
                   <authoritativeSources>
                     <doc:TypeExpressions />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Exhaustive grammar productions for every expression form.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 3. Match order -->
-
-        <dpage:Section
-          heading="Union match order"
-          purpose="Explain left-to-right first-hit matching for union alternatives">
-
+        <!--3. Match order-->
+        <dpage:Section heading="Union match order" purpose="Explain left-to-right first-hit matching for union alternatives">
           <content>
-            <dpage:Paragraph
-              purpose="Explain that union alternatives match left to right, first hit wins">
-
+            <dpage:Paragraph purpose="Explain that union alternatives match left to right, first hit wins">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                Union alternatives are matched left to right; the first alternative that
-                fits wins, with no best-match search.
-              </message>
-
+              <message>Union alternatives are matched left to right; the first alternative that
+fits wins, with no best-match search.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Prefer narrower or sentinel alternatives on the left so they remain reachable.
-                  </summary>
                   <authoritativeSources>
                     <doc:TypeExpressions />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Later alternatives that can never win are a modeling smell, not a
-                    sophisticated fallback strategy.
-                  </summary>
                   <authoritativeSources>
                     <doc:TypeExpressions />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Validator diagnostic identifiers for unreachable alternatives.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 4. Summary of forms -->
-
-        <dpage:Section
-          heading="Common expression forms"
-          purpose="Summarize the forms readers will see most often">
-
+        <!--4. Summary of forms-->
+        <dpage:Section heading="Common expression forms" purpose="Summarize the forms readers will see most often">
           <content>
-            <dpage:Paragraph
-              purpose="Prepare the reader for the common-forms summary list">
-
+            <dpage:Paragraph purpose="Prepare the reader for the common-forms summary list">
               <role>role:Transition</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                Most everyday type expressions are built from a small set of combination forms.
-              </message>
+              <message>Most everyday type expressions are built from a small set of combination forms.</message>
             </dpage:Paragraph>
-
-            <dpage:List
-              purpose="Present common type-expression forms as a concise summary">
-
+            <dpage:List purpose="Present common type-expression forms as a concise summary">
               <role>role:Summary</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                These forms are the everyday building blocks of type expressions.
-              </message>
-
+              <message>These forms are the everyday building blocks of type expressions.</message>
               <items>
-                <dpage:ListItem
-                  text="Multiplicity"
-                  purpose="Explain array and range multiplicity forms">
-
-                  <message>
-                    Multiplicity forms such as arrays and ranges describe how many values
-                    of a type are expected.
-                  </message>
+                <dpage:ListItem text="Multiplicity" purpose="Explain array and range multiplicity forms">
+                  <message>Multiplicity forms such as arrays and ranges describe how many values
+of a type are expected.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="Unions"
-                  purpose="Explain union alternatives and match order">
-
-                  <message>
-                    Unions combine alternatives, and match order matters when more than
-                    one alternative could apply.
-                  </message>
+                <dpage:ListItem text="Unions" purpose="Explain union alternatives and match order">
+                  <message>Unions combine alternatives, and match order matters when more than
+one alternative could apply.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="Generics"
-                  purpose="Explain generic application at use sites">
-
-                  <message>
-                    Generic application binds type arguments at a use site.
-                  </message>
+                <dpage:ListItem text="Generics" purpose="Explain generic application at use sites">
+                  <message>Generic application binds type arguments at a use site.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="Configuration"
-                  purpose="Explain curly-brace configuration on the property type instance">
-
-                  <message>
-                    Curly-brace configuration specializes the ValueType instance on a
-                    property without redefining the type itself.
-                  </message>
+                <dpage:ListItem text="Configuration" purpose="Explain curly-brace configuration on the property type instance">
+                  <message>Curly-brace configuration specializes the ValueType instance on a
+property without redefining the type itself.</message>
                 </dpage:ListItem>
               </items>
             </dpage:List>
           </content>
         </dpage:Section>
-
-        <!-- 5. Example -->
-
-        <dpage:Section
-          heading="Multiplicity and union"
-          purpose="Connect the cheat-sheet to a small type-expression example">
-
+        <!--5. Example-->
+        <dpage:Section heading="Multiplicity and union" purpose="Connect the cheat-sheet to a small type-expression example">
           <content>
-            <dpage:Paragraph
-              purpose="Introduce multiplicity and a simple union on a property type">
-
+            <dpage:Paragraph purpose="Introduce multiplicity and a simple union on a property type">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                Two frequent patterns are array multiplicity and a simple union of named types.
-              </message>
-
+              <message>Two frequent patterns are array multiplicity and a simple union of named types.</message>
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Full generic inheritance rules and exhaustive grammar.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
-
-            <dpage:CodeBlock
-              purpose="Illustrate a complete Block using multiplicity and union type expressions">
-
+            <dpage:CodeBlock purpose="Illustrate a complete Block using multiplicity and union type expressions">
               <role>role:Example</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                Show a complete root Block with property types that use multiplicity brackets
-                and a simple union of named ValueTypes.
-              </message>
-
+              <message>Show a complete root Block with property types that use multiplicity brackets
+and a simple union of named ValueTypes.</message>
               <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>
-                    Provide a complete Block so the type attributes sit on real properties
-                    in a valid definition.
-                  </summary>
-                </sem:SupportingPoint>
-
-                <sem:SupportingPoint>
-                  <summary>
-                    Highlight one multiplicity form such as Integer[] and one union such as
-                    Boolean | Integer, keeping match order intentional.
-                  </summary>
-                </sem:SupportingPoint>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Generics, configuration, and advanced match-order cases.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:CodeBlock>
-
-            <dpage:Paragraph
-              purpose="Interpret the multiplicity and union constructs in the example">
-
+            <dpage:Paragraph purpose="Interpret the multiplicity and union constructs in the example">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                In the example, multiplicity brackets describe how many values a property
-                expects, while the union lists alternatives that still resolve left to right.
-              </message>
-
+              <message>In the example, multiplicity brackets describe how many values a property
+expects, while the union lists alternatives that still resolve left to right.</message>
               <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>
-                    Notice that the brackets attach to a named ValueType; they do not introduce
-                    a separate Array type class.
-                  </summary>
-                </sem:SupportingPoint>
-
-                <sem:SupportingPoint>
-                  <summary>
-                    The left alternative in the union is the first match candidate, illustrating
-                    the match-order rule from the earlier section.
-                  </summary>
-                </sem:SupportingPoint>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
               </supportingPoints>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 6. Navigation -->
-
-        <dpage:Section
-          heading="Continue with generics and configuration"
-          purpose="Direct the reader to related type topics">
-
+        <!--6. Navigation-->
+        <dpage:Section heading="Continue with generics and configuration" purpose="Direct the reader to related type topics">
           <content>
-            <dpage:Navigation
-              purpose="Continue the type-expression learning sequence">
-
+            <dpage:Navigation purpose="Continue the type-expression learning sequence">
               <title>Next</title>
-
               <items>
-                <dpage:NavigationItem
-                  label="Generics briefly"
-                  summary="See how type parameters are declared and bound on Blocks.">
-
-                  <target>
-                    page:GenericsBriefly
-                  </target>
+                <dpage:NavigationItem label="Generics briefly" summary="See how type parameters are declared and bound on Blocks.">
+                  <target>page:GenericsBriefly</target>
                 </dpage:NavigationItem>
-
-                <dpage:NavigationItem
-                  label="Configuring ValueTypes"
-                  summary="Learn curly-brace configuration of ValueType instances on properties.">
-
-                  <target>
-                    page:ConfiguringTypes
-                  </target>
+                <dpage:NavigationItem label="Configuring ValueTypes" summary="Learn curly-brace configuration of ValueType instances on properties.">
+                  <target>page:ConfiguringTypes</target>
                 </dpage:NavigationItem>
               </items>
             </dpage:Navigation>
           </content>
         </dpage:Section>
-
       </composition>
     </content>
   </aggregations>
-
-</block>
+</page:TypeExpressionsBasics>

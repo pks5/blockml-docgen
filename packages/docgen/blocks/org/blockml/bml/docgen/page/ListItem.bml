@@ -1,27 +1,21 @@
-<!--
-  BlockML DocGen — documentation list item
+<!--BlockML DocGen — documentation list item
 
-  FQN: org.blockml.bml.docgen.page.ListItem
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.page.ListItem-->
+<page:ListItem xmlns="http://blockml.org/bml"
   xmlns:page="org.blockml.bml.docgen.page"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:core="org.blockml.bml.core">
 
-  <name>ListItem</name>
-  <type>page:ListItem</type>
-  <baseType>page:ContentElement</baseType>
-  <is>A single item in a documentation list</is>
-
+  <baseType>
+    page:ContentElement
+  </baseType>
+  <is>
+    A single item in a documentation list
+  </is>
   <documentation>
     List entry with optional display text and nested block-level content (paragraphs, nested
     lists, code). Extends PageElement so purpose (renderer-facing) is available.
   </documentation>
-
   <references>
     <see type="dcore:PageElement" relation="Extends">
       Shared page content element root.
@@ -30,17 +24,18 @@
       List aggregation that holds ListItem children.
     </see>
   </references>
-
   <properties>
-    <text type="Text">
-      <documentation>Primary label or lead text for this list item.</documentation>
+    <text type="org.blockml.bml.type.Text">
+      <documentation>
+        Primary label or lead text for this list item.
+      </documentation>
     </text>
   </properties>
-
   <aggregations>
     <content type="page:BlockElement[]">
-      <documentation>Optional nested block-level content under this item.</documentation>
+      <documentation>
+        Optional nested block-level content under this item.
+      </documentation>
     </content>
   </aggregations>
-
-</block>
+</page:ListItem>

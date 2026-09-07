@@ -1,15 +1,9 @@
-<!--
-  BlockML Documentation — Definition and instance
+<!--BlockML Documentation — Definition and instance
 
-  FQN: org.blockml.bml.bmldocs.page.docs.DefinitionAndInstance
--->
-<block
-  xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs.page.docs.DefinitionAndInstance-->
+<page:DefinitionAndInstance xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
   xmlns:docset="org.blockml.bml.bmldocs.docset"
   xmlns:dpage="org.blockml.bml.docgen.page"
@@ -20,49 +14,38 @@
   xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
-  <name>DefinitionAndInstance</name>
-  <type>page:DefinitionAndInstance</type>
-  <baseType>docset:BmlDocPage</baseType>
-  <is>A website page for definition versus instance</is>
-
+  <baseType>
+    docset:BmlDocPage
+  </baseType>
+  <is>
+    A website page for definition versus instance
+  </is>
   <documentation>
     Marker page: clarify definition vs Block instance with a small diagram-friendly explanation
     and one concrete example — not the full definition meta-model.
-
+    
     content is a structural scaffold only; generate prose and examples from referenced core
     documentation (doc:BlockAndInstance).
   </documentation>
-
   <references>
     <see type="doc:BlockAndInstance" relation="Requires">
       Primary content — definition, Block, instance, and composition.
     </see>
   </references>
-
   <properties>
     <title override="true">
       <value>Definition and instance</value>
     </title>
-
     <purpose override="true">
-      <value>
-        Clarify the distinction between Block definitions and Block instances.
-      </value>
+      <value>Clarify the distinction between Block definitions and Block instances.</value>
     </purpose>
-
     <detailLevel override="true">
-      <value>
-        dlevel:Introductory
-      </value>
+      <value>dlevel:Introductory</value>
     </detailLevel>
-
     <pageType override="true">
-      <value>
-        ptype:Concept
-      </value>
+      <value>ptype:Concept</value>
     </pageType>
   </properties>
-
   <aggregations>
     <authoritativeSources override="true">
       <composition>
@@ -71,13 +54,9 @@
         <doc:DefinitionModel />
       </composition>
     </authoritativeSources>
-
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
-          <summary>
-            Distinguish a Block definition from a Block instance at the conceptual level.
-          </summary>
           <authoritativeSources>
             <doc:BlockAndInstance />
             <core:Block />
@@ -86,37 +65,24 @@
         </sem:LearningObjective>
       </composition>
     </learningObjectives>
-
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
-          <summary>
-            The reader can describe definitions as class-like and instances as object-like.
-          </summary>
           <authoritativeSources>
             <doc:BlockAndInstance />
             <doc:DefinitionModel />
           </authoritativeSources>
         </sem:ReaderOutcome>
-
         <sem:ReaderOutcome>
-          <summary>
-            The reader can name the main places where instances appear in authored BML.
-          </summary>
           <authoritativeSources>
             <doc:BlockAndInstance />
           </authoritativeSources>
         </sem:ReaderOutcome>
       </composition>
     </readerOutcomes>
-
     <scopes override="true">
       <composition>
         <sem:Scope>
-          <summary>
-            Clarify the definition-versus-instance distinction, the semantic analogy, and
-            where readers encounter instances.
-          </summary>
           <authoritativeSources>
             <doc:BlockAndInstance />
             <core:Block />
@@ -125,86 +91,43 @@
         </sem:Scope>
       </composition>
     </scopes>
-
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
-          <summary>
-            Runtime OOP mandates.
-          </summary>
-          <reason>
-            The analogy is semantic; runtime class mapping is not required by the model.
-          </reason>
+          <reason>The analogy is semantic; runtime class mapping is not required by the model.</reason>
         </sem:Exclusion>
-
         <sem:Exclusion>
-          <summary>
-            Compiler storage layouts.
-          </summary>
-          <reason>
-            Storage details distract from the author-facing distinction.
-          </reason>
+          <reason>Storage details distract from the author-facing distinction.</reason>
         </sem:Exclusion>
-
         <sem:Exclusion>
-          <summary>
-            Full composition placement diagnostics.
-          </summary>
-          <reason>
-            Placement rules and diagnostics belong on the Composition page and references.
-          </reason>
+          <reason>Placement rules and diagnostics belong on the Composition page and references.</reason>
         </sem:Exclusion>
       </composition>
     </exclusions>
-
     <content override="true">
       <composition>
-        <!-- 1. Lead -->
-
-        <dpage:Section
-          heading="Class-like definitions, object-like instances"
-          purpose="Frame the page as clarifying definitions versus instances">
-
+        <!--1. Lead-->
+        <dpage:Section heading="Class-like definitions, object-like instances" purpose="Frame the page as clarifying definitions versus instances">
           <content>
-            <dpage:Paragraph
-              purpose="Introduce the definition-versus-instance distinction">
-
+            <dpage:Paragraph purpose="Introduce the definition-versus-instance distinction">
               <role>role:Lead</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                A Block definition describes a reusable type; a Block instance is a concrete
-                use of that type.
-              </message>
-
+              <message>A Block definition describes a reusable type; a Block instance is a concrete
+use of that type.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Definitions declare shape and meaning; instances fill that shape in context.
-                  </summary>
                   <authoritativeSources>
                     <doc:BlockAndInstance />
                     <doc:DefinitionModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Root .bml documents typically author definitions; nested composition holds
-                    instances.
-                  </summary>
                   <authoritativeSources>
                     <doc:BlockAndInstance />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Keeping the roles separate prevents treating every nested element as a new type.
-                  </summary>
                   <authoritativeSources>
                     <doc:BlockAndInstance />
                   </authoritativeSources>
@@ -213,431 +136,205 @@
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 2. Semantic analogy -->
-
-        <dpage:Section
-          heading="A semantic analogy"
-          purpose="Explain the class/object analogy without mandating runtime OOP">
-
+        <!--2. Semantic analogy-->
+        <dpage:Section heading="A semantic analogy" purpose="Explain the class/object analogy without mandating runtime OOP">
           <content>
-
-            <dpage:Paragraph
-              purpose="Explain the semantic analogy from doc:BlockAndInstance">
-
+            <dpage:Paragraph purpose="Explain the semantic analogy from doc:BlockAndInstance">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                Treat a definition like a class and an instance like an object: the analogy
-                clarifies roles without prescribing a runtime object model.
-              </message>
-
+              <message>Treat a definition like a class and an instance like an object: the analogy
+clarifies roles without prescribing a runtime object model.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    The analogy is semantic guidance for authors, not an OOP contract.
-                  </summary>
                   <authoritativeSources>
                     <doc:BlockAndInstance />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    A definition is reusable across many places; an instance is one concrete use.
-                  </summary>
                   <authoritativeSources>
                     <doc:BlockAndInstance />
                     <doc:DefinitionModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Renderers may map these roles differently; the authored distinction still holds.
-                  </summary>
                   <authoritativeSources>
                     <doc:BlockAndInstance />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Claims that BlockML requires a class-based runtime.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
-
-            <dpage:Paragraph
-              purpose="Note that the parser distinguishes documents even if storage is plain data">
-
+            <dpage:Paragraph purpose="Note that the parser distinguishes documents even if storage is plain data">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                The parser still distinguishes definition documents from composition children,
-                even when the compiler stores them as plain data.
-              </message>
-
+              <message>The parser still distinguishes definition documents from composition children,
+even when the compiler stores them as plain data.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Authoring form and storage form can differ without collapsing the conceptual
-                    roles.
-                  </summary>
                   <authoritativeSources>
                     <doc:BlockAndInstance />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Readers should trust document shape and composition placement over internal
-                    storage layout.
-                  </summary>
                   <authoritativeSources>
                     <doc:BlockAndInstance />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Compiler storage layouts and internal object graphs.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
-
           </content>
         </dpage:Section>
-
-        <!-- 3. Where instances appear -->
-
-        <dpage:Section
-          heading="Where instances appear"
-          purpose="Summarize the main places readers meet instances">
-
+        <!--3. Where instances appear-->
+        <dpage:Section heading="Where instances appear" purpose="Summarize the main places readers meet instances">
           <content>
-
-            <dpage:Paragraph
-              purpose="Prepare the reader for the places where instances appear">
-
+            <dpage:Paragraph purpose="Prepare the reader for the places where instances appear">
               <role>role:Transition</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                With the analogy in place, the next step is recognizing where instances show
-                up in authored BML.
-              </message>
+              <message>With the analogy in place, the next step is recognizing where instances show
+up in authored BML.</message>
             </dpage:Paragraph>
-
-            <dpage:List
-              purpose="Places readers meet instances">
-
+            <dpage:List purpose="Places readers meet instances">
               <role>role:Summary</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                Instances appear in composition, in direct aggregation fill, and as type references.
-              </message>
-
+              <message>Instances appear in composition, in direct aggregation fill, and as type references.</message>
               <items>
-                <dpage:ListItem
-                  text="Definition composition"
-                  purpose="Instances nested inside composition on definitions">
-
-                  <message>
-                    Definitions nest child instances inside a composition member.
-                  </message>
+                <dpage:ListItem text="Definition composition" purpose="Instances nested inside composition on definitions">
+                  <message>Definitions nest child instances inside a composition member.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="Instance fill"
-                  purpose="Direct aggregation fill on instances">
-
-                  <message>
-                    Instances fill aggregations directly by member name.
-                  </message>
+                <dpage:ListItem text="Instance fill" purpose="Direct aggregation fill on instances">
+                  <message>Instances fill aggregations directly by member name.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="Type references"
-                  purpose="TypeReferenceEntity sugar for type refs">
-
-                  <message>
-                    Type references are a compact form for pointing at a Block type.
-                  </message>
+                <dpage:ListItem text="Type references" purpose="TypeReferenceEntity sugar for type refs">
+                  <message>Type references are a compact form for pointing at a Block type.</message>
                 </dpage:ListItem>
               </items>
             </dpage:List>
-
           </content>
         </dpage:Section>
-
-        <!-- 4. Definition beside an instance -->
-
-        <dpage:Section
-          heading="Definition beside an instance"
-          purpose="Pair a short definition with a composition instance using that type">
-
+        <!--4. Definition beside an instance-->
+        <dpage:Section heading="Definition beside an instance" purpose="Pair a short definition with a composition instance using that type">
           <content>
-
-            <dpage:Paragraph
-              purpose="Introduce a side-by-side definition and nested instance">
-
+            <dpage:Paragraph purpose="Introduce a side-by-side definition and nested instance">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                Seeing a definition next to one nested use makes the two roles concrete.
-              </message>
-
+              <message>Seeing a definition next to one nested use makes the two roles concrete.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    The definition document declares the reusable type.
-                  </summary>
                   <authoritativeSources>
                     <doc:BlockAndInstance />
                     <doc:DefinitionModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    A composition child uses that type as an instance in context.
-                  </summary>
                   <authoritativeSources>
                     <doc:BlockAndInstance />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
-
-            <dpage:CodeBlock
-              purpose="Side-by-side definition document and nested composition instance">
-
+            <dpage:CodeBlock purpose="Side-by-side definition document and nested composition instance">
               <role>role:Example</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                One document defines the type; a composition child instantiates it.
-              </message>
-
+              <message>One document defines the type; a composition child instantiates it.</message>
               <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>
-                    Highlight the root Block as the definition with name, type, and baseType.
-                  </summary>
-                </sem:SupportingPoint>
-
-                <sem:SupportingPoint>
-                  <summary>
-                    Highlight a nested composition child whose type refers back to that
-                    definition as an instance.
-                  </summary>
-                </sem:SupportingPoint>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Full member sets, overrides, and placement diagnostics.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:CodeBlock>
-
-            <dpage:Paragraph
-              purpose="Interpret which element is the definition and which is the instance">
-
+            <dpage:Paragraph purpose="Interpret which element is the definition and which is the instance">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                The root Block is the definition of the type; the nested composition child is
-                an instance of that same type placed where a parent aggregation expects it.
-              </message>
-
+              <message>The root Block is the definition of the type; the nested composition child is
+an instance of that same type placed where a parent aggregation expects it.</message>
               <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>
-                    Notice that the instance does not redeclare the type's member model — it
-                    supplies a concrete use of the definition.
-                  </summary>
-                </sem:SupportingPoint>
-
-                <sem:SupportingPoint>
-                  <summary>
-                    The pairing shows why root documents and nested children play different
-                    roles even when they share a type name.
-                  </summary>
-                </sem:SupportingPoint>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
               </supportingPoints>
             </dpage:Paragraph>
-
           </content>
         </dpage:Section>
-
-        <!-- 5. Document root versus nested sites -->
-
-        <dpage:Section
-          heading="Document roots versus nested instance sites"
-          purpose="Separate the root definition document from nested instance placement sites">
-
+        <!--5. Document root versus nested sites-->
+        <dpage:Section heading="Document roots versus nested instance sites" purpose="Separate the root definition document from nested instance placement sites">
           <content>
-
-            <dpage:Paragraph
-              purpose="Explain the root .bml document as the definition site">
-
+            <dpage:Paragraph purpose="Explain the root .bml document as the definition site">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                A root .bml document is the usual definition site: the file authors a reusable
-                Block type, not a one-off nested use.
-              </message>
-
+              <message>A root .bml document is the usual definition site: the file authors a reusable
+Block type, not a one-off nested use.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    The document root carries name, type, and baseType for the definition being
-                    declared.
-                  </summary>
                   <authoritativeSources>
                     <doc:BlockAndInstance />
                     <doc:DefinitionModel />
                     <core:Block />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Treating every root file as a definition keeps type identity stable across
-                    later nested uses.
-                  </summary>
                   <authoritativeSources>
                     <doc:BlockAndInstance />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    The side-by-side example's outer Block is this definition site.
-                  </summary>
                   <authoritativeSources>
                     <doc:BlockAndInstance />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
-
-            <dpage:Paragraph
-              purpose="Explain nested composition and aggregation fill as instance sites">
-
+            <dpage:Paragraph purpose="Explain nested composition and aggregation fill as instance sites">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                Nested composition children and direct aggregation fill are instance sites:
-                they place a concrete use of an existing definition in context.
-              </message>
-
+              <message>Nested composition children and direct aggregation fill are instance sites:
+they place a concrete use of an existing definition in context.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Instance sites supply values and placement; they do not redeclare the type's
-                    member model as a new root definition.
-                  </summary>
                   <authoritativeSources>
                     <doc:BlockAndInstance />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Recognizing the site — root definition versus nested instance — prevents
-                    reading every nested element as a new type.
-                  </summary>
                   <authoritativeSources>
                     <doc:BlockAndInstance />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Full composition placement diagnostics and override merge detail.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
-
           </content>
         </dpage:Section>
-
-        <!-- 6. Continuation -->
-
-        <dpage:Section
-          heading="Continue with composition"
-          purpose="Direct the reader to the next conceptual page">
-
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with composition" purpose="Direct the reader to the next conceptual page">
           <content>
-            <dpage:Navigation
-              purpose="Continue the introductory learning sequence">
-
+            <dpage:Navigation purpose="Continue the introductory learning sequence">
               <title>Next</title>
-
               <items>
-                <dpage:NavigationItem
-                  label="Composition"
-                  summary="Learn how aggregations receive child Block instances.">
-
-                  <target>
-                    page:CompositionBasics
-                  </target>
+                <dpage:NavigationItem label="Composition" summary="Learn how aggregations receive child Block instances.">
+                  <target>page:CompositionBasics</target>
                 </dpage:NavigationItem>
               </items>
             </dpage:Navigation>
           </content>
         </dpage:Section>
-
       </composition>
     </content>
   </aggregations>
-
-</block>
+</page:DefinitionAndInstance>

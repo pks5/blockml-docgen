@@ -1,22 +1,19 @@
-<!--
-  BlockML DocGen — planned page group within a DocSetPlan
+<!--BlockML DocGen — planned page group within a DocSetPlan
 
-  FQN: org.blockml.bml.docgen.plan.PageGroupPlan
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.plan.PageGroupPlan-->
+<dplan:PageGroupPlan xmlns="http://blockml.org/bml"
   xmlns:dplan="org.blockml.bml.docgen.plan"
   xmlns:dcore="org.blockml.bml.docgen.core">
 
-  <name>PageGroupPlan</name>
-  <type>dplan:PageGroupPlan</type>
-  <baseType>dplan:StructurePlan</baseType>
-  <is>A planned page group for a DocSetPlan</is>
-  <isnot>A concrete PageGroup or a PagePlan</isnot>
-
+  <baseType>
+    dplan:StructurePlan
+  </baseType>
+  <is>
+    A planned page group for a DocSetPlan
+  </is>
+  <isnot>
+    A concrete PageGroup or a PagePlan
+  </isnot>
   <documentation>
     Planned page group within a DocSetPlan. Used in DocSetPlanningStage to sketch thematic or
     navigational groupings before concrete PageGroups exist. Inherits name from StructurePlan
@@ -24,7 +21,6 @@
     StructurePlan entries (PagePlan and/or nested PageGroupPlan). DocSetStructuringStage later
     materializes a concrete PageGroup from this plan.
   </documentation>
-
   <references>
     <see type="dplan:StructurePlan" relation="Extends">
       Structural planning base — provides name relative to pageBasePackage.
@@ -39,18 +35,19 @@
       Concrete page group — created later from this plan entry in DocSetStructuringStage.
     </see>
   </references>
-
   <properties>
-    <title type="Text">
-      <documentation>Visible label of the planned group (for example Getting Started).</documentation>
+    <title type="org.blockml.bml.type.Text">
+      <documentation>
+        Visible label of the planned group (for example Getting Started).
+      </documentation>
     </title>
   </properties>
-
   <aggregations>
     <plans type="dplan:StructurePlan[]">
-      <documentation>Nested StructurePlan entries for this group — PagePlan and/or nested
-        PageGroupPlan.</documentation>
+      <documentation>
+        Nested StructurePlan entries for this group — PagePlan and/or nested
+        PageGroupPlan.
+      </documentation>
     </plans>
   </aggregations>
-
-</block>
+</dplan:PageGroupPlan>

@@ -1,29 +1,24 @@
-<!--
-  Workspace Documentation — PackageMap
-  FQN: org.blockml.bml.docgen.workspace.documentation.PackageMap
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+<!--Workspace Documentation — PackageMap
+  FQN: org.blockml.bml.docgen.workspace.documentation.PackageMap-->
+<wsdocumentation:PackageMap xmlns="http://blockml.org/bml"
   xmlns:core="org.blockml.bml.core"
   xmlns:docgen="org.blockml.bml.docgen"
   xmlns:bmldocs="org.blockml.bml.bmldocs"
   xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation">
 
-  <name>PackageMap</name>
-  <type>wsdocumentation:PackageMap</type>
-  <baseType>core:Documentation</baseType>
-  <is>npm package to BML library map for this monorepo</is>
-
+  <baseType>
+    core:Documentation
+  </baseType>
+  <is>
+    npm package to BML library map for this monorepo
+  </is>
   <documentation>
     Linked libraries (npm → BML FQN → blocks path):
-
+    
     • @blockml/core (external) → org.blockml.bml.Library
       → node_modules/@blockml/core/blocks/org/blockml/bml/Library.bml
       Language, narrative documentation, and task guides that both packages consume.
-
+    
     • @blockml/docgen → org.blockml.bml.docgen.Library
       → packages/docgen/blocks/org/blockml/bml/docgen/Library.bml
       Reusable documentation-generation catalogue: DocElement branch (DocSet, Page,
@@ -31,19 +26,18 @@
       Audience, PageType, ContentRole, SemanticAnnotation), plan types, four
       manifestation stages, page content types, page-type and role specializations,
       rule families, and semantic annotations.
-
+    
     • @blockml/bmldocs → org.blockml.bml.bmldocs.Library
       → packages/bmldocs/blocks/org/blockml/bml/bmldocs/Library.bml
       blockml.org documentation catalogue: BmlDocSet, BmlDocSetPlan, BmlDocPage,
       site rules, concrete pages under org.blockml.bml.bmldocs.page.docs.*, and
       page groups under org.blockml.bml.bmldocs.page.*. Depends on docgen:Library
       and blockml:Library. Does not carry narrative page prose.
-
+    
     This hub → org.blockml.bml.docgen.workspace.Library
       → blocks/org/blockml/bml/docgen/workspace/Library.bml
       Monorepo orientation only. Not an npm publishable product library.
   </documentation>
-
   <references>
     <see type="wsdocumentation:ArchitectureOverview" relation="ReadNext" />
     <see type="wsdocumentation:ReadingOrder" relation="SeeAlso" />
@@ -52,5 +46,4 @@
     <see type="docgen:README" relation="SeeAlso" />
     <see type="bmldocs:README" relation="SeeAlso" />
   </references>
-
-</block>
+</wsdocumentation:PackageMap>

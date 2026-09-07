@@ -1,30 +1,23 @@
-<!--
-  BlockML DocGen — an optional understanding-weight classifier
+<!--BlockML DocGen — an optional understanding-weight classifier
 
-  FQN: org.blockml.bml.docgen.weight.Optional
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.weight.Optional-->
+<weight:Optional xmlns="http://blockml.org/bml"
   xmlns:weight="org.blockml.bml.docgen.weight"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:core="org.blockml.bml.core">
 
-  <name>Optional</name>
-  <type>weight:Optional</type>
-  <baseType>dcore:Weight</baseType>
-  <is>An optional understanding-weight classifier</is>
-
+  <baseType>
+    dcore:Weight
+  </baseType>
+  <is>
+    An optional understanding-weight classifier
+  </is>
   <documentation>
     Additional information. May be skipped without losing the thread. Prefer for asides, tips, and enrichments that do not change whether the page’s core outcome is met.
   </documentation>
-
   <references>
     <see type="dcore:Weight" relation="Extends">
       Understanding-weight classification axis under DocElement.
     </see>
   </references>
-
-</block>
+</weight:Optional>

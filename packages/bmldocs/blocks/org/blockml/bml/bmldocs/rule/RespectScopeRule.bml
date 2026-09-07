@@ -1,34 +1,27 @@
-<!--
-  BlockML Documentation — respect declared scope content rule
+<!--BlockML Documentation — respect declared scope content rule
 
-  FQN: org.blockml.bml.bmldocs.rule.RespectScopeRule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.bmldocs.rule.RespectScopeRule-->
+<brule:RespectScopeRule xmlns="http://blockml.org/bml"
   xmlns:brule="org.blockml.bml.bmldocs.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
-  <name>RespectScopeRule</name>
-  <type>brule:RespectScopeRule</type>
-  <baseType>rule:ContentRule</baseType>
-  <is>A content rule requiring content to remain within declared Scope</is>
-
+  <baseType>
+    rule:ContentRule
+  </baseType>
+  <is>
+    A content rule requiring content to remain within declared Scope
+  </is>
   <documentation>
     Requires that content stays within the declared Scope of the PageElement. Only information
     that directly contributes to Scope and Message may appear; adjacent implementation details,
     related diagnostics, metadata, and architectural internals are out unless explicitly included
     by Scope or SupportingPoint.
   </documentation>
-
   <references>
     <see type="rule:ContentRule" relation="Extends">
       Documentation content-rule branch.
     </see>
   </references>
-
   <properties>
     <name override="true">
       <value>Respect scope</value>
@@ -38,11 +31,9 @@
     </summary>
     <instructions override="true">
       <value>Include only information that directly contributes to the declared Scope and Message
-        of the PageElement. Do not add adjacent implementation details, related diagnostics,
-        metadata, or architectural internals unless they are explicitly included by Scope or
-        SupportingPoint.</value>
+of the PageElement. Do not add adjacent implementation details, related diagnostics,
+metadata, or architectural internals unless they are explicitly included by Scope or
+SupportingPoint.</value>
     </instructions>
   </properties>
-
-
-</block>
+</brule:RespectScopeRule>

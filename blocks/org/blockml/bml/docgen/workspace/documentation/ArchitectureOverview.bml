@@ -1,12 +1,6 @@
-<!--
-  Workspace Documentation — ArchitectureOverview
-  FQN: org.blockml.bml.docgen.workspace.documentation.ArchitectureOverview
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+<!--Workspace Documentation — ArchitectureOverview
+  FQN: org.blockml.bml.docgen.workspace.documentation.ArchitectureOverview-->
+<wsdocumentation:ArchitectureOverview xmlns="http://blockml.org/bml"
   xmlns:core="org.blockml.bml.core"
   xmlns:docgen="org.blockml.bml.docgen"
   xmlns:dcore="org.blockml.bml.docgen.core"
@@ -17,23 +11,24 @@
   xmlns:structuring="org.blockml.bml.bmldocs.a02_structuring"
   xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation">
 
-  <name>ArchitectureOverview</name>
-  <type>wsdocumentation:ArchitectureOverview</type>
-  <baseType>core:Documentation</baseType>
-  <is>How @blockml/docgen and @blockml/bmldocs compose</is>
-
+  <baseType>
+    core:Documentation
+  </baseType>
+  <is>
+    How @blockml/docgen and @blockml/bmldocs compose
+  </is>
   <documentation>
     Two layers, one pipeline.
-
+    
     org.blockml.bml.docgen is the reusable layer. dcore:DocElement is the semantic
     base. A dcore:DocSet owns pages (via pageMapping), a root PageGroup tree, a
     dplan:DocSetPlan, global rules, and authoritativeSources. Pages and groups are
     structural; PageElements (Section, Paragraph, List, Navigation, CodeBlock, …)
     carry content. PageType, ContentRole, DetailLevel, Weight, and SemanticAnnotation
     classify that content. dcore:Rule names generation and authoring constraints.
-
+    
     Manifestation is staged, not a single compile step:
-
+    
     1. stage:DocSetPlanningStage — create or update a dplan:DocSetPlan (root
        PageGroupPlan tree of PageGroupPlan / PagePlan; authoritativeSources).
     2. stage:DocSetStructuringStage — materialize or synchronize a concrete DocSet,
@@ -42,17 +37,16 @@
        (structure, roles, annotations, small structural values).
     4. stage:PageRenderingStage — resolve authoritativeSources and emit the target
        manifestation (for example JSON or HTML).
-
+    
     org.blockml.bml.bmldocs is the site layer. structuring:BmlDocSet extends dcore:DocSet
     for BlockML core documentation on blockml.org (rootPath /docs, homePage
     TableOfContents, rootPageGroup RootPageGroup). Concrete pages extend
     docset:BmlDocPage and point at bml-core narrative Blocks. Site rules specialize
     dcore:Rule. bmldocs does not re-implement docgen types.
-
+    
     The workspace hub orients the monorepo. It does not own DocSets, stages, or
     generation capabilities.
   </documentation>
-
   <references>
     <see type="wsdocumentation:ReadingOrder" relation="ReadNext" />
     <see type="dcore:DocElement" relation="SeeAlso" />
@@ -67,5 +61,4 @@
     <see type="docgen:Library" relation="SeeAlso" />
     <see type="bmldocs:Library" relation="SeeAlso" />
   </references>
-
-</block>
+</wsdocumentation:ArchitectureOverview>

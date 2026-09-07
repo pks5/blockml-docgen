@@ -1,12 +1,6 @@
-<!--
-  BlockML Docgen Workspace Library
-  FQN: org.blockml.bml.docgen.workspace.Library
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+<!--BlockML Docgen Workspace Library
+  FQN: org.blockml.bml.docgen.workspace.Library-->
+<workspace:Library xmlns="http://blockml.org/bml"
   xmlns:blockml="org.blockml.bml"
   xmlns:core="org.blockml.bml.core"
   xmlns:docgen="org.blockml.bml.docgen"
@@ -14,43 +8,41 @@
   xmlns:workspace="org.blockml.bml.docgen.workspace"
   xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation">
 
-  <name>Library</name>
-  <type>workspace:Library</type>
-  <baseType>core:BlockLibrary</baseType>
-  <is>The BlockML Docgen monorepo workspace library catalog</is>
-
+  <baseType>
+    core:BlockLibrary
+  </baseType>
+  <is>
+    The BlockML Docgen monorepo workspace library catalog
+  </is>
+  <version>
+    0.1.0
+  </version>
   <documentation>
     Documentation and SSOT hub for the BlockML Docgen monorepo.
-
+    
     Linked libraries:
-
+    
     - org.blockml.bml.docgen.Library (`@blockml/docgen`)
     - org.blockml.bml.bmldocs.Library (`@blockml/bmldocs`)
     - org.blockml.bml.Library (`@blockml/core`)
-
+    
     Direction is workspace → packages only. Membership is defined exclusively by
     this blocks list. This hub does not re-export package blocks; package libraries
     must not depend back on this library.
   </documentation>
-
   <references>
     <see type="workspace:README" relation="ReadFirst">
       Human/LLM reading entry for this library.
     </see>
   </references>
-
-  <version>0.1.0</version>
-
   <language>
-    <English />
+    <blockml:language.English />
   </language>
-
   <properties>
     <description override="true">
       <value>BlockML Docgen workspace monorepo library</value>
     </description>
   </properties>
-
   <aggregations>
     <readMe override="true">
       <composition>
@@ -75,5 +67,4 @@
       </composition>
     </blocks>
   </aggregations>
-
-</block>
+</workspace:Library>

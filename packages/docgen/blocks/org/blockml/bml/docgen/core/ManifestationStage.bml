@@ -1,23 +1,18 @@
-<!--
-  BlockML DocGen — documentation manifestation-stage classifier
+<!--BlockML DocGen — documentation manifestation-stage classifier
 
-  FQN: org.blockml.bml.docgen.core.ManifestationStage
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.core.ManifestationStage-->
+<dcore:ManifestationStage xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:dplan="org.blockml.bml.docgen.plan"
   xmlns:stage="org.blockml.bml.docgen.stage"
   xmlns:core="org.blockml.bml.core">
 
-  <name>ManifestationStage</name>
-  <type>dcore:ManifestationStage</type>
-  <baseType>dcore:DocElement</baseType>
-  <is>A documentation manifestation-stage classifier</is>
-
+  <baseType>
+    dcore:DocElement
+  </baseType>
+  <is>
+    A documentation manifestation-stage classifier
+  </is>
   <documentation>
     Abstract base for which manifestation stage a documentation concern applies to along the
     DocSet lifecycle — planning a DocSetPlan, structuring a concrete DocSet, authoring Page BML
@@ -26,7 +21,9 @@
     stages live in org.blockml.bml.docgen.stage (DocSetPlanningStage, DocSetStructuringStage,
     PageAuthoringStage, PageRenderingStage).
   </documentation>
-
+  <abstract>
+    true
+  </abstract>
   <references>
     <see type="dcore:DocElement" relation="Extends">
       Semantic base for all docgen domain Blocks (except Library / README).
@@ -50,7 +47,4 @@
       Transforms authored BML Pages into the target manifestation.
     </see>
   </references>
-
-  <abstract>true</abstract>
-
-</block>
+</dcore:ManifestationStage>

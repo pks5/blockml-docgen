@@ -1,33 +1,26 @@
-<!--
-  BlockML Documentation — one primary message content rule
+<!--BlockML Documentation — one primary message content rule
 
-  FQN: org.blockml.bml.bmldocs.rule.OnePrimaryMessageRule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.bmldocs.rule.OnePrimaryMessageRule-->
+<brule:OnePrimaryMessageRule xmlns="http://blockml.org/bml"
   xmlns:brule="org.blockml.bml.bmldocs.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
-  <name>OnePrimaryMessageRule</name>
-  <type>brule:OnePrimaryMessageRule</type>
-  <baseType>rule:ContentRule</baseType>
-  <is>A content rule requiring one primary message per ContentElement</is>
-
+  <baseType>
+    rule:ContentRule
+  </baseType>
+  <is>
+    A content rule requiring one primary message per ContentElement
+  </is>
   <documentation>
     Requires that every ContentElement communicates exactly one primary message. Supporting
     details may clarify that statement; unrelated topics must move into separate ContentElements
     or be omitted.
   </documentation>
-
   <references>
     <see type="rule:ContentRule" relation="Extends">
       Documentation content-rule branch.
     </see>
   </references>
-
   <properties>
     <name override="true">
       <value>One primary message</value>
@@ -37,10 +30,8 @@
     </summary>
     <instructions override="true">
       <value>Generate each ContentElement around exactly one central factual or conceptual
-        statement. Supporting details may clarify that statement, but unrelated topics must be
-        moved into separate ContentElements or omitted.</value>
+statement. Supporting details may clarify that statement, but unrelated topics must be
+moved into separate ContentElements or omitted.</value>
     </instructions>
   </properties>
-
-
-</block>
+</brule:OnePrimaryMessageRule>

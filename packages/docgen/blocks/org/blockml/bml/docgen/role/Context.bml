@@ -1,34 +1,28 @@
-<!--
-  BlockML DocGen — Context content role
+<!--BlockML DocGen — Context content role
 
-  FQN: org.blockml.bml.docgen.role.Context
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.role.Context-->
+<role:Context xmlns="http://blockml.org/bml"
   xmlns:role="org.blockml.bml.docgen.role"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:level="org.blockml.bml.docgen.level"
   xmlns:weight="org.blockml.bml.docgen.weight">
 
-  <name>Context</name>
-  <type>role:Context</type>
-  <baseType>dcore:ContentRole</baseType>
-  <is>A content role that situates a topic in a larger frame</is>
-
+  <baseType>
+    dcore:ContentRole
+  </baseType>
+  <is>
+    A content role that situates a topic in a larger frame
+  </is>
   <documentation>
     Situates a topic in a larger frame — background, preconditions, or embedding — without
     itself explaining the central concept. Useful when background is needed without turning
     it into the primary claim.
-
+    
     Distinguishes from Lead (opens), and Explanation (explains substantively).
-
+    
     Typical rules: provide embedding or background only; avoid becoming the main technical
     explanation; keep secondary to the page message.
   </documentation>
-
   <references>
     <see type="dcore:ContentRole" relation="Extends">
       Rhetorical / content-role branch root.
@@ -40,7 +34,6 @@
       Explanation explains substantively; Context only frames.
     </see>
   </references>
-
   <properties>
     <displayName override="true">
       <value>Context</value>
@@ -55,5 +48,4 @@
       <value>false</value>
     </allowsNewConcepts>
   </properties>
-
-</block>
+</role:Context>

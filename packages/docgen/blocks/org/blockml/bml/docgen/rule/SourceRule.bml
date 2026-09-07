@@ -1,33 +1,25 @@
-<!--
-  BlockML DocGen — a documentation source rule
+<!--BlockML DocGen — a documentation source rule
 
-  FQN: org.blockml.bml.docgen.rule.SourceRule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.rule.SourceRule-->
+<rule:SourceRule xmlns="http://blockml.org/bml"
   xmlns:rule="org.blockml.bml.docgen.rule"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:core="org.blockml.bml.core">
 
-  <name>SourceRule</name>
-  <type>rule:SourceRule</type>
-  <baseType>dcore:Rule</baseType>
-  <is>A documentation source rule</is>
-
+  <baseType>
+    dcore:Rule
+  </baseType>
+  <is>
+    A documentation source rule
+  </is>
   <documentation>
     Defines requirements for the origin, traceability, and correctness of documentation content. Source Rules specify how content is derived from authoritative sources, how references should be maintained, and how generated documentation remains consistent with its underlying source of truth. They focus on where information comes from, not on how it is written.
-
+    
     Distinction in one sentence: Where does the information come from?
   </documentation>
-
   <references>
     <see type="dcore:Rule" relation="Extends">
       Documentation-generation rule branch under DocElement.
     </see>
   </references>
-
-
-</block>
+</rule:SourceRule>

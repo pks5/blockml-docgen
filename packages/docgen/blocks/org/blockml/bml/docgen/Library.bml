@@ -1,18 +1,12 @@
-<!--
-  BlockML DocGen Library Descriptor
+<!--BlockML DocGen Library Descriptor
 
   Name: Library
   Filename: Library.bml
   FQN: org.blockml.bml.docgen.Library
 
   Standalone library for general documentation generation from BlockML.
-  Block .bml sources live under blocks/org/blockml/bml/docgen/.
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  Block .bml sources live under blocks/org/blockml/bml/docgen/.-->
+<docgen:Library xmlns="http://blockml.org/bml"
   xmlns:docgen="org.blockml.bml.docgen"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:dplan="org.blockml.bml.docgen.plan"
@@ -28,53 +22,49 @@
   xmlns:core="org.blockml.bml.core"
   xmlns:transformer="org.blockml.bml.transformer">
 
-  <name>Library</name>
-  <type>docgen:Library</type>
-  <baseType>core:BlockLibrary</baseType>
-  <is>A BlockML documentation-generation library catalog</is>
-
+  <baseType>
+    core:BlockLibrary
+  </baseType>
+  <is>
+    A BlockML documentation-generation library catalog
+  </is>
+  <version>
+    0.1.0
+  </version>
   <documentation>
     Publishable BlockML documentation-generation library (org.blockml.bml.docgen.Library). Provides
     the reusable basis for generating human-facing documentation from BlockML definitions —
     orthogonal to any single website (for example blockml.org). Domain or site libraries depend on
     this catalogue when they need docgen types and pipelines.
-
+    
     Membership is defined exclusively by this file's blocks list — not by directory layout.
     Version 0.1.0 applies to all exported blocks (framework convention: version only on Library.bml).
   </documentation>
-
   <references>
     <see type="docgen:README" relation="ReadFirst">
       Human/LLM reading entry for this library.
     </see>
   </references>
-
-  <version>0.1.0</version>
-
   <language>
-    <English />
+    <blockml:language.English />
   </language>
-
   <properties>
     <description override="true">
       <value>BlockML documentation-generation library — general docs generation from BlockML</value>
     </description>
   </properties>
-
   <aggregations>
     <readMe override="true">
       <composition>
         <docgen:README />
       </composition>
     </readMe>
-
     <dependencies override="true">
       <composition>
         <blockml:Library />
         <transformer:Library />
       </composition>
     </dependencies>
-
     <blocks override="true">
       <composition>
         <docgen:README />
@@ -165,5 +155,4 @@
       </composition>
     </blocks>
   </aggregations>
-
-</block>
+</docgen:Library>

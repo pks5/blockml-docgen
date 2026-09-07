@@ -1,52 +1,43 @@
-<!--
-  BlockML Documentation — page section count rule
+<!--BlockML Documentation — page section count rule
 
-  FQN: org.blockml.bml.bmldocs.rule.PageSectionCountRule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.bmldocs.rule.PageSectionCountRule-->
+<brule:PageSectionCountRule xmlns="http://blockml.org/bml"
   xmlns:brule="org.blockml.bml.bmldocs.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
-  <name>PageSectionCountRule</name>
-  <type>brule:PageSectionCountRule</type>
-  <baseType>rule:StructureRule</baseType>
-  <is>A structure rule defining the preferred number of content sections on a documentation page</is>
-
+  <baseType>
+    rule:StructureRule
+  </baseType>
+  <is>
+    A structure rule defining the preferred number of content sections on a documentation page
+  </is>
   <documentation>
     Defines the preferred number of substantive content sections on a documentation page.
     A page should normally contain approximately five content sections. This provides enough
     structure to explain a subject in meaningful stages without fragmenting the page into too
     many small sections.
-
+    
     Four to six content sections are acceptable when required by the subject. Prefer five when
     no strong structural reason suggests otherwise. Do not create artificial sections merely to
     reach the preferred count, and do not compress distinct concepts into one section solely to
     remain within it.
-
+    
     Navigation-only sections such as the final Next Page section are not counted as content
     sections.
   </documentation>
-
   <properties>
     <name override="true">
       <value>Page section count</value>
     </name>
-
     <summary override="true">
       <value>Prefer five substantive content sections per page, excluding navigation sections.</value>
     </summary>
-
     <instructions override="true">
       <value>Structure each documentation page around approximately five substantive content
-        sections. Prefer five sections, while allowing four to six when the subject naturally
-        requires less or more structure. Do not introduce artificial sections to satisfy the
-        target count and do not merge distinct topics merely to reduce the count. Exclude
-        navigation-only sections such as Next Page from the section count.</value>
+sections. Prefer five sections, while allowing four to six when the subject naturally
+requires less or more structure. Do not introduce artificial sections to satisfy the
+target count and do not merge distinct topics merely to reduce the count. Exclude
+navigation-only sections such as Next Page from the section count.</value>
     </instructions>
   </properties>
-
-</block>
+</brule:PageSectionCountRule>

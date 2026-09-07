@@ -1,33 +1,27 @@
-<!--
-  BlockML DocGen — Rationale content role
+<!--BlockML DocGen — Rationale content role
 
-  FQN: org.blockml.bml.docgen.role.Rationale
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.role.Rationale-->
+<role:Rationale xmlns="http://blockml.org/bml"
   xmlns:role="org.blockml.bml.docgen.role"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:level="org.blockml.bml.docgen.level"
   xmlns:weight="org.blockml.bml.docgen.weight">
 
-  <name>Rationale</name>
-  <type>role:Rationale</type>
-  <baseType>dcore:ContentRole</baseType>
-  <is>A content role that explains a deliberate design decision</is>
-
+  <baseType>
+    dcore:ContentRole
+  </baseType>
+  <is>
+    A content role that explains a deliberate design decision
+  </is>
   <documentation>
     Explains the deliberate design decision behind a concept. Answers: Why was it done
     exactly this way? Examples include why BOM is lossless, why domain semantics live in the
     renderer, why BlockML uses XML, or why TypeReferenceEntity is preferred over certain
     associations.
-
+    
     Distinguishes from Explanation (how something works) by focusing on why it was
     intentionally designed that way.
   </documentation>
-
   <references>
     <see type="dcore:ContentRole" relation="Extends">
       Rhetorical / content-role branch root.
@@ -36,7 +30,6 @@
       Explanation describes behaviour; Rationale justifies the design.
     </see>
   </references>
-
   <properties>
     <displayName override="true">
       <value>Rationale</value>
@@ -51,5 +44,4 @@
       <value>false</value>
     </allowsNewConcepts>
   </properties>
-
-</block>
+</role:Rationale>

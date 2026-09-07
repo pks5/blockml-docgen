@@ -1,30 +1,23 @@
-<!--
-  BlockML DocGen — a very short orientation detail level
+<!--BlockML DocGen — a very short orientation detail level
 
-  FQN: org.blockml.bml.docgen.level.Overview
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.level.Overview-->
+<level:Overview xmlns="http://blockml.org/bml"
   xmlns:level="org.blockml.bml.docgen.level"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:core="org.blockml.bml.core">
 
-  <name>Overview</name>
-  <type>level:Overview</type>
-  <baseType>dcore:DetailLevel</baseType>
-  <is>A very short orientation detail level</is>
-
+  <baseType>
+    dcore:DetailLevel
+  </baseType>
+  <is>
+    A very short orientation detail level
+  </is>
   <documentation>
     Very short orientation (1–3 sentences). Only the core statement — no elaboration, examples, or edge cases. Prefer when the reader needs a quick cue before deciding whether to go deeper.
   </documentation>
-
   <references>
     <see type="dcore:DetailLevel" relation="Extends">
       Detail-level classification axis under DocElement.
     </see>
   </references>
-
-</block>
+</level:Overview>

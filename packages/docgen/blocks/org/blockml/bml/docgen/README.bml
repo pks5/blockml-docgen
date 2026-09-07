@@ -1,13 +1,7 @@
-<!--
-  BlockML DocGen Library — README / library reading entry point
+<!--BlockML DocGen Library — README / library reading entry point
 
-  FQN: org.blockml.bml.docgen.README
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.README-->
+<docgen:README xmlns="http://blockml.org/bml"
   xmlns:docgen="org.blockml.bml.docgen"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:page="org.blockml.bml.docgen.page"
@@ -16,11 +10,12 @@
   xmlns:blockml="org.blockml.bml"
   xmlns:core="org.blockml.bml.core">
 
-  <name>README</name>
-  <type>docgen:README</type>
-  <baseType>core:ReadMe</baseType>
-  <is>A documentation-generation library reading entry point</is>
-
+  <baseType>
+    core:ReadMe
+  </baseType>
+  <is>
+    A documentation-generation library reading entry point
+  </is>
   <documentation>
     README for the BlockML documentation-generation library (org.blockml.bml.docgen). This library
     is a standalone foundation for producing human-readable documentation from BlockML — page
@@ -31,15 +26,14 @@
     chrome, and classification axes dcore:DetailLevel (how detailed)
     and dcore:Weight (how important for understanding) — without tying them to one particular
     website. DocSet.pageMapping owns pageKey and path for publishable pages.
-
+    
     Narrative SSOT remains in bml-core (org.blockml.bml.documentation.* and org.blockml.bml.task.*).
     Site-specific catalogues (for example org.blockml.bml.bmldocs) depend on this library and fill
     concrete documentation structures for their surfaces.
-
+    
     Start with dcore:DocElement, then dcore:Page / dcore:PageElement / dcore:Audience /
     dcore:SemanticAnnotation / dcore:DetailLevel / dcore:Weight and their specializations.
   </documentation>
-
   <references>
     <see type="dcore:DocElement" relation="ReadFirst">
       Semantic base for all docgen domain Blocks (except Library / README).
@@ -94,5 +88,4 @@
       BlockML core library — grammar and documentation SSOT that docgen consumes.
     </see>
   </references>
-
-</block>
+</docgen:README>

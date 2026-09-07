@@ -1,35 +1,29 @@
-<!--
-  BlockML DocGen — Example content role
+<!--BlockML DocGen — Example content role
 
-  FQN: org.blockml.bml.docgen.role.Example
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.role.Example-->
+<role:Example xmlns="http://blockml.org/bml"
   xmlns:role="org.blockml.bml.docgen.role"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:level="org.blockml.bml.docgen.level"
   xmlns:weight="org.blockml.bml.docgen.weight">
 
-  <name>Example</name>
-  <type>role:Example</type>
-  <baseType>dcore:ContentRole</baseType>
-  <is>A content role that illustrates a prior concept with a concrete case</is>
-
+  <baseType>
+    dcore:ContentRole
+  </baseType>
+  <is>
+    A content role that illustrates a prior concept with a concrete case
+  </is>
   <documentation>
     Illustrates a previously described concept with a concrete case — code, BML snippet,
     configuration, small scenario, or counter-example. Shows rather than introducing new
     theory.
-
+    
     Distinguishes from Instruction (which directs the reader to act), and Reference (which
     supplies complete technical facts).
-
+    
     Typical rules: name clearly what is illustrated; keep small; introduce no extra
     concepts; match the current detail level.
   </documentation>
-
   <references>
     <see type="dcore:ContentRole" relation="Extends">
       Rhetorical / content-role branch root.
@@ -41,7 +35,6 @@
       Reference is complete lookup material; Example is a small illustration.
     </see>
   </references>
-
   <properties>
     <displayName override="true">
       <value>Example</value>
@@ -56,5 +49,4 @@
       <value>false</value>
     </allowsNewConcepts>
   </properties>
-
-</block>
+</role:Example>

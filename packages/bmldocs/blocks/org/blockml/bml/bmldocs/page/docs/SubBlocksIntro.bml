@@ -1,15 +1,9 @@
-<!--
-  BlockML Documentation — Sub-Blocks intro
+<!--BlockML Documentation — Sub-Blocks intro
 
-  FQN: org.blockml.bml.bmldocs.page.docs.SubBlocksIntro
--->
-<block
-  xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs.page.docs.SubBlocksIntro-->
+<page:SubBlocksIntro xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
   xmlns:docset="org.blockml.bml.bmldocs.docset"
   xmlns:dpage="org.blockml.bml.docgen.page"
@@ -20,19 +14,19 @@
   xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
-  <name>SubBlocksIntro</name>
-  <type>page:SubBlocksIntro</type>
-  <baseType>docset:BmlDocPage</baseType>
-  <is>A website intro to Sub-Blocks</is>
-
+  <baseType>
+    docset:BmlDocPage
+  </baseType>
+  <is>
+    A website intro to Sub-Blocks
+  </is>
   <documentation>
     Marker page: nested types under a root Block, FQN derivation, and how they differ from
     embedded Blocks — one nesting example plus a pointer to identity rules.
-
+    
     content is a structural scaffold only; generate prose and examples from referenced core
     documentation (doc:SubBlockModel, doc:TypeIdentityDerivation, doc:MemberVisibility).
   </documentation>
-
   <references>
     <see type="doc:SubBlockModel" relation="Requires">
       Primary content — Sub-Blocks, visibility, and embedded Blocks.
@@ -41,31 +35,20 @@
       Primary content — root vs Sub-Block FQN derivation.
     </see>
   </references>
-
   <properties>
     <title override="true">
       <value>Sub-Blocks</value>
     </title>
-
     <purpose override="true">
-      <value>
-        Introduce Sub-Blocks as nested types under a parent Block.
-      </value>
+      <value>Introduce Sub-Blocks as nested types under a parent Block.</value>
     </purpose>
-
     <detailLevel override="true">
-      <value>
-        dlevel:Introductory
-      </value>
+      <value>dlevel:Introductory</value>
     </detailLevel>
-
     <pageType override="true">
-      <value>
-        ptype:Concept
-      </value>
+      <value>ptype:Concept</value>
     </pageType>
   </properties>
-
   <aggregations>
     <authoritativeSources override="true">
       <composition>
@@ -74,14 +57,9 @@
         <doc:MemberVisibility />
       </composition>
     </authoritativeSources>
-
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
-          <summary>
-            Recognize Sub-Blocks as nested types under a parent Block and distinguish them
-            from embedded Blocks while grasping basic FQN forms.
-          </summary>
           <authoritativeSources>
             <doc:SubBlockModel />
             <doc:TypeIdentityDerivation />
@@ -90,23 +68,14 @@
         </sem:LearningObjective>
       </composition>
     </learningObjectives>
-
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
-          <summary>
-            The reader can describe Sub-Blocks as nested types declared under subBlocks.
-          </summary>
           <authoritativeSources>
             <doc:SubBlockModel />
           </authoritativeSources>
         </sem:ReaderOutcome>
-
         <sem:ReaderOutcome>
-          <summary>
-            The reader can contrast Sub-Blocks with embedded Blocks and name common reference
-            forms.
-          </summary>
           <authoritativeSources>
             <doc:SubBlockModel />
             <doc:TypeIdentityDerivation />
@@ -114,15 +83,9 @@
         </sem:ReaderOutcome>
       </composition>
     </readerOutcomes>
-
     <scopes override="true">
       <composition>
         <sem:Scope>
-          <summary>
-            Introduce Sub-Blocks as nested types, contrast them with embedded Blocks, explain
-            Sub-Block versus root identity conventions, and summarize FQN and reference forms
-            for nested types.
-          </summary>
           <authoritativeSources>
             <doc:SubBlockModel />
             <doc:TypeIdentityDerivation />
@@ -131,77 +94,39 @@
         </sem:Scope>
       </composition>
     </scopes>
-
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
-          <summary>
-            Full identity derivation algorithm.
-          </summary>
-          <reason>
-            Introductory pages need usable reference forms, not the complete algorithm.
-          </reason>
+          <reason>Introductory pages need usable reference forms, not the complete algorithm.</reason>
         </sem:Exclusion>
-
         <sem:Exclusion>
-          <summary>
-            Diagnostic codes.
-          </summary>
-          <reason>
-            Diagnostic identifiers belong on reference and troubleshooting pages.
-          </reason>
+          <reason>Diagnostic identifiers belong on reference and troubleshooting pages.</reason>
         </sem:Exclusion>
       </composition>
     </exclusions>
-
     <content override="true">
       <composition>
-
-        <!-- 1. Lead -->
-
-        <dpage:Section
-          heading="Nested types under a parent Block"
-          purpose="Orient readers with a nested-type analogy">
-
+        <!--1. Lead-->
+        <dpage:Section heading="Nested types under a parent Block" purpose="Orient readers with a nested-type analogy">
           <content>
-            <dpage:Paragraph
-              purpose="Introduce Sub-Blocks as nested-type analogues under a parent Block">
-
+            <dpage:Paragraph purpose="Introduce Sub-Blocks as nested-type analogues under a parent Block">
               <role>role:Lead</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                Sub-Blocks are nested types under a parent Block, comparable to static nested
-                classes that still belong to one enclosing identity.
-              </message>
-
+              <message>Sub-Blocks are nested types under a parent Block, comparable to static nested
+classes that still belong to one enclosing identity.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Nesting keeps related types close without inventing a second ontology.
-                  </summary>
                   <authoritativeSources>
                     <doc:SubBlockModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Sub-Block identity builds from the parent FQN rather than standing as an
-                    independent document root.
-                  </summary>
                   <authoritativeSources>
                     <doc:TypeIdentityDerivation />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Visibility naming for Sub-Blocks follows the same access prefixes as members.
-                  </summary>
                   <authoritativeSources>
                     <doc:MemberVisibility />
                     <doc:SubBlockModel />
@@ -211,479 +136,221 @@
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-
-        <!-- 2. Nesting and contrast -->
-
-        <dpage:Section
-          heading="Declared under subBlocks"
-          purpose="Explain nesting under the parent and contrast embedded Blocks">
-
+        <!--2. Nesting and contrast-->
+        <dpage:Section heading="Declared under subBlocks" purpose="Explain nesting under the parent and contrast embedded Blocks">
           <content>
-
-            <dpage:Paragraph
-              purpose="Explain subBlocks nesting">
-
+            <dpage:Paragraph purpose="Explain subBlocks nesting">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                Sub-Blocks are declared in subBlocks, may nest to arbitrary depth, and do not
-                inherit outer generic scope from the parent.
-              </message>
-
+              <message>Sub-Blocks are declared in subBlocks, may nest to arbitrary depth, and do not
+inherit outer generic scope from the parent.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Visibility naming for Sub-Blocks follows the same access prefixes as members.
-                  </summary>
                   <authoritativeSources>
                     <doc:SubBlockModel />
                     <doc:MemberVisibility />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Nested depth is allowed, but each Sub-Block remains a nested type under the
-                    parent identity.
-                  </summary>
                   <authoritativeSources>
                     <doc:SubBlockModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
-
-            <dpage:Paragraph
-              purpose="Contrast Sub-Blocks with embedded Blocks">
-
+            <dpage:Paragraph purpose="Contrast Sub-Blocks with embedded Blocks">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                Embedded Blocks under embeddedBlocks serve a different nesting role and must
-                not be confused with Sub-Block nested types.
-              </message>
-
+              <message>Embedded Blocks under embeddedBlocks serve a different nesting role and must
+not be confused with Sub-Block nested types.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Keep nested-type identity and embedded composition as separate ideas.
-                  </summary>
                   <authoritativeSources>
                     <doc:SubBlockModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    subBlocks declare types; embeddedBlocks place Block instances in a different
-                    nesting role.
-                  </summary>
                   <authoritativeSources>
                     <doc:SubBlockModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
-
           </content>
         </dpage:Section>
-
-        <!-- 3. FQN and references -->
-
-        <dpage:Section
-          heading="FQN and reference forms"
-          purpose="Summarize identity and how nested types are referenced">
-
+        <!--3. FQN and references-->
+        <dpage:Section heading="FQN and reference forms" purpose="Summarize identity and how nested types are referenced">
           <content>
-
-            <dpage:Paragraph
-              purpose="Introduce root versus Sub-Block identity at a conceptual level">
-
+            <dpage:Paragraph purpose="Introduce root versus Sub-Block identity at a conceptual level">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                A Sub-Block identity builds from the parent FQN prefix rather than standing as
-                an independent document root.
-              </message>
-
+              <message>A Sub-Block identity builds from the parent FQN prefix rather than standing as
+an independent document root.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    Qualified and nested unqualified forms cover everyday references to nested
-                    types.
-                  </summary>
                   <authoritativeSources>
                     <doc:TypeIdentityDerivation />
                     <doc:SubBlockModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Full identity derivation algorithm.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
-
-            <dpage:Paragraph
-              purpose="Prepare the reader for common Sub-Block reference forms">
-
+            <dpage:Paragraph purpose="Prepare the reader for common Sub-Block reference forms">
               <role>role:Transition</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                Authors usually choose among fully qualified, prefixed, and innermost-first
-                unqualified references.
-              </message>
+              <message>Authors usually choose among fully qualified, prefixed, and innermost-first
+unqualified references.</message>
             </dpage:Paragraph>
-
-            <dpage:List
-              purpose="Present reference forms as a concise summary">
-
+            <dpage:List purpose="Present reference forms as a concise summary">
               <role>role:Summary</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                These forms cover qualified and nested unqualified references.
-              </message>
-
+              <message>These forms cover qualified and nested unqualified references.</message>
               <items>
-                <dpage:ListItem
-                  text="FQN"
-                  purpose="Name the fully qualified name form">
-
-                  <message>
-                    A fully qualified name identifies the nested type unambiguously.
-                  </message>
+                <dpage:ListItem text="FQN" purpose="Name the fully qualified name form">
+                  <message>A fully qualified name identifies the nested type unambiguously.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="QName"
-                  purpose="Name the QName with xmlns prefix form">
-
-                  <message>
-                    A QName with an xmlns prefix can refer to the nested type compactly.
-                  </message>
+                <dpage:ListItem text="QName" purpose="Name the QName with xmlns prefix form">
+                  <message>A QName with an xmlns prefix can refer to the nested type compactly.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="Nested unqualified"
-                  purpose="Name innermost-first unqualified resolution">
-
-                  <message>
-                    Unqualified nested resolution prefers the innermost enclosing scope first.
-                  </message>
+                <dpage:ListItem text="Nested unqualified" purpose="Name innermost-first unqualified resolution">
+                  <message>Unqualified nested resolution prefers the innermost enclosing scope first.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="External refs"
-                  purpose="Explain that outside the parent document refs must qualify">
-
-                  <message>
-                    References from outside the parent document must qualify the nested type.
-                  </message>
+                <dpage:ListItem text="External refs" purpose="Explain that outside the parent document refs must qualify">
+                  <message>References from outside the parent document must qualify the nested type.</message>
                 </dpage:ListItem>
               </items>
             </dpage:List>
-
           </content>
         </dpage:Section>
-
-        <!-- 4. Sub-Block identity -->
-
-        <dpage:Section
-          heading="Sub-Block identity differs from root identity"
-          purpose="Explain the name-required, type-derived convention for nested types">
-
+        <!--4. Sub-Block identity-->
+        <dpage:Section heading="Sub-Block identity differs from root identity" purpose="Explain the name-required, type-derived convention for nested types">
           <content>
-
-            <dpage:Paragraph
-              purpose="Contrast Sub-Block identity with root Block identity conventions">
-
+            <dpage:Paragraph purpose="Contrast Sub-Block identity with root Block identity conventions">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                Sub-Block identity uses the opposite convention from a root Block: name is
-                required, and type is normally omitted because it derives from the parent FQN
-                plus that name.
-              </message>
-
+              <message>Sub-Block identity uses the opposite convention from a root Block: name is
+required, and type is normally omitted because it derives from the parent FQN
+plus that name.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
-                  <summary>
-                    A root Block requires type as canonical identity and may omit name when it
-                    matches the type's last segment.
-                  </summary>
                   <authoritativeSources>
                     <doc:TypeIdentityDerivation />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    When a Sub-Block does declare type, it must equal the expected parent-path
-                    derivation, not merely the last segment.
-                  </summary>
                   <authoritativeSources>
                     <doc:TypeIdentityDerivation />
                     <doc:SubBlockModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
-
                 <sem:SupportingPoint>
-                  <summary>
-                    Prefer omitting type on Sub-Blocks so the nested FQN stays derived and
-                    uncluttered.
-                  </summary>
                   <authoritativeSources>
                     <doc:SubBlockModel />
                     <doc:TypeIdentityDerivation />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Full identity derivation algorithm and diagnostic codes.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
-
-            <dpage:Paragraph
-              purpose="Prepare the reader for the identity-convention summary">
-
+            <dpage:Paragraph purpose="Prepare the reader for the identity-convention summary">
               <role>role:Transition</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                A short contrast keeps root and nested identity rules distinct while authoring.
-              </message>
+              <message>A short contrast keeps root and nested identity rules distinct while authoring.</message>
             </dpage:Paragraph>
-
-            <dpage:List
-              purpose="Present root versus Sub-Block identity conventions">
-
+            <dpage:List purpose="Present root versus Sub-Block identity conventions">
               <role>role:Summary</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Primary</weight>
-
-              <message>
-                These conventions distinguish document roots from nested types.
-              </message>
-
+              <message>These conventions distinguish document roots from nested types.</message>
               <items>
-                <dpage:ListItem
-                  text="Root"
-                  purpose="Summarize root identity: type required, name optional">
-
-                  <message>
-                    Roots require type; name is optional when it matches the type's last
-                    segment.
-                  </message>
+                <dpage:ListItem text="Root" purpose="Summarize root identity: type required, name optional">
+                  <message>Roots require type; name is optional when it matches the type's last
+segment.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="Sub-Block"
-                  purpose="Summarize Sub-Block identity: name required, type derived">
-
-                  <message>
-                    Sub-Blocks require name; type is normally omitted and derived from the
-                    parent path.
-                  </message>
+                <dpage:ListItem text="Sub-Block" purpose="Summarize Sub-Block identity: name required, type derived">
+                  <message>Sub-Blocks require name; type is normally omitted and derived from the
+parent path.</message>
                 </dpage:ListItem>
-
-                <dpage:ListItem
-                  text="Embedded contrast"
-                  purpose="Keep embedded Blocks out of the nested-type identity rule">
-
-                  <message>
-                    Embedded Blocks remain separate full documents with their own required
-                    type, not nested-type identity under the parent FQN.
-                  </message>
+                <dpage:ListItem text="Embedded contrast" purpose="Keep embedded Blocks out of the nested-type identity rule">
+                  <message>Embedded Blocks remain separate full documents with their own required
+type, not nested-type identity under the parent FQN.</message>
                 </dpage:ListItem>
               </items>
             </dpage:List>
-
           </content>
         </dpage:Section>
-
-        <!-- 5. Minimal example -->
-
-        <dpage:Section
-          heading="A parent with one nested Sub-Block"
-          purpose="Connect the concept to a small nesting sketch">
-
+        <!--5. Minimal example-->
+        <dpage:Section heading="A parent with one nested Sub-Block" purpose="Connect the concept to a small nesting sketch">
           <content>
-
-            <dpage:Paragraph
-              purpose="Introduce a parent Sub-Block declaration and qualified reference">
-
+            <dpage:Paragraph purpose="Introduce a parent Sub-Block declaration and qualified reference">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                A root can declare one Sub-Block under subBlocks and refer to that nested type
-                with a qualified name from a composition or similar member.
-              </message>
-
+              <message>A root can declare one Sub-Block under subBlocks and refer to that nested type
+with a qualified name from a composition or similar member.</message>
               <exclusions>
                 <sem:Exclusion>
-                  <summary>
-                    Full identity derivation algorithm and diagnostic codes.
-                  </summary>
-                  <reason>
-                    The example teaches nesting and reference shape, not the full algorithm.
-                  </reason>
+                  <reason>The example teaches nesting and reference shape, not the full algorithm.</reason>
                 </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
-
-            <dpage:CodeBlock
-              purpose="Illustrate a subBlocks entry and a qualified nested reference">
-
+            <dpage:CodeBlock purpose="Illustrate a subBlocks entry and a qualified nested reference">
               <role>role:Example</role>
-
               <detailLevel>dlevel:Overview</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                A root declares one Sub-Block and a composition can refer to that nested type
-                with a qualified name.
-              </message>
-
+              <message>A root declares one Sub-Block and a composition can refer to that nested type
+with a qualified name.</message>
               <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>
-                    Highlight the subBlocks entry that declares the nested type under the
-                    parent.
-                  </summary>
-                </sem:SupportingPoint>
-
-                <sem:SupportingPoint>
-                  <summary>
-                    Highlight the qualified reference that names the nested type from outside
-                    its declaration site.
-                  </summary>
-                </sem:SupportingPoint>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
               </supportingPoints>
-
               <exclusions>
-                <sem:Exclusion>
-                  <summary>
-                    Full identity derivation algorithm and diagnostic codes.
-                  </summary>
-                </sem:Exclusion>
+                <sem:Exclusion />
               </exclusions>
             </dpage:CodeBlock>
-
-            <dpage:Paragraph
-              purpose="Interpret the subBlocks declaration and qualified reference">
-
+            <dpage:Paragraph purpose="Interpret the subBlocks declaration and qualified reference">
               <role>role:Explanation</role>
-
               <detailLevel>dlevel:Introductory</detailLevel>
-
               <weight>weight:Supporting</weight>
-
-              <message>
-                In the example, the Sub-Block is a nested type under the parent, and the
-                qualified reference resolves that nested identity rather than an independent
-                root document.
-              </message>
-
+              <message>In the example, the Sub-Block is a nested type under the parent, and the
+qualified reference resolves that nested identity rather than an independent
+root document.</message>
               <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>
-                    The subBlocks aggregation demonstrates nested-type declaration, not
-                    embeddedBlocks instance nesting.
-                  </summary>
-                </sem:SupportingPoint>
-
-                <sem:SupportingPoint>
-                  <summary>
-                    The qualified name shows how FQN or QName forms identify the nested type
-                    unambiguously.
-                  </summary>
-                </sem:SupportingPoint>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
               </supportingPoints>
             </dpage:Paragraph>
-
           </content>
         </dpage:Section>
-
-        <!-- 6. Continuation -->
-
-        <dpage:Section
-          heading="Continue with visibility and contracts"
-          purpose="Direct the reader to related conceptual pages">
-
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with visibility and contracts" purpose="Direct the reader to related conceptual pages">
           <content>
-            <dpage:Navigation
-              purpose="Continue the learning sequence">
-
+            <dpage:Navigation purpose="Continue the learning sequence">
               <title>Next</title>
-
               <items>
-                <dpage:NavigationItem
-                  label="Visibility"
-                  summary="Learn how naming prefixes control access to members and Sub-Blocks.">
-
-                  <target>
-                    page:VisibilityBasics
-                  </target>
+                <dpage:NavigationItem label="Visibility" summary="Learn how naming prefixes control access to members and Sub-Blocks.">
+                  <target>page:VisibilityBasics</target>
                 </dpage:NavigationItem>
-
-                <dpage:NavigationItem
-                  label="Contracts"
-                  summary="See how contracts differ from nested Sub-Block types.">
-
-                  <target>
-                    page:ContractsIntro
-                  </target>
+                <dpage:NavigationItem label="Contracts" summary="See how contracts differ from nested Sub-Block types.">
+                  <target>page:ContractsIntro</target>
                 </dpage:NavigationItem>
               </items>
             </dpage:Navigation>
           </content>
         </dpage:Section>
-
       </composition>
     </content>
   </aggregations>
-
-</block>
+</page:SubBlocksIntro>

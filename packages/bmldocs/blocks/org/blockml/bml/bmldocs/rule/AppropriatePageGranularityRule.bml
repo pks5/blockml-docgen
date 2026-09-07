@@ -1,68 +1,58 @@
-<!--
-  BlockML Documentation — appropriate page granularity rule
+<!--BlockML Documentation — appropriate page granularity rule
 
-  FQN: org.blockml.bml.bmldocs.rule.AppropriatePageGranularityRule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.bmldocs.rule.AppropriatePageGranularityRule-->
+<brule:AppropriatePageGranularityRule xmlns="http://blockml.org/bml"
   xmlns:brule="org.blockml.bml.bmldocs.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
-  <name>AppropriatePageGranularityRule</name>
-  <type>brule:AppropriatePageGranularityRule</type>
-  <baseType>rule:StructureRule</baseType>
-  <is>A structure rule requiring planned Pages to have an appropriate conceptual granularity</is>
-
+  <baseType>
+    rule:StructureRule
+  </baseType>
+  <is>
+    A structure rule requiring planned Pages to have an appropriate conceptual granularity
+  </is>
   <documentation>
     Defines the appropriate conceptual size of planned Pages within a DocSet.
-
+    
     Each planned Page should represent a coherent unit of documentation that is large enough
     to justify an independent Page while remaining focused enough to have one clear purpose.
     A Page should not combine several largely independent topics merely to reduce the total
     number of Pages.
-
+    
     Conversely, the DocSet should not be fragmented into many very small Pages when closely
     related concepts can be explained more coherently together. Minor details, syntax variants,
     and supporting concepts should normally remain part of a broader Page unless they require
     substantial independent explanation or serve a clearly distinct purpose.
-
+    
     Page granularity should be determined by conceptual coherence and reader comprehension,
     not by an arbitrary target number of Pages. Split a planned Page when its purpose contains
     multiple independent responsibilities. Merge planned Pages when their purposes are too
     narrow to form meaningful standalone documentation or when separating them would
     unnecessarily interrupt the learning flow.
   </documentation>
-
   <references>
     <see type="rule:StructureRule" relation="Extends">
       Documentation structure-rule branch.
     </see>
   </references>
-
   <properties>
     <name override="true">
       <value>Appropriate page granularity</value>
     </name>
-
     <summary override="true">
       <value>Plan Pages as coherent documentation units that are neither overloaded nor
-        unnecessarily fragmented.</value>
+unnecessarily fragmented.</value>
     </summary>
-
     <instructions override="true">
       <value>Choose the granularity of planned Pages according to conceptual coherence and
-        reader comprehension. Each Page should be substantial enough to justify an independent
-        Page and focused enough to serve one clear purpose. Split a Page when its planned
-        purpose contains multiple largely independent responsibilities that deserve separate
-        treatment. Merge or broaden Pages whose purposes are too narrow to provide meaningful
-        standalone documentation, especially when the concepts are naturally learned together.
-        Keep minor details, variants, and supporting concepts within a broader Page unless they
-        require substantial independent explanation or have a clearly distinct purpose. Do not
-        optimize page granularity merely to reach a particular total page count.</value>
+reader comprehension. Each Page should be substantial enough to justify an independent
+Page and focused enough to serve one clear purpose. Split a Page when its planned
+purpose contains multiple largely independent responsibilities that deserve separate
+treatment. Merge or broaden Pages whose purposes are too narrow to provide meaningful
+standalone documentation, especially when the concepts are naturally learned together.
+Keep minor details, variants, and supporting concepts within a broader Page unless they
+require substantial independent explanation or have a clearly distinct purpose. Do not
+optimize page granularity merely to reach a particular total page count.</value>
     </instructions>
   </properties>
-
-</block>
+</brule:AppropriatePageGranularityRule>

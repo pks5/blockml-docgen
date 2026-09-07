@@ -1,35 +1,29 @@
-<!--
-  BlockML DocGen — Reference page type
+<!--BlockML DocGen — Reference page type
 
-  FQN: org.blockml.bml.docgen.pagetype.Reference
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.pagetype.Reference-->
+<ptype:Reference xmlns="http://blockml.org/bml"
   xmlns:ptype="org.blockml.bml.docgen.pagetype"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:role="org.blockml.bml.docgen.role"
   xmlns:level="org.blockml.bml.docgen.level">
 
-  <name>Reference</name>
-  <type>ptype:Reference</type>
-  <baseType>dcore:PageType</baseType>
-  <is>A page type that provides complete factual reference information</is>
-
+  <baseType>
+    dcore:PageType
+  </baseType>
+  <is>
+    A page type that provides complete factual reference information
+  </is>
   <documentation>
     Provides complete factual reference information — APIs, syntax, properties, members,
     options, mappings, or rules — as precisely and completely as possible. Optimized for
     lookup rather than learning.
-
+    
     Typical characteristics: exhaustive; precise; structured; little narrative.
-
+    
     Examples: Block definition; Aggregation member; Expression language; XML schema.
-
+    
     Core question: Which complete facts apply?
   </documentation>
-
   <references>
     <see type="dcore:PageType" relation="Extends">
       Editorial page-kind branch root.
@@ -44,7 +38,6 @@
       Concept builds understanding; Reference catalogues facts.
     </see>
   </references>
-
   <properties>
     <displayName override="true">
       <value>Reference</value>
@@ -56,7 +49,6 @@
       <value>1</value>
     </maxPrimaryConcepts>
   </properties>
-
   <aggregations>
     <recommendedRoles override="true">
       <composition>
@@ -71,5 +63,4 @@
       </composition>
     </forbiddenRoles>
   </aggregations>
-
-</block>
+</ptype:Reference>

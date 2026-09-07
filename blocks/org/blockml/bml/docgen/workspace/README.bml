@@ -1,40 +1,34 @@
-<!--
-  BlockML Docgen Workspace — README
-  FQN: org.blockml.bml.docgen.workspace.README
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+<!--BlockML Docgen Workspace — README
+  FQN: org.blockml.bml.docgen.workspace.README-->
+<workspace:README xmlns="http://blockml.org/bml"
   xmlns:core="org.blockml.bml.core"
   xmlns:docgen="org.blockml.bml.docgen"
   xmlns:bmldocs="org.blockml.bml.bmldocs"
   xmlns:workspace="org.blockml.bml.docgen.workspace"
   xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation">
 
-  <name>README</name>
-  <type>workspace:README</type>
-  <baseType>core:ReadMe</baseType>
-  <is>Reading entry for the BlockML Docgen workspace library</is>
-
+  <baseType>
+    core:ReadMe
+  </baseType>
+  <is>
+    Reading entry for the BlockML Docgen workspace library
+  </is>
   <documentation>
     This monorepo authors two publishable BML libraries:
-
+    
     org.blockml.bml.docgen (@blockml/docgen) is the reusable documentation-generation
     foundation — DocSet, Page, PageGroup, Plans, manifestation stages, page and content
     types, roles, rules, and semantic annotations. It is orthogonal to any one website.
-
+    
     org.blockml.bml.bmldocs (@blockml/bmldocs) specializes that foundation for
     blockml.org: BmlDocSet, BmlDocPage markers, page groups, and site rules. Narrative
     prose stays in org.blockml.bml.documentation.* and org.blockml.bml.task.*; bmldocs
     pages point at those sources.
-
+    
     This library (org.blockml.bml.docgen.workspace.*) is the monorepo documentation hub
     and SSOT entry. It depends on each package BML library; packages never depend back
     here. Start at org.blockml.bml.docgen.workspace.documentation.Introduction.
   </documentation>
-
   <references>
     <see type="wsdocumentation:Introduction" relation="ReadFirst" />
     <see type="wsdocumentation:PackageMap" relation="SeeAlso" />
@@ -44,5 +38,4 @@
     <see type="docgen:README" relation="SeeAlso" />
     <see type="bmldocs:README" relation="SeeAlso" />
   </references>
-
-</block>
+</workspace:README>

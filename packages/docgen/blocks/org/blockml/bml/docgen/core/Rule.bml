@@ -1,24 +1,19 @@
-<!--
-  BlockML DocGen — documentation generation rule
+<!--BlockML DocGen — documentation generation rule
 
-  FQN: org.blockml.bml.docgen.core.Rule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.core.Rule-->
+<dcore:Rule xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:rule="org.blockml.bml.docgen.rule"
   xmlns:core="org.blockml.bml.core"
   xmlns:type="org.blockml.bml.type"
   xmlns:workflow="org.blockml.bml.transformer.workflow">
 
-  <name>Rule</name>
-  <type>dcore:Rule</type>
-  <baseType>workflow:InstructionTask</baseType>
-  <is>A documentation-generation rule</is>
-
+  <baseType>
+    workflow:InstructionTask
+  </baseType>
+  <is>
+    A documentation-generation rule
+  </is>
   <documentation>
     Named rule that guides how documentation is authored or generated. name identifies the rule;
     summary states its intent briefly; instruction holds the actionable directive for authors and
@@ -27,7 +22,9 @@
     org.blockml.bml.docgen.rule (StructureRule, ContentRule, SourceRule, TerminologyRule,
     LearningRule, StyleRule, QualityRule).
   </documentation>
-
+  <abstract>
+    true
+  </abstract>
   <references>
     <see type="dcore:DocElement" relation="Extends">
       Semantic base for all docgen domain Blocks (except Library / README).
@@ -45,16 +42,16 @@
       Overarching quality requirements across dimensions.
     </see>
   </references>
-
-  <abstract>true</abstract>
-
   <properties>
-    <name type="Text">
-      <documentation>Stable name of this rule.</documentation>
+    <name type="type:Text">
+      <documentation>
+        Stable name of this rule.
+      </documentation>
     </name>
-    <summary type="Text">
-      <documentation>Short statement of what this rule requires or prefers.</documentation>
+    <summary type="type:Text">
+      <documentation>
+        Short statement of what this rule requires or prefers.
+      </documentation>
     </summary>
   </properties>
-
-</block>
+</dcore:Rule>

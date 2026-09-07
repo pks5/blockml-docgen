@@ -1,24 +1,19 @@
-<!--
-  BlockML DocGen — abstract documentation page branch root
+<!--BlockML DocGen — abstract documentation page branch root
 
-  FQN: org.blockml.bml.docgen.core.Page
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.core.Page-->
+<dcore:Page xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.docgen.page"
   xmlns:core="org.blockml.bml.core"
   xmlns:type="org.blockml.bml.type">
 
-  <name>Page</name>
-  <type>dcore:Page</type>
-  <baseType>dcore:DocElement</baseType>
-  <is>A documentation-generation page branch root</is>
-
+  <baseType>
+    dcore:DocElement
+  </baseType>
+  <is>
+    A documentation-generation page branch root
+  </is>
   <documentation>
     Abstract root for documentation-generation page structures. Specialized by page:DocPage
     (content pages, including index/menu pages). Content elements branch from
@@ -29,7 +24,9 @@
     ContentElement). docset points at the DocSet this page belongs to. Site routing uses
     DocSet.rootPath + PageMapping.path.
   </documentation>
-
+  <abstract>
+    true
+  </abstract>
   <references>
     <see type="dcore:DocElement" relation="Extends">
       Semantic base for all docgen domain Blocks (except Library / README).
@@ -73,63 +70,84 @@
       Owned exclusion instances on exclusions — page-wide.
     </see>
   </references>
-
-  <abstract>true</abstract>
-
   <properties>
-    <title type="Text">
-      <documentation>Title of this page.</documentation>
+    <title type="type:Text">
+      <documentation>
+        Title of this page.
+      </documentation>
     </title>
     <docset type="type:TypeReference(dcore:DocSet)">
-      <documentation>Type reference to the DocSet this page belongs to.</documentation>
+      <documentation>
+        Type reference to the DocSet this page belongs to.
+      </documentation>
     </docset>
     <pageType type="type:TypeReference(dcore:PageType)">
-      <documentation>Editorial kind of this page (concrete types in
-        org.blockml.bml.docgen.pagetype).</documentation>
+      <documentation>
+        Editorial kind of this page (concrete types in
+        org.blockml.bml.docgen.pagetype).
+      </documentation>
     </pageType>
-    <purpose type="Text">
-      <documentation>Purpose of this page for the documentation renderer — why it is present and
-        what it should accomplish. Not reader-facing page copy.</documentation>
+    <purpose type="type:Text">
+      <documentation>
+        Purpose of this page for the documentation renderer — why it is present and
+        what it should accomplish. Not reader-facing page copy.
+      </documentation>
     </purpose>
     <detailLevel type="type:TypeReference(dcore:DetailLevel)">
-      <documentation>Optional reference to how detailed this page should be explained overall
-        (concrete levels in org.blockml.bml.docgen.level).</documentation>
+      <documentation>
+        Optional reference to how detailed this page should be explained overall
+        (concrete levels in org.blockml.bml.docgen.level).
+      </documentation>
     </detailLevel>
   </properties>
-
   <aggregations>
     <rules type="type:TypeReferenceEntity(dcore:Rule)[]">
-      <documentation>      Rules that apply to this page. They apply in addition to the global rules on
-        DocSet.</documentation>
+      <documentation>
+        Rules that apply to this page. They apply in addition to the global rules on
+          DocSet.
+      </documentation>
     </rules>
     <authoritativeSources type="type:TypeReferenceEntity(core:Block)[]">
-      <documentation>Authoritative source Blocks this page relates to — apply to the whole
-        page.</documentation>
+      <documentation>
+        Authoritative source Blocks this page relates to — apply to the whole
+        page.
+      </documentation>
     </authoritativeSources>
     <audiences type="type:TypeReferenceEntity(dcore:Audience)[]">
-      <documentation>Type references to audiences this page is intended for — apply to the whole
-        page.</documentation>
+      <documentation>
+        Type references to audiences this page is intended for — apply to the whole
+        page.
+      </documentation>
     </audiences>
     <supportingPoints type="sem:SupportingPoint[]">
-      <documentation>Owned supporting points that reinforce this page’s purpose — direct
-        instances, not type references.</documentation>
+      <documentation>
+        Owned supporting points that reinforce this page’s purpose — direct
+        instances, not type references.
+      </documentation>
     </supportingPoints>
     <readerOutcomes type="sem:ReaderOutcome[]">
-      <documentation>Owned reader outcomes this page should produce — direct instances, not type
-        references.</documentation>
+      <documentation>
+        Owned reader outcomes this page should produce — direct instances, not type
+        references.
+      </documentation>
     </readerOutcomes>
     <learningObjectives type="sem:LearningObjective[]">
-      <documentation>Owned learning objectives this page should produce — direct instances, not
-        type references.</documentation>
+      <documentation>
+        Owned learning objectives this page should produce — direct instances, not
+        type references.
+      </documentation>
     </learningObjectives>
     <scopes type="sem:Scope[]">
-      <documentation>Owned in-scope bounds for this page — direct instances, not type
-        references.</documentation>
+      <documentation>
+        Owned in-scope bounds for this page — direct instances, not type
+        references.
+      </documentation>
     </scopes>
     <exclusions type="sem:Exclusion[]">
-      <documentation>Owned out-of-scope exclusions for this page — direct instances, not type
-        references.</documentation>
+      <documentation>
+        Owned out-of-scope exclusions for this page — direct instances, not type
+        references.
+      </documentation>
     </exclusions>
   </aggregations>
-
-</block>
+</dcore:Page>

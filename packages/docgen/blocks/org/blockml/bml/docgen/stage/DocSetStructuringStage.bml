@@ -1,26 +1,21 @@
-<!--
-  BlockML DocGen — DocSet structuring manifestation stage
+<!--BlockML DocGen — DocSet structuring manifestation stage
 
-  FQN: org.blockml.bml.docgen.stage.DocSetStructuringStage
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.stage.DocSetStructuringStage-->
+<stage:DocSetStructuringStage xmlns="http://blockml.org/bml"
   xmlns:stage="org.blockml.bml.docgen.stage"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:dplan="org.blockml.bml.docgen.plan">
 
-  <name>DocSetStructuringStage</name>
-  <type>stage:DocSetStructuringStage</type>
-  <baseType>dcore:ManifestationStage</baseType>
-  <is>The manifestation stage that materializes a DocSet from an abstract DocSetPlan</is>
-
+  <baseType>
+    dcore:ManifestationStage
+  </baseType>
+  <is>
+    The manifestation stage that materializes a DocSet from an abstract DocSetPlan
+  </is>
   <documentation>
     Translates the abstract DocSetPlan into a concrete DocSet structure — Pages, PageGroups, and
     related catalogue entries — or synchronizes an existing DocSet with the plan.
-
+    
     Responsibilities include:
     - resolving each StructurePlan.name against DocSetPlan.pageBasePackage to the concrete Block
       FQN and creating missing Pages / PageGroups
@@ -33,12 +28,11 @@
       the plan
     - copying DocSetPlan.authoritativeSources onto DocSet.authoritativeSources
     - marking Pages that no longer occur in the plan for deletion by renaming
-      &lt;page&gt;.bml to &lt;page&gt;.bml.deleted
-
+      &lt;page>.bml to &lt;page>.bml.deleted
+    
     Prefer reuse of existing content over rewriting. Full semantic authoring of Page body content
     remains the responsibility of later stages (for example PageAuthoringStage).
   </documentation>
-
   <references>
     <see type="dcore:ManifestationStage" relation="Extends">
       Manifestation-stage classification axis under DocElement.
@@ -62,5 +56,4 @@
       Next stage — authors semantic Page models after structure exists.
     </see>
   </references>
-
-</block>
+</stage:DocSetStructuringStage>

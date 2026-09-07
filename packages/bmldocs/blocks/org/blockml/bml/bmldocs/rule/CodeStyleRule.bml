@@ -1,21 +1,16 @@
-<!--
-  BlockML Documentation — code presentation style rule
+<!--BlockML Documentation — code presentation style rule
 
-  FQN: org.blockml.bml.bmldocs.rule.CodeStyleRule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.bmldocs.rule.CodeStyleRule-->
+<brule:CodeStyleRule xmlns="http://blockml.org/bml"
   xmlns:brule="org.blockml.bml.bmldocs.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
-  <name>CodeStyleRule</name>
-  <type>brule:CodeStyleRule</type>
-  <baseType>rule:StyleRule</baseType>
-  <is>A style rule for source code and code snippet presentation</is>
-
+  <baseType>
+    rule:StyleRule
+  </baseType>
+  <is>
+    A style rule for source code and code snippet presentation
+  </is>
   <documentation>
     Defines how source code and code snippets must be presented in BlockML documentation.
     Code is always shown as preformatted text with syntax highlighting. Depending on the target
@@ -23,28 +18,24 @@
     and syntax highlighting. Code is always read-only. In addition, each code block must provide
     a copy control that places the code on the system clipboard.
   </documentation>
-
   <references>
     <see type="rule:StyleRule" relation="Extends">
       Documentation style-rule branch.
     </see>
   </references>
-
   <properties>
     <name override="true">
       <value>Code presentation</value>
     </name>
     <summary override="true">
       <value>Present code as read-only preformatted text with syntax highlighting and a copy
-        control.</value>
+control.</value>
     </summary>
     <instructions override="true">
       <value>Render every source listing and code snippet as preformatted text with syntax
-        highlighting. Use a platform-appropriate prettify / highlighting plugin when the target
-        does not provide this natively. Code must be read-only. Provide a copy button that copies
-        the full code to the clipboard.</value>
+highlighting. Use a platform-appropriate prettify / highlighting plugin when the target
+does not provide this natively. Code must be read-only. Provide a copy button that copies
+the full code to the clipboard.</value>
     </instructions>
   </properties>
-
-
-</block>
+</brule:CodeStyleRule>

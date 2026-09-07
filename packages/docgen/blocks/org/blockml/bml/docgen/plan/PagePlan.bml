@@ -1,30 +1,26 @@
-<!--
-  BlockML DocGen — planned page within a DocSetPlan
+<!--BlockML DocGen — planned page within a DocSetPlan
 
-  FQN: org.blockml.bml.docgen.plan.PagePlan
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.plan.PagePlan-->
+<dplan:PagePlan xmlns="http://blockml.org/bml"
   xmlns:dplan="org.blockml.bml.docgen.plan"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:page="org.blockml.bml.docgen.page">
 
-  <name>PagePlan</name>
-  <type>dplan:PagePlan</type>
-  <baseType>dplan:StructurePlan</baseType>
-  <is>A planned page for a DocSetPlan</is>
-  <isnot>A concrete documentation Page, PageMapping, or PageGroup</isnot>
-
+  <baseType>
+    dplan:StructurePlan
+  </baseType>
+  <is>
+    A planned page for a DocSetPlan
+  </is>
+  <isnot>
+    A concrete documentation Page, PageMapping, or PageGroup
+  </isnot>
   <documentation>
     Planned page within a DocSetPlan. Used in DocSetPlanningStage to sketch structure before
     concrete Pages exist. Inherits name from StructurePlan (Block path relative to
     pageBasePackage). scopes describes the intended page content; structuring maps scopes into
     the concrete Page’s purpose and documentation while reusing existing content where possible.
   </documentation>
-
   <references>
     <see type="dplan:StructurePlan" relation="Extends">
       Structural planning base — provides name relative to pageBasePackage.
@@ -39,13 +35,13 @@
       Concrete pageKey/path mapping — assigned during structuring, not at planning time.
     </see>
   </references>
-
   <properties>
-    <scopes type="Text">
-      <documentation>Comma-separated scopes describing the intended page content (for example
+    <scopes type="org.blockml.bml.type.Text">
+      <documentation>
+        Comma-separated scopes describing the intended page content (for example
         Block overview, mental model, learning path). Structuring maps scopes into Page.purpose
-        and Page documentation.</documentation>
+        and Page documentation.
+      </documentation>
     </scopes>
   </properties>
-
-</block>
+</dplan:PagePlan>

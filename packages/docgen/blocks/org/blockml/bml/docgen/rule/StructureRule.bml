@@ -1,33 +1,25 @@
-<!--
-  BlockML DocGen — a documentation structure rule
+<!--BlockML DocGen — a documentation structure rule
 
-  FQN: org.blockml.bml.docgen.rule.StructureRule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.rule.StructureRule-->
+<rule:StructureRule xmlns="http://blockml.org/bml"
   xmlns:rule="org.blockml.bml.docgen.rule"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:core="org.blockml.bml.core">
 
-  <name>StructureRule</name>
-  <type>rule:StructureRule</type>
-  <baseType>dcore:Rule</baseType>
-  <is>A documentation structure rule</is>
-
+  <baseType>
+    dcore:Rule
+  </baseType>
+  <is>
+    A documentation structure rule
+  </is>
   <documentation>
     Defines requirements for the structural organization of documentation. Structure Rules govern how documentation is composed, including the presence, hierarchy, ordering, cardinality, and relationships of pages, sections, and other documentation elements. They focus on how content is organized, not on the content itself.
-
+    
     Distinction in one sentence: How is the documentation organized?
   </documentation>
-
   <references>
     <see type="dcore:Rule" relation="Extends">
       Documentation-generation rule branch under DocElement.
     </see>
   </references>
-
-
-</block>
+</rule:StructureRule>

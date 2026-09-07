@@ -1,28 +1,22 @@
-<!--
-  BlockML Documentation — Documentation page group
+<!--BlockML Documentation — Documentation page group
 
-  FQN: org.blockml.bml.bmldocs.page.DocsPageGroup
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.bmldocs.page.DocsPageGroup-->
+<pgroup:DocsPageGroup xmlns="http://blockml.org/bml"
   xmlns:pgroup="org.blockml.bml.bmldocs.page"
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
   xmlns:dcore="org.blockml.bml.docgen.core">
 
-  <name>DocsPageGroup</name>
-  <type>pgroup:DocsPageGroup</type>
-  <baseType>dcore:PageGroup</baseType>
-  <is>The Documentation page group for blockml.org docs</is>
-
+  <baseType>
+    dcore:PageGroup
+  </baseType>
+  <is>
+    The Documentation page group for blockml.org docs
+  </is>
   <documentation>
     Documentation subtree under RootPageGroup. title is “Documentation”; landingPage is
     TableOfContents. Does not list pages itself — child section PageGroups nest under this group
     via parentGroup.
   </documentation>
-
   <references>
     <see type="dcore:PageGroup" relation="Extends">
       Docgen page group base.
@@ -34,7 +28,6 @@
       Landing page for this documentation group.
     </see>
   </references>
-
   <properties>
     <title override="true">
       <value>Documentation</value>
@@ -46,5 +39,4 @@
       <value>page:TableOfContents</value>
     </landingPage>
   </properties>
-
-</block>
+</pgroup:DocsPageGroup>

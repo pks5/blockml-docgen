@@ -1,63 +1,54 @@
-<!--
-  BlockML Documentation — code explanation rule
+<!--BlockML Documentation — code explanation rule
 
-  FQN: org.blockml.bml.bmldocs.rule.CodeExplanationRule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.bmldocs.rule.CodeExplanationRule-->
+<brule:CodeExplanationRule xmlns="http://blockml.org/bml"
   xmlns:brule="org.blockml.bml.bmldocs.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
-  <name>CodeExplanationRule</name>
-  <type>brule:CodeExplanationRule</type>
-  <baseType>rule:ContentRule</baseType>
-  <is>A content rule requiring code examples to be followed by a concrete explanation</is>
-
+  <baseType>
+    rule:ContentRule
+  </baseType>
+  <is>
+    A content rule requiring code examples to be followed by a concrete explanation
+  </is>
   <documentation>
     Defines how code examples must be integrated into the explanatory flow of a documentation
     section.
-
+    
     A code example must not stand on its own. After every code block, provide explanatory text
     that connects the example back to the concept introduced by the surrounding section. The
     explanation must make explicit how the concrete elements shown in the example represent the
     concepts being taught.
-
+    
     Refer to the actual names and constructs used in the example whenever this improves
     understanding. For example, identify which concrete Block is the definition, which nested
     element is an instance, which Property or Aggregation demonstrates the discussed behavior,
     or which expression illustrates the relevant language feature.
-
+    
     The explanation should interpret the example rather than merely repeat what is visibly
     present in the code. Explain why the relevant elements matter, how they relate to each other,
     and how they demonstrate the point made before the example.
-
+    
     Keep the explanation focused on the purpose of the example. It does not need to describe
     every line of code unless those details are necessary for understanding the concept.
   </documentation>
-
   <properties>
     <name override="true">
       <value>Code explanation</value>
     </name>
-
     <summary override="true">
       <value>Follow every code example with explanatory text that connects its concrete elements
-        to the concept being taught.</value>
+to the concept being taught.</value>
     </summary>
-
     <instructions override="true">
       <value>After every code block, provide explanatory text that relates the example directly
-        to the concept introduced in the surrounding section. Refer to the concrete names,
-        elements, properties, aggregations, instances, expressions, or other constructs used in
-        the example whenever they help make the relationship explicit. Explain what role those
-        concrete elements play and why they demonstrate the concept. Do not merely paraphrase
-        the code or repeat the introductory text. Interpret the example and connect it back to
-        the section's explanation. Focus on the parts relevant to the example's teaching goal;
-        do not explain every line unless necessary.</value>
+to the concept introduced in the surrounding section. Refer to the concrete names,
+elements, properties, aggregations, instances, expressions, or other constructs used in
+the example whenever they help make the relationship explicit. Explain what role those
+concrete elements play and why they demonstrate the concept. Do not merely paraphrase
+the code or repeat the introductory text. Interpret the example and connect it back to
+the section's explanation. Focus on the parts relevant to the example's teaching goal;
+do not explain every line unless necessary.</value>
     </instructions>
   </properties>
-
-</block>
+</brule:CodeExplanationRule>

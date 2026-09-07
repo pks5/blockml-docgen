@@ -1,63 +1,53 @@
-<!--
-  BlockML Documentation — clear page purpose rule
+<!--BlockML Documentation — clear page purpose rule
 
-  FQN: org.blockml.bml.bmldocs.rule.ClearPagePurposeRule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.bmldocs.rule.ClearPagePurposeRule-->
+<brule:ClearPagePurposeRule xmlns="http://blockml.org/bml"
   xmlns:brule="org.blockml.bml.bmldocs.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
-  <name>ClearPagePurposeRule</name>
-  <type>brule:ClearPagePurposeRule</type>
-  <baseType>rule:ContentRule</baseType>
-  <is>A content rule requiring every planned documentation page to have a clear and specific purpose</is>
-
+  <baseType>
+    rule:ContentRule
+  </baseType>
+  <is>
+    A content rule requiring every planned documentation page to have a clear and specific purpose
+  </is>
   <documentation>
     Defines how the purpose of a documentation page is established during documentation
     planning.
-
+    
     Every planned Page must define a clear, specific, and unambiguous purpose. The purpose
     describes why the Page exists within the DocSet, what role it fulfills in the overall
     documentation, and why the reader should read it.
-
+    
     The purpose represents the planning intent of the Page rather than its concrete content.
     It should define the responsibility of the Page without describing its future Sections,
     examples, or detailed explanations. The purpose serves as the foundation for later
     structuring, authoring, and rendering stages.
-
+    
     A good purpose is concise, focused, and sufficiently specific to distinguish the Page
     from every other Page in the same DocSet. It should avoid combining multiple independent
     objectives into a single Page whenever those objectives would be better served by separate
     Pages.
   </documentation>
-
   <references>
     <see type="rule:ContentRule" relation="Extends">
       Documentation content-rule branch.
     </see>
   </references>
-
   <properties>
     <name override="true">
       <value>Clear page purpose</value>
     </name>
-
     <summary override="true">
       <value>Define a clear and specific purpose for every planned documentation page.</value>
     </summary>
-
     <instructions override="true">
       <value>During documentation planning, define a clear purpose for every planned Page.
-        The purpose must explain why the Page exists within the DocSet and what responsibility
-        it has in the overall documentation. Keep the purpose focused on a single objective
-        and avoid combining unrelated goals. The purpose should guide all later stages,
-        including page structuring, authoring, and rendering, but should not prescribe the
-        detailed structure or content of the Page.</value>
+The purpose must explain why the Page exists within the DocSet and what responsibility
+it has in the overall documentation. Keep the purpose focused on a single objective
+and avoid combining unrelated goals. The purpose should guide all later stages,
+including page structuring, authoring, and rendering, but should not prescribe the
+detailed structure or content of the Page.</value>
     </instructions>
   </properties>
-
-</block>
+</brule:ClearPagePurposeRule>

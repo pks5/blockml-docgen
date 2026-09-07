@@ -1,13 +1,7 @@
-<!--
-  BlockML Documentation Library — README / library reading entry point
+<!--BlockML Documentation Library — README / library reading entry point
 
-  FQN: org.blockml.bml.bmldocs.README
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.bmldocs.README-->
+<bmldocs:README xmlns="http://blockml.org/bml"
   xmlns:bmldocs="org.blockml.bml.bmldocs"
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
   xmlns:docset="org.blockml.bml.bmldocs.docset"
@@ -16,11 +10,12 @@
   xmlns:docgen="org.blockml.bml.docgen"
   xmlns:core="org.blockml.bml.core">
 
-  <name>README</name>
-  <type>bmldocs:README</type>
-  <baseType>core:ReadMe</baseType>
-  <is>A bmldocs library reading entry point</is>
-
+  <baseType>
+    core:ReadMe
+  </baseType>
+  <is>
+    A bmldocs library reading entry point
+  </is>
   <documentation>
     README for the BlockML documentation library (org.blockml.bml.bmldocs). This library models how
     blockml.org presents BlockML documentation to humans — TableOfContents menu page and concrete
@@ -29,11 +24,10 @@
     docgen:Library). Narrative content stays in bml-core; each DocPage points at those sources
     via references/see (Requires = primary content, SeeAlso = optional context). Routing keys and
     paths live on DocSet.pageMapping.
-
+    
     Start with page:TableOfContents and concrete pages under org.blockml.bml.bmldocs.page.docs.* —
     introductions, examples, cheat-sheets — not a 1:1 mirror of the core ReadFirst path.
   </documentation>
-
   <references>
     <see type="page:TableOfContents" relation="ReadFirst">
       Documentation menu page for blockml.org (Navigation tree).
@@ -57,5 +51,4 @@
       Published catalog of exported bmldocs blocks.
     </see>
   </references>
-
-</block>
+</bmldocs:README>

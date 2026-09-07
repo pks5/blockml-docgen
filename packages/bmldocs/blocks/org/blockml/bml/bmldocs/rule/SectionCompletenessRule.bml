@@ -1,82 +1,68 @@
-<!--
-  BlockML Documentation — section completeness rule
+<!--BlockML Documentation — section completeness rule
 
-  FQN: org.blockml.bml.bmldocs.rule.SectionCompletenessRule
--->
+  FQN: org.blockml.bml.bmldocs.rule.SectionCompletenessRule-->
+<brule:SectionCompletenessRule xmlns="http://blockml.org/bml"
+  xmlns:brule="org.blockml.bml.bmldocs.rule"
+  xmlns:rule="org.blockml.bml.docgen.rule">
 
-<block
-    xmlns="http://blockml.org/bml"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                        "
-    xmlns:brule="org.blockml.bml.bmldocs.rule"
-    xmlns:rule="org.blockml.bml.docgen.rule">
-
-    <name>SectionCompletenessRule</name>
-    <type>brule:SectionCompletenessRule</type>
-    <baseType>rule:ContentRule</baseType>
-    <is>A content rule requiring documentation sections to explain their subject with sufficient
-        depth</is>
-
-    <documentation>
-        Defines the required depth of documentation sections. A section must not merely mention or
-        summarize its subject in one or two sentences when additional explanation is useful for
-        understanding it.
-
-        Each section should explain the subject sufficiently for the reader to understand what it
-        is,
-        how it is used, and any important relationships, behavior, consequences, or limitations that
-        are relevant in the current context.
-
-        Because BlockML is primarily learned through its concrete language representation, sections
-        should include one or more code examples whenever examples improve understanding. Multiple
-        code examples on the same page are explicitly encouraged when they demonstrate different
-        aspects, variants, or usage patterns of the language.
-
-        Additional text or examples must add useful information. Do not increase section length
-        through
-        repetition, generic filler, or restating information that is already clear.
-
-    </documentation>
-
-    <references>
-        <see type="rule:ContentRule" relation="Extends">
-            Documentation content-rule branch.
-        </see>
-    </references>
-
-    <properties>
-        <name override="true">
-            <value>Section completeness</value>
-        </name>
-
-        <summary override="true">
-            <value>Explain every section with sufficient depth and use code examples generously
-                where
-                they improve understanding.</value>
-        </summary>
-
-        <instructions override="true">
-            <value>Develop every documentation section sufficiently to explain its subject rather
-                than
-                reducing it to a brief mention or one or two summary sentences. Include the
-                information
-                needed to understand what the subject is, how it is used, and its important
-                relationships,
-                behavior, consequences, or limitations in the current context. When the subject
-                involves
-                BlockML syntax, structure, configuration, expressions, or other language features,
-                include
-                one or more relevant code examples whenever they improve understanding. Multiple
-                code
-                examples on a page are encouraged when they demonstrate distinct aspects or usage
-                patterns.
-                Prefer useful explanation and concrete examples over filler, repetition, or
-                artificial
-                verbosity.</value>
-        </instructions>
-
-    </properties>
-
-
-</block>
+  <baseType>
+    rule:ContentRule
+  </baseType>
+  <is>
+    A content rule requiring documentation sections to explain their subject with sufficient
+    depth
+  </is>
+  <documentation>
+    Defines the required depth of documentation sections. A section must not merely mention or
+    summarize its subject in one or two sentences when additional explanation is useful for
+    understanding it.
+    
+    Each section should explain the subject sufficiently for the reader to understand what it
+    is,
+    how it is used, and any important relationships, behavior, consequences, or limitations that
+    are relevant in the current context.
+    
+    Because BlockML is primarily learned through its concrete language representation, sections
+    should include one or more code examples whenever examples improve understanding. Multiple
+    code examples on the same page are explicitly encouraged when they demonstrate different
+    aspects, variants, or usage patterns of the language.
+    
+    Additional text or examples must add useful information. Do not increase section length
+    through
+    repetition, generic filler, or restating information that is already clear.
+  </documentation>
+  <references>
+    <see type="rule:ContentRule" relation="Extends">
+      Documentation content-rule branch.
+    </see>
+  </references>
+  <properties>
+    <name override="true">
+      <value>Section completeness</value>
+    </name>
+    <summary override="true">
+      <value>Explain every section with sufficient depth and use code examples generously
+where
+they improve understanding.</value>
+    </summary>
+    <instructions override="true">
+      <value>Develop every documentation section sufficiently to explain its subject rather
+than
+reducing it to a brief mention or one or two summary sentences. Include the
+information
+needed to understand what the subject is, how it is used, and its important
+relationships,
+behavior, consequences, or limitations in the current context. When the subject
+involves
+BlockML syntax, structure, configuration, expressions, or other language features,
+include
+one or more relevant code examples whenever they improve understanding. Multiple
+code
+examples on a page are encouraged when they demonstrate distinct aspects or usage
+patterns.
+Prefer useful explanation and concrete examples over filler, repetition, or
+artificial
+verbosity.</value>
+    </instructions>
+  </properties>
+</brule:SectionCompletenessRule>

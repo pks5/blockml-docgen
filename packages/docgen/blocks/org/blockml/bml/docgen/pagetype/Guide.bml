@@ -1,36 +1,30 @@
-<!--
-  BlockML DocGen — Guide page type
+<!--BlockML DocGen — Guide page type
 
-  FQN: org.blockml.bml.docgen.pagetype.Guide
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.pagetype.Guide-->
+<ptype:Guide xmlns="http://blockml.org/bml"
   xmlns:ptype="org.blockml.bml.docgen.pagetype"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:role="org.blockml.bml.docgen.role"
   xmlns:level="org.blockml.bml.docgen.level">
 
-  <name>Guide</name>
-  <type>ptype:Guide</type>
-  <baseType>dcore:PageType</baseType>
-  <is>A page type that explains a larger topic spanning multiple concepts</is>
-
+  <baseType>
+    dcore:PageType
+  </baseType>
+  <is>
+    A page type that explains a larger topic spanning multiple concepts
+  </is>
   <documentation>
     Explains a larger topic by combining multiple concepts into a coherent narrative. Helps
     readers understand a broader subject that spans multiple pages or concepts. Emphasizes
     understanding and decision-making rather than individual definitions.
-
+    
     Typical characteristics: multiple concepts; recommendations; architecture; best
     practices.
-
+    
     Examples: Documentation Architecture; Modeling Strategies; Library Design.
-
+    
     Core question: How do several concepts fit together?
   </documentation>
-
   <references>
     <see type="dcore:PageType" relation="Extends">
       Editorial page-kind branch root.
@@ -42,7 +36,6 @@
       Reference is lookup; Guide advises and structures.
     </see>
   </references>
-
   <properties>
     <displayName override="true">
       <value>Guide</value>
@@ -54,7 +47,6 @@
       <value>5</value>
     </maxPrimaryConcepts>
   </properties>
-
   <aggregations>
     <recommendedRoles override="true">
       <composition>
@@ -66,5 +58,4 @@
       </composition>
     </recommendedRoles>
   </aggregations>
-
-</block>
+</ptype:Guide>

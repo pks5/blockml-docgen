@@ -1,26 +1,20 @@
-<!--
-  BlockML DocGen — documentation list
+<!--BlockML DocGen — documentation list
 
-  FQN: org.blockml.bml.docgen.page.List
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.page.List-->
+<page:List xmlns="http://blockml.org/bml"
   xmlns:page="org.blockml.bml.docgen.page"
   xmlns:core="org.blockml.bml.core">
 
-  <name>List</name>
-  <type>page:List</type>
-  <baseType>page:ContentElement</baseType>
-  <is>A list of documentation items</is>
-
+  <baseType>
+    page:ContentElement
+  </baseType>
+  <is>
+    A list of documentation items
+  </is>
   <documentation>
     Ordered collection of ListItem children. Each item may carry a short text label and nested
     block content.
   </documentation>
-
   <references>
     <see type="page:ContentElement" relation="Extends">
       Block-level leaf content under BlockElement.
@@ -29,11 +23,11 @@
       List item type for items aggregation.
     </see>
   </references>
-
   <aggregations>
     <items type="page:ListItem[]">
-      <documentation>Ordered list items.</documentation>
+      <documentation>
+        Ordered list items.
+      </documentation>
     </items>
   </aggregations>
-
-</block>
+</page:List>

@@ -1,36 +1,30 @@
-<!--
-  BlockML DocGen — documentation image
+<!--BlockML DocGen — documentation image
 
-  FQN: org.blockml.bml.docgen.page.Image
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.page.Image-->
+<page:Image xmlns="http://blockml.org/bml"
   xmlns:page="org.blockml.bml.docgen.page"
   xmlns:core="org.blockml.bml.core">
 
-  <name>Image</name>
-  <type>page:Image</type>
-  <baseType>page:ContentElement</baseType>
-  <is>A block-level image in documentation content</is>
-
+  <baseType>
+    page:ContentElement
+  </baseType>
+  <is>
+    A block-level image in documentation content
+  </is>
   <documentation>
     Block-level image referenced by src. Placed among other ContentElements in Section.content
     or DocPage.content — not as an inline run inside Paragraph.
   </documentation>
-
   <references>
     <see type="page:ContentElement" relation="Extends">
       Block-level leaf content under BlockElement.
     </see>
   </references>
-
   <properties>
-    <src type="Text">
-      <documentation>Image URL or site-relative path.</documentation>
+    <src type="org.blockml.bml.type.Text">
+      <documentation>
+        Image URL or site-relative path.
+      </documentation>
     </src>
   </properties>
-
-</block>
+</page:Image>

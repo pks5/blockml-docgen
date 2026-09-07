@@ -1,62 +1,52 @@
-<!--
-  BlockML Documentation — distinct page purpose rule
+<!--BlockML Documentation — distinct page purpose rule
 
-  FQN: org.blockml.bml.bmldocs.rule.DistinctPagePurposeRule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.bmldocs.rule.DistinctPagePurposeRule-->
+<brule:DistinctPagePurposeRule xmlns="http://blockml.org/bml"
   xmlns:brule="org.blockml.bml.bmldocs.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
-  <name>DistinctPagePurposeRule</name>
-  <type>brule:DistinctPagePurposeRule</type>
-  <baseType>rule:ContentRule</baseType>
-  <is>A content rule requiring every planned Page to have a distinct purpose</is>
-
+  <baseType>
+    rule:ContentRule
+  </baseType>
+  <is>
+    A content rule requiring every planned Page to have a distinct purpose
+  </is>
   <documentation>
     Defines how the purposes of planned Pages relate to one another.
-
+    
     Every planned Page must have a purpose that is clearly distinguishable from every other
     Page in the same DocSet. A Page should have a unique responsibility within the overall
     documentation rather than duplicating or only slightly rephrasing the purpose of another
     Page.
-
+    
     Closely related concepts may build upon one another, but each Page must contribute a
     unique perspective, learning objective, or responsibility. When two planned Pages would
     largely communicate the same purpose, they should either be merged into a single Page or
     their responsibilities should be refined until the distinction is clear.
-
+    
     The purpose of a Page should therefore describe its unique role within the learning path,
     not merely the topic it mentions.
   </documentation>
-
   <references>
     <see type="rule:ContentRule" relation="Extends">
       Documentation content-rule branch.
     </see>
   </references>
-
   <properties>
     <name override="true">
       <value>Distinct page purposes</value>
     </name>
-
     <summary override="true">
       <value>Ensure that every planned Page fulfills a unique purpose within the DocSet.</value>
     </summary>
-
     <instructions override="true">
       <value>Define the purpose of every planned Page so that it has a clear and unique
-        responsibility within the DocSet. Compare each Page purpose with the purposes of all
-        other planned Pages and avoid unnecessary overlap or duplication. Closely related
-        concepts may span multiple Pages only when each Page contributes a distinct learning
-        objective or role. If two planned Pages serve essentially the same purpose, either
-        merge them or redefine their purposes until each Page has a clearly distinguishable
-        responsibility.</value>
+responsibility within the DocSet. Compare each Page purpose with the purposes of all
+other planned Pages and avoid unnecessary overlap or duplication. Closely related
+concepts may span multiple Pages only when each Page contributes a distinct learning
+objective or role. If two planned Pages serve essentially the same purpose, either
+merge them or redefine their purposes until each Page has a clearly distinguishable
+responsibility.</value>
     </instructions>
   </properties>
-
-</block>
+</brule:DistinctPagePurposeRule>

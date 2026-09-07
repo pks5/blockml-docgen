@@ -1,34 +1,27 @@
-<!--
-  BlockML Documentation — complete-sentence prose style rule
+<!--BlockML Documentation — complete-sentence prose style rule
 
-  FQN: org.blockml.bml.bmldocs.rule.CompleteSentenceRule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.bmldocs.rule.CompleteSentenceRule-->
+<brule:CompleteSentenceRule xmlns="http://blockml.org/bml"
   xmlns:brule="org.blockml.bml.bmldocs.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
-  <name>CompleteSentenceRule</name>
-  <type>brule:CompleteSentenceRule</type>
-  <baseType>rule:StyleRule</baseType>
-  <is>A style rule requiring complete grammatical sentences in generated prose</is>
-
+  <baseType>
+    rule:StyleRule
+  </baseType>
+  <is>
+    A style rule requiring complete grammatical sentences in generated prose
+  </is>
   <documentation>
     Requires that generated prose use complete grammatical sentences. Headings, labels, error
     codes, source fragments, and noun phrases must not appear as standalone prose unless the
     PageElement explicitly requests a list, table, glossary, or reference index. Paragraphs must
     consist of complete sentences with a clear subject and predicate.
   </documentation>
-
   <references>
     <see type="rule:StyleRule" relation="Extends">
       Documentation style-rule branch.
     </see>
   </references>
-
   <properties>
     <name override="true">
       <value>Complete sentences</value>
@@ -38,11 +31,9 @@
     </summary>
     <instructions override="true">
       <value>Do not emit headings, labels, error codes, source fragments, or noun phrases as
-        standalone prose unless the PageElement explicitly requests a list, table, glossary, or
-        reference index. Paragraphs must consist of complete sentences with a clear subject and
-        predicate.</value>
+standalone prose unless the PageElement explicitly requests a list, table, glossary, or
+reference index. Paragraphs must consist of complete sentences with a clear subject and
+predicate.</value>
     </instructions>
   </properties>
-
-
-</block>
+</brule:CompleteSentenceRule>

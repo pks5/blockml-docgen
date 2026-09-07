@@ -1,40 +1,34 @@
-<!--
-  BlockML DocGen — documentation code block
+<!--BlockML DocGen — documentation code block
 
-  FQN: org.blockml.bml.docgen.page.CodeBlock
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.page.CodeBlock-->
+<page:CodeBlock xmlns="http://blockml.org/bml"
   xmlns:page="org.blockml.bml.docgen.page"
   xmlns:core="org.blockml.bml.core">
 
-  <name>CodeBlock</name>
-  <type>page:CodeBlock</type>
-  <baseType>page:ContentElement</baseType>
-  <is>A fenced or preformatted code sample</is>
-
+  <baseType>
+    page:ContentElement
+  </baseType>
+  <is>
+    A fenced or preformatted code sample
+  </is>
   <documentation>
     Block-level code listing. When code is authored, it is the literal source body. When code is
     omitted, the listing is generated from this element’s semantic information and authoritative
     sources (message, role, supporting points, exclusions, authoritativeSources, and related
     ContentElement metadata).
   </documentation>
-
   <references>
     <see type="page:ContentElement" relation="Extends">
       Block-level leaf content under BlockElement — semantic metadata used when code is generated.
     </see>
   </references>
-
   <properties>
-    <code type="Text">
-      <documentation>Optional literal source code body of this listing. When omitted, generate the
+    <code type="org.blockml.bml.type.Text">
+      <documentation>
+        Optional literal source code body of this listing. When omitted, generate the
         code from the provided semantic information and authoritative sources on this element
-        (and its page context) instead of leaving the listing empty.</documentation>
+        (and its page context) instead of leaving the listing empty.
+      </documentation>
     </code>
   </properties>
-
-</block>
+</page:CodeBlock>

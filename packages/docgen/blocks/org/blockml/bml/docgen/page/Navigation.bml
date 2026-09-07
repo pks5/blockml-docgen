@@ -1,26 +1,20 @@
-<!--
-  BlockML DocGen — in-page navigation block
+<!--BlockML DocGen — in-page navigation block
 
-  FQN: org.blockml.bml.docgen.page.Navigation
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.page.Navigation-->
+<page:Navigation xmlns="http://blockml.org/bml"
   xmlns:page="org.blockml.bml.docgen.page">
 
-  <name>Navigation</name>
-  <type>page:Navigation</type>
-  <baseType>page:BlockElement</baseType>
-  <is>A documentation navigation list of page links</is>
-
+  <baseType>
+    page:BlockElement
+  </baseType>
+  <is>
+    A documentation navigation list of page links
+  </is>
   <documentation>
     Block-level page content that presents an ordered set of navigation items linking to other
     documentation pages. Supports recursive NavigationItem trees for hierarchical menus (for
     example a documentation table of contents) as well as flat Next-link lists.
   </documentation>
-
   <references>
     <see type="page:BlockElement" relation="Extends">
       Block-level content element branch.
@@ -29,17 +23,18 @@
       Navigation item type for items aggregation.
     </see>
   </references>
-
   <properties>
-    <title type="Text">
-      <documentation>Title of this navigation block.</documentation>
+    <title type="org.blockml.bml.type.Text">
+      <documentation>
+        Title of this navigation block.
+      </documentation>
     </title>
   </properties>
-
   <aggregations>
     <items type="page:NavigationItem[]">
-      <documentation>Ordered navigation items linking to documentation pages.</documentation>
+      <documentation>
+        Ordered navigation items linking to documentation pages.
+      </documentation>
     </items>
   </aggregations>
-
-</block>
+</page:Navigation>

@@ -1,37 +1,34 @@
-<!--
-  BlockML DocGen — abstract block-level leaf content element
+<!--BlockML DocGen — abstract block-level leaf content element
 
-  FQN: org.blockml.bml.docgen.page.ContentElement
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.docgen.page.ContentElement-->
+<page:ContentElement xmlns="http://blockml.org/bml"
   xmlns:page="org.blockml.bml.docgen.page"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:core="org.blockml.bml.core"
   xmlns:type="org.blockml.bml.type">
 
-  <name>ContentElement</name>
-  <type>page:ContentElement</type>
-  <baseType>page:BlockElement</baseType>
-  <is>A block-level documentation content element that carries readable content</is>
-
+  <baseType>
+    page:BlockElement
+  </baseType>
+  <is>
+    A block-level documentation content element that carries readable content
+  </is>
   <documentation>
     Abstract base for block-level elements that hold documentation content themselves —
     paragraphs, lists, code blocks, and images. Distinct from Section, which is structural
     grouping of BlockElements without being leaf content. message states what claim or idea
     this element should convey to the reader; contrast with purpose on PageElement (why the
     element exists for the renderer).
-
+    
     detailLevel and weight are optional TypeReferenceEntity links into the DetailLevel and Weight
     branches. Semantic annotations (SupportingPoint, ReaderOutcome, Scope, Exclusion) are owned
     as direct aggregation instances — not type references. authoritativeSources and audiences are
     TypeReferenceEntity catalogues; role is a TypeReference to a ContentRole.
   </documentation>
-
+  <abstract>
+    true
+  </abstract>
   <references>
     <see type="page:BlockElement" relation="Extends">
       Block-level content element branch.
@@ -64,64 +61,77 @@
       List of items.
     </see>
   </references>
-
-  <abstract>true</abstract>
-
   <properties>
-    <message type="Text">
-      <documentation>What statement or idea this element should convey to the reader. Distinct
-        from purpose on PageElement (why the element exists for the renderer).</documentation>
+    <message type="type:Text">
+      <documentation>
+        What statement or idea this element should convey to the reader. Distinct
+        from purpose on PageElement (why the element exists for the renderer).
+      </documentation>
     </message>
-
     <detailLevel type="type:TypeReference(dcore:DetailLevel)">
-      <documentation>Optional reference to how detailed this content should be explained
-        (concrete levels in org.blockml.bml.docgen.level).</documentation>
+      <documentation>
+        Optional reference to how detailed this content should be explained
+        (concrete levels in org.blockml.bml.docgen.level).
+      </documentation>
     </detailLevel>
-    
     <role type="type:TypeReference(dcore:ContentRole)">
-      <documentation>Type reference to the rhetorical or content role of this element.</documentation>
+      <documentation>
+        Type reference to the rhetorical or content role of this element.
+      </documentation>
     </role>
-    
     <weight type="type:TypeReference(dcore:Weight)">
-      <documentation>Optional reference to how important this content is for understanding
-        (concrete weights in org.blockml.bml.docgen.weight).</documentation>
+      <documentation>
+        Optional reference to how important this content is for understanding
+        (concrete weights in org.blockml.bml.docgen.weight).
+      </documentation>
     </weight>
   </properties>
-
   <aggregations>
     <rules type="type:TypeReferenceEntity(dcore:Rule)[]">
-      <documentation>Rules that apply to this element. They apply in addition to the global rules on
-        Documentation and the rules on the Page that owns this element.</documentation>
+      <documentation>
+        Rules that apply to this element. They apply in addition to the global rules on
+        Documentation and the rules on the Page that owns this element.
+      </documentation>
     </rules>
     <authoritativeSources type="type:TypeReferenceEntity(core:Block)[]">
-      <documentation>Authoritative source Blocks this content relates to.</documentation>
+      <documentation>
+        Authoritative source Blocks this content relates to.
+      </documentation>
     </authoritativeSources>
     <audiences type="type:TypeReferenceEntity(dcore:Audience)[]">
-      <documentation>Type references to audiences this content is intended for.</documentation>
+      <documentation>
+        Type references to audiences this content is intended for.
+      </documentation>
     </audiences>
-    
     <supportingPoints type="sem:SupportingPoint[]">
-      <documentation>Owned supporting points that reinforce this element’s message — direct
-        instances, not type references.</documentation>
+      <documentation>
+        Owned supporting points that reinforce this element’s message — direct
+        instances, not type references.
+      </documentation>
     </supportingPoints>
     <readerOutcomes type="sem:ReaderOutcome[]">
-      <documentation>Owned reader outcomes this element should produce — direct instances, not
-        type references.</documentation>
+      <documentation>
+        Owned reader outcomes this element should produce — direct instances, not
+        type references.
+      </documentation>
     </readerOutcomes>
     <learningObjectives type="sem:LearningObjective[]">
-      <documentation>Owned learning objectives this element should produce — direct instances, not
-        type references.</documentation>
+      <documentation>
+        Owned learning objectives this element should produce — direct instances, not
+        type references.
+      </documentation>
     </learningObjectives>
-    
     <scopes type="sem:Scope[]">
-      <documentation>Owned in-scope bounds for this element — direct instances, not type
-        references.</documentation>
+      <documentation>
+        Owned in-scope bounds for this element — direct instances, not type
+        references.
+      </documentation>
     </scopes>
     <exclusions type="sem:Exclusion[]">
-      <documentation>Owned out-of-scope exclusions for this element — direct instances, not type
-        references.</documentation>
+      <documentation>
+        Owned out-of-scope exclusions for this element — direct instances, not type
+        references.
+      </documentation>
     </exclusions>
-    
   </aggregations>
-
-</block>
+</page:ContentElement>

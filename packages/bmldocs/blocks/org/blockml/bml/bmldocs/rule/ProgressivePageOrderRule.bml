@@ -1,68 +1,58 @@
-<!--
-  BlockML Documentation — progressive page order rule
+<!--BlockML Documentation — progressive page order rule
 
-  FQN: org.blockml.bml.bmldocs.rule.ProgressivePageOrderRule
--->
-<block
-  xmlns="http://blockml.org/bml"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://blockml.org/bml https://blockml.org/schemas/bml.xsd
-                      "
+  FQN: org.blockml.bml.bmldocs.rule.ProgressivePageOrderRule-->
+<brule:ProgressivePageOrderRule xmlns="http://blockml.org/bml"
   xmlns:brule="org.blockml.bml.bmldocs.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
-  <name>ProgressivePageOrderRule</name>
-  <type>brule:ProgressivePageOrderRule</type>
-  <baseType>rule:StructureRule</baseType>
-  <is>A structure rule requiring planned Pages to follow a coherent learning and dependency order</is>
-
+  <baseType>
+    rule:StructureRule
+  </baseType>
+  <is>
+    A structure rule requiring planned Pages to follow a coherent learning and dependency order
+  </is>
   <documentation>
     Defines how planned Pages should be ordered within a DocSet.
-
+    
     Pages should form a coherent progression in which readers encounter the concepts needed to
     understand a Page before that Page depends on them. Introductory and foundational concepts
     should normally appear before concepts that build upon, specialize, combine, or apply them.
-
+    
     Page order should reflect the reader's learning path rather than the internal organization
     of source material, implementation packages, or specification files. Related Pages should be
     positioned so that the transition between them is understandable and does not require the
     reader to know concepts that have not yet been introduced.
-
+    
     A later Page may revisit or deepen an earlier concept, but it should have a clearly more
     advanced or specialized purpose. Avoid unnecessary forward dependencies where a Page can only
     be understood by reading a substantially later Page first.
-
+    
     The order does not need to represent a strict prerequisite graph. Some topics may be largely
     independent. In those cases, prefer an ordering that creates a natural conceptual progression
     and minimizes abrupt changes of subject.
   </documentation>
-
   <references>
     <see type="rule:StructureRule" relation="Extends">
       Documentation structure-rule branch.
     </see>
   </references>
-
   <properties>
     <name override="true">
       <value>Progressive page order</value>
     </name>
-
     <summary override="true">
       <value>Order planned Pages so readers encounter foundations before concepts that depend on
-        or deepen them.</value>
+or deepen them.</value>
     </summary>
-
     <instructions override="true">
       <value>Order the planned Pages as a coherent learning path. Place introductory and
-        foundational Pages before Pages that depend on, specialize, combine, or apply their
-        concepts. Avoid requiring readers to understand concepts that are introduced only on
-        substantially later Pages. When a concept is revisited later, ensure that the later Page
-        has a clearly deeper, more specialized, or more practical purpose. Base the ordering on
-        reader comprehension and conceptual dependencies rather than on source-file, package, or
-        implementation order. Where Pages have no strict dependency, choose the sequence that
-        provides the most natural progression and minimizes abrupt topic changes.</value>
+foundational Pages before Pages that depend on, specialize, combine, or apply their
+concepts. Avoid requiring readers to understand concepts that are introduced only on
+substantially later Pages. When a concept is revisited later, ensure that the later Page
+has a clearly deeper, more specialized, or more practical purpose. Base the ordering on
+reader comprehension and conceptual dependencies rather than on source-file, package, or
+implementation order. Where Pages have no strict dependency, choose the sequence that
+provides the most natural progression and minimizes abrupt topic changes.</value>
     </instructions>
   </properties>
-
-</block>
+</brule:ProgressivePageOrderRule>
