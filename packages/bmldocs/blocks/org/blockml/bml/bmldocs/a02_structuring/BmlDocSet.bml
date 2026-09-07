@@ -28,8 +28,8 @@
     advanced and senior developers. The set follows a clear learning path: quick start, fast first
     results, then deeper study when needed.
 
-    pageMapping lists every publishable page with pageKey and path. rootPath is /docs; homePage
-    points at the TableOfContents menu page; rootPageGroup is RootPageGroup.
+    pages lists every publishable page. rootPath is /docs; homePage points at the
+    TableOfContents menu page; rootPageGroup is RootPageGroup.
   </documentation>
 
   <references>
@@ -113,43 +113,35 @@
   </properties>
 
   <aggregations>
-    <pageMapping override="true">
+    <pages override="true">
       <composition>
-        <dcore:PageMapping pageKey="docs" path="/" page="page:TableOfContents" />
-
-        <dcore:PageMapping pageKey="intro" path="/intro" page="page:Intro" />
-        <dcore:PageMapping pageKey="first_block" path="/first-block" page="page:FirstBlock" />
-        <dcore:PageMapping pageKey="file_anatomy" path="/file-anatomy" page="page:FileAnatomy" />
-
-        <dcore:PageMapping pageKey="everything_is_a_block" path="/everything-is-a-block" page="page:EverythingIsABlockPage" />
-        <dcore:PageMapping pageKey="definition_and_instance" path="/definition-and-instance" page="page:DefinitionAndInstance" />
-        <dcore:PageMapping pageKey="composition" path="/composition" page="page:CompositionBasics" />
-
-        <dcore:PageMapping pageKey="types_overview" path="/types-overview" page="page:TypesOverview" />
-        <dcore:PageMapping pageKey="type_expressions" path="/type-expressions" page="page:TypeExpressionsBasics" />
-        <dcore:PageMapping pageKey="generics" path="/generics" page="page:GenericsBriefly" />
-        <dcore:PageMapping pageKey="configuring_types" path="/configuring-types" page="page:ConfiguringTypes" />
-
-        <dcore:PageMapping pageKey="capabilities" path="/capabilities" page="page:CapabilitiesIntro" />
-        <dcore:PageMapping pageKey="expressions" path="/expressions" page="page:ExpressionsIntro" />
-        <dcore:PageMapping pageKey="embedded_expressions" path="/embedded-expressions" page="page:EmbeddedExpressionsIntro" />
-
-        <dcore:PageMapping pageKey="libraries" path="/libraries" page="page:LibrariesAndPackages" />
-        <dcore:PageMapping pageKey="readme_and_bootstrap" path="/readme-and-bootstrap" page="page:ReadmeAndBootstrap" />
-
-        <dcore:PageMapping pageKey="modeling_guidelines" path="/modeling-guidelines" page="page:ModelingGuidelinesPage" />
-        <dcore:PageMapping pageKey="visibility" path="/visibility" page="page:VisibilityBasics" />
-        <dcore:PageMapping pageKey="overrides" path="/overrides" page="page:OverridesBasics" />
-        <dcore:PageMapping pageKey="constraints" path="/constraints" page="page:ConstraintsBasics" />
-        <dcore:PageMapping pageKey="annotations_and_directives" path="/annotations-and-directives" page="page:AnnotationsAndDirectives" />
-
-        <dcore:PageMapping pageKey="sub_blocks" path="/sub-blocks" page="page:SubBlocksIntro" />
-        <dcore:PageMapping pageKey="contracts" path="/contracts" page="page:ContractsIntro" />
-        <dcore:PageMapping pageKey="compiler" path="/compiler" page="page:CompilerOverview" />
-
-        <dcore:PageMapping pageKey="author_a_new_block" path="/author-a-new-block" page="page:AuthorNewBlockGuide" />
+        <page:TableOfContents />
+        <page:Intro />
+        <page:FirstBlock />
+        <page:FileAnatomy />
+        <page:EverythingIsABlockPage />
+        <page:DefinitionAndInstance />
+        <page:CompositionBasics />
+        <page:TypesOverview />
+        <page:TypeExpressionsBasics />
+        <page:GenericsBriefly />
+        <page:ConfiguringTypes />
+        <page:CapabilitiesIntro />
+        <page:ExpressionsIntro />
+        <page:EmbeddedExpressionsIntro />
+        <page:LibrariesAndPackages />
+        <page:ReadmeAndBootstrap />
+        <page:ModelingGuidelinesPage />
+        <page:VisibilityBasics />
+        <page:OverridesBasics />
+        <page:ConstraintsBasics />
+        <page:AnnotationsAndDirectives />
+        <page:SubBlocksIntro />
+        <page:ContractsIntro />
+        <page:CompilerOverview />
+        <page:AuthorNewBlockGuide />
       </composition>
-    </pageMapping>
+    </pages>
     <globalRules override="true">
       <composition>
         <!-- Planning rules -->

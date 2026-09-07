@@ -102,14 +102,9 @@
   </properties>
 
   <aggregations>
-    <pageMapping type="dcore:PageMapping[]">
-      <documentation>Authoritative mappings of pages that belong to this DocSet. Each entry binds a
-        Page to pageKey and path. The library may contain additional page types (drafts,
-        experiments, retired pages) that are not part of this DocSet — those must not be published
-        with it. Renderers must only consider pages listed here; if a page is linked from an index,
-        navigation, or another page and is not in this list, emit an error or warning. Full site
-        URL = rootPath + path.</documentation>
-    </pageMapping>
+    <pages type="type:TypeReferenceEntity(dcore:Page)[]">
+      <documentation>List of all pages in this DocSet.</documentation>
+    </pages>
     <learningPaths type="type:TypeReferenceEntity(sem:LearningPath)[]">
       <documentation>List of all available and active learning paths for this DocSet.</documentation>
     </learningPaths>
