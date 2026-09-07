@@ -38,24 +38,24 @@
   </references>
 
   <properties>
-    <title>
+    <title override="true">
       <value>Documentation</value>
     </title>
 
-    <purpose>
+    <purpose override="true">
       <value>
         Present the structured documentation menu so readers can find entry points without
         introducing new conceptual content.
       </value>
     </purpose>
 
-    <detailLevel>
+    <detailLevel override="true">
       <value>
         dlevel:Overview
       </value>
     </detailLevel>
 
-    <pageType>
+    <pageType override="true">
       <value>
         ptype:Index
       </value>

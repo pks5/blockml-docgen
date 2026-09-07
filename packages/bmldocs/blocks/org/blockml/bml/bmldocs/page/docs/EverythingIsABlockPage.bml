@@ -40,23 +40,23 @@
   </references>
 
   <properties>
-    <title>
+    <title override="true">
       <value>Everything is a Block</value>
     </title>
 
-    <purpose>
+    <purpose override="true">
       <value>
         Establish Block as the universal abstraction of a World's grammar.
       </value>
     </purpose>
 
-    <detailLevel>
+    <detailLevel override="true">
       <value>
         dlevel:Introductory
       </value>
     </detailLevel>
 
-    <pageType>
+    <pageType override="true">
       <value>
         ptype:Concept
       </value>

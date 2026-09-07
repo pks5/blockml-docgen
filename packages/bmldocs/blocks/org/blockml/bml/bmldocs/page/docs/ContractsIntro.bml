@@ -40,23 +40,23 @@
   </references>
 
   <properties>
-    <title>
+    <title override="true">
       <value>Contracts</value>
     </title>
 
-    <purpose>
+    <purpose override="true">
       <value>
         Introduce contracts as reusable partial definitions that merge member fragments.
       </value>
     </purpose>
 
-    <detailLevel>
+    <detailLevel override="true">
       <value>
         dlevel:Introductory
       </value>
     </detailLevel>
 
-    <pageType>
+    <pageType override="true">
       <value>
         ptype:Concept
       </value>

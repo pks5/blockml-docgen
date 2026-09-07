@@ -43,23 +43,23 @@
   </references>
 
   <properties>
-    <title>
+    <title override="true">
       <value>Libraries and packages</value>
     </title>
 
-    <purpose>
+    <purpose override="true">
       <value>
         Explain Library as the publishable unit and the domain bml package convention.
       </value>
     </purpose>
 
-    <detailLevel>
+    <detailLevel override="true">
       <value>
         dlevel:Introductory
       </value>
     </detailLevel>
 
-    <pageType>
+    <pageType override="true">
       <value>
         ptype:Concept
       </value>

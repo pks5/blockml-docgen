@@ -42,7 +42,7 @@
   </properties>
 
   <aggregations>
-    <pages>
+    <pages override="true">
       <composition>
         <page:SubBlocksIntro />
         <page:ContractsIntro />

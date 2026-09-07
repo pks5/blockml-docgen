@@ -40,23 +40,23 @@
   </references>
 
   <properties>
-    <title>
+    <title override="true">
       <value>Overrides</value>
     </title>
 
-    <purpose>
+    <purpose override="true">
       <value>
         Introduce partial member overrides with override="true".
       </value>
     </purpose>
 
-    <detailLevel>
+    <detailLevel override="true">
       <value>
         dlevel:Introductory
       </value>
     </detailLevel>
 
-    <pageType>
+    <pageType override="true">
       <value>
         ptype:Concept
       </value>

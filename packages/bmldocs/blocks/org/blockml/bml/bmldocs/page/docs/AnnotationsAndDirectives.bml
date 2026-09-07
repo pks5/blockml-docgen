@@ -43,23 +43,23 @@
   </references>
 
   <properties>
-    <title>
+    <title override="true">
       <value>Annotations and directives</value>
     </title>
 
-    <purpose>
+    <purpose override="true">
       <value>
         Frame annotations as directive namespaces orthogonal to Definition members.
       </value>
     </purpose>
 
-    <detailLevel>
+    <detailLevel override="true">
       <value>
         dlevel:Introductory
       </value>
     </detailLevel>
 
-    <pageType>
+    <pageType override="true">
       <value>
         ptype:Concept
       </value>

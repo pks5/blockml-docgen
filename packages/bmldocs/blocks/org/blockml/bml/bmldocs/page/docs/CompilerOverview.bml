@@ -43,23 +43,23 @@
   </references>
 
   <properties>
-    <title>
+    <title override="true">
       <value>How the compiler works</value>
     </title>
 
-    <purpose>
+    <purpose override="true">
       <value>
         Give website readers a high-level compiler pipeline sketch without normative internals.
       </value>
     </purpose>
 
-    <detailLevel>
+    <detailLevel override="true">
       <value>
         dlevel:Overview
       </value>
     </detailLevel>
 
-    <pageType>
+    <pageType override="true">
       <value>
         ptype:Concept
       </value>

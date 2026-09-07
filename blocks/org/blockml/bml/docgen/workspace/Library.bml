@@ -52,19 +52,19 @@
   </properties>
 
   <aggregations>
-    <readMe>
+    <readMe override="true">
       <composition>
         <workspace:README />
       </composition>
     </readMe>
-    <dependencies>
+    <dependencies override="true">
       <composition>
         <blockml:Library />
         <docgen:Library />
         <bmldocs:Library />
       </composition>
     </dependencies>
-    <blocks>
+    <blocks override="true">
       <composition>
         <workspace:WorkspaceType />
         <wsdocumentation:Introduction />

@@ -39,23 +39,23 @@
   </references>
 
   <properties>
-    <title>
+    <title override="true">
       <value>Types at a glance</value>
     </title>
 
-    <purpose>
+    <purpose override="true">
       <value>
         Introduce the four ValueType kinds as the type-system entry point.
       </value>
     </purpose>
 
-    <detailLevel>
+    <detailLevel override="true">
       <value>
         dlevel:Introductory
       </value>
     </detailLevel>
 
-    <pageType>
+    <pageType override="true">
       <value>
         ptype:Concept
       </value>

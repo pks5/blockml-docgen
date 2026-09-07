@@ -40,23 +40,23 @@
   </references>
 
   <properties>
-    <title>
+    <title override="true">
       <value>Modeling guidelines</value>
     </title>
 
-    <purpose>
+    <purpose override="true">
       <value>
         Offer practical modeling patterns without becoming a second language specification.
       </value>
     </purpose>
 
-    <detailLevel>
+    <detailLevel override="true">
       <value>
         dlevel:Practical
       </value>
     </detailLevel>
 
-    <pageType>
+    <pageType override="true">
       <value>
         ptype:Guide
       </value>

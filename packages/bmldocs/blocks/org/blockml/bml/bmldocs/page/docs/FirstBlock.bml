@@ -42,23 +42,23 @@
   </references>
 
   <properties>
-    <title>
+    <title override="true">
       <value>Your first Block</value>
     </title>
 
-    <purpose>
+    <purpose override="true">
       <value>
         Walk a new reader through their first Block definition and the definition/instance distinction.
       </value>
     </purpose>
 
-    <detailLevel>
+    <detailLevel override="true">
       <value>
         dlevel:Introductory
       </value>
     </detailLevel>
 
-    <pageType>
+    <pageType override="true">
       <value>
         ptype:Tutorial
       </value>

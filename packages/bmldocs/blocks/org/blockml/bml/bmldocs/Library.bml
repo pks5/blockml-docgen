@@ -58,20 +58,20 @@
   </properties>
 
   <aggregations>
-    <readMe>
+    <readMe override="true">
       <composition>
         <bmldocs:README />
       </composition>
     </readMe>
 
-    <dependencies>
+    <dependencies override="true">
       <composition>
         <blockml:Library />
         <docgen:Library />
       </composition>
     </dependencies>
 
-    <blocks>
+    <blocks override="true">
       <composition>
         <bmldocs:README />
         <structuring:BmlDocSet />

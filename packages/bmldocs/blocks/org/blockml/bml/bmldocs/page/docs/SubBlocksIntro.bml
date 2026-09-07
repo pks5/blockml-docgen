@@ -43,23 +43,23 @@
   </references>
 
   <properties>
-    <title>
+    <title override="true">
       <value>Sub-Blocks</value>
     </title>
 
-    <purpose>
+    <purpose override="true">
       <value>
         Introduce Sub-Blocks as nested types under a parent Block.
       </value>
     </purpose>
 
-    <detailLevel>
+    <detailLevel override="true">
       <value>
         dlevel:Introductory
       </value>
     </detailLevel>
 
-    <pageType>
+    <pageType override="true">
       <value>
         ptype:Concept
       </value>

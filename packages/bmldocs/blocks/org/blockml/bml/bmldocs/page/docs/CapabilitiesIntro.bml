@@ -42,23 +42,23 @@
   </references>
 
   <properties>
-    <title>
+    <title override="true">
       <value>Capabilities</value>
     </title>
 
-    <purpose>
+    <purpose override="true">
       <value>
         Show that behaviour is expressed as ordinary Capabilities, not special language constructs.
       </value>
     </purpose>
 
-    <detailLevel>
+    <detailLevel override="true">
       <value>
         dlevel:Introductory
       </value>
     </detailLevel>
 
-    <pageType>
+    <pageType override="true">
       <value>
         ptype:Concept
       </value>

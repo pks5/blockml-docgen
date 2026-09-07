@@ -39,23 +39,23 @@
   </references>
 
   <properties>
-    <title>
+    <title override="true">
       <value>Type expressions</value>
     </title>
 
-    <purpose>
+    <purpose override="true">
       <value>
         Cheat-sheet for combining named types into type expressions.
       </value>
     </purpose>
 
-    <detailLevel>
+    <detailLevel override="true">
       <value>
         dlevel:Introductory
       </value>
     </detailLevel>
 
-    <pageType>
+    <pageType override="true">
       <value>
         ptype:Guide
       </value>

@@ -40,23 +40,23 @@
   </references>
 
   <properties>
-    <title>
+    <title override="true">
       <value>Constraints</value>
     </title>
 
-    <purpose>
+    <purpose override="true">
       <value>
         Introduce reusable validation rules on constrainable definition elements.
       </value>
     </purpose>
 
-    <detailLevel>
+    <detailLevel override="true">
       <value>
         dlevel:Introductory
       </value>
     </detailLevel>
 
-    <pageType>
+    <pageType override="true">
       <value>
         ptype:Concept
       </value>

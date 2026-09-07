@@ -38,24 +38,24 @@
   </references>
 
   <properties>
-    <title>
+    <title override="true">
       <value>What is BlockML?</value>
     </title>
 
-    <purpose>
+    <purpose override="true">
       <value>
         Give new readers a clear first mental model of BlockML and prepare them for the
         more detailed concept pages that follow.
       </value>
     </purpose>
 
-    <detailLevel>
+    <detailLevel override="true">
       <value>
         dlevel:Introductory
       </value>
     </detailLevel>
 
-    <pageType>
+    <pageType override="true">
       <value>
         ptype:Introduction
       </value>

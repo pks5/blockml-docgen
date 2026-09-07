@@ -40,23 +40,23 @@
   </references>
 
   <properties>
-    <title>
+    <title override="true">
       <value>Author a new Block</value>
     </title>
 
-    <purpose>
+    <purpose override="true">
       <value>
         Provide a procedural checklist for creating and publishing a new Block type.
       </value>
     </purpose>
 
-    <detailLevel>
+    <detailLevel override="true">
       <value>
         dlevel:Practical
       </value>
     </detailLevel>
 
-    <pageType>
+    <pageType override="true">
       <value>
         ptype:HowTo
       </value>

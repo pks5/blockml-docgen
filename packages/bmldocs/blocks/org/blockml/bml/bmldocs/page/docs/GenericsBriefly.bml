@@ -39,23 +39,23 @@
   </references>
 
   <properties>
-    <title>
+    <title override="true">
       <value>Generics briefly</value>
     </title>
 
-    <purpose>
+    <purpose override="true">
       <value>
         Introduce generics as parameters owned by the declaring Block.
       </value>
     </purpose>
 
-    <detailLevel>
+    <detailLevel override="true">
       <value>
         dlevel:Introductory
       </value>
     </detailLevel>
 
-    <pageType>
+    <pageType override="true">
       <value>
         ptype:Concept
       </value>

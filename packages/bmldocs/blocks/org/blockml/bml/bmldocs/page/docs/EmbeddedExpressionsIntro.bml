@@ -42,23 +42,23 @@
   </references>
 
   <properties>
-    <title>
+    <title override="true">
       <value>Embedded expressions</value>
     </title>
 
-    <purpose>
+    <purpose override="true">
       <value>
         Introduce &lt;$ $&gt; embeds inside Capability implementation bodies.
       </value>
     </purpose>
 
-    <detailLevel>
+    <detailLevel override="true">
       <value>
         dlevel:Introductory
       </value>
     </detailLevel>
 
-    <pageType>
+    <pageType override="true">
       <value>
         ptype:Concept
       </value>

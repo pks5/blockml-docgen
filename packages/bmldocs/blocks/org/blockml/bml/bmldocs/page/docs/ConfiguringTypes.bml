@@ -42,23 +42,23 @@
   </references>
 
   <properties>
-    <title>
+    <title override="true">
       <value>Configuring ValueTypes</value>
     </title>
 
-    <purpose>
+    <purpose override="true">
       <value>
         Explain curly-brace configuration of ValueType instances on properties.
       </value>
     </purpose>
 
-    <detailLevel>
+    <detailLevel override="true">
       <value>
         dlevel:Introductory
       </value>
     </detailLevel>
 
-    <pageType>
+    <pageType override="true">
       <value>
         ptype:Guide
       </value>
