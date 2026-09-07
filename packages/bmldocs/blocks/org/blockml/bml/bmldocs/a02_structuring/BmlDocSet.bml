@@ -28,8 +28,8 @@
     advanced and senior developers. The set follows a clear learning path: quick start, fast first
     results, then deeper study when needed.
 
-    pages lists every publishable page. rootPath is /docs; homePage points at the
-    TableOfContents menu page; rootPageGroup is RootPageGroup.
+    pages and pageGroups list every publishable page and group. rootPath is /docs;
+    homePage points at the TableOfContents menu page; rootPageGroup is RootPageGroup.
   </documentation>
 
   <references>
@@ -142,6 +142,20 @@
         <page:AuthorNewBlockGuide />
       </composition>
     </pages>
+    <pageGroups override="true">
+      <composition>
+        <pgroup:RootPageGroup />
+        <pgroup:DocsPageGroup />
+        <pgroup:GettingStartedPageGroup />
+        <pgroup:CoreIdeasPageGroup />
+        <pgroup:TypesPageGroup />
+        <pgroup:BehaviourPageGroup />
+        <pgroup:LibrariesPageGroup />
+        <pgroup:AuthoringPageGroup />
+        <pgroup:DeeperTopicsPageGroup />
+        <pgroup:HowToPageGroup />
+      </composition>
+    </pageGroups>
     <globalRules override="true">
       <composition>
         <!-- Planning rules -->

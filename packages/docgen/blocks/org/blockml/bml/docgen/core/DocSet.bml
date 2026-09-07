@@ -29,7 +29,7 @@
     instance owns pages, page groups, learning paths, and global rules.
 
     title, summary, version, homePage, rootPath, rootPageGroup, and plan identify the
-    documentation set; pageMapping lists every publishable page with pageKey and path; remaining
+    documentation set; pages and pageGroups list every publishable page and group; remaining
     aggregations hold TypeReferenceEntity catalogues (learning paths, global rules) used when
     generating or rendering that documentation.
 
@@ -53,7 +53,7 @@
       Pages via homePage and PageMapping.page.
     </see>
     <see type="dcore:PageGroup" relation="Requires">
-      Root page group via rootPageGroup — nested groups hang off that tree.
+      Page groups via pageGroups; root via rootPageGroup.
     </see>
     <see type="sem:LearningPath" relation="Requires">
       Learning paths via learningPaths aggregation.
@@ -105,6 +105,9 @@
     <pages type="type:TypeReferenceEntity(dcore:Page)[]">
       <documentation>List of all pages in this DocSet.</documentation>
     </pages>
+    <pageGroups type="type:TypeReferenceEntity(dcore:PageGroup)[]">
+      <documentation>List of all page groups in this DocSet.</documentation>
+    </pageGroups>
     <learningPaths type="type:TypeReferenceEntity(sem:LearningPath)[]">
       <documentation>List of all available and active learning paths for this DocSet.</documentation>
     </learningPaths>
