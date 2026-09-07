@@ -25,7 +25,7 @@
     The BlockML website documentation is the first concrete example: a site-specific DocSet
     instance owns pages, page groups, learning paths, and global rules.
     
-    title, summary, version, homePage, rootPath, rootPageGroup, and plan identify the
+    title, summary, version, homePage, rootPageGroup, and plan identify the
     documentation set; pages and pageGroups list every publishable page and group; remaining
     aggregations hold TypeReferenceEntity catalogues (learning paths, global rules) used when
     generating or rendering that documentation.
@@ -96,12 +96,6 @@
         of this DocSet.
       </documentation>
     </plan>
-    <rootPath type="type:Text">
-      <documentation>
-        Base URL path of this documentation set on the site (for example /docs). Full
-        page URLs are rootPath + PageMapping.path.
-      </documentation>
-    </rootPath>
     <rootPageGroup type="type:TypeReference(dcore:PageGroup)">
       <documentation>
         Type reference to the top-level PageGroup of this documentation set. Nested

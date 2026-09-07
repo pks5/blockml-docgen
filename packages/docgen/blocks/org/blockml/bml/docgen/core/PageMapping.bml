@@ -17,8 +17,8 @@
     An in-page NavigationItem or a preliminary PagePlan
   </isnot>
   <documentation>
-    Associates a Page (typically a DocPage) with a stable routing key and a site-relative path
-    under DocSet.rootPath. pageKey uses underscores for lookup and generators; path is the
+    Associates a Page (typically a DocPage) with a stable routing key and a site-relative path.
+    pageKey uses underscores for lookup and generators; path is the
     hyphenated URL segment used in site routing. Distinct from NavigationItem, which carries
     navigation labels and optional nested menu structure without owning pageKey/path. Used by
     DocSet.pageMapping.

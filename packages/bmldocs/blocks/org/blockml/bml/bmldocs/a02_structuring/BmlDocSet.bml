@@ -25,7 +25,7 @@
     advanced and senior developers. The set follows a clear learning path: quick start, fast first
     results, then deeper study when needed.
     
-    pages and pageGroups list every publishable page and group. rootPath is /docs;
+    pages and pageGroups list every publishable page and group.
     homePage points at the TableOfContents menu page; rootPageGroup is RootPageGroup.
   </documentation>
   <references>
@@ -99,9 +99,6 @@ developers.</value>
     <plan override="true">
       <value>plan:BmlDocSetPlan</value>
     </plan>
-    <rootPath override="true">
-      <value>/docs</value>
-    </rootPath>
     <rootPageGroup override="true">
       <value>pgroup:RootPageGroup</value>
     </rootPageGroup>

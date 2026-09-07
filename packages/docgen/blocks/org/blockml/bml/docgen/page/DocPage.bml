@@ -25,8 +25,8 @@
     • Requires — primary content source(s) used to generate this page
     • SeeAlso — optional related background
     
-    Site routing uses DocSet.rootPath + PageMapping.path (for example /docs + /intro →
-    /docs/intro). Concrete children add see links to org.blockml.bml.documentation.* or
+    Site routing uses PageMapping.path (for example /docs/intro). Concrete children add
+    see links to org.blockml.bml.documentation.* or
     org.blockml.bml.task.*.
   </documentation>
   <abstract>

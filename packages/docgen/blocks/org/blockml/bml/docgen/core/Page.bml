@@ -22,7 +22,7 @@
     Page-local rules apply in addition to DocSet.globalRules. authoritativeSources and
     audiences on the page apply to the whole page (element-level catalogues remain on
     ContentElement). docset points at the DocSet this page belongs to. Site routing uses
-    DocSet.rootPath + PageMapping.path.
+    PageMapping.path.
   </documentation>
   <abstract>
     true

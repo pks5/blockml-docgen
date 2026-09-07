@@ -39,7 +39,7 @@
        manifestation (for example JSON or HTML).
     
     org.blockml.bml.bmldocs is the site layer. structuring:BmlDocSet extends dcore:DocSet
-    for BlockML core documentation on blockml.org (rootPath /docs, homePage
+    for BlockML core documentation on blockml.org (homePage
     TableOfContents, rootPageGroup RootPageGroup). Concrete pages extend
     docset:BmlDocPage and point at bml-core narrative Blocks. Site rules specialize
     dcore:Rule. bmldocs does not re-implement docgen types.
