@@ -3,7 +3,7 @@
   FQN: org.blockml.bml.bmldocs.docset.BmlDocPage-->
 <docset:BmlDocPage xmlns="http://blockml.org/bml"
   xmlns:docset="org.blockml.bml.bmldocs.docset"
-  xmlns:structuring="org.blockml.bml.bmldocs.a02_structuring"
+  xmlns:authoring="org.blockml.bml.bmldocs.a03_authoring"
   xmlns:dpage="org.blockml.bml.docgen.page">
 
   <baseType>
@@ -27,13 +27,13 @@
     <see type="dpage:DocPage" relation="Extends">
       Docgen human-facing documentation page marker.
     </see>
-    <see type="structuring:BmlDocSet" relation="Requires">
+    <see type="authoring:BmlDocSet" relation="Requires">
       Documentation set bound via docset.
     </see>
   </references>
   <properties>
     <docset override="true">
-      <value>structuring:BmlDocSet</value>
+      <value>authoring:BmlDocSet</value>
     </docset>
   </properties>
 </docset:BmlDocPage>

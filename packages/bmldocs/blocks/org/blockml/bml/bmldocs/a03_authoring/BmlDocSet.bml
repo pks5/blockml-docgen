@@ -1,8 +1,8 @@
 <!--BlockML Documentation — cohesive BlockML core documentation set
 
-  FQN: org.blockml.bml.bmldocs.a02_structuring.BmlDocSet-->
-<structuring:BmlDocSet xmlns="http://blockml.org/bml"
-  xmlns:structuring="org.blockml.bml.bmldocs.a02_structuring"
+  FQN: org.blockml.bml.bmldocs.a03_authoring.BmlDocSet-->
+<authoring:BmlDocSet xmlns="http://blockml.org/bml"
+  xmlns:authoring="org.blockml.bml.bmldocs.a03_authoring"
   xmlns:plan="org.blockml.bml.bmldocs.a01_planning"
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
   xmlns:pgroup="org.blockml.bml.bmldocs.page"
@@ -180,4 +180,4 @@ developers.</value>
       </composition>
     </authoritativeSources>
   </aggregations>
-</structuring:BmlDocSet>
+</authoring:BmlDocSet>

@@ -12,7 +12,7 @@
   xmlns:pgroup="org.blockml.bml.bmldocs.page"
   xmlns:docset="org.blockml.bml.bmldocs.docset"
   xmlns:plan="org.blockml.bml.bmldocs.a01_planning"
-  xmlns:structuring="org.blockml.bml.bmldocs.a02_structuring"
+  xmlns:authoring="org.blockml.bml.bmldocs.a03_authoring"
   xmlns:brule="org.blockml.bml.bmldocs.rule"
   xmlns:docgen="org.blockml.bml.docgen"
   xmlns:blockml="org.blockml.bml"
@@ -64,7 +64,7 @@
     <blocks override="true">
       <composition>
         <bmldocs:README />
-        <structuring:BmlDocSet />
+        <authoring:BmlDocSet />
         <plan:BmlDocSetPlan />
         <docset:BmlDocPage />
         <brule:CodeStyleRule />

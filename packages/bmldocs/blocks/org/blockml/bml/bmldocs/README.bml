@@ -5,7 +5,7 @@
   xmlns:bmldocs="org.blockml.bml.bmldocs"
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
   xmlns:docset="org.blockml.bml.bmldocs.docset"
-  xmlns:structuring="org.blockml.bml.bmldocs.a02_structuring"
+  xmlns:authoring="org.blockml.bml.bmldocs.a03_authoring"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:docgen="org.blockml.bml.docgen"
   xmlns:core="org.blockml.bml.core">
@@ -32,7 +32,7 @@
     <see type="page:TableOfContents" relation="ReadFirst">
       Documentation menu page for blockml.org (Navigation tree).
     </see>
-    <see type="structuring:BmlDocSet" relation="ReadFirst">
+    <see type="authoring:BmlDocSet" relation="ReadFirst">
       BlockML core DocSet — pageMapping catalogue and learning-path intent.
     </see>
     <see type="docset:BmlDocPage" relation="Requires">
