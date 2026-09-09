@@ -6,7 +6,7 @@
   xmlns:plan="org.blockml.bml.bmldocs.a01_planning"
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
   xmlns:pgroup="org.blockml.bml.bmldocs.page"
-  xmlns:brule="org.blockml.bml.bmldocs.rule"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:blockml="org.blockml.bml">
 
@@ -44,37 +44,37 @@
     <see type="plan:BmlDocSetPlan" relation="Requires">
       Preliminary DocSet plan referenced by plan.
     </see>
-    <see type="brule:CodeStyleRule" relation="Requires">
+    <see type="lrule:CodeStyleRule" relation="Requires">
       Global rule for code and snippet presentation.
     </see>
-    <see type="brule:CompleteSentenceRule" relation="Requires">
+    <see type="lrule:CompleteSentenceRule" relation="Requires">
       Global rule requiring complete grammatical sentences in generated prose.
     </see>
-    <see type="brule:OnePrimaryMessageRule" relation="Requires">
+    <see type="lrule:OnePrimaryMessageRule" relation="Requires">
       Global rule requiring one primary message per ContentElement.
     </see>
-    <see type="brule:RespectScopeRule" relation="Requires">
+    <see type="lrule:RespectScopeRule" relation="Requires">
       Global rule requiring content to remain within declared Scope.
     </see>
-    <see type="brule:RespectExclusionsRule" relation="Requires">
+    <see type="lrule:RespectExclusionsRule" relation="Requires">
       Global rule forbidding excluded material in generated content.
     </see>
-    <see type="brule:NoSourceDumpRule" relation="Requires">
+    <see type="lrule:NoSourceDumpRule" relation="Requires">
       Global rule requiring synthesis of sources instead of unordered dumps.
     </see>
-    <see type="brule:NoUnrequestedDiagnosticsRule" relation="Requires">
+    <see type="lrule:NoUnrequestedDiagnosticsRule" relation="Requires">
       Global rule restricting diagnostic codes to explicitly requested contexts.
     </see>
-    <see type="brule:MatchDetailLevelRule" relation="Requires">
+    <see type="lrule:MatchDetailLevelRule" relation="Requires">
       Global rule requiring generated detail to match DetailLevel.
     </see>
-    <see type="brule:ConceptBeforeImplementationRule" relation="Requires">
+    <see type="lrule:ConceptBeforeImplementationRule" relation="Requires">
       Global rule requiring concept explanation before implementation details.
     </see>
-    <see type="brule:NoFragmentedEnumerationRule" relation="Requires">
+    <see type="lrule:NoFragmentedEnumerationRule" relation="Requires">
       Global rule requiring List or Table for unstructured enumerations.
     </see>
-    <see type="brule:AudienceVocabularyRule" relation="Requires">
+    <see type="lrule:AudienceVocabularyRule" relation="Requires">
       Global rule requiring terminology appropriate to the declared Audience.
     </see>
     <see type="blockml:Library" relation="Requires">
@@ -150,28 +150,28 @@ developers.</value>
     <globalRules override="true">
       <composition>
         <!--Planning rules-->
-        <brule:ClearPagePurposeRule />
-        <brule:DistinctPagePurposeRule />
-        <brule:CompleteTopicCoverageRule />
-        <brule:AppropriatePageGranularityRule />
-        <brule:ProgressivePageOrderRule />
-        <brule:StablePageIdentityRule />
+        <lrule:ClearPagePurposeRule />
+        <lrule:DistinctPagePurposeRule />
+        <lrule:CompleteTopicCoverageRule />
+        <lrule:AppropriatePageGranularityRule />
+        <lrule:ProgressivePageOrderRule />
+        <lrule:StablePageIdentityRule />
         <!--Other rules-->
-        <brule:CodeExampleRule />
-        <brule:CodeStyleRule />
-        <brule:AvoidContentRepetitionRule />
-        <brule:CompleteSentenceRule />
-        <brule:OnePrimaryMessageRule />
-        <brule:RespectScopeRule />
-        <brule:RespectExclusionsRule />
-        <brule:NoSourceDumpRule />
-        <brule:NoUnrequestedDiagnosticsRule />
-        <brule:MatchDetailLevelRule />
-        <brule:ConceptBeforeImplementationRule />
-        <brule:NoFragmentedEnumerationRule />
-        <brule:AudienceVocabularyRule />
-        <brule:SectionCompletenessRule />
-        <brule:PageSectionCountRule />
+        <lrule:CodeExampleRule />
+        <lrule:CodeStyleRule />
+        <lrule:AvoidContentRepetitionRule />
+        <lrule:CompleteSentenceRule />
+        <lrule:OnePrimaryMessageRule />
+        <lrule:RespectScopeRule />
+        <lrule:RespectExclusionsRule />
+        <lrule:NoSourceDumpRule />
+        <lrule:NoUnrequestedDiagnosticsRule />
+        <lrule:MatchDetailLevelRule />
+        <lrule:ConceptBeforeImplementationRule />
+        <lrule:NoFragmentedEnumerationRule />
+        <lrule:AudienceVocabularyRule />
+        <lrule:SectionCompletenessRule />
+        <lrule:PageSectionCountRule />
       </composition>
     </globalRules>
     <authoritativeSources override="true">

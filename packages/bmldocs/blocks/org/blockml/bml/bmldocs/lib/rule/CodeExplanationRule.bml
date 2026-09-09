@@ -1,8 +1,8 @@
 <!--BlockML Documentation — code explanation rule
 
-  FQN: org.blockml.bml.bmldocs.rule.CodeExplanationRule-->
-<brule:CodeExplanationRule xmlns="http://blockml.org/bml"
-  xmlns:brule="org.blockml.bml.bmldocs.rule"
+  FQN: org.blockml.bml.bmldocs.lib.rule.CodeExplanationRule-->
+<lrule:CodeExplanationRule xmlns="http://blockml.org/bml"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
   <baseType>
@@ -51,4 +51,4 @@ the section's explanation. Focus on the parts relevant to the example's teaching
 do not explain every line unless necessary.</value>
     </instructions>
   </properties>
-</brule:CodeExplanationRule>
+</lrule:CodeExplanationRule>

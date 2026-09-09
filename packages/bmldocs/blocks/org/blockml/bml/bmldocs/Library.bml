@@ -10,10 +10,10 @@
   xmlns:bmldocs="org.blockml.bml.bmldocs"
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
   xmlns:pgroup="org.blockml.bml.bmldocs.page"
-  xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:lib="org.blockml.bml.bmldocs.lib"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:plan="org.blockml.bml.bmldocs.a01_planning"
   xmlns:authoring="org.blockml.bml.bmldocs.a03_authoring"
-  xmlns:brule="org.blockml.bml.bmldocs.rule"
   xmlns:docgen="org.blockml.bml.docgen"
   xmlns:blockml="org.blockml.bml"
   xmlns:core="org.blockml.bml.core"
@@ -66,18 +66,18 @@
         <bmldocs:README />
         <authoring:BmlDocSet />
         <plan:BmlDocSetPlan />
-        <docset:BmlDocPage />
-        <brule:CodeStyleRule />
-        <brule:CompleteSentenceRule />
-        <brule:OnePrimaryMessageRule />
-        <brule:RespectScopeRule />
-        <brule:RespectExclusionsRule />
-        <brule:NoSourceDumpRule />
-        <brule:NoUnrequestedDiagnosticsRule />
-        <brule:MatchDetailLevelRule />
-        <brule:ConceptBeforeImplementationRule />
-        <brule:NoFragmentedEnumerationRule />
-        <brule:AudienceVocabularyRule />
+        <lib:BmlDocPage />
+        <lrule:CodeStyleRule />
+        <lrule:CompleteSentenceRule />
+        <lrule:OnePrimaryMessageRule />
+        <lrule:RespectScopeRule />
+        <lrule:RespectExclusionsRule />
+        <lrule:NoSourceDumpRule />
+        <lrule:NoUnrequestedDiagnosticsRule />
+        <lrule:MatchDetailLevelRule />
+        <lrule:ConceptBeforeImplementationRule />
+        <lrule:NoFragmentedEnumerationRule />
+        <lrule:AudienceVocabularyRule />
         <page:TableOfContents />
         <page:Intro />
         <page:FirstBlock />

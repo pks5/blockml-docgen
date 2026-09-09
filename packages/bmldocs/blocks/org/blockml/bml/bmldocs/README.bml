@@ -4,7 +4,7 @@
 <bmldocs:README xmlns="http://blockml.org/bml"
   xmlns:bmldocs="org.blockml.bml.bmldocs"
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
-  xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:lib="org.blockml.bml.bmldocs.lib"
   xmlns:authoring="org.blockml.bml.bmldocs.a03_authoring"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:docgen="org.blockml.bml.docgen"
@@ -19,7 +19,7 @@
   <documentation>
     README for the BlockML documentation library (org.blockml.bml.bmldocs). This library models how
     blockml.org presents BlockML documentation to humans — TableOfContents menu page and concrete
-    DocPage markers. Concrete pages extend docset:BmlDocPage (docset fixed to BmlDocSet).
+    DocPage markers. Concrete pages extend lib:BmlDocPage (docset fixed to BmlDocSet).
     Page structure types live in org.blockml.bml.docgen.page (dependency
     docgen:Library). Narrative content stays in bml-core; each DocPage points at those sources
     via references/see (Requires = primary content, SeeAlso = optional context). Routing keys and
@@ -35,7 +35,7 @@
     <see type="authoring:BmlDocSet" relation="ReadFirst">
       BlockML core DocSet — pageMapping catalogue and learning-path intent.
     </see>
-    <see type="docset:BmlDocPage" relation="Requires">
+    <see type="lib:BmlDocPage" relation="Requires">
       Abstract bmldocs DocPage base — sets docset to BmlDocSet for all concrete pages.
     </see>
     <see type="dpage:DocPage" relation="Requires">

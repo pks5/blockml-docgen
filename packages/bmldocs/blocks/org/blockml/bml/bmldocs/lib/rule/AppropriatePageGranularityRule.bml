@@ -1,8 +1,8 @@
 <!--BlockML Documentation — appropriate page granularity rule
 
-  FQN: org.blockml.bml.bmldocs.rule.AppropriatePageGranularityRule-->
-<brule:AppropriatePageGranularityRule xmlns="http://blockml.org/bml"
-  xmlns:brule="org.blockml.bml.bmldocs.rule"
+  FQN: org.blockml.bml.bmldocs.lib.rule.AppropriatePageGranularityRule-->
+<lrule:AppropriatePageGranularityRule xmlns="http://blockml.org/bml"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
   <baseType>
@@ -55,4 +55,4 @@ require substantial independent explanation or have a clearly distinct purpose. 
 optimize page granularity merely to reach a particular total page count.</value>
     </instructions>
   </properties>
-</brule:AppropriatePageGranularityRule>
+</lrule:AppropriatePageGranularityRule>

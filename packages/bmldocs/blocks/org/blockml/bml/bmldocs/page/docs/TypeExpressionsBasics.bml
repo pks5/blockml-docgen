@@ -5,7 +5,7 @@
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
-  xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:lib="org.blockml.bml.bmldocs.lib"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:dlevel="org.blockml.bml.docgen.level"
   xmlns:ptype="org.blockml.bml.docgen.pagetype"
@@ -15,7 +15,7 @@
   xmlns:doc="org.blockml.bml.documentation">
 
   <baseType>
-    docset:BmlDocPage
+    lib:BmlDocPage
   </baseType>
   <is>
     A website cheat-sheet for type expressions

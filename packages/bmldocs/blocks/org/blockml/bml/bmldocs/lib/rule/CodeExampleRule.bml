@@ -1,8 +1,8 @@
 <!--BlockML Documentation — code example content rule
 
-  FQN: org.blockml.bml.bmldocs.rule.CodeExampleRule-->
-<brule:CodeExampleRule xmlns="http://blockml.org/bml"
-  xmlns:brule="org.blockml.bml.bmldocs.rule"
+  FQN: org.blockml.bml.bmldocs.lib.rule.CodeExampleRule-->
+<lrule:CodeExampleRule xmlns="http://blockml.org/bml"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
   <baseType>
@@ -43,4 +43,4 @@ unrelated parts of the Block simple so that they provide context without distrac
 from the concept being demonstrated.</value>
     </instructions>
   </properties>
-</brule:CodeExampleRule>
+</lrule:CodeExampleRule>

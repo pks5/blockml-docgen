@@ -1,8 +1,8 @@
 <!--BlockML Documentation — audience vocabulary terminology rule
 
-  FQN: org.blockml.bml.bmldocs.rule.AudienceVocabularyRule-->
-<brule:AudienceVocabularyRule xmlns="http://blockml.org/bml"
-  xmlns:brule="org.blockml.bml.bmldocs.rule"
+  FQN: org.blockml.bml.bmldocs.lib.rule.AudienceVocabularyRule-->
+<lrule:AudienceVocabularyRule xmlns="http://blockml.org/bml"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
   <baseType>
@@ -35,4 +35,4 @@ directive syntax, or unresolved abbreviations unless the Audience is expected to
 them or the terms are introduced within the Page.</value>
     </instructions>
   </properties>
-</brule:AudienceVocabularyRule>
+</lrule:AudienceVocabularyRule>

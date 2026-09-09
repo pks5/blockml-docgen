@@ -1,8 +1,8 @@
 <!--BlockML Documentation — page section count rule
 
-  FQN: org.blockml.bml.bmldocs.rule.PageSectionCountRule-->
-<brule:PageSectionCountRule xmlns="http://blockml.org/bml"
-  xmlns:brule="org.blockml.bml.bmldocs.rule"
+  FQN: org.blockml.bml.bmldocs.lib.rule.PageSectionCountRule-->
+<lrule:PageSectionCountRule xmlns="http://blockml.org/bml"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
   <baseType>
@@ -40,4 +40,4 @@ target count and do not merge distinct topics merely to reduce the count. Exclud
 navigation-only sections such as Next Page from the section count.</value>
     </instructions>
   </properties>
-</brule:PageSectionCountRule>
+</lrule:PageSectionCountRule>

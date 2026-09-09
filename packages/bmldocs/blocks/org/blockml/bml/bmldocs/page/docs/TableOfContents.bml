@@ -3,13 +3,13 @@
   FQN: org.blockml.bml.bmldocs.page.docs.TableOfContents-->
 <page:TableOfContents xmlns="http://blockml.org/bml"
   xmlns:page="org.blockml.bml.bmldocs.page.docs"
-  xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:lib="org.blockml.bml.bmldocs.lib"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:ptype="org.blockml.bml.docgen.pagetype"
   xmlns:dlevel="org.blockml.bml.docgen.level">
 
   <baseType>
-    docset:BmlDocPage
+    lib:BmlDocPage
   </baseType>
   <is>
     The blockml.org documentation table of contents
@@ -20,7 +20,7 @@
     Section nodes carry only label and nested items; leaf nodes set target to a page marker.
   </documentation>
   <references>
-    <see type="docset:BmlDocPage" relation="Extends">
+    <see type="lib:BmlDocPage" relation="Extends">
       bmldocs DocPage base bound to BmlDocSet.
     </see>
     <see type="dpage:Navigation" relation="Requires">

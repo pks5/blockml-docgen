@@ -1,8 +1,8 @@
 <!--BlockML Documentation — complete topic coverage rule
 
-  FQN: org.blockml.bml.bmldocs.rule.CompleteTopicCoverageRule-->
-<brule:CompleteTopicCoverageRule xmlns="http://blockml.org/bml"
-  xmlns:brule="org.blockml.bml.bmldocs.rule"
+  FQN: org.blockml.bml.bmldocs.lib.rule.CompleteTopicCoverageRule-->
+<lrule:CompleteTopicCoverageRule xmlns="http://blockml.org/bml"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
   <baseType>
@@ -48,4 +48,4 @@ every minor detail; instead, incorporate related details into broader Pages when
 this results in a clearer and more coherent documentation structure.</value>
     </instructions>
   </properties>
-</brule:CompleteTopicCoverageRule>
+</lrule:CompleteTopicCoverageRule>

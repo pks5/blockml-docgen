@@ -1,8 +1,8 @@
 <!--BlockML Documentation — abstract bmldocs DocPage base
 
-  FQN: org.blockml.bml.bmldocs.docset.BmlDocPage-->
-<docset:BmlDocPage xmlns="http://blockml.org/bml"
-  xmlns:docset="org.blockml.bml.bmldocs.docset"
+  FQN: org.blockml.bml.bmldocs.lib.BmlDocPage-->
+<lib:BmlDocPage xmlns="http://blockml.org/bml"
+  xmlns:lib="org.blockml.bml.bmldocs.lib"
   xmlns:authoring="org.blockml.bml.bmldocs.a03_authoring"
   xmlns:dpage="org.blockml.bml.docgen.page">
 
@@ -36,4 +36,4 @@
       <value>authoring:BmlDocSet</value>
     </docset>
   </properties>
-</docset:BmlDocPage>
+</lib:BmlDocPage>

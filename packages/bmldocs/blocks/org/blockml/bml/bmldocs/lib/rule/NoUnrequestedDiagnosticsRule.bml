@@ -1,8 +1,8 @@
 <!--BlockML Documentation — no unrequested diagnostics content rule
 
-  FQN: org.blockml.bml.bmldocs.rule.NoUnrequestedDiagnosticsRule-->
-<brule:NoUnrequestedDiagnosticsRule xmlns="http://blockml.org/bml"
-  xmlns:brule="org.blockml.bml.bmldocs.rule"
+  FQN: org.blockml.bml.bmldocs.lib.rule.NoUnrequestedDiagnosticsRule-->
+<lrule:NoUnrequestedDiagnosticsRule xmlns="http://blockml.org/bml"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
   <baseType>
@@ -34,4 +34,4 @@ has Reference or Troubleshooting semantics, or explicitly lists those diagnostic
 required SupportingPoints.</value>
     </instructions>
   </properties>
-</brule:NoUnrequestedDiagnosticsRule>
+</lrule:NoUnrequestedDiagnosticsRule>

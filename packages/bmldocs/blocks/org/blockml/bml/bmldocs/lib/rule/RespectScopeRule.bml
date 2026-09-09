@@ -1,8 +1,8 @@
 <!--BlockML Documentation — respect declared scope content rule
 
-  FQN: org.blockml.bml.bmldocs.rule.RespectScopeRule-->
-<brule:RespectScopeRule xmlns="http://blockml.org/bml"
-  xmlns:brule="org.blockml.bml.bmldocs.rule"
+  FQN: org.blockml.bml.bmldocs.lib.rule.RespectScopeRule-->
+<lrule:RespectScopeRule xmlns="http://blockml.org/bml"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
   <baseType>
@@ -36,4 +36,4 @@ metadata, or architectural internals unless they are explicitly included by Scop
 SupportingPoint.</value>
     </instructions>
   </properties>
-</brule:RespectScopeRule>
+</lrule:RespectScopeRule>

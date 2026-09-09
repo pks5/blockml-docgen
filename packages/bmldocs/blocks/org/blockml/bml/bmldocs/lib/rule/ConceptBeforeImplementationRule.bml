@@ -1,8 +1,8 @@
 <!--BlockML Documentation — concept before implementation learning rule
 
-  FQN: org.blockml.bml.bmldocs.rule.ConceptBeforeImplementationRule-->
-<brule:ConceptBeforeImplementationRule xmlns="http://blockml.org/bml"
-  xmlns:brule="org.blockml.bml.bmldocs.rule"
+  FQN: org.blockml.bml.bmldocs.lib.rule.ConceptBeforeImplementationRule-->
+<lrule:ConceptBeforeImplementationRule xmlns="http://blockml.org/bml"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:rule="org.blockml.bml.docgen.rule">
 
   <baseType>
@@ -33,4 +33,4 @@
 behavior, internal object-model mappings, implementation status, or runtime mechanics.</value>
     </instructions>
   </properties>
-</brule:ConceptBeforeImplementationRule>
+</lrule:ConceptBeforeImplementationRule>

@@ -7,7 +7,7 @@
   xmlns:dplan="org.blockml.bml.docgen.plan"
   xmlns:stage="org.blockml.bml.docgen.stage"
   xmlns:bmldocs="org.blockml.bml.bmldocs"
-  xmlns:docset="org.blockml.bml.bmldocs.docset"
+  xmlns:lib="org.blockml.bml.bmldocs.lib"
   xmlns:authoring="org.blockml.bml.bmldocs.a03_authoring"
   xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation">
 
@@ -41,7 +41,7 @@
     org.blockml.bml.bmldocs is the site layer. authoring:BmlDocSet extends dcore:DocSet
     for BlockML core documentation on blockml.org (homePage
     TableOfContents, rootPageGroup RootPageGroup). Concrete pages extend
-    docset:BmlDocPage and point at bml-core narrative Blocks. Site rules specialize
+    lib:BmlDocPage and point at bml-core narrative Blocks. Site rules specialize
     dcore:Rule. bmldocs does not re-implement docgen types.
     
     The workspace hub orients the monorepo. It does not own DocSets, stages, or
