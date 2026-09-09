@@ -1,0 +1,183 @@
+<!--BlockML Documentation — cohesive BlockML core documentation set
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.BmlDocSet-->
+<adata:BmlDocSet xmlns="http://blockml.org/bml"
+  xmlns:adata="org.blockml.bml.bmldocs.a03_authoring.data"
+  xmlns:pdata="org.blockml.bml.bmldocs.a01_planning.data"
+  xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.page"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:blockml="org.blockml.bml">
+
+  <baseType>
+    dcore:DocSet
+  </baseType>
+  <is>
+    The BlockML core documentation set
+  </is>
+  <isNot>
+    A single DocPage or a bml-core narrative Documentation Block
+  </isNot>
+  <documentation>
+    The complete documentation set for BlockML core — syntax, rules, examples, best practices,
+    and use cases. Aimed at developers: some material targets junior readers, other parts serve
+    advanced and senior developers. The set follows a clear learning path: quick start, fast first
+    results, then deeper study when needed.
+    
+    pages and pageGroups list every publishable page and group.
+    homePage points at the TableOfContents menu page; rootPageGroup is RootPageGroup.
+  </documentation>
+  <references>
+    <see type="dcore:DocSet" relation="Extends">
+      Docgen DocSet container.
+    </see>
+    <see type="page:Intro" relation="Requires">
+      Entry content page of this documentation set.
+    </see>
+    <see type="page:TableOfContents" relation="Requires">
+      Documentation menu page for blockml.org — also homePage.
+    </see>
+    <see type="pgroup:RootPageGroup" relation="Requires">
+      Top-level page group referenced by rootPageGroup.
+    </see>
+    <see type="pdata:BmlDocSetPlan" relation="Requires">
+      Preliminary DocSet plan referenced by plan.
+    </see>
+    <see type="lrule:CodeStyleRule" relation="Requires">
+      Global rule for code and snippet presentation.
+    </see>
+    <see type="lrule:CompleteSentenceRule" relation="Requires">
+      Global rule requiring complete grammatical sentences in generated prose.
+    </see>
+    <see type="lrule:OnePrimaryMessageRule" relation="Requires">
+      Global rule requiring one primary message per ContentElement.
+    </see>
+    <see type="lrule:RespectScopeRule" relation="Requires">
+      Global rule requiring content to remain within declared Scope.
+    </see>
+    <see type="lrule:RespectExclusionsRule" relation="Requires">
+      Global rule forbidding excluded material in generated content.
+    </see>
+    <see type="lrule:NoSourceDumpRule" relation="Requires">
+      Global rule requiring synthesis of sources instead of unordered dumps.
+    </see>
+    <see type="lrule:NoUnrequestedDiagnosticsRule" relation="Requires">
+      Global rule restricting diagnostic codes to explicitly requested contexts.
+    </see>
+    <see type="lrule:MatchDetailLevelRule" relation="Requires">
+      Global rule requiring generated detail to match DetailLevel.
+    </see>
+    <see type="lrule:ConceptBeforeImplementationRule" relation="Requires">
+      Global rule requiring concept explanation before implementation details.
+    </see>
+    <see type="lrule:NoFragmentedEnumerationRule" relation="Requires">
+      Global rule requiring List or Table for unstructured enumerations.
+    </see>
+    <see type="lrule:AudienceVocabularyRule" relation="Requires">
+      Global rule requiring terminology appropriate to the declared Audience.
+    </see>
+    <see type="blockml:Library" relation="Requires">
+      Authoritative BlockML core library source for this documentation set.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>BlockML Documentation</value>
+    </title>
+    <summary override="true">
+      <value>Complete BlockML core documentation — syntax, rules, examples, best practices, and
+use cases — with a learning path from quick start to deep study for junior through senior
+developers.</value>
+    </summary>
+    <version override="true">
+      <value>0.1.0</value>
+    </version>
+    <homePage override="true">
+      <value>page:TableOfContents</value>
+    </homePage>
+    <plan override="true">
+      <value>pdata:BmlDocSetPlan</value>
+    </plan>
+    <rootPageGroup override="true">
+      <value>pgroup:RootPageGroup</value>
+    </rootPageGroup>
+  </properties>
+  <aggregations>
+    <pages override="true">
+      <composition>
+        <page:TableOfContents />
+        <page:Intro />
+        <page:FirstBlock />
+        <page:FileAnatomy />
+        <page:EverythingIsABlockPage />
+        <page:DefinitionAndInstance />
+        <page:CompositionBasics />
+        <page:TypesOverview />
+        <page:TypeExpressionsBasics />
+        <page:GenericsBriefly />
+        <page:ConfiguringTypes />
+        <page:CapabilitiesIntro />
+        <page:ExpressionsIntro />
+        <page:EmbeddedExpressionsIntro />
+        <page:LibrariesAndPackages />
+        <page:ReadmeAndBootstrap />
+        <page:ModelingGuidelinesPage />
+        <page:VisibilityBasics />
+        <page:OverridesBasics />
+        <page:ConstraintsBasics />
+        <page:AnnotationsAndDirectives />
+        <page:SubBlocksIntro />
+        <page:ContractsIntro />
+        <page:CompilerOverview />
+        <page:AuthorNewBlockGuide />
+      </composition>
+    </pages>
+    <pageGroups override="true">
+      <composition>
+        <pgroup:RootPageGroup />
+        <pgroup:DocsPageGroup />
+        <pgroup:GettingStartedPageGroup />
+        <pgroup:CoreIdeasPageGroup />
+        <pgroup:TypesPageGroup />
+        <pgroup:BehaviourPageGroup />
+        <pgroup:LibrariesPageGroup />
+        <pgroup:AuthoringPageGroup />
+        <pgroup:DeeperTopicsPageGroup />
+        <pgroup:HowToPageGroup />
+      </composition>
+    </pageGroups>
+    <globalRules override="true">
+      <composition>
+        <!--Planning rules-->
+        <lrule:ClearPagePurposeRule />
+        <lrule:DistinctPagePurposeRule />
+        <lrule:CompleteTopicCoverageRule />
+        <lrule:AppropriatePageGranularityRule />
+        <lrule:ProgressivePageOrderRule />
+        <lrule:StablePageIdentityRule />
+        <!--Other rules-->
+        <lrule:CodeExampleRule />
+        <lrule:CodeStyleRule />
+        <lrule:AvoidContentRepetitionRule />
+        <lrule:CompleteSentenceRule />
+        <lrule:OnePrimaryMessageRule />
+        <lrule:RespectScopeRule />
+        <lrule:RespectExclusionsRule />
+        <lrule:NoSourceDumpRule />
+        <lrule:NoUnrequestedDiagnosticsRule />
+        <lrule:MatchDetailLevelRule />
+        <lrule:ConceptBeforeImplementationRule />
+        <lrule:NoFragmentedEnumerationRule />
+        <lrule:AudienceVocabularyRule />
+        <lrule:SectionCompletenessRule />
+        <lrule:PageSectionCountRule />
+      </composition>
+    </globalRules>
+    <authoritativeSources override="true">
+      <composition>
+        <blockml:Library />
+      </composition>
+    </authoritativeSources>
+  </aggregations>
+</adata:BmlDocSet>

@@ -58,7 +58,7 @@
     <pageBasePackage type="type:Text">
       <documentation>
         Base package for concrete Page and PageGroup Blocks created from this plan
-        (for example org.blockml.bml.bmldocs.page). DocSetStructuringStage places new Blocks under
+        (for example org.blockml.bml.bmldocs.a03_authoring.data.page). DocSetStructuringStage places new Blocks under
         this package.
       </documentation>
     </pageBasePackage>

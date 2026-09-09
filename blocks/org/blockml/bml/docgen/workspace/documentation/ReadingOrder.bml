@@ -5,8 +5,8 @@
   xmlns:docgen="org.blockml.bml.docgen"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:bmldocs="org.blockml.bml.bmldocs"
-  xmlns:authoring="org.blockml.bml.bmldocs.a03_authoring"
-  xmlns:page="org.blockml.bml.bmldocs.page.docs"
+  xmlns:adata="org.blockml.bml.bmldocs.a03_authoring.data"
+  xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation">
 
   <baseType>
@@ -23,8 +23,8 @@
        dcore:Page (DocPage), dcore:PageGroup, dcore:Plan, and
        dcore:ManifestationStage. Stay here for reusable types and the four-stage
        pipeline.
-    3. org.blockml.bml.bmldocs.README — then authoring:BmlDocSet, page:TableOfContents,
-       and concrete pages under org.blockml.bml.bmldocs.page.docs.*. Stay here for
+    3. org.blockml.bml.bmldocs.README — then adata:BmlDocSet, page:TableOfContents,
+       and concrete pages under org.blockml.bml.bmldocs.a03_authoring.data.page.docs.*. Stay here for
        the blockml.org catalogue, not a 1:1 mirror of the core ReadFirst path.
     
     Dive into a package library only for that package's contracts; return here for
@@ -37,7 +37,7 @@
     <see type="dcore:DocElement" relation="SeeAlso" />
     <see type="dcore:DocSet" relation="SeeAlso" />
     <see type="bmldocs:README" relation="SeeAlso" />
-    <see type="authoring:BmlDocSet" relation="SeeAlso" />
+    <see type="adata:BmlDocSet" relation="SeeAlso" />
     <see type="page:TableOfContents" relation="SeeAlso" />
     <see type="docgen:Library" relation="SeeAlso" />
     <see type="bmldocs:Library" relation="SeeAlso" />

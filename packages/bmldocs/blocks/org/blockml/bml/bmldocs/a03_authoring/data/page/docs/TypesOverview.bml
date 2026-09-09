@@ -1,0 +1,287 @@
+<!--BlockML Documentation — Types at a glance
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.TypesOverview-->
+<page:TypesOverview xmlns="http://blockml.org/bml"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:lpage="org.blockml.bml.bmldocs.lib.page"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:weight="org.blockml.bml.docgen.weight"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    lpage:BmlDocPage
+  </baseType>
+  <is>
+    A website overview of ValueTypes
+  </is>
+  <documentation>
+    Marker page: high-level map of the four ValueType kinds and where type expressions show up —
+    orientation only, not the full expression grammar.
+    content is a structural scaffold only; generate prose and examples from referenced core
+    documentation (doc:TypeSystemOverview).
+  </documentation>
+  <references>
+    <see type="doc:TypeSystemOverview" relation="Requires">
+      Primary content source — ValueTypes overview.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Types at a glance</value>
+    </title>
+    <purpose override="true">
+      <value>Introduce the four ValueType kinds as the type-system entry point.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>dlevel:Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>ptype:Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <doc:TypeSystemOverview />
+        <core:Block />
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <authoritativeSources>
+            <doc:TypeSystemOverview />
+            <core:Block />
+          </authoritativeSources>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <authoritativeSources>
+            <doc:TypeSystemOverview />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+        <sem:ReaderOutcome>
+          <authoritativeSources>
+            <doc:TypeSystemOverview />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <authoritativeSources>
+            <doc:TypeSystemOverview />
+            <core:Block />
+          </authoritativeSources>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <reason>This page is an entry map; deeper layers belong on dedicated type-system pages.</reason>
+        </sem:Exclusion>
+        <sem:Exclusion>
+          <reason>Contracts are a separate concern and would dilute the ValueType orientation.</reason>
+        </sem:Exclusion>
+        <sem:Exclusion>
+          <reason>The overview should describe the stable mental model, not project history.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <content override="true">
+      <composition>
+        <!--1. Lead-->
+        <dpage:Section heading="Four kinds of ValueType" purpose="Give readers an immediate orientation to the type-system entry point">
+          <content>
+            <dpage:Paragraph purpose="Introduce the four ValueType kinds as the type-system entry point">
+              <role>role:Lead</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>BlockML types that describe values on properties and similar members are
+ValueTypes, and they come in four kinds.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:TypeSystemOverview />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:TypeSystemOverview />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:TypeSystemOverview />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--2. Siblings-->
+        <dpage:Section heading="Sibling kinds, not a subtype ladder" purpose="Prevent readers from treating the four kinds as an inheritance hierarchy">
+          <content>
+            <dpage:Paragraph purpose="Explain Primitive, Enum, Struct, and Constant as siblings under ValueType">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>PrimitiveType, EnumType, StructType, and ConstantType are sibling branches
+under ValueType; none of them is a subtype of another.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:TypeSystemOverview />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:TypeSystemOverview />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:TypeSystemOverview />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion />
+              </exclusions>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--3. Where ValueTypes appear-->
+        <dpage:Section heading="Where ValueTypes appear" purpose="Relate ValueTypes to the member sites that require them">
+          <content>
+            <dpage:Paragraph purpose="Explain bare type-name sites that require ValueTypes">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>Only ValueTypes may appear where a bare type name is required on a Property
+type or a Capability inputType and outputType.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:TypeSystemOverview />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:TypeSystemOverview />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion />
+              </exclusions>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--4. Summary of kinds-->
+        <dpage:Section heading="What each kind means" purpose="Summarize the four ValueType kinds readers should retain">
+          <content>
+            <dpage:Paragraph purpose="Prepare the reader for the four-kind summary list">
+              <role>role:Transition</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>Keep the four kinds as a small vocabulary for the shape of value meaning.</message>
+            </dpage:Paragraph>
+            <dpage:List purpose="Present the four ValueType kinds as a concise summary">
+              <role>role:Summary</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>These four kinds are the practical vocabulary for ValueTypes.</message>
+              <items>
+                <dpage:ListItem text="PrimitiveType" purpose="Explain atomic scalar semantics for property values">
+                  <message>PrimitiveType describes atomic scalar values such as text or numbers
+that live on properties.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="EnumType" purpose="Explain named closed sets of literals">
+                  <message>EnumType describes a named closed set of allowed literal values.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="StructType" purpose="Explain named structured fields">
+                  <message>StructType describes a named structure with typed fields.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="ConstantType" purpose="Explain singleton domains via Constant">
+                  <message>ConstantType describes a singleton domain, typically expressed as
+Constant with a fixed value.</message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+          </content>
+        </dpage:Section>
+        <!--5. Example-->
+        <dpage:Section heading="A property with a Primitive" purpose="Connect the overview to a small typed property example">
+          <content>
+            <dpage:Paragraph purpose="Introduce a property declaring a Primitive ValueType">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>The simplest everyday use of a ValueType is a property whose type is a
+Primitive such as Text or Integer.</message>
+              <exclusions>
+                <sem:Exclusion>
+                  <reason>Those combination forms belong on type-expression and configuration pages.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+            <dpage:CodeBlock purpose="Illustrate a complete Block with a property typed as a Primitive">
+              <role>role:Example</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>Show a complete root Block whose highlighted property declares a Primitive
+ValueType such as Text or Integer.</message>
+              <supportingPoints>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion />
+              </exclusions>
+            </dpage:CodeBlock>
+            <dpage:Paragraph purpose="Interpret the Primitive property type in the example">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>In the example, the property's type attribute names a Primitive ValueType;
+that name is the semantic meaning, while any concrete value still belongs to
+the property on an instance.</message>
+              <supportingPoints>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--6. Navigation-->
+        <dpage:Section heading="Continue with type expressions" purpose="Direct the reader to combination forms and configuration">
+          <content>
+            <dpage:Navigation purpose="Continue the type-system learning sequence">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Type expressions" summary="Learn how named types combine into multiplicity, unions, and other forms.">
+                  <target>page:TypeExpressionsBasics</target>
+                </dpage:NavigationItem>
+                <dpage:NavigationItem label="Configuring ValueTypes" summary="See how curly-brace configuration specializes a ValueType instance on a property.">
+                  <target>page:ConfiguringTypes</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
+  </aggregations>
+</page:TypesOverview>

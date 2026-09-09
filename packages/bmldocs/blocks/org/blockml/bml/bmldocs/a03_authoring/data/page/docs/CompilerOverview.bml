@@ -1,0 +1,355 @@
+<!--BlockML Documentation — Compiler overview
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.CompilerOverview-->
+<page:CompilerOverview xmlns="http://blockml.org/bml"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:lpage="org.blockml.bml.bmldocs.lib.page"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:weight="org.blockml.bml.docgen.weight"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    lpage:BmlDocPage
+  </baseType>
+  <is>
+    A website overview of the compiler pipeline
+  </is>
+  <documentation>
+    Marker page: parser → validator → renderer at a glance, plus the idea that manifestation is
+    target-defined — background for curious readers, not an architecture deep-dive.
+    
+    content is a structural scaffold only; generate prose and examples from referenced core
+    documentation (doc:CompilerArchitecture, doc:RendererFreedom, doc:Introduction).
+  </documentation>
+  <references>
+    <see type="doc:CompilerArchitecture" relation="Requires">
+      Primary content — parser, validator, renderer stages.
+    </see>
+    <see type="doc:RendererFreedom" relation="Requires">
+      Primary content — targets decide manifestation.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>How the compiler works</value>
+    </title>
+    <purpose override="true">
+      <value>Give website readers a high-level compiler pipeline sketch without normative internals.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>dlevel:Overview</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>ptype:Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <doc:CompilerArchitecture />
+        <doc:RendererFreedom />
+        <doc:Introduction />
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <authoritativeSources>
+            <doc:CompilerArchitecture />
+            <doc:RendererFreedom />
+            <doc:Introduction />
+          </authoritativeSources>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <authoritativeSources>
+            <doc:CompilerArchitecture />
+            <doc:Introduction />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+        <sem:ReaderOutcome>
+          <authoritativeSources>
+            <doc:RendererFreedom />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <authoritativeSources>
+            <doc:CompilerArchitecture />
+            <doc:RendererFreedom />
+            <doc:Introduction />
+          </authoritativeSources>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <reason>Overview pages should keep the pipeline conceptual rather than package-shaped.</reason>
+        </sem:Exclusion>
+        <sem:Exclusion>
+          <reason>Class names belong in architecture references, not a website overview.</reason>
+        </sem:Exclusion>
+        <sem:Exclusion>
+          <reason>Internal interfaces are normative internals outside this overview.</reason>
+        </sem:Exclusion>
+        <sem:Exclusion>
+          <reason>Diagnostic identifiers belong on reference and troubleshooting pages.</reason>
+        </sem:Exclusion>
+        <sem:Exclusion>
+          <reason>Migration history distracts from the stable high-level pipeline sketch.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <content override="true">
+      <composition>
+        <!--1. Lead-->
+        <dpage:Section heading="A high-level pipeline sketch" purpose="Orient website readers without normative internals">
+          <content>
+            <dpage:Paragraph purpose="Introduce the compiler pipeline at overview depth">
+              <role>role:Lead</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>The compiler turns authored BML into a Canonical BOM and then into
+target-specific results; this page sketches that path without normative
+internals.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:CompilerArchitecture />
+                    <doc:Introduction />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:CompilerArchitecture />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:RendererFreedom />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--2. BML to BOM to targets-->
+        <dpage:Section heading="From BML to BOM to targets" purpose="Sketch the conceptual pipeline and accompany it with an optional image">
+          <content>
+            <dpage:Paragraph purpose="Explain BML to Canonical BOM to targets at overview depth">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>Authored BML is parsed into a Canonical BOM, validated, and then handed to
+Renderers that produce target-specific results.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:CompilerArchitecture />
+                    <doc:Introduction />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:CompilerArchitecture />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion />
+              </exclusions>
+            </dpage:Paragraph>
+            <dpage:Paragraph purpose="Explain why the Canonical BOM sits between authoring and targets">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>Keeping a Canonical BOM between authoring and targets lets many Renderers share
+one lossless model without baking target choices into BML.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:RendererFreedom />
+                    <doc:CompilerArchitecture />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+            <dpage:Image purpose="Pipeline diagram of parser, validator, and renderer stages">
+              <role>role:Example</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>A simple pipeline diagram can show parser, Canonical BOM, validator, and
+renderer without naming packages.</message>
+            </dpage:Image>
+          </content>
+        </dpage:Section>
+        <!--3. Conceptual stages as a list-->
+        <dpage:Section heading="Conceptual stages" purpose="Enumerate recognizable stages without package names">
+          <content>
+            <dpage:Paragraph purpose="Prepare the reader for the conceptual stage list">
+              <role>role:Transition</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>The pipeline is easiest to remember as a short sequence of conceptual stages
+rather than as implementation packages.</message>
+            </dpage:Paragraph>
+            <dpage:List purpose="Present conceptual compiler stages as a concise summary">
+              <role>role:Summary</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>These conceptual stages name the path from authored BML to target results.</message>
+              <items>
+                <dpage:ListItem text="Parse" purpose="Authored BML becomes a structured model">
+                  <message>Authored BML is parsed into a structured representation.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Canonical BOM" purpose="Meaning is preserved in the Canonical BOM">
+                  <message>The Canonical BOM preserves authored meaning for later processing.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Validate" purpose="The model is checked before manifestation">
+                  <message>Validation checks the model before target-specific manifestation.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Render" purpose="Renderers produce target-specific results">
+                  <message>Renderers produce target-specific results from the validated model.</message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+            <dpage:Paragraph purpose="Keep stage names conceptual and free of internals">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>Stage names here are conceptual labels only; they are not package names, class
+names, or normative internal interfaces.</message>
+              <exclusions>
+                <sem:Exclusion />
+              </exclusions>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--4. Renderer freedom-->
+        <dpage:Section heading="Renderer freedom" purpose="Explain that targets decide manifestation">
+          <content>
+            <dpage:Paragraph purpose="Explain that targets decide manifestation without a required one-to-one mapping">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>Targets decide manifestation; there is no required one-to-one mapping from each
+Block to a single artifact.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:RendererFreedom />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:RendererFreedom />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+            <dpage:Paragraph purpose="Prepare the reader for renderer freedom points">
+              <role>role:Transition</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>Three freedoms keep the core independent of individual targets.</message>
+            </dpage:Paragraph>
+            <dpage:List purpose="Present freedom points as a concise summary">
+              <role>role:Summary</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>These freedoms keep the core independent of individual targets.</message>
+              <items>
+                <dpage:ListItem text="Format" purpose="Explain that output need not be blocks in the target language">
+                  <message>Output need not be blocks in the target language.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Cardinality" purpose="Explain that artifact cardinality is target-defined">
+                  <message>The cardinality of artifacts is defined by the target.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Side effects" purpose="Explain that side-effects-only targets are valid">
+                  <message>Side-effects-only targets are valid manifestations of a model.</message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+          </content>
+        </dpage:Section>
+        <!--5. What readers should retain-->
+        <dpage:Section heading="What this sketch should leave you with" purpose="Anchor the high-level pipeline outcomes for website readers">
+          <content>
+            <dpage:Paragraph purpose="State the retainable pipeline model without normative internals">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>Readers should leave with a short path in mind: authored BML becomes a
+Canonical BOM, that model is validated, and Renderers then produce
+target-specific results from the shared meaning.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:CompilerArchitecture />
+                    <doc:Introduction />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:RendererFreedom />
+                    <doc:CompilerArchitecture />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+            <dpage:List purpose="Summarize the retainable stages of the sketch">
+              <role>role:Summary</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>These four labels are enough to navigate from authoring into the rest of the
+documentation set.</message>
+              <items>
+                <dpage:ListItem text="Parse" purpose="Retain that BML becomes a structured model">
+                  <message>Authored BML is parsed into a structured representation.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Canonical BOM" purpose="Retain that meaning is preserved canonically">
+                  <message>The Canonical BOM preserves authored meaning for later processing.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Validate" purpose="Retain that checks happen before manifestation">
+                  <message>Validation checks the model before target-specific manifestation begins.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Render" purpose="Retain that Renderers own target results">
+                  <message>Renderers turn the shared model into target-specific results.</message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+          </content>
+        </dpage:Section>
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with capabilities and libraries" purpose="Direct the reader to related system pieces">
+          <content>
+            <dpage:Navigation purpose="Continue the learning sequence">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Capabilities" summary="See how Capabilities relate to behaviour in the semantic model.">
+                  <target>page:CapabilitiesIntro</target>
+                </dpage:NavigationItem>
+                <dpage:NavigationItem label="Libraries and packages" summary="Learn how publishable Libraries group Blocks for reuse.">
+                  <target>page:LibrariesAndPackages</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
+  </aggregations>
+</page:CompilerOverview>

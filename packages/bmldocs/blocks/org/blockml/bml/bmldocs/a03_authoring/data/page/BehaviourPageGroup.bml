@@ -1,0 +1,45 @@
+<!--BlockML Documentation — Behaviour page group
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.BehaviourPageGroup-->
+<pgroup:BehaviourPageGroup xmlns="http://blockml.org/bml"
+  xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.page"
+  xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:dcore="org.blockml.bml.docgen.core">
+
+  <baseType>
+    dcore:PageGroup
+  </baseType>
+  <is>
+    A documentation page group for Behaviour
+  </is>
+  <documentation>
+    Page group corresponding to the “Behaviour” TOC section on blockml.org. pages lists the
+    section’s leaf NavigationItem targets as page type references. parentGroup is
+    DocsPageGroup.
+  </documentation>
+  <references>
+    <see type="dcore:PageGroup" relation="Extends">
+      Docgen page group base.
+    </see>
+    <see type="pgroup:DocsPageGroup" relation="Requires">
+      Parent Documentation root page group.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Behaviour</value>
+    </title>
+    <parentGroup override="true">
+      <value>pgroup:DocsPageGroup</value>
+    </parentGroup>
+  </properties>
+  <aggregations>
+    <pages override="true">
+      <composition>
+        <page:CapabilitiesIntro />
+        <page:ExpressionsIntro />
+        <page:EmbeddedExpressionsIntro />
+      </composition>
+    </pages>
+  </aggregations>
+</pgroup:BehaviourPageGroup>

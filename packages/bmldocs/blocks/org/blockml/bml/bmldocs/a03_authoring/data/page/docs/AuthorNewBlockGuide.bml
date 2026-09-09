@@ -1,0 +1,341 @@
+<!--BlockML Documentation — Author a new Block how-to
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.AuthorNewBlockGuide-->
+<page:AuthorNewBlockGuide xmlns="http://blockml.org/bml"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:lpage="org.blockml.bml.bmldocs.lib.page"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:weight="org.blockml.bml.docgen.weight"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:task="org.blockml.bml.task">
+
+  <baseType>
+    lpage:BmlDocPage
+  </baseType>
+  <is>
+    A website how-to for authoring a new Block
+  </is>
+  <documentation>
+    Marker page: step-by-step website how-to for creating a new root Block and exporting it in
+    Library.bml — surfaces the core task guide as human docs.
+    content is a structural scaffold only; generate prose and examples from referenced core
+    documentation (task:AuthorNewBlock, doc:DocumentationModel, doc:LibrarySystem, doc:DefinitionModel).
+  </documentation>
+  <references>
+    <see type="task:AuthorNewBlock" relation="Requires">
+      Primary content — procedural how-to for a new Block definition.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Author a new Block</value>
+    </title>
+    <purpose override="true">
+      <value>Provide a procedural checklist for creating and publishing a new Block type.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>dlevel:Practical</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>ptype:HowTo</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <task:AuthorNewBlock />
+        <doc:DocumentationModel />
+        <doc:LibrarySystem />
+        <doc:DefinitionModel />
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <authoritativeSources>
+            <task:AuthorNewBlock />
+            <doc:DocumentationModel />
+            <doc:DefinitionModel />
+          </authoritativeSources>
+        </sem:LearningObjective>
+        <sem:LearningObjective>
+          <authoritativeSources>
+            <task:AuthorNewBlock />
+            <doc:LibrarySystem />
+            <doc:DefinitionModel />
+          </authoritativeSources>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <authoritativeSources>
+            <task:AuthorNewBlock />
+            <doc:LibrarySystem />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+        <sem:ReaderOutcome>
+          <authoritativeSources>
+            <task:AuthorNewBlock />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <authoritativeSources>
+            <task:AuthorNewBlock />
+            <doc:DocumentationModel />
+            <doc:LibrarySystem />
+            <doc:DefinitionModel />
+          </authoritativeSources>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <reason>This page is a practical checklist surface of task:AuthorNewBlock.</reason>
+        </sem:Exclusion>
+        <sem:Exclusion>
+          <reason>Diagnostics belong on reference and troubleshooting pages.</reason>
+        </sem:Exclusion>
+        <sem:Exclusion>
+          <reason>Only the export step needed to publish the new Block is in scope.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <content override="true">
+      <composition>
+        <!--1. Lead-->
+        <dpage:Section heading="A procedural how-to for a new Block" purpose="Position the page as the website surface of task:AuthorNewBlock">
+          <content>
+            <dpage:Paragraph purpose="Position as procedural website surface of task:AuthorNewBlock">
+              <role>role:Lead</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>This how-to is the website surface of task:AuthorNewBlock for creating a new
+root Block and exporting it in Library.bml.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <task:AuthorNewBlock />
+                    <doc:DefinitionModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:DocumentationModel />
+                    <task:AuthorNewBlock />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:LibrarySystem />
+                    <task:AuthorNewBlock />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--2. Base and identity-->
+        <dpage:Section heading="Choose a base and declare identity" purpose="Start authoring with baseType choice and identity metadata">
+          <content>
+            <dpage:Paragraph purpose="Choose baseType from framework or domain branch">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Practical</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>Choose a baseType from the framework or a domain branch that matches the new
+Block’s role.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <task:AuthorNewBlock />
+                    <doc:DefinitionModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <task:AuthorNewBlock />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+            <dpage:Paragraph purpose="Declare identity and documentation metadata (is, documentation, optional summary)">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Practical</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>Declare name, type, and baseType, then add is and documentation so the Block
+is identifiable and explainable.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:DocumentationModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:DocumentationModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--3. Authoring steps-->
+        <dpage:Section heading="Authoring steps" purpose="List the procedural steps after identity is declared">
+          <content>
+            <dpage:Paragraph purpose="Prepare the reader for the authoring checklist steps">
+              <role>role:Transition</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>After identity is in place, complete members, optional constraints, and Library
+export in that practical order.</message>
+            </dpage:Paragraph>
+            <dpage:List purpose="Authoring procedure from task:AuthorNewBlock">
+              <role>role:Summary</role>
+              <detailLevel>dlevel:Practical</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>Complete members, constraints, and Library export after identity is in place.</message>
+              <items>
+                <dpage:ListItem text="Members" purpose="Add properties, aggregations, associations, or capabilities">
+                  <message>Add the properties, aggregations, associations, or capabilities the Block needs.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Constraints" purpose="Add constraints and further capabilities as needed">
+                  <message>Add constraints and further capabilities only when the Block requires them.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Library export" purpose="Export the Block in Library.bml membership">
+                  <message>Export the Block in Library.bml membership so others can reuse it.</message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+          </content>
+        </dpage:Section>
+        <!--4. Checklist in code form-->
+        <dpage:Section heading="Checklist in code form" purpose="Show a checklist-shaped minimal new Block ready for Library export">
+          <content>
+            <dpage:Paragraph purpose="Show a checklist-shaped minimal new Block ready for Library export">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Practical</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>A checklist-shaped skeleton should show identity, is, one property, and readiness
+for Library.blocks membership.</message>
+              <exclusions>
+                <sem:Exclusion>
+                  <reason>The example should stay checklist-sized and ready to publish.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+            <dpage:CodeBlock purpose="New Block skeleton with identity, is, one property, ready for Library.blocks">
+              <role>role:Example</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>Illustrate a new Block skeleton with identity, is, one property, and readiness
+for Library export.</message>
+              <supportingPoints>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion />
+              </exclusions>
+            </dpage:CodeBlock>
+            <dpage:Paragraph purpose="Interpret the new Block skeleton fields and Library-ready property">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Practical</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>In the example, name, type, and baseType identify the new Block, is states what
+it is, and the single property is the first member before Library.blocks export.</message>
+              <supportingPoints>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--5. Library export-->
+        <dpage:Section heading="Publish with Library.blocks" purpose="Complete the checklist with Library membership export">
+          <content>
+            <dpage:Paragraph purpose="Explain Library.blocks as the publish step for a new Block type">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Practical</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>A new domain Block becomes a published catalogue member only when its FQN is
+listed in the library's blocks aggregation in Library.bml.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:LibrarySystem />
+                    <task:AuthorNewBlock />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <task:AuthorNewBlock />
+                    <doc:DocumentationModel />
+                    <doc:DefinitionModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion>
+                  <reason>Only the export step needed to publish the new Block is in scope.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+            <dpage:CodeBlock purpose="Illustrate a Library.blocks membership entry for the new Block">
+              <role>role:Example</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>Library.bml lists the new Block FQN under blocks so the type becomes a
+publishable catalogue member.</message>
+              <supportingPoints>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion />
+              </exclusions>
+            </dpage:CodeBlock>
+            <dpage:Paragraph purpose="Interpret the Library.blocks membership entry in the example">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Practical</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>In the example, the Library blocks entry publishes the Block created in the
+earlier checklist skeleton so other authors can reuse that type.</message>
+              <supportingPoints>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--6. Navigation-->
+        <dpage:Section heading="Continue with anatomy and guidelines" purpose="Direct the reader to related pages">
+          <content>
+            <dpage:Navigation purpose="Continue from the author-new-Block how-to">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Anatomy of a .bml file" summary="Review the ordered fields of a root Block document.">
+                  <target>page:FileAnatomy</target>
+                </dpage:NavigationItem>
+                <dpage:NavigationItem label="Modeling guidelines" summary="Apply broader authoring guidance after the checklist.">
+                  <target>page:ModelingGuidelinesPage</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
+  </aggregations>
+</page:AuthorNewBlockGuide>

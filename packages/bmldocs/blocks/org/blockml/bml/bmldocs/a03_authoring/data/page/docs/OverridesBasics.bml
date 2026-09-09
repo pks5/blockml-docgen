@@ -1,0 +1,315 @@
+<!--BlockML Documentation — Overrides basics
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.OverridesBasics-->
+<page:OverridesBasics xmlns="http://blockml.org/bml"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:lpage="org.blockml.bml.bmldocs.lib.page"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:weight="org.blockml.bml.docgen.weight"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    lpage:BmlDocPage
+  </baseType>
+  <is>
+    A website intro to partial member overrides
+  </is>
+  <documentation>
+    Marker page: abstract / final / override / readOnly in everyday authoring terms with one
+    before/after snippet.
+    
+    content is a structural scaffold only; generate prose and examples from referenced core
+    documentation (doc:PartialMemberOverrides, doc:ContractsModel).
+  </documentation>
+  <references>
+    <see type="doc:PartialMemberOverrides" relation="Requires">
+      Primary content — merge semantics and override flags.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Overrides</value>
+    </title>
+    <purpose override="true">
+      <value>Introduce partial member overrides with override="true".</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>dlevel:Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>ptype:Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <doc:PartialMemberOverrides />
+        <doc:ContractsModel />
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <authoritativeSources>
+            <doc:PartialMemberOverrides />
+            <doc:ContractsModel />
+          </authoritativeSources>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <authoritativeSources>
+            <doc:PartialMemberOverrides />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+        <sem:ReaderOutcome>
+          <authoritativeSources>
+            <doc:PartialMemberOverrides />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <authoritativeSources>
+            <doc:PartialMemberOverrides />
+            <doc:ContractsModel />
+          </authoritativeSources>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <reason>Introductory pages need the authoring rule, not the complete merge procedure.</reason>
+        </sem:Exclusion>
+        <sem:Exclusion>
+          <reason>Diagnostic identifiers belong on reference and troubleshooting pages.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <content override="true">
+      <composition>
+        <!--1. Lead-->
+        <dpage:Section heading="Partial overrides refine inherited members" purpose="Give readers an immediate orientation to override=&quot;true&quot;">
+          <content>
+            <dpage:Paragraph purpose="Introduce override=&quot;true&quot; for refining inherited members">
+              <role>role:Lead</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>A partial member override uses override=&quot;true&quot; when a local redeclaration
+refines a member that already exists through inheritance or contracts.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:PartialMemberOverrides />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:PartialMemberOverrides />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:PartialMemberOverrides />
+                    <doc:ContractsModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--2. Merge rules-->
+        <dpage:Section heading="Merge with baseType and contracts" purpose="Explain when override is required and that it is not inherited">
+          <content>
+            <dpage:Paragraph purpose="Explain merge with baseType chain and contracts">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>The override flag is required when a local redeclaration merges with a member
+from the baseType chain or from contracts.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:PartialMemberOverrides />
+                    <doc:ContractsModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:PartialMemberOverrides />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+            <dpage:Paragraph purpose="Explain that override is not inherited">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>Override is not inherited; each redeclaration layer must set override=&quot;true&quot;
+again when it further refines the member.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:PartialMemberOverrides />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion />
+              </exclusions>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--3. Authoring checks-->
+        <dpage:Section heading="New versus override" purpose="Summarize the principal authoring checks">
+          <content>
+            <dpage:Paragraph purpose="Prepare the reader for new-versus-override checks">
+              <role>role:Transition</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>Authors should distinguish brand-new members from redeclarations that merge with
+prior identity.</message>
+            </dpage:Paragraph>
+            <dpage:List purpose="Present authoring checks as a concise summary">
+              <role>role:Summary</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>These checks keep new members and overrides distinct.</message>
+              <items>
+                <dpage:ListItem text="New" purpose="Explain that new members must not set override=&quot;true&quot;">
+                  <message>New members must not set override=&quot;true&quot;.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Override required" purpose="Explain that inherited identity requires override=&quot;true&quot;">
+                  <message>Inherited identity requires override=&quot;true&quot; on the local redeclaration.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Abstract satisfaction" purpose="Explain that a concrete override can satisfy abstract parents">
+                  <message>A locally concrete override can satisfy abstract members from parents.</message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+          </content>
+        </dpage:Section>
+        <!--4. Abstract, final, and readOnly-->
+        <dpage:Section heading="Abstract, final, and readOnly" purpose="Introduce local merge flags beyond override=&quot;true&quot;">
+          <content>
+            <dpage:Paragraph purpose="Explain abstract, final, and override as local declaration flags">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>abstract, final, and override are local declaration flags — they are never
+inherited, even when their effects propagate through the merge.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:PartialMemberOverrides />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:PartialMemberOverrides />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:PartialMemberOverrides />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion />
+              </exclusions>
+            </dpage:Paragraph>
+            <dpage:Paragraph purpose="Explain that readOnly is orthogonal to abstract, final, and override">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>readOnly is orthogonal to those flags: it blocks instance writes after effective
+resolution, while final blocks further definition overrides entirely.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:PartialMemberOverrides />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:PartialMemberOverrides />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--5. Minimal example-->
+        <dpage:Section heading="Overriding a property" purpose="Connect the concept to a small override sketch">
+          <content>
+            <dpage:Paragraph purpose="Introduce a child member refined with override=&quot;true&quot;">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>A child Block can refine an inherited property by restating it with
+override=&quot;true&quot; and a narrowed documentation or value.</message>
+              <exclusions>
+                <sem:Exclusion>
+                  <reason>The example teaches the authoring flag, not the merge procedure.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+            <dpage:CodeBlock purpose="Illustrate a child member with override=&quot;true&quot;">
+              <role>role:Example</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>A child Block refines an inherited property with override=&quot;true&quot; and a
+narrowed documentation or value.</message>
+              <supportingPoints>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion />
+              </exclusions>
+            </dpage:CodeBlock>
+            <dpage:Paragraph purpose="Interpret the override=&quot;true&quot; property in the example">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>In the example, the child restates the inherited property name and marks it
+with override=&quot;true&quot; so the local changes merge into that prior member.</message>
+              <supportingPoints>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with constraints and contracts" purpose="Direct the reader to related conceptual pages">
+          <content>
+            <dpage:Navigation purpose="Continue the learning sequence">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Constraints" summary="Attach reusable validation rules to constrainable definition elements.">
+                  <target>page:ConstraintsBasics</target>
+                </dpage:NavigationItem>
+                <dpage:NavigationItem label="Contracts" summary="See how contracts contribute member fragments that may be overridden.">
+                  <target>page:ContractsIntro</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
+  </aggregations>
+</page:OverridesBasics>

@@ -1,0 +1,371 @@
+<!--BlockML Documentation — What is BlockML
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.Intro-->
+<page:Intro xmlns="http://blockml.org/bml"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:lpage="org.blockml.bml.bmldocs.lib.page"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:weight="org.blockml.bml.docgen.weight"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    lpage:BmlDocPage
+  </baseType>
+  <is>
+    A short website introduction to BlockML
+  </is>
+  <documentation>
+    Marker page: gentle first contact for humans on blockml.org — goals and overview only.
+    content is a structural scaffold only; generate prose and examples from referenced core
+    documentation (doc:Introduction).
+  </documentation>
+  <references>
+    <see type="doc:Introduction" relation="Requires">
+      Primary content source — BlockML goals and overview.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>What is BlockML?</value>
+    </title>
+    <purpose override="true">
+      <value>Give new readers a clear first mental model of BlockML and prepare them for the
+more detailed concept pages that follow.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>dlevel:Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>ptype:Introduction</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <core:Block />
+        <doc:Introduction />
+        <doc:EverythingIsABlock />
+        <doc:WOTFoundation />
+        <doc:BmlNamespace />
+        <doc:BmlDirectives />
+        <doc:DocumentationModel />
+        <doc:CompilerArchitecture />
+        <doc:BlockAndInstance />
+        <doc:RendererFreedom />
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <authoritativeSources>
+            <doc:BmlNamespace />
+            <doc:BmlDirectives />
+            <doc:DocumentationModel />
+            <doc:Introduction />
+            <doc:CompilerArchitecture />
+            <doc:BlockAndInstance />
+            <doc:RendererFreedom />
+            <doc:WOTFoundation />
+          </authoritativeSources>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <authoritativeSources>
+            <doc:Introduction />
+            <doc:EverythingIsABlock />
+            <doc:WOTFoundation />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+        <sem:ReaderOutcome>
+          <authoritativeSources>
+            <doc:BmlNamespace />
+            <doc:BmlDirectives />
+            <doc:DocumentationModel />
+            <doc:Introduction />
+            <doc:CompilerArchitecture />
+            <doc:BlockAndInstance />
+            <doc:RendererFreedom />
+            <doc:WOTFoundation />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <authoritativeSources>
+            <doc:Introduction />
+            <doc:EverythingIsABlock />
+            <doc:WOTFoundation />
+            <doc:BmlNamespace />
+            <doc:BmlDirectives />
+            <doc:DocumentationModel />
+            <doc:CompilerArchitecture />
+            <doc:BlockAndInstance />
+            <doc:RendererFreedom />
+          </authoritativeSources>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <reason>The page establishes the conceptual model before presenting implementation details.</reason>
+        </sem:Exclusion>
+        <sem:Exclusion>
+          <reason>Diagnostic details belong on reference and troubleshooting pages.</reason>
+        </sem:Exclusion>
+        <sem:Exclusion>
+          <reason>The introduction should describe the stable mental model rather than project history.</reason>
+        </sem:Exclusion>
+        <sem:Exclusion>
+          <reason>These concepts require dedicated pages and should not compete with the introductory message.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <content override="true">
+      <composition>
+        <!--1. Lead-->
+        <dpage:Section heading="A language for describing ideas as Blocks" purpose="Give readers an immediate and accessible orientation">
+          <content>
+            <dpage:Paragraph purpose="Introduce BlockML in one concise paragraph">
+              <role>role:Lead</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>BlockML is a universal declarative language for describing semantic,
+reusable Blocks independently of how they are later manifested.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:Introduction />
+                    <doc:EverythingIsABlock />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:Introduction />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:RendererFreedom />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--2. Core mental model-->
+        <dpage:Section heading="BML, BOM, and Renderers" purpose="Establish the three-part conceptual model used throughout the documentation">
+          <content>
+            <dpage:Paragraph purpose="Explain the relationship between BML and BOM">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>BML and BOM are complementary representations of the same authored model:
+BML is optimized for authoring, while BOM preserves the model canonically
+and losslessly for processing.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:BmlNamespace />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:BmlNamespace />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:BmlNamespace />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion />
+              </exclusions>
+            </dpage:Paragraph>
+            <dpage:Paragraph purpose="Explain why target-specific interpretation belongs to Renderers">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>BlockML preserves the meaning of a model without deciding how it must appear
+in a particular target; each Renderer supplies that interpretation.</message>
+              <supportingPoints>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:RendererFreedom />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion />
+              </exclusions>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--3. Goals-->
+        <dpage:Section heading="What BlockML is designed to achieve" purpose="Summarize the small set of principles readers should retain">
+          <content>
+            <dpage:Paragraph purpose="Prepare the reader for the following summary list">
+              <role>role:Transition</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>BlockML combines a common grammar, explicit semantics, lossless representation,
+and renderer independence in one model.</message>
+            </dpage:Paragraph>
+            <dpage:List purpose="Present the principal design goals as a concise summary">
+              <role>role:Summary</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>These principles define the core character of BlockML.</message>
+              <items>
+                <dpage:ListItem text="One grammar" purpose="Explain that different BlockML domains share the same foundational language">
+                  <message>Types, domain Blocks, services, languages, and documentation use the same
+foundational grammar.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Explicit semantics" purpose="Explain that behavior and intent remain part of the model">
+                  <message>Meaning and behavior are described explicitly through ordinary BlockML
+structures such as Properties, relationships, and Capabilities.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Lossless representation" purpose="Explain that authored information is preserved">
+                  <message>The canonical BOM preserves the authored BML model without silently
+interpreting or discarding information.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Renderer freedom" purpose="Explain that output interpretation remains target-specific">
+                  <message>Each Renderer decides how the semantic model is manifested in its own target.</message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+          </content>
+        </dpage:Section>
+        <!--4. Minimal example-->
+        <dpage:Section heading="A minimal Block" purpose="Connect the conceptual explanation to a small piece of BML">
+          <content>
+            <dpage:Paragraph purpose="Introduce the minimum visible structure of a BML document">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>A BML document uses a single root block definition with a name, a globally
+identifiable type, and an explicit base type.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <core:Block />
+                    <doc:Introduction />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <core:Block />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion>
+                  <reason>The example should show only the smallest useful structural skeleton.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+            <dpage:CodeBlock purpose="Illustrate the minimum BML block structure">
+              <role>role:Example</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>Every BML definition is represented by a root block with explicit identity
+and inheritance.</message>
+              <supportingPoints>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion />
+              </exclusions>
+            </dpage:CodeBlock>
+            <dpage:Paragraph purpose="Interpret the minimal root Block identity fields in the example">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>In the example, the root block is the definition itself: name is the local
+identifier, type is the Block's own type identity, and baseType names the
+parent it extends.</message>
+              <supportingPoints>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--5. What to carry forward-->
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the introductory outcomes readers should retain">
+          <content>
+            <dpage:Paragraph purpose="State the mental-model outcomes this introduction should leave behind">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>After this introduction, readers should be able to explain BlockML as authored
+meaning, name BML and BOM as complementary representations, and treat
+Renderers as the place where target-specific manifestation begins.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:Introduction />
+                    <doc:EverythingIsABlock />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:Introduction />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+            <dpage:List purpose="Summarize the retainable outcomes of the introduction">
+              <role>role:Summary</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>These outcomes are the checkpoint before Everything is a Block and the
+getting-started pages that follow.</message>
+              <items>
+                <dpage:ListItem text="Purpose in one sentence" purpose="Retain the purpose of BlockML">
+                  <message>BlockML describes reusable semantic Blocks independently of how a target
+later manifests them.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Three-part model" purpose="Retain BML, BOM, and Renderer roles">
+                  <message>BML is for authoring, BOM preserves that model canonically, and each
+Renderer supplies a target interpretation.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Minimal document shape" purpose="Retain the identity skeleton of a root Block">
+                  <message>A root Block needs name, type, and baseType before members are added.</message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+          </content>
+        </dpage:Section>
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with the core idea" purpose="Direct the reader to the next conceptual page">
+          <content>
+            <dpage:Navigation purpose="Continue the introductory learning sequence">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Everything is a Block" summary="Learn why Block is the universal abstraction at the heart of BlockML.">
+                  <target>page:EverythingIsABlockPage</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
+  </aggregations>
+</page:Intro>

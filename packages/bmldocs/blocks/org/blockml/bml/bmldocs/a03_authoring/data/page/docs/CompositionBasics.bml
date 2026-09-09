@@ -1,0 +1,350 @@
+<!--BlockML Documentation — Composition basics
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.CompositionBasics-->
+<page:CompositionBasics xmlns="http://blockml.org/bml"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:lpage="org.blockml.bml.bmldocs.lib.page"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:role="org.blockml.bml.docgen.role"
+  xmlns:weight="org.blockml.bml.docgen.weight"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    lpage:BmlDocPage
+  </baseType>
+  <is>
+    A website intro to composition
+  </is>
+  <documentation>
+    Marker page: how aggregations get filled — definition composition vs instance fill — with a
+    tiny nested example. Defer advanced directives and ID reachability to deeper pages.
+    
+    content is a structural scaffold only; generate prose and examples from referenced core
+    documentation (doc:CompositionModel).
+  </documentation>
+  <references>
+    <see type="doc:CompositionModel" relation="Requires">
+      Primary content — aggregation fill, placement, and recursion.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Composition</value>
+    </title>
+    <purpose override="true">
+      <value>Explain how aggregations receive child Block instances through composition.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>dlevel:Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>ptype:Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <doc:CompositionModel />
+        <doc:BlockAndInstance />
+        <core:Block />
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <authoritativeSources>
+            <doc:CompositionModel />
+            <doc:BlockAndInstance />
+            <core:Block />
+          </authoritativeSources>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <authoritativeSources>
+            <doc:CompositionModel />
+            <doc:BlockAndInstance />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+        <sem:ReaderOutcome>
+          <authoritativeSources>
+            <doc:CompositionModel />
+          </authoritativeSources>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <authoritativeSources>
+            <doc:CompositionModel />
+            <doc:BlockAndInstance />
+            <core:Block />
+          </authoritativeSources>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <reason>Merge details belong on overrides and reference pages.</reason>
+        </sem:Exclusion>
+        <sem:Exclusion>
+          <reason>Directives need dedicated pages and would distract from aggregation fill.</reason>
+        </sem:Exclusion>
+        <sem:Exclusion>
+          <reason>Diagnostic identifiers belong on troubleshooting and reference pages.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <content override="true">
+      <composition>
+        <!--1. Lead-->
+        <dpage:Section heading="Filling aggregations" purpose="State that composition is how aggregations receive child Block instances">
+          <content>
+            <dpage:Paragraph purpose="Introduce composition as aggregation fill">
+              <role>role:Lead</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>Composition is how aggregations receive child Block instances.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:CompositionModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:CompositionModel />
+                    <doc:BlockAndInstance />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:CompositionModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--2. Definition vs instance fill-->
+        <dpage:Section heading="Definition composition versus instance fill" purpose="Contrast definition-time composition with instance-time aggregation fill">
+          <content>
+            <dpage:Paragraph purpose="Explain composition nested inside aggregations on definitions">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>On definitions, child instances nest inside a composition member of the aggregation.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:CompositionModel />
+                    <doc:BlockAndInstance />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:CompositionModel />
+                    <doc:BlockAndInstance />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:CompositionModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+            <dpage:Paragraph purpose="Explain direct aggregation fill on instances">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>On instances, aggregations are filled directly by member name — without a
+composition wrapper.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:CompositionModel />
+                    <doc:BlockAndInstance />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:CompositionModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:CompositionModel />
+                    <doc:BlockAndInstance />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--3. Placement rules-->
+        <dpage:Section heading="Placement rules to remember" purpose="Summarize placement, override, and recursion rules">
+          <content>
+            <dpage:Paragraph purpose="Prepare the reader for the placement rules summary">
+              <role>role:Transition</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>A few placement rules keep composition predictable once both fill paths are clear.</message>
+            </dpage:Paragraph>
+            <dpage:List purpose="Rules to retain from doc:CompositionModel">
+              <role>role:Summary</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>A few placement rules keep composition predictable.</message>
+              <items>
+                <dpage:ListItem text="Placement" purpose="composition must nest inside an aggregation — never standalone">
+                  <message>A composition belongs inside an aggregation; it is never a free-standing root.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Overrides" purpose="Inherited aggregation overrides need override=&quot;true&quot;">
+                  <message>Overriding an inherited aggregation requires an explicit override marker.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Recursion" purpose="Nested aggregations make recursive structures first-class">
+                  <message>Nested aggregations make recursive Block structures first-class.</message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+          </content>
+        </dpage:Section>
+        <!--4. Filling an aggregation-->
+        <dpage:Section heading="Filling an aggregation" purpose="Show a definition-time composition and the instance-time equivalent">
+          <content>
+            <dpage:Paragraph purpose="Introduce a tiny nested fill example">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>A short example shows the same children declared at definition time and filled
+at instance time.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:CompositionModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:CompositionModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+            <dpage:CodeBlock purpose="Aggregation with composition children using qualified Block tags">
+              <role>role:Example</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>Qualified Block tags appear as composition children under the aggregation.</message>
+              <supportingPoints>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion />
+              </exclusions>
+            </dpage:CodeBlock>
+            <dpage:Paragraph purpose="Interpret the aggregation, composition wrapper, and nested children">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>In the definition path, the aggregation owns a composition member and the
+nested qualified Block tags inside it are the child instances; on an instance,
+those same children sit directly under the aggregation name.</message>
+              <supportingPoints>
+                <sem:SupportingPoint />
+                <sem:SupportingPoint />
+              </supportingPoints>
+            </dpage:Paragraph>
+            <dpage:Image purpose="Diagram: definition composition vs instance aggregation fill">
+              <role>role:Example</role>
+              <detailLevel>dlevel:Overview</detailLevel>
+              <weight>weight:Supporting</weight>
+              <message>Definition composition and instance fill place the same children differently.</message>
+            </dpage:Image>
+          </content>
+        </dpage:Section>
+        <!--5. Aggregation versus association-->
+        <dpage:Section heading="Aggregation versus association" purpose="Contrast composition fill on aggregations with association references">
+          <content>
+            <dpage:Paragraph purpose="Explain that composition fills aggregations that own nested children">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>Aggregation members are the containers composition fills: child instances nest
+under the aggregation because the parent owns that structure.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:CompositionModel />
+                    <doc:BlockAndInstance />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:CompositionModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:CompositionModel />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+            <dpage:Paragraph purpose="Contrast associations as references that are not composition fill">
+              <role>role:Explanation</role>
+              <detailLevel>dlevel:Introductory</detailLevel>
+              <weight>weight:Primary</weight>
+              <message>Associations relate Blocks without nesting those related Blocks as composition
+children under an aggregation.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:BlockAndInstance />
+                    <core:Block />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <authoritativeSources>
+                    <doc:CompositionModel />
+                    <doc:BlockAndInstance />
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion />
+              </exclusions>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue nesting and practice" purpose="Direct the reader to Sub-Blocks and Author a new Block">
+          <content>
+            <dpage:Navigation purpose="Continue the introductory learning sequence">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Sub-Blocks" summary="Learn how nested Block types are declared and referenced.">
+                  <target>page:SubBlocksIntro</target>
+                </dpage:NavigationItem>
+                <dpage:NavigationItem label="Author a new Block" summary="Put the core ideas into practice with a small new Block.">
+                  <target>page:AuthorNewBlockGuide</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
+  </aggregations>
+</page:CompositionBasics>
