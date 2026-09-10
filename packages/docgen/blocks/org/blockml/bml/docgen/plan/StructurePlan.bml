@@ -17,7 +17,8 @@
   <documentation>
     Abstract base for structural planning elements within a DocSetPlan — PagePlan and
     PageGroupPlan. name is the concrete Block local path relative to DocSetPlan.pageBasePackage
-    (for example docs.Intro or GettingStartedPageGroup). Full FQN = pageBasePackage + "." + name.
+    (PagePlan, for example Intro) or DocSetPlan.pageGroupBasePackage (PageGroupPlan, for example
+    GettingStartedPageGroup). Full FQN = the matching base package + "." + name.
     Used by DocSetPlanningStage; materialized by DocSetStructuringStage.
   </documentation>
   <abstract>
@@ -28,7 +29,8 @@
       Planning-element base for DocSetPlanningStage.
     </see>
     <see type="dplan:DocSetPlan" relation="SeeAlso">
-      DocSet-level plan — owns pageBasePackage; contrasts with structural entries.
+      DocSet-level plan — owns pageBasePackage and pageGroupBasePackage; contrasts with
+      structural entries.
     </see>
     <see type="dplan:PagePlan" relation="SeeAlso">
       Planned-page specialization.
@@ -40,8 +42,9 @@
   <properties>
     <name type="org.blockml.bml.type.Text">
       <documentation>
-        Concrete Block name relative to DocSetPlan.pageBasePackage (for example
-        docs.Intro, GettingStartedPageGroup). Full FQN = pageBasePackage + "." + name.
+        Concrete Block name relative to DocSetPlan.pageBasePackage (PagePlan) or
+        DocSetPlan.pageGroupBasePackage (PageGroupPlan). Full FQN = the matching base
+        package + "." + name.
       </documentation>
     </name>
   </properties>

@@ -17,19 +17,19 @@
   <documentation>
     Planned page group within a DocSetPlan. Used in DocSetPlanningStage to sketch thematic or
     navigational groupings before concrete PageGroups exist. Inherits name from StructurePlan
-    (Block path relative to pageBasePackage). title is the visible group label. plans holds nested
+    (Block path relative to DocSetPlan.pageGroupBasePackage). title is the visible group label. plans holds nested
     StructurePlan entries (PagePlan and/or nested PageGroupPlan). DocSetStructuringStage later
     materializes a concrete PageGroup from this plan.
   </documentation>
   <references>
     <see type="dplan:StructurePlan" relation="Extends">
-      Structural planning base — provides name relative to pageBasePackage.
+      Structural planning base — provides name relative to DocSetPlan.pageGroupBasePackage.
     </see>
     <see type="dplan:StructurePlan" relation="Requires">
       Nested structural plans via plans aggregation.
     </see>
     <see type="dplan:DocSetPlan" relation="SeeAlso">
-      Abstract DocSet model that owns planned page groups and pageBasePackage.
+      Abstract DocSet model that owns planned page groups and pageGroupBasePackage.
     </see>
     <see type="dcore:PageGroup" relation="ContrastsWith">
       Concrete page group — created later from this plan entry in DocSetStructuringStage.

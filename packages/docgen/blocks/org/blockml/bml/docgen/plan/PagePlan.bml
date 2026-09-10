@@ -18,12 +18,12 @@
   <documentation>
     Planned page within a DocSetPlan. Used in DocSetPlanningStage to sketch structure before
     concrete Pages exist. Inherits name from StructurePlan (Block path relative to
-    pageBasePackage). scopes describes the intended page content; structuring maps scopes into
+    DocSetPlan.pageBasePackage). scopes describes the intended page content; structuring maps scopes into
     the concrete Page’s purpose and documentation while reusing existing content where possible.
   </documentation>
   <references>
     <see type="dplan:StructurePlan" relation="Extends">
-      Structural planning base — provides name relative to pageBasePackage.
+      Structural planning base — provides name relative to DocSetPlan.pageBasePackage.
     </see>
     <see type="dplan:DocSetPlan" relation="SeeAlso">
       Abstract DocSet model that owns planned pages and pageBasePackage.

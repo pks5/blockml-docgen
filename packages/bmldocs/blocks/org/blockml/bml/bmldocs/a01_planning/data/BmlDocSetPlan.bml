@@ -19,8 +19,9 @@
   </isNot>
   <documentation>
     Abstract plan for BmlDocSet. rootPageGroupPlan mirrors the concrete RootPageGroup /
-    DocsPageGroup / section PageGroup tree, with nested PagePlan entries (name relative to pageBasePackage +
-    scopes) that DocSetStructuringStage materializes into concrete Pages and PageGroups while
+    DocsPageGroup / section PageGroup tree, with nested PagePlan entries (name relative to
+    pageBasePackage + scopes) that DocSetStructuringStage materializes into concrete Pages and
+    PageGroups while
     reusing existing content where possible. authoritativeSources lists the DocSet-level SSOT
     Blocks and is copied to BmlDocSet.authoritativeSources in DocSetStructuringStage.
   </documentation>
@@ -43,8 +44,11 @@
   </references>
   <properties>
     <pageBasePackage override="true">
-      <value>org.blockml.bml.bmldocs.a03_authoring.data.page</value>
+      <value>org.blockml.bml.bmldocs.a03_authoring.data.page.docs</value>
     </pageBasePackage>
+    <pageGroupBasePackage override="true">
+      <value>org.blockml.bml.bmldocs.a03_authoring.data.page</value>
+    </pageGroupBasePackage>
   </properties>
   <aggregations>
     <rootPageGroupPlan override="true">
@@ -53,61 +57,61 @@
           <plans>
             <dplan:PageGroupPlan name="DocsPageGroup" title="Documentation">
               <plans>
-                <dplan:PagePlan name="docs.TableOfContents" scopes="documentation menu, entry points, navigation overview" />
+                <dplan:PagePlan name="TableOfContents" scopes="documentation menu, entry points, navigation overview" />
                 <dplan:PageGroupPlan name="GettingStartedPageGroup" title="Getting Started">
                   <plans>
-                    <dplan:PagePlan name="docs.Intro" scopes="BlockML overview, mental model, learning path orientation" />
-                    <dplan:PagePlan name="docs.FirstBlock" scopes="first Block definition, definition versus instance, hands-on walkthrough" />
-                    <dplan:PagePlan name="docs.FileAnatomy" scopes="root Block document fields, file structure cheat-sheet, ordered members" />
+                    <dplan:PagePlan name="Intro" scopes="BlockML overview, mental model, learning path orientation" />
+                    <dplan:PagePlan name="FirstBlock" scopes="first Block definition, definition versus instance, hands-on walkthrough" />
+                    <dplan:PagePlan name="FileAnatomy" scopes="root Block document fields, file structure cheat-sheet, ordered members" />
                   </plans>
                 </dplan:PageGroupPlan>
                 <dplan:PageGroupPlan name="CoreIdeasPageGroup" title="Core Ideas">
                   <plans>
-                    <dplan:PagePlan name="docs.EverythingIsABlockPage" scopes="Block as universal abstraction, World grammar, core mental model" />
-                    <dplan:PagePlan name="docs.DefinitionAndInstance" scopes="Block definition, Block instance, definition versus instance distinction" />
-                    <dplan:PagePlan name="docs.CompositionBasics" scopes="aggregations, composition fill, child Block instances" />
+                    <dplan:PagePlan name="EverythingIsABlockPage" scopes="Block as universal abstraction, World grammar, core mental model" />
+                    <dplan:PagePlan name="DefinitionAndInstance" scopes="Block definition, Block instance, definition versus instance distinction" />
+                    <dplan:PagePlan name="CompositionBasics" scopes="aggregations, composition fill, child Block instances" />
                   </plans>
                 </dplan:PageGroupPlan>
                 <dplan:PageGroupPlan name="TypesPageGroup" title="Types">
                   <plans>
-                    <dplan:PagePlan name="docs.TypesOverview" scopes="ValueType kinds, type-system entry point, named types overview" />
-                    <dplan:PagePlan name="docs.TypeExpressionsBasics" scopes="type expressions, combining named types, type expression cheat-sheet" />
-                    <dplan:PagePlan name="docs.GenericsBriefly" scopes="generics, declaring Block parameters, generic type arguments" />
-                    <dplan:PagePlan name="docs.ConfiguringTypes" scopes="ValueType configuration, curly-brace property config, configured types" />
+                    <dplan:PagePlan name="TypesOverview" scopes="ValueType kinds, type-system entry point, named types overview" />
+                    <dplan:PagePlan name="TypeExpressionsBasics" scopes="type expressions, combining named types, type expression cheat-sheet" />
+                    <dplan:PagePlan name="GenericsBriefly" scopes="generics, declaring Block parameters, generic type arguments" />
+                    <dplan:PagePlan name="ConfiguringTypes" scopes="ValueType configuration, curly-brace property config, configured types" />
                   </plans>
                 </dplan:PageGroupPlan>
                 <dplan:PageGroupPlan name="BehaviourPageGroup" title="Behaviour">
                   <plans>
-                    <dplan:PagePlan name="docs.CapabilitiesIntro" scopes="Capabilities, behaviour as ordinary members, capability endpoints" />
-                    <dplan:PagePlan name="docs.ExpressionsIntro" scopes="dollar-brace expressions, dynamic member values, expression basics" />
-                    <dplan:PagePlan name="docs.EmbeddedExpressionsIntro" scopes="embedded expressions, Capability implementation bodies, embed syntax" />
+                    <dplan:PagePlan name="CapabilitiesIntro" scopes="Capabilities, behaviour as ordinary members, capability endpoints" />
+                    <dplan:PagePlan name="ExpressionsIntro" scopes="dollar-brace expressions, dynamic member values, expression basics" />
+                    <dplan:PagePlan name="EmbeddedExpressionsIntro" scopes="embedded expressions, Capability implementation bodies, embed syntax" />
                   </plans>
                 </dplan:PageGroupPlan>
                 <dplan:PageGroupPlan name="LibrariesPageGroup" title="Libraries">
                   <plans>
-                    <dplan:PagePlan name="docs.LibrariesAndPackages" scopes="Library publishable unit, packages, domain bml package convention" />
-                    <dplan:PagePlan name="docs.ReadmeAndBootstrap" scopes="README entry point, compiler bootstrap, human versus machine entry" />
+                    <dplan:PagePlan name="LibrariesAndPackages" scopes="Library publishable unit, packages, domain bml package convention" />
+                    <dplan:PagePlan name="ReadmeAndBootstrap" scopes="README entry point, compiler bootstrap, human versus machine entry" />
                   </plans>
                 </dplan:PageGroupPlan>
                 <dplan:PageGroupPlan name="AuthoringPageGroup" title="Authoring">
                   <plans>
-                    <dplan:PagePlan name="docs.ModelingGuidelinesPage" scopes="modeling patterns, practical authoring guidance, non-normative tips" />
-                    <dplan:PagePlan name="docs.VisibilityBasics" scopes="member visibility, Sub-Block visibility, access control" />
-                    <dplan:PagePlan name="docs.OverridesBasics" scopes="partial member overrides, override true, inheritance merge" />
-                    <dplan:PagePlan name="docs.ConstraintsBasics" scopes="validation rules, constrainable definition elements, reusable constraints" />
-                    <dplan:PagePlan name="docs.AnnotationsAndDirectives" scopes="annotations, directive namespaces, orthogonal to Definition members" />
+                    <dplan:PagePlan name="ModelingGuidelinesPage" scopes="modeling patterns, practical authoring guidance, non-normative tips" />
+                    <dplan:PagePlan name="VisibilityBasics" scopes="member visibility, Sub-Block visibility, access control" />
+                    <dplan:PagePlan name="OverridesBasics" scopes="partial member overrides, override true, inheritance merge" />
+                    <dplan:PagePlan name="ConstraintsBasics" scopes="validation rules, constrainable definition elements, reusable constraints" />
+                    <dplan:PagePlan name="AnnotationsAndDirectives" scopes="annotations, directive namespaces, orthogonal to Definition members" />
                   </plans>
                 </dplan:PageGroupPlan>
                 <dplan:PageGroupPlan name="DeeperTopicsPageGroup" title="Deeper Topics">
                   <plans>
-                    <dplan:PagePlan name="docs.SubBlocksIntro" scopes="Sub-Blocks, nested types, parent Block nesting" />
-                    <dplan:PagePlan name="docs.ContractsIntro" scopes="contracts, reusable partial definitions, member fragment merge" />
-                    <dplan:PagePlan name="docs.CompilerOverview" scopes="compiler pipeline, high-level processing stages, non-normative overview" />
+                    <dplan:PagePlan name="SubBlocksIntro" scopes="Sub-Blocks, nested types, parent Block nesting" />
+                    <dplan:PagePlan name="ContractsIntro" scopes="contracts, reusable partial definitions, member fragment merge" />
+                    <dplan:PagePlan name="CompilerOverview" scopes="compiler pipeline, high-level processing stages, non-normative overview" />
                   </plans>
                 </dplan:PageGroupPlan>
                 <dplan:PageGroupPlan name="HowToPageGroup" title="How-to">
                   <plans>
-                    <dplan:PagePlan name="docs.AuthorNewBlockGuide" scopes="new Block checklist, create and publish Block type, procedural how-to" />
+                    <dplan:PagePlan name="AuthorNewBlockGuide" scopes="new Block checklist, create and publish Block type, procedural how-to" />
                   </plans>
                 </dplan:PageGroupPlan>
               </plans>
