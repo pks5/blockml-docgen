@@ -1,0 +1,26 @@
+<!--BlockML Documentation — update A02 page skeletons
+  FQN: org.blockml.bml.bmldocs.a02_structuring.task.A02_UpdatePageSkeletons-->
+<task:A02_UpdatePageSkeletons xmlns="http://blockml.org/bml"
+  xmlns:task="org.blockml.bml.bmldocs.a02_structuring.task"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    workflow:InstructionTask
+  </baseType>
+  <is>
+    A task that updates A02 page skeletons
+  </is>
+  <documentation>
+    A task that updates A02 page skeletons
+  </documentation>
+  <properties>
+    <instructions type="type:Text" override="true">
+      <value>
+        <![CDATA[
+          
+        ]]>
+      </value>
+    </instructions>
+  </properties>
+</task:A02_UpdatePageSkeletons>

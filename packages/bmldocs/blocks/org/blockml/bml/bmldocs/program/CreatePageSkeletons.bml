@@ -1,13 +1,14 @@
-<!--Workspace a02_task — CreatePageSkeletons
-  FQN: org.blockml.bml.workspace.a02_task.CreatePageSkeletons-->
-<a02_task:CreatePageSkeletons xmlns="http://blockml.org/bml"
+<!--Workspace program — CreatePageSkeletons
+  FQN: org.blockml.bml.bmldocs.program.CreatePageSkeletons-->
+<program:CreatePageSkeletons xmlns="http://blockml.org/bml"
   xmlns:core="org.blockml.bml.core"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type"
+  xmlns:program="org.blockml.bml.bmldocs.program"
   xmlns:a02_task="org.blockml.bml.bmldocs.a02_structuring.task">
 
   <baseType>
-    workflow:ModelTransformation(a02_task:CreatePageSkeletons.Parameters, type:Text)
+    workflow:ModelTransformation(program:CreatePageSkeletons.Parameters, type:Text)
   </baseType>
   <is>
     A pending ModelTransformation that creates skeletons for all planned pages.
@@ -25,22 +26,16 @@
     <template override="true" type="type:Boolean">
       <value>true</value>
     </template>
-    <parameters override="true" type="a02_task:CreatePageSkeletons.Parameters">
-      <value>{targetBlock:"org.blockml.bml.workspace.a02_task.RandomBlock"}</value>
+    <parameters override="true" type="program:CreatePageSkeletons.Parameters">
+      <value>{targetBlock:"org.blockml.bml.workspace.program.RandomBlock"}</value>
     </parameters>
   </properties>
   <aggregations>
     <operations override="true">
       <composition>
-        <workflow:AgenticOperation name="Create Random Block" status="Pending" captureOutput="true">
+        <workflow:AgenticOperation name="Update page skeletons" status="Pending" captureOutput="true">
           <task>
-            <workflow:InstructionTask>
-              <instructions>
-                Read org.blockml.bml.bmldocs.a01_planning.data.BmlDocSetPlan 
-                and create a skeleton for each planned page in org.blockml.bml.bmldocs.a02_structuring.data.page.*.
-                
-              </instructions>
-            </workflow:InstructionTask>
+            <a02_task:A02_UpdatePageSkeletons />
           </task>
         </workflow:AgenticOperation>
       </composition>
@@ -59,4 +54,4 @@
       </properties>
     </Parameters>
   </subBlocks>
-</a02_task:CreatePageSkeletons>
+</program:CreatePageSkeletons>

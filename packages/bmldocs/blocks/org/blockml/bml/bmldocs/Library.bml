@@ -7,15 +7,16 @@
   Models blockml.org site content structure — documentation TOC and page markers.
   Block .bml sources live under blocks/org/blockml/bml/bmldocs/.-->
 <bmldocs:Library xmlns="http://blockml.org/bml"
-  xmlns:bmldocs="org.blockml.bml.bmldocs"
-  xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
-  xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.page"
-  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
-  xmlns:pdata="org.blockml.bml.bmldocs.a01_planning.data"
-  xmlns:adata="org.blockml.bml.bmldocs.a03_authoring.data"
-  xmlns:docgen="org.blockml.bml.docgen"
   xmlns:blockml="org.blockml.bml"
+  xmlns:bmldocs="org.blockml.bml.bmldocs"
+  xmlns:pdata="org.blockml.bml.bmldocs.a01_planning.data"
+  xmlns:task="org.blockml.bml.bmldocs.a02_structuring.task"
+  xmlns:adata="org.blockml.bml.bmldocs.a03_authoring.data"
+  xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.page"
+  xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:core="org.blockml.bml.core"
+  xmlns:docgen="org.blockml.bml.docgen"
   xmlns:type="org.blockml.bml.type">
 
   <baseType>
@@ -111,6 +112,7 @@
         <pgroup:AuthoringPageGroup />
         <pgroup:DeeperTopicsPageGroup />
         <pgroup:HowToPageGroup />
+        <task:A02_UpdatePageSkeletons />
       </composition>
     </blocks>
   </aggregations>

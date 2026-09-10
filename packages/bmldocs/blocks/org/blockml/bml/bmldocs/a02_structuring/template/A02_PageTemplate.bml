@@ -1,7 +1,7 @@
 <!--BlockML Documentation — Composition basics
 
-  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.CompositionBasics-->
-<page:CompositionBasics xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.PageTemplate-->
+<page:A02_PageTemplate xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
@@ -46,4 +46,4 @@
     </pageType>
   </properties>
   
-</page:CompositionBasics>
+</page:A02_PageTemplate>

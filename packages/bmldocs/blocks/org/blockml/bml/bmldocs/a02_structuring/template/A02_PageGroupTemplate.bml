@@ -1,7 +1,7 @@
 <!--BlockML Documentation — Documentation page group
 
-  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.DocsPageGroup-->
-<pgroup:DocsPageGroup xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.PageGroupTemplate-->
+<pgroup:A02_PageGroupTemplate xmlns="http://blockml.org/bml"
   xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.page"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dcore="org.blockml.bml.docgen.core">
@@ -39,4 +39,4 @@
       <value>page:TableOfContents</value>
     </landingPage>
   </properties>
-</pgroup:DocsPageGroup>
+</pgroup:A02_PageGroupTemplate>
