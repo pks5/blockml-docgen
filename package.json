@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@blockml/bmldocs": "workspace:*",
-    "@blockml/cli": "^0.9.7",
+    "@blockml/cli": "^0.9.8",
     "@blockml/docgen": "workspace:*"
   },
   "scripts": {
