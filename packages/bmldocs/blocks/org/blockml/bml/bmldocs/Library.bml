@@ -26,9 +26,9 @@
   <is>
     A sector-model catalog for stepwise documentation development
   </is>
-  <isNot>
+  <isnot>
     A classical cohesive Block library for one published documentation site
-  </isNot>
+  </isnot>
   <version>
     0.1.0
   </version>
@@ -123,6 +123,7 @@
         <pgroup:DeeperTopicsPageGroup />
         <pgroup:HowToPageGroup />
         <task:A02_UpdatePageSkeletons />
+        <task:A02_UpdatePageGroups />
         <docs:TableOfContents />
         <docs:Intro />
         <docs:FirstBlock />

@@ -1,0 +1,84 @@
+<!--BlockML Documentation — update A02 page groups
+  FQN: org.blockml.bml.bmldocs.a02_structuring.task.A02_UpdatePageGroups-->
+<task:A02_UpdatePageGroups xmlns="http://blockml.org/bml"
+  xmlns:task="org.blockml.bml.bmldocs.a02_structuring.task"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    workflow:InstructionTask
+  </baseType>
+  <is>
+    A task that updates A02 page groups
+  </is>
+  <documentation>
+    A02 structuring task: materialize PageGroupPlan entries from BmlDocSetPlan
+    into concrete PageGroups under the a02 pagegroup package. Name, title,
+    parentGroup, and pages come only from the plan. This task has no
+    authoritativeSources.
+  </documentation>
+  <properties>
+    <instructions type="type:Text" override="true">
+      <value>
+        <![CDATA[
+          All information for this task comes from the plan. Do not read
+          authoritativeSources on this task or on BmlDocSetPlan. Do not invent
+          groups, titles, or page membership that the plan does not state.
+
+          1. Read the plan
+          Read org.blockml.bml.bmldocs.a01_planning.data.BmlDocSetPlan. Walk every
+          PageGroupPlan under rootPageGroupPlan, including nested groups. For each
+          group, collect its direct PagePlan children (pages of that group) and its
+          nested PageGroupPlan children (child groups). Do not flatten nested
+          groups into the parent’s pages list.
+
+          2. Resolve A02 FQNs
+          PageGroup FQN =
+          org.blockml.bml.bmldocs.a02_structuring.data.pagegroup + "." +
+          PageGroupPlan.name
+          (for example RootPageGroup →
+          org.blockml.bml.bmldocs.a02_structuring.data.pagegroup.RootPageGroup).
+
+          Page FQN =
+          org.blockml.bml.bmldocs.a02_structuring.data.page + "." + PagePlan.name
+          (for example docs.FirstBlock →
+          org.blockml.bml.bmldocs.a02_structuring.data.page.docs.FirstBlock).
+
+          Write only under this a02 pagegroup package, never a pagegroup package
+          outside a02 (a03 or any later sector). Do not create or edit pages,
+          DocSet, or pageMapping. Do not write PageGroups outside a02.
+
+          3. Link only existing a02 pages — fail if a planned page is missing
+          For each PagePlan of a group, the matching a02 page must already exist.
+          If that a02 page is absent, throw
+          org.blockml.bml.transformer.workflow.ExecutionException naming the
+          PagePlan.name and the expected a02 page FQN. Do not skip the page, do
+          not create it here, and do not link a substitute from another sector.
+          Only a02 pages may appear in pages. Never link a page outside a02.
+
+          4. Write each PageGroup from the plan
+          If a group with that name already exists, discard its current content
+          and regenerate the file from the plan. Keep only the FQN / file path so
+          the same Block is overwritten. Do not invent groups that are not in the
+          plan.
+
+          Each PageGroup must:
+          - use baseType org.blockml.bml.docgen.core.PageGroup
+          - use PageGroupPlan.name as the Block name
+          - override title from PageGroupPlan.title
+          - set parentGroup to the A02 FQN of the enclosing PageGroupPlan
+            when this group is nested; omit parentGroup on the root
+            PageGroupPlan (the root of rootPageGroupPlan has no parent)
+          - fill pages with TypeReferenceEntity links to the a02 pages of
+            that group’s direct PagePlan children, in plan order
+          - omit landingPage unless the plan supplies one (it does not)
+          - omit every other aggregation
+
+          Export each A02 PageGroup from org.blockml.bml.bmldocs.Library if it is
+          not already in the catalog. Do not remove catalog entries of other
+          sectors.
+        ]]>
+      </value>
+    </instructions>
+  </properties>
+</task:A02_UpdatePageGroups>
