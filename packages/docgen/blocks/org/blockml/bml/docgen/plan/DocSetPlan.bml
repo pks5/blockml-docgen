@@ -4,7 +4,8 @@
 <dplan:DocSetPlan xmlns="http://blockml.org/bml"
   xmlns:dplan="org.blockml.bml.docgen.plan"
   xmlns:dcore="org.blockml.bml.docgen.core"
-  xmlns:stage="org.blockml.bml.docgen.stage">
+  xmlns:stage="org.blockml.bml.docgen.stage"
+  xmlns:type="org.blockml.bml.type">
 
   <baseType>
     dcore:Plan
@@ -53,6 +54,13 @@
       Stage that materializes Pages and PageGroups from this plan.
     </see>
   </references>
+  <properties>
+     <homePage type="type:TypeReference(dcore:Page)">
+      <documentation>
+        Type reference to the entry / home page of this documentation set.
+      </documentation>
+    </homePage>
+  </properties>
   <aggregations>
     <rootPageGroupPlan type="dplan:PageGroupPlan">
       <documentation>

@@ -45,8 +45,8 @@
           org.blockml.bml.bmldocs.a02_structuring.data.page.docs.FirstBlock).
 
           Write only under this a02 pagegroup package, never a pagegroup package
-          outside a02 (a03 or any later sector). Do not create or edit pages,
-          DocSet, or pageMapping. Do not write PageGroups outside a02.
+          outside a02 (a03 or any later sector). Do not create or edit pages
+          or pageMapping. Do not write PageGroups outside a02.
 
           3. Link only existing a02 pages — fail if a planned page is missing
           For each PagePlan of a group, the matching a02 page must already exist.
@@ -73,6 +73,24 @@
             that group’s direct PagePlan children, in plan order
           - omit landingPage unless the plan supplies one (it does not)
           - omit every other aggregation
+
+          5. Register every A02 PageGroup on BmlDocSet_A02
+          Update org.blockml.bml.bmldocs.a02_structuring.data.BmlDocSet_A02.
+          Put every A02 PageGroup written in this task into
+          BmlDocSet_A02.pageGroups (TypeReferenceEntity links, plan order).
+          Do not invent groups that are not in the plan.
+
+          Set BmlDocSet_A02.rootPageGroup from
+          BmlDocSetPlan.rootPageGroupPlan, resolved to the matching A02
+          PageGroup FQN (a02 pagegroup package + PageGroupPlan.name, for
+          example RootPageGroup →
+          org.blockml.bml.bmldocs.a02_structuring.data.pagegroup.RootPageGroup).
+          rootPageGroup must be one of the a02 groups in pageGroups.
+
+          BmlDocSet_A02.pageGroups and rootPageGroup may contain only a02
+          PageGroups. Never insert or keep a PageGroup from another sector
+          (a03 or later). If an existing pageGroups entry is outside a02,
+          remove it. Do not edit DocSets of other sectors.
 
           Export each A02 PageGroup from org.blockml.bml.bmldocs.Library if it is
           not already in the catalog. Do not remove catalog entries of other

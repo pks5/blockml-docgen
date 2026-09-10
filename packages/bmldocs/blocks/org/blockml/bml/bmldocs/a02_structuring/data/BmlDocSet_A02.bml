@@ -1,11 +1,8 @@
 <!--BlockML Documentation — cohesive BlockML core documentation set
 
-  FQN: org.blockml.bml.bmldocs.a03_authoring.data.BmlDocSet-->
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.BmlDocSet_A02-->
 <adata:BmlDocSet_A02 xmlns="http://blockml.org/bml"
-  xmlns:adata="org.blockml.bml.bmldocs.a03_authoring.data"
-  xmlns:pdata="org.blockml.bml.bmldocs.a01_planning.data"
-  xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
-  xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.page"
+  xmlns:adata="org.blockml.bml.bmldocs.a02_structuring.data"
   xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:blockml="org.blockml.bml">
@@ -46,10 +43,10 @@ developers.</value>
       <value>0.1.0</value>
     </version>
     <homePage override="true">
-      <value>page:TableOfContents</value>
+      
     </homePage>
     <rootPageGroup override="true">
-      <value>pgroup:RootPageGroup</value>
+      
     </rootPageGroup>
   </properties>
   <aggregations>

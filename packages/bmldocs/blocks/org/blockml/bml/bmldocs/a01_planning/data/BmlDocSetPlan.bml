@@ -33,6 +33,11 @@
       TOC pages — relative name and scopes.
     </see>
   </references>
+  <properties>
+    <homePage override="true">
+      <value>page:TableOfContents</value>
+    </homePage>
+  </properties>
   <aggregations>
     <rootPageGroupPlan override="true">
       <composition>
