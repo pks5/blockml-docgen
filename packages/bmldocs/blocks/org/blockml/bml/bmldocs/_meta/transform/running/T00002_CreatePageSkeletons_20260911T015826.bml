@@ -1,0 +1,75 @@
+<!--Workspace program — CreatePageSkeletons
+  FQN: org.blockml.bml.bmldocs._meta.transform.running.T00002_CreatePageSkeletons_20260911T015826-->
+<running:T00002_CreatePageSkeletons_20260911T015826 xmlns="http://blockml.org/bml"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:program="org.blockml.bml.bmldocs.program"
+  xmlns:a02_task="org.blockml.bml.bmldocs.a02_structuring.task"
+  xmlns:running="org.blockml.bml.bmldocs._meta.transform.running">
+
+  <baseType>
+    workflow:ModelTransformation(running:T00002_CreatePageSkeletons_20260911T015826.Parameters, type:Text)
+  </baseType>
+  <is>
+    A pending ModelTransformation that creates skeletons for all planned pages.
+  </is>
+  <properties>
+    <description override="true">
+      <value>A transformation that creates skeletons for all planned pages.</value>
+    </description>
+    <status override="true" type="workflow:ExecutionStatus">
+      <value>Running</value>
+    </status>
+    <createdAt override="true" type="type:DateTime">
+      <value>2026-09-06T00:00:00</value>
+    </createdAt>
+    <template override="true" type="type:Boolean">
+      <value>false</value>
+    </template>
+    <parameters override="true" type="running:T00002_CreatePageSkeletons_20260911T015826.Parameters">
+      <value>{targetBlock:"org.blockml.bml.workspace.program.RandomBlock"}</value>
+    </parameters>
+    <executionId override="true" type="type:UUID">
+      <value>46bbfed7-c6a2-45bc-9e6d-ac55a0b888cc</value>
+    </executionId>
+    <sequence override="true" type="type:Integer">
+      <value>2</value>
+    </sequence>
+    <startedAt override="true" type="type:DateTime">
+      <value>2026-09-11T01:58:26</value>
+    </startedAt>
+    <baseCommit override="true" type="type:Text">
+      <value>78897083008fed94268c59e114c15d986fd5d01d</value>
+    </baseCommit>
+  </properties>
+  <aggregations>
+    <operations override="true">
+      <composition>
+        <workflow:AgenticOperation name="Update A02 page skeletons" status="Pending" captureOutput="true">
+          <task>
+            <a02_task:A02_UpdatePageSkeletons />
+          </task>
+        </workflow:AgenticOperation>
+        <workflow:AgenticOperation name="Update A02 page groups" status="Pending" captureOutput="true">
+          <task>
+            <a02_task:A02_UpdatePageGroups />
+          </task>
+        </workflow:AgenticOperation>
+      </composition>
+    </operations>
+  </aggregations>
+  <subBlocks>
+    <Parameters>
+      <baseType>
+        type:StructType
+      </baseType>
+      <is>
+        Run parameters for this transformation
+      </is>
+      <properties>
+        <targetBlock type="type:Text" />
+      </properties>
+    </Parameters>
+  </subBlocks>
+</running:T00002_CreatePageSkeletons_20260911T015826>
