@@ -32,23 +32,23 @@
   <aggregations>
     <authorativeSources type="type:TypeSelectorEntity[]">
       <composition>
-        <type:TypeSelectorEntity value="org.blockml.bml.docgen.annotation.*" />
-        <type:TypeSelectorEntity value="org.blockml.bml.docgen.capability.*" />
-        <type:TypeSelectorEntity value="org.blockml.bml.constraint.*" />
-        <type:TypeSelectorEntity value="org.blockml.bml.core.*" />
-        <type:TypeSelectorEntity value="org.blockml.bml.definition.*" />
-        <type:TypeSelectorEntity value="org.blockml.bml.documentation.*" />
-        <type:TypeSelectorEntity value="org.blockml.bml.exception.*" />
-        <type:TypeSelectorEntity value="org.blockml.bml.group.*" />
-        <type:TypeSelectorEntity value="org.blockml.bml.language.*" />
-        <type:TypeSelectorEntity value="org.blockml.bml.mapping.*" />
-        <type:TypeSelectorEntity value="org.blockml.bml.meta.*" />
-        <type:TypeSelectorEntity value="org.blockml.bml.relation.*" />
-        <type:TypeSelectorEntity value="org.blockml.bml.service.*" />
-        <type:TypeSelectorEntity value="org.blockml.bml.status.*" />
-        <type:TypeSelectorEntity value="org.blockml.bml.type.*" />
-        <type:TypeSelectorEntity value="org.blockml.bml.unit.*" />
-        <type:TypeSelectorEntity value="org.blockml.bml.validation.*" />
+        <type:TypeSelectorEntity value="org.blockml.bml.docgen.annotation.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.docgen.capability.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.constraint.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.core.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.definition.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.documentation.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.exception.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.group.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.language.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.mapping.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.meta.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.relation.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.service.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.status.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.type.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.unit.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.validation.**" />
       </composition>
     </authorativeSources>
   </aggregations>
