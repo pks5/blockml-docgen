@@ -58,14 +58,14 @@
     <pageBasePackage type="type:Text">
       <documentation>
         Base package for concrete Page Blocks created from this plan (for example
-        org.blockml.bml.bmldocs.a03_authoring.data.page.docs). Distinct from
-        pageGroupBasePackage. DocSetStructuringStage places new Pages under this package.
+        org.example.docs.page). Distinct from pageGroupBasePackage.
+        DocSetStructuringStage places new Pages under this package.
       </documentation>
     </pageBasePackage>
     <pageGroupBasePackage type="type:Text">
       <documentation>
         Base package for concrete PageGroup Blocks created from this plan (for example
-        org.blockml.bml.bmldocs.a03_authoring.data.page). Distinct from pageBasePackage.
+        org.example.docs.pagegroup). Distinct from pageBasePackage.
         DocSetStructuringStage places new PageGroups under this package.
       </documentation>
     </pageGroupBasePackage>

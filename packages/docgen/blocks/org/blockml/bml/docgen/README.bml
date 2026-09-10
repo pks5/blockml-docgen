@@ -28,8 +28,8 @@
     website. DocSet.pageMapping owns pageKey and path for publishable pages.
     
     Narrative SSOT remains in bml-core (org.blockml.bml.documentation.* and org.blockml.bml.task.*).
-    Site-specific catalogues (for example org.blockml.bml.bmldocs) depend on this library and fill
-    concrete documentation structures for their surfaces.
+    Site-specific catalogues depend on this library and fill concrete documentation
+    structures for their surfaces.
     
     Start with dcore:DocElement, then dcore:Page / dcore:PageElement / dcore:Audience /
     dcore:SemanticAnnotation / dcore:DetailLevel / dcore:Weight and their specializations.
