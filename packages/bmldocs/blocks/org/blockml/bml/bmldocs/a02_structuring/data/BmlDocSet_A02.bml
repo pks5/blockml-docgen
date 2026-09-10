@@ -1,7 +1,7 @@
 <!--BlockML Documentation — cohesive BlockML core documentation set
 
   FQN: org.blockml.bml.bmldocs.a03_authoring.data.BmlDocSet-->
-<adata:BmlDocSetA02 xmlns="http://blockml.org/bml"
+<adata:BmlDocSet_A02 xmlns="http://blockml.org/bml"
   xmlns:adata="org.blockml.bml.bmldocs.a03_authoring.data"
   xmlns:pdata="org.blockml.bml.bmldocs.a01_planning.data"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
@@ -48,9 +48,6 @@ developers.</value>
     <homePage override="true">
       <value>page:TableOfContents</value>
     </homePage>
-    <plan override="true">
-      <value>pdata:BmlDocSetPlan</value>
-    </plan>
     <rootPageGroup override="true">
       <value>pgroup:RootPageGroup</value>
     </rootPageGroup>
@@ -67,4 +64,4 @@ developers.</value>
       </composition>
     </pageGroups>
   </aggregations>
-</adata:BmlDocSetA02>
+</adata:BmlDocSet_A02>

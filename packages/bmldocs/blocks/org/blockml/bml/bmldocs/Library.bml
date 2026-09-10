@@ -63,7 +63,7 @@
     <blocks override="true">
       <composition>
         <bmldocs:README />
-        <adata:BmlDocSet />
+        <adata:BmlDocSet_A03 />
         <pdata:BmlDocSetPlan />
         <lrule:CodeStyleRule />
         <lrule:CompleteSentenceRule />
