@@ -1,42 +1,36 @@
-<!--BlockML Documentation — DocSet plan for BlockML core docs
+<!--BlockML Documentation — TOC plan for the BlockML website docs
 
   FQN: org.blockml.bml.bmldocs.a01_planning.data.BmlDocSetPlan-->
 <pdata:BmlDocSetPlan xmlns="http://blockml.org/bml"
   xmlns:pdata="org.blockml.bml.bmldocs.a01_planning.data"
-  xmlns:adata="org.blockml.bml.bmldocs.a03_authoring.data"
-  xmlns:dcore="org.blockml.bml.docgen.core"
-  xmlns:dplan="org.blockml.bml.docgen.plan"
-  xmlns:blockml="org.blockml.bml">
+  xmlns:dplan="org.blockml.bml.docgen.plan">
 
   <baseType>
     dplan:DocSetPlan
   </baseType>
   <is>
-    The DocSetPlan for the BlockML core documentation set
+    The TOC plan for the BlockML website documentation
   </is>
   <isNot>
-    A concrete BmlDocSet or a documentation Page
+    A concrete DocSet or a documentation Page
   </isNot>
   <documentation>
-    Abstract plan for BmlDocSet. rootPageGroupPlan mirrors the concrete RootPageGroup /
-    DocsPageGroup / section PageGroup tree, with nested PagePlan entries (relative name +
-    scopes) that DocSetStructuringStage materializes into concrete Pages and
-    PageGroups while
-    reusing existing content where possible. authoritativeSources lists the DocSet-level SSOT
-    Blocks and is copied to BmlDocSet.authoritativeSources in DocSetStructuringStage.
+    Concrete DocSetPlan for the table of contents of the BlockML website
+    documentation. Specializes the abstract DocSetPlan template.
+
+    rootPageGroupPlan is that TOC: RootPageGroup → DocsPageGroup → section
+    PageGroups (title + nesting), with PagePlan entries (relative name + scopes)
+    for each planned page.
   </documentation>
   <references>
     <see type="dplan:DocSetPlan" relation="Extends">
-      Docgen abstract DocSet plan.
+      Abstract TOC-plan template.
     </see>
     <see type="dplan:PageGroupPlan" relation="Requires">
-      Root and nested page-group plans in rootPageGroupPlan.
+      TOC groups — titles and nesting under rootPageGroupPlan.
     </see>
     <see type="dplan:PagePlan" relation="Requires">
-      Nested abstract planned pages within the rootPageGroupPlan tree.
-    </see>
-    <see type="blockml:Library" relation="Requires">
-      Authoritative BlockML core library source for this documentation set.
+      TOC pages — relative name and scopes.
     </see>
   </references>
   <aggregations>
@@ -109,10 +103,5 @@
         </dplan:PageGroupPlan>
       </composition>
     </rootPageGroupPlan>
-    <authoritativeSources override="true">
-      <composition>
-        <blockml:Library />
-      </composition>
-    </authoritativeSources>
   </aggregations>
 </pdata:BmlDocSetPlan>

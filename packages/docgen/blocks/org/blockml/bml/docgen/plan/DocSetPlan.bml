@@ -1,32 +1,34 @@
-<!--BlockML DocGen — abstract DocSet plan
+<!--BlockML DocGen — abstract TOC plan template
 
   FQN: org.blockml.bml.docgen.plan.DocSetPlan-->
 <dplan:DocSetPlan xmlns="http://blockml.org/bml"
   xmlns:dplan="org.blockml.bml.docgen.plan"
   xmlns:dcore="org.blockml.bml.docgen.core"
-  xmlns:stage="org.blockml.bml.docgen.stage"
-  xmlns:bmlcore="org.blockml.bml.core"
-  xmlns:type="org.blockml.bml.type">
+  xmlns:stage="org.blockml.bml.docgen.stage">
 
   <baseType>
     dcore:Plan
   </baseType>
   <is>
-    An abstract plan for an intended DocSet
+    An abstract template for a documentation TOC plan
   </is>
   <isNot>
-    A concrete DocSet or a documentation Page
+    A concrete DocSetPlan, DocSet, or documentation Page
   </isNot>
   <documentation>
-    Abstract model of an intended DocSet. Defines the coarse topical structure before concrete
-    Pages or PageGroups are created. rootPageGroupPlan is the root PageGroupPlan tree — nested
-    PageGroupPlan and PagePlan entries under StructurePlan.plans. authoritativeSources lists the
-    DocSet-level SSOT Blocks and is copied onto the concrete DocSet in DocSetStructuringStage.
-    
-    Filled and maintained in DocSetPlanningStage; consumed by DocSetStructuringStage to materialize
-    or synchronize a concrete DocSet. Page and PageGroup identities in this plan are relative
-    names only; completing base packages are defined later. This plan does not hold concrete
-    Page content, routing keys, or full Block FQNs.
+    Abstract template for a documentation table-of-contents plan. Concrete DocSetPlan
+    types fill this template; they are not themselves a DocSet.
+
+    A DocSetPlan is the TOC plan: which pages exist, what each page is about, how
+    pages nest in groups, and which group is the root.
+
+    - **Pages** — PagePlan.name (relative path; base packages later) and
+      PagePlan.scopes (intended content, not body text)
+    - **Nesting** — PageGroupPlan entries, each with a visible title
+    - **Root** — rootPageGroupPlan, the TOC root PageGroupPlan
+
+    Filled in DocSetPlanningStage; consumed by DocSetStructuringStage. Does not hold
+    page body, routing keys, or full Block FQNs.
   </documentation>
   <abstract>
     true
@@ -36,39 +38,27 @@
       Planning-element base for DocSetPlanningStage.
     </see>
     <see type="dcore:DocSet" relation="ContrastsWith">
-      Concrete documentation-set container — not the abstract plan.
+      Concrete documentation-set container — not the TOC plan.
     </see>
     <see type="dplan:PageGroupPlan" relation="Requires">
-      Root structural plan via rootPageGroupPlan.
+      TOC nesting and titles via rootPageGroupPlan.
     </see>
     <see type="dplan:PagePlan" relation="Requires">
-      Nested abstract planned pages within the rootPageGroupPlan tree.
-    </see>
-    <see type="bmlcore:Block" relation="Requires">
-      Authoritative source Blocks via authoritativeSources aggregation.
+      Planned TOC pages — relative name and scopes.
     </see>
     <see type="stage:DocSetPlanningStage" relation="SeeAlso">
-      Stage that creates or updates this abstract plan and its rootPageGroupPlan.
+      Stage that creates or updates this TOC plan.
     </see>
     <see type="stage:DocSetStructuringStage" relation="SeeAlso">
-      Stage that materializes or synchronizes a DocSet from this plan.
+      Stage that materializes Pages and PageGroups from this plan.
     </see>
   </references>
   <aggregations>
     <rootPageGroupPlan type="dplan:PageGroupPlan">
       <documentation>
-        Root PageGroupPlan for the DocSet. Nested StructurePlan entries (PageGroupPlan
-        and PagePlan) under plans define the full abstract structure. Populated in
-        DocSetPlanningStage; materialized into concrete PageGroups and Pages by
-        DocSetStructuringStage.
+        TOC root. Nested PageGroupPlan and PagePlan entries under plans define
+        grouping, titles, pages, and scopes.
       </documentation>
     </rootPageGroupPlan>
-    <authoritativeSources type="type:TypeReferenceEntity(bmlcore:Block)[]">
-      <documentation>
-        Authoritative source Blocks for the planned DocSet — typically libraries or
-        other Blocks that are the SSOT for generated content. Copied to DocSet.authoritativeSources
-        in DocSetStructuringStage.
-      </documentation>
-    </authoritativeSources>
   </aggregations>
 </dplan:DocSetPlan>
