@@ -19,8 +19,8 @@
   </isNot>
   <documentation>
     Abstract plan for BmlDocSet. rootPageGroupPlan mirrors the concrete RootPageGroup /
-    DocsPageGroup / section PageGroup tree, with nested PagePlan entries (name relative to
-    pageBasePackage + scopes) that DocSetStructuringStage materializes into concrete Pages and
+    DocsPageGroup / section PageGroup tree, with nested PagePlan entries (relative name +
+    scopes) that DocSetStructuringStage materializes into concrete Pages and
     PageGroups while
     reusing existing content where possible. authoritativeSources lists the DocSet-level SSOT
     Blocks and is copied to BmlDocSet.authoritativeSources in DocSetStructuringStage.
@@ -39,14 +39,6 @@
       Authoritative BlockML core library source for this documentation set.
     </see>
   </references>
-  <properties>
-    <pageBasePackage override="true">
-      <value>org.blockml.bml.bmldocs.a03_authoring.data.page</value>
-    </pageBasePackage>
-    <pageGroupBasePackage override="true">
-      <value>org.blockml.bml.bmldocs.a03_authoring.data.pagegroup</value>
-    </pageGroupBasePackage>
-  </properties>
   <aggregations>
     <rootPageGroupPlan override="true">
       <composition>

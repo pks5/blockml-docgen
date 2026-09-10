@@ -24,8 +24,8 @@
     DocSet-level SSOT Blocks and is copied onto the concrete DocSet in DocSetStructuringStage.
     
     Filled and maintained in DocSetPlanningStage; consumed by DocSetStructuringStage to materialize
-    or synchronize a concrete DocSet. pageBasePackage and pageGroupBasePackage are separate
-    package prefixes for concrete Page and PageGroup Blocks. This plan does not hold concrete
+    or synchronize a concrete DocSet. Page and PageGroup identities in this plan are relative
+    names only; completing base packages are defined later. This plan does not hold concrete
     Page content, routing keys, or full Block FQNs.
   </documentation>
   <abstract>
@@ -54,22 +54,6 @@
       Stage that materializes or synchronizes a DocSet from this plan.
     </see>
   </references>
-  <properties>
-    <pageBasePackage type="type:Text">
-      <documentation>
-        Base package for concrete Page Blocks created from this plan (for example
-        org.example.docs.page). Distinct from pageGroupBasePackage.
-        DocSetStructuringStage places new Pages under this package.
-      </documentation>
-    </pageBasePackage>
-    <pageGroupBasePackage type="type:Text">
-      <documentation>
-        Base package for concrete PageGroup Blocks created from this plan (for example
-        org.example.docs.pagegroup). Distinct from pageBasePackage.
-        DocSetStructuringStage places new PageGroups under this package.
-      </documentation>
-    </pageGroupBasePackage>
-  </properties>
   <aggregations>
     <rootPageGroupPlan type="dplan:PageGroupPlan">
       <documentation>

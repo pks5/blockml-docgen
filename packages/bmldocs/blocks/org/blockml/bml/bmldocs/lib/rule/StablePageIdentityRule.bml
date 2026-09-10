@@ -15,7 +15,7 @@
     Defines how Page identity should be preserved when an existing DocSetPlan is updated.
     
     A planned Page that continues to represent the same conceptual Page should retain its
-    existing name (relative to pageBasePackage). The PagePlan.name should not be changed merely
+    existing relative name. The PagePlan.name should not be changed merely
     because wording, ordering, scopes, detail level, or supporting content evolves.
     
     Identity should change only when the Page itself has conceptually changed enough that it
@@ -45,8 +45,8 @@
 fundamentally changed.</value>
     </summary>
     <instructions override="true">
-      <value>When updating an existing DocSetPlan, preserve the PagePlan.name (relative to
-pageBasePackage) of every Page that still represents the same conceptual Page. Do not
+      <value>When updating an existing DocSetPlan, preserve the relative PagePlan.name
+of every Page that still represents the same conceptual Page. Do not
 assign a new name merely because scopes are refined, position changes, or later content is
 expected to change. Change the name only when the Page has been replaced by a
 fundamentally different responsibility, intentionally split or merged, or otherwise

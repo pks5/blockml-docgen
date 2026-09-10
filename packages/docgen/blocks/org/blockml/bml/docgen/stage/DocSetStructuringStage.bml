@@ -17,9 +17,8 @@
     related catalogue entries — or synchronizes an existing DocSet with the plan.
     
     Responsibilities include:
-    - resolving each PagePlan.name against DocSetPlan.pageBasePackage and each
-      PageGroupPlan.name against DocSetPlan.pageGroupBasePackage to the concrete Block FQN,
-      creating missing Pages / PageGroups
+    - resolving each relative PagePlan.name and PageGroupPlan.name against the later-defined
+      base packages to the concrete Block FQN, creating missing Pages / PageGroups
     - creating or updating PageGroups from PageGroupPlans when those plans exist
     - mapping PagePlan.scopes into the concrete Page’s purpose and documentation
     - preserving and reusing as much existing Page content as possible when a planned page still

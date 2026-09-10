@@ -17,16 +17,14 @@
     
     This stage builds a nested rootPageGroupPlan tree of PageGroupPlans and PagePlans. Together
     they define the intended topical structure of the documentation set before any concrete Pages
-    or PageGroups are created. Each PagePlan carries a Block name relative to pageBasePackage
-    and comma-separated scopes that describe page content; each PageGroupPlan.name is relative
-    to pageGroupBasePackage. Routing keys, paths, and concrete Block identities are not
-    decided here.
+    or PageGroups are created. Each PagePlan carries a relative Block name and comma-separated
+    scopes that describe page content; each PageGroupPlan.name is likewise relative. Completing
+    base packages, routing keys, paths, and concrete Block identities are not decided here.
     
     Responsibilities include:
     - defining the root PageGroupPlan and nested PageGroupPlan / PagePlan structure
-    - defining intended Pages via PagePlan entries (name relative to pageBasePackage + scopes)
-    - defining intended PageGroups via PageGroupPlan entries (name relative to
-      pageGroupBasePackage)
+    - defining intended Pages via PagePlan entries (relative name + scopes)
+    - defining intended PageGroups via PageGroupPlan entries (relative name)
     - defining the ordering and overall progression of the DocSet
     - defining DocSet-level authoritativeSources (SSOT Blocks for the planned set)
     - updating an existing abstract plan when the topical structure should change

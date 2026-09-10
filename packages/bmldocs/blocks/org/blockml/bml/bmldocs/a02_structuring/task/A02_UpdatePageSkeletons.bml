@@ -49,8 +49,10 @@
           org.blockml.bml.bmldocs.a02_structuring.data.page + "." + PagePlan.name
           (for example docs.FirstBlock →
           org.blockml.bml.bmldocs.a02_structuring.data.page.docs.FirstBlock).
-          Do not write under DocSetPlan.pageBasePackage (a03). Do not create or edit
-          a03 pages, PageGroups, DocSet, or pageMapping.
+          Do not write in page packages of other sectors — only this a02
+          page package, never a page package outside a02 (a03 or any later
+          sector). Do not create or edit pages outside a02, PageGroups,
+          DocSet, or pageMapping.
 
           If a skeleton with that name already exists, discard its current content
           and regenerate the file from the plan and the bound authoritative sources.

@@ -17,16 +17,16 @@
   </isNot>
   <documentation>
     Planned page within a DocSetPlan. Used in DocSetPlanningStage to sketch structure before
-    concrete Pages exist. Inherits name from StructurePlan (Block path relative to
-    DocSetPlan.pageBasePackage). scopes describes the intended page content; structuring maps scopes into
+    concrete Pages exist. Inherits name from StructurePlan (relative Block path; completing
+    base package is defined later). scopes describes the intended page content; structuring maps scopes into
     the concrete Page’s purpose and documentation while reusing existing content where possible.
   </documentation>
   <references>
     <see type="dplan:StructurePlan" relation="Extends">
-      Structural planning base — provides name relative to DocSetPlan.pageBasePackage.
+      Structural planning base — provides relative name (base package defined later).
     </see>
     <see type="dplan:DocSetPlan" relation="SeeAlso">
-      Abstract DocSet model that owns planned pages and pageBasePackage.
+      Abstract DocSet model that owns planned pages.
     </see>
     <see type="page:DocPage" relation="ContrastsWith">
       Concrete page marker — created later from this plan entry in DocSetStructuringStage.
