@@ -1,15 +1,15 @@
 <!--Workspace program — CreatePageSkeletons
-  FQN: org.blockml.bml.bmldocs._meta.transform.running.T00001_CreatePageSkeletons_20260911T004916-->
-<running:T00001_CreatePageSkeletons_20260911T004916 xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs._meta.transform.succeeded.T00001_CreatePageSkeletons_20260911T004916-->
+<succeeded:T00001_CreatePageSkeletons_20260911T004916 xmlns="http://blockml.org/bml"
   xmlns:core="org.blockml.bml.core"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type"
   xmlns:program="org.blockml.bml.bmldocs.program"
   xmlns:a02_task="org.blockml.bml.bmldocs.a02_structuring.task"
-  xmlns:running="org.blockml.bml.bmldocs._meta.transform.running">
+  xmlns:succeeded="org.blockml.bml.bmldocs._meta.transform.succeeded">
 
   <baseType>
-    workflow:ModelTransformation(running:T00001_CreatePageSkeletons_20260911T004916.Parameters, type:Text)
+    workflow:ModelTransformation(succeeded:T00001_CreatePageSkeletons_20260911T004916.Parameters, type:Text)
   </baseType>
   <is>
     A pending ModelTransformation that creates skeletons for all planned pages.
@@ -19,7 +19,7 @@
       <value>A transformation that creates skeletons for all planned pages.</value>
     </description>
     <status override="true" type="workflow:ExecutionStatus">
-      <value>Running</value>
+      <value>Succeeded</value>
     </status>
     <createdAt override="true" type="type:DateTime">
       <value>2026-09-06T00:00:00</value>
@@ -27,7 +27,7 @@
     <template override="true" type="type:Boolean">
       <value>false</value>
     </template>
-    <parameters override="true" type="running:T00001_CreatePageSkeletons_20260911T004916.Parameters">
+    <parameters override="true" type="succeeded:T00001_CreatePageSkeletons_20260911T004916.Parameters">
       <value>{targetBlock:"org.blockml.bml.workspace.program.RandomBlock"}</value>
     </parameters>
     <executionId override="true" type="type:UUID">
@@ -42,6 +42,12 @@
     <baseCommit override="true" type="type:Text">
       <value>a7f88895a5a6096068d1176c00f99eba9f371daf</value>
     </baseCommit>
+    <completedAt override="true" type="type:DateTime">
+      <value>2026-09-11T00:56:16</value>
+    </completedAt>
+    <duration override="true" type="type:Duration">
+      <value>PT7M0.913S</value>
+    </duration>
   </properties>
   <aggregations>
     <operations override="true">
@@ -77,8 +83,7 @@
 
 Also reverted an incidental `&lt;isNot>`→`&lt;isnot>` casing change that `blockml new` made to `Library.bml`.
 
-Files are unstaged/untracked; no commit made.
-</output>
+Files are unstaged/untracked; no commit made.</output>
           <completedAt>2026-09-11T00:56:16</completedAt>
           <task>
             <a02_task:A02_UpdatePageSkeletons />
@@ -104,4 +109,4 @@ Files are unstaged/untracked; no commit made.
       </properties>
     </Parameters>
   </subBlocks>
-</running:T00001_CreatePageSkeletons_20260911T004916>
+</succeeded:T00001_CreatePageSkeletons_20260911T004916>
