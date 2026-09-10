@@ -1,0 +1,41 @@
+<!--BlockML Documentation — Documentation (structuring skeleton)
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.TableOfContents-->
+<page:TableOfContents xmlns="http://blockml.org/bml"
+  xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    The blockml.org documentation table of contents
+  </is>
+  <documentation>
+    Structuring skeleton for the “Documentation” documentation page. Planned scopes: documentation menu, entry points, navigation overview. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.TableOfContents. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+  </documentation>
+  <references>
+    <see type="dpage:Navigation" relation="Requires">
+      In-page navigation block holding the TOC menu tree.
+    </see>
+    <see type="dpage:NavigationItem" relation="Requires">
+      Recursive menu nodes (sections and leaf links).
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Documentation</value>
+    </title>
+    <purpose override="true">
+      <value>Present the structured documentation menu so readers can find entry points without introducing new conceptual content.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>dlevel:Overview</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>ptype:Index</value>
+    </pageType>
+  </properties>
+</page:TableOfContents>

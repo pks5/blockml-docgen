@@ -1,0 +1,42 @@
+<!--BlockML Documentation — Overrides (structuring skeleton)
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.OverridesBasics-->
+<page:OverridesBasics xmlns="http://blockml.org/bml"
+  xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A website intro to partial member overrides
+  </is>
+  <documentation>
+    Structuring skeleton for the “Overrides” documentation page. Planned scopes: partial member overrides, override true, inheritance merge. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.OverridesBasics. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+  </documentation>
+  <references>
+    <see type="doc:PartialMemberOverrides" relation="Requires">
+      Primary content — merge semantics and override flags.
+    </see>
+    <see type="doc:ContractsModel" relation="SeeAlso">
+      Related — member merge across contracts.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Overrides</value>
+    </title>
+    <purpose override="true">
+      <value>Introduce partial member overrides with override="true".</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>dlevel:Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>ptype:Concept</value>
+    </pageType>
+  </properties>
+</page:OverridesBasics>

@@ -1,0 +1,39 @@
+<!--BlockML Documentation — Types at a glance (structuring skeleton)
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.TypesOverview-->
+<page:TypesOverview xmlns="http://blockml.org/bml"
+  xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A website overview of ValueTypes
+  </is>
+  <documentation>
+    Structuring skeleton for the “Types at a glance” documentation page. Planned scopes: ValueType kinds, type-system entry point, named types overview. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.TypesOverview. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+  </documentation>
+  <references>
+    <see type="doc:TypeSystemOverview" relation="Requires">
+      Primary content source — ValueTypes overview.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Types at a glance</value>
+    </title>
+    <purpose override="true">
+      <value>Introduce the four ValueType kinds as the type-system entry point.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>dlevel:Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>ptype:Concept</value>
+    </pageType>
+  </properties>
+</page:TypesOverview>

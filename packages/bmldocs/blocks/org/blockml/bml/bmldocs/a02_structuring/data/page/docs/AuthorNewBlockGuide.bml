@@ -1,0 +1,49 @@
+<!--BlockML Documentation — Author a new Block (structuring skeleton)
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.AuthorNewBlockGuide-->
+<page:AuthorNewBlockGuide xmlns="http://blockml.org/bml"
+  xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:task="org.blockml.bml.task">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A website how-to for authoring a new Block
+  </is>
+  <documentation>
+    Structuring skeleton for the “Author a new Block” documentation page. Planned scopes: new Block checklist, create and publish Block type, procedural how-to. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.AuthorNewBlockGuide. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+  </documentation>
+  <references>
+    <see type="task:AuthorNewBlock" relation="Requires">
+      Primary content — procedural how-to for a new Block definition.
+    </see>
+    <see type="doc:DocumentationModel" relation="SeeAlso">
+      Related — is, documentation, and references on a new definition.
+    </see>
+    <see type="doc:LibrarySystem" relation="SeeAlso">
+      Related — exporting the new Block in Library.bml.
+    </see>
+    <see type="doc:DefinitionModel" relation="SeeAlso">
+      Related — members on the new definition.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Author a new Block</value>
+    </title>
+    <purpose override="true">
+      <value>Provide a procedural checklist for creating and publishing a new Block type.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>dlevel:Practical</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>ptype:HowTo</value>
+    </pageType>
+  </properties>
+</page:AuthorNewBlockGuide>

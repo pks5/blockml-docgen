@@ -1,0 +1,42 @@
+<!--BlockML Documentation — Capabilities (structuring skeleton)
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.CapabilitiesIntro-->
+<page:CapabilitiesIntro xmlns="http://blockml.org/bml"
+  xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A website intro to Capabilities
+  </is>
+  <documentation>
+    Structuring skeleton for the “Capabilities” documentation page. Planned scopes: Capabilities, behaviour as ordinary members, capability endpoints. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.CapabilitiesIntro. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+  </documentation>
+  <references>
+    <see type="doc:CapabilitySemantics" relation="Requires">
+      Primary content source — behaviour as Capabilities.
+    </see>
+    <see type="doc:FunctionMappingModel" relation="Requires">
+      Primary content source — positional and named Capability call arguments.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Capabilities</value>
+    </title>
+    <purpose override="true">
+      <value>Show that behaviour is expressed as ordinary Capabilities, not special language constructs.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>dlevel:Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>ptype:Concept</value>
+    </pageType>
+  </properties>
+</page:CapabilitiesIntro>

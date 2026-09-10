@@ -10,6 +10,7 @@
   xmlns:blockml="org.blockml.bml"
   xmlns:bmldocs="org.blockml.bml.bmldocs"
   xmlns:pdata="org.blockml.bml.bmldocs.a01_planning.data"
+  xmlns:docs="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
   xmlns:task="org.blockml.bml.bmldocs.a02_structuring.task"
   xmlns:adata="org.blockml.bml.bmldocs.a03_authoring.data"
   xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.page"
@@ -122,6 +123,31 @@
         <pgroup:DeeperTopicsPageGroup />
         <pgroup:HowToPageGroup />
         <task:A02_UpdatePageSkeletons />
+        <docs:TableOfContents />
+        <docs:Intro />
+        <docs:FirstBlock />
+        <docs:FileAnatomy />
+        <docs:EverythingIsABlockPage />
+        <docs:DefinitionAndInstance />
+        <docs:CompositionBasics />
+        <docs:TypesOverview />
+        <docs:TypeExpressionsBasics />
+        <docs:GenericsBriefly />
+        <docs:ConfiguringTypes />
+        <docs:CapabilitiesIntro />
+        <docs:ExpressionsIntro />
+        <docs:EmbeddedExpressionsIntro />
+        <docs:LibrariesAndPackages />
+        <docs:ReadmeAndBootstrap />
+        <docs:ModelingGuidelinesPage />
+        <docs:VisibilityBasics />
+        <docs:OverridesBasics />
+        <docs:ConstraintsBasics />
+        <docs:AnnotationsAndDirectives />
+        <docs:SubBlocksIntro />
+        <docs:ContractsIntro />
+        <docs:CompilerOverview />
+        <docs:AuthorNewBlockGuide />
       </composition>
     </blocks>
   </aggregations>

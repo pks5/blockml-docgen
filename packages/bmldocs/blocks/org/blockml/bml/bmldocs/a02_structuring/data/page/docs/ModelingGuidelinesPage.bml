@@ -1,0 +1,42 @@
+<!--BlockML Documentation — Modeling guidelines (structuring skeleton)
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.ModelingGuidelinesPage-->
+<page:ModelingGuidelinesPage xmlns="http://blockml.org/bml"
+  xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A website page of modeling guidelines
+  </is>
+  <documentation>
+    Structuring skeleton for the “Modeling guidelines” documentation page. Planned scopes: modeling patterns, practical authoring guidance, non-normative tips. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.ModelingGuidelinesPage. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+  </documentation>
+  <references>
+    <see type="doc:ModelingGuidelines" relation="Requires">
+      Primary content — recommended modeling patterns.
+    </see>
+    <see type="doc:ContractsModel" relation="SeeAlso">
+      Related — contract patterns referenced by the guidelines.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Modeling guidelines</value>
+    </title>
+    <purpose override="true">
+      <value>Offer practical modeling patterns without becoming a second language specification.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>dlevel:Practical</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>ptype:Guide</value>
+    </pageType>
+  </properties>
+</page:ModelingGuidelinesPage>

@@ -1,0 +1,42 @@
+<!--BlockML Documentation — Constraints (structuring skeleton)
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.ConstraintsBasics-->
+<page:ConstraintsBasics xmlns="http://blockml.org/bml"
+  xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A website intro to constraints
+  </is>
+  <documentation>
+    Structuring skeleton for the “Constraints” documentation page. Planned scopes: validation rules, constrainable definition elements, reusable constraints. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.ConstraintsBasics. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+  </documentation>
+  <references>
+    <see type="doc:ConstraintsModel" relation="Requires">
+      Primary content — constraints, suggestions, and Enum rules.
+    </see>
+    <see type="doc:ValueTypeConfiguration" relation="SeeAlso">
+      Related — constraints attached through ValueType configuration.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Constraints</value>
+    </title>
+    <purpose override="true">
+      <value>Introduce reusable validation rules on constrainable definition elements.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>dlevel:Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>ptype:Concept</value>
+    </pageType>
+  </properties>
+</page:ConstraintsBasics>

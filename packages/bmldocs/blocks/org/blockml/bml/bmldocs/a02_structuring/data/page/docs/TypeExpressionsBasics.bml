@@ -1,0 +1,39 @@
+<!--BlockML Documentation — Type expressions (structuring skeleton)
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.TypeExpressionsBasics-->
+<page:TypeExpressionsBasics xmlns="http://blockml.org/bml"
+  xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A website cheat-sheet for type expressions
+  </is>
+  <documentation>
+    Structuring skeleton for the “Type expressions” documentation page. Planned scopes: type expressions, combining named types, type expression cheat-sheet. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.TypeExpressionsBasics. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+  </documentation>
+  <references>
+    <see type="doc:TypeExpressions" relation="Requires">
+      Primary content source — multiplicity, unions, and match order.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Type expressions</value>
+    </title>
+    <purpose override="true">
+      <value>Cheat-sheet for combining named types into type expressions.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>dlevel:Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>ptype:Guide</value>
+    </pageType>
+  </properties>
+</page:TypeExpressionsBasics>

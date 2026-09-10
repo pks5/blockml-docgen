@@ -1,0 +1,42 @@
+<!--BlockML Documentation — Your first Block (structuring skeleton)
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.FirstBlock-->
+<page:FirstBlock xmlns="http://blockml.org/bml"
+  xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A first-Block walkthrough for website readers
+  </is>
+  <documentation>
+    Structuring skeleton for the “Your first Block” documentation page. Planned scopes: first Block definition, definition versus instance, hands-on walkthrough. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.FirstBlock. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+  </documentation>
+  <references>
+    <see type="doc:BlockAndInstance" relation="Requires">
+      Primary content — definition, instance, and composition mental model.
+    </see>
+    <see type="doc:DefinitionModel" relation="Requires">
+      Primary content — is, members, and documentation on definitions.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Your first Block</value>
+    </title>
+    <purpose override="true">
+      <value>Walk a new reader through their first Block definition and the definition/instance distinction.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>dlevel:Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>ptype:Tutorial</value>
+    </pageType>
+  </properties>
+</page:FirstBlock>

@@ -1,0 +1,42 @@
+<!--BlockML Documentation — Anatomy of a .bml file (structuring skeleton)
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.FileAnatomy-->
+<page:FileAnatomy xmlns="http://blockml.org/bml"
+  xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A .bml file anatomy cheat-sheet
+  </is>
+  <documentation>
+    Structuring skeleton for the “Anatomy of a .bml file” documentation page. Planned scopes: root Block document fields, file structure cheat-sheet, ordered members. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.FileAnatomy. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+  </documentation>
+  <references>
+    <see type="doc:DocumentationModel" relation="Requires">
+      Primary content — is, documentation, references, examples.
+    </see>
+    <see type="doc:BlockNameConvention" relation="Requires">
+      Primary content — PascalCase name rules and type identity.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Anatomy of a .bml file</value>
+    </title>
+    <purpose override="true">
+      <value>Give readers a structural cheat-sheet for the ordered fields of a root Block document.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>dlevel:Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>ptype:Guide</value>
+    </pageType>
+  </properties>
+</page:FileAnatomy>

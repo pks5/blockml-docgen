@@ -1,0 +1,45 @@
+<!--BlockML Documentation — How the compiler works (structuring skeleton)
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.CompilerOverview-->
+<page:CompilerOverview xmlns="http://blockml.org/bml"
+  xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A website overview of the compiler pipeline
+  </is>
+  <documentation>
+    Structuring skeleton for the “How the compiler works” documentation page. Planned scopes: compiler pipeline, high-level processing stages, non-normative overview. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.CompilerOverview. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+  </documentation>
+  <references>
+    <see type="doc:CompilerArchitecture" relation="Requires">
+      Primary content — parser, validator, renderer stages.
+    </see>
+    <see type="doc:RendererFreedom" relation="Requires">
+      Primary content — targets decide manifestation.
+    </see>
+    <see type="doc:Introduction" relation="SeeAlso">
+      Related — where the pipeline fits in the bigger picture.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>How the compiler works</value>
+    </title>
+    <purpose override="true">
+      <value>Give website readers a high-level compiler pipeline sketch without normative internals.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>dlevel:Overview</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>ptype:Concept</value>
+    </pageType>
+  </properties>
+</page:CompilerOverview>

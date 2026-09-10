@@ -1,0 +1,42 @@
+<!--BlockML Documentation — Embedded expressions (structuring skeleton)
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.EmbeddedExpressionsIntro-->
+<page:EmbeddedExpressionsIntro xmlns="http://blockml.org/bml"
+  xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dlevel="org.blockml.bml.docgen.level"
+  xmlns:ptype="org.blockml.bml.docgen.pagetype"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A website intro to &lt;$ $> embeds
+  </is>
+  <documentation>
+    Structuring skeleton for the “Embedded expressions” documentation page. Planned scopes: embedded expressions, Capability implementation bodies, embed syntax. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.EmbeddedExpressionsIntro. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+  </documentation>
+  <references>
+    <see type="doc:EmbeddedExpressions" relation="Requires">
+      Primary content source — embeds inside Capability implementations.
+    </see>
+    <see type="doc:Expressions" relation="SeeAlso">
+      Related — \${ } expression language contrast.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Embedded expressions</value>
+    </title>
+    <purpose override="true">
+      <value>Introduce &lt;$ $> embeds inside Capability implementation bodies.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>dlevel:Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>ptype:Concept</value>
+    </pageType>
+  </properties>
+</page:EmbeddedExpressionsIntro>
