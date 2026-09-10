@@ -21,7 +21,7 @@
     types, roles, rules, and semantic annotations. It is orthogonal to any one website.
     
     org.blockml.bml.bmldocs (@blockml/bmldocs) specializes that foundation for
-    blockml.org: BmlDocSet, BmlDocPage markers, page groups, and site rules. Narrative
+    blockml.org: BmlDocSet, DocPage markers, page groups, and site rules. Narrative
     prose stays in org.blockml.bml.documentation.* and org.blockml.bml.task.*; bmldocs
     pages point at those sources.
     

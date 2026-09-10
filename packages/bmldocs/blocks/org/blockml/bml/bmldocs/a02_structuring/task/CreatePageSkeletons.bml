@@ -1,0 +1,62 @@
+<!--Workspace a02_task — CreatePageSkeletons
+  FQN: org.blockml.bml.workspace.a02_task.CreatePageSkeletons-->
+<a02_task:CreatePageSkeletons xmlns="http://blockml.org/bml"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:a02_task="org.blockml.bml.bmldocs.a02_structuring.task">
+
+  <baseType>
+    workflow:ModelTransformation(a02_task:CreatePageSkeletons.Parameters, type:Text)
+  </baseType>
+  <is>
+    A pending ModelTransformation that creates skeletons for all planned pages.
+  </is>
+  <properties>
+    <description override="true">
+      <value>A transformation that creates skeletons for all planned pages.</value>
+    </description>
+    <status override="true" type="workflow:ExecutionStatus">
+      <value>Pending</value>
+    </status>
+    <createdAt override="true" type="type:DateTime">
+      <value>2026-09-06T00:00:00</value>
+    </createdAt>
+    <template override="true" type="type:Boolean">
+      <value>true</value>
+    </template>
+    <parameters override="true" type="a02_task:CreatePageSkeletons.Parameters">
+      <value>{targetBlock:"org.blockml.bml.workspace.a02_task.RandomBlock"}</value>
+    </parameters>
+  </properties>
+  <aggregations>
+    <operations override="true">
+      <composition>
+        <workflow:AgenticOperation name="Create Random Block" status="Pending" captureOutput="true">
+          <task>
+            <workflow:InstructionTask>
+              <instructions>
+                Read org.blockml.bml.bmldocs.a01_planning.data.BmlDocSetPlan 
+                and create a skeleton for each planned page in org.blockml.bml.bmldocs.a02_structuring.data.page.*.
+                
+              </instructions>
+            </workflow:InstructionTask>
+          </task>
+        </workflow:AgenticOperation>
+      </composition>
+    </operations>
+  </aggregations>
+  <subBlocks>
+    <Parameters>
+      <baseType>
+        type:StructType
+      </baseType>
+      <is>
+        Run parameters for this transformation
+      </is>
+      <properties>
+        <targetBlock type="type:Text" />
+      </properties>
+    </Parameters>
+  </subBlocks>
+</a02_task:CreatePageSkeletons>

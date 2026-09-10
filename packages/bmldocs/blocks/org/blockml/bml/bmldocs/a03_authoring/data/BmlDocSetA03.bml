@@ -1,7 +1,7 @@
 <!--BlockML Documentation — cohesive BlockML core documentation set
 
   FQN: org.blockml.bml.bmldocs.a03_authoring.data.BmlDocSet-->
-<adata:BmlDocSet xmlns="http://blockml.org/bml"
+<adata:BmlDocSetA03 xmlns="http://blockml.org/bml"
   xmlns:adata="org.blockml.bml.bmldocs.a03_authoring.data"
   xmlns:pdata="org.blockml.bml.bmldocs.a01_planning.data"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
@@ -96,9 +96,6 @@ developers.</value>
     <homePage override="true">
       <value>page:TableOfContents</value>
     </homePage>
-    <plan override="true">
-      <value>pdata:BmlDocSetPlan</value>
-    </plan>
     <rootPageGroup override="true">
       <value>pgroup:RootPageGroup</value>
     </rootPageGroup>
@@ -147,37 +144,5 @@ developers.</value>
         <pgroup:HowToPageGroup />
       </composition>
     </pageGroups>
-    <globalRules override="true">
-      <composition>
-        <!--Planning rules-->
-        <lrule:ClearPagePurposeRule />
-        <lrule:DistinctPagePurposeRule />
-        <lrule:CompleteTopicCoverageRule />
-        <lrule:AppropriatePageGranularityRule />
-        <lrule:ProgressivePageOrderRule />
-        <lrule:StablePageIdentityRule />
-        <!--Other rules-->
-        <lrule:CodeExampleRule />
-        <lrule:CodeStyleRule />
-        <lrule:AvoidContentRepetitionRule />
-        <lrule:CompleteSentenceRule />
-        <lrule:OnePrimaryMessageRule />
-        <lrule:RespectScopeRule />
-        <lrule:RespectExclusionsRule />
-        <lrule:NoSourceDumpRule />
-        <lrule:NoUnrequestedDiagnosticsRule />
-        <lrule:MatchDetailLevelRule />
-        <lrule:ConceptBeforeImplementationRule />
-        <lrule:NoFragmentedEnumerationRule />
-        <lrule:AudienceVocabularyRule />
-        <lrule:SectionCompletenessRule />
-        <lrule:PageSectionCountRule />
-      </composition>
-    </globalRules>
-    <authoritativeSources override="true">
-      <composition>
-        <blockml:Library />
-      </composition>
-    </authoritativeSources>
   </aggregations>
-</adata:BmlDocSet>
+</adata:BmlDocSetA03>

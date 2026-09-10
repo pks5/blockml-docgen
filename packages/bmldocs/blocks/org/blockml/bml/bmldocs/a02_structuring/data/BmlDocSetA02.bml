@@ -1,0 +1,70 @@
+<!--BlockML Documentation — cohesive BlockML core documentation set
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.BmlDocSet-->
+<adata:BmlDocSetA02 xmlns="http://blockml.org/bml"
+  xmlns:adata="org.blockml.bml.bmldocs.a03_authoring.data"
+  xmlns:pdata="org.blockml.bml.bmldocs.a01_planning.data"
+  xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.page"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:blockml="org.blockml.bml">
+
+  <baseType>
+    dcore:DocSet
+  </baseType>
+  <is>
+    The BlockML core documentation set
+  </is>
+  <isNot>
+    A single DocPage or a bml-core narrative Documentation Block
+  </isNot>
+  <documentation>
+    The complete documentation set for BlockML core — syntax, rules, examples, best practices,
+    and use cases. Aimed at developers: some material targets junior readers, other parts serve
+    advanced and senior developers. The set follows a clear learning path: quick start, fast first
+    results, then deeper study when needed.
+    
+    pages and pageGroups list every publishable page and group.
+    homePage points at the TableOfContents menu page; rootPageGroup is RootPageGroup.
+  </documentation>
+  <references>
+    <see type="dcore:DocSet" relation="Extends">
+      Docgen DocSet container.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>BlockML Documentation</value>
+    </title>
+    <summary override="true">
+      <value>Complete BlockML core documentation — syntax, rules, examples, best practices, and
+use cases — with a learning path from quick start to deep study for junior through senior
+developers.</value>
+    </summary>
+    <version override="true">
+      <value>0.1.0</value>
+    </version>
+    <homePage override="true">
+      <value>page:TableOfContents</value>
+    </homePage>
+    <plan override="true">
+      <value>pdata:BmlDocSetPlan</value>
+    </plan>
+    <rootPageGroup override="true">
+      <value>pgroup:RootPageGroup</value>
+    </rootPageGroup>
+  </properties>
+  <aggregations>
+    <pages override="true">
+      <composition>
+        
+      </composition>
+    </pages>
+    <pageGroups override="true">
+      <composition>
+        
+      </composition>
+    </pageGroups>
+  </aggregations>
+</adata:BmlDocSetA02>

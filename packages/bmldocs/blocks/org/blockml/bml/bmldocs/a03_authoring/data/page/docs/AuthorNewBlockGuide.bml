@@ -5,7 +5,6 @@
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
-  xmlns:lpage="org.blockml.bml.bmldocs.lib.page"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:dlevel="org.blockml.bml.docgen.level"
   xmlns:ptype="org.blockml.bml.docgen.pagetype"
@@ -16,7 +15,7 @@
   xmlns:task="org.blockml.bml.task">
 
   <baseType>
-    lpage:BmlDocPage
+    dpage:DocPage
   </baseType>
   <is>
     A website how-to for authoring a new Block

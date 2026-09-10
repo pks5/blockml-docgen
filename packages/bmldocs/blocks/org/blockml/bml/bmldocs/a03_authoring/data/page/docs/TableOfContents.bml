@@ -3,13 +3,12 @@
   FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.TableOfContents-->
 <page:TableOfContents xmlns="http://blockml.org/bml"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
-  xmlns:lpage="org.blockml.bml.bmldocs.lib.page"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:ptype="org.blockml.bml.docgen.pagetype"
   xmlns:dlevel="org.blockml.bml.docgen.level">
 
   <baseType>
-    lpage:BmlDocPage
+    dpage:DocPage
   </baseType>
   <is>
     The blockml.org documentation table of contents
@@ -20,8 +19,8 @@
     Section nodes carry only label and nested items; leaf nodes set target to a page marker.
   </documentation>
   <references>
-    <see type="lpage:BmlDocPage" relation="Extends">
-      bmldocs DocPage base bound to BmlDocSet.
+    <see type="dpage:DocPage" relation="Extends">
+      Docgen human-facing documentation page marker.
     </see>
     <see type="dpage:Navigation" relation="Requires">
       In-page navigation block holding the TOC menu tree.

@@ -90,12 +90,6 @@
         Type reference to the entry / home page of this documentation set.
       </documentation>
     </homePage>
-    <plan type="type:TypeReference(dplan:DocSetPlan)">
-      <documentation>
-        Type reference to the DocSetPlan that defines or guides the intended structure
-        of this DocSet.
-      </documentation>
-    </plan>
     <rootPageGroup type="type:TypeReference(dcore:PageGroup)">
       <documentation>
         Type reference to the top-level PageGroup of this documentation set. Nested
@@ -119,16 +113,5 @@
         List of all available and active learning paths for this DocSet.
       </documentation>
     </learningPaths>
-    <globalRules type="type:TypeReferenceEntity(dcore:Rule)[]">
-      <documentation>
-        Rules that apply globally to everything within this DocSet.
-      </documentation>
-    </globalRules>
-    <authoritativeSources type="type:TypeReferenceEntity(bmlcore:Block)[]">
-      <documentation>
-        Authoritative source Blocks for this DocSet — typically libraries or other
-        Blocks that are the SSOT for generated content.
-      </documentation>
-    </authoritativeSources>
   </aggregations>
 </dcore:DocSet>

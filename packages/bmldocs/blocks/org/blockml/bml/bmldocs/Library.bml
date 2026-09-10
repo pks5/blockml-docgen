@@ -10,7 +10,6 @@
   xmlns:bmldocs="org.blockml.bml.bmldocs"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.page"
-  xmlns:lpage="org.blockml.bml.bmldocs.lib.page"
   xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:pdata="org.blockml.bml.bmldocs.a01_planning.data"
   xmlns:adata="org.blockml.bml.bmldocs.a03_authoring.data"
@@ -66,7 +65,6 @@
         <bmldocs:README />
         <adata:BmlDocSet />
         <pdata:BmlDocSetPlan />
-        <lpage:BmlDocPage />
         <lrule:CodeStyleRule />
         <lrule:CompleteSentenceRule />
         <lrule:OnePrimaryMessageRule />

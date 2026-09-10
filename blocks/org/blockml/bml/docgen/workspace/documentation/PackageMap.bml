@@ -29,7 +29,7 @@
     
     • @blockml/bmldocs → org.blockml.bml.bmldocs.Library
       → packages/bmldocs/blocks/org/blockml/bml/bmldocs/Library.bml
-      blockml.org documentation catalogue: BmlDocSet, BmlDocSetPlan, BmlDocPage,
+      blockml.org documentation catalogue: BmlDocSet, BmlDocSetPlan, DocPage markers,
       site rules, concrete pages under org.blockml.bml.bmldocs.a03_authoring.data.page.docs.*, and
       page groups under org.blockml.bml.bmldocs.a03_authoring.data.page.*. Depends on docgen:Library
       and blockml:Library. Does not carry narrative page prose.
