@@ -1,10 +1,12 @@
-<!--BlockML Documentation Library — README / library reading entry point
+<!--BlockML Documentation Sector Model — README / reading entry point
 
   FQN: org.blockml.bml.bmldocs.README-->
 <bmldocs:README xmlns="http://blockml.org/bml"
   xmlns:bmldocs="org.blockml.bml.bmldocs"
-  xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:pdata="org.blockml.bml.bmldocs.a01_planning.data"
+  xmlns:task="org.blockml.bml.bmldocs.a02_structuring.task"
   xmlns:adata="org.blockml.bml.bmldocs.a03_authoring.data"
+  xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:docgen="org.blockml.bml.docgen"
   xmlns:core="org.blockml.bml.core">
@@ -13,36 +15,43 @@
     core:ReadMe
   </baseType>
   <is>
-    A bmldocs library reading entry point
+    A sector-model reading entry point
   </is>
+  <isNot>
+    A reading entry for a classical cohesive documentation library
+  </isNot>
   <documentation>
-    README for the BlockML documentation library (org.blockml.bml.bmldocs). This library models how
-    blockml.org presents BlockML documentation to humans — TableOfContents menu page and concrete
-    DocPage markers. Concrete pages extend dpage:DocPage.
-    Page structure types live in org.blockml.bml.docgen.page (dependency
-    docgen:Library). Narrative content stays in bml-core; each DocPage points at those sources
-    via references/see (Requires = primary content, SeeAlso = optional context). Routing keys and
-    paths live on DocSet.pageMapping.
+    README for the BlockML documentation sector model (org.blockml.bml.bmldocs). bmldocs is a
+    sector model: numbered sectors (a01_planning, a02_structuring, a03_authoring, …) each contain
+    an autonomous sub-model. A later sector can be produced from an earlier one. The goal is to
+    develop documentation in multiple steps rather than as one monolithic catalogue.
     
-    Start with page:TableOfContents and concrete pages under org.blockml.bml.bmldocs.a03_authoring.data.page.docs.* —
-    introductions, examples, cheat-sheets — not a 1:1 mirror of the core ReadFirst path.
+    docgen is used only as the content-structure foundation inside sectors (DocSetPlan, DocSet,
+    Page, PageGroup, and related types). Sector models are not classical cohesive libraries.
+    
+    Start with this README and bmldocs:Library, then read each sector as its own sub-model.
   </documentation>
   <references>
-    <see type="page:TableOfContents" relation="ReadFirst">
-      Documentation menu page for blockml.org (Navigation tree).
+    <see type="bmldocs:Library" relation="ReadFirst">
+      Sector-model catalog — not a classical cohesive library.
     </see>
-    
-    <see type="dpage:DocPage" relation="Requires">
-      Docgen page marker — baseType of concrete bmldocs pages.
+    <see type="pdata:BmlDocSetPlan" relation="ReadFirst">
+      a01_planning sector — autonomous DocSetPlan sub-model.
     </see>
-    <see type="dpage:Navigation" relation="Requires">
-      In-page navigation block used by TableOfContents and other DocPages.
+    <see type="task:A02_UpdatePageSkeletons" relation="SeeAlso">
+      a02_structuring sector — task that updates page skeletons from earlier sectors.
+    </see>
+    <see type="adata:BmlDocSet_A03" relation="SeeAlso">
+      a03_authoring sector — autonomous authored DocSet sub-model.
     </see>
     <see type="docgen:Library" relation="Requires">
-      Documentation-generation library providing page and content types.
+      Content-structure foundation for models inside sectors — not a site catalogue.
     </see>
-    <see type="bmldocs:Library" relation="SeeAlso">
-      Published catalog of exported bmldocs blocks.
+    <see type="dpage:DocPage" relation="SeeAlso">
+      Docgen page marker specialized by sector page models.
+    </see>
+    <see type="page:TableOfContents" relation="SeeAlso">
+      a03 authoring menu page — one sector artifact, not the model root.
     </see>
   </references>
 </bmldocs:README>

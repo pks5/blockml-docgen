@@ -1,10 +1,10 @@
-<!--BlockML Documentation Library Descriptor
+<!--BlockML Documentation Sector Model Descriptor
 
   Name: Library
   Filename: Library.bml
   FQN: org.blockml.bml.bmldocs.Library
 
-  Models blockml.org site content structure — documentation TOC and page markers.
+  Sector model for stepwise documentation development (a01, a02, …).
   Block .bml sources live under blocks/org/blockml/bml/bmldocs/.-->
 <bmldocs:Library xmlns="http://blockml.org/bml"
   xmlns:blockml="org.blockml.bml"
@@ -23,18 +23,27 @@
     core:BlockLibrary
   </baseType>
   <is>
-    A BlockML documentation library catalog
+    A sector-model catalog for stepwise documentation development
   </is>
+  <isNot>
+    A classical cohesive Block library for one published documentation site
+  </isNot>
   <version>
     0.1.0
   </version>
   <documentation>
-    Publishable BlockML documentation library (org.blockml.bml.bmldocs.Library). Models the structure of
-    blockml.org documentation — table of contents, URL paths, and DocPage markers that point at
-    bml-core documentation as content SSOT. Does not carry narrative page prose.
+    Sector model (org.blockml.bml.bmldocs) for developing documentation in successive steps.
+    The model is partitioned into numbered sectors (a01, a02, …). Each sector holds an
+    autonomous sub-model that may be derived from earlier sectors. Sector models are not
+    classical cohesive libraries.
     
-    Membership is defined exclusively by this file's blocks list — not by directory layout.
-    Version 0.1.0 applies to all exported blocks (framework convention: version only on Library.bml).
+    docgen supplies only the content-structure types that sector models specialize
+    (DocSet, DocSetPlan, Page, PageGroup, and related types). It is the foundation for
+    models inside sectors, not a site catalogue and not the owner of sector content.
+    
+    Membership of this descriptor is defined exclusively by this file's blocks list — not
+    by directory layout. Version 0.1.0 applies to all exported blocks (framework convention:
+    version only on Library.bml).
   </documentation>
   <references>
     <see type="bmldocs:README" relation="ReadFirst">
@@ -46,7 +55,7 @@
   </language>
   <properties>
     <description override="true">
-      <value>BlockML documentation library — documentation structure for blockml.org</value>
+      <value>BlockML documentation sector model — autonomous sector sub-models, not a classical library</value>
     </description>
   </properties>
   <aggregations>

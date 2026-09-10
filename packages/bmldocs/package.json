@@ -1,7 +1,7 @@
 {
   "name": "@blockml/bmldocs",
   "version": "0.1.0",
-  "description": "BlockML library for generating the documentation published on blockml.org",
+  "description": "BlockML sector model for developing documentation in successive autonomous sectors",
   "license": "Apache-2.0",
   "publishConfig": {
     "access": "public"
