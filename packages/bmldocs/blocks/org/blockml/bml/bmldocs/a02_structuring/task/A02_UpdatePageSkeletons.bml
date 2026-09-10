@@ -12,19 +12,74 @@
     A task that updates A02 page skeletons
   </is>
   <documentation>
-    A task that updates A02 page skeletons
+    A02 structuring task: PagePlan.scopes name the topic only. This task reads
+    authorativeSources, selects the matching SSOT Blocks, and writes each page
+    skeleton with a formulated purpose plus see links to those sources. An
+    existing skeleton is overwritten; its content is never used as input. Body
+    content stays for a03.
   </documentation>
   <properties>
     <instructions type="type:Text" override="true">
       <value>
         <![CDATA[
-          - Read org.blockml.bml.bmldocs.a01_planning.data.BmlDocSetPlan
-          - For each page plan create a new page skeleton in org.blockml.bml.bmldocs.a02_structuring.page.* using the relative path specified in the page plan
-          - The page skeleton must extend the base type org.blockml.bml.docgen.core.DocPage
-          - In the skeleton, specify *is*, *documentation*, and *references* and override the properties with the values specified in the page plan
-          - The purpose and documentation must be based on the page plan's scopes
-          - Enrich the contents with data from the authorative sources
-          - Do not implement any aggregations
+          PagePlan carries only name and scopes. scopes is a topic list — what the page
+          is about — not a purpose, title, or outline. Structuring must open the
+          authoritative sources, choose the SSOT Blocks that cover those scopes, and
+          write a formulated purpose from what those Blocks actually say.
+
+          1. Read the plan
+          Read org.blockml.bml.bmldocs.a01_planning.data.BmlDocSetPlan. Walk every nested
+          PagePlan under rootPageGroupPlan. Ignore PageGroupPlan entries.
+
+          2. Open the authoritative sources before writing a page
+          Resolve this task's authorativeSources TypeSelectors (scan type for each
+          selector). Also read BmlDocSetPlan.authoritativeSources (the core Library and
+          the Blocks it owns). For each candidate, inspect is, documentation, and
+          references — do not guess from the FQN or from scopes alone.
+
+          3. Bind sources to scopes
+          For each PagePlan, select the source Blocks whose documented subject matches
+          that page's scopes. Those selected Blocks are the page's authoritative
+          sources. Every page must have at least one Requires source. If several
+          sources match, Requires = primary SSOT for the scopes; SeeAlso = supporting
+          background. Do not attach a source that does not serve the scopes.
+
+          4. Formulate the skeleton from the bound sources
+          Resolve the A02 FQN as
+          org.blockml.bml.bmldocs.a02_structuring.data.page + "." + PagePlan.name
+          (for example docs.FirstBlock →
+          org.blockml.bml.bmldocs.a02_structuring.data.page.docs.FirstBlock).
+          Do not write under DocSetPlan.pageBasePackage (a03). Do not create or edit
+          a03 pages, PageGroups, DocSet, or pageMapping.
+
+          If a skeleton with that name already exists, discard its current content
+          and regenerate the file from the plan and the bound authoritative sources.
+          Existing skeleton content is never authoritative: do not treat it as true,
+          and do not use it as input for generation (not is, documentation, purpose,
+          title, see links, or any other field). Keep only the FQN / file path so
+          the same Block is overwritten. Do not invent pages that are not in the plan.
+
+          Write purpose as a finished renderer instruction: why this page exists and
+          what it must accomplish, grounded in the bound sources (their is /
+          documentation / claims). Do not copy scopes into purpose and do not leave
+          purpose as a topic list.
+
+          Each skeleton must:
+          - use baseType org.blockml.bml.docgen.page.DocPage
+            (not org.blockml.bml.docgen.core.Page)
+          - set is to one short identity sentence informed by the bound sources
+          - set documentation to name the scopes, name the bound source FQNs, and
+            state that body content is authored in a03 from those sources
+          - override title, purpose, detailLevel (org.blockml.bml.docgen.level.*),
+            and pageType (org.blockml.bml.docgen.pagetype.*) from the bound sources
+          - list each bound source as references/see (Requires or SeeAlso)
+          - omit every aggregation, including DocPage.content and Page.rules /
+            authoritativeSources / audiences / semantic lists. Do not author
+            sections, paragraphs, or other page body
+          - omit docset
+
+          Export each A02 skeleton from org.blockml.bml.bmldocs.Library if it is not
+          already in the catalog. Do not remove a03 catalog entries.
         ]]>
       </value>
     </instructions>
