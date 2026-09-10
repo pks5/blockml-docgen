@@ -13,7 +13,8 @@
   <documentation>
     Marker for org.blockml.bml.docgen.workspace.* hub types. This library is
     documentation-only; it does not export capabilities, DocSet types, or runtime APIs.
-    Package contracts live in org.blockml.bml.docgen and org.blockml.bml.bmldocs.
+    Package contracts live in the publishable libraries: docgen as the structuring
+    base, and the bmldocs sector model that generates BlockML documentation from it.
   </documentation>
   <abstract>
     true

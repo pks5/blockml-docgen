@@ -4,7 +4,6 @@
   xmlns:blockml="org.blockml.bml"
   xmlns:core="org.blockml.bml.core"
   xmlns:docgen="org.blockml.bml.docgen"
-  xmlns:bmldocs="org.blockml.bml.bmldocs"
   xmlns:workspace="org.blockml.bml.docgen.workspace"
   xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation">
 
@@ -20,11 +19,12 @@
   <documentation>
     Documentation and SSOT hub for the BlockML Docgen monorepo.
     
-    Linked libraries:
+    This workspace orients two publishable packages:
     
-    - org.blockml.bml.docgen.Library (`@blockml/docgen`)
-    - org.blockml.bml.bmldocs.Library (`@blockml/bmldocs`)
-    - org.blockml.bml.Library (`@blockml/core`)
+    - @blockml/docgen — base library for structuring documentation
+    - @blockml/bmldocs — sector model that generates BlockML documentation on top of docgen
+    
+    @blockml/core supplies language and narrative SSOT that both packages consume.
     
     Direction is workspace → packages only. Membership is defined exclusively by
     this blocks list. This hub does not re-export package blocks; package libraries
@@ -53,7 +53,6 @@
       <composition>
         <blockml:Library />
         <docgen:Library />
-        <bmldocs:Library />
       </composition>
     </dependencies>
     <blocks override="true">

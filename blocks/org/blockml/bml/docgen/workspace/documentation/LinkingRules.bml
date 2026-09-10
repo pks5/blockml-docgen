@@ -22,13 +22,13 @@
        and points at it via package.json blockml.library.
     4. Hub SSOT. The root package.json blockml.library points at this workspace
        Library — the entry for monorepo documentation and orientation.
-    5. Dependency direction. @blockml/bmldocs may depend on @blockml/docgen.
-       @blockml/docgen must not depend on @blockml/bmldocs.
-    6. Layering. docgen types are site-orthogonal. bmldocs specializes them for
-       blockml.org and must not re-implement DocSet, Page, PageElement, Plan, or
-       ManifestationStage in a parallel type tree.
+    5. Dependency direction. The sector-model package may depend on the docgen
+       base library. @blockml/docgen must not depend on the sector-model package.
+    6. Layering. docgen types are the content-structure foundation. The sector
+       model uses them inside sectors and must not re-implement DocSet, Page,
+       PageElement, Plan, or ManifestationStage in a parallel type tree.
     7. Narrative SSOT. Page prose for BlockML itself stays in org.blockml.bml
-       (documentation.* and task.*). bmldocs DocPages reference those sources;
+       (documentation.* and task.*). Sector page models reference those sources;
        they do not duplicate that narrative.
   </documentation>
   <references>

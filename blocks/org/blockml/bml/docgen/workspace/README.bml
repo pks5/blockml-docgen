@@ -3,7 +3,6 @@
 <workspace:README xmlns="http://blockml.org/bml"
   xmlns:core="org.blockml.bml.core"
   xmlns:docgen="org.blockml.bml.docgen"
-  xmlns:bmldocs="org.blockml.bml.bmldocs"
   xmlns:workspace="org.blockml.bml.docgen.workspace"
   xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation">
 
@@ -14,19 +13,21 @@
     Reading entry for the BlockML Docgen workspace library
   </is>
   <documentation>
-    This monorepo authors two publishable BML libraries:
+    This monorepo authors two publishable BML libraries.
     
-    org.blockml.bml.docgen (@blockml/docgen) is the reusable documentation-generation
-    foundation — DocSet, Page, PageGroup, Plans, manifestation stages, page and content
-    types, roles, rules, and semantic annotations. It is orthogonal to any one website.
+    @blockml/docgen is the base library for structuring documentation. It defines
+    DocSet, Page, PageGroup, Plans, manifestation stages, page and content types,
+    roles, rules, and semantic annotations — orthogonal to any one website or
+    documentation programme.
     
-    org.blockml.bml.bmldocs (@blockml/bmldocs) specializes that foundation for
-    blockml.org: BmlDocSet, DocPage markers, page groups, and site rules. Narrative
-    prose stays in org.blockml.bml.documentation.* and org.blockml.bml.task.*; bmldocs
-    pages point at those sources.
+    @blockml/bmldocs is a sector model on top of that foundation. Numbered sectors
+    (a01, a02, …) each hold an autonomous sub-model; later sectors can be produced
+    from earlier ones. The sector model uses docgen only for content structure and
+    generates the BlockML documentation in successive steps. It is not a classical
+    cohesive library.
     
     This library (org.blockml.bml.docgen.workspace.*) is the monorepo documentation hub
-    and SSOT entry. It depends on each package BML library; packages never depend back
+    and SSOT entry. It depends on the base package library; packages never depend back
     here. Start at org.blockml.bml.docgen.workspace.documentation.Introduction.
   </documentation>
   <references>
@@ -36,6 +37,5 @@
     <see type="wsdocumentation:ReadingOrder" relation="SeeAlso" />
     <see type="wsdocumentation:LinkingRules" relation="SeeAlso" />
     <see type="docgen:README" relation="SeeAlso" />
-    <see type="bmldocs:README" relation="SeeAlso" />
   </references>
 </workspace:README>

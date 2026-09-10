@@ -3,7 +3,6 @@
 <wsdocumentation:PackageMap xmlns="http://blockml.org/bml"
   xmlns:core="org.blockml.bml.core"
   xmlns:docgen="org.blockml.bml.docgen"
-  xmlns:bmldocs="org.blockml.bml.bmldocs"
   xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation">
 
   <baseType>
@@ -21,18 +20,17 @@
     
     • @blockml/docgen → org.blockml.bml.docgen.Library
       → packages/docgen/blocks/org/blockml/bml/docgen/Library.bml
-      Reusable documentation-generation catalogue: DocElement branch (DocSet, Page,
+      Base library for structuring documentation: DocElement branch (DocSet, Page,
       PageGroup, PageElement, Plan, Rule, ManifestationStage, DetailLevel, Weight,
       Audience, PageType, ContentRole, SemanticAnnotation), plan types, four
       manifestation stages, page content types, page-type and role specializations,
       rule families, and semantic annotations.
     
-    • @blockml/bmldocs → org.blockml.bml.bmldocs.Library
-      → packages/bmldocs/blocks/org/blockml/bml/bmldocs/Library.bml
-      blockml.org documentation catalogue: BmlDocSet, BmlDocSetPlan, DocPage markers,
-      site rules, concrete pages under org.blockml.bml.bmldocs.a03_authoring.data.page.docs.*, and
-      page groups under org.blockml.bml.bmldocs.a03_authoring.data.page.*. Depends on docgen:Library
-      and blockml:Library. Does not carry narrative page prose.
+    • @blockml/bmldocs
+      → packages/bmldocs/blocks/org/blockml/bml/bmldocs/
+      Sector model that generates BlockML documentation on top of docgen. Numbered
+      sectors (a01, a02, …) are autonomous sub-models, not one classical cohesive
+      library. Uses docgen only for content structure inside sectors.
     
     This hub → org.blockml.bml.docgen.workspace.Library
       → blocks/org/blockml/bml/docgen/workspace/Library.bml
@@ -42,8 +40,6 @@
     <see type="wsdocumentation:ArchitectureOverview" relation="ReadNext" />
     <see type="wsdocumentation:ReadingOrder" relation="SeeAlso" />
     <see type="docgen:Library" relation="SeeAlso" />
-    <see type="bmldocs:Library" relation="SeeAlso" />
     <see type="docgen:README" relation="SeeAlso" />
-    <see type="bmldocs:README" relation="SeeAlso" />
   </references>
 </wsdocumentation:PackageMap>

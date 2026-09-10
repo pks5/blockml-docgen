@@ -3,7 +3,6 @@
 <wsdocumentation:Introduction xmlns="http://blockml.org/bml"
   xmlns:core="org.blockml.bml.core"
   xmlns:docgen="org.blockml.bml.docgen"
-  xmlns:bmldocs="org.blockml.bml.bmldocs"
   xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation">
 
   <baseType>
@@ -14,21 +13,20 @@
   </is>
   <documentation>
     This repository is the BlockML Docgen monorepo. It authors two @blockml/* packages
-    whose BML libraries are the product:
+    whose BML libraries are the product.
     
-    @blockml/docgen (org.blockml.bml.docgen.Library) is the standalone documentation-
-    generation library. It defines how human-facing documentation is modelled and
-    manifested from BlockML — DocSet, Page, PageGroup, Plans, manifestation stages,
-    page and content types, roles, rules, and semantic annotations — without tying
-    those types to one website.
+    @blockml/docgen is the base library for structuring documentation. It defines how
+    human-facing documentation is modelled and manifested from BlockML — DocSet, Page,
+    PageGroup, Plans, manifestation stages, page and content types, roles, rules, and
+    semantic annotations — without tying those types to one website or programme.
     
-    @blockml/bmldocs (org.blockml.bml.bmldocs.Library) is the first concrete site
-    library. It models the blockml.org documentation set: table of contents, URL
-    paths, DocPage markers, page groups, and site rules. It depends on docgen and
-    treats org.blockml.bml.documentation.* / org.blockml.bml.task.* as narrative SSOT.
+    @blockml/bmldocs is a sector model that uses docgen as that structural foundation
+    and generates the BlockML documentation in successive steps. Numbered sectors
+    (a01, a02, …) each contain an autonomous sub-model; a later sector can be produced
+    from an earlier one. Sector models are not classical cohesive libraries.
     
     This workspace library (org.blockml.bml.docgen.workspace.*) is the monorepo
-    documentation hub and SSOT entry for humans and LLMs. It links each package
+    documentation hub and SSOT entry for humans and LLMs. It links the base package
     library via Library.dependencies (workspace → packages only). Per-package
     contracts stay in those libraries; this hub does not re-export their blocks.
     
@@ -39,6 +37,5 @@
     <see type="wsdocumentation:ArchitectureOverview" relation="SeeAlso" />
     <see type="wsdocumentation:LinkingRules" relation="SeeAlso" />
     <see type="docgen:Library" relation="SeeAlso" />
-    <see type="bmldocs:Library" relation="SeeAlso" />
   </references>
 </wsdocumentation:Introduction>

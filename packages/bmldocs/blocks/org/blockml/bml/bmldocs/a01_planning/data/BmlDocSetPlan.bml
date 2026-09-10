@@ -29,9 +29,6 @@
     <see type="dplan:DocSetPlan" relation="Extends">
       Docgen abstract DocSet plan.
     </see>
-    <see type="adata:BmlDocSet" relation="Requires">
-      Concrete DocSet this plan describes.
-    </see>
     <see type="dplan:PageGroupPlan" relation="Requires">
       Root and nested page-group plans in rootPageGroupPlan.
     </see>

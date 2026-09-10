@@ -6,26 +6,24 @@
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:dplan="org.blockml.bml.docgen.plan"
   xmlns:stage="org.blockml.bml.docgen.stage"
-  xmlns:bmldocs="org.blockml.bml.bmldocs"
-  xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:adata="org.blockml.bml.bmldocs.a03_authoring.data"
   xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation">
 
   <baseType>
     core:Documentation
   </baseType>
   <is>
-    How @blockml/docgen and @blockml/bmldocs compose
+    How the docgen base library and the bmldocs sector model compose
   </is>
   <documentation>
-    Two layers, one pipeline.
+    Two libraries, one pipeline.
     
-    org.blockml.bml.docgen is the reusable layer. dcore:DocElement is the semantic
-    base. A dcore:DocSet owns pages (via pageMapping), a root PageGroup tree, a
-    dplan:DocSetPlan, global rules, and authoritativeSources. Pages and groups are
-    structural; PageElements (Section, Paragraph, List, Navigation, CodeBlock, …)
-    carry content. PageType, ContentRole, DetailLevel, Weight, and SemanticAnnotation
-    classify that content. dcore:Rule names generation and authoring constraints.
+    @blockml/docgen is the base library for structuring documentation.
+    dcore:DocElement is the semantic base. A dcore:DocSet owns pages (via
+    pageMapping), a root PageGroup tree, a dplan:DocSetPlan, global rules, and
+    authoritativeSources. Pages and groups are structural; PageElements (Section,
+    Paragraph, List, Navigation, CodeBlock, …) carry content. PageType, ContentRole,
+    DetailLevel, Weight, and SemanticAnnotation classify that content. dcore:Rule
+    names generation and authoring constraints.
     
     Manifestation is staged, not a single compile step:
     
@@ -38,11 +36,11 @@
     4. stage:PageRenderingStage — resolve authoritativeSources and emit the target
        manifestation (for example JSON or HTML).
     
-    org.blockml.bml.bmldocs is the site layer. adata:BmlDocSet extends dcore:DocSet
-    for BlockML core documentation on blockml.org (homePage
-    TableOfContents, rootPageGroup RootPageGroup). Concrete pages extend
-    dpage:DocPage and point at bml-core narrative Blocks. Site rules specialize
-    dcore:Rule. bmldocs does not re-implement docgen types.
+    @blockml/bmldocs is a sector model on that foundation. It uses docgen only for
+    content structure inside sectors and generates the BlockML documentation in
+    successive steps. Each numbered sector (a01, a02, …) is an autonomous sub-model
+    that may be derived from earlier sectors. The sector model does not re-implement
+    docgen types and is not a classical cohesive library.
     
     The workspace hub orients the monorepo. It does not own DocSets, stages, or
     generation capabilities.
@@ -57,8 +55,6 @@
     <see type="stage:DocSetStructuringStage" relation="SeeAlso" />
     <see type="stage:PageAuthoringStage" relation="SeeAlso" />
     <see type="stage:PageRenderingStage" relation="SeeAlso" />
-    <see type="adata:BmlDocSet" relation="SeeAlso" />
     <see type="docgen:Library" relation="SeeAlso" />
-    <see type="bmldocs:Library" relation="SeeAlso" />
   </references>
 </wsdocumentation:ArchitectureOverview>
