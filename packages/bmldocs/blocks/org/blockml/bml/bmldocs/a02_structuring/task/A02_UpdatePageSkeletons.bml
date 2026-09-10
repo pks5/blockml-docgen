@@ -18,9 +18,38 @@
     <instructions type="type:Text" override="true">
       <value>
         <![CDATA[
-          
+          - Read org.blockml.bml.bmldocs.a01_planning.data.BmlDocSetPlan
+          - For each page plan create a new page skeleton in org.blockml.bml.bmldocs.a02_structuring.page.* using the relative path specified in the page plan
+          - The page skeleton must extend the base type org.blockml.bml.docgen.core.DocPage
+          - In the skeleton, specify *is*, *documentation*, and *references* and override the properties with the values specified in the page plan
+          - The purpose and documentation must be based on the page plan's scopes
+          - Enrich the contents with data from the authorative sources
+          - Do not implement any aggregations
         ]]>
       </value>
     </instructions>
   </properties>
+  <aggregations>
+    <authorativeSources type="type:TypeSelectorEntity[]">
+      <composition>
+        <type:TypeSelectorEntity value="org.blockml.bml.docgen.annotation.*" />
+        <type:TypeSelectorEntity value="org.blockml.bml.docgen.capability.*" />
+        <type:TypeSelectorEntity value="org.blockml.bml.constraint.*" />
+        <type:TypeSelectorEntity value="org.blockml.bml.core.*" />
+        <type:TypeSelectorEntity value="org.blockml.bml.definition.*" />
+        <type:TypeSelectorEntity value="org.blockml.bml.documentation.*" />
+        <type:TypeSelectorEntity value="org.blockml.bml.exception.*" />
+        <type:TypeSelectorEntity value="org.blockml.bml.group.*" />
+        <type:TypeSelectorEntity value="org.blockml.bml.language.*" />
+        <type:TypeSelectorEntity value="org.blockml.bml.mapping.*" />
+        <type:TypeSelectorEntity value="org.blockml.bml.meta.*" />
+        <type:TypeSelectorEntity value="org.blockml.bml.relation.*" />
+        <type:TypeSelectorEntity value="org.blockml.bml.service.*" />
+        <type:TypeSelectorEntity value="org.blockml.bml.status.*" />
+        <type:TypeSelectorEntity value="org.blockml.bml.type.*" />
+        <type:TypeSelectorEntity value="org.blockml.bml.unit.*" />
+        <type:TypeSelectorEntity value="org.blockml.bml.validation.*" />
+      </composition>
+    </authorativeSources>
+  </aggregations>
 </task:A02_UpdatePageSkeletons>

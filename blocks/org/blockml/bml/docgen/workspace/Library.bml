@@ -4,6 +4,7 @@
   xmlns:blockml="org.blockml.bml"
   xmlns:core="org.blockml.bml.core"
   xmlns:docgen="org.blockml.bml.docgen"
+  xmlns:bmldocs="org.blockml.bml.bmldocs"
   xmlns:workspace="org.blockml.bml.docgen.workspace"
   xmlns:wsdocumentation="org.blockml.bml.docgen.workspace.documentation">
 
@@ -53,6 +54,7 @@
       <composition>
         <blockml:Library />
         <docgen:Library />
+        <bmldocs:Library />
       </composition>
     </dependencies>
     <blocks override="true">
