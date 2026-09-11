@@ -4,6 +4,7 @@
 <adata:BmlDocSet_A02 xmlns="http://blockml.org/bml"
   xmlns:adata="org.blockml.bml.bmldocs.a02_structuring.data"
   xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:pgroup="org.blockml.bml.bmldocs.a02_structuring.data.pagegroup"
   xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:blockml="org.blockml.bml">
@@ -54,7 +55,7 @@ developers.</value>
       <value>page:TableOfContents</value>
     </homePage>
     <rootPageGroup override="true">
-
+      <value>pgroup:RootPageGroup</value>
     </rootPageGroup>
   </properties>
   <aggregations>
@@ -89,7 +90,16 @@ developers.</value>
     </pages>
     <pageGroups override="true">
       <composition>
-
+        <pgroup:RootPageGroup />
+        <pgroup:DocsPageGroup />
+        <pgroup:GettingStartedPageGroup />
+        <pgroup:CoreIdeasPageGroup />
+        <pgroup:TypesPageGroup />
+        <pgroup:BehaviourPageGroup />
+        <pgroup:LibrariesPageGroup />
+        <pgroup:AuthoringPageGroup />
+        <pgroup:DeeperTopicsPageGroup />
+        <pgroup:HowToPageGroup />
       </composition>
     </pageGroups>
   </aggregations>

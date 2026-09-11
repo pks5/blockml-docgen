@@ -1,0 +1,45 @@
+<!--BlockML Documentation — Getting Started page group (A02 structuring)
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.pagegroup.GettingStartedPageGroup-->
+<pgroup:GettingStartedPageGroup xmlns="http://blockml.org/bml"
+  xmlns:pgroup="org.blockml.bml.bmldocs.a02_structuring.data.pagegroup"
+  xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dcore="org.blockml.bml.docgen.core">
+
+  <baseType>
+    dcore:PageGroup
+  </baseType>
+  <is>
+    A documentation page group for Getting Started
+  </is>
+  <documentation>
+    A02 structuring PageGroup materialized from BmlDocSetPlan
+    (GettingStartedPageGroup, title "Getting Started"). Nests under DocsPageGroup
+    via parentGroup. pages lists this section's PagePlan children in plan order.
+  </documentation>
+  <references>
+    <see type="dcore:PageGroup" relation="Extends">
+      Docgen page group base.
+    </see>
+    <see type="pgroup:DocsPageGroup" relation="Requires">
+      Parent Documentation page group.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Getting Started</value>
+    </title>
+    <parentGroup override="true">
+      <value>pgroup:DocsPageGroup</value>
+    </parentGroup>
+  </properties>
+  <aggregations>
+    <pages override="true">
+      <composition>
+        <page:Intro />
+        <page:FirstBlock />
+        <page:FileAnatomy />
+      </composition>
+    </pages>
+  </aggregations>
+</pgroup:GettingStartedPageGroup>

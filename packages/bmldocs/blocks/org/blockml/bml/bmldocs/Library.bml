@@ -13,6 +13,7 @@
   xmlns:docs="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
   xmlns:task="org.blockml.bml.bmldocs.a02_structuring.task"
   xmlns:adata="org.blockml.bml.bmldocs.a03_authoring.data"
+  xmlns:a02pgroup="org.blockml.bml.bmldocs.a02_structuring.data.pagegroup"
   xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.page"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
@@ -124,6 +125,16 @@
         <pgroup:HowToPageGroup />
         <task:A02_UpdatePageSkeletons />
         <task:A02_UpdatePageGroups />
+        <a02pgroup:RootPageGroup />
+        <a02pgroup:DocsPageGroup />
+        <a02pgroup:GettingStartedPageGroup />
+        <a02pgroup:CoreIdeasPageGroup />
+        <a02pgroup:TypesPageGroup />
+        <a02pgroup:BehaviourPageGroup />
+        <a02pgroup:LibrariesPageGroup />
+        <a02pgroup:AuthoringPageGroup />
+        <a02pgroup:DeeperTopicsPageGroup />
+        <a02pgroup:HowToPageGroup />
         <docs:TableOfContents />
         <docs:Intro />
         <docs:FirstBlock />

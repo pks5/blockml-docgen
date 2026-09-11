@@ -119,12 +119,47 @@
             <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/VisibilityBasics.bml" />
           </changedFiles>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Update A02 page groups" status="Running" captureOutput="true">
+        <workflow:AgenticOperation name="Update A02 page groups" status="Succeeded" captureOutput="true">
           <startedAt>2026-09-11T02:08:43</startedAt>
           <baseCommit>513f60afc27863c6a09108114b88e83a6d908780</baseCommit>
+          <output>`Task.run` on `org.blockml.bml.bmldocs.a02_structuring.task.A02_UpdatePageGroups` — executed. It's an `InstructionTask` (no authoritativeSources), so I carried out its instructions against the a01 plan.
+
+## What was done
+
+**1. Read the plan** — walked `BmlDocSetPlan.rootPageGroupPlan`: 10 `PageGroupPlan` nodes, nested one level deep under `DocsPageGroup`.
+
+**2. Page check** — all 25 planned `PagePlan` targets already exist under `a02_structuring.data.page.docs`, so no `ExecutionException` was thrown; every group links only a02 pages.
+
+**3. Created 10 PageGroups** in `blocks/org/blockml/bml/bmldocs/a02_structuring/data/pagegroup/` (baseType `docgen.core.PageGroup`, `title` from plan, `parentGroup` = A02 FQN of enclosing plan, `pages` in plan order, no `landingPage`, no other aggregations):
+
+| Group | parentGroup | pages |
+|---|---|---|
+| RootPageGroup | — (root) | — |
+| DocsPageGroup | RootPageGroup | TableOfContents |
+| GettingStartedPageGroup | DocsPageGroup | Intro, FirstBlock, FileAnatomy |
+| CoreIdeasPageGroup | DocsPageGroup | EverythingIsABlockPage, DefinitionAndInstance, CompositionBasics |
+| TypesPageGroup | DocsPageGroup | TypesOverview, TypeExpressionsBasics, GenericsBriefly, ConfiguringTypes |
+| BehaviourPageGroup | DocsPageGroup | CapabilitiesIntro, ExpressionsIntro, EmbeddedExpressionsIntro |
+| LibrariesPageGroup | DocsPageGroup | LibrariesAndPackages, ReadmeAndBootstrap |
+| AuthoringPageGroup | DocsPageGroup | ModelingGuidelinesPage, VisibilityBasics, OverridesBasics, ConstraintsBasics, AnnotationsAndDirectives |
+| DeeperTopicsPageGroup | DocsPageGroup | SubBlocksIntro, ContractsIntro, CompilerOverview |
+| HowToPageGroup | DocsPageGroup | AuthorNewBlockGuide |
+
+**4. `BmlDocSet_A02`** — `rootPageGroup` = `pagegroup.RootPageGroup`; `pageGroups` = all 10 in plan order (a02-only).
+
+**5. `Library.bml`** — added the 10 A02 PageGroups to the catalog (new `a02pgroup` namespace); no other-sector entries removed.
+
+**Validation:** `npx blockml validate` → 102 blocks, 0 errors, 0 warnings (39 pre-existing style recommendations, none on the new files). Pages, `pageMapping`, and other sectors' DocSets were left untouched.
+</output>
+          <completedAt>2026-09-11T02:12:40</completedAt>
           <task>
             <a02_task:A02_UpdatePageGroups />
           </task>
+          <changedFiles>
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/Library.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/BmlDocSet_A02.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/pagegroup/" />
+          </changedFiles>
         </workflow:AgenticOperation>
       </composition>
     </operations>
