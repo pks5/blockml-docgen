@@ -12,14 +12,22 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website page for definition versus instance
+    A website page on the Block definition versus instance distinction
   </is>
   <documentation>
-    Structuring skeleton for the “Definition and instance” documentation page. Planned scopes: Block definition, Block instance, definition versus instance distinction. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.DefinitionAndInstance. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "Definition and instance" documentation page. Scopes: Block
+    definition, Block instance, definition versus instance distinction. Bound authoritative
+    sources: org.blockml.bml.documentation.BlockAndInstance,
+    org.blockml.bml.documentation.MemberAuthoring. The a03 authoring stage writes the page body
+    from those sources; this skeleton carries only page identity, the title / purpose /
+    detailLevel / pageType overrides, and the see links to those sources.
   </documentation>
   <references>
     <see type="doc:BlockAndInstance" relation="Requires">
-      Primary content — definition, Block, instance, and composition.
+      Primary content — a Block is a declarative semantic class; a Block instance is an object; the analogy is semantic, not a runtime-OOP mandate.
+    </see>
+    <see type="doc:MemberAuthoring" relation="SeeAlso">
+      Supporting background — how definition-declaration syntax differs from instance-assignment syntax.
     </see>
   </references>
   <properties>
@@ -27,7 +35,7 @@
       <value>Definition and instance</value>
     </title>
     <purpose override="true">
-      <value>Clarify the distinction between Block definitions and Block instances.</value>
+      <value>Make the definition/instance split precise and warn that it is a semantic analogy rather than a claim about runtime objects, so readers stop conflating the two.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Introductory</value>

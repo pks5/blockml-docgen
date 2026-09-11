@@ -12,14 +12,22 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website intro to \${ } expressions
+    A website introduction to the BlockML expression language
   </is>
   <documentation>
-    Structuring skeleton for the “Expressions” documentation page. Planned scopes: dollar-brace expressions, dynamic member values, expression basics. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.ExpressionsIntro. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "Expressions" documentation page. Scopes: dollar-brace
+    expressions, dynamic member values, expression basics. Bound authoritative sources:
+    org.blockml.bml.documentation.Expressions, org.blockml.bml.documentation.EmbeddedExpressions.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
   </documentation>
   <references>
     <see type="doc:Expressions" relation="Requires">
-      Primary content source — expression language, scope, and builtins.
+      Primary content — the dollar-brace expression language as extended JSON used wherever a member value must be derived, computed, or service-bound, plus restricted text interpolation.
+    </see>
+    <see type="doc:EmbeddedExpressions" relation="SeeAlso">
+      Supporting background — the same language used inside Capability implementation embeds, covered on its own page.
     </see>
   </references>
   <properties>
@@ -27,7 +35,7 @@
       <value>Expressions</value>
     </title>
     <purpose override="true">
-      <value>Introduce \${ } expressions for dynamic member values.</value>
+      <value>Introduce the dollar-brace expression language and the situations that call for a dynamic member value, keeping embedded implementations for the next page.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Introductory</value>

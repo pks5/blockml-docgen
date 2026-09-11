@@ -16,20 +16,26 @@
     A website how-to for authoring a new Block
   </is>
   <documentation>
-    Structuring skeleton for the “Author a new Block” documentation page. Planned scopes: new Block checklist, create and publish Block type, procedural how-to. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.AuthorNewBlockGuide. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "Author a new Block" documentation page. Scopes: new Block
+    checklist, create and publish Block type, procedural how-to. Bound authoritative sources:
+    org.blockml.bml.task.AuthorNewBlock, org.blockml.bml.documentation.DocumentationModel,
+    org.blockml.bml.documentation.LibrarySystem, org.blockml.bml.documentation.DefinitionModel.
+    The a03 authoring stage writes the page body (the step sequence) from those sources; this
+    skeleton carries only page identity, the title / purpose / detailLevel / pageType overrides,
+    and the see links to those sources.
   </documentation>
   <references>
     <see type="task:AuthorNewBlock" relation="Requires">
-      Primary content — procedural how-to for a new Block definition.
+      Primary content — the ordered procedure for defining and publishing a new Block.
     </see>
     <see type="doc:DocumentationModel" relation="SeeAlso">
-      Related — is, documentation, and references on a new definition.
+      Supporting background — identity, is, and documentation to place on the new definition.
     </see>
     <see type="doc:LibrarySystem" relation="SeeAlso">
-      Related — exporting the new Block in Library.bml.
+      Supporting background — adding the new Block to the owning Library's blocks list.
     </see>
     <see type="doc:DefinitionModel" relation="SeeAlso">
-      Related — members on the new definition.
+      Supporting background — the member kinds the new definition may declare.
     </see>
   </references>
   <properties>
@@ -37,7 +43,7 @@
       <value>Author a new Block</value>
     </title>
     <purpose override="true">
-      <value>Provide a procedural checklist for creating and publishing a new Block type.</value>
+      <value>Give readers an actionable step-by-step procedure for creating a new Block definition and publishing it in a Library, presented as a checklist rather than concept prose.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Practical</value>

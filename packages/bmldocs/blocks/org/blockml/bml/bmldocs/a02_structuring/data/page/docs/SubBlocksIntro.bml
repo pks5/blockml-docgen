@@ -12,20 +12,22 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website intro to Sub-Blocks
+    A website introduction to Sub-Blocks
   </is>
   <documentation>
-    Structuring skeleton for the “Sub-Blocks” documentation page. Planned scopes: Sub-Blocks, nested types, parent Block nesting. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.SubBlocksIntro. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "Sub-Blocks" documentation page. Scopes: Sub-Blocks, nested types,
+    parent Block nesting. Bound authoritative sources:
+    org.blockml.bml.documentation.SubBlockModel, org.blockml.bml.documentation.TypeIdentityDerivation.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
   </documentation>
   <references>
     <see type="doc:SubBlockModel" relation="Requires">
-      Primary content — Sub-Blocks, visibility, and embedded Blocks.
+      Primary content — Sub-Blocks as Block definitions nested inside a parent, like static nested classes, declared under subBlocks.
     </see>
     <see type="doc:TypeIdentityDerivation" relation="Requires">
-      Primary content — root vs Sub-Block FQN derivation.
-    </see>
-    <see type="doc:MemberVisibility" relation="SeeAlso">
-      Related — visibility of nested types.
+      Primary content — how a Sub-Block's canonical FQN is derived from the parent's prefix.
     </see>
   </references>
   <properties>
@@ -33,7 +35,7 @@
       <value>Sub-Blocks</value>
     </title>
     <purpose override="true">
-      <value>Introduce Sub-Blocks as nested types under a parent Block.</value>
+      <value>Introduce Sub-Blocks as parent-nested definitions that share the parent's FQN prefix and have no enclosing-instance scope, and show how their identity is formed.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Introductory</value>

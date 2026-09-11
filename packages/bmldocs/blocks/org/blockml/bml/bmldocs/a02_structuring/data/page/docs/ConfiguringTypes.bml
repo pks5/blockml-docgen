@@ -12,17 +12,22 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website page for ValueType configuration
+    A website page on configuring ValueType instances
   </is>
   <documentation>
-    Structuring skeleton for the “Configuring ValueTypes” documentation page. Planned scopes: ValueType configuration, curly-brace property config, configured types. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.ConfiguringTypes. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "Configuring ValueTypes" documentation page. Scopes: ValueType
+    configuration, curly-brace property config, configured types. Bound authoritative sources:
+    org.blockml.bml.documentation.ValueTypeConfiguration, org.blockml.bml.documentation.ConstantValueType.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
   </documentation>
   <references>
     <see type="doc:ValueTypeConfiguration" relation="Requires">
-      Primary content source — ValueType instance configuration on property types.
+      Primary content — curly braces configure the property's owned ValueType instance, orthogonal to generic binding, with multiplicity applied afterwards.
     </see>
-    <see type="doc:ConstantValueType" relation="Requires">
-      Primary content source — Constant(T) singleton domains.
+    <see type="doc:ConstantValueType" relation="SeeAlso">
+      Supporting background — Constant(T){value: ...} as a configured singleton domain.
     </see>
   </references>
   <properties>
@@ -30,7 +35,7 @@
       <value>Configuring ValueTypes</value>
     </title>
     <purpose override="true">
-      <value>Explain curly-brace configuration of ValueType instances on properties.</value>
+      <value>Show how curly-brace configuration tunes the ValueType instance a property owns, how it differs from generic binding, and how the two combine on one property.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Introductory</value>

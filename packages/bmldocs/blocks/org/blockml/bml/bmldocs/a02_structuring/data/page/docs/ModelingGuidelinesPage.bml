@@ -12,17 +12,25 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website page of modeling guidelines
+    A website page of practical modeling guidelines
   </is>
   <documentation>
-    Structuring skeleton for the “Modeling guidelines” documentation page. Planned scopes: modeling patterns, practical authoring guidance, non-normative tips. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.ModelingGuidelinesPage. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "Modeling guidelines" documentation page. Scopes: modeling
+    patterns, practical authoring guidance, non-normative tips. Bound authoritative sources:
+    org.blockml.bml.documentation.ModelingGuidelines, org.blockml.bml.documentation.ContractsModel,
+    org.blockml.bml.documentation.ConstraintsModel. The a03 authoring stage writes the page body
+    from those sources; this skeleton carries only page identity, the title / purpose /
+    detailLevel / pageType overrides, and the see links to those sources.
   </documentation>
   <references>
     <see type="doc:ModelingGuidelines" relation="Requires">
-      Primary content — recommended modeling patterns.
+      Primary content — recommended patterns for inheritance, member fragments, and branch membership.
     </see>
     <see type="doc:ContractsModel" relation="SeeAlso">
-      Related — contract patterns referenced by the guidelines.
+      Supporting background — choosing contracts over baseType for shared member fragments.
+    </see>
+    <see type="doc:ConstraintsModel" relation="SeeAlso">
+      Supporting background — where constraints fit into a well-shaped model.
     </see>
   </references>
   <properties>
@@ -30,7 +38,7 @@
       <value>Modeling guidelines</value>
     </title>
     <purpose override="true">
-      <value>Offer practical modeling patterns without becoming a second language specification.</value>
+      <value>Collect practical, non-normative modeling patterns so authors have guidance without turning the page into a second language specification.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Practical</value>

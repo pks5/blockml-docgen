@@ -12,14 +12,22 @@
     dpage:DocPage
   </baseType>
   <is>
-    A short website intro to generics
+    A short website introduction to generics
   </is>
   <documentation>
-    Structuring skeleton for the “Generics briefly” documentation page. Planned scopes: generics, declaring Block parameters, generic type arguments. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.GenericsBriefly. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "Generics briefly" documentation page. Scopes: generics,
+    declaring Block parameters, generic type arguments. Bound authoritative sources:
+    org.blockml.bml.documentation.GenericsModel, org.blockml.bml.documentation.TypeExpressions.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
   </documentation>
   <references>
     <see type="doc:GenericsModel" relation="Requires">
-      Primary content source — generics declarations and binding.
+      Primary content — generic parameters belong to the declaring Block and are never inherited implicitly; a derived Block must bind or forward every base parameter.
+    </see>
+    <see type="doc:TypeExpressions" relation="SeeAlso">
+      Supporting background — generic application as one form of type expression.
     </see>
   </references>
   <properties>
@@ -27,7 +35,7 @@
       <value>Generics briefly</value>
     </title>
     <purpose override="true">
-      <value>Introduce generics as parameters owned by the declaring Block.</value>
+      <value>Explain the ownership and bind-or-forward rule for generic parameters in a short page, sending readers who need more to the type-expression material.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Introductory</value>

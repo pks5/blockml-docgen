@@ -12,17 +12,22 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website intro to partial member overrides
+    A website introduction to partial member overrides
   </is>
   <documentation>
-    Structuring skeleton for the “Overrides” documentation page. Planned scopes: partial member overrides, override true, inheritance merge. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.OverridesBasics. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "Overrides" documentation page. Scopes: partial member overrides,
+    override true, inheritance merge. Bound authoritative sources:
+    org.blockml.bml.documentation.PartialMemberOverrides, org.blockml.bml.documentation.ContractsModel.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
   </documentation>
   <references>
     <see type="doc:PartialMemberOverrides" relation="Requires">
-      Primary content — merge semantics and override flags.
+      Primary content — override="true" merges a local member redeclaration with an inherited or contract-supplied member, and when the flag is required.
     </see>
     <see type="doc:ContractsModel" relation="SeeAlso">
-      Related — member merge across contracts.
+      Supporting background — contract completion uses the same merge rule as baseType refinement.
     </see>
   </references>
   <properties>
@@ -30,7 +35,7 @@
       <value>Overrides</value>
     </title>
     <purpose override="true">
-      <value>Introduce partial member overrides with override="true".</value>
+      <value>Show what override="true" does to an inherited or contract member and when the flag must be present, so authors merge members deliberately.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Introductory</value>

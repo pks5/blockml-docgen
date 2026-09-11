@@ -12,14 +12,22 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website intro to composition
+    A website introduction to composition
   </is>
   <documentation>
-    Structuring skeleton for the “Composition” documentation page. Planned scopes: aggregations, composition fill, child Block instances. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.CompositionBasics. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "Composition" documentation page. Scopes: aggregations,
+    composition fill, child Block instances. Bound authoritative sources:
+    org.blockml.bml.documentation.CompositionModel, org.blockml.bml.documentation.MemberAuthoring.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
   </documentation>
   <references>
     <see type="doc:CompositionModel" relation="Requires">
-      Primary content — aggregation fill, placement, and recursion.
+      Primary content — a Composition fills an Aggregation with concrete child Block instances; nesting on definitions versus direct member-name fill on instances.
+    </see>
+    <see type="doc:MemberAuthoring" relation="SeeAlso">
+      Supporting background — the common mistake of wrapping instance aggregation children in composition.
     </see>
   </references>
   <properties>
@@ -27,7 +35,7 @@
       <value>Composition</value>
     </title>
     <purpose override="true">
-      <value>Explain how aggregations receive child Block instances through composition.</value>
+      <value>Show how an aggregation receives concrete child Block instances through composition, and contrast the definition-side and instance-side syntax so readers avoid the usual wrapper mistakes.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Introductory</value>

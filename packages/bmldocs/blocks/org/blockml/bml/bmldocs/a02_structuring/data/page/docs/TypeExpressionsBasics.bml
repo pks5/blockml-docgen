@@ -12,14 +12,22 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website cheat-sheet for type expressions
+    A cheat-sheet for BlockML type expressions
   </is>
   <documentation>
-    Structuring skeleton for the “Type expressions” documentation page. Planned scopes: type expressions, combining named types, type expression cheat-sheet. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.TypeExpressionsBasics. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "Type expressions" documentation page. Scopes: type expressions,
+    combining named types, type expression cheat-sheet. Bound authoritative sources:
+    org.blockml.bml.documentation.TypeExpressions, org.blockml.bml.documentation.TypeSystemOverview.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
   </documentation>
   <references>
     <see type="doc:TypeExpressions" relation="Requires">
-      Primary content source — multiplicity, unions, and match order.
+      Primary content — multiplicity, unions, generic application, instance configuration, anonymous structs, and match order as uses of named types.
+    </see>
+    <see type="doc:TypeSystemOverview" relation="SeeAlso">
+      Supporting background — the four named ValueType kinds that type expressions build on.
     </see>
   </references>
   <properties>
@@ -27,7 +35,7 @@
       <value>Type expressions</value>
     </title>
     <purpose override="true">
-      <value>Cheat-sheet for combining named types into type expressions.</value>
+      <value>Give readers a quick reference for using and combining named types as expressions — not new type classes — with compact examples for each form.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Introductory</value>

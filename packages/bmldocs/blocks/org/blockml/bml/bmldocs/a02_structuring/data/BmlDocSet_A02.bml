@@ -3,6 +3,7 @@
   FQN: org.blockml.bml.bmldocs.a02_structuring.data.BmlDocSet_A02-->
 <adata:BmlDocSet_A02 xmlns="http://blockml.org/bml"
   xmlns:adata="org.blockml.bml.bmldocs.a02_structuring.data"
+  xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
   xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:blockml="org.blockml.bml">
@@ -21,13 +22,20 @@
     and use cases. Aimed at developers: some material targets junior readers, other parts serve
     advanced and senior developers. The set follows a clear learning path: quick start, fast first
     results, then deeper study when needed.
-    
-    pages and pageGroups list every publishable page and group.
-    homePage points at the TableOfContents menu page; rootPageGroup is RootPageGroup.
+
+    pages lists every A02 structuring skeleton, in a01 BmlDocSetPlan order. homePage points at
+    the TableOfContents menu page. pageGroups and rootPageGroup are populated by the A02
+    page-groups task, not here.
   </documentation>
   <references>
     <see type="dcore:DocSet" relation="Extends">
       Docgen DocSet container.
+    </see>
+    <see type="page:TableOfContents" relation="Requires">
+      Documentation menu page for blockml.org — also homePage.
+    </see>
+    <see type="page:Intro" relation="Requires">
+      Entry content page of this documentation set.
     </see>
   </references>
   <properties>
@@ -43,21 +51,45 @@ developers.</value>
       <value>0.1.0</value>
     </version>
     <homePage override="true">
-      
+      <value>page:TableOfContents</value>
     </homePage>
     <rootPageGroup override="true">
-      
+
     </rootPageGroup>
   </properties>
   <aggregations>
     <pages override="true">
       <composition>
-        
+        <page:TableOfContents />
+        <page:Intro />
+        <page:FirstBlock />
+        <page:FileAnatomy />
+        <page:EverythingIsABlockPage />
+        <page:DefinitionAndInstance />
+        <page:CompositionBasics />
+        <page:TypesOverview />
+        <page:TypeExpressionsBasics />
+        <page:GenericsBriefly />
+        <page:ConfiguringTypes />
+        <page:CapabilitiesIntro />
+        <page:ExpressionsIntro />
+        <page:EmbeddedExpressionsIntro />
+        <page:LibrariesAndPackages />
+        <page:ReadmeAndBootstrap />
+        <page:ModelingGuidelinesPage />
+        <page:VisibilityBasics />
+        <page:OverridesBasics />
+        <page:ConstraintsBasics />
+        <page:AnnotationsAndDirectives />
+        <page:SubBlocksIntro />
+        <page:ContractsIntro />
+        <page:CompilerOverview />
+        <page:AuthorNewBlockGuide />
       </composition>
     </pages>
     <pageGroups override="true">
       <composition>
-        
+
       </composition>
     </pageGroups>
   </aggregations>

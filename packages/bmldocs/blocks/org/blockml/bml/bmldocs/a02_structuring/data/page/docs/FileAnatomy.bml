@@ -12,17 +12,25 @@
     dpage:DocPage
   </baseType>
   <is>
-    A .bml file anatomy cheat-sheet
+    A cheat-sheet for the fields of a .bml root document
   </is>
   <documentation>
-    Structuring skeleton for the “Anatomy of a .bml file” documentation page. Planned scopes: root Block document fields, file structure cheat-sheet, ordered members. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.FileAnatomy. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "Anatomy of a .bml file" documentation page. Scopes: root Block
+    document fields, file structure cheat-sheet, ordered members. Bound authoritative sources:
+    org.blockml.bml.documentation.DocumentationModel, org.blockml.bml.documentation.DocumentFormat,
+    org.blockml.bml.documentation.BlockNameConvention. The a03 authoring stage writes the page
+    body from those sources; this skeleton carries only page identity, the title / purpose /
+    detailLevel / pageType overrides, and the see links to those sources.
   </documentation>
   <references>
     <see type="doc:DocumentationModel" relation="Requires">
-      Primary content — is, documentation, references, examples.
+      Primary content — identity first (name / type / baseType), then is and documentation, then the ordered member sections.
     </see>
-    <see type="doc:BlockNameConvention" relation="Requires">
-      Primary content — PascalCase name rules and type identity.
+    <see type="doc:DocumentFormat" relation="Requires">
+      Primary content — the element-tag document wrapper and the valid authoring formats.
+    </see>
+    <see type="doc:BlockNameConvention" relation="SeeAlso">
+      Supporting background — PascalCase rules for the name field.
     </see>
   </references>
   <properties>
@@ -30,7 +38,7 @@
       <value>Anatomy of a .bml file</value>
     </title>
     <purpose override="true">
-      <value>Give readers a structural cheat-sheet for the ordered fields of a root Block document.</value>
+      <value>Give readers a compact structural map of a root Block document — identity fields, then is and documentation, then the ordered member sections — so they can read and lay out a .bml file with confidence.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Introductory</value>

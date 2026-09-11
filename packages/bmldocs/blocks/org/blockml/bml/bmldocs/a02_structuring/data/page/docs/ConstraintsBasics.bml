@@ -12,17 +12,22 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website intro to constraints
+    A website introduction to constraints
   </is>
   <documentation>
-    Structuring skeleton for the “Constraints” documentation page. Planned scopes: validation rules, constrainable definition elements, reusable constraints. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.ConstraintsBasics. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "Constraints" documentation page. Scopes: validation rules,
+    constrainable definition elements, reusable constraints. Bound authoritative sources:
+    org.blockml.bml.documentation.ConstraintsModel, org.blockml.bml.documentation.ValueTypeConfiguration.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
   </documentation>
   <references>
     <see type="doc:ConstraintsModel" relation="Requires">
-      Primary content — constraints, suggestions, and Enum rules.
+      Primary content — reusable validation rules attached through one constraints container on Blocks and members, with the constraint's type bound from context.
     </see>
     <see type="doc:ValueTypeConfiguration" relation="SeeAlso">
-      Related — constraints attached through ValueType configuration.
+      Supporting background — constraints also reached through ValueType configuration on a property.
     </see>
   </references>
   <properties>
@@ -30,7 +35,7 @@
       <value>Constraints</value>
     </title>
     <purpose override="true">
-      <value>Introduce reusable validation rules on constrainable definition elements.</value>
+      <value>Introduce constraints as reusable, context-bound validation rules on constrainable definition elements, so authors know where they attach and how their type parameter is supplied.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Introductory</value>

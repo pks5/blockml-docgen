@@ -12,17 +12,22 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website page for annotations and bml: directives
+    A website page on annotations and bml directives
   </is>
   <documentation>
-    Structuring skeleton for the “Annotations and directives” documentation page. Planned scopes: annotations, directive namespaces, orthogonal to Definition members. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.AnnotationsAndDirectives. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "Annotations and directives" documentation page. Scopes:
+    annotations, directive namespaces, orthogonal to Definition members. Bound authoritative
+    sources: org.blockml.bml.documentation.AnnotationModel, org.blockml.bml.documentation.BmlDirectives.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
   </documentation>
   <references>
     <see type="doc:AnnotationModel" relation="Requires">
-      Primary content — annotation namespaces and facets.
+      Primary content — annotations formalize directive namespaces and are orthogonal to the Definition meta-model; naming overlap classifies directive form only.
     </see>
     <see type="doc:BmlDirectives" relation="Requires">
-      Primary content — bml:each, bml:if, bml:container, bml:with, bml:xml.
+      Primary content — bml directives as the concrete flow-control and serialization form of that annotation model.
     </see>
   </references>
   <properties>
@@ -30,7 +35,7 @@
       <value>Annotations and directives</value>
     </title>
     <purpose override="true">
-      <value>Frame annotations as directive namespaces orthogonal to Definition members.</value>
+      <value>Frame annotations as directive namespaces that sit beside, not inside, the Definition meta-model, and present bml directives as their built-in concrete form.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Introductory</value>

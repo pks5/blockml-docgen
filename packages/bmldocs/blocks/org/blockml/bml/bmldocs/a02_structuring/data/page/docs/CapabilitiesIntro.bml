@@ -12,17 +12,22 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website intro to Capabilities
+    A website introduction to Capabilities
   </is>
   <documentation>
-    Structuring skeleton for the “Capabilities” documentation page. Planned scopes: Capabilities, behaviour as ordinary members, capability endpoints. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.CapabilitiesIntro. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "Capabilities" documentation page. Scopes: Capabilities, behaviour
+    as ordinary members, capability endpoints. Bound authoritative sources:
+    org.blockml.bml.documentation.CapabilitySemantics, org.blockml.bml.documentation.FunctionMappingModel.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
   </documentation>
   <references>
     <see type="doc:CapabilitySemantics" relation="Requires">
-      Primary content source — behaviour as Capabilities.
+      Primary content — there are no special constructs for constructor, getter, setter, or render; all behaviour is an ordinary Capability with a language-tagged implementation body.
     </see>
-    <see type="doc:FunctionMappingModel" relation="Requires">
-      Primary content source — positional and named Capability call arguments.
+    <see type="doc:FunctionMappingModel" relation="SeeAlso">
+      Supporting background — how call arguments map to a Capability's inputType and outputType.
     </see>
   </references>
   <properties>
@@ -30,7 +35,7 @@
       <value>Capabilities</value>
     </title>
     <purpose override="true">
-      <value>Show that behaviour is expressed as ordinary Capabilities, not special language constructs.</value>
+      <value>Establish that every behaviour BlockML offers is expressed as an ordinary Capability, not a special language keyword, and preview the reading directions an implementation can serve.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Introductory</value>

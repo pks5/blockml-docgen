@@ -12,14 +12,22 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website page for the everything-is-a-Block idea
+    A website page for the everything-is-a-Block principle
   </is>
   <documentation>
-    Structuring skeleton for the “Everything is a Block” documentation page. Planned scopes: Block as universal abstraction, World grammar, core mental model. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.EverythingIsABlockPage. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "Everything is a Block" documentation page. Scopes: Block as
+    universal abstraction, World grammar, core mental model. Bound authoritative sources:
+    org.blockml.bml.documentation.EverythingIsABlock, org.blockml.bml.documentation.WOTFoundation.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
   </documentation>
   <references>
     <see type="doc:EverythingIsABlock" relation="Requires">
-      Primary content source — the central ontological principle.
+      Primary content — one root, one parser, one bootstrap path; domain types, ValueTypes, languages, and documentation are all Blocks.
+    </see>
+    <see type="doc:WOTFoundation" relation="SeeAlso">
+      Supporting background — the Web of Things framing behind the principle, offered as optional context.
     </see>
   </references>
   <properties>
@@ -27,7 +35,7 @@
       <value>Everything is a Block</value>
     </title>
     <purpose override="true">
-      <value>Establish Block as the universal abstraction of a World's grammar.</value>
+      <value>Establish the central mental model — every element of a World's grammar descends from one root Block — so that later pages can rely on it without re-explaining it.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Introductory</value>

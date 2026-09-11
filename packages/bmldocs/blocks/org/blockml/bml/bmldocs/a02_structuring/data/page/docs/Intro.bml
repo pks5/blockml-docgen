@@ -15,11 +15,19 @@
     A short website introduction to BlockML
   </is>
   <documentation>
-    Structuring skeleton for the “What is BlockML?” documentation page. Planned scopes: BlockML overview, mental model, learning path orientation. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.Intro. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "What is BlockML?" documentation page. Scopes: BlockML overview,
+    mental model, learning path orientation. Bound authoritative sources:
+    org.blockml.bml.documentation.Introduction, org.blockml.bml.documentation.EverythingIsABlock.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
   </documentation>
   <references>
     <see type="doc:Introduction" relation="Requires">
-      Primary content source — BlockML goals and overview.
+      Primary content — what BlockML is: a declarative language of composable semantic Blocks, with BML as the authoring format and the BOM as its canonical representation.
+    </see>
+    <see type="doc:EverythingIsABlock" relation="SeeAlso">
+      Supporting background — the everything-is-a-Block mental model the intro previews.
     </see>
   </references>
   <properties>
@@ -27,7 +35,7 @@
       <value>What is BlockML?</value>
     </title>
     <purpose override="true">
-      <value>Give new readers a clear first mental model of BlockML and prepare them for the more detailed concept pages that follow.</value>
+      <value>Give first-time readers BlockML's core idea and vocabulary, then orient them toward the concept pages that follow; keep it to a short introduction rather than a deep dive.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Introductory</value>

@@ -12,14 +12,22 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website intro to member visibility
+    A website introduction to member and Sub-Block visibility
   </is>
   <documentation>
-    Structuring skeleton for the “Visibility” documentation page. Planned scopes: member visibility, Sub-Block visibility, access control. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.VisibilityBasics. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "Visibility" documentation page. Scopes: member visibility,
+    Sub-Block visibility, access control. Bound authoritative sources:
+    org.blockml.bml.documentation.MemberVisibility, org.blockml.bml.documentation.SubBlockModel.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
   </documentation>
   <references>
     <see type="doc:MemberVisibility" relation="Requires">
-      Primary content — visibility naming and access rules.
+      Primary content — visibility (public, protected, private, signalled by naming) governs BlockML authoring access, not how a renderer manifests it.
+    </see>
+    <see type="doc:SubBlockModel" relation="SeeAlso">
+      Supporting background — visibility as it applies to nested Sub-Block types.
     </see>
   </references>
   <properties>
@@ -27,7 +35,7 @@
       <value>Visibility</value>
     </title>
     <purpose override="true">
-      <value>Explain member and Sub-Block visibility as access control in the model.</value>
+      <value>Explain member and Sub-Block visibility as authoring-time access control, and make clear that renderers still see the entire Canonical BOM.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Introductory</value>

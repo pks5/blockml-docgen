@@ -12,17 +12,22 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website page for libraries and packages
+    A website page on libraries and packages
   </is>
   <documentation>
-    Structuring skeleton for the “Libraries and packages” documentation page. Planned scopes: Library publishable unit, packages, domain bml package convention. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.LibrariesAndPackages. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "Libraries and packages" documentation page. Scopes: Library
+    publishable unit, packages, domain bml package convention. Bound authoritative sources:
+    org.blockml.bml.documentation.LibrarySystem, org.blockml.bml.documentation.BmlNamespace.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
   </documentation>
   <references>
     <see type="doc:LibrarySystem" relation="Requires">
-      Primary content — libraries, packages, versioning, and blocks membership.
+      Primary content — a Library is a publishable unit whose membership is defined by its blocks list, not by directory layout.
     </see>
     <see type="doc:BmlNamespace" relation="Requires">
-      Primary content — org.blockml.bml.* layout and domain conventions.
+      Primary content — every BlockML definition must reside below its owning domain's bml package.
     </see>
   </references>
   <properties>
@@ -30,7 +35,7 @@
       <value>Libraries and packages</value>
     </title>
     <purpose override="true">
-      <value>Explain Library as the publishable unit and the domain bml package convention.</value>
+      <value>Explain the Library as the publishable unit defined by its blocks list, and the rule that every definition lives under a domain's bml namespace.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Introductory</value>

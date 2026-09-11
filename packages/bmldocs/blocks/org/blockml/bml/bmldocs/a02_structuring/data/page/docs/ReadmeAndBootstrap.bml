@@ -12,17 +12,22 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website page for README versus Bootstrap
+    A website page on README and bootstrap entry points
   </is>
   <documentation>
-    Structuring skeleton for the “README and Bootstrap” documentation page. Planned scopes: README entry point, compiler bootstrap, human versus machine entry. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.ReadmeAndBootstrap. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "README and Bootstrap" documentation page. Scopes: README entry
+    point, compiler bootstrap, human versus machine entry. Bound authoritative sources:
+    org.blockml.bml.documentation.BootstrapModel, org.blockml.bml.documentation.LibrarySystem.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
   </documentation>
   <references>
     <see type="doc:BootstrapModel" relation="Requires">
-      Primary content — README, Bootstrap SPOE, and interpretation context.
+      Primary content — the human-facing README reading path versus the compiler's self-hosting bootstrap order.
     </see>
     <see type="doc:LibrarySystem" relation="SeeAlso">
-      Related — Library.readMe and Library.bootstrap wiring.
+      Supporting background — how a Library wires its readMe and bootstrap entry points.
     </see>
   </references>
   <properties>
@@ -30,7 +35,7 @@
       <value>README and Bootstrap</value>
     </title>
     <purpose override="true">
-      <value>Distinguish human-facing README from compiler bootstrap entry points.</value>
+      <value>Distinguish the human reading entry (README) from the machine loading entry (bootstrap), and show that a Library carries both.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Introductory</value>

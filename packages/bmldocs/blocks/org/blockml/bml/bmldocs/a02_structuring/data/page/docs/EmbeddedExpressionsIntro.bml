@@ -12,17 +12,22 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website intro to &lt;$ $> embeds
+    A website introduction to embedded expressions in Capability implementations
   </is>
   <documentation>
-    Structuring skeleton for the “Embedded expressions” documentation page. Planned scopes: embedded expressions, Capability implementation bodies, embed syntax. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.EmbeddedExpressionsIntro. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "Embedded expressions" documentation page. Scopes: embedded
+    expressions, Capability implementation bodies, embed syntax. Bound authoritative sources:
+    org.blockml.bml.documentation.EmbeddedExpressions, org.blockml.bml.documentation.CapabilitySemantics.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
   </documentation>
   <references>
     <see type="doc:EmbeddedExpressions" relation="Requires">
-      Primary content source — embeds inside Capability implementations.
+      Primary content — language-neutral expression regions inside a Capability implementation body that the renderer replaces with equivalent target-language code.
     </see>
-    <see type="doc:Expressions" relation="SeeAlso">
-      Related — \${ } expression language contrast.
+    <see type="doc:CapabilitySemantics" relation="SeeAlso">
+      Supporting background — the language-tagged implementation body that hosts the embedded regions.
     </see>
   </references>
   <properties>
@@ -30,7 +35,7 @@
       <value>Embedded expressions</value>
     </title>
     <purpose override="true">
-      <value>Introduce &lt;$ $> embeds inside Capability implementation bodies.</value>
+      <value>Explain how embedded expression regions inside an implementation body are resolved by the renderer, and how that differs from a plain expression member value.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Introductory</value>

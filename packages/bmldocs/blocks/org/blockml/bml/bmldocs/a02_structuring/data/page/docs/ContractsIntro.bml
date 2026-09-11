@@ -12,20 +12,22 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website intro to contracts
+    A website introduction to contracts
   </is>
   <documentation>
-    Structuring skeleton for the “Contracts” documentation page. Planned scopes: contracts, reusable partial definitions, member fragment merge. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.ContractsIntro. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "Contracts" documentation page. Scopes: contracts, reusable
+    partial definitions, member fragment merge. Bound authoritative sources:
+    org.blockml.bml.documentation.ContractsModel, org.blockml.bml.documentation.PartialMemberOverrides.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
   </documentation>
   <references>
     <see type="doc:ContractsModel" relation="Requires">
-      Primary content — contracts, member merge, and type bounds.
+      Primary content — root-level contracts compose reusable partial definitions whose member fragments merge into the effective Block; contrast with single baseType.
     </see>
     <see type="doc:PartialMemberOverrides" relation="SeeAlso">
-      Related — how member fragments merge.
-    </see>
-    <see type="doc:ModelingGuidelines" relation="SeeAlso">
-      Related — when to use contracts versus baseType.
+      Supporting background — the member-merge rule contract completion shares with baseType refinement.
     </see>
   </references>
   <properties>
@@ -33,7 +35,7 @@
       <value>Contracts</value>
     </title>
     <purpose override="true">
-      <value>Introduce contracts as reusable partial definitions that merge member fragments.</value>
+      <value>Introduce contracts as reusable partial definitions merged at the document root, and set them apart from the single-baseType inheritance readers already know.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Introductory</value>

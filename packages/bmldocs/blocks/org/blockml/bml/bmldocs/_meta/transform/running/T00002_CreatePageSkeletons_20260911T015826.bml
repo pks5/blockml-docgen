@@ -46,12 +46,79 @@
   <aggregations>
     <operations override="true">
       <composition>
-        <workflow:AgenticOperation name="Update A02 page skeletons" status="Running" captureOutput="true">
+        <workflow:AgenticOperation name="Update A02 page skeletons" status="Succeeded" captureOutput="true">
           <startedAt>2026-09-11T01:58:26</startedAt>
           <baseCommit>21d9109fc2cf139b7b74bf4a635dee06a59387d9</baseCommit>
+          <output>`Task.run` executed for `org.blockml.bml.bmldocs.a02_structuring.task.A02_UpdatePageSkeletons` (an `InstructionTask`) — operation #1 of the running transform `T00002_CreatePageSkeletons_20260911T015826`.
+
+## Execution trace
+
+| Phase | Result |
+|---|---|
+| `prerequisites` | none defined |
+| `rules` | none defined |
+| `execute()` | followed `instructions` (below) |
+| `successCriteria` | none defined → single pass |
+
+## What `execute()` did
+
+**1. Read the plan** — `a01_planning.data.BmlDocSetPlan`, walked all nested `PagePlan` entries under `rootPageGroupPlan`: 25 pages (all `docs.*`), ignoring `PageGroupPlan` nodes.
+
+**2. Opened authoritative sources** — resolved the task's `authorativeSources` selectors via `scan type`; the SSOT pool for these pages is `org.blockml.bml.documentation.**` (38 narrative guide Blocks), plus `org.blockml.bml.task.AuthorNewBlock` and `org.blockml.bml.docgen.page.Navigation`/`NavigationItem`. Inspected `is` / `documentation` / `references` on every candidate — bindings are grounded in what the Blocks say, not FQN guesses.
+
+**3–4. Regenerated all 25 skeletons** in `…a02_structuring.data.page.docs.*` — existing content discarded, files rewritten from plan + bound sources:
+- `baseType` `dpage:DocPage`; one-sentence `is`
+- `documentation` now names the scopes verbatim, names the bound source **FQNs**, and states the page body is authored in a03 from those sources
+- `purpose` rewritten as a finished renderer instruction grounded in the sources (no longer a scope restatement)
+- `title` / `purpose` / `detailLevel` (`dlevel:*`) / `pageType` (`ptype:*`) overridden
+- each bound source listed as `references/see` with `Requires` (primary SSOT) or `SeeAlso` (background); every page has ≥1 `Requires`
+- no aggregations, no `docset`
+
+**5. Registered on `BmlDocSet_A02`** — `pages` = all 25 skeletons in plan order; `homePage` = `page:TableOfContents` (from `BmlDocSetPlan.homePage`, resolved to the a02 page package). `pageGroups` / `rootPageGroup` left empty for operation #2 (`A02_UpdatePageGroups`). Library catalog already exports all 25 `docs:` pages — no change needed.
+
+## Deviations from literal instruction text
+- **Base type**: instructions say `org.blockml.bml.docgen.page.DocPage` — used as written (real type; matches a03 pages).
+- **Out-of-selector sources**: `AuthorNewBlockGuide` binds `task:AuthorNewBlock` and `TableOfContents` binds `dpage:Navigation`/`NavigationItem` — these lie outside the `authorativeSources` selector list but are the only Blocks whose documented subject serves those pages' scopes, and they match the finished a03 model. Every other page binds only `org.blockml.bml.documentation.*`.
+
+## Validation
+`npx blockml validate` → **92 blocks, 0 errors, 0 warnings**, 39 recommendations (unchanged from baseline — all pre-existing `PREFER_MARKDOWN` / `PREFER_CDATA` style notes; none introduced).
+
+## Changed files (unstaged, no commit)
+- `packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/BmlDocSet_A02.bml`
+- `packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/` (25 skeletons)
+</output>
+          <completedAt>2026-09-11T02:08:43</completedAt>
           <task>
             <a02_task:A02_UpdatePageSkeletons />
           </task>
+          <changedFiles>
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/BmlDocSet_A02.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/AnnotationsAndDirectives.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/AuthorNewBlockGuide.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/CapabilitiesIntro.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/CompilerOverview.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/CompositionBasics.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/ConfiguringTypes.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/ConstraintsBasics.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/ContractsIntro.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/DefinitionAndInstance.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/EmbeddedExpressionsIntro.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/EverythingIsABlockPage.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/ExpressionsIntro.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/FileAnatomy.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/FirstBlock.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/GenericsBriefly.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/Intro.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/LibrariesAndPackages.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/ModelingGuidelinesPage.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/OverridesBasics.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/ReadmeAndBootstrap.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/SubBlocksIntro.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/TableOfContents.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/TypeExpressionsBasics.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/TypesOverview.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/docs/VisibilityBasics.bml" />
+          </changedFiles>
         </workflow:AgenticOperation>
         <workflow:AgenticOperation name="Update A02 page groups" status="Pending" captureOutput="true">
           <task>

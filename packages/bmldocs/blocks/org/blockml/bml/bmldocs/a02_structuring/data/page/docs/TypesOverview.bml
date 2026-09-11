@@ -12,14 +12,22 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website overview of ValueTypes
+    A website overview of the BlockML type system
   </is>
   <documentation>
-    Structuring skeleton for the “Types at a glance” documentation page. Planned scopes: ValueType kinds, type-system entry point, named types overview. Purpose and detailLevel are derived from the a01 BmlDocSetPlan PagePlan docs.TypesOverview. This skeleton carries page identity, properties, and authoritative-source references only; sections and prose are authored in the a03 stage.
+    Structuring skeleton for the "Types at a glance" documentation page. Scopes: ValueType kinds,
+    type-system entry point, named types overview. Bound authoritative sources:
+    org.blockml.bml.documentation.TypeSystemOverview, org.blockml.bml.documentation.TypeExpressions.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
   </documentation>
   <references>
     <see type="doc:TypeSystemOverview" relation="Requires">
-      Primary content source — ValueTypes overview.
+      Primary content — the four ValueType kinds (Primitive, Enum, Struct, Constant) as sibling branches under ValueType.
+    </see>
+    <see type="doc:TypeExpressions" relation="SeeAlso">
+      Supporting background — everything beyond the four kinds is a type expression, covered on its own page.
     </see>
   </references>
   <properties>
@@ -27,7 +35,7 @@
       <value>Types at a glance</value>
     </title>
     <purpose override="true">
-      <value>Introduce the four ValueType kinds as the type-system entry point.</value>
+      <value>Introduce the four ValueType kinds as the entry point to the type pages, making clear they are sibling branches rather than subtypes of one another.</value>
     </purpose>
     <detailLevel override="true">
       <value>dlevel:Introductory</value>
