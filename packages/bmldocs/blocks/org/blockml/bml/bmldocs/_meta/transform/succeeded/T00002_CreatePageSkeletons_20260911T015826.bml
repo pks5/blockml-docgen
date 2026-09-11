@@ -1,15 +1,15 @@
 <!--Workspace program — CreatePageSkeletons
-  FQN: org.blockml.bml.bmldocs._meta.transform.running.T00002_CreatePageSkeletons_20260911T015826-->
-<running:T00002_CreatePageSkeletons_20260911T015826 xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs._meta.transform.succeeded.T00002_CreatePageSkeletons_20260911T015826-->
+<succeeded:T00002_CreatePageSkeletons_20260911T015826 xmlns="http://blockml.org/bml"
   xmlns:core="org.blockml.bml.core"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type"
   xmlns:program="org.blockml.bml.bmldocs.program"
   xmlns:a02_task="org.blockml.bml.bmldocs.a02_structuring.task"
-  xmlns:running="org.blockml.bml.bmldocs._meta.transform.running">
+  xmlns:succeeded="org.blockml.bml.bmldocs._meta.transform.succeeded">
 
   <baseType>
-    workflow:ModelTransformation(running:T00002_CreatePageSkeletons_20260911T015826.Parameters, type:Text)
+    workflow:ModelTransformation(succeeded:T00002_CreatePageSkeletons_20260911T015826.Parameters, type:Text)
   </baseType>
   <is>
     A pending ModelTransformation that creates skeletons for all planned pages.
@@ -19,7 +19,7 @@
       <value>A transformation that creates skeletons for all planned pages.</value>
     </description>
     <status override="true" type="workflow:ExecutionStatus">
-      <value>Running</value>
+      <value>Succeeded</value>
     </status>
     <createdAt override="true" type="type:DateTime">
       <value>2026-09-06T00:00:00</value>
@@ -27,7 +27,7 @@
     <template override="true" type="type:Boolean">
       <value>false</value>
     </template>
-    <parameters override="true" type="running:T00002_CreatePageSkeletons_20260911T015826.Parameters">
+    <parameters override="true" type="succeeded:T00002_CreatePageSkeletons_20260911T015826.Parameters">
       <value>{targetBlock:"org.blockml.bml.workspace.program.RandomBlock"}</value>
     </parameters>
     <executionId override="true" type="type:UUID">
@@ -42,6 +42,12 @@
     <baseCommit override="true" type="type:Text">
       <value>78897083008fed94268c59e114c15d986fd5d01d</value>
     </baseCommit>
+    <completedAt override="true" type="type:DateTime">
+      <value>2026-09-11T02:12:41</value>
+    </completedAt>
+    <duration override="true" type="type:Duration">
+      <value>PT14M15.629S</value>
+    </duration>
   </properties>
   <aggregations>
     <operations override="true">
@@ -149,8 +155,7 @@
 
 **5. `Library.bml`** — added the 10 A02 PageGroups to the catalog (new `a02pgroup` namespace); no other-sector entries removed.
 
-**Validation:** `npx blockml validate` → 102 blocks, 0 errors, 0 warnings (39 pre-existing style recommendations, none on the new files). Pages, `pageMapping`, and other sectors' DocSets were left untouched.
-</output>
+**Validation:** `npx blockml validate` → 102 blocks, 0 errors, 0 warnings (39 pre-existing style recommendations, none on the new files). Pages, `pageMapping`, and other sectors' DocSets were left untouched.</output>
           <completedAt>2026-09-11T02:12:40</completedAt>
           <task>
             <a02_task:A02_UpdatePageGroups />
@@ -177,4 +182,4 @@
       </properties>
     </Parameters>
   </subBlocks>
-</running:T00002_CreatePageSkeletons_20260911T015826>
+</succeeded:T00002_CreatePageSkeletons_20260911T015826>
