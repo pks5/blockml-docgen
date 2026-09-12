@@ -10,11 +10,11 @@
     "library": "./blocks/org/blockml/bml/docgen/workspace/Library.bml"
   },
   "dependencies": {
-    "@blockml/core": "^1.4.0"
+    "@blockml/core": "^1.4.1"
   },
   "devDependencies": {
     "@blockml/bmldocs": "workspace:*",
-    "@blockml/cli": "^0.9.10",
+    "@blockml/cli": "^0.9.11",
     "@blockml/docgen": "workspace:*"
   },
   "scripts": {

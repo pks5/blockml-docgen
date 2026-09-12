@@ -20,6 +20,7 @@
   xmlns:adata="org.blockml.bml.bmldocs.a03_authoring.data"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.pagegroup"
+  xmlns:a03task="org.blockml.bml.bmldocs.a03_authoring.task"
   xmlns:a04_rendering="org.blockml.bml.bmldocs.a04_rendering"
   xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:source="org.blockml.bml.bmldocs.lib.source"
@@ -132,6 +133,9 @@
         <task:A02_UpdateDocSet />
         <task:A02_UpdatePageSkeletons />
         <task:A02_UpdatePageGroups />
+        <a03task:A03_CopyDocSet />
+        <a03task:A03_CopyPageGroups />
+        <a03task:A03_AuthorPages />
         <a02data:BmlDocSet_A02 />
         <a02pgroup:RootPageGroup />
         <a02pgroup:DocsPageGroup />
