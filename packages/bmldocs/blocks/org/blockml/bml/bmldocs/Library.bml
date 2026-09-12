@@ -10,6 +10,7 @@
   xmlns:blockml="org.blockml.bml"
   xmlns:bmldocs="org.blockml.bml.bmldocs"
   xmlns:pdata="org.blockml.bml.bmldocs.a01_planning.data"
+  xmlns:a02data="org.blockml.bml.bmldocs.a02_structuring.data"
   xmlns:docs="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
   xmlns:a02pgroup="org.blockml.bml.bmldocs.a02_structuring.data.pagegroup"
   xmlns:task="org.blockml.bml.bmldocs.a02_structuring.task"
@@ -127,6 +128,7 @@
         <task:A02_UpdateDocSet />
         <task:A02_UpdatePageSkeletons />
         <task:A02_UpdatePageGroups />
+        <a02data:BmlDocSet_A02 />
         <a02pgroup:RootPageGroup />
         <a02pgroup:DocsPageGroup />
         <a02pgroup:GettingStartedPageGroup />

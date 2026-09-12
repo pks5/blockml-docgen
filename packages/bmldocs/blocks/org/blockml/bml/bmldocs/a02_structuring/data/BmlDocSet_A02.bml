@@ -1,0 +1,53 @@
+<!--BlockML Documentation — cohesive BlockML core documentation set
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.BmlDocSet_A02-->
+<adata:BmlDocSet_A02 xmlns="http://blockml.org/bml"
+  xmlns:adata="org.blockml.bml.bmldocs.a02_structuring.data"
+  xmlns:dcore="org.blockml.bml.docgen.core">
+
+  <baseType>
+    dcore:DocSet
+  </baseType>
+  <is>
+    The BlockML core documentation set
+  </is>
+  <isNot>
+    A single DocPage or a bml-core narrative Documentation Block
+  </isNot>
+  <documentation>
+    The complete documentation set for BlockML core — syntax, rules, examples, best practices,
+    and use cases — with a learning path from quick start to deep study for junior through
+    senior developers.
+
+    pages and homePage are filled by A02_UpdatePageSkeletons. pageGroups and rootPageGroup are
+    filled by A02_UpdatePageGroups. Both aggregations are declared empty here.
+  </documentation>
+  <references>
+    <see type="dcore:DocSet" relation="Extends">
+      Docgen DocSet container.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>BlockML Documentation</value>
+    </title>
+    <summary override="true">
+      <value>Complete BlockML core documentation — syntax, rules, examples, best practices, and
+use cases — with a learning path from quick start to deep study for junior through senior
+developers.</value>
+    </summary>
+    <version override="true">
+      <value>0.1.0</value>
+    </version>
+  </properties>
+  <aggregations>
+    <pages override="true">
+      <composition>
+      </composition>
+    </pages>
+    <pageGroups override="true">
+      <composition>
+      </composition>
+    </pageGroups>
+  </aggregations>
+</adata:BmlDocSet_A02>
