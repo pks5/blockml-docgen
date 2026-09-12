@@ -1,8 +1,8 @@
 <!--BlockML Documentation — Getting Started page group
 
-  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.GettingStartedPageGroup-->
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.pagegroup.GettingStartedPageGroup-->
 <pgroup:GettingStartedPageGroup xmlns="http://blockml.org/bml"
-  xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.page"
+  xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.pagegroup"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dcore="org.blockml.bml.docgen.core">
 

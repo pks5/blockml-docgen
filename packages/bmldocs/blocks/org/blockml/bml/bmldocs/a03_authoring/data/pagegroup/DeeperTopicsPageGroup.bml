@@ -1,8 +1,8 @@
 <!--BlockML Documentation — Deeper Topics page group
 
-  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.DeeperTopicsPageGroup-->
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.pagegroup.DeeperTopicsPageGroup-->
 <pgroup:DeeperTopicsPageGroup xmlns="http://blockml.org/bml"
-  xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.page"
+  xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.pagegroup"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dcore="org.blockml.bml.docgen.core">
 

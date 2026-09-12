@@ -5,7 +5,7 @@
   xmlns:adata="org.blockml.bml.bmldocs.a03_authoring.data"
   xmlns:pdata="org.blockml.bml.bmldocs.a01_planning.data"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
-  xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.page"
+  xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.pagegroup"
   xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:blockml="org.blockml.bml">
