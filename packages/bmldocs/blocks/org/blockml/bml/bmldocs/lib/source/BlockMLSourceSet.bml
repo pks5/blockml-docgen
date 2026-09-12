@@ -26,8 +26,6 @@
   <aggregations>
     <includedTypes override="true">
       <composition>
-        <type:TypeSelectorEntity value="org.blockml.bml.docgen.annotation.**" />
-        <type:TypeSelectorEntity value="org.blockml.bml.docgen.capability.**" />
         <type:TypeSelectorEntity value="org.blockml.bml.constraint.**" />
         <type:TypeSelectorEntity value="org.blockml.bml.core.**" />
         <type:TypeSelectorEntity value="org.blockml.bml.definition.**" />
