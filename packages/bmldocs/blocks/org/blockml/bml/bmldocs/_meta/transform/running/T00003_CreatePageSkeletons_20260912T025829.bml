@@ -63,8 +63,7 @@
 - `packages/bmldocs/blocks/org/blockml/bml/bmldocs/Library.bml`
 - `packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/BmlDocSet_A02.bml`
 
-One note: I could not update the running transform record (`_meta/transform/running/T00003_...bml`, operation #1 → `Succeeded`) or commit — edits under that `_meta` path are blocked by your permission settings, and you haven't asked me to commit. If a separate step is meant to flip that operation's status and commit `transform(operation): T00003_CreatePageSkeletons_20260912T025829 #1`, that's still pending.
-</output>
+One note: I could not update the running transform record (`_meta/transform/running/T00003_...bml`, operation #1 → `Succeeded`) or commit — edits under that `_meta` path are blocked by your permission settings, and you haven't asked me to commit. If a separate step is meant to flip that operation's status and commit `transform(operation): T00003_CreatePageSkeletons_20260912T025829 #1`, that's still pending.</output>
           <completedAt>2026-09-12T03:03:05</completedAt>
           <task>
             <a02_task:A02_UpdateDocSet />
@@ -74,7 +73,9 @@ One note: I could not update the running transform record (`_meta/transform/runn
             <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/" />
           </changedFiles>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Update A02 page skeletons" status="Pending" captureOutput="true">
+        <workflow:AgenticOperation name="Update A02 page skeletons" status="Running" captureOutput="true">
+          <startedAt>2026-09-12T03:03:05</startedAt>
+          <baseCommit>8e51a208dd1655294e36c7aaad9a22d01323d9c3</baseCommit>
           <task>
             <a02_task:A02_UpdatePageSkeletons />
           </task>
