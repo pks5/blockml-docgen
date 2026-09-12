@@ -99,8 +99,7 @@ One note: I could not update the running transform record (`_meta/transform/runn
 - `packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/BmlDocSet_A02.bml`
 - `packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/` (25 new skeletons)
 
-I left the running transform record (`_meta/transform/running/T00003_...bml`) and git state untouched, matching how operation #1 ended — flipping that operation to `Succeeded` and committing `transform(operation): T00003_CreatePageSkeletons_20260912T025829 #2` appears to be a separate step you haven't asked me to take.
-</output>
+I left the running transform record (`_meta/transform/running/T00003_...bml`) and git state untouched, matching how operation #1 ended — flipping that operation to `Succeeded` and committing `transform(operation): T00003_CreatePageSkeletons_20260912T025829 #2` appears to be a separate step you haven't asked me to take.</output>
           <completedAt>2026-09-12T03:11:01</completedAt>
           <task>
             <a02_task:A02_UpdatePageSkeletons />
@@ -110,7 +109,9 @@ I left the running transform record (`_meta/transform/running/T00003_...bml`) an
             <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/" />
           </changedFiles>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Update A02 page groups" status="Pending" captureOutput="true">
+        <workflow:AgenticOperation name="Update A02 page groups" status="Running" captureOutput="true">
+          <startedAt>2026-09-12T03:11:01</startedAt>
+          <baseCommit>4e05376c9f67e4d3a939416c0c5e4b7b4e48e3c0</baseCommit>
           <task>
             <a02_task:A02_UpdatePageGroups />
           </task>
