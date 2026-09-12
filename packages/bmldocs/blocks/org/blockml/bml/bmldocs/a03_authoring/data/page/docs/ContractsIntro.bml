@@ -5,7 +5,9 @@
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:doc="org.blockml.bml.documentation">
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type">
 
   <baseType>
     dpage:DocPage
@@ -42,9 +44,13 @@
   <aggregations>
     <authoritativeSources override="true">
       <composition>
-        <doc:ContractsModel />
-        <doc:PartialMemberOverrides />
-        <doc:ModelingGuidelines />
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ContractsModel" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.PartialMemberOverrides" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ModelingGuidelines" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
       </composition>
     </authoritativeSources>
     <learningObjectives override="true">

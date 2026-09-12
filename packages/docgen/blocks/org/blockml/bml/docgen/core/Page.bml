@@ -5,8 +5,8 @@
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.docgen.page"
-  xmlns:core="org.blockml.bml.core"
-  xmlns:type="org.blockml.bml.type">
+  xmlns:type="org.blockml.bml.type"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
 
   <baseType>
     dcore:DocElement
@@ -44,9 +44,8 @@
     <see type="dcore:Rule" relation="Requires">
       Page-local rules via rules aggregation; apply in addition to DocSet.globalRules.
     </see>
-    <see type="core:Block" relation="Requires">
-      Authoritative source Blocks via authoritativeSources TypeReferenceEntity aggregation —
-      page-wide.
+    <see type="workflow:AuthorativeSourceSet" relation="Requires">
+      Authoritative source sets via authoritativeSources aggregation — page-wide.
     </see>
     <see type="dcore:Audience" relation="Requires">
       Audiences via audiences TypeReferenceEntity aggregation — page-wide.
@@ -112,9 +111,9 @@
           DocSet.
       </documentation>
     </rules>
-    <authoritativeSources type="type:TypeReferenceEntity(core:Block)[]">
+    <authoritativeSources type="workflow:AuthorativeSourceSet[]">
       <documentation>
-        Authoritative source Blocks this page relates to — apply to the whole
+        Authoritative source sets this page relates to — apply to the whole
         page.
       </documentation>
     </authoritativeSources>
