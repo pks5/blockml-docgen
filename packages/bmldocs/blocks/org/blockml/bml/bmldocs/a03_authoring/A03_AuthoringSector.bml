@@ -1,0 +1,30 @@
+<!--BlockML Documentation — A03 authoring sector
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.A03_AuthoringSector-->
+<a03_authoring:A03_AuthoringSector xmlns="http://blockml.org/bml"
+  xmlns:a03_authoring="org.blockml.bml.bmldocs.a03_authoring"
+  xmlns:bmldocs="org.blockml.bml.bmldocs"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    workflow:Sector
+  </baseType>
+  <is>
+    The authoring sector for page content structure
+  </is>
+  <isNot>
+    The whole BML docs sector model or a planning, structuring, or rendering sector
+  </isNot>
+  <documentation>
+    Third generation step: create the content structure of the pages.
+    This Block designates `org.blockml.bml.bmldocs.a03_authoring` as a sector.
+  </documentation>
+  <references>
+    <see type="workflow:Sector" relation="Extends">
+      Abstract sector type.
+    </see>
+    <see type="bmldocs:BmlDocsSectorModel" relation="Requires">
+      Sector model that lists this sector.
+    </see>
+  </references>
+</a03_authoring:A03_AuthoringSector>

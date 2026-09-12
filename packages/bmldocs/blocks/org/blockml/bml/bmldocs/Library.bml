@@ -9,14 +9,18 @@
 <bmldocs:Library xmlns="http://blockml.org/bml"
   xmlns:blockml="org.blockml.bml"
   xmlns:bmldocs="org.blockml.bml.bmldocs"
+  xmlns:a01_planning="org.blockml.bml.bmldocs.a01_planning"
   xmlns:pdata="org.blockml.bml.bmldocs.a01_planning.data"
+  xmlns:a02_structuring="org.blockml.bml.bmldocs.a02_structuring"
   xmlns:a02data="org.blockml.bml.bmldocs.a02_structuring.data"
   xmlns:docs="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
   xmlns:a02pgroup="org.blockml.bml.bmldocs.a02_structuring.data.pagegroup"
   xmlns:task="org.blockml.bml.bmldocs.a02_structuring.task"
+  xmlns:a03_authoring="org.blockml.bml.bmldocs.a03_authoring"
   xmlns:adata="org.blockml.bml.bmldocs.a03_authoring.data"
-  xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.pagegroup"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.pagegroup"
+  xmlns:a04_rendering="org.blockml.bml.bmldocs.a04_rendering"
   xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:source="org.blockml.bml.bmldocs.lib.source"
   xmlns:core="org.blockml.bml.core"
@@ -165,6 +169,11 @@
         <docs:CompilerOverview />
         <docs:AuthorNewBlockGuide />
         <source:BlockMLSourceSet />
+        <a01_planning:A01_PlanningSector />
+        <a02_structuring:A02_StructuringSector />
+        <a03_authoring:A03_AuthoringSector />
+        <a04_rendering:A04_RenderingSector />
+        <bmldocs:BmlDocsSectorModel />
       </composition>
     </blocks>
   </aggregations>

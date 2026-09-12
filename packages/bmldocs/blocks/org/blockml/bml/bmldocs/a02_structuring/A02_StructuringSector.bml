@@ -1,0 +1,31 @@
+<!--BlockML Documentation — A02 structuring sector
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.A02_StructuringSector-->
+<a02_structuring:A02_StructuringSector xmlns="http://blockml.org/bml"
+  xmlns:a02_structuring="org.blockml.bml.bmldocs.a02_structuring"
+  xmlns:bmldocs="org.blockml.bml.bmldocs"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    workflow:Sector
+  </baseType>
+  <is>
+    The structuring sector for DocSet, page groups, and pages
+  </is>
+  <isNot>
+    The whole BML docs sector model or a planning, authoring, or rendering sector
+  </isNot>
+  <documentation>
+    Second generation step: create the basic structure for the DocSet,
+    page groups, and pages. This Block designates
+    `org.blockml.bml.bmldocs.a02_structuring` as a sector.
+  </documentation>
+  <references>
+    <see type="workflow:Sector" relation="Extends">
+      Abstract sector type.
+    </see>
+    <see type="bmldocs:BmlDocsSectorModel" relation="Requires">
+      Sector model that lists this sector.
+    </see>
+  </references>
+</a02_structuring:A02_StructuringSector>

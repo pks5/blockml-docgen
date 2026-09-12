@@ -1,0 +1,30 @@
+<!--BlockML Documentation — A04 rendering sector
+
+  FQN: org.blockml.bml.bmldocs.a04_rendering.A04_RenderingSector-->
+<a04_rendering:A04_RenderingSector xmlns="http://blockml.org/bml"
+  xmlns:a04_rendering="org.blockml.bml.bmldocs.a04_rendering"
+  xmlns:bmldocs="org.blockml.bml.bmldocs"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    workflow:Sector
+  </baseType>
+  <is>
+    The rendering sector for documentation pages
+  </is>
+  <isNot>
+    The whole BML docs sector model or a planning, structuring, or authoring sector
+  </isNot>
+  <documentation>
+    Fourth generation step: render the pages. This Block designates
+    `org.blockml.bml.bmldocs.a04_rendering` as a sector.
+  </documentation>
+  <references>
+    <see type="workflow:Sector" relation="Extends">
+      Abstract sector type.
+    </see>
+    <see type="bmldocs:BmlDocsSectorModel" relation="Requires">
+      Sector model that lists this sector.
+    </see>
+  </references>
+</a04_rendering:A04_RenderingSector>

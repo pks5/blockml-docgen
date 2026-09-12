@@ -1,0 +1,58 @@
+<!--BlockML Documentation — sector model for BML docs generation
+
+  FQN: org.blockml.bml.bmldocs.BmlDocsSectorModel-->
+<bmldocs:BmlDocsSectorModel xmlns="http://blockml.org/bml"
+  xmlns:bmldocs="org.blockml.bml.bmldocs"
+  xmlns:a01_planning="org.blockml.bml.bmldocs.a01_planning"
+  xmlns:a02_structuring="org.blockml.bml.bmldocs.a02_structuring"
+  xmlns:a03_authoring="org.blockml.bml.bmldocs.a03_authoring"
+  xmlns:a04_rendering="org.blockml.bml.bmldocs.a04_rendering"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    workflow:SectorModel
+  </baseType>
+  <is>
+    The sector model for generating BML documentation
+  </is>
+  <isNot>
+    A single Sector, a ModelTransformation, or a published documentation site
+  </isNot>
+  <documentation>
+    bmldocs representation of the sector model that generates the BlockML
+    documentation. Generation is divided into four successive steps; each
+    step is a `workflow:Sector` that designates its package.
+
+    1. A01_PlanningSector — plan the documentation
+    2. A02_StructuringSector — create the DocSet, page-group, and page structure
+    3. A03_AuthoringSector — author the content structure of the pages
+    4. A04_RenderingSector — render the pages
+  </documentation>
+  <references>
+    <see type="workflow:SectorModel" relation="Extends">
+      Abstract sector-model type.
+    </see>
+    <see type="a01_planning:A01_PlanningSector" relation="Defines">
+      Planning sector.
+    </see>
+    <see type="a02_structuring:A02_StructuringSector" relation="Defines">
+      Structuring sector.
+    </see>
+    <see type="a03_authoring:A03_AuthoringSector" relation="Defines">
+      Authoring sector.
+    </see>
+    <see type="a04_rendering:A04_RenderingSector" relation="Defines">
+      Rendering sector.
+    </see>
+  </references>
+  <aggregations>
+    <sectors override="true">
+      <composition>
+        <a01_planning:A01_PlanningSector />
+        <a02_structuring:A02_StructuringSector />
+        <a03_authoring:A03_AuthoringSector />
+        <a04_rendering:A04_RenderingSector />
+      </composition>
+    </sectors>
+  </aggregations>
+</bmldocs:BmlDocsSectorModel>

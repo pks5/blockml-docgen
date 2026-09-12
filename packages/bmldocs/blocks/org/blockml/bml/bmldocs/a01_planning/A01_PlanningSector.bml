@@ -1,0 +1,31 @@
+<!--BlockML Documentation — A01 planning sector
+
+  FQN: org.blockml.bml.bmldocs.a01_planning.A01_PlanningSector-->
+<a01_planning:A01_PlanningSector xmlns="http://blockml.org/bml"
+  xmlns:a01_planning="org.blockml.bml.bmldocs.a01_planning"
+  xmlns:bmldocs="org.blockml.bml.bmldocs"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    workflow:Sector
+  </baseType>
+  <is>
+    The planning sector for BML documentation
+  </is>
+  <isNot>
+    The whole BML docs sector model or a later structuring, authoring, or rendering sector
+  </isNot>
+  <documentation>
+    First generation step: plan the documentation. This Block designates
+    `org.blockml.bml.bmldocs.a01_planning` as a sector. The sector holds the
+    DocSetPlan and related planning artifacts that later sectors read.
+  </documentation>
+  <references>
+    <see type="workflow:Sector" relation="Extends">
+      Abstract sector type.
+    </see>
+    <see type="bmldocs:BmlDocsSectorModel" relation="Requires">
+      Sector model that lists this sector.
+    </see>
+  </references>
+</a01_planning:A01_PlanningSector>
