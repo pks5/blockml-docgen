@@ -73,12 +73,42 @@ One note: I could not update the running transform record (`_meta/transform/runn
             <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/" />
           </changedFiles>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Update A02 page skeletons" status="Running" captureOutput="true">
+        <workflow:AgenticOperation name="Update A02 page skeletons" status="Succeeded" captureOutput="true">
           <startedAt>2026-09-12T03:03:05</startedAt>
           <baseCommit>8e51a208dd1655294e36c7aaad9a22d01323d9c3</baseCommit>
+          <output>No changes there — matching the previous operation's boundary. The task is complete.
+
+## Summary
+
+`Task.run` on `A02_UpdatePageSkeletons` executed — operation #2 of the running transform `T00003_CreatePageSkeletons_20260912T025829`.
+
+**1. Read the plan** — `BmlDocSetPlan.rootPageGroupPlan`: 25 `PagePlan` entries across 9 groups.
+
+**2. Sources** — resolved `BlockMLSourceSet` (whitelist: `core/definition/documentation/type/…`). Found a strong prior draft (from the earlier, since-reset `T00002` run) and independently re-verified every bound source against the live `@blockml/core` model rather than trusting it:
+- Confirmed the `is`/`documentation` text of ~30 `org.blockml.bml.documentation.*` Blocks actually supports each page's claims.
+- Caught one stale binding: `org.blockml.bml.task.AuthorNewBlock` no longer exists — the package moved to `org.blockml.bml.documentation.howto.AuthorNewBlock`. Fixed `AuthorNewBlockGuide.bml` accordingly.
+- Kept the one deliberate exception outside the whitelist: `TableOfContents` binds to `org.blockml.bml.docgen.page.Navigation`/`NavigationItem`, since no narrative source covers the navigation-menu topic and these structural Blocks are literally the SSOT for it.
+
+**3–4. Wrote 25 skeletons** under `a02_structuring/data/page/docs/` — `dpage:DocPage` baseType, `is`/`documentation`/`purpose`/`detailLevel`/`pageType` set, bound sources listed as `Requires`/`SeeAlso`, no body aggregations.
+
+**5. Registered on `BmlDocSet_A02`** — filled `pages` (25 entries, plan order) and `homePage` → `docs:TableOfContents`. `pageGroups` left empty (that's task #3's job). `Library.bml` already exported every `docs:*` page from before, so no catalog change was needed there.
+
+**Validation** (`npx blockml validate --all`): only the pre-existing, out-of-scope `pagegroup:*` unknown-type errors remain (op #3's responsibility). No errors, no warnings on any file I touched — only the same `PREFER_MARKDOWN` style recommendations already present on sibling a03 pages. (I did hit and fix a self-inflicted issue along the way: a bulk `sed` cleanup of unused `dlevel:`/`ptype:` namespace warnings briefly corrupted `TableOfContents.bml`'s opening tag; caught it via validate and repaired it.)
+
+**Changed files** (unstaged, no commit):
+- `packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/BmlDocSet_A02.bml`
+- `packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/` (25 new skeletons)
+
+I left the running transform record (`_meta/transform/running/T00003_...bml`) and git state untouched, matching how operation #1 ended — flipping that operation to `Succeeded` and committing `transform(operation): T00003_CreatePageSkeletons_20260912T025829 #2` appears to be a separate step you haven't asked me to take.
+</output>
+          <completedAt>2026-09-12T03:11:01</completedAt>
           <task>
             <a02_task:A02_UpdatePageSkeletons />
           </task>
+          <changedFiles>
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/BmlDocSet_A02.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/" />
+          </changedFiles>
         </workflow:AgenticOperation>
         <workflow:AgenticOperation name="Update A02 page groups" status="Pending" captureOutput="true">
           <task>

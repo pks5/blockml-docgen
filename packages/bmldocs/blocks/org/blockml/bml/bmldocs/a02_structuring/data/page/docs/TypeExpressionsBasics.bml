@@ -1,0 +1,45 @@
+<!--BlockML Documentation — Type expressions (structuring skeleton)
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.TypeExpressionsBasics-->
+<page:TypeExpressionsBasics xmlns="http://blockml.org/bml"
+  xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A cheat-sheet for BlockML type expressions
+  </is>
+  <documentation>
+    Structuring skeleton for the "Type expressions" documentation page. Scopes: type expressions,
+    combining named types, type expression cheat-sheet. Bound authoritative sources:
+    org.blockml.bml.documentation.TypeExpressions, org.blockml.bml.documentation.TypeSystemOverview.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
+  </documentation>
+  <references>
+    <see type="doc:TypeExpressions" relation="Requires">
+      Primary content — multiplicity, unions, generic application, instance configuration, anonymous structs, and match order as uses of named types.
+    </see>
+    <see type="doc:TypeSystemOverview" relation="SeeAlso">
+      Supporting background — the four named ValueType kinds that type expressions build on.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Type expressions</value>
+    </title>
+    <purpose override="true">
+      <value>Give readers a quick reference for using and combining named types as expressions — not new type classes — with compact examples for each form.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Guide</value>
+    </pageType>
+  </properties>
+</page:TypeExpressionsBasics>

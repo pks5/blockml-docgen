@@ -1,0 +1,45 @@
+<!--BlockML Documentation — How the compiler works (structuring skeleton)
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.CompilerOverview-->
+<page:CompilerOverview xmlns="http://blockml.org/bml"
+  xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A high-level website overview of the compiler pipeline
+  </is>
+  <documentation>
+    Structuring skeleton for the "How the compiler works" documentation page. Scopes: compiler
+    pipeline, high-level processing stages, non-normative overview. Bound authoritative sources:
+    org.blockml.bml.documentation.CompilerArchitecture, org.blockml.bml.documentation.RendererFreedom.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
+  </documentation>
+  <references>
+    <see type="doc:CompilerArchitecture" relation="Requires">
+      Primary content — the BML to parser to immutable BOM to validator and render-target sketch, kept to overview level.
+    </see>
+    <see type="doc:RendererFreedom" relation="Requires">
+      Primary content — the render target decides cardinality, format, and semantics of the output.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>How the compiler works</value>
+    </title>
+    <purpose override="true">
+      <value>Give readers a non-normative sketch of the pipeline stages and make clear that render targets, not the framework, decide final output.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Overview</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+</page:CompilerOverview>

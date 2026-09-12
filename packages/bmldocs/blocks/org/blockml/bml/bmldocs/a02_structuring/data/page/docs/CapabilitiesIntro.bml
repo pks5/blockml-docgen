@@ -1,0 +1,45 @@
+<!--BlockML Documentation — Capabilities (structuring skeleton)
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.CapabilitiesIntro-->
+<page:CapabilitiesIntro xmlns="http://blockml.org/bml"
+  xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A website introduction to Capabilities
+  </is>
+  <documentation>
+    Structuring skeleton for the "Capabilities" documentation page. Scopes: Capabilities, behaviour
+    as ordinary members, capability endpoints. Bound authoritative sources:
+    org.blockml.bml.documentation.CapabilitySemantics, org.blockml.bml.documentation.FunctionMappingModel.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
+  </documentation>
+  <references>
+    <see type="doc:CapabilitySemantics" relation="Requires">
+      Primary content — there are no special constructs for constructor, getter, setter, or render; all behaviour is an ordinary Capability with a language-tagged implementation body.
+    </see>
+    <see type="doc:FunctionMappingModel" relation="SeeAlso">
+      Supporting background — how call arguments map to a Capability's inputType and outputType.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Capabilities</value>
+    </title>
+    <purpose override="true">
+      <value>Establish that every behaviour BlockML offers is expressed as an ordinary Capability, not a special language keyword, and preview the reading directions an implementation can serve.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+</page:CapabilitiesIntro>

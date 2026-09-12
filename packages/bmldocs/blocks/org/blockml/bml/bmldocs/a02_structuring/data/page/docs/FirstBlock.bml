@@ -1,0 +1,45 @@
+<!--BlockML Documentation — Your first Block (structuring skeleton)
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.FirstBlock-->
+<page:FirstBlock xmlns="http://blockml.org/bml"
+  xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A first-Block walkthrough for website readers
+  </is>
+  <documentation>
+    Structuring skeleton for the "Your first Block" documentation page. Scopes: first Block
+    definition, definition versus instance, hands-on walkthrough. Bound authoritative sources:
+    org.blockml.bml.documentation.BlockAndInstance, org.blockml.bml.documentation.DefinitionModel.
+    The a03 authoring stage writes the page body (walkthrough and worked example) from those
+    sources; this skeleton carries only page identity, the title / purpose / detailLevel /
+    pageType overrides, and the see links to those sources.
+  </documentation>
+  <references>
+    <see type="doc:BlockAndInstance" relation="Requires">
+      Primary content — the definition-as-class, instance-as-object analogy and where the parser draws the line.
+    </see>
+    <see type="doc:DefinitionModel" relation="Requires">
+      Primary content — identity fields, is, documentation, and the first member kinds on a definition.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Your first Block</value>
+    </title>
+    <purpose override="true">
+      <value>Walk a newcomer through writing one small Block definition and seeing how a definition differs from an instance, using a minimal worked example rather than full theory.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Tutorial</value>
+    </pageType>
+  </properties>
+</page:FirstBlock>

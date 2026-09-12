@@ -1,0 +1,45 @@
+<!--BlockML Documentation — README and Bootstrap (structuring skeleton)
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.ReadmeAndBootstrap-->
+<page:ReadmeAndBootstrap xmlns="http://blockml.org/bml"
+  xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A website page on README and bootstrap entry points
+  </is>
+  <documentation>
+    Structuring skeleton for the "README and Bootstrap" documentation page. Scopes: README entry
+    point, compiler bootstrap, human versus machine entry. Bound authoritative sources:
+    org.blockml.bml.documentation.BootstrapModel, org.blockml.bml.documentation.LibrarySystem.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
+  </documentation>
+  <references>
+    <see type="doc:BootstrapModel" relation="Requires">
+      Primary content — the human-facing README reading path versus the compiler's self-hosting bootstrap order.
+    </see>
+    <see type="doc:LibrarySystem" relation="SeeAlso">
+      Supporting background — how a Library wires its readMe and bootstrap entry points.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>README and Bootstrap</value>
+    </title>
+    <purpose override="true">
+      <value>Distinguish the human reading entry (README) from the machine loading entry (bootstrap), and show that a Library carries both.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+</page:ReadmeAndBootstrap>

@@ -1,0 +1,45 @@
+<!--BlockML Documentation — Overrides (structuring skeleton)
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.OverridesBasics-->
+<page:OverridesBasics xmlns="http://blockml.org/bml"
+  xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A website introduction to partial member overrides
+  </is>
+  <documentation>
+    Structuring skeleton for the "Overrides" documentation page. Scopes: partial member overrides,
+    override true, inheritance merge. Bound authoritative sources:
+    org.blockml.bml.documentation.PartialMemberOverrides, org.blockml.bml.documentation.ContractsModel.
+    The a03 authoring stage writes the page body from those sources; this skeleton carries only
+    page identity, the title / purpose / detailLevel / pageType overrides, and the see links to
+    those sources.
+  </documentation>
+  <references>
+    <see type="doc:PartialMemberOverrides" relation="Requires">
+      Primary content — override="true" merges a local member redeclaration with an inherited or contract-supplied member, and when the flag is required.
+    </see>
+    <see type="doc:ContractsModel" relation="SeeAlso">
+      Supporting background — contract completion uses the same merge rule as baseType refinement.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Overrides</value>
+    </title>
+    <purpose override="true">
+      <value>Show what override="true" does to an inherited or contract member and when the flag must be present, so authors merge members deliberately.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+</page:OverridesBasics>
