@@ -1,0 +1,42 @@
+<!--BlockML Documentation — How-to page group
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.pagegroup.HowToPageGroup-->
+<pgroup:HowToPageGroup xmlns="http://blockml.org/bml"
+  xmlns:pgroup="org.blockml.bml.bmldocs.a02_structuring.data.pagegroup"
+  xmlns:docs="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dcore="org.blockml.bml.docgen.core">
+
+  <baseType>
+    dcore:PageGroup
+  </baseType>
+  <is>
+    The How-to page group for the a02 documentation set
+  </is>
+  <documentation>
+    Section page group materialized from the plan's HowToPageGroup PageGroupPlan.
+    Direct pages: AuthorNewBlockGuide. parentGroup is DocsPageGroup.
+  </documentation>
+  <references>
+    <see type="dcore:PageGroup" relation="Extends">
+      Docgen page group base.
+    </see>
+    <see type="pgroup:DocsPageGroup" relation="Requires">
+      Parent Documentation page group.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>How-to</value>
+    </title>
+    <parentGroup override="true">
+      <value>pgroup:DocsPageGroup</value>
+    </parentGroup>
+  </properties>
+  <aggregations>
+    <pages override="true">
+      <composition>
+        <docs:AuthorNewBlockGuide />
+      </composition>
+    </pages>
+  </aggregations>
+</pgroup:HowToPageGroup>

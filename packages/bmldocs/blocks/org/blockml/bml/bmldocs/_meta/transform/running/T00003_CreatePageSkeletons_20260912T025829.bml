@@ -109,12 +109,35 @@ I left the running transform record (`_meta/transform/running/T00003_...bml`) an
             <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/" />
           </changedFiles>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Update A02 page groups" status="Running" captureOutput="true">
+        <workflow:AgenticOperation name="Update A02 page groups" status="Succeeded" captureOutput="true">
           <startedAt>2026-09-12T03:11:01</startedAt>
           <baseCommit>4e05376c9f67e4d3a939416c0c5e4b7b4e48e3c0</baseCommit>
+          <output>`Task.run` on `A02_UpdatePageGroups` executed — operation #3 of the running transform `T00003_CreatePageSkeletons_20260912T025829`.
+
+**What ran** — `A02_UpdatePageGroups` is an `InstructionTask` with no prerequisites/rules/successCriteria/authorativeSources, so `execute()` ran once straight from its `instructions` and the a01 plan.
+
+1. **Plan** — read `BmlDocSetPlan.rootPageGroupPlan`: 10 `PageGroupPlan` nodes (Root → Docs → 8 section groups), 25 `PagePlan` leaves total.
+2. **Verified pages exist** — all 25 planned a02 pages already exist under `a02_structuring/data/page/docs/` (written by task #2). No `ExecutionException` needed.
+3. **Wrote 10 PageGroups** under new `a02_structuring/data/pagegroup/`: `RootPageGroup` (no parent, no direct pages), `DocsPageGroup` (parent Root, page `TableOfContents`), and 8 section groups (`GettingStarted`, `CoreIdeas`, `Types`, `Behaviour`, `Libraries`, `Authoring`, `DeeperTopics`, `HowTo`), each with `parentGroup` = `DocsPageGroup` and `pages` = its direct `PagePlan` children in plan order. All use `baseType dcore:PageGroup`, override `title` only, omit `landingPage`, no other aggregations.
+4. **Registered on `BmlDocSet_A02`** — added `xmlns:pgroup`, filled `pageGroups` (10 entries, plan order) and set `rootPageGroup` → `pgroup:RootPageGroup`.
+5. **Catalog** — `Library.bml` already exported all 10 `a02pgroup:*` entries (leftover from the pre-transform reset), so no change was needed there.
+
+**Validation** (`npx blockml validate --all`): 0 errors across 630 blocks — the previously-reported out-of-scope `pagegroup:*` unknown-type errors are now resolved. Only pre-existing style recommendations remain on unrelated files.
+
+**Changed files** (unstaged, no commit):
+- `packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/BmlDocSet_A02.bml`
+- `packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/pagegroup/` (10 new PageGroups)
+
+Matching how operations #1 and #2 ended, I left the running transform record (`_meta/transform/running/T00003_...bml`) and git state untouched — flipping this operation to `Succeeded` and committing `transform(operation): T00003_CreatePageSkeletons_20260912T025829 #3` is a separate step outside this task's instructions.
+</output>
+          <completedAt>2026-09-12T03:15:32</completedAt>
           <task>
             <a02_task:A02_UpdatePageGroups />
           </task>
+          <changedFiles>
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/BmlDocSet_A02.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/pagegroup/" />
+          </changedFiles>
         </workflow:AgenticOperation>
       </composition>
     </operations>
