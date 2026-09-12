@@ -5,7 +5,6 @@
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type">
@@ -58,9 +57,13 @@
       <composition>
         <sem:LearningObjective>
           <authoritativeSources>
-            <doc:BlockAndInstance />
-            <core:Block />
-            <doc:DefinitionModel />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                <type:TypeSelectorEntity value="org.blockml.bml.core.Block" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.DefinitionModel" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:LearningObjective>
       </composition>
@@ -69,13 +72,21 @@
       <composition>
         <sem:ReaderOutcome>
           <authoritativeSources>
-            <doc:BlockAndInstance />
-            <doc:DefinitionModel />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.DefinitionModel" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
           <authoritativeSources>
-            <doc:BlockAndInstance />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:ReaderOutcome>
       </composition>
@@ -84,9 +95,13 @@
       <composition>
         <sem:Scope>
           <authoritativeSources>
-            <doc:BlockAndInstance />
-            <core:Block />
-            <doc:DefinitionModel />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                <type:TypeSelectorEntity value="org.blockml.bml.core.Block" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.DefinitionModel" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:Scope>
       </composition>
@@ -118,18 +133,30 @@ use of that type.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:BlockAndInstance />
-                    <doc:DefinitionModel />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.DefinitionModel" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:BlockAndInstance />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:BlockAndInstance />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -148,18 +175,30 @@ clarifies roles without prescribing a runtime object model.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:BlockAndInstance />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:BlockAndInstance />
-                    <doc:DefinitionModel />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.DefinitionModel" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:BlockAndInstance />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -176,12 +215,20 @@ even when the compiler stores them as plain data.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:BlockAndInstance />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:BlockAndInstance />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -231,13 +278,21 @@ up in authored BML.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:BlockAndInstance />
-                    <doc:DefinitionModel />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.DefinitionModel" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:BlockAndInstance />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -280,19 +335,31 @@ Block type, not a one-off nested use.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:BlockAndInstance />
-                    <doc:DefinitionModel />
-                    <core:Block />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.DefinitionModel" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.core.Block" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:BlockAndInstance />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:BlockAndInstance />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -306,12 +373,20 @@ they place a concrete use of an existing definition in context.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:BlockAndInstance />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:BlockAndInstance />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>

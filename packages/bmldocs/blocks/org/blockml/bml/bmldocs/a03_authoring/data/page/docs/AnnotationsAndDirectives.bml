@@ -59,8 +59,12 @@
       <composition>
         <sem:LearningObjective>
           <authoritativeSources>
-            <doc:AnnotationModel />
-            <doc:BmlDirectives />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.AnnotationModel" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlDirectives" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:LearningObjective>
       </composition>
@@ -69,12 +73,20 @@
       <composition>
         <sem:ReaderOutcome>
           <authoritativeSources>
-            <doc:AnnotationModel />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.AnnotationModel" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
           <authoritativeSources>
-            <doc:BmlDirectives />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlDirectives" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:ReaderOutcome>
       </composition>
@@ -83,8 +95,12 @@
       <composition>
         <sem:Scope>
           <authoritativeSources>
-            <doc:AnnotationModel />
-            <doc:BmlDirectives />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.AnnotationModel" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlDirectives" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:Scope>
       </composition>
@@ -116,18 +132,30 @@ Definition members instead of describing block structure themselves.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:AnnotationModel />
-                    <doc:BmlDirectives />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.AnnotationModel" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlDirectives" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:AnnotationModel />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.AnnotationModel" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:BmlDirectives />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlDirectives" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -146,13 +174,21 @@ concepts only classifies directive form, not membership in the model tree.</mess
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:AnnotationModel />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.AnnotationModel" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:AnnotationModel />
-                    <doc:BmlDirectives />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.AnnotationModel" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlDirectives" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -166,7 +202,11 @@ elements are recognized without polluting Definition membership.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:BmlDirectives />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlDirectives" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -223,17 +263,29 @@ or examples slots.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:AnnotationModel />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.AnnotationModel" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:AnnotationModel />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.AnnotationModel" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:AnnotationModel />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.AnnotationModel" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>

@@ -5,7 +5,6 @@
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type">
@@ -58,9 +57,13 @@
       <composition>
         <sem:LearningObjective>
           <authoritativeSources>
-            <doc:EverythingIsABlock />
-            <core:Block />
-            <doc:WOTFoundation />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                <type:TypeSelectorEntity value="org.blockml.bml.core.Block" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.WOTFoundation" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:LearningObjective>
       </composition>
@@ -69,14 +72,22 @@
       <composition>
         <sem:ReaderOutcome>
           <authoritativeSources>
-            <doc:EverythingIsABlock />
-            <core:Block />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                <type:TypeSelectorEntity value="org.blockml.bml.core.Block" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
           <authoritativeSources>
-            <doc:EverythingIsABlock />
-            <doc:WOTFoundation />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.WOTFoundation" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:ReaderOutcome>
       </composition>
@@ -85,9 +96,13 @@
       <composition>
         <sem:Scope>
           <authoritativeSources>
-            <doc:EverythingIsABlock />
-            <core:Block />
-            <doc:WOTFoundation />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                <type:TypeSelectorEntity value="org.blockml.bml.core.Block" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.WOTFoundation" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:Scope>
       </composition>
@@ -121,19 +136,31 @@
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:EverythingIsABlock />
-                    <core:Block />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.core.Block" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:EverythingIsABlock />
-                    <doc:WOTFoundation />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.WOTFoundation" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:EverythingIsABlock />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -152,20 +179,32 @@ parser and one registry path cover the whole World.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:EverythingIsABlock />
-                    <core:Block />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.core.Block" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <core:Block />
-                    <doc:EverythingIsABlock />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.core.Block" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:EverythingIsABlock />
-                    <doc:WOTFoundation />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.WOTFoundation" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -179,13 +218,21 @@ are modeled inside the same tree.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:EverythingIsABlock />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:EverythingIsABlock />
-                    <doc:WOTFoundation />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.WOTFoundation" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -235,8 +282,12 @@ sit on that tree.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <core:Block />
-                    <doc:EverythingIsABlock />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.core.Block" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint />
@@ -286,19 +337,31 @@ and documentation — they do not sit beside it in a private ontology.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:EverythingIsABlock />
-                    <core:Block />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.core.Block" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:EverythingIsABlock />
-                    <doc:WOTFoundation />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.WOTFoundation" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:EverythingIsABlock />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>

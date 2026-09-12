@@ -59,9 +59,13 @@
       <composition>
         <sem:LearningObjective>
           <authoritativeSources>
-            <doc:EmbeddedExpressions />
-            <doc:Expressions />
-            <doc:CapabilitySemantics />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.EmbeddedExpressions" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.Expressions" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.CapabilitySemantics" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:LearningObjective>
       </composition>
@@ -70,13 +74,21 @@
       <composition>
         <sem:ReaderOutcome>
           <authoritativeSources>
-            <doc:EmbeddedExpressions />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.EmbeddedExpressions" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
           <authoritativeSources>
-            <doc:EmbeddedExpressions />
-            <doc:Expressions />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.EmbeddedExpressions" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.Expressions" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:ReaderOutcome>
       </composition>
@@ -85,9 +97,13 @@
       <composition>
         <sem:Scope>
           <authoritativeSources>
-            <doc:EmbeddedExpressions />
-            <doc:Expressions />
-            <doc:CapabilitySemantics />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.EmbeddedExpressions" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.Expressions" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.CapabilitySemantics" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:Scope>
       </composition>
@@ -116,18 +132,30 @@ body of a Capability implementation.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:EmbeddedExpressions />
-                    <doc:CapabilitySemantics />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EmbeddedExpressions" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.CapabilitySemantics" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:EmbeddedExpressions />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EmbeddedExpressions" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:EmbeddedExpressions />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EmbeddedExpressions" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -146,17 +174,29 @@ names its host language.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:EmbeddedExpressions />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EmbeddedExpressions" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:EmbeddedExpressions />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EmbeddedExpressions" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:EmbeddedExpressions />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EmbeddedExpressions" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -178,18 +218,30 @@ Capabilities with the same expression language used elsewhere.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:EmbeddedExpressions />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EmbeddedExpressions" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:EmbeddedExpressions />
-                    <doc:Expressions />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EmbeddedExpressions" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.Expressions" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:EmbeddedExpressions />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EmbeddedExpressions" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -211,13 +263,21 @@ in different host contexts.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:Expressions />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.Expressions" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:EmbeddedExpressions />
-                    <doc:CapabilitySemantics />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EmbeddedExpressions" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.CapabilitySemantics" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>

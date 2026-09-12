@@ -5,7 +5,6 @@
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:doc="org.blockml.bml.documentation"
   xmlns:howto="org.blockml.bml.documentation.howto"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type">
@@ -58,16 +57,24 @@
       <composition>
         <sem:LearningObjective>
           <authoritativeSources>
-            <howto:AuthorNewBlock />
-            <doc:DocumentationModel />
-            <doc:DefinitionModel />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.howto.AuthorNewBlock" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentationModel" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.DefinitionModel" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:LearningObjective>
         <sem:LearningObjective>
           <authoritativeSources>
-            <howto:AuthorNewBlock />
-            <doc:LibrarySystem />
-            <doc:DefinitionModel />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.howto.AuthorNewBlock" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.LibrarySystem" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.DefinitionModel" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:LearningObjective>
       </composition>
@@ -76,13 +83,21 @@
       <composition>
         <sem:ReaderOutcome>
           <authoritativeSources>
-            <howto:AuthorNewBlock />
-            <doc:LibrarySystem />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.howto.AuthorNewBlock" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.LibrarySystem" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
           <authoritativeSources>
-            <howto:AuthorNewBlock />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.howto.AuthorNewBlock" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:ReaderOutcome>
       </composition>
@@ -91,10 +106,14 @@
       <composition>
         <sem:Scope>
           <authoritativeSources>
-            <howto:AuthorNewBlock />
-            <doc:DocumentationModel />
-            <doc:LibrarySystem />
-            <doc:DefinitionModel />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.howto.AuthorNewBlock" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentationModel" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.LibrarySystem" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.DefinitionModel" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:Scope>
       </composition>
@@ -126,20 +145,32 @@ root Block and exporting it in Library.bml.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <howto:AuthorNewBlock />
-                    <doc:DefinitionModel />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.howto.AuthorNewBlock" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.DefinitionModel" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:DocumentationModel />
-                    <howto:AuthorNewBlock />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentationModel" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.howto.AuthorNewBlock" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:LibrarySystem />
-                    <howto:AuthorNewBlock />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.LibrarySystem" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.howto.AuthorNewBlock" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -158,13 +189,21 @@ Block’s role.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <howto:AuthorNewBlock />
-                    <doc:DefinitionModel />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.howto.AuthorNewBlock" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.DefinitionModel" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <howto:AuthorNewBlock />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.howto.AuthorNewBlock" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -178,12 +217,20 @@ is identifiable and explainable.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:DocumentationModel />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentationModel" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:DocumentationModel />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentationModel" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -273,15 +320,23 @@ listed in the library's blocks aggregation in Library.bml.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:LibrarySystem />
-                    <howto:AuthorNewBlock />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.LibrarySystem" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.howto.AuthorNewBlock" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <howto:AuthorNewBlock />
-                    <doc:DocumentationModel />
-                    <doc:DefinitionModel />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.howto.AuthorNewBlock" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentationModel" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.DefinitionModel" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>

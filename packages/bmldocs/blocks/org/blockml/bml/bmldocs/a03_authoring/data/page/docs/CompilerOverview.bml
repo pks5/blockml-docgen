@@ -60,9 +60,13 @@
       <composition>
         <sem:LearningObjective>
           <authoritativeSources>
-            <doc:CompilerArchitecture />
-            <doc:RendererFreedom />
-            <doc:Introduction />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompilerArchitecture" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.RendererFreedom" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:LearningObjective>
       </composition>
@@ -71,13 +75,21 @@
       <composition>
         <sem:ReaderOutcome>
           <authoritativeSources>
-            <doc:CompilerArchitecture />
-            <doc:Introduction />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompilerArchitecture" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
           <authoritativeSources>
-            <doc:RendererFreedom />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.RendererFreedom" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:ReaderOutcome>
       </composition>
@@ -86,9 +98,13 @@
       <composition>
         <sem:Scope>
           <authoritativeSources>
-            <doc:CompilerArchitecture />
-            <doc:RendererFreedom />
-            <doc:Introduction />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompilerArchitecture" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.RendererFreedom" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:Scope>
       </composition>
@@ -127,18 +143,30 @@ internals.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:CompilerArchitecture />
-                    <doc:Introduction />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompilerArchitecture" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:CompilerArchitecture />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompilerArchitecture" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:RendererFreedom />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.RendererFreedom" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -157,13 +185,21 @@ Renderers that produce target-specific results.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:CompilerArchitecture />
-                    <doc:Introduction />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompilerArchitecture" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:CompilerArchitecture />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompilerArchitecture" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -180,8 +216,12 @@ one lossless model without baking target choices into BML.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:RendererFreedom />
-                    <doc:CompilerArchitecture />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.RendererFreedom" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompilerArchitecture" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -249,12 +289,20 @@ Block to a single artifact.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:RendererFreedom />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.RendererFreedom" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:RendererFreedom />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.RendererFreedom" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -297,14 +345,22 @@ target-specific results from the shared meaning.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:CompilerArchitecture />
-                    <doc:Introduction />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompilerArchitecture" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:RendererFreedom />
-                    <doc:CompilerArchitecture />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.RendererFreedom" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompilerArchitecture" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>

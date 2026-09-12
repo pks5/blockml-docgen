@@ -5,7 +5,6 @@
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type">
@@ -64,14 +63,18 @@ more detailed concept pages that follow.</value>
       <composition>
         <sem:LearningObjective>
           <authoritativeSources>
-            <doc:BmlNamespace />
-            <doc:BmlDirectives />
-            <doc:DocumentationModel />
-            <doc:Introduction />
-            <doc:CompilerArchitecture />
-            <doc:BlockAndInstance />
-            <doc:RendererFreedom />
-            <doc:WOTFoundation />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlDirectives" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentationModel" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompilerArchitecture" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.RendererFreedom" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.WOTFoundation" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:LearningObjective>
       </composition>
@@ -80,21 +83,29 @@ more detailed concept pages that follow.</value>
       <composition>
         <sem:ReaderOutcome>
           <authoritativeSources>
-            <doc:Introduction />
-            <doc:EverythingIsABlock />
-            <doc:WOTFoundation />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.WOTFoundation" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
           <authoritativeSources>
-            <doc:BmlNamespace />
-            <doc:BmlDirectives />
-            <doc:DocumentationModel />
-            <doc:Introduction />
-            <doc:CompilerArchitecture />
-            <doc:BlockAndInstance />
-            <doc:RendererFreedom />
-            <doc:WOTFoundation />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlDirectives" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentationModel" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompilerArchitecture" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.RendererFreedom" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.WOTFoundation" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:ReaderOutcome>
       </composition>
@@ -103,15 +114,19 @@ more detailed concept pages that follow.</value>
       <composition>
         <sem:Scope>
           <authoritativeSources>
-            <doc:Introduction />
-            <doc:EverythingIsABlock />
-            <doc:WOTFoundation />
-            <doc:BmlNamespace />
-            <doc:BmlDirectives />
-            <doc:DocumentationModel />
-            <doc:CompilerArchitecture />
-            <doc:BlockAndInstance />
-            <doc:RendererFreedom />
+            <workflow:AuthorativeSourceSet>
+              <includedTypes>
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.WOTFoundation" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlDirectives" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentationModel" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompilerArchitecture" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                <type:TypeSelectorEntity value="org.blockml.bml.documentation.RendererFreedom" />
+              </includedTypes>
+            </workflow:AuthorativeSourceSet>
           </authoritativeSources>
         </sem:Scope>
       </composition>
@@ -146,18 +161,30 @@ reusable Blocks independently of how they are later manifested.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:Introduction />
-                    <doc:EverythingIsABlock />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:Introduction />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:RendererFreedom />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.RendererFreedom" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -177,17 +204,29 @@ and losslessly for processing.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:BmlNamespace />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:BmlNamespace />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:BmlNamespace />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -205,7 +244,11 @@ in a particular target; each Renderer supplies that interpretation.</message>
                 <sem:SupportingPoint />
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:RendererFreedom />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.RendererFreedom" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -262,13 +305,21 @@ identifiable type, and an explicit base type.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <core:Block />
-                    <doc:Introduction />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.core.Block" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <core:Block />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.core.Block" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -319,13 +370,21 @@ Renderers as the place where target-specific manifestation begins.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:Introduction />
-                    <doc:EverythingIsABlock />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <doc:Introduction />
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
