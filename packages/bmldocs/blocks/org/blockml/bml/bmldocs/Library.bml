@@ -124,6 +124,7 @@
         <pgroup:AuthoringPageGroup />
         <pgroup:DeeperTopicsPageGroup />
         <pgroup:HowToPageGroup />
+        <task:A02_UpdateDocSet />
         <task:A02_UpdatePageSkeletons />
         <task:A02_UpdatePageGroups />
         <a02pgroup:RootPageGroup />

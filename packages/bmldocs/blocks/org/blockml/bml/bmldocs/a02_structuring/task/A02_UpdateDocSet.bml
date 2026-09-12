@@ -1,0 +1,84 @@
+<!--BlockML Documentation — create or update the A02 DocSet
+  FQN: org.blockml.bml.bmldocs.a02_structuring.task.A02_UpdateDocSet-->
+<task:A02_UpdateDocSet xmlns="http://blockml.org/bml"
+  xmlns:task="org.blockml.bml.bmldocs.a02_structuring.task"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    workflow:InstructionTask
+  </baseType>
+  <is>
+    A task that creates or updates the A02 DocSet
+  </is>
+  <documentation>
+    A02 structuring task: create or update BmlDocSet_A02 from BmlDocSetPlan.
+    title, version, and summary come only from the plan. pages and pageGroups
+    are declared as empty aggregations so later A02 tasks can register
+    entries. This task has no authoritativeSources.
+  </documentation>
+  <properties>
+    <instructions type="type:Text" override="true">
+      <value>
+        <![CDATA[
+          All information for this task comes from the plan. Do not read
+          authoritativeSources on this task or on BmlDocSetPlan. Do not invent
+          title, version, or summary that the plan does not state.
+
+          1. Read the plan
+          Read org.blockml.bml.bmldocs.a01_planning.data.BmlDocSetPlan. Collect
+          title, version, and summary. Those three values are the DocSet
+          identity fields this task copies. Do not walk PagePlan or
+          PageGroupPlan entries. Do not create or edit pages, PageGroups,
+          or pageMapping.
+
+          2. Resolve the A02 DocSet FQN
+          DocSet FQN =
+          org.blockml.bml.bmldocs.a02_structuring.data.BmlDocSet_A02
+          Write only this a02 DocSet, never a DocSet outside a02 (a03 or any
+          later sector). Do not edit DocSets of other sectors.
+
+          3. Create or update BmlDocSet_A02
+          If BmlDocSet_A02 already exists, keep only the FQN / file path so
+          the same Block is overwritten. Refresh title, version, and summary
+          from the plan. Preserve existing pages, pageGroups, homePage, and
+          rootPageGroup — later A02 tasks fill those (A02_UpdatePageSkeletons
+          writes pages and homePage; A02_UpdatePageGroups writes pageGroups
+          and rootPageGroup). If a preserved pages or pageGroups entry is
+          outside a02, remove it. Do not invent pages or groups.
+
+          If BmlDocSet_A02 does not exist, create it as the A02 DocSet
+          container. Example of the target shape:
+          packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/BmlDocSet_A02.bml
+
+          Each DocSet must:
+          - use baseType org.blockml.bml.docgen.core.DocSet
+          - use BmlDocSet_A02 as the Block name
+          - set is to one short identity sentence from the plan title /
+            summary (for example "The BlockML core documentation set")
+          - set isNot to contrast with a single DocPage and with a bml-core
+            narrative Documentation Block
+          - set documentation to restate the plan summary and to name that
+            pages / homePage are filled by A02_UpdatePageSkeletons and
+            pageGroups / rootPageGroup by A02_UpdatePageGroups
+          - override title from BmlDocSetPlan.title
+          - override version from BmlDocSetPlan.version
+          - override summary from BmlDocSetPlan.summary
+          - declare aggregations pages and pageGroups so later A02 tasks can
+            register TypeReferenceEntity links there
+          - on create: leave pages and pageGroups as empty compositions;
+            omit homePage and rootPageGroup
+          - on update: do not empty pages or pageGroups; do not add children
+            to them here
+          - omit learningPaths
+          - omit every other aggregation
+
+          4. Export BmlDocSet_A02 from the catalog
+          Export org.blockml.bml.bmldocs.a02_structuring.data.BmlDocSet_A02
+          from org.blockml.bml.bmldocs.Library if it is not already in the
+          catalog. Do not remove catalog entries of other sectors.
+        ]]>
+      </value>
+    </instructions>
+  </properties>
+</task:A02_UpdateDocSet>

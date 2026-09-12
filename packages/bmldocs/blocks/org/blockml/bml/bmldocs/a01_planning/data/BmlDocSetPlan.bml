@@ -34,6 +34,17 @@
     </see>
   </references>
   <properties>
+    <title override="true">
+      <value>BlockML Documentation</value>
+    </title>
+    <summary override="true">
+      <value>Complete BlockML core documentation — syntax, rules, examples, best practices, and
+use cases — with a learning path from quick start to deep study for junior through senior
+developers.</value>
+    </summary>
+    <version override="true">
+      <value>0.1.0</value>
+    </version>
     <homePage override="true">
       <value>page:TableOfContents</value>
     </homePage>

@@ -55,6 +55,21 @@
     </see>
   </references>
   <properties>
+    <title>
+      <documentation>
+        The title of the documentation set.
+      </documentation>
+    </title>
+    <summary>
+      <documentation>
+        The summary of the documentation set.
+      </documentation>
+    </summary>
+    <version>
+      <documentation>
+        The version of the documentation set.
+      </documentation>
+    </version>
      <homePage type="type:TypeReference(dcore:Page)">
       <documentation>
         Type reference to the entry / home page of this documentation set.

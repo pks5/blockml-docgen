@@ -32,6 +32,11 @@
   <aggregations>
     <operations override="true">
       <composition>
+        <workflow:AgenticOperation name="Update A02 doc set" status="Pending" captureOutput="true">
+          <task>
+            <a02_task:A02_UpdateDocSet />
+          </task>
+        </workflow:AgenticOperation>
         <workflow:AgenticOperation name="Update A02 page skeletons" status="Pending" captureOutput="true">
           <task>
             <a02_task:A02_UpdatePageSkeletons />
