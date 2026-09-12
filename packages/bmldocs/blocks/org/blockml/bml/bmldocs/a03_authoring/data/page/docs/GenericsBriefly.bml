@@ -2,15 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.GenericsBriefly-->
 <page:GenericsBriefly xmlns="http://blockml.org/bml"
-  xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dlevel="org.blockml.bml.docgen.level"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
-  xmlns:role="org.blockml.bml.docgen.role"
-  xmlns:weight="org.blockml.bml.docgen.weight"
-  xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
   <baseType>
@@ -38,10 +32,10 @@
       <value>Introduce generics as parameters owned by the declaring Block.</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Introductory</value>
+      <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:Concept</value>
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
     </pageType>
   </properties>
   <aggregations>
@@ -101,9 +95,9 @@
         <dpage:Section heading="Parameters owned by the declaring Block" purpose="Frame generics as Block-owned type parameters">
           <content>
             <dpage:Paragraph purpose="Introduce generics as parameters owned by the declaring Block">
-              <role>role:Lead</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Generics are type parameters owned by the Block that declares them.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
@@ -129,9 +123,9 @@
         <dpage:Section heading="No implicit inheritance of parameters" purpose="Make binding or forwarding explicit when using a generic base">
           <content>
             <dpage:Paragraph purpose="Explain that baseType use requires binding or forwarding every base parameter">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>When a Block uses a generic Block as its base type, every base parameter
 must be bound or forwarded; parameters are not inherited implicitly.</message>
               <supportingPoints>
@@ -161,9 +155,9 @@ must be bound or forwarded; parameters are not inherited implicitly.</message>
         <dpage:Section heading="Application at use sites" purpose="Explain round-parentheses generic application in type expressions">
           <content>
             <dpage:Paragraph purpose="Explain Type(Args) application syntax and its relationship to ownership">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>At a use site, round parentheses bind type arguments to the parameters owned
 by the named Block, as in Box(Integer).</message>
               <supportingPoints>
@@ -191,15 +185,15 @@ by the named Block, as in Box(Integer).</message>
         <dpage:Section heading="Where generics appear" purpose="Summarize declaration, application, and inheritance sites">
           <content>
             <dpage:Paragraph purpose="Prepare the reader for the three-site summary list">
-              <role>role:Transition</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Generics show up in three places: declaration, application, and inheritance.</message>
             </dpage:Paragraph>
             <dpage:List purpose="Present the principal generics sites as a concise summary">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>These three sites cover how generics are declared and used.</message>
               <items>
                 <dpage:ListItem text="Declaration" purpose="Explain genericTypes on the declaring Block">
@@ -220,9 +214,9 @@ generic base type.</message>
         <dpage:Section heading="A generic declaration and binding" purpose="Connect the concept to a small generics example">
           <content>
             <dpage:Paragraph purpose="Introduce a generic declaration and a concrete binding">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A short example shows a Block declaring a type parameter and a use site
 binding it to a concrete type.</message>
               <exclusions>
@@ -230,9 +224,9 @@ binding it to a concrete type.</message>
               </exclusions>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="Illustrate complete Blocks for generic declaration and concrete binding">
-              <role>role:Example</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Show complete Blocks: one declaring a type parameter under genericTypes, and
 one applying or binding that parameter to a concrete type.</message>
               <supportingPoints>
@@ -244,9 +238,9 @@ one applying or binding that parameter to a concrete type.</message>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the declaration and binding constructs in the example">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>In the example, the declaring Block owns the parameter under genericTypes,
 and the use site's parentheses bind that parameter to a concrete type rather
 than inheriting it silently.</message>

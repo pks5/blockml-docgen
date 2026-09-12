@@ -4,8 +4,6 @@
 <page:FileAnatomy xmlns="http://blockml.org/bml"
   xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dlevel="org.blockml.bml.docgen.level"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
   xmlns:doc="org.blockml.bml.documentation">
 
   <baseType>
@@ -41,10 +39,10 @@
       <value>Give readers a compact structural map of a root Block document — identity fields, then is and documentation, then the ordered member sections — so they can read and lay out a .bml file with confidence.</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Introductory</value>
+      <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:Guide</value>
+      <value>org.blockml.bml.docgen.pagetype.Guide</value>
     </pageType>
   </properties>
 </page:FileAnatomy>

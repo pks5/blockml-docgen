@@ -4,8 +4,6 @@
 <page:CompilerOverview xmlns="http://blockml.org/bml"
   xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dlevel="org.blockml.bml.docgen.level"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
   xmlns:doc="org.blockml.bml.documentation">
 
   <baseType>
@@ -38,10 +36,10 @@
       <value>Give readers a non-normative sketch of the pipeline stages and make clear that render targets, not the framework, decide final output.</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Overview</value>
+      <value>org.blockml.bml.docgen.level.Overview</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:Concept</value>
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
     </pageType>
   </properties>
 </page:CompilerOverview>

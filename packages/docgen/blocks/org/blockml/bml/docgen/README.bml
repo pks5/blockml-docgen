@@ -27,7 +27,7 @@
     and dcore:Weight (how important for understanding) — without tying them to one particular
     website. DocSet.pageMapping owns pageKey and path for publishable pages.
     
-    Narrative SSOT remains in bml-core (org.blockml.bml.documentation.* and org.blockml.bml.task.*).
+    Narrative SSOT remains in bml-core (org.blockml.bml.documentation.* and org.blockml.bml.documentation.howto.*).
     Site-specific catalogues depend on this library and fill concrete documentation
     structures for their surfaces.
     

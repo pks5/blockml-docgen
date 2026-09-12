@@ -2,14 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.FileAnatomy-->
 <page:FileAnatomy xmlns="http://blockml.org/bml"
-  xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dlevel="org.blockml.bml.docgen.level"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
-  xmlns:role="org.blockml.bml.docgen.role"
-  xmlns:weight="org.blockml.bml.docgen.weight"
   xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
@@ -41,10 +36,10 @@
       <value>Give readers a structural cheat-sheet for the ordered fields of a root Block document.</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Introductory</value>
+      <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:Guide</value>
+      <value>org.blockml.bml.docgen.pagetype.Guide</value>
     </pageType>
   </properties>
   <aggregations>
@@ -115,9 +110,9 @@
         <dpage:Section heading="A structural map of a Block document" purpose="Introduce the page as a .bml anatomy cheat-sheet">
           <content>
             <dpage:Paragraph purpose="Explain this page as a structural map of a root Block document">
-              <role>role:Lead</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>This page is a short structural map of the ordered fields in a root Block
 document, not a full style guide.</message>
               <supportingPoints>
@@ -146,9 +141,9 @@ document, not a full style guide.</message>
         <dpage:Section heading="Identity before prose" purpose="Place identity fields ahead of documentation prose">
           <content>
             <dpage:Paragraph purpose="Cover is, documentation, references, and examples from doc:DocumentationModel">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>After identity, a definition carries is, documentation, references, and
 optional examples that explain the Block for humans and tools.</message>
               <supportingPoints>
@@ -170,9 +165,9 @@ optional examples that explain the Block for humans and tools.</message>
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Stress identity first: name, type, baseType before prose">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Name, type, and baseType come first so the Block is identifiable before any
 prose is read.</message>
               <supportingPoints>
@@ -201,18 +196,18 @@ prose is read.</message>
         <dpage:Section heading="Naming the Block" purpose="Summarize PascalCase Block name rules">
           <content>
             <dpage:Paragraph purpose="Summarize PascalCase name rules from doc:BlockNameConvention">
-              <role>role:Transition</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Block names follow a simple PascalCase convention that keeps type identity readable.</message>
               <exclusions>
                 <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
             <dpage:List purpose="Name rules to remember">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Remember the valid format and the forms that fail the naming convention.</message>
               <items>
                 <dpage:ListItem text="PascalCase format" purpose="Letters and digits only; start with uppercase">
@@ -229,9 +224,9 @@ prose is read.</message>
         <dpage:Section heading="Annotated skeleton" purpose="Show the ordered fields of a typical root .bml">
           <content>
             <dpage:Paragraph purpose="Walk through the ordered fields of a typical root .bml">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A typical root .bml orders identity, documentation fields, properties, and
 references in a stable skeleton.</message>
               <exclusions>
@@ -241,9 +236,9 @@ references in a stable skeleton.</message>
               </exclusions>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="Annotated skeleton showing identity, documentation, properties, references">
-              <role>role:Example</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Illustrate an annotated root Block skeleton with identity, documentation,
 properties, and references.</message>
               <supportingPoints>
@@ -256,9 +251,9 @@ properties, and references.</message>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the annotated skeleton's field order and roles">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Read the skeleton top to bottom: name, type, and baseType identify the Block,
 is and documentation explain it, references point outward, and properties
 begin the ordinary member area.</message>
@@ -273,9 +268,9 @@ begin the ordinary member area.</message>
         <dpage:Section heading="Common field-order mistakes" purpose="Summarize overview-depth mistakes that break the ordered anatomy">
           <content>
             <dpage:Paragraph purpose="Explain why the ordered checklist matters in practice">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>The ordered skeleton is a checklist: when fields appear in the wrong place or
 under the wrong name form, the document stops reading as a clear Block anatomy.</message>
               <supportingPoints>
@@ -302,9 +297,9 @@ under the wrong name form, the document stops reading as a clear Block anatomy.<
               </exclusions>
             </dpage:Paragraph>
             <dpage:List purpose="Checklist of overview-depth mistakes to avoid">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Avoid these field-order and naming mistakes when sketching a root .bml.</message>
               <items>
                 <dpage:ListItem text="Prose before identity" purpose="Mistake: is or documentation ahead of name, type, baseType">

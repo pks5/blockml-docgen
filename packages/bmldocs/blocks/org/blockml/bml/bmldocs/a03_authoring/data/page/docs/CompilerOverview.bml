@@ -2,15 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.CompilerOverview-->
 <page:CompilerOverview xmlns="http://blockml.org/bml"
-  xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dlevel="org.blockml.bml.docgen.level"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
-  xmlns:role="org.blockml.bml.docgen.role"
-  xmlns:weight="org.blockml.bml.docgen.weight"
-  xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
   <baseType>
@@ -42,10 +36,10 @@
       <value>Give website readers a high-level compiler pipeline sketch without normative internals.</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Overview</value>
+      <value>org.blockml.bml.docgen.level.Overview</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:Concept</value>
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
     </pageType>
   </properties>
   <aggregations>
@@ -118,9 +112,9 @@
         <dpage:Section heading="A high-level pipeline sketch" purpose="Orient website readers without normative internals">
           <content>
             <dpage:Paragraph purpose="Introduce the compiler pipeline at overview depth">
-              <role>role:Lead</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>The compiler turns authored BML into a Canonical BOM and then into
 target-specific results; this page sketches that path without normative
 internals.</message>
@@ -149,9 +143,9 @@ internals.</message>
         <dpage:Section heading="From BML to BOM to targets" purpose="Sketch the conceptual pipeline and accompany it with an optional image">
           <content>
             <dpage:Paragraph purpose="Explain BML to Canonical BOM to targets at overview depth">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Authored BML is parsed into a Canonical BOM, validated, and then handed to
 Renderers that produce target-specific results.</message>
               <supportingPoints>
@@ -172,9 +166,9 @@ Renderers that produce target-specific results.</message>
               </exclusions>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Explain why the Canonical BOM sits between authoring and targets">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Keeping a Canonical BOM between authoring and targets lets many Renderers share
 one lossless model without baking target choices into BML.</message>
               <supportingPoints>
@@ -187,9 +181,9 @@ one lossless model without baking target choices into BML.</message>
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:Image purpose="Pipeline diagram of parser, validator, and renderer stages">
-              <role>role:Example</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A simple pipeline diagram can show parser, Canonical BOM, validator, and
 renderer without naming packages.</message>
             </dpage:Image>
@@ -199,16 +193,16 @@ renderer without naming packages.</message>
         <dpage:Section heading="Conceptual stages" purpose="Enumerate recognizable stages without package names">
           <content>
             <dpage:Paragraph purpose="Prepare the reader for the conceptual stage list">
-              <role>role:Transition</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>The pipeline is easiest to remember as a short sequence of conceptual stages
 rather than as implementation packages.</message>
             </dpage:Paragraph>
             <dpage:List purpose="Present conceptual compiler stages as a concise summary">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>These conceptual stages name the path from authored BML to target results.</message>
               <items>
                 <dpage:ListItem text="Parse" purpose="Authored BML becomes a structured model">
@@ -226,9 +220,9 @@ rather than as implementation packages.</message>
               </items>
             </dpage:List>
             <dpage:Paragraph purpose="Keep stage names conceptual and free of internals">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Stage names here are conceptual labels only; they are not package names, class
 names, or normative internal interfaces.</message>
               <exclusions>
@@ -241,9 +235,9 @@ names, or normative internal interfaces.</message>
         <dpage:Section heading="Renderer freedom" purpose="Explain that targets decide manifestation">
           <content>
             <dpage:Paragraph purpose="Explain that targets decide manifestation without a required one-to-one mapping">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Targets decide manifestation; there is no required one-to-one mapping from each
 Block to a single artifact.</message>
               <supportingPoints>
@@ -260,15 +254,15 @@ Block to a single artifact.</message>
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Prepare the reader for renderer freedom points">
-              <role>role:Transition</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Three freedoms keep the core independent of individual targets.</message>
             </dpage:Paragraph>
             <dpage:List purpose="Present freedom points as a concise summary">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>These freedoms keep the core independent of individual targets.</message>
               <items>
                 <dpage:ListItem text="Format" purpose="Explain that output need not be blocks in the target language">
@@ -288,9 +282,9 @@ Block to a single artifact.</message>
         <dpage:Section heading="What this sketch should leave you with" purpose="Anchor the high-level pipeline outcomes for website readers">
           <content>
             <dpage:Paragraph purpose="State the retainable pipeline model without normative internals">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Readers should leave with a short path in mind: authored BML becomes a
 Canonical BOM, that model is validated, and Renderers then produce
 target-specific results from the shared meaning.</message>
@@ -310,9 +304,9 @@ target-specific results from the shared meaning.</message>
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:List purpose="Summarize the retainable stages of the sketch">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>These four labels are enough to navigate from authoring into the rest of the
 documentation set.</message>
               <items>

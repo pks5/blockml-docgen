@@ -5,7 +5,7 @@
   xmlns:workspace="org.blockml.bml.docgen.workspace">
 
   <baseType>
-    core:Entity
+    core:Block
   </baseType>
   <is>
     Abstract marker for workspace hub documentation blocks

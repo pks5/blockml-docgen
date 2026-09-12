@@ -4,10 +4,8 @@
 <page:AuthorNewBlockGuide xmlns="http://blockml.org/bml"
   xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dlevel="org.blockml.bml.docgen.level"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
   xmlns:doc="org.blockml.bml.documentation"
-  xmlns:task="org.blockml.bml.task">
+  xmlns:howto="org.blockml.bml.documentation.howto">
 
   <baseType>
     dpage:DocPage
@@ -18,14 +16,14 @@
   <documentation>
     Structuring skeleton for the "Author a new Block" documentation page. Scopes: new Block
     checklist, create and publish Block type, procedural how-to. Bound authoritative sources:
-    org.blockml.bml.task.AuthorNewBlock, org.blockml.bml.documentation.DocumentationModel,
+    org.blockml.bml.documentation.howto.AuthorNewBlock, org.blockml.bml.documentation.DocumentationModel,
     org.blockml.bml.documentation.LibrarySystem, org.blockml.bml.documentation.DefinitionModel.
     The a03 authoring stage writes the page body (the step sequence) from those sources; this
     skeleton carries only page identity, the title / purpose / detailLevel / pageType overrides,
     and the see links to those sources.
   </documentation>
   <references>
-    <see type="task:AuthorNewBlock" relation="Requires">
+    <see type="howto:AuthorNewBlock" relation="Requires">
       Primary content — the ordered procedure for defining and publishing a new Block.
     </see>
     <see type="doc:DocumentationModel" relation="SeeAlso">
@@ -46,10 +44,10 @@
       <value>Give readers an actionable step-by-step procedure for creating a new Block definition and publishing it in a Library, presented as a checklist rather than concept prose.</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Practical</value>
+      <value>org.blockml.bml.docgen.level.Practical</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:HowTo</value>
+      <value>org.blockml.bml.docgen.pagetype.HowTo</value>
     </pageType>
   </properties>
 </page:AuthorNewBlockGuide>

@@ -3,8 +3,7 @@
   FQN: org.blockml.bml.docgen.semantic.Scope-->
 <sem:Scope xmlns="http://blockml.org/bml"
   xmlns:sem="org.blockml.bml.docgen.semantic"
-  xmlns:dcore="org.blockml.bml.docgen.core"
-  xmlns:core="org.blockml.bml.core">
+  xmlns:dcore="org.blockml.bml.docgen.core">
 
   <baseType>
     dcore:SemanticAnnotation

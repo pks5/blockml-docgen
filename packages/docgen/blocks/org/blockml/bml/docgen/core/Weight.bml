@@ -3,8 +3,7 @@
   FQN: org.blockml.bml.docgen.core.Weight-->
 <dcore:Weight xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
-  xmlns:weight="org.blockml.bml.docgen.weight"
-  xmlns:core="org.blockml.bml.core">
+  xmlns:weight="org.blockml.bml.docgen.weight">
 
   <baseType>
     dcore:DocElement

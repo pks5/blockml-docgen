@@ -2,14 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.CompositionBasics-->
 <page:CompositionBasics xmlns="http://blockml.org/bml"
-  xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dlevel="org.blockml.bml.docgen.level"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
-  xmlns:role="org.blockml.bml.docgen.role"
-  xmlns:weight="org.blockml.bml.docgen.weight"
   xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
@@ -39,10 +34,10 @@
       <value>Explain how aggregations receive child Block instances through composition.</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Introductory</value>
+      <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:Concept</value>
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
     </pageType>
   </properties>
   <aggregations>
@@ -109,9 +104,9 @@
         <dpage:Section heading="Filling aggregations" purpose="State that composition is how aggregations receive child Block instances">
           <content>
             <dpage:Paragraph purpose="Introduce composition as aggregation fill">
-              <role>role:Lead</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Composition is how aggregations receive child Block instances.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
@@ -138,9 +133,9 @@
         <dpage:Section heading="Definition composition versus instance fill" purpose="Contrast definition-time composition with instance-time aggregation fill">
           <content>
             <dpage:Paragraph purpose="Explain composition nested inside aggregations on definitions">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>On definitions, child instances nest inside a composition member of the aggregation.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
@@ -163,9 +158,9 @@
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Explain direct aggregation fill on instances">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>On instances, aggregations are filled directly by member name — without a
 composition wrapper.</message>
               <supportingPoints>
@@ -194,15 +189,15 @@ composition wrapper.</message>
         <dpage:Section heading="Placement rules to remember" purpose="Summarize placement, override, and recursion rules">
           <content>
             <dpage:Paragraph purpose="Prepare the reader for the placement rules summary">
-              <role>role:Transition</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A few placement rules keep composition predictable once both fill paths are clear.</message>
             </dpage:Paragraph>
             <dpage:List purpose="Rules to retain from doc:CompositionModel">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>A few placement rules keep composition predictable.</message>
               <items>
                 <dpage:ListItem text="Placement" purpose="composition must nest inside an aggregation — never standalone">
@@ -222,9 +217,9 @@ composition wrapper.</message>
         <dpage:Section heading="Filling an aggregation" purpose="Show a definition-time composition and the instance-time equivalent">
           <content>
             <dpage:Paragraph purpose="Introduce a tiny nested fill example">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A short example shows the same children declared at definition time and filled
 at instance time.</message>
               <supportingPoints>
@@ -241,9 +236,9 @@ at instance time.</message>
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="Aggregation with composition children using qualified Block tags">
-              <role>role:Example</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Qualified Block tags appear as composition children under the aggregation.</message>
               <supportingPoints>
                 <sem:SupportingPoint />
@@ -254,9 +249,9 @@ at instance time.</message>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the aggregation, composition wrapper, and nested children">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>In the definition path, the aggregation owns a composition member and the
 nested qualified Block tags inside it are the child instances; on an instance,
 those same children sit directly under the aggregation name.</message>
@@ -266,9 +261,9 @@ those same children sit directly under the aggregation name.</message>
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:Image purpose="Diagram: definition composition vs instance aggregation fill">
-              <role>role:Example</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Definition composition and instance fill place the same children differently.</message>
             </dpage:Image>
           </content>
@@ -277,9 +272,9 @@ those same children sit directly under the aggregation name.</message>
         <dpage:Section heading="Aggregation versus association" purpose="Contrast composition fill on aggregations with association references">
           <content>
             <dpage:Paragraph purpose="Explain that composition fills aggregations that own nested children">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Aggregation members are the containers composition fills: child instances nest
 under the aggregation because the parent owns that structure.</message>
               <supportingPoints>
@@ -302,9 +297,9 @@ under the aggregation because the parent owns that structure.</message>
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Contrast associations as references that are not composition fill">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Associations relate Blocks without nesting those related Blocks as composition
 children under an aggregation.</message>
               <supportingPoints>

@@ -5,9 +5,7 @@
   xmlns:adata="org.blockml.bml.bmldocs.a02_structuring.data"
   xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
   xmlns:pgroup="org.blockml.bml.bmldocs.a02_structuring.data.pagegroup"
-  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
-  xmlns:dcore="org.blockml.bml.docgen.core"
-  xmlns:blockml="org.blockml.bml">
+  xmlns:dcore="org.blockml.bml.docgen.core">
 
   <baseType>
     dcore:DocSet

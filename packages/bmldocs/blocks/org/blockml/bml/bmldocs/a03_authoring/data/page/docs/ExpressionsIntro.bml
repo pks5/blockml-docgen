@@ -2,15 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.ExpressionsIntro-->
 <page:ExpressionsIntro xmlns="http://blockml.org/bml"
-  xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dlevel="org.blockml.bml.docgen.level"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
-  xmlns:role="org.blockml.bml.docgen.role"
-  xmlns:weight="org.blockml.bml.docgen.weight"
-  xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
   <baseType>
@@ -38,10 +32,10 @@
       <value>Introduce \${ } expressions for dynamic member values.</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Introductory</value>
+      <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:Concept</value>
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
     </pageType>
   </properties>
   <aggregations>
@@ -105,9 +99,9 @@
         <dpage:Section heading="Dynamic values with \${ }" purpose="Introduce the expression language for dynamic member values">
           <content>
             <dpage:Paragraph purpose="Introduce \${ } expressions for dynamic member values">
-              <role>role:Lead</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>\${ } expressions provide dynamic values for Block members instead of
 fixed literals.</message>
               <supportingPoints>
@@ -135,9 +129,9 @@ fixed literals.</message>
         <dpage:Section heading="Where expressions appear" purpose="Explain member use sites for \${ } expressions">
           <content>
             <dpage:Paragraph purpose="Explain that derived, computed, or service-bound member values use \${ }">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Member values that are derived, computed, or service-bound use \${ }
 expressions rather than literal constants.</message>
               <supportingPoints>
@@ -167,9 +161,9 @@ expressions rather than literal constants.</message>
         <dpage:Section heading="Shared language with embeds" purpose="Connect \${ } member expressions to embeds in Capability bodies">
           <content>
             <dpage:Paragraph purpose="Explain that the same language appears inside embeds in implementations">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>The same expression language appears inside embeds in Capability
 implementation bodies, in a different host context.</message>
               <supportingPoints>
@@ -197,15 +191,15 @@ implementation bodies, in a different host context.</message>
         <dpage:Section heading="Scope, builtins, and calls" purpose="Summarize the expression topics readers should retain">
           <content>
             <dpage:Paragraph purpose="Prepare the reader for the expression-topics summary list">
-              <role>role:Transition</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Scope, builtins, and Capability calls frame how expression values are resolved.</message>
             </dpage:Paragraph>
             <dpage:List purpose="Present principal expression topics as a concise summary">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>These topics frame how expression values are resolved.</message>
               <items>
                 <dpage:ListItem text="Scope" purpose="Explain scope rules for member and composition context">
@@ -226,18 +220,18 @@ member or composition context.</message>
         <dpage:Section heading="A property expression" purpose="Connect the concept to a small property value example">
           <content>
             <dpage:Paragraph purpose="Introduce a property whose value is an expression rather than a literal">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A property can take a \${ } expression as its value instead of a fixed literal.</message>
               <exclusions>
                 <sem:Exclusion />
               </exclusions>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="Illustrate a complete Block with a property expression value">
-              <role>role:Example</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Show a complete root Block whose highlighted property value is a \${ }
 expression rather than a literal.</message>
               <supportingPoints>
@@ -249,9 +243,9 @@ expression rather than a literal.</message>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the \${ } property value in the example">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>In the example, the property's value is an authored \${ } expression: the
 delimiters mark the expression language, and the body resolves through scope,
 builtins, or calls rather than storing a fixed literal.</message>

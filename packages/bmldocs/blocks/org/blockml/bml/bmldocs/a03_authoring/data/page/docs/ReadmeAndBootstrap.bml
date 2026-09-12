@@ -2,15 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.ReadmeAndBootstrap-->
 <page:ReadmeAndBootstrap xmlns="http://blockml.org/bml"
-  xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dlevel="org.blockml.bml.docgen.level"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
-  xmlns:role="org.blockml.bml.docgen.role"
-  xmlns:weight="org.blockml.bml.docgen.weight"
-  xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
   <baseType>
@@ -39,10 +33,10 @@
       <value>Distinguish human-facing README from compiler bootstrap entry points.</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Introductory</value>
+      <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:Concept</value>
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
     </pageType>
   </properties>
   <aggregations>
@@ -105,9 +99,9 @@
         <dpage:Section heading="README for humans, Bootstrap for the compiler" purpose="Give readers an immediate distinction between README and Bootstrap">
           <content>
             <dpage:Paragraph purpose="Clarify human README versus compiler bootstrap entry">
-              <role>role:Lead</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>README orients humans and language models, while Bootstrap is the compiler
 entry that prepares interpretation context for a Library.</message>
               <supportingPoints>
@@ -136,9 +130,9 @@ entry that prepares interpretation context for a Library.</message>
         <dpage:Section heading="Self-hosting TypeRegistry bootstrap" purpose="Explain that framework BML loads before user content">
           <content>
             <dpage:Paragraph purpose="Explain self-hosting TypeRegistry bootstrap without implementation packages">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>The compiler loads framework BML to populate the TypeRegistry before it
 interprets user content, instead of hard-coding type semantics in code.</message>
               <supportingPoints>
@@ -158,9 +152,9 @@ interprets user content, instead of hard-coding type semantics in code.</message
               </exclusions>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Explain why user content waits for the registry">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>User content is interpreted only after the TypeRegistry already knows the
 framework and package types it depends on.</message>
               <supportingPoints>
@@ -177,16 +171,16 @@ framework and package types it depends on.</message>
         <dpage:Section heading="Bootstrap order at a glance" purpose="Summarize the high-level load order readers should retain">
           <content>
             <dpage:Paragraph purpose="Prepare the reader for the bootstrap order list">
-              <role>role:Transition</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Bootstrap proceeds from core branches through packages to user content in a
 fixed conceptual order.</message>
             </dpage:Paragraph>
             <dpage:List purpose="Present bootstrap order highlights as a concise summary">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Bootstrap proceeds from core branches through packages to user content.</message>
               <items>
                 <dpage:ListItem text="Core branches" purpose="Name the earliest bootstrap layer">
@@ -206,9 +200,9 @@ fixed conceptual order.</message>
         <dpage:Section heading="Bootstrap and Library entry points" purpose="Connect the distinction to a small entry-point sketch">
           <content>
             <dpage:Paragraph purpose="Introduce Library readMe and bootstrap entry-point wiring">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A Library can point to a human README and a Bootstrap entry without mixing
 those roles in one document purpose.</message>
               <exclusions>
@@ -218,9 +212,9 @@ those roles in one document purpose.</message>
               </exclusions>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="Sketch Bootstrap and Library entry points readers should recognize">
-              <role>role:Example</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A Library can point to README for humans and Bootstrap for interpretation
 context without mixing those roles.</message>
               <supportingPoints>
@@ -232,9 +226,9 @@ context without mixing those roles.</message>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the readMe and bootstrap entry constructs in the example">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>In the example, readMe names the orientation document for people, while
 bootstrap names the Block that establishes interpretation context for the
 compiler.</message>
@@ -249,9 +243,9 @@ compiler.</message>
         <dpage:Section heading="When to open README versus Bootstrap" purpose="Give readers decision criteria for README versus Bootstrap entry points">
           <content>
             <dpage:Paragraph purpose="State when README is the right entry">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Open README when a human or language model needs orientation to the Library's
 purpose, audience, and how to approach its content.</message>
               <supportingPoints>
@@ -275,9 +269,9 @@ purpose, audience, and how to approach its content.</message>
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:List purpose="Decision cues for choosing Bootstrap instead of README">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Choose Bootstrap when the question is how interpretation context is prepared,
 not how to read the Library as a person.</message>
               <items>

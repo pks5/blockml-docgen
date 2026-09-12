@@ -3,7 +3,6 @@
   FQN: org.blockml.bml.docgen.core.DocElement-->
 <dcore:DocElement xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
-  xmlns:page="org.blockml.bml.docgen.page"
   xmlns:core="org.blockml.bml.core">
 
   <baseType>

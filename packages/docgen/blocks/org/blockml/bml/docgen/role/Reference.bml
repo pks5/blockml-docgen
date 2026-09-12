@@ -3,9 +3,7 @@
   FQN: org.blockml.bml.docgen.role.Reference-->
 <role:Reference xmlns="http://blockml.org/bml"
   xmlns:role="org.blockml.bml.docgen.role"
-  xmlns:dcore="org.blockml.bml.docgen.core"
-  xmlns:level="org.blockml.bml.docgen.level"
-  xmlns:weight="org.blockml.bml.docgen.weight">
+  xmlns:dcore="org.blockml.bml.docgen.core">
 
   <baseType>
     dcore:ContentRole
@@ -40,10 +38,10 @@
       <value>Reference</value>
     </displayName>
     <defaultDetailLevel override="true">
-      <value>level:Reference</value>
+      <value>org.blockml.bml.docgen.level.Reference</value>
     </defaultDetailLevel>
     <defaultWeight override="true">
-      <value>weight:Supporting</value>
+      <value>org.blockml.bml.docgen.weight.Supporting</value>
     </defaultWeight>
     <allowsNewConcepts override="true">
       <value>true</value>

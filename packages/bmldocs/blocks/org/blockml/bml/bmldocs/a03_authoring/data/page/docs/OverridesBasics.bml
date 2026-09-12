@@ -2,15 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.OverridesBasics-->
 <page:OverridesBasics xmlns="http://blockml.org/bml"
-  xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dlevel="org.blockml.bml.docgen.level"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
-  xmlns:role="org.blockml.bml.docgen.role"
-  xmlns:weight="org.blockml.bml.docgen.weight"
-  xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
   <baseType>
@@ -39,10 +33,10 @@
       <value>Introduce partial member overrides with override="true".</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Introductory</value>
+      <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:Concept</value>
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
     </pageType>
   </properties>
   <aggregations>
@@ -102,9 +96,9 @@
         <dpage:Section heading="Partial overrides refine inherited members" purpose="Give readers an immediate orientation to override=&quot;true&quot;">
           <content>
             <dpage:Paragraph purpose="Introduce override=&quot;true&quot; for refining inherited members">
-              <role>role:Lead</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>A partial member override uses override=&quot;true&quot; when a local redeclaration
 refines a member that already exists through inheritance or contracts.</message>
               <supportingPoints>
@@ -132,9 +126,9 @@ refines a member that already exists through inheritance or contracts.</message>
         <dpage:Section heading="Merge with baseType and contracts" purpose="Explain when override is required and that it is not inherited">
           <content>
             <dpage:Paragraph purpose="Explain merge with baseType chain and contracts">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>The override flag is required when a local redeclaration merges with a member
 from the baseType chain or from contracts.</message>
               <supportingPoints>
@@ -152,9 +146,9 @@ from the baseType chain or from contracts.</message>
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Explain that override is not inherited">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Override is not inherited; each redeclaration layer must set override=&quot;true&quot;
 again when it further refines the member.</message>
               <supportingPoints>
@@ -174,16 +168,16 @@ again when it further refines the member.</message>
         <dpage:Section heading="New versus override" purpose="Summarize the principal authoring checks">
           <content>
             <dpage:Paragraph purpose="Prepare the reader for new-versus-override checks">
-              <role>role:Transition</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Authors should distinguish brand-new members from redeclarations that merge with
 prior identity.</message>
             </dpage:Paragraph>
             <dpage:List purpose="Present authoring checks as a concise summary">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>These checks keep new members and overrides distinct.</message>
               <items>
                 <dpage:ListItem text="New" purpose="Explain that new members must not set override=&quot;true&quot;">
@@ -203,9 +197,9 @@ prior identity.</message>
         <dpage:Section heading="Abstract, final, and readOnly" purpose="Introduce local merge flags beyond override=&quot;true&quot;">
           <content>
             <dpage:Paragraph purpose="Explain abstract, final, and override as local declaration flags">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>abstract, final, and override are local declaration flags — they are never
 inherited, even when their effects propagate through the merge.</message>
               <supportingPoints>
@@ -230,9 +224,9 @@ inherited, even when their effects propagate through the merge.</message>
               </exclusions>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Explain that readOnly is orthogonal to abstract, final, and override">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>readOnly is orthogonal to those flags: it blocks instance writes after effective
 resolution, while final blocks further definition overrides entirely.</message>
               <supportingPoints>
@@ -254,9 +248,9 @@ resolution, while final blocks further definition overrides entirely.</message>
         <dpage:Section heading="Overriding a property" purpose="Connect the concept to a small override sketch">
           <content>
             <dpage:Paragraph purpose="Introduce a child member refined with override=&quot;true&quot;">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A child Block can refine an inherited property by restating it with
 override=&quot;true&quot; and a narrowed documentation or value.</message>
               <exclusions>
@@ -266,9 +260,9 @@ override=&quot;true&quot; and a narrowed documentation or value.</message>
               </exclusions>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="Illustrate a child member with override=&quot;true&quot;">
-              <role>role:Example</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A child Block refines an inherited property with override=&quot;true&quot; and a
 narrowed documentation or value.</message>
               <supportingPoints>
@@ -280,9 +274,9 @@ narrowed documentation or value.</message>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the override=&quot;true&quot; property in the example">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>In the example, the child restates the inherited property name and marks it
 with override=&quot;true&quot; so the local changes merge into that prior member.</message>
               <supportingPoints>

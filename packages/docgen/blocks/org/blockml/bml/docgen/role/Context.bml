@@ -3,9 +3,7 @@
   FQN: org.blockml.bml.docgen.role.Context-->
 <role:Context xmlns="http://blockml.org/bml"
   xmlns:role="org.blockml.bml.docgen.role"
-  xmlns:dcore="org.blockml.bml.docgen.core"
-  xmlns:level="org.blockml.bml.docgen.level"
-  xmlns:weight="org.blockml.bml.docgen.weight">
+  xmlns:dcore="org.blockml.bml.docgen.core">
 
   <baseType>
     dcore:ContentRole
@@ -39,10 +37,10 @@
       <value>Context</value>
     </displayName>
     <defaultDetailLevel override="true">
-      <value>level:Introductory</value>
+      <value>org.blockml.bml.docgen.level.Introductory</value>
     </defaultDetailLevel>
     <defaultWeight override="true">
-      <value>weight:Supporting</value>
+      <value>org.blockml.bml.docgen.weight.Supporting</value>
     </defaultWeight>
     <allowsNewConcepts override="true">
       <value>false</value>

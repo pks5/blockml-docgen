@@ -2,8 +2,7 @@
 
   FQN: org.blockml.bml.docgen.page.List-->
 <page:List xmlns="http://blockml.org/bml"
-  xmlns:page="org.blockml.bml.docgen.page"
-  xmlns:core="org.blockml.bml.core">
+  xmlns:page="org.blockml.bml.docgen.page">
 
   <baseType>
     page:ContentElement

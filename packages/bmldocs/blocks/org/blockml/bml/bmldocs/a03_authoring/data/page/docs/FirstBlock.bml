@@ -2,14 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.FirstBlock-->
 <page:FirstBlock xmlns="http://blockml.org/bml"
-  xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dlevel="org.blockml.bml.docgen.level"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
-  xmlns:role="org.blockml.bml.docgen.role"
-  xmlns:weight="org.blockml.bml.docgen.weight"
   xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
@@ -41,10 +36,10 @@
       <value>Walk a new reader through their first Block definition and the definition/instance distinction.</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Introductory</value>
+      <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:Tutorial</value>
+      <value>org.blockml.bml.docgen.pagetype.Tutorial</value>
     </pageType>
   </properties>
   <aggregations>
@@ -117,9 +112,9 @@
         <dpage:Section heading="Start with a Block definition" purpose="Orient readers authoring their first Block definition">
           <content>
             <dpage:Paragraph purpose="State audience: readers authoring their first Block definition">
-              <role>role:Lead</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>This walkthrough shows what a first Block definition looks like and how
 definition and instance relate before deeper theory.</message>
               <supportingPoints>
@@ -148,9 +143,9 @@ definition and instance relate before deeper theory.</message>
         <dpage:Section heading="Definition and instance" purpose="Establish the Block definition versus Block instance distinction">
           <content>
             <dpage:Paragraph purpose="Explain the Class/Object analogy from doc:BlockAndInstance without implying runtime OOP">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>A Block definition is like a Class and a Block instance is like an Object,
 but the analogy stays conceptual and does not imply runtime OOP.</message>
               <supportingPoints>
@@ -175,9 +170,9 @@ but the analogy stays conceptual and does not imply runtime OOP.</message>
               </exclusions>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Distinguish block documents (definitions) from composition instances">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>A .bml document typically authors a Block definition, while composition holds
 instances of other Blocks inside aggregations.</message>
               <supportingPoints>
@@ -199,9 +194,9 @@ instances of other Blocks inside aggregations.</message>
         <dpage:Section heading="Members you will meet" purpose="Preview the Definition branch members readers will meet first">
           <content>
             <dpage:Paragraph purpose="Introduce is, documentation, and member kinds from doc:DefinitionModel">
-              <role>role:Transition</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A first definition usually starts with identity and is, then adds a few
 familiar member kinds.</message>
               <exclusions>
@@ -209,9 +204,9 @@ familiar member kinds.</message>
               </exclusions>
             </dpage:Paragraph>
             <dpage:List purpose="Member kinds to preview on a first definition">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>These three member kinds appear most often on early Block definitions.</message>
               <items>
                 <dpage:ListItem text="Properties" purpose="Properties hold typed values">
@@ -231,9 +226,9 @@ familiar member kinds.</message>
         <dpage:Section heading="A tiny worked example" purpose="Connect the walkthrough to a minimal Block definition">
           <content>
             <dpage:Paragraph purpose="Describe a minimal worked example preferring practice over full theory">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A tiny first Block needs identity fields, a short is statement, and one
 property before other members are introduced.</message>
               <exclusions>
@@ -243,9 +238,9 @@ property before other members are introduced.</message>
               </exclusions>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="Minimal Block with name, type, baseType, is, and one property">
-              <role>role:Example</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Illustrate a minimal root Block with name, type, baseType, is, and one property.</message>
               <supportingPoints>
                 <sem:SupportingPoint />
@@ -256,9 +251,9 @@ property before other members are introduced.</message>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the worked example's definition fields and single property">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>The root document is the Block definition: name, type, and baseType identify
 it, is states what it is in one sentence, and the single property is the first
 concrete member on that type.</message>
@@ -273,9 +268,9 @@ concrete member on that type.</message>
         <dpage:Section heading="is and documentation" purpose="Separate the short is statement and documentation from ordinary members">
           <content>
             <dpage:Paragraph purpose="Explain is as the one-sentence statement on a definition">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>is is not a property: it is the short sentence that states what the Block is
 before ordinary members begin.</message>
               <supportingPoints>
@@ -298,9 +293,9 @@ before ordinary members begin.</message>
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Explain documentation as expanded intent beyond is">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>documentation expands intent for humans and tools when the one-line is
 statement is not enough.</message>
               <supportingPoints>

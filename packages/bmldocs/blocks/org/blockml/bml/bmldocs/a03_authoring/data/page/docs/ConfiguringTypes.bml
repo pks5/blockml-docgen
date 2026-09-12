@@ -2,15 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.ConfiguringTypes-->
 <page:ConfiguringTypes xmlns="http://blockml.org/bml"
-  xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dlevel="org.blockml.bml.docgen.level"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
-  xmlns:role="org.blockml.bml.docgen.role"
-  xmlns:weight="org.blockml.bml.docgen.weight"
-  xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
   <baseType>
@@ -41,10 +35,10 @@
       <value>Explain curly-brace configuration of ValueType instances on properties.</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Introductory</value>
+      <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:Guide</value>
+      <value>org.blockml.bml.docgen.pagetype.Guide</value>
     </pageType>
   </properties>
   <aggregations>
@@ -106,9 +100,9 @@
         <dpage:Section heading="Curly-brace configuration on properties" purpose="Orient readers to ValueType instance configuration">
           <content>
             <dpage:Paragraph purpose="Introduce curly-brace configuration as orthogonal to generic binding">
-              <role>role:Lead</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Curly-brace configuration specializes a ValueType instance on a property
 without redefining the type declaration itself.</message>
               <supportingPoints>
@@ -136,9 +130,9 @@ without redefining the type declaration itself.</message>
         <dpage:Section heading="Configuration applies to the type instance" purpose="Establish where configuration attaches without rewriting the shared type">
           <content>
             <dpage:Paragraph purpose="Explain that config applies to the property type instance">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Configuration attaches to the ValueType instance used on a property; it does
 not rewrite the shared ValueType Block definition.</message>
               <supportingPoints>
@@ -168,9 +162,9 @@ not rewrite the shared ValueType Block definition.</message>
         <dpage:Section heading="Together with generics" purpose="Explain that parentheses bind generics while braces configure the instance">
           <content>
             <dpage:Paragraph purpose="Explain that configuration may coexist with generics">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Generic binding and curly-brace configuration may appear together on the
 same property type expression.</message>
               <supportingPoints>
@@ -196,9 +190,9 @@ same property type expression.</message>
         <dpage:Section heading="Constant singleton domains" purpose="Introduce Constant configuration surface points">
           <content>
             <dpage:Paragraph purpose="Introduce Constant(T){value: …} singleton domains">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Constant describes a singleton domain by binding a type argument and
 configuring a fixed value.</message>
               <supportingPoints>
@@ -215,15 +209,15 @@ configuring a fixed value.</message>
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Prepare the reader for the Constant surface-point summary">
-              <role>role:Transition</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Constant combines generic bind and value config on one type reference.</message>
             </dpage:Paragraph>
             <dpage:List purpose="Present Constant surface points as a concise summary">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>These points describe how Constant combines generic bind and value config.</message>
               <items>
                 <dpage:ListItem text="Generic bind" purpose="Explain that parentheses bind generic T">
@@ -243,9 +237,9 @@ configuring a fixed value.</message>
         <dpage:Section heading="A configured property type" purpose="Connect the guide to a small configuration example">
           <content>
             <dpage:Paragraph purpose="Introduce a property with configured Text or Constant">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A short example shows a property type using curly-brace configuration,
 optionally with Constant.</message>
               <exclusions>
@@ -253,9 +247,9 @@ optionally with Constant.</message>
               </exclusions>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="Illustrate a complete Block with configured property types">
-              <role>role:Example</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Show a complete root Block whose property types use curly-brace configuration,
 such as Text{maxLength: …} or Constant(T){value: …}.</message>
               <supportingPoints>
@@ -267,9 +261,9 @@ such as Text{maxLength: …} or Constant(T){value: …}.</message>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the configuration braces and optional Constant bind in the example">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>In the example, the braces specialize the property's ValueType instance; if
 Constant appears, the parentheses bind T while the braces supply the singleton
 value on that same reference.</message>

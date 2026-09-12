@@ -4,8 +4,6 @@
 <page:OverridesBasics xmlns="http://blockml.org/bml"
   xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dlevel="org.blockml.bml.docgen.level"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
   xmlns:doc="org.blockml.bml.documentation">
 
   <baseType>
@@ -38,10 +36,10 @@
       <value>Show what override="true" does to an inherited or contract member and when the flag must be present, so authors merge members deliberately.</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Introductory</value>
+      <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:Concept</value>
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
     </pageType>
   </properties>
 </page:OverridesBasics>

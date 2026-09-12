@@ -18,7 +18,7 @@
     a website page exists and describes what part of BlockML it explains and how (short intro,
     example, cheat-sheet). Content elements are dcore:PageElement specializations in this package
     (BlockElement, Section, Paragraph, List, CodeBlock, …). content holds the ordered page body.
-    Narrative SSOT remains bml-core documentation and task blocks referenced via
+    Narrative SSOT remains bml-core documentation and howto blocks referenced via
     &lt;references>&lt;see>.
     
     Convention for see relations:
@@ -27,7 +27,7 @@
     
     Site routing uses PageMapping.path (for example /docs/intro). Concrete children add
     see links to org.blockml.bml.documentation.* or
-    org.blockml.bml.task.*.
+    org.blockml.bml.documentation.howto.*.
   </documentation>
   <abstract>
     true

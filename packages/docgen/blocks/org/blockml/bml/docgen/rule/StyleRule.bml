@@ -3,8 +3,7 @@
   FQN: org.blockml.bml.docgen.rule.StyleRule-->
 <rule:StyleRule xmlns="http://blockml.org/bml"
   xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:dcore="org.blockml.bml.docgen.core"
-  xmlns:core="org.blockml.bml.core">
+  xmlns:dcore="org.blockml.bml.docgen.core">
 
   <baseType>
     dcore:Rule

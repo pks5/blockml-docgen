@@ -3,9 +3,7 @@
   FQN: org.blockml.bml.docgen.role.Lead-->
 <role:Lead xmlns="http://blockml.org/bml"
   xmlns:role="org.blockml.bml.docgen.role"
-  xmlns:dcore="org.blockml.bml.docgen.core"
-  xmlns:level="org.blockml.bml.docgen.level"
-  xmlns:weight="org.blockml.bml.docgen.weight">
+  xmlns:dcore="org.blockml.bml.docgen.core">
 
   <baseType>
     dcore:ContentRole
@@ -43,10 +41,10 @@
       <value>Lead</value>
     </displayName>
     <defaultDetailLevel override="true">
-      <value>level:Overview</value>
+      <value>org.blockml.bml.docgen.level.Overview</value>
     </defaultDetailLevel>
     <defaultWeight override="true">
-      <value>weight:Primary</value>
+      <value>org.blockml.bml.docgen.weight.Primary</value>
     </defaultWeight>
     <allowsNewConcepts override="true">
       <value>false</value>

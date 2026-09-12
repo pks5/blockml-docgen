@@ -12,11 +12,14 @@
     A task that updates A02 page skeletons
   </is>
   <documentation>
-    A02 structuring task: PagePlan.scopes name the topic only. This task reads
-    authorativeSources, selects the matching SSOT Blocks, and writes each page
-    skeleton with a formulated purpose plus see links to those sources. An
-    existing skeleton is overwritten; its content is never used as input. Body
-    content stays for a03.
+    A02 structuring task: PagePlan.scopes name the topic only.
+
+    - **Sources** — read authorativeSources and select the SSOT Blocks that
+      cover each page's scopes
+    - **Skeleton** — write a formulated purpose plus see links to those sources
+    - **Overwrite** — an existing skeleton is replaced; its content is never
+      used as input
+    - **Body** — page body content stays for a03
   </documentation>
   <properties>
     <instructions type="type:Text" override="true">
@@ -104,25 +107,29 @@
     </instructions>
   </properties>
   <aggregations>
-    <authorativeSources type="type:TypeSelectorEntity[]">
+    <authorativeSources override="true">
       <composition>
-        <type:TypeSelectorEntity value="org.blockml.bml.docgen.annotation.**" />
-        <type:TypeSelectorEntity value="org.blockml.bml.docgen.capability.**" />
-        <type:TypeSelectorEntity value="org.blockml.bml.constraint.**" />
-        <type:TypeSelectorEntity value="org.blockml.bml.core.**" />
-        <type:TypeSelectorEntity value="org.blockml.bml.definition.**" />
-        <type:TypeSelectorEntity value="org.blockml.bml.documentation.**" />
-        <type:TypeSelectorEntity value="org.blockml.bml.exception.**" />
-        <type:TypeSelectorEntity value="org.blockml.bml.group.**" />
-        <type:TypeSelectorEntity value="org.blockml.bml.language.**" />
-        <type:TypeSelectorEntity value="org.blockml.bml.mapping.**" />
-        <type:TypeSelectorEntity value="org.blockml.bml.meta.**" />
-        <type:TypeSelectorEntity value="org.blockml.bml.relation.**" />
-        <type:TypeSelectorEntity value="org.blockml.bml.service.**" />
-        <type:TypeSelectorEntity value="org.blockml.bml.status.**" />
-        <type:TypeSelectorEntity value="org.blockml.bml.type.**" />
-        <type:TypeSelectorEntity value="org.blockml.bml.unit.**" />
-        <type:TypeSelectorEntity value="org.blockml.bml.validation.**" />
+        <workflow:AuthorativeSourceSet>
+          <includedPackages>
+            <type:TypeSelectorEntity value="org.blockml.bml.docgen.annotation.**" />
+            <type:TypeSelectorEntity value="org.blockml.bml.docgen.capability.**" />
+            <type:TypeSelectorEntity value="org.blockml.bml.constraint.**" />
+            <type:TypeSelectorEntity value="org.blockml.bml.core.**" />
+            <type:TypeSelectorEntity value="org.blockml.bml.definition.**" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.**" />
+            <type:TypeSelectorEntity value="org.blockml.bml.exception.**" />
+            <type:TypeSelectorEntity value="org.blockml.bml.group.**" />
+            <type:TypeSelectorEntity value="org.blockml.bml.language.**" />
+            <type:TypeSelectorEntity value="org.blockml.bml.mapping.**" />
+            <type:TypeSelectorEntity value="org.blockml.bml.meta.**" />
+            <type:TypeSelectorEntity value="org.blockml.bml.relation.**" />
+            <type:TypeSelectorEntity value="org.blockml.bml.service.**" />
+            <type:TypeSelectorEntity value="org.blockml.bml.status.**" />
+            <type:TypeSelectorEntity value="org.blockml.bml.type.**" />
+            <type:TypeSelectorEntity value="org.blockml.bml.unit.**" />
+            <type:TypeSelectorEntity value="org.blockml.bml.validation.**" />
+          </includedPackages>
+        </workflow:AuthorativeSourceSet>
       </composition>
     </authorativeSources>
   </aggregations>

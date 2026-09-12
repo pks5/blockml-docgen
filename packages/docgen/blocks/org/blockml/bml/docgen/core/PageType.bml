@@ -4,7 +4,6 @@
 <dcore:PageType xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
-  xmlns:core="org.blockml.bml.core"
   xmlns:type="org.blockml.bml.type">
 
   <baseType>

@@ -1,10 +1,8 @@
 <!--Workspace program — CreatePageSkeletons
   FQN: org.blockml.bml.bmldocs._meta.transform.succeeded.T00002_CreatePageSkeletons_20260911T015826-->
 <succeeded:T00002_CreatePageSkeletons_20260911T015826 xmlns="http://blockml.org/bml"
-  xmlns:core="org.blockml.bml.core"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type"
-  xmlns:program="org.blockml.bml.bmldocs.program"
   xmlns:a02_task="org.blockml.bml.bmldocs.a02_structuring.task"
   xmlns:succeeded="org.blockml.bml.bmldocs._meta.transform.succeeded">
 

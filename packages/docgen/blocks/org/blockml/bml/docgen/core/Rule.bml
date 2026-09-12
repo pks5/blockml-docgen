@@ -4,7 +4,6 @@
 <dcore:Rule xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:rule="org.blockml.bml.docgen.rule"
-  xmlns:core="org.blockml.bml.core"
   xmlns:type="org.blockml.bml.type"
   xmlns:workflow="org.blockml.bml.transformer.workflow">
 

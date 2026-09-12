@@ -2,14 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.CapabilitiesIntro-->
 <page:CapabilitiesIntro xmlns="http://blockml.org/bml"
-  xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dlevel="org.blockml.bml.docgen.level"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
-  xmlns:role="org.blockml.bml.docgen.role"
-  xmlns:weight="org.blockml.bml.docgen.weight"
   xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
@@ -41,10 +36,10 @@
       <value>Show that behaviour is expressed as ordinary Capabilities, not special language constructs.</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Introductory</value>
+      <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:Concept</value>
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
     </pageType>
   </properties>
   <aggregations>
@@ -109,9 +104,9 @@
         <dpage:Section heading="No special behaviour constructs" purpose="State that BlockML has no special constructor, getter, or render language concepts">
           <content>
             <dpage:Paragraph purpose="Lead with the absence of special language constructs for behaviour">
-              <role>role:Lead</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>BlockML does not introduce special language constructs for constructors,
 getters, or rendering; behaviour is expressed as ordinary Capabilities.</message>
               <supportingPoints>
@@ -139,9 +134,9 @@ getters, or rendering; behaviour is expressed as ordinary Capabilities.</message
         <dpage:Section heading="Ordinary Capabilities express behaviour" purpose="Show that familiar operations are ordinary Capabilities">
           <content>
             <dpage:Paragraph purpose="Explain that init, getValue, setValue, and render are ordinary Capabilities">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Operations such as initialization, reading and writing values, and rendering
 are declared and invoked as ordinary Capabilities.</message>
               <supportingPoints>
@@ -177,9 +172,9 @@ are declared and invoked as ordinary Capabilities.</message>
         <dpage:Section heading="Kinds describe intent" purpose="Introduce Inbound, Outbound, and Transformation as intent labels">
           <content>
             <dpage:Paragraph purpose="Explain Capability kinds as intent descriptions, not runtime objects">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Capability kinds describe intent — inbound input, outbound output, or
 transformation — rather than special compiler or runtime constructs.</message>
               <supportingPoints>
@@ -209,9 +204,9 @@ transformation — rather than special compiler or runtime constructs.</message>
         <dpage:Section heading="FunctionMapping for call arguments" purpose="Explain how expression calls connect to Capability inputs and outputs">
           <content>
             <dpage:Paragraph purpose="Explain positional and named arguments via FunctionMapping">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>FunctionMapping describes how call arguments from expressions map to a
 Capability input and how the Capability output returns to the caller.</message>
               <supportingPoints>
@@ -232,15 +227,15 @@ Capability input and how the Capability output returns to the caller.</message>
               </exclusions>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Prepare the reader for the Expression and Capability mapping summary">
-              <role>role:Transition</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Calls and results travel in two directions between expressions and Capabilities.</message>
             </dpage:Paragraph>
             <dpage:List purpose="Present Expression and Capability mapping directions as a summary">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>These two directions describe how calls and results travel.</message>
               <items>
                 <dpage:ListItem text="Expression → Capability" purpose="Explain that expression calls map to Capability input">
@@ -258,9 +253,9 @@ the Capability input.</message>
         <dpage:Section heading="A Capability skeleton" purpose="Connect the concept to a small Capability outline">
           <content>
             <dpage:Paragraph purpose="Introduce a Capability with input and output types">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A Capability declares its input and output types and may provide an
 implementation hook.</message>
               <exclusions>
@@ -268,9 +263,9 @@ implementation hook.</message>
               </exclusions>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="Illustrate a complete Block with a Capability member skeleton">
-              <role>role:Example</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Show a complete root Block that declares a Capability member with input type,
 output type, and an optional implementation.</message>
               <supportingPoints>
@@ -282,9 +277,9 @@ output type, and an optional implementation.</message>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the Capability member types in the example">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>In the example, the Capability is an ordinary member: its name identifies the
 behaviour, and inputType and outputType declare what the call accepts and returns.</message>
               <supportingPoints>

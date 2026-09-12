@@ -2,15 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.EmbeddedExpressionsIntro-->
 <page:EmbeddedExpressionsIntro xmlns="http://blockml.org/bml"
-  xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dlevel="org.blockml.bml.docgen.level"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
-  xmlns:role="org.blockml.bml.docgen.role"
-  xmlns:weight="org.blockml.bml.docgen.weight"
-  xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
   <baseType>
@@ -41,10 +35,10 @@
       <value>Introduce &lt;$ $> embeds inside Capability implementation bodies.</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Introductory</value>
+      <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:Concept</value>
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
     </pageType>
   </properties>
   <aggregations>
@@ -108,9 +102,9 @@
         <dpage:Section heading="Embeds in implementation bodies" purpose="Frame embeds as expression inserts inside Capability implementations">
           <content>
             <dpage:Paragraph purpose="Introduce embeds as Capability references inside implementation bodies">
-              <role>role:Lead</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Embedded expressions insert Capability references into the host-language
 body of a Capability implementation.</message>
               <supportingPoints>
@@ -138,9 +132,9 @@ body of a Capability implementation.</message>
         <dpage:Section heading="Delimiters and host language" purpose="Explain embed delimiters and how the host language is named">
           <content>
             <dpage:Paragraph purpose="Explain opening and closing delimiters and language on implementation">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>An embed opens with &lt;$ and closes with $>; the surrounding implementation
 names its host language.</message>
               <supportingPoints>
@@ -170,9 +164,9 @@ names its host language.</message>
         <dpage:Section heading="Call forms inside embeds" purpose="Introduce the main embed call shapes without a full catalogue">
           <content>
             <dpage:Paragraph purpose="Explain common Capability and builtin call forms inside embeds">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Inside an embed, authors call own Capabilities, builtins, and bound bean
 Capabilities with the same expression language used elsewhere.</message>
               <supportingPoints>
@@ -203,9 +197,9 @@ Capabilities with the same expression language used elsewhere.</message>
         <dpage:Section heading="Member expressions versus embeds" purpose="Contrast \${ } member values with embeds in implementation bodies">
           <content>
             <dpage:Paragraph purpose="Explain same language, different host context versus member expressions">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Member expressions and embeds share the same expression language but appear
 in different host contexts.</message>
               <supportingPoints>
@@ -223,15 +217,15 @@ in different host contexts.</message>
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Prepare the reader for the member-versus-embed summary">
-              <role>role:Transition</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Choose the form that matches the host context, not a different expression language.</message>
             </dpage:Paragraph>
             <dpage:List purpose="Present when to use member expressions versus embeds">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>These two forms cover the main expression host contexts.</message>
               <items>
                 <dpage:ListItem text="Member expressions" purpose="Explain \${ } for Block member values">
@@ -249,9 +243,9 @@ expression insert.</message>
         <dpage:Section heading="An implementation embed" purpose="Connect the concept to a small implementation fragment">
           <content>
             <dpage:Paragraph purpose="Introduce an implementation fragment with an embedded Capability call">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A short implementation fragment can contain an embedded expression that
 calls a Capability.</message>
               <exclusions>
@@ -259,9 +253,9 @@ calls a Capability.</message>
               </exclusions>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="Illustrate a complete Block whose Capability implementation contains an embed">
-              <role>role:Example</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Show a complete root Block with a Capability implementation whose body contains
 an &lt;$ $> embed among host-language text.</message>
               <supportingPoints>
@@ -273,9 +267,9 @@ an &lt;$ $> embed among host-language text.</message>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the embed delimiters and call inside the example">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>In the example, the implementation body is host-language source; the &lt;$ $>
 region is the BlockML expression insert, and the call inside it names the
 Capability or builtin being referenced.</message>

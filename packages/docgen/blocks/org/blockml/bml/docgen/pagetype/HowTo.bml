@@ -4,8 +4,7 @@
 <ptype:HowTo xmlns="http://blockml.org/bml"
   xmlns:ptype="org.blockml.bml.docgen.pagetype"
   xmlns:dcore="org.blockml.bml.docgen.core"
-  xmlns:role="org.blockml.bml.docgen.role"
-  xmlns:level="org.blockml.bml.docgen.level">
+  xmlns:role="org.blockml.bml.docgen.role">
 
   <baseType>
     dcore:PageType
@@ -40,7 +39,7 @@
       <value>How-to</value>
     </displayName>
     <defaultDetailLevel override="true">
-      <value>level:Practical</value>
+      <value>org.blockml.bml.docgen.level.Practical</value>
     </defaultDetailLevel>
     <maxPrimaryConcepts override="true">
       <value>2</value>

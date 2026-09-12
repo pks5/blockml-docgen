@@ -2,8 +2,7 @@
 
   FQN: org.blockml.bml.docgen.core.QualityCriterion-->
 <dcore:QualityCriterion xmlns="http://blockml.org/bml"
-  xmlns:dcore="org.blockml.bml.docgen.core"
-  xmlns:core="org.blockml.bml.core">
+  xmlns:dcore="org.blockml.bml.docgen.core">
 
   <baseType>
     dcore:DocElement

@@ -4,8 +4,7 @@
 <dcore:ManifestationStage xmlns="http://blockml.org/bml"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:dplan="org.blockml.bml.docgen.plan"
-  xmlns:stage="org.blockml.bml.docgen.stage"
-  xmlns:core="org.blockml.bml.core">
+  xmlns:stage="org.blockml.bml.docgen.stage">
 
   <baseType>
     dcore:DocElement

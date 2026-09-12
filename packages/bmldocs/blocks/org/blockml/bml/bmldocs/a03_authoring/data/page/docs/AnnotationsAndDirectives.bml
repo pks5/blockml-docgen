@@ -2,15 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.AnnotationsAndDirectives-->
 <page:AnnotationsAndDirectives xmlns="http://blockml.org/bml"
-  xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dlevel="org.blockml.bml.docgen.level"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
-  xmlns:role="org.blockml.bml.docgen.role"
-  xmlns:weight="org.blockml.bml.docgen.weight"
-  xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
   <baseType>
@@ -42,10 +36,10 @@
       <value>Frame annotations as directive namespaces orthogonal to Definition members.</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Introductory</value>
+      <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:Concept</value>
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
     </pageType>
   </properties>
   <aggregations>
@@ -108,9 +102,9 @@
         <dpage:Section heading="Annotations sit beside Definition structure" purpose="Frame annotations as directive namespaces orthogonal to Definition">
           <content>
             <dpage:Paragraph purpose="Introduce annotations as directive namespaces">
-              <role>role:Lead</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Annotations provide directive namespaces that sit orthogonal to ordinary
 Definition members instead of describing block structure themselves.</message>
               <supportingPoints>
@@ -138,9 +132,9 @@ Definition members instead of describing block structure themselves.</message>
         <dpage:Section heading="Annotation versus Definition" purpose="Explain the orthogonality of annotation namespaces">
           <content>
             <dpage:Paragraph purpose="Contrast Annotation namespaces with Definition members">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Annotations do not describe block structure; naming overlap with Definition
 concepts only classifies directive form, not membership in the model tree.</message>
               <supportingPoints>
@@ -158,9 +152,9 @@ concepts only classifies directive form, not membership in the model tree.</mess
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Explain why xmlns:bml binds the directive namespace">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Authors bind xmlns:bml to the annotation namespace so directive attributes and
 elements are recognized without polluting Definition membership.</message>
               <supportingPoints>
@@ -177,16 +171,16 @@ elements are recognized without polluting Definition membership.</message>
         <dpage:Section heading="Common bml: directives" purpose="Summarize principal directive roles without syntax tutorials">
           <content>
             <dpage:Paragraph purpose="Prepare the reader for the common directive roles">
-              <role>role:Transition</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A small set of bml: directives covers the everyday authoring controls without
 requiring a full attribute catalogue here.</message>
             </dpage:Paragraph>
             <dpage:List purpose="Present common directives as conceptual messages">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>These directives cover repetition, condition, containment, binding, and
 serialization hints.</message>
               <items>
@@ -214,9 +208,9 @@ member.</message>
         <dpage:Section heading="Value and example Annotation facets" purpose="Explain Annotation facets as orthogonal multipliers beside canonical slots">
           <content>
             <dpage:Paragraph purpose="Explain that Annotation facets multiply values and examples by namespace">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Annotation facets multiply property values and examples along an Annotation
 namespace axis; they never replace the required canonical value, documentation,
 or examples slots.</message>
@@ -242,15 +236,15 @@ or examples slots.</message>
               </exclusions>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Prepare the reader for facet versus canonical slot roles">
-              <role>role:Transition</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Keep canonical Definition slots and Annotation facets conceptually separate.</message>
             </dpage:Paragraph>
             <dpage:List purpose="Present facet versus canonical roles as a concise summary">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>These roles keep facets orthogonal to required Definition slots.</message>
               <items>
                 <dpage:ListItem text="Canonical slots" purpose="Keep required value and examples on the Definition">
@@ -273,9 +267,9 @@ becoming Definition members.</message>
         <dpage:Section heading="Binding xmlns:bml and a directive" purpose="Connect the concept to a small directive sketch">
           <content>
             <dpage:Paragraph purpose="Introduce xmlns:bml binding with a flow-control directive">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A short fragment binds xmlns:bml to the annotation namespace and uses a
 flow-control directive such as if or each.</message>
               <exclusions>
@@ -285,9 +279,9 @@ flow-control directive such as if or each.</message>
               </exclusions>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="Illustrate xmlns:bml with a directive attribute">
-              <role>role:Example</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A fragment binds xmlns:bml to the annotation namespace and uses a flow-control
 directive such as if or each.</message>
               <supportingPoints>
@@ -299,9 +293,9 @@ directive such as if or each.</message>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the xmlns:bml binding and directive in the example">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>In the example, xmlns:bml opens the annotation namespace, and the if or each
 directive controls authoring flow beside ordinary members rather than as one.</message>
               <supportingPoints>

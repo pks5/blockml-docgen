@@ -4,8 +4,6 @@
 <page:FirstBlock xmlns="http://blockml.org/bml"
   xmlns:page="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dlevel="org.blockml.bml.docgen.level"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
   xmlns:doc="org.blockml.bml.documentation">
 
   <baseType>
@@ -38,10 +36,10 @@
       <value>Walk a newcomer through writing one small Block definition and seeing how a definition differs from an instance, using a minimal worked example rather than full theory.</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Introductory</value>
+      <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:Tutorial</value>
+      <value>org.blockml.bml.docgen.pagetype.Tutorial</value>
     </pageType>
   </properties>
 </page:FirstBlock>

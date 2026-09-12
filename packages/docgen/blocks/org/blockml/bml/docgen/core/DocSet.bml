@@ -7,7 +7,6 @@
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.docgen.page"
   xmlns:bmlcore="org.blockml.bml.core"
-  xmlns:core="org.blockml.bml.core"
   xmlns:type="org.blockml.bml.type">
 
   <baseType>

@@ -2,17 +2,11 @@
 
   FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.AuthorNewBlockGuide-->
 <page:AuthorNewBlockGuide xmlns="http://blockml.org/bml"
-  xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dlevel="org.blockml.bml.docgen.level"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
-  xmlns:role="org.blockml.bml.docgen.role"
-  xmlns:weight="org.blockml.bml.docgen.weight"
-  xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation"
-  xmlns:task="org.blockml.bml.task">
+  xmlns:howto="org.blockml.bml.documentation.howto">
 
   <baseType>
     dpage:DocPage
@@ -24,10 +18,10 @@
     Marker page: step-by-step website how-to for creating a new root Block and exporting it in
     Library.bml — surfaces the core task guide as human docs.
     content is a structural scaffold only; generate prose and examples from referenced core
-    documentation (task:AuthorNewBlock, doc:DocumentationModel, doc:LibrarySystem, doc:DefinitionModel).
+    documentation (howto:AuthorNewBlock, doc:DocumentationModel, doc:LibrarySystem, doc:DefinitionModel).
   </documentation>
   <references>
-    <see type="task:AuthorNewBlock" relation="Requires">
+    <see type="howto:AuthorNewBlock" relation="Requires">
       Primary content — procedural how-to for a new Block definition.
     </see>
   </references>
@@ -39,16 +33,16 @@
       <value>Provide a procedural checklist for creating and publishing a new Block type.</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Practical</value>
+      <value>org.blockml.bml.docgen.level.Practical</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:HowTo</value>
+      <value>org.blockml.bml.docgen.pagetype.HowTo</value>
     </pageType>
   </properties>
   <aggregations>
     <authoritativeSources override="true">
       <composition>
-        <task:AuthorNewBlock />
+        <howto:AuthorNewBlock />
         <doc:DocumentationModel />
         <doc:LibrarySystem />
         <doc:DefinitionModel />
@@ -58,14 +52,14 @@
       <composition>
         <sem:LearningObjective>
           <authoritativeSources>
-            <task:AuthorNewBlock />
+            <howto:AuthorNewBlock />
             <doc:DocumentationModel />
             <doc:DefinitionModel />
           </authoritativeSources>
         </sem:LearningObjective>
         <sem:LearningObjective>
           <authoritativeSources>
-            <task:AuthorNewBlock />
+            <howto:AuthorNewBlock />
             <doc:LibrarySystem />
             <doc:DefinitionModel />
           </authoritativeSources>
@@ -76,13 +70,13 @@
       <composition>
         <sem:ReaderOutcome>
           <authoritativeSources>
-            <task:AuthorNewBlock />
+            <howto:AuthorNewBlock />
             <doc:LibrarySystem />
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
           <authoritativeSources>
-            <task:AuthorNewBlock />
+            <howto:AuthorNewBlock />
           </authoritativeSources>
         </sem:ReaderOutcome>
       </composition>
@@ -91,7 +85,7 @@
       <composition>
         <sem:Scope>
           <authoritativeSources>
-            <task:AuthorNewBlock />
+            <howto:AuthorNewBlock />
             <doc:DocumentationModel />
             <doc:LibrarySystem />
             <doc:DefinitionModel />
@@ -102,7 +96,7 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
-          <reason>This page is a practical checklist surface of task:AuthorNewBlock.</reason>
+          <reason>This page is a practical checklist surface of howto:AuthorNewBlock.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
           <reason>Diagnostics belong on reference and troubleshooting pages.</reason>
@@ -115,31 +109,31 @@
     <content override="true">
       <composition>
         <!--1. Lead-->
-        <dpage:Section heading="A procedural how-to for a new Block" purpose="Position the page as the website surface of task:AuthorNewBlock">
+        <dpage:Section heading="A procedural how-to for a new Block" purpose="Position the page as the website surface of howto:AuthorNewBlock">
           <content>
-            <dpage:Paragraph purpose="Position as procedural website surface of task:AuthorNewBlock">
-              <role>role:Lead</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
-              <message>This how-to is the website surface of task:AuthorNewBlock for creating a new
+            <dpage:Paragraph purpose="Position as procedural website surface of howto:AuthorNewBlock">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>This how-to is the website surface of howto:AuthorNewBlock for creating a new
 root Block and exporting it in Library.bml.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <task:AuthorNewBlock />
+                    <howto:AuthorNewBlock />
                     <doc:DefinitionModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
                     <doc:DocumentationModel />
-                    <task:AuthorNewBlock />
+                    <howto:AuthorNewBlock />
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
                     <doc:LibrarySystem />
-                    <task:AuthorNewBlock />
+                    <howto:AuthorNewBlock />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
@@ -150,29 +144,29 @@ root Block and exporting it in Library.bml.</message>
         <dpage:Section heading="Choose a base and declare identity" purpose="Start authoring with baseType choice and identity metadata">
           <content>
             <dpage:Paragraph purpose="Choose baseType from framework or domain branch">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Practical</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Practical</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Choose a baseType from the framework or a domain branch that matches the new
 Block’s role.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <task:AuthorNewBlock />
+                    <howto:AuthorNewBlock />
                     <doc:DefinitionModel />
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <task:AuthorNewBlock />
+                    <howto:AuthorNewBlock />
                   </authoritativeSources>
                 </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Declare identity and documentation metadata (is, documentation, optional summary)">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Practical</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Practical</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Declare name, type, and baseType, then add is and documentation so the Block
 is identifiable and explainable.</message>
               <supportingPoints>
@@ -194,16 +188,16 @@ is identifiable and explainable.</message>
         <dpage:Section heading="Authoring steps" purpose="List the procedural steps after identity is declared">
           <content>
             <dpage:Paragraph purpose="Prepare the reader for the authoring checklist steps">
-              <role>role:Transition</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>After identity is in place, complete members, optional constraints, and Library
 export in that practical order.</message>
             </dpage:Paragraph>
-            <dpage:List purpose="Authoring procedure from task:AuthorNewBlock">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Practical</detailLevel>
-              <weight>weight:Primary</weight>
+            <dpage:List purpose="Authoring procedure from howto:AuthorNewBlock">
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Practical</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Complete members, constraints, and Library export after identity is in place.</message>
               <items>
                 <dpage:ListItem text="Members" purpose="Add properties, aggregations, associations, or capabilities">
@@ -223,9 +217,9 @@ export in that practical order.</message>
         <dpage:Section heading="Checklist in code form" purpose="Show a checklist-shaped minimal new Block ready for Library export">
           <content>
             <dpage:Paragraph purpose="Show a checklist-shaped minimal new Block ready for Library export">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Practical</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Practical</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A checklist-shaped skeleton should show identity, is, one property, and readiness
 for Library.blocks membership.</message>
               <exclusions>
@@ -235,9 +229,9 @@ for Library.blocks membership.</message>
               </exclusions>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="New Block skeleton with identity, is, one property, ready for Library.blocks">
-              <role>role:Example</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Illustrate a new Block skeleton with identity, is, one property, and readiness
 for Library export.</message>
               <supportingPoints>
@@ -249,9 +243,9 @@ for Library export.</message>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the new Block skeleton fields and Library-ready property">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Practical</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Practical</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>In the example, name, type, and baseType identify the new Block, is states what
 it is, and the single property is the first member before Library.blocks export.</message>
               <supportingPoints>
@@ -265,21 +259,21 @@ it is, and the single property is the first member before Library.blocks export.
         <dpage:Section heading="Publish with Library.blocks" purpose="Complete the checklist with Library membership export">
           <content>
             <dpage:Paragraph purpose="Explain Library.blocks as the publish step for a new Block type">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Practical</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Practical</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>A new domain Block becomes a published catalogue member only when its FQN is
 listed in the library's blocks aggregation in Library.bml.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
                   <authoritativeSources>
                     <doc:LibrarySystem />
-                    <task:AuthorNewBlock />
+                    <howto:AuthorNewBlock />
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
                   <authoritativeSources>
-                    <task:AuthorNewBlock />
+                    <howto:AuthorNewBlock />
                     <doc:DocumentationModel />
                     <doc:DefinitionModel />
                   </authoritativeSources>
@@ -292,9 +286,9 @@ listed in the library's blocks aggregation in Library.bml.</message>
               </exclusions>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="Illustrate a Library.blocks membership entry for the new Block">
-              <role>role:Example</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Library.bml lists the new Block FQN under blocks so the type becomes a
 publishable catalogue member.</message>
               <supportingPoints>
@@ -306,9 +300,9 @@ publishable catalogue member.</message>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the Library.blocks membership entry in the example">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Practical</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Practical</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>In the example, the Library blocks entry publishes the Block created in the
 earlier checklist skeleton so other authors can reuse that type.</message>
               <supportingPoints>

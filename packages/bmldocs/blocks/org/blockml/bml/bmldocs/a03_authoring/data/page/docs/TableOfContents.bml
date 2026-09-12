@@ -3,9 +3,7 @@
   FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.TableOfContents-->
 <page:TableOfContents xmlns="http://blockml.org/bml"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
-  xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
-  xmlns:dlevel="org.blockml.bml.docgen.level">
+  xmlns:dpage="org.blockml.bml.docgen.page">
 
   <baseType>
     dpage:DocPage
@@ -38,10 +36,10 @@
 introducing new conceptual content.</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Overview</value>
+      <value>org.blockml.bml.docgen.level.Overview</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:Index</value>
+      <value>org.blockml.bml.docgen.pagetype.Index</value>
     </pageType>
   </properties>
   <aggregations>

@@ -2,14 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.ModelingGuidelinesPage-->
 <page:ModelingGuidelinesPage xmlns="http://blockml.org/bml"
-  xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dlevel="org.blockml.bml.docgen.level"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
-  xmlns:role="org.blockml.bml.docgen.role"
-  xmlns:weight="org.blockml.bml.docgen.weight"
   xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
@@ -39,10 +34,10 @@
       <value>Offer practical modeling patterns without becoming a second language specification.</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Practical</value>
+      <value>org.blockml.bml.docgen.level.Practical</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:Guide</value>
+      <value>org.blockml.bml.docgen.pagetype.Guide</value>
     </pageType>
   </properties>
   <aggregations>
@@ -107,9 +102,9 @@
         <dpage:Section heading="Practical patterns, not a second specification" purpose="Position the page as authoring guidance rather than language law">
           <content>
             <dpage:Paragraph purpose="Introduce modeling guidelines as practical advice">
-              <role>role:Lead</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>These guidelines help authors choose clear baseTypes and reuse patterns without
 restating the whole language specification.</message>
               <supportingPoints>
@@ -138,9 +133,9 @@ restating the whole language specification.</message>
         <dpage:Section heading="Single inheritance via baseType" purpose="Explain the principal baseType guideline">
           <content>
             <dpage:Paragraph purpose="Explain single inheritance via baseType">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Practical</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Practical</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>A Block declares exactly one baseType except the Block root, and that choice
 should express branch membership and shared members together.</message>
               <supportingPoints>
@@ -159,9 +154,9 @@ should express branch membership and shared members together.</message>
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Separate inheritance reuse from contract composition concerns">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Practical</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Practical</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Prefer inheritance when a Block is a specialized member of a branch; prefer
 contracts when reusable fragments should merge without forcing that branch.</message>
               <supportingPoints>
@@ -179,16 +174,16 @@ contracts when reusable fragments should merge without forcing that branch.</mes
         <dpage:Section heading="Guideline checklist" purpose="Summarize the practical patterns readers should retain">
           <content>
             <dpage:Paragraph purpose="Prepare the reader for the modeling checklist">
-              <role>role:Transition</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A short checklist keeps branch membership, reuse, and contracts distinct while
 authoring.</message>
             </dpage:Paragraph>
             <dpage:List purpose="Present modeling patterns as a concise summary">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Practical</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Practical</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>These habits keep models readable and reusable.</message>
               <items>
                 <dpage:ListItem text="Branch membership" purpose="Prefer clear branch membership over deep accidental trees">
@@ -208,9 +203,9 @@ authoring.</message>
         <dpage:Section heading="Capabilities as the public surface" purpose="Guide authors to express behaviour as Capabilities rather than Properties">
           <content>
             <dpage:Paragraph purpose="Explain Capabilities as the public behavioural surface of a Block">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Practical</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Practical</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Model behaviour as Capabilities — the public surface of a Block — and keep
 Properties as internal configuration rather than as the behavioural API.</message>
               <supportingPoints>
@@ -232,16 +227,16 @@ Properties as internal configuration rather than as the behavioural API.</messag
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Prepare the reader for the Capability-versus-Property checklist">
-              <role>role:Transition</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A short split keeps the public surface and internal configuration distinct while
 authoring.</message>
             </dpage:Paragraph>
             <dpage:List purpose="Present Capability versus Property roles as a concise summary">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Practical</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Practical</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>These roles keep behaviour public and configuration internal.</message>
               <items>
                 <dpage:ListItem text="Capabilities" purpose="Name Capabilities as the public behavioural surface">
@@ -262,9 +257,9 @@ confuse constraints with Capability behaviour.</message>
         <dpage:Section heading="A good baseType choice" purpose="Connect the guideline to a small baseType sketch">
           <content>
             <dpage:Paragraph purpose="Introduce a baseType choice that states branch membership">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Practical</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Practical</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A small domain Block should pick a framework or domain base that states its
 branch clearly in the definition header.</message>
               <exclusions>
@@ -274,9 +269,9 @@ branch clearly in the definition header.</message>
               </exclusions>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="Illustrate baseType choice for branch membership">
-              <role>role:Example</role>
-              <detailLevel>dlevel:Practical</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Practical</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A small domain Block picks a framework or domain base that states its branch.</message>
               <supportingPoints>
                 <sem:SupportingPoint />
@@ -287,9 +282,9 @@ branch clearly in the definition header.</message>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the baseType choice in the example">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Practical</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Practical</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>In the example, baseType names the parent branch the new Block joins, while
 type remains the Block's own identity on that branch.</message>
               <supportingPoints>

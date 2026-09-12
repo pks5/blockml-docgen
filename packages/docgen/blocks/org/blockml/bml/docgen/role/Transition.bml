@@ -3,9 +3,7 @@
   FQN: org.blockml.bml.docgen.role.Transition-->
 <role:Transition xmlns="http://blockml.org/bml"
   xmlns:role="org.blockml.bml.docgen.role"
-  xmlns:dcore="org.blockml.bml.docgen.core"
-  xmlns:level="org.blockml.bml.docgen.level"
-  xmlns:weight="org.blockml.bml.docgen.weight">
+  xmlns:dcore="org.blockml.bml.docgen.core">
 
   <baseType>
     dcore:ContentRole
@@ -37,10 +35,10 @@
       <value>Transition</value>
     </displayName>
     <defaultDetailLevel override="true">
-      <value>level:Overview</value>
+      <value>org.blockml.bml.docgen.level.Overview</value>
     </defaultDetailLevel>
     <defaultWeight override="true">
-      <value>weight:Optional</value>
+      <value>org.blockml.bml.docgen.weight.Optional</value>
     </defaultWeight>
     <allowsNewConcepts override="true">
       <value>false</value>

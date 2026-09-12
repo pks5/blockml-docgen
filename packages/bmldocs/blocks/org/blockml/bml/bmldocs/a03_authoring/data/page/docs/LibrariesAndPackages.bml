@@ -2,14 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.LibrariesAndPackages-->
 <page:LibrariesAndPackages xmlns="http://blockml.org/bml"
-  xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:page="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dlevel="org.blockml.bml.docgen.level"
-  xmlns:ptype="org.blockml.bml.docgen.pagetype"
-  xmlns:role="org.blockml.bml.docgen.role"
-  xmlns:weight="org.blockml.bml.docgen.weight"
   xmlns:core="org.blockml.bml.core"
   xmlns:doc="org.blockml.bml.documentation">
 
@@ -42,10 +37,10 @@
       <value>Explain Library as the publishable unit and the domain bml package convention.</value>
     </purpose>
     <detailLevel override="true">
-      <value>dlevel:Introductory</value>
+      <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
     <pageType override="true">
-      <value>ptype:Concept</value>
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
     </pageType>
   </properties>
   <aggregations>
@@ -110,9 +105,9 @@
         <dpage:Section heading="Libraries group publishable Blocks" purpose="Give readers an immediate orientation to Library as the publishable unit">
           <content>
             <dpage:Paragraph purpose="Introduce Library as the unit that groups Blocks and ValueTypes">
-              <role>role:Lead</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>A Library is the publishable unit that groups Blocks and related types for
 reuse across a World.</message>
               <supportingPoints>
@@ -140,9 +135,9 @@ reuse across a World.</message>
         <dpage:Section heading="Membership and identity" purpose="Explain exclusive Library membership and FQN derivation from package path">
           <content>
             <dpage:Paragraph purpose="Explain that Library.blocks membership is exclusive">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>A Block belongs to a Library only when it is listed in that Library's blocks
 composition; scanning directories is not membership.</message>
               <supportingPoints>
@@ -160,9 +155,9 @@ composition; scanning directories is not membership.</message>
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Explain FQN derivation from the file package path">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>The Library FQN follows the package path of its file, ending in Library for
 that package.</message>
               <supportingPoints>
@@ -185,9 +180,9 @@ that package.</message>
         <dpage:Section heading="Domain bml package conventions" purpose="Summarize where definitions live under the domain bml namespace">
           <content>
             <dpage:Paragraph purpose="Explain that every definition resides under the domain bml package">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Every definition resides under a domain bml package so framework, domain, and
 user content share one namespace pattern.</message>
               <supportingPoints>
@@ -204,15 +199,15 @@ user content share one namespace pattern.</message>
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Prepare the reader for the namespace examples list">
-              <role>role:Transition</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>The same bml package pattern appears at framework, domain, and user scales.</message>
             </dpage:Paragraph>
             <dpage:List purpose="Present namespace examples as a concise summary">
-              <role>role:Summary</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>These examples show the same bml package pattern at three scales.</message>
               <items>
                 <dpage:ListItem text="Framework" purpose="Name the framework package root">
@@ -232,9 +227,9 @@ user content share one namespace pattern.</message>
         <dpage:Section heading="Library membership entry" purpose="Connect the concept to a small Library membership sketch">
           <content>
             <dpage:Paragraph purpose="Introduce a Library.blocks membership sketch">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A short Library sketch shows how published Blocks appear as explicit children
 under the blocks composition.</message>
               <exclusions>
@@ -244,9 +239,9 @@ under the blocks composition.</message>
               </exclusions>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="Illustrate Library.blocks composition referencing a Block type">
-              <role>role:Example</role>
-              <detailLevel>dlevel:Overview</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A Library lists each published Block explicitly in its blocks composition.</message>
               <supportingPoints>
                 <sem:SupportingPoint />
@@ -257,9 +252,9 @@ under the blocks composition.</message>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the Library.blocks membership constructs in the example">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Supporting</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>In the example, the Library definition owns a blocks aggregation; each child
 in its composition is a published Block type, not a folder entry.</message>
               <supportingPoints>
@@ -273,9 +268,9 @@ in its composition is a published Block type, not a folder entry.</message>
         <dpage:Section heading="Packages locate; Libraries publish" purpose="Separate package-path identity from Library publication membership">
           <content>
             <dpage:Paragraph purpose="Explain package path as location and FQN identity">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>The domain bml package path locates a definition and derives its FQN; that
 location alone does not publish the Block.</message>
               <supportingPoints>
@@ -299,9 +294,9 @@ location alone does not publish the Block.</message>
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Explain Library.blocks as the exclusive publish gate">
-              <role>role:Explanation</role>
-              <detailLevel>dlevel:Introductory</detailLevel>
-              <weight>weight:Primary</weight>
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
               <message>Library.blocks is the publish gate: only types listed in that composition are
 published by the Library.</message>
               <supportingPoints>
