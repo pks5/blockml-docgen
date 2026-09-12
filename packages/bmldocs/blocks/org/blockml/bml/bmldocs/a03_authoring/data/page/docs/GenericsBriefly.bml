@@ -54,6 +54,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Understand that generic parameters belong to the declaring Block and must be bound or forwarded when that Block is used as a base.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -68,6 +69,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can locate declaration, application, and inheritance binding sites for generics.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -77,6 +79,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader knows that generic parameters are not inherited implicitly.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -90,6 +93,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Introduce generics as parameters owned by the declaring Block, with the main declaration and binding sites.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -104,9 +108,11 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Advanced variance rules.</summary>
           <reason>Variance details belong after the basic ownership and binding model is clear.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Compiler binding internals.</summary>
           <reason>This page establishes the author-facing model, not compiler machinery.</reason>
         </sem:Exclusion>
       </composition>
@@ -123,6 +129,7 @@
               <message>Generics are type parameters owned by the Block that declares them.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>A declaring Block introduces its own parameters; other Blocks do not share that ownership automatically.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -132,6 +139,7 @@
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Use sites apply those parameters by binding concrete types.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -141,6 +149,7 @@
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Declaration appears under genericTypes on the owning Block definition.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -164,6 +173,7 @@
 must be bound or forwarded; parameters are not inherited implicitly.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Binding supplies a concrete type for a base parameter.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -173,6 +183,7 @@ must be bound or forwarded; parameters are not inherited implicitly.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Forwarding re-exposes a base parameter through the derived Block.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -182,6 +193,7 @@ must be bound or forwarded; parameters are not inherited implicitly.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>All parameters bound yields a concrete derived Block; any forwarded parameter keeps the derived Block generic.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -192,7 +204,9 @@ must be bound or forwarded; parameters are not inherited implicitly.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Advanced variance and compiler binding internals.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>
@@ -208,6 +222,7 @@ must be bound or forwarded; parameters are not inherited implicitly.</message>
 by the named Block, as in Box(Integer).</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Each argument is itself a type expression and may include unions or nested generics.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -218,6 +233,7 @@ by the named Block, as in Box(Integer).</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Parentheses bind arguments in XML type attributes without using angle brackets.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -229,6 +245,7 @@ by the named Block, as in Box(Integer).</message>
               </supportingPoints>
               <exclusions>
                 <sem:Exclusion>
+                  <summary>Curly-brace ValueType configuration and multiplicity brackets.</summary>
                   <reason>Those mechanisms are orthogonal and belong on neighboring pages.</reason>
                 </sem:Exclusion>
               </exclusions>
@@ -274,7 +291,9 @@ generic base type.</message>
               <message>A short example shows a Block declaring a type parameter and a use site
 binding it to a concrete type.</message>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Advanced variance and multi-parameter inheritance cases.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="Illustrate complete Blocks for generic declaration and concrete binding">
@@ -284,11 +303,17 @@ binding it to a concrete type.</message>
               <message>Show complete Blocks: one declaring a type parameter under genericTypes, and
 one applying or binding that parameter to a concrete type.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Highlight the genericTypes declaration that owns the parameter on the declaring Block.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Highlight the Type(Args) application or baseType binding that supplies the concrete type argument.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Compiler binding internals and advanced constraints.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the declaration and binding constructs in the example">
@@ -299,8 +324,12 @@ one applying or binding that parameter to a concrete type.</message>
 and the use site's parentheses bind that parameter to a concrete type rather
 than inheriting it silently.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Notice that ownership stays with the declaring Block; the derived or applying site must account for the parameter explicitly.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>The concrete argument appears in round parentheses, matching the application syntax from the earlier section.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
           </content>

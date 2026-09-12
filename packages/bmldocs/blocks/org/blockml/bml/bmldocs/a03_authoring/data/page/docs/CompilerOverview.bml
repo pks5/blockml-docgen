@@ -59,6 +59,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Sketch the BML to BOM to target path and appreciate that Renderers decide manifestation without requiring a one-to-one Block mapping.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -74,6 +75,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can outline BML, Canonical BOM, validation, and rendering at overview depth.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -84,6 +86,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader can explain that targets choose format, cardinality, and side effects.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -97,6 +100,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Provide a high-level compiler pipeline sketch, the principal freedoms of target-specific Renderers, and an explicit note of what this overview deliberately omits for website readers.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -112,18 +116,23 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Package names.</summary>
           <reason>Overview pages should keep the pipeline conceptual rather than package-shaped.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Pipeline stage class names.</summary>
           <reason>Class names belong in architecture references, not a website overview.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Internal object-model interfaces.</summary>
           <reason>Internal interfaces are normative internals outside this overview.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Validator diagnostic identifiers.</summary>
           <reason>Diagnostic identifiers belong on reference and troubleshooting pages.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Version-specific migration notes.</summary>
           <reason>Migration history distracts from the stable high-level pipeline sketch.</reason>
         </sem:Exclusion>
       </composition>
@@ -142,6 +151,7 @@ target-specific results; this page sketches that path without normative
 internals.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Normative detail stays in core compiler documentation.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -152,6 +162,7 @@ internals.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Website readers need the BML to BOM to target path, not package or class inventories.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -161,6 +172,7 @@ internals.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Renderers decide manifestation after validation, with wide target freedom.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -184,6 +196,7 @@ internals.</message>
 Renderers that produce target-specific results.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>The Canonical BOM preserves authored meaning for later processing.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -194,6 +207,7 @@ Renderers that produce target-specific results.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Validation checks the model before target-specific manifestation begins.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -204,7 +218,9 @@ Renderers that produce target-specific results.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Package names, stage class names, and internal object-model interfaces.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Explain why the Canonical BOM sits between authoring and targets">
@@ -215,6 +231,7 @@ Renderers that produce target-specific results.</message>
 one lossless model without baking target choices into BML.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>The same BOM can feed different manifestations without rewriting the authored model.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -272,7 +289,9 @@ rather than as implementation packages.</message>
               <message>Stage names here are conceptual labels only; they are not package names, class
 names, or normative internal interfaces.</message>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Package names, pipeline stage class names, and internal interfaces.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>
@@ -288,6 +307,7 @@ names, or normative internal interfaces.</message>
 Block to a single artifact.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>The same Canonical BOM may yield very different target results.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -297,6 +317,7 @@ Block to a single artifact.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Format, cardinality, and side effects remain target choices after the shared pipeline stages.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -344,6 +365,7 @@ Canonical BOM, that model is validated, and Renderers then produce
 target-specific results from the shared meaning.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>The Canonical BOM is the lossless hand-off between authoring and many possible targets.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -354,6 +376,7 @@ target-specific results from the shared meaning.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Renderer freedom means manifestation choices stay target-specific after the shared pipeline sketch.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>

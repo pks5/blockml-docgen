@@ -55,6 +55,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Use override="true" when a local redeclaration merges with inherited or contract members, and understand that the flag is not inherited.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -69,6 +70,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can decide when a member needs override="true".</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -78,6 +80,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader can explain that each redeclaration layer must set override again.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -91,6 +94,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Introduce partial member overrides, merge with baseType and contracts, local flags such as abstract, final, and readOnly, and the authoring checks for new versus override members.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -105,9 +109,11 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Full merge algorithm.</summary>
           <reason>Introductory pages need the authoring rule, not the complete merge procedure.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Diagnostic codes.</summary>
           <reason>Diagnostic identifiers belong on reference and troubleshooting pages.</reason>
         </sem:Exclusion>
       </composition>
@@ -125,6 +131,7 @@
 refines a member that already exists through inheritance or contracts.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>The flag marks intentional merge rather than accidental name collision.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -134,6 +141,7 @@ refines a member that already exists through inheritance or contracts.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Overrides refine existing members; they do not invent a second identity for the same name.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -143,6 +151,7 @@ refines a member that already exists through inheritance or contracts.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Contract fragments and baseType members both count as prior members that may need override.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -167,6 +176,7 @@ refines a member that already exists through inheritance or contracts.</message>
 from the baseType chain or from contracts.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Inherited identity and contract fragments both count as prior members.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -177,6 +187,7 @@ from the baseType chain or from contracts.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Setting override="true" declares that the local member intentionally merges with that prior identity.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -195,6 +206,7 @@ from the baseType chain or from contracts.</message>
 again when it further refines the member.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>A child that overrides again must restate the flag; it does not inherit the parent's override marker.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -205,7 +217,9 @@ again when it further refines the member.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full merge algorithm details.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>
@@ -250,6 +264,7 @@ prior identity.</message>
 inherited, even when their effects propagate through the merge.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>abstract="true" marks an incomplete declaration that creates an implementation obligation for descendants.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -259,6 +274,7 @@ inherited, even when their effects propagate through the merge.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>final="true" seals a declaration so descendants cannot override it.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -268,6 +284,7 @@ inherited, even when their effects propagate through the merge.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>A concrete child satisfies an abstract parent by restating the member with override="true" and a locally complete declaration.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -278,7 +295,9 @@ inherited, even when their effects propagate through the merge.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full merge algorithm and diagnostic codes.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Explain that readOnly is orthogonal to abstract, final, and override">
@@ -289,6 +308,7 @@ inherited, even when their effects propagate through the merge.</message>
 resolution, while final blocks further definition overrides entirely.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Definitions may still declare and refine readOnly members; instances must not set a member whose effective definition is readOnly.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -298,6 +318,7 @@ resolution, while final blocks further definition overrides entirely.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>A public readOnly member remains publicly readable; readOnly is not a visibility substitute.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -321,6 +342,7 @@ resolution, while final blocks further definition overrides entirely.</message>
 override=&quot;true&quot; and a narrowed documentation or value.</message>
               <exclusions>
                 <sem:Exclusion>
+                  <summary>Full merge algorithm and diagnostic codes.</summary>
                   <reason>The example teaches the authoring flag, not the merge procedure.</reason>
                 </sem:Exclusion>
               </exclusions>
@@ -332,11 +354,17 @@ override=&quot;true&quot; and a narrowed documentation or value.</message>
               <message>A child Block refines an inherited property with override=&quot;true&quot; and a
 narrowed documentation or value.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Highlight the child property that repeats an inherited name with override="true".</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Highlight the refined documentation or value that demonstrates partial merge rather than a brand-new member.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full merge algorithm and diagnostic codes.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the override=&quot;true&quot; property in the example">
@@ -346,8 +374,12 @@ narrowed documentation or value.</message>
               <message>In the example, the child restates the inherited property name and marks it
 with override=&quot;true&quot; so the local changes merge into that prior member.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Without the flag, the same name would look like an accidental collision rather than an intentional refinement.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>A further descendant that refines again must set override="true" on its own redeclaration layer.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
           </content>

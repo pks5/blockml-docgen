@@ -55,6 +55,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Attach reusable constraints through a single context-bound constraints container without a separate target property.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -69,6 +70,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can explain that embedding context binds a constraint automatically.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -78,6 +80,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader can distinguish constraint branches, suggestions, and Enum-related rules at a conceptual level.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -91,6 +94,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Introduce constraints on constrainable definition elements, the single context-bound container, validation severity versus metadata-only rules, preference for inline ValueType configuration where intrinsic, and the related ideas of branches, suggestions, and Enums.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -105,9 +109,11 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Full constraint branch catalogue.</summary>
           <reason>An introductory page should teach the attachment model, not list every branch.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Diagnostic identifiers.</summary>
           <reason>Diagnostic identifiers belong on reference and troubleshooting pages.</reason>
         </sem:Exclusion>
       </composition>
@@ -125,6 +131,7 @@
 elements such as properties and related members.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Suggestions remain related authoring help beside those validation rules.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -134,6 +141,7 @@ elements such as properties and related members.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Constraints travel with the definition element they constrain rather than living as free-floating rules.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -144,6 +152,7 @@ elements such as properties and related members.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Branches, suggestions, and Enum-related patterns organize how those rules appear in authoring.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -167,6 +176,7 @@ elements such as properties and related members.</message>
 each constraint automatically without a target= property.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Placement under the constrained element supplies the binding context.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -177,6 +187,7 @@ each constraint automatically without a target= property.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Authors do not name the target separately because the surrounding element already is the target.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -187,7 +198,9 @@ each constraint automatically without a target= property.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full constraint branch catalogue and diagnostic identifiers.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Relate constraints to ValueType configuration on members">
@@ -198,6 +211,7 @@ each constraint automatically without a target= property.</message>
 keeping validation next to the typed value they guard.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Co-location helps readers see type shape and validation together.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -251,6 +265,7 @@ and authoring help appear together.</message>
 Information — and when validation is omitted the rule remains metadata only.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Error fails compilation on violation; Warning and Information report without the same hard stop.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -260,6 +275,7 @@ Information — and when validation is omitted the rule remains metadata only.</
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Metadata-only constraints still travel with the definition element for editors and later processing even when the validator does not enforce them.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -270,7 +286,9 @@ Information — and when validation is omitted the rule remains metadata only.</
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full branch catalogue and diagnostic identifiers.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Prefer ValueType configuration for type-intrinsic thresholds">
@@ -281,6 +299,7 @@ Information — and when validation is omitted the rule remains metadata only.</
 keep Constraints for contextual or composable rules beside that type shape.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>A Text{maxLength: 100} style configuration expresses an intrinsic limit on the typed value itself.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -291,6 +310,7 @@ keep Constraints for contextual or composable rules beside that type shape.</mes
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Constraints remain the place for reusable Min, Pattern, and structural rules that compose across contexts.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -315,6 +335,7 @@ keep Constraints for contextual or composable rules beside that type shape.</mes
 Pattern-style rule bound by that property's context.</message>
               <exclusions>
                 <sem:Exclusion>
+                  <summary>Full branch catalogue and diagnostic identifiers.</summary>
                   <reason>The example teaches attachment, not every constraint branch.</reason>
                 </sem:Exclusion>
               </exclusions>
@@ -325,11 +346,17 @@ Pattern-style rule bound by that property's context.</message>
               <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A property constraints container can host a simple Min or Pattern style rule.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Highlight the property that owns the constraints container.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Highlight the MinLength- or Pattern-style constraint child bound by embedding context without a target= attribute.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full branch catalogue and diagnostic identifiers.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the constraints container and rule in the example">
@@ -340,8 +367,12 @@ Pattern-style rule bound by that property's context.</message>
 placement under that property binds the constraint without a separate target=
 property.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>The MinLength- or Pattern-style child demonstrates a reusable rule kind attached to one member.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Suggestions, if shown nearby, remain authoring help rather than the same validation rule.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
           </content>

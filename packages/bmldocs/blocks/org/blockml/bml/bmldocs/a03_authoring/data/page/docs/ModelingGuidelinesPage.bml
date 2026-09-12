@@ -56,6 +56,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Apply a small set of practical modeling patterns for baseType, reuse, and contracts without treating the page as a second language specification.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -71,6 +72,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can choose a baseType that expresses clear branch membership.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -81,6 +83,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader can separate inheritance reuse from contract composition concerns.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -95,6 +98,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Present practical guidelines for baseType choice, branch membership, reuse, contracts, and Capabilities as the public behavioural surface — as authoring advice rather than normative language law.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -110,9 +114,11 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Exhaustive anti-pattern catalogue.</summary>
           <reason>A short guide should teach preferred patterns, not enumerate every mistake.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Validator codes.</summary>
           <reason>Diagnostic identifiers belong on reference and troubleshooting pages.</reason>
         </sem:Exclusion>
       </composition>
@@ -130,6 +136,7 @@
 restating the whole language specification.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Prefer a small checklist of durable habits over exhaustive rules.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -139,6 +146,7 @@ restating the whole language specification.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Guidance here complements contracts and override pages rather than replacing them.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -149,6 +157,7 @@ restating the whole language specification.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Clear branch membership and intentional reuse matter more than deep inheritance trees.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -173,6 +182,7 @@ restating the whole language specification.</message>
 should express branch membership and shared members together.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Clear branch membership beats deep accidental inheritance trees.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -183,6 +193,7 @@ should express branch membership and shared members together.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>baseType is the primary reuse path for shared members on a single branch.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -202,6 +213,7 @@ should express branch membership and shared members together.</message>
 contracts when reusable fragments should merge without forcing that branch.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Contracts and baseType solve different reuse problems and should not be treated as interchangeable.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -255,6 +267,7 @@ authoring.</message>
 Properties as internal configuration rather than as the behavioural API.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Init, get/set, render, and domain operations belong on Capabilities, not on ad-hoc Properties that only look like behaviour.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -264,6 +277,7 @@ Properties as internal configuration rather than as the behavioural API.</messag
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Capability kinds such as Inbound, Outbound, and Transformation describe intent without inventing special compiler constructs.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -273,6 +287,7 @@ Properties as internal configuration rather than as the behavioural API.</messag
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Prefer PseudoCode or natural-language Capability implementations when the goal is a clear semantic description.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -321,6 +336,7 @@ confuse constraints with Capability behaviour.</message>
 branch clearly in the definition header.</message>
               <exclusions>
                 <sem:Exclusion>
+                  <summary>Exhaustive anti-pattern examples and validator codes.</summary>
                   <reason>The example teaches a preferred pattern, not an anti-pattern catalogue.</reason>
                 </sem:Exclusion>
               </exclusions>
@@ -331,11 +347,17 @@ branch clearly in the definition header.</message>
               <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A small domain Block picks a framework or domain base that states its branch.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Highlight name, type, and baseType as the identity header that states branch membership.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Keep members minimal so the baseType choice remains the teaching focus.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Exhaustive anti-pattern examples and validator codes.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the baseType choice in the example">
@@ -345,8 +367,12 @@ branch clearly in the definition header.</message>
               <message>In the example, baseType names the parent branch the new Block joins, while
 type remains the Block's own identity on that branch.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Readers should see one clear parent rather than a deep accidental chain invented for reuse alone.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Shared fragments that do not belong on that branch would use contracts instead of forcing another baseType.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
           </content>

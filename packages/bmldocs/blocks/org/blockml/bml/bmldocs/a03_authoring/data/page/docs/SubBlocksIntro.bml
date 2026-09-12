@@ -59,6 +59,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Recognize Sub-Blocks as nested types under a parent Block and distinguish them from embedded Blocks while grasping basic FQN forms.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -74,6 +75,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can describe Sub-Blocks as nested types declared under subBlocks.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -83,6 +85,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader can contrast Sub-Blocks with embedded Blocks and name common reference forms.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -97,6 +100,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Introduce Sub-Blocks as nested types, contrast them with embedded Blocks, explain Sub-Block versus root identity conventions, and summarize FQN and reference forms for nested types.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -112,9 +116,11 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Full identity derivation algorithm.</summary>
           <reason>Introductory pages need usable reference forms, not the complete algorithm.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Diagnostic codes.</summary>
           <reason>Diagnostic identifiers belong on reference and troubleshooting pages.</reason>
         </sem:Exclusion>
       </composition>
@@ -132,6 +138,7 @@
 classes that still belong to one enclosing identity.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Nesting keeps related types close without inventing a second ontology.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -141,6 +148,7 @@ classes that still belong to one enclosing identity.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Sub-Block identity builds from the parent FQN rather than standing as an independent document root.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -150,6 +158,7 @@ classes that still belong to one enclosing identity.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Visibility naming for Sub-Blocks follows the same access prefixes as members.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -174,6 +183,7 @@ classes that still belong to one enclosing identity.</message>
 inherit outer generic scope from the parent.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Visibility naming for Sub-Blocks follows the same access prefixes as members.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -184,6 +194,7 @@ inherit outer generic scope from the parent.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Nested depth is allowed, but each Sub-Block remains a nested type under the parent identity.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -202,6 +213,7 @@ inherit outer generic scope from the parent.</message>
 not be confused with Sub-Block nested types.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Keep nested-type identity and embedded composition as separate ideas.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -211,6 +223,7 @@ not be confused with Sub-Block nested types.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>subBlocks declare types; embeddedBlocks place Block instances in a different nesting role.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -234,6 +247,7 @@ not be confused with Sub-Block nested types.</message>
 an independent document root.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Qualified and nested unqualified forms cover everyday references to nested types.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -245,7 +259,9 @@ an independent document root.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full identity derivation algorithm.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Prepare the reader for common Sub-Block reference forms">
@@ -289,6 +305,7 @@ required, and type is normally omitted because it derives from the parent FQN
 plus that name.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>A root Block requires type as canonical identity and may omit name when it matches the type's last segment.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -298,6 +315,7 @@ plus that name.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>When a Sub-Block does declare type, it must equal the expected parent-path derivation, not merely the last segment.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -308,6 +326,7 @@ plus that name.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Prefer omitting type on Sub-Blocks so the nested FQN stays derived and uncluttered.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -319,7 +338,9 @@ plus that name.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full identity derivation algorithm and diagnostic codes.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Prepare the reader for the identity-convention summary">
@@ -361,6 +382,7 @@ type, not nested-type identity under the parent FQN.</message>
 with a qualified name from a composition or similar member.</message>
               <exclusions>
                 <sem:Exclusion>
+                  <summary>Full identity derivation algorithm and diagnostic codes.</summary>
                   <reason>The example teaches nesting and reference shape, not the full algorithm.</reason>
                 </sem:Exclusion>
               </exclusions>
@@ -372,11 +394,17 @@ with a qualified name from a composition or similar member.</message>
               <message>A root declares one Sub-Block and a composition can refer to that nested type
 with a qualified name.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Highlight the subBlocks entry that declares the nested type under the parent.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Highlight the qualified reference that names the nested type from outside its declaration site.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full identity derivation algorithm and diagnostic codes.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the subBlocks declaration and qualified reference">
@@ -387,8 +415,12 @@ with a qualified name.</message>
 qualified reference resolves that nested identity rather than an independent
 root document.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>The subBlocks aggregation demonstrates nested-type declaration, not embeddedBlocks instance nesting.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>The qualified name shows how FQN or QName forms identify the nested type unambiguously.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
           </content>

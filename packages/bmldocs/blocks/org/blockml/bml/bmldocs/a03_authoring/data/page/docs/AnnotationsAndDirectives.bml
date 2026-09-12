@@ -58,6 +58,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Treat annotation namespaces as orthogonal to Definition members and recognize the principal bml: directive roles at a conceptual level.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -72,6 +73,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can distinguish Annotation namespaces from Definition structure.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -81,6 +83,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader can name the conceptual jobs of each, if, container, with, and xml.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -94,6 +97,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Introduce annotation namespaces, their orthogonality to Definition members, value and example Annotation facets, and a conceptual tour of common bml: directives.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -108,12 +112,15 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Exhaustive directive attribute reference.</summary>
           <reason>This page frames roles; attribute catalogues belong in dedicated references.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Validator codes.</summary>
           <reason>Diagnostic identifiers belong on reference and troubleshooting pages.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Implementation status.</summary>
           <reason>The conceptual model should stay free of project-status notes.</reason>
         </sem:Exclusion>
       </composition>
@@ -131,6 +138,7 @@
 Definition members instead of describing block structure themselves.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Directives steer authoring and processing without becoming properties or aggregations of the Definition.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -141,6 +149,7 @@ Definition members instead of describing block structure themselves.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Annotation namespaces classify directive form; they are not another member kind in the model tree.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -150,6 +159,7 @@ Definition members instead of describing block structure themselves.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Common bml: directives cover repetition, condition, containment, binding, and serialization hints.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -173,6 +183,7 @@ Definition members instead of describing block structure themselves.</message>
 concepts only classifies directive form, not membership in the model tree.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Keep structural members and directive namespaces conceptually separate.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -182,6 +193,7 @@ concepts only classifies directive form, not membership in the model tree.</mess
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>A directive may appear near members without becoming a property, aggregation, or association itself.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -201,6 +213,7 @@ concepts only classifies directive form, not membership in the model tree.</mess
 elements are recognized without polluting Definition membership.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Namespace binding keeps directive vocabulary explicit and portable.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -262,6 +275,7 @@ namespace axis; they never replace the required canonical value, documentation,
 or examples slots.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>A prefixed value under a property is a Value facet for that property identity, not a renamed Definition member.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -271,6 +285,7 @@ or examples slots.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Prefixed example children under examples are Annotation.Example siblings of the canonical unprefixed example element.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -280,6 +295,7 @@ or examples slots.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>preferredAlias remains an authoring convention; the Canonical BOM stores the Annotation FQN, never the XML prefix alone.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -290,7 +306,9 @@ or examples slots.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Exhaustive attribute reference, validator codes, and implementation status.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Prepare the reader for facet versus canonical slot roles">
@@ -332,6 +350,7 @@ becoming Definition members.</message>
 flow-control directive such as if or each.</message>
               <exclusions>
                 <sem:Exclusion>
+                  <summary>Exhaustive attribute reference, validator codes, and implementation status.</summary>
                   <reason>The example teaches namespace binding and one directive role, not a catalogue.</reason>
                 </sem:Exclusion>
               </exclusions>
@@ -343,11 +362,17 @@ flow-control directive such as if or each.</message>
               <message>A fragment binds xmlns:bml to the annotation namespace and uses a flow-control
 directive such as if or each.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Highlight the xmlns:bml namespace binding on the fragment.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Highlight the if or each directive that steers inclusion or repetition without becoming a Definition member.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Exhaustive attribute reference, validator codes, and implementation status.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the xmlns:bml binding and directive in the example">
@@ -357,8 +382,12 @@ directive such as if or each.</message>
               <message>In the example, xmlns:bml opens the annotation namespace, and the if or each
 directive controls authoring flow beside ordinary members rather than as one.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>The directive demonstrates annotation orthogonality: it steers processing without describing Block structure.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Other directives such as container, with, and xml follow the same namespace idea with different jobs.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
           </content>

@@ -58,6 +58,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Understand the distinction between a Block definition and a Block instance.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -67,6 +68,7 @@
           </authoritativeSources>
         </sem:LearningObjective>
         <sem:LearningObjective>
+          <summary>Recognize the main member kinds that appear on a first Block definition.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -80,6 +82,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can sketch a minimal Block definition with identity and one property.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -90,6 +93,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader can explain definition versus instance in one sentence.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -103,6 +107,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>First-contact walkthrough of a Block definition for website readers.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -118,15 +123,19 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Full Definition meta-model.</summary>
           <reason>This page introduces only the members a first author will meet.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Runtime OOP semantics.</summary>
           <reason>The Class/Object analogy is conceptual only and must not imply runtime objects.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Validator diagnostics.</summary>
           <reason>Diagnostic identifiers belong on reference and troubleshooting pages.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Full composition rules.</summary>
           <reason>Composition has a dedicated page after this walkthrough.</reason>
         </sem:Exclusion>
       </composition>
@@ -144,6 +153,7 @@
 definition and instance relate before deeper theory.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Prefer a small worked example over a full Definition meta-model tour.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -154,6 +164,7 @@ definition and instance relate before deeper theory.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Readers leave able to sketch identity, is, and one property on a root Block.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -164,6 +175,7 @@ definition and instance relate before deeper theory.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Definition versus instance is introduced here and deepened on later pages.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -187,6 +199,7 @@ definition and instance relate before deeper theory.</message>
 but the analogy stays conceptual and does not imply runtime OOP.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>The definition describes the reusable shape and meaning of a Block type.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -196,6 +209,7 @@ but the analogy stays conceptual and does not imply runtime OOP.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>An instance is a concrete use of that definition with specific values.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -205,6 +219,7 @@ but the analogy stays conceptual and does not imply runtime OOP.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>The analogy helps authors navigate roles without importing language-runtime object semantics.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -215,7 +230,9 @@ but the analogy stays conceptual and does not imply runtime OOP.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Runtime object models, inheritance mechanics, and language-runtime mapping.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Distinguish block documents (definitions) from composition instances">
@@ -226,6 +243,7 @@ but the analogy stays conceptual and does not imply runtime OOP.</message>
 instances of other Blocks inside aggregations.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Root documents declare named Block types for reuse.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -235,6 +253,7 @@ instances of other Blocks inside aggregations.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Nested composition places instances where a parent aggregation expects them.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -257,7 +276,9 @@ instances of other Blocks inside aggregations.</message>
               <message>A first definition usually starts with identity and is, then adds a few
 familiar member kinds.</message>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Deep DefinitionModel detail beyond the first-contact member kinds.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:List purpose="Member kinds to preview on a first definition">
@@ -290,6 +311,7 @@ familiar member kinds.</message>
 property before other members are introduced.</message>
               <exclusions>
                 <sem:Exclusion>
+                  <summary>Aggregations, associations, capabilities, constraints, and versioning.</summary>
                   <reason>The example should stay minimal and practice-oriented.</reason>
                 </sem:Exclusion>
               </exclusions>
@@ -300,11 +322,17 @@ property before other members are introduced.</message>
               <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Illustrate a minimal root Block with name, type, baseType, is, and one property.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Highlight the root identity fields name, type, and baseType together with the short is statement.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Highlight a single named property under properties as the first member kind.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Other members beyond a single property.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the worked example's definition fields and single property">
@@ -315,8 +343,12 @@ property before other members are introduced.</message>
 it, is states what it is in one sentence, and the single property is the first
 concrete member on that type.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Notice that this file authors a definition, not an instance — instances appear later inside aggregations on other Blocks.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>The property demonstrates a typed value on the definition without yet introducing aggregations or capabilities.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
           </content>
@@ -332,6 +364,7 @@ concrete member on that type.</message>
 before ordinary members begin.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>A first definition uses is to give humans and tools a one-line reading of the type.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -341,6 +374,7 @@ before ordinary members begin.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Keep is short; it is an identity statement, not a full description.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -350,6 +384,7 @@ before ordinary members begin.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>The worked example's is line sits with identity fields, ahead of the property that demonstrates a member.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -369,6 +404,7 @@ before ordinary members begin.</message>
 statement is not enough.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Add documentation after is when readers need purpose, constraints, or usage notes on the definition.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -378,6 +414,7 @@ statement is not enough.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Documentation remains part of the definition model, not a substitute for properties, aggregations, or capabilities.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -388,7 +425,9 @@ statement is not enough.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full DocumentationModel field catalogues and style-guide prose rules.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>

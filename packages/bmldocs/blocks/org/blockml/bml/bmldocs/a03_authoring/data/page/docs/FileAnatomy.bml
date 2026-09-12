@@ -58,6 +58,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Recognize the ordered identity and documentation fields of a root Block document.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -68,6 +69,7 @@
           </authoritativeSources>
         </sem:LearningObjective>
         <sem:LearningObjective>
+          <summary>Apply PascalCase Block naming rules at a conceptual level.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -81,6 +83,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can map the main ordered fields of a typical root .bml file.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -91,6 +94,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader can state valid versus invalid Block name forms without diagnostic codes.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -104,6 +108,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Provide a structural cheat-sheet for the ordered fields of a root Block document.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -119,12 +124,15 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Full style-guide advice beyond file anatomy and naming.</summary>
           <reason>This page is a short labeled map, not a modeling style guide.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Validator diagnostic identifiers and detailed validation behavior.</summary>
           <reason>Diagnostic details belong on reference and troubleshooting pages.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Capabilities, constraints, and versioning noise in the skeleton example.</summary>
           <reason>The annotated skeleton should show identity, documentation, properties, and references.</reason>
         </sem:Exclusion>
       </composition>
@@ -142,6 +150,7 @@
 document, not a full style guide.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Identity fields come first, then documentation fields, then ordinary members.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -152,6 +161,7 @@ document, not a full style guide.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Naming conventions keep the local Block name readable and valid.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -161,6 +171,7 @@ document, not a full style guide.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>An annotated skeleton ties the ordered fields together in one view.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -185,6 +196,7 @@ document, not a full style guide.</message>
 optional examples that explain the Block for humans and tools.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>is states the Block in one short sentence.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -194,6 +206,7 @@ optional examples that explain the Block for humans and tools.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>documentation expands intent for humans and tools beyond that one-liner.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -203,6 +216,7 @@ optional examples that explain the Block for humans and tools.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>references and examples point to related material without replacing the Block's own documentation.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -221,6 +235,7 @@ optional examples that explain the Block for humans and tools.</message>
 prose is read.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>name is the local Block identifier in the file.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -231,6 +246,7 @@ prose is read.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>type and baseType place the Block in the type system and inheritance chain.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -240,6 +256,7 @@ prose is read.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Prose fields follow only after that identity trio is present.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -262,7 +279,9 @@ prose is read.</message>
               <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Block names follow a simple PascalCase convention that keeps type identity readable.</message>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Validator diagnostic identifiers for invalid names.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:List purpose="Name rules to remember">
@@ -292,6 +311,7 @@ prose is read.</message>
 references in a stable skeleton.</message>
               <exclusions>
                 <sem:Exclusion>
+                  <summary>Capabilities, constraints, and versioning in the skeleton.</summary>
                   <reason>The annotated example should stay focused on the cheat-sheet fields.</reason>
                 </sem:Exclusion>
               </exclusions>
@@ -303,12 +323,20 @@ references in a stable skeleton.</message>
               <message>Illustrate an annotated root Block skeleton with identity, documentation,
 properties, and references.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Highlight the ordered identity trio name, type, and baseType at the top of the root Block.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Highlight is, documentation, and references as the documentation-model fields that follow identity.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Highlight a small properties section as the first ordinary member area in the skeleton.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Capabilities, constraints, and versioning noise.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the annotated skeleton's field order and roles">
@@ -319,8 +347,12 @@ properties, and references.</message>
 is and documentation explain it, references point outward, and properties
 begin the ordinary member area.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Notice that prose fields never precede identity — the Block is named before it is described.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>The properties section shows where members live without introducing capabilities or constraints into the cheat-sheet.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
           </content>
@@ -336,6 +368,7 @@ begin the ordinary member area.</message>
 under the wrong name form, the document stops reading as a clear Block anatomy.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Identity must precede prose so name, type, and baseType identify the Block before is or documentation explain it.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -346,6 +379,7 @@ under the wrong name form, the document stops reading as a clear Block anatomy.<
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>PascalCase naming mistakes are anatomy errors, not merely style nits, because the local name is part of type identity.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -355,6 +389,7 @@ under the wrong name form, the document stops reading as a clear Block anatomy.<
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Stuffing capabilities, constraints, or versioning into a first skeleton hides the cheat-sheet fields this page is meant to teach.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -366,7 +401,9 @@ under the wrong name form, the document stops reading as a clear Block anatomy.<
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Validator diagnostic identifiers and full style-guide advice.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:List purpose="Checklist of overview-depth mistakes to avoid">

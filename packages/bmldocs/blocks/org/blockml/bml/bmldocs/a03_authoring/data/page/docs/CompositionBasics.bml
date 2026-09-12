@@ -56,6 +56,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Explain how aggregations receive child Block instances through composition.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -71,6 +72,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can contrast definition-time composition with instance-time aggregation fill.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -81,6 +83,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader can recall placement, override, and recursion rules at a high level.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -94,6 +97,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Introduce composition as aggregation fill, contrast definition and instance paths, and retain a short set of placement rules.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -109,12 +113,15 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Full override merge algorithm.</summary>
           <reason>Merge details belong on overrides and reference pages.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Annotation and directive containers.</summary>
           <reason>Directives need dedicated pages and would distract from aggregation fill.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Validator error codes.</summary>
           <reason>Diagnostic identifiers belong on troubleshooting and reference pages.</reason>
         </sem:Exclusion>
       </composition>
@@ -131,6 +138,7 @@
               <message>Composition is how aggregations receive child Block instances.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Child Blocks nest under an aggregation member rather than floating free.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -140,6 +148,7 @@
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Definition-time and instance-time fill use different surface forms for the same idea.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -150,6 +159,7 @@
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>A few placement rules keep nesting predictable before overrides go deeper.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -172,6 +182,7 @@
               <message>On definitions, child instances nest inside a composition member of the aggregation.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>The composition wrapper marks definition-time children of that aggregation.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -182,6 +193,7 @@
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Those children are instances of other Block types nested under the parent definition.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -192,6 +204,7 @@
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Definition composition is authored once on the type and shared by later uses.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -210,6 +223,7 @@
 composition wrapper.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Instance fill uses the aggregation name as the container for children.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -220,6 +234,7 @@ composition wrapper.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>There is no composition wrapper on instances — the aggregation element itself holds the children.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -229,6 +244,7 @@ composition wrapper.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>The same child types can appear in either path; only the placement form differs.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -281,6 +297,7 @@ composition wrapper.</message>
 at instance time.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Definition-time composition nests children under a composition member.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -290,6 +307,7 @@ at instance time.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Instance-time fill places the same child kinds directly under the aggregation.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -306,11 +324,17 @@ at instance time.</message>
               <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Qualified Block tags appear as composition children under the aggregation.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Highlight an aggregation that contains a composition wrapper with nested child Block instances.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Optionally contrast the same aggregation filled directly on an instance without a composition wrapper.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Override merge algorithms, directives, and validator codes.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the aggregation, composition wrapper, and nested children">
@@ -321,8 +345,12 @@ at instance time.</message>
 nested qualified Block tags inside it are the child instances; on an instance,
 those same children sit directly under the aggregation name.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Notice that composition is never a free-standing root — it always nests inside the aggregation being filled.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>The contrast shows one conceptual fill with two surface forms, matching the earlier definition-versus-instance explanation.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:Image purpose="Diagram: definition composition vs instance aggregation fill">
@@ -344,6 +372,7 @@ those same children sit directly under the aggregation name.</message>
 under the aggregation because the parent owns that structure.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Definition composition and instance fill both target aggregations, not free-floating children.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -354,6 +383,7 @@ under the aggregation because the parent owns that structure.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Nested aggregations can recurse because ownership of children stays inside the aggregation model.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -363,6 +393,7 @@ under the aggregation because the parent owns that structure.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>The earlier example's composition wrapper and direct fill both answer the same aggregation-ownership question.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -381,6 +412,7 @@ under the aggregation because the parent owns that structure.</message>
 children under an aggregation.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>An association points to related types or instances; it does not use the composition-wrapper fill path taught above.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -391,6 +423,7 @@ children under an aggregation.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Keep the contrast light: choose aggregation when children belong inside the parent structure, and association when the link should not be composition fill.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -402,7 +435,9 @@ children under an aggregation.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full association meta-model detail, override merge, and directive containers.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>

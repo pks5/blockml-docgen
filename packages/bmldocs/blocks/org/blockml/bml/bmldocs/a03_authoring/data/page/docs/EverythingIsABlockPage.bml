@@ -56,6 +56,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Recognize Block as the single universal abstraction behind a World's grammar.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -71,6 +72,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can state that every construct in a World inherits from one Block root.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -81,6 +83,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader can explain why BlockML rejects parallel ontologies beside that root.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -95,6 +98,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Introduce the Everything-is-a-Block principle, the single-root grammar path, and what kinds of constructs count as Blocks.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -110,15 +114,19 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Compiler internal representations.</summary>
           <reason>This page establishes the conceptual ontology, not compiler storage.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Parallel ontology designs.</summary>
           <reason>The page rejects parallel ontologies; it does not explore alternative designs.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Runtime class hierarchies.</summary>
           <reason>Runtime mapping belongs to later implementation-oriented pages.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Package-by-package inventory.</summary>
           <reason>Cataloguing packages would bury the single-root message.</reason>
         </sem:Exclusion>
       </composition>
@@ -135,6 +143,7 @@
               <message>In BlockML, every construct in a World is a Block under one shared grammar.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Types, domain models, behaviour, and documentation share that same root.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -145,6 +154,7 @@
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>One parser and one registry path cover the whole World because membership is inheritance from that root.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -155,6 +165,7 @@
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Branch differences stay inside the tree; they are not separate ontologies.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -178,6 +189,7 @@
 parser and one registry path cover the whole World.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Membership in the grammar is expressed by inheriting from the Block root.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -188,6 +200,7 @@ parser and one registry path cover the whole World.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>baseType links each Block to its parent until the chain reaches the root.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -198,6 +211,7 @@ parser and one registry path cover the whole World.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>A single registry path follows that chain rather than consulting separate kind-specific registries.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -217,6 +231,7 @@ parser and one registry path cover the whole World.</message>
 are modeled inside the same tree.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>ValueTypes, Languages, and domain Blocks are sibling branches, not rival roots.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -226,6 +241,7 @@ are modeled inside the same tree.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Specialization happens by extending the shared root, never by inventing a parallel kind hierarchy.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -237,7 +253,9 @@ are modeled inside the same tree.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Designs that introduce parallel root types or separate registries.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>
@@ -281,6 +299,7 @@ sit on that tree.</message>
               <message>A short baseType chain is enough to see how a branch joins the single root.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Each step names its parent until the chain reaches the Block root.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -290,7 +309,9 @@ sit on that tree.</message>
                     </workflow:AuthorativeSourceSet>
                   </authoritativeSources>
                 </sem:SupportingPoint>
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>The sketch stays tiny so the inheritance path remains the only teaching point.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="Tiny baseType chain illustrating branch membership">
@@ -299,11 +320,17 @@ sit on that tree.</message>
               <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Each step names its parent until the chain reaches the Block root.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Highlight successive baseType links on a short branch that ends at Block.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Keep member bodies empty so the inheritance chain is the highlighted section.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full package trees and optional member declarations.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the baseType chain shown in the ontology sketch">
@@ -313,8 +340,12 @@ sit on that tree.</message>
               <message>In the sketch, each Block's baseType points to its parent; following those
 links reaches the shared Block root and proves the branch is inside one grammar.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Notice that sibling branches would each climb to the same root rather than to different ontology roots.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>The example shows membership by inheritance, not by a separate registry entry per kind.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
             <dpage:Image purpose="Diagram of Block root with sibling branches (ValueType, Language, domain) — only if it clarifies the ontology">
@@ -336,6 +367,7 @@ links reaches the shared Block root and proves the branch is inside one grammar.
 and documentation — they do not sit beside it in a private ontology.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Model a new domain idea as a Block that extends an existing parent, so it inherits membership in the single root.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -346,6 +378,7 @@ and documentation — they do not sit beside it in a private ontology.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Prefer specialization inside the tree over inventing a parallel kind that tools would have to treat differently.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -356,6 +389,7 @@ and documentation — they do not sit beside it in a private ontology.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Documentation and tasks stay first-class Blocks, so domain models do not need a side channel for meaning that the grammar already covers.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -366,7 +400,9 @@ and documentation — they do not sit beside it in a private ontology.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Package-by-package inventories and runtime class hierarchies.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:List purpose="Summarize modeling implications of one shared root">

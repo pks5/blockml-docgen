@@ -55,6 +55,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Distinguish human-oriented README content from the Bootstrap entry that prepares interpretation context for the compiler.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -69,6 +70,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can say when to open README versus when Bootstrap matters.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -78,6 +80,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader can outline that framework BML loads before user content.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -91,6 +94,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Introduce README versus Bootstrap, self-hosting TypeRegistry bootstrap order, and the Library entry points readers should recognize.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -105,12 +109,15 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Compiler package names.</summary>
           <reason>Package names obscure the conceptual bootstrap story for website readers.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Pipeline stage internals.</summary>
           <reason>Stage mechanics belong to compiler architecture pages, not this distinction.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Version migration notes.</summary>
           <reason>Migration history distracts from the stable README versus Bootstrap model.</reason>
         </sem:Exclusion>
       </composition>
@@ -128,6 +135,7 @@
 entry that prepares interpretation context for a Library.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>A Library may wire both entry points without mixing their audiences.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -138,6 +146,7 @@ entry that prepares interpretation context for a Library.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>README is for understanding; Bootstrap is for loading interpretation context before user content runs.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -147,6 +156,7 @@ entry that prepares interpretation context for a Library.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Keeping the two roles separate prevents documentation prose from being mistaken for compiler entry logic.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -171,6 +181,7 @@ entry that prepares interpretation context for a Library.</message>
 interprets user content, instead of hard-coding type semantics in code.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Framework definitions remain ordinary BML that bootstrap the registry.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -180,6 +191,7 @@ interprets user content, instead of hard-coding type semantics in code.</message
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Self-hosting keeps type meaning in the model rather than burying it in compiler-only tables.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -190,7 +202,9 @@ interprets user content, instead of hard-coding type semantics in code.</message
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Implementation package names and stage class identifiers.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Explain why user content waits for the registry">
@@ -201,6 +215,7 @@ interprets user content, instead of hard-coding type semantics in code.</message
 framework and package types it depends on.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Bootstrap order protects authors from resolving against an empty type world.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -253,6 +268,7 @@ fixed conceptual order.</message>
 those roles in one document purpose.</message>
               <exclusions>
                 <sem:Exclusion>
+                  <summary>Compiler package names and pipeline stage internals.</summary>
                   <reason>The sketch teaches entry-point wiring, not compiler internals.</reason>
                 </sem:Exclusion>
               </exclusions>
@@ -264,11 +280,17 @@ those roles in one document purpose.</message>
               <message>A Library can point to README for humans and Bootstrap for interpretation
 context without mixing those roles.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Highlight Library.readMe as the human- and LLM-facing entry reference.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Highlight Library.bootstrap as the compiler entry that prepares interpretation context.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Compiler package names and pipeline stage internals.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the readMe and bootstrap entry constructs in the example">
@@ -279,8 +301,12 @@ context without mixing those roles.</message>
 bootstrap names the Block that establishes interpretation context for the
 compiler.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>The two properties demonstrate separate audiences sharing one Library without merging documentation and bootstrap logic.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Bootstrap remains ordinary BML that runs early, matching the self-hosting TypeRegistry story above.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
           </content>
@@ -296,6 +322,7 @@ compiler.</message>
 purpose, audience, and how to approach its content.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>README answers understanding questions: what the Library is for and how to start reading it.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -306,6 +333,7 @@ purpose, audience, and how to approach its content.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Library.readMe wires that human-facing entry without making it the compiler bootstrap path.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -316,6 +344,7 @@ purpose, audience, and how to approach its content.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Documentation prose belongs here so it is not mistaken for interpretation context setup.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -347,7 +376,9 @@ prose and compiler entry logic stay distinct.</message>
                 </dpage:ListItem>
               </items>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Compiler package names, pipeline stage internals, and version migration notes.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:List>
           </content>

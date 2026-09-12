@@ -58,6 +58,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Establish that BlockML expresses behaviour through ordinary Capabilities rather than special constructor, getter, or render language constructs.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -72,6 +73,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can explain that familiar operations such as init, getValue, setValue, and render are ordinary Capabilities.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -81,6 +83,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader understands that FunctionMapping connects expression calls to Capability inputs and outputs.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -94,6 +97,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Introduce Capabilities as the ordinary means of expressing behaviour, including FunctionMapping for call arguments.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -109,12 +113,15 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Package-by-package capability catalogue.</summary>
           <reason>A catalogue would overwhelm the conceptual message that all behaviour is ordinary Capabilities.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Specific renderer hooks.</summary>
           <reason>Renderer integration belongs on renderer-focused pages.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Full FunctionMapping grammar.</summary>
           <reason>This page introduces the role of FunctionMapping, not its complete syntax.</reason>
         </sem:Exclusion>
       </composition>
@@ -132,6 +139,7 @@
 getters, or rendering; behaviour is expressed as ordinary Capabilities.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Behaviour remains part of the same Block model as properties and relationships.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -142,6 +150,7 @@ getters, or rendering; behaviour is expressed as ordinary Capabilities.</message
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Familiar operations are Capabilities, not reserved keywords or hidden hooks.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -151,6 +160,7 @@ getters, or rendering; behaviour is expressed as ordinary Capabilities.</message
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>A Block's public surface is its Capabilities; internal structure is not the outward API.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -174,6 +184,7 @@ getters, or rendering; behaviour is expressed as ordinary Capabilities.</message
 are declared and invoked as ordinary Capabilities.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Initialization is expressed as a Capability rather than a special constructor form.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -183,6 +194,7 @@ are declared and invoked as ordinary Capabilities.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Reading and writing values are Capabilities such as getValue and setValue.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -192,6 +204,7 @@ are declared and invoked as ordinary Capabilities.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Rendering is likewise a Capability, not a separate language concept.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -201,6 +214,7 @@ are declared and invoked as ordinary Capabilities.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Domain-specific operations use the same Capability model as these familiar ones.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -212,7 +226,9 @@ are declared and invoked as ordinary Capabilities.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Package-by-package capability catalogue and specific renderer hooks.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>
@@ -228,6 +244,7 @@ are declared and invoked as ordinary Capabilities.</message>
 transformation — rather than special compiler or runtime constructs.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Inbound Capabilities receive input and declare an inputType.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -237,6 +254,7 @@ transformation — rather than special compiler or runtime constructs.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Outbound Capabilities produce output and declare an outputType.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -246,6 +264,7 @@ transformation — rather than special compiler or runtime constructs.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Transformation Capabilities map input to output and declare both types.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -256,7 +275,9 @@ transformation — rather than special compiler or runtime constructs.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Package catalogue and renderer realisation details for each kind.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>
@@ -272,6 +293,7 @@ transformation — rather than special compiler or runtime constructs.</message>
 Capability input and how the Capability output returns to the caller.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Arguments may be positional or named according to the mapping.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -281,6 +303,7 @@ Capability input and how the Capability output returns to the caller.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>The mapping keeps expression-call syntax separate from the Capability's declared input and output types.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -292,7 +315,9 @@ Capability input and how the Capability output returns to the caller.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full FunctionMapping grammar.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Prepare the reader for the Expression and Capability mapping summary">
@@ -328,7 +353,9 @@ the Capability input.</message>
               <message>A Capability declares its input and output types and may provide an
 implementation hook.</message>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Package catalogue, renderer hooks, and full FunctionMapping grammar.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="Illustrate a complete Block with a Capability member skeleton">
@@ -338,11 +365,17 @@ implementation hook.</message>
               <message>Show a complete root Block that declares a Capability member with input type,
 output type, and an optional implementation.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Provide a complete Block so the Capability sits under capabilities in a valid definition context.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Highlight the Capability name together with its inputType and outputType, leaving implementation minimal if present.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Host-language tutorials and package-specific capability lists.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the Capability member types in the example">
@@ -352,8 +385,12 @@ output type, and an optional implementation.</message>
               <message>In the example, the Capability is an ordinary member: its name identifies the
 behaviour, and inputType and outputType declare what the call accepts and returns.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Notice that there is no special constructor or getter keyword — only a Capability declaration under capabilities.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Any implementation present is a host-language body for that Capability, not a separate language construct for behaviour.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
           </content>

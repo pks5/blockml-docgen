@@ -56,6 +56,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Distinguish a Block definition from a Block instance at the conceptual level.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -71,6 +72,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can describe definitions as class-like and instances as object-like.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -81,6 +83,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader can name the main places where instances appear in authored BML.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -94,6 +97,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Clarify the definition-versus-instance distinction, the semantic analogy, and where readers encounter instances.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -109,12 +113,15 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Runtime OOP mandates.</summary>
           <reason>The analogy is semantic; runtime class mapping is not required by the model.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Compiler storage layouts.</summary>
           <reason>Storage details distract from the author-facing distinction.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Full composition placement diagnostics.</summary>
           <reason>Placement rules and diagnostics belong on the Composition page and references.</reason>
         </sem:Exclusion>
       </composition>
@@ -132,6 +139,7 @@
 use of that type.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Definitions declare shape and meaning; instances fill that shape in context.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -142,6 +150,7 @@ use of that type.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Root .bml documents typically author definitions; nested composition holds instances.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -151,6 +160,7 @@ use of that type.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Keeping the roles separate prevents treating every nested element as a new type.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -174,6 +184,7 @@ use of that type.</message>
 clarifies roles without prescribing a runtime object model.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>The analogy is semantic guidance for authors, not an OOP contract.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -183,6 +194,7 @@ clarifies roles without prescribing a runtime object model.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>A definition is reusable across many places; an instance is one concrete use.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -193,6 +205,7 @@ clarifies roles without prescribing a runtime object model.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Renderers may map these roles differently; the authored distinction still holds.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -203,7 +216,9 @@ clarifies roles without prescribing a runtime object model.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Claims that BlockML requires a class-based runtime.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Note that the parser distinguishes documents even if storage is plain data">
@@ -214,6 +229,7 @@ clarifies roles without prescribing a runtime object model.</message>
 even when the compiler stores them as plain data.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Authoring form and storage form can differ without collapsing the conceptual roles.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -223,6 +239,7 @@ even when the compiler stores them as plain data.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Readers should trust document shape and composition placement over internal storage layout.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -233,7 +250,9 @@ even when the compiler stores them as plain data.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Compiler storage layouts and internal object graphs.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>
@@ -277,6 +296,7 @@ up in authored BML.</message>
               <message>Seeing a definition next to one nested use makes the two roles concrete.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>The definition document declares the reusable type.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -287,6 +307,7 @@ up in authored BML.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>A composition child uses that type as an instance in context.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -303,11 +324,17 @@ up in authored BML.</message>
               <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>One document defines the type; a composition child instantiates it.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Highlight the root Block as the definition with name, type, and baseType.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Highlight a nested composition child whose type refers back to that definition as an instance.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full member sets, overrides, and placement diagnostics.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret which element is the definition and which is the instance">
@@ -317,8 +344,12 @@ up in authored BML.</message>
               <message>The root Block is the definition of the type; the nested composition child is
 an instance of that same type placed where a parent aggregation expects it.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Notice that the instance does not redeclare the type's member model — it supplies a concrete use of the definition.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>The pairing shows why root documents and nested children play different roles even when they share a type name.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
           </content>
@@ -334,6 +365,7 @@ an instance of that same type placed where a parent aggregation expects it.</mes
 Block type, not a one-off nested use.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>The document root carries name, type, and baseType for the definition being declared.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -345,6 +377,7 @@ Block type, not a one-off nested use.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Treating every root file as a definition keeps type identity stable across later nested uses.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -354,6 +387,7 @@ Block type, not a one-off nested use.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>The side-by-side example's outer Block is this definition site.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -372,6 +406,7 @@ Block type, not a one-off nested use.</message>
 they place a concrete use of an existing definition in context.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Instance sites supply values and placement; they do not redeclare the type's member model as a new root definition.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -381,6 +416,7 @@ they place a concrete use of an existing definition in context.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Recognizing the site — root definition versus nested instance — prevents reading every nested element as a new type.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -391,7 +427,9 @@ they place a concrete use of an existing definition in context.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full composition placement diagnostics and override merge detail.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>

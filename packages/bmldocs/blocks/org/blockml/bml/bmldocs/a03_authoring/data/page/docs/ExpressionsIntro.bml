@@ -54,6 +54,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Understand that \${ } expressions supply dynamic member values and share the same language used inside implementation embeds.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -68,6 +69,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader knows where \${ } expressions appear and can name scope, builtins, and Capability calls as the main topics to remember.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -77,6 +79,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader knows to continue with embedded expressions for Capability bodies.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -91,6 +94,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Introduce \${ } expressions for dynamic member values, including scope, builtins, and Capability calls at a conceptual level.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -105,12 +109,15 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Full expression grammar.</summary>
           <reason>This page introduces the role of expressions, not an exhaustive syntax reference.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Service binding catalogue.</summary>
           <reason>Service bindings deserve dedicated reference material.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Diagnostic codes.</summary>
           <reason>Diagnostic identifiers belong on troubleshooting pages.</reason>
         </sem:Exclusion>
       </composition>
@@ -128,6 +135,7 @@
 fixed literals.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Expressions compute or derive a value in member context.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -137,6 +145,7 @@ fixed literals.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Expression results may come from scope, builtins, or Capability calls.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -147,6 +156,7 @@ fixed literals.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>The language is an extended JSON form inside \${ } delimiters.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -170,6 +180,7 @@ fixed literals.</message>
 expressions rather than literal constants.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Properties and other members can take expression values.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -179,6 +190,7 @@ expressions rather than literal constants.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Expressions evaluate in the scope of the member and its surrounding composition.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -188,6 +200,7 @@ expressions rather than literal constants.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Authored expressions are stored as expression values; evaluation belongs to later processing, not to rewriting the model.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -198,7 +211,9 @@ expressions rather than literal constants.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full expression grammar and service binding catalogue.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>
@@ -214,6 +229,7 @@ expressions rather than literal constants.</message>
 implementation bodies, in a different host context.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Member expressions and embeds share vocabulary and call semantics.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -224,6 +240,7 @@ implementation bodies, in a different host context.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>\${ } appears on member values; embeds appear inside implementation source.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -235,6 +252,7 @@ implementation bodies, in a different host context.</message>
               </supportingPoints>
               <exclusions>
                 <sem:Exclusion>
+                  <summary>Embed delimiter details and host-language tutorials.</summary>
                   <reason>Those details belong on the embedded-expressions page.</reason>
                 </sem:Exclusion>
               </exclusions>
@@ -279,7 +297,9 @@ member or composition context.</message>
               <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A property can take a \${ } expression as its value instead of a fixed literal.</message>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full grammar, service catalogues, and diagnostic codes.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="Illustrate a complete Block with a property expression value">
@@ -289,11 +309,17 @@ member or composition context.</message>
               <message>Show a complete root Block whose highlighted property value is a \${ }
 expression rather than a literal.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Provide a complete Block so the expression sits on a real property in a valid definition.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Highlight the \${ } delimiters and a small expression body such as a property reference or builtin call.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Exhaustive builtin lists and service binding examples.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the \${ } property value in the example">
@@ -304,8 +330,12 @@ expression rather than a literal.</message>
 delimiters mark the expression language, and the body resolves through scope,
 builtins, or calls rather than storing a fixed literal.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Notice that the surrounding Block identity fields exist only to host the dynamic property value in a complete definition.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>The expression form on the member foreshadows the shared language used later inside Capability embeds.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
           </content>

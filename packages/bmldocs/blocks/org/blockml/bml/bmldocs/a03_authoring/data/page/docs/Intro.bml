@@ -62,6 +62,7 @@ more detailed concept pages that follow.</value>
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Establish the distinction between authored meaning, canonical representation, and target-specific manifestation.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -82,6 +83,7 @@ more detailed concept pages that follow.</value>
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can explain the basic purpose of BlockML in one or two sentences.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -93,6 +95,7 @@ more detailed concept pages that follow.</value>
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader can distinguish BML, BOM, and a Renderer at a conceptual level.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -113,6 +116,7 @@ more detailed concept pages that follow.</value>
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Provide a short conceptual introduction to BlockML, its principal representations, and the role of target-specific Renderers.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -134,15 +138,19 @@ more detailed concept pages that follow.</value>
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Compiler implementation details, package names, pipeline stages, and internal object-model interfaces.</summary>
           <reason>The page establishes the conceptual model before presenting implementation details.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Validator diagnostic identifiers and detailed validation behavior.</summary>
           <reason>Diagnostic details belong on reference and troubleshooting pages.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Version-specific migration notes, implementation status, and legacy behavior.</summary>
           <reason>The introduction should describe the stable mental model rather than project history.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Detailed expression syntax, service binding, directives, and capability invocation.</summary>
           <reason>These concepts require dedicated pages and should not compete with the introductory message.</reason>
         </sem:Exclusion>
       </composition>
@@ -160,6 +168,7 @@ more detailed concept pages that follow.</value>
 reusable Blocks independently of how they are later manifested.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>The same language can describe Blocks from different technical and non-technical domains.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -170,6 +179,7 @@ reusable Blocks independently of how they are later manifested.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Humans and language models can work on the same explicit representation.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -179,6 +189,7 @@ reusable Blocks independently of how they are later manifested.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Concrete output is produced later by target-specific Renderers.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -203,6 +214,7 @@ BML is optimized for authoring, while BOM preserves the model canonically
 and losslessly for processing.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>BML is the human- and editor-friendly authoring representation.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -212,6 +224,7 @@ and losslessly for processing.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>BOM is the canonical and immutable representation of authored BML.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -221,6 +234,7 @@ and losslessly for processing.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>A lossless BML to BOM to BML round trip must remain possible.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -231,7 +245,9 @@ and losslessly for processing.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Parser stages, TypeScript interfaces, and internal BOM data structures.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Explain why target-specific interpretation belongs to Renderers">
@@ -241,8 +257,11 @@ and losslessly for processing.</message>
               <message>BlockML preserves the meaning of a model without deciding how it must appear
 in a particular target; each Renderer supplies that interpretation.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
                 <sem:SupportingPoint>
+                  <summary>The BlockML core remains independent of individual domains and output formats.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Different Renderers may produce fundamentally different manifestations from the same model.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -253,7 +272,9 @@ in a particular target; each Renderer supplies that interpretation.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Specific renderer pipelines, processor classes, and target-package architecture.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>
@@ -304,6 +325,7 @@ interpreting or discarding information.</message>
 identifiable type, and an explicit base type.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>The root is the definition document itself, not a nested instance.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -314,6 +336,7 @@ identifiable type, and an explicit base type.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Identity fields alone are enough to open the mental model before members are introduced.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -325,6 +348,7 @@ identifiable type, and an explicit base type.</message>
               </supportingPoints>
               <exclusions>
                 <sem:Exclusion>
+                  <summary>Properties, aggregations, associations, capabilities, directives, validation, and versioning.</summary>
                   <reason>The example should show only the smallest useful structural skeleton.</reason>
                 </sem:Exclusion>
               </exclusions>
@@ -336,11 +360,17 @@ identifiable type, and an explicit base type.</message>
               <message>Every BML definition is represented by a root block with explicit identity
 and inheritance.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Highlight the root block element with name, type, and baseType as the minimal identity skeleton.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Keep the example free of properties, aggregations, and other members so identity stands alone.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>All optional metadata and member declarations.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the minimal root Block identity fields in the example">
@@ -351,8 +381,12 @@ and inheritance.</message>
 identifier, type is the Block's own type identity, and baseType names the
 parent it extends.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Notice that name, type, and baseType appear before any members, matching the authored-meaning model from the earlier sections.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>The absence of properties and aggregations shows that identity alone is enough to open a valid definition document.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
           </content>
@@ -369,6 +403,7 @@ meaning, name BML and BOM as complementary representations, and treat
 Renderers as the place where target-specific manifestation begins.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>The same Block idea can describe domains far beyond a single output format.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -379,6 +414,7 @@ Renderers as the place where target-specific manifestation begins.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Later pages deepen authoring and behaviour on top of this shared model rather than replacing it.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>

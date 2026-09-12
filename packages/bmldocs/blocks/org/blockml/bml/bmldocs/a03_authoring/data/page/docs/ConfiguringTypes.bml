@@ -58,6 +58,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Understand curly-brace configuration as specializing a ValueType instance on a property, orthogonal to generic binding.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -72,6 +73,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can explain that configuration applies to the property type instance and does not redefine the ValueType Block itself.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -81,6 +83,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader recognizes Constant singleton domains and how generic bind and value config work together.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -94,6 +97,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Explain curly-brace configuration of ValueType instances on properties, including Constant singleton domains.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -109,9 +113,11 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Constraint branch inventory.</summary>
           <reason>Constraints are a separate topic and should not compete with configuration basics.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Renderer mapping of configured types.</summary>
           <reason>Renderer interpretation belongs on renderer-focused pages.</reason>
         </sem:Exclusion>
       </composition>
@@ -129,6 +135,7 @@
 without redefining the type declaration itself.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Configuration is written at the property type use site.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -138,6 +145,7 @@ without redefining the type declaration itself.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Generic binding and value configuration are complementary mechanisms.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -148,6 +156,7 @@ without redefining the type declaration itself.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Everyday forms include Text{maxLength: …} and Decimal{precision: …, scale: …}.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -171,6 +180,7 @@ without redefining the type declaration itself.</message>
 not rewrite the shared ValueType Block definition.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Different properties may configure the same ValueType differently.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -180,6 +190,7 @@ not rewrite the shared ValueType Block definition.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>The named type remains the reusable semantic definition.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -189,6 +200,7 @@ not rewrite the shared ValueType Block definition.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Prefer inline configuration for type-intrinsic thresholds; keep Constraints for contextual or composable rules.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -199,7 +211,9 @@ not rewrite the shared ValueType Block definition.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Constraint branch inventory and renderer mapping details.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>
@@ -215,6 +229,7 @@ not rewrite the shared ValueType Block definition.</message>
 same property type expression.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Parentheses bind generic arguments; braces configure the resulting instance.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -225,6 +240,7 @@ same property type expression.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Multiplicity brackets apply after configuration on the same type reference.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -235,7 +251,9 @@ same property type expression.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full generics inheritance rules.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>
@@ -251,6 +269,7 @@ same property type expression.</message>
 configuring a fixed value.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>The singleton value is part of the configured type instance.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -260,6 +279,7 @@ configuring a fixed value.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Constant is especially useful as a union alternative for sentinel literals.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -305,7 +325,9 @@ configuring a fixed value.</message>
               <message>A short example shows a property type using curly-brace configuration,
 optionally with Constant.</message>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Constraint inventories and renderer-specific mapping.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="Illustrate a complete Block with configured property types">
@@ -315,11 +337,17 @@ optionally with Constant.</message>
               <message>Show a complete root Block whose property types use curly-brace configuration,
 such as Text{maxLength: …} or Constant(T){value: …}.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Provide a complete Block so the configured type attributes sit on real properties in a valid definition.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Highlight the braces that configure the ValueType instance, and when Constant is used, also highlight the parentheses that bind T.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full Constant catalogue and constraint branches.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the configuration braces and optional Constant bind in the example">
@@ -330,8 +358,12 @@ such as Text{maxLength: …} or Constant(T){value: …}.</message>
 Constant appears, the parentheses bind T while the braces supply the singleton
 value on that same reference.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Notice that the named ValueType itself is unchanged; only this property's type instance carries the configuration.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Parentheses and braces remain distinct mechanisms even when they appear side by side on Constant.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
           </content>

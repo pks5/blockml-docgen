@@ -55,6 +55,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Treat visibility as model access control for members and Sub-Blocks, not as a renderer presentation setting.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -69,6 +70,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can map public, protected, and private naming prefixes to access rules.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -78,6 +80,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader can explain that Renderers still receive the full Canonical BOM.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -91,6 +94,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Introduce visibility naming prefixes for members and Sub-Blocks, the three access levels, aggregation id reachability under those levels, and the distinction from renderer UI hiding.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -105,9 +109,11 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Renderer UI hiding strategies.</summary>
           <reason>Visibility here is model access control, not target presentation tactics.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Diagnostic codes.</summary>
           <reason>Diagnostic identifiers belong on reference and troubleshooting pages.</reason>
         </sem:Exclusion>
       </composition>
@@ -125,6 +131,7 @@
 not a setting for hiding UI in a Renderer.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>The same naming rules apply to ordinary members and nested Sub-Blocks.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -135,6 +142,7 @@ not a setting for hiding UI in a Renderer.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Access meaning lives in the authored name prefix, not in target presentation filters.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -144,6 +152,7 @@ not a setting for hiding UI in a Renderer.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Renderers still receive the full Canonical BOM even when members are private.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -167,6 +176,7 @@ not a setting for hiding UI in a Renderer.</message>
 private names use a double underscore on members and Sub-Blocks.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>The prefix is part of the authored name and carries access meaning.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -176,6 +186,7 @@ private names use a double underscore on members and Sub-Blocks.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Authors encode access intent in the name itself rather than in a separate visibility attribute.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -194,6 +205,7 @@ private names use a double underscore on members and Sub-Blocks.</message>
 access rules rather than stripping content from the BOM.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Model access control and target UI hiding remain separate concerns.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -204,7 +216,9 @@ access rules rather than stripping content from the BOM.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Renderer UI hiding strategies and presentation filters.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>
@@ -250,6 +264,7 @@ Blocks.</message>
 be referenced; there is no separate export flag on composition or bml:container.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Reachability follows the aggregation member's visibility prefix, just as ordinary member access does.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -259,6 +274,7 @@ be referenced; there is no separate export flag on composition or bml:container.
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Qualified cross-document id references need a public target aggregation and a literal static bml:id.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -269,7 +285,9 @@ be referenced; there is no separate export flag on composition or bml:container.
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Diagnostic codes and renderer presentation tactics.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Prepare the reader for aggregation id reachability levels">
@@ -311,6 +329,7 @@ definition.</message>
 protected, and private prefixes in everyday authoring.</message>
               <exclusions>
                 <sem:Exclusion>
+                  <summary>Diagnostic codes and renderer presentation tactics.</summary>
                   <reason>The example teaches naming prefixes, not diagnostics or UI filters.</reason>
                 </sem:Exclusion>
               </exclusions>
@@ -322,11 +341,17 @@ protected, and private prefixes in everyday authoring.</message>
               <message>Property names such as myVar, _myVar, and __myVar show the three visibility
 prefixes in ordinary authoring.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Highlight the three property names that differ only by visibility prefix.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Keep surrounding Block structure minimal so the prefixes remain obvious.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Diagnostic codes and renderer presentation tactics.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the visibility prefixes on the example property names">
@@ -336,8 +361,12 @@ prefixes in ordinary authoring.</message>
               <message>In the example, myVar is public, _myVar is protected for derived Blocks, and
 __myVar is private to the declaring Block alone.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>The underscore prefixes are part of the authored names and encode access, not decoration.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>The same prefix rules apply if those names were Sub-Blocks instead of properties.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
           </content>

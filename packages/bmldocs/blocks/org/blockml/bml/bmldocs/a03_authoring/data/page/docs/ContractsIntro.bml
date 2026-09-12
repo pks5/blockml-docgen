@@ -56,6 +56,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Use root-level contracts as reusable partial definitions whose member fragments merge into the effective definition.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -71,6 +72,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can explain that contracts are declared only on the document root.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -80,6 +82,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader can name merge, bounds, and what contracts ignore at a conceptual level.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -93,6 +96,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Introduce contracts as reusable partial definitions, root-only declaration, type bounds versus branch membership, and the conceptual topics of merge, bounds, and ignored contract members.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -108,9 +112,11 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Full merge algorithm.</summary>
           <reason>Introductory pages need the merge idea, not the complete algorithm.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Contract implementation packages.</summary>
           <reason>Package inventory distracts from the reusable partial-definition message.</reason>
         </sem:Exclusion>
       </composition>
@@ -128,6 +134,7 @@
 the effective definition of a Block.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Contracts complement baseType inheritance instead of replacing it.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -138,6 +145,7 @@ the effective definition of a Block.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Member fragments merge into the consuming Block's effective definition.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -148,6 +156,7 @@ the effective definition of a Block.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Contracts are declared on the document root, not on nested Sub-Blocks.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -171,6 +180,7 @@ the effective definition of a Block.</message>
 Sub-Blocks.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Root placement keeps composition of partial definitions explicit and local.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -180,6 +190,7 @@ Sub-Blocks.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Nested types may use members contributed by root contracts, but they do not declare their own contracts aggregation.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -199,6 +210,7 @@ inheritance branch; prefer baseType when the Block is a specialized member of
 that branch.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Modeling guidelines treat contracts and inheritance as complementary tools.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -253,6 +265,7 @@ a direct contracts entry, while branch membership checks use the baseType chain
 only.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>satisfiesTypeBound is true when the bound appears on the baseType chain or directly in contracts; V1 does not walk a contract's own contracts.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -262,6 +275,7 @@ only.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>inBranch ignores contracts and looks only at single-inheritance baseType ancestry.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -272,6 +286,7 @@ only.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Framework branch markers such as ValueType or Language remain baseType choices, not duplicated interface contracts.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -282,7 +297,9 @@ only.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full merge algorithm and contract implementation packages.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:Paragraph purpose="Prepare the reader for bounds-versus-branch summary">
@@ -322,6 +339,7 @@ after the bound is satisfied.</message>
 merge into the effective definition.</message>
               <exclusions>
                 <sem:Exclusion>
+                  <summary>Full merge algorithm and contract implementation packages.</summary>
                   <reason>The example teaches declaration shape, not the merge procedure.</reason>
                 </sem:Exclusion>
               </exclusions>
@@ -333,11 +351,17 @@ merge into the effective definition.</message>
               <message>A root Block declares contracts with one contract child that contributes member
 fragments.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Highlight the root-level contracts aggregation on the consuming Block.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Highlight the contract child type that contributes reusable member fragments.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full merge algorithm and contract implementation packages.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the contracts aggregation and contract child in the example">
@@ -347,8 +371,12 @@ fragments.</message>
               <message>In the example, the root contracts aggregation lists the contract Block, and
 that contract's member fragments merge into the consuming definition.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>The contract child is a reusable partial definition, not a nested Sub-Block type under subBlocks.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Local members that refine merged fragments later use override="true" as explained on the overrides page.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
           </content>

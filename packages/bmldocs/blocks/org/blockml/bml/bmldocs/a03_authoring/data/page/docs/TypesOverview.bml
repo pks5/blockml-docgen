@@ -54,6 +54,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Recognize ValueType as the shared root for the four sibling type kinds used on properties and other typed members.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -68,6 +69,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can name the four ValueType kinds and state that they are siblings, not a subtype hierarchy of one another.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -77,6 +79,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader knows where to continue for type expressions and ValueType configuration.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -90,6 +93,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Orient readers to the four ValueType kinds as the entry point into the BlockML type system.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -104,12 +108,15 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Full type-system layers beyond the ValueType kind overview.</summary>
           <reason>This page is an entry map; deeper layers belong on dedicated type-system pages.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Language and Capability contracts.</summary>
           <reason>Contracts are a separate concern and would dilute the ValueType orientation.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Implementation status and version-specific notes.</summary>
           <reason>The overview should describe the stable mental model, not project history.</reason>
         </sem:Exclusion>
       </composition>
@@ -127,6 +134,7 @@
 ValueTypes, and they come in four kinds.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>ValueType is the shared conceptual root for typed value meaning.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -136,6 +144,7 @@ ValueTypes, and they come in four kinds.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>The four kinds cover scalars, closed literals, structured fields, and singleton constant domains.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -145,6 +154,7 @@ ValueTypes, and they come in four kinds.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>ValueTypes name meaning; Properties own the concrete values that appear on Block instances.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -168,6 +178,7 @@ ValueTypes, and they come in four kinds.</message>
 under ValueType; none of them is a subtype of another.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Each kind carries its own semantic role for describing values.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -177,6 +188,7 @@ under ValueType; none of them is a subtype of another.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Choosing a kind is about the shape of meaning, not about specializing another kind.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -186,6 +198,7 @@ under ValueType; none of them is a subtype of another.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Parameterized StructTypes remain StructTypes; generics do not invent a fifth ValueType kind.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -196,7 +209,9 @@ under ValueType; none of them is a subtype of another.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full inheritance rules among Blocks that declare types.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>
@@ -212,6 +227,7 @@ under ValueType; none of them is a subtype of another.</message>
 type or a Capability inputType and outputType.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Aggregation and association type attributes may name any Block FQN, not only ValueTypes.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -221,6 +237,7 @@ type or a Capability inputType and outputType.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Type expressions still build on named ValueTypes when they appear at those bare type-name sites.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -231,7 +248,9 @@ type or a Capability inputType and outputType.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full type-expression grammar and configuration syntax.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>
@@ -280,6 +299,7 @@ Constant with a fixed value.</message>
 Primitive such as Text or Integer.</message>
               <exclusions>
                 <sem:Exclusion>
+                  <summary>Multiplicity, unions, generics, and curly-brace configuration.</summary>
                   <reason>Those combination forms belong on type-expression and configuration pages.</reason>
                 </sem:Exclusion>
               </exclusions>
@@ -291,11 +311,17 @@ Primitive such as Text or Integer.</message>
               <message>Show a complete root Block whose highlighted property declares a Primitive
 ValueType such as Text or Integer.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Provide a complete Block with name, type, and baseType so the property sits in a valid definition context.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Highlight the property type attribute that names the Primitive ValueType.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full property metadata and advanced type expressions.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the Primitive property type in the example">
@@ -306,8 +332,12 @@ ValueType such as Text or Integer.</message>
 that name is the semantic meaning, while any concrete value still belongs to
 the property on an instance.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Notice that the Primitive appears at a bare type-name site on the property, matching the ValueType requirement from the earlier section.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>The surrounding Block identity fields exist only to place that typed property in a complete definition.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
           </content>

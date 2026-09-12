@@ -59,6 +59,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Recognize Library as the publishable unit that groups Blocks through explicit membership rather than directory discovery.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -73,6 +74,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can explain that Library.blocks membership is exclusive and explicit.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -82,6 +84,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader can place a definition under the domain bml package convention.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -95,6 +98,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Introduce Library membership, FQN derivation from package path, and the domain bml namespace layout used for publishable packages.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -110,12 +114,15 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>npm package layout.</summary>
           <reason>BlockML libraries are not described in terms of npm package conventions.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Physical filesystem edge cases.</summary>
           <reason>Membership and namespace rules matter more than filesystem quirks at this level.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Diagnostic codes.</summary>
           <reason>Diagnostic identifiers belong on reference and troubleshooting pages.</reason>
         </sem:Exclusion>
       </composition>
@@ -133,6 +140,7 @@
 reuse across a World.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Membership is declared explicitly, not inferred from folders alone.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -142,6 +150,7 @@ reuse across a World.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Publishable content stays intentional and reviewable because membership is authored, not discovered.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -152,6 +161,7 @@ reuse across a World.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Package path and namespace conventions keep Library identity stable for tools.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -175,6 +185,7 @@ reuse across a World.</message>
 composition; scanning directories is not membership.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Explicit composition keeps publishable content intentional and reviewable.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -185,6 +196,7 @@ composition; scanning directories is not membership.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Exclusive membership means a Block is published through one intentional Library list rather than ambient folder presence.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -203,6 +215,7 @@ composition; scanning directories is not membership.</message>
 that package.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Stable package paths keep Library identity predictable across tools.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -213,6 +226,7 @@ that package.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Readers can predict the Library type name from the package layout without inventing a second identity scheme.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -236,6 +250,7 @@ that package.</message>
 user content share one namespace pattern.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>The convention separates framework packages from domain and user packages.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -245,6 +260,7 @@ user content share one namespace pattern.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Shared shape makes FQNs readable across Libraries without special cases.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -291,6 +307,7 @@ user content share one namespace pattern.</message>
 under the blocks composition.</message>
               <exclusions>
                 <sem:Exclusion>
+                  <summary>Versioning metadata and physical file layout details.</summary>
                   <reason>The example should teach membership declaration, not packaging logistics.</reason>
                 </sem:Exclusion>
               </exclusions>
@@ -301,11 +318,17 @@ under the blocks composition.</message>
               <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>A Library lists each published Block explicitly in its blocks composition.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Highlight the Library root with name, type, and baseType that place it in the package.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Highlight the blocks aggregation and its composition children that name each published Block type.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Versioning metadata and physical file layout details.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the Library.blocks membership constructs in the example">
@@ -315,8 +338,12 @@ under the blocks composition.</message>
               <message>In the example, the Library definition owns a blocks aggregation; each child
 in its composition is a published Block type, not a folder entry.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>The composition children demonstrate exclusive membership: only listed types are published by that Library.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>The Library's own type identity still follows the package path ending in Library, matching the FQN rule from earlier.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
           </content>
@@ -332,6 +359,7 @@ in its composition is a published Block type, not a folder entry.</message>
 location alone does not publish the Block.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Package conventions keep framework, domain, and user content readable under one namespace pattern.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -341,6 +369,7 @@ location alone does not publish the Block.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>A Library's own FQN still follows its package path ending in Library, which is identity — not membership of other Blocks.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -351,6 +380,7 @@ location alone does not publish the Block.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Authors can predict where a file lives without assuming every file in that folder is published.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -370,6 +400,7 @@ location alone does not publish the Block.</message>
 published by the Library.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Exclusive membership keeps publishable content intentional and reviewable.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -380,6 +411,7 @@ published by the Library.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Folder presence under a domain bml package never substitutes for an explicit blocks composition entry.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -390,7 +422,9 @@ published by the Library.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>npm package layout, filesystem edge cases, and diagnostic codes.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>

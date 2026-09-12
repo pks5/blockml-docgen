@@ -54,6 +54,7 @@
     <learningObjectives override="true">
       <composition>
         <sem:LearningObjective>
+          <summary>Distinguish a named ValueType from a TypeExpression that combines named types with multiplicity, unions, generics, or configuration.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -68,6 +69,7 @@
     <readerOutcomes override="true">
       <composition>
         <sem:ReaderOutcome>
+          <summary>The reader can recognize common type-expression forms and know they combine named types rather than invent new type classes.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -77,6 +79,7 @@
           </authoritativeSources>
         </sem:ReaderOutcome>
         <sem:ReaderOutcome>
+          <summary>The reader knows where to continue for generics and ValueType configuration.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -91,6 +94,7 @@
     <scopes override="true">
       <composition>
         <sem:Scope>
+          <summary>Provide a short cheat-sheet for combining named types into everyday type expressions.</summary>
           <authoritativeSources>
             <workflow:AuthorativeSourceSet>
               <includedTypes>
@@ -105,12 +109,15 @@
     <exclusions override="true">
       <composition>
         <sem:Exclusion>
+          <summary>Full generic inheritance rules.</summary>
           <reason>Generics deserve a focused page; inheritance details would overwhelm this cheat-sheet.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Validator codes and diagnostic identifiers.</summary>
           <reason>Diagnostics belong on reference and troubleshooting pages.</reason>
         </sem:Exclusion>
         <sem:Exclusion>
+          <summary>Exhaustive type-expression grammar.</summary>
           <reason>This page is a usage map, not a complete specification.</reason>
         </sem:Exclusion>
       </composition>
@@ -128,6 +135,7 @@
 properties and other typed members.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Named types supply meaning; expressions supply how that meaning is combined at a use site.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -138,6 +146,7 @@ properties and other typed members.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>This page is a cheat-sheet for common patterns, not a full grammar.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -147,6 +156,7 @@ properties and other typed members.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Everything beyond the four ValueType kinds is still a use of named types, not a new BlockML type class.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -170,6 +180,7 @@ properties and other typed members.</message>
 unions, generic application, or configuration to named types at a use site.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Declaring a ValueType defines reusable meaning.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -179,6 +190,7 @@ unions, generic application, or configuration to named types at a use site.</mes
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Writing a TypeExpression selects and shapes that meaning for a particular member.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -188,6 +200,7 @@ unions, generic application, or configuration to named types at a use site.</mes
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Multiplicity brackets are metadata on the type reference; they do not invent a separate Array type class.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -198,7 +211,9 @@ unions, generic application, or configuration to named types at a use site.</mes
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Exhaustive grammar productions for every expression form.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>
@@ -214,6 +229,7 @@ unions, generic application, or configuration to named types at a use site.</mes
 fits wins, with no best-match search.</message>
               <supportingPoints>
                 <sem:SupportingPoint>
+                  <summary>Prefer narrower or sentinel alternatives on the left so they remain reachable.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -223,6 +239,7 @@ fits wins, with no best-match search.</message>
                   </authoritativeSources>
                 </sem:SupportingPoint>
                 <sem:SupportingPoint>
+                  <summary>Later alternatives that can never win are a modeling smell, not a sophisticated fallback strategy.</summary>
                   <authoritativeSources>
                     <workflow:AuthorativeSourceSet>
                       <includedTypes>
@@ -233,7 +250,9 @@ fits wins, with no best-match search.</message>
                 </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Validator diagnostic identifiers for unreachable alternatives.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
           </content>
@@ -281,7 +300,9 @@ property without redefining the type itself.</message>
               <weight>org.blockml.bml.docgen.weight.Supporting</weight>
               <message>Two frequent patterns are array multiplicity and a simple union of named types.</message>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Full generic inheritance rules and exhaustive grammar.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:Paragraph>
             <dpage:CodeBlock purpose="Illustrate a complete Block using multiplicity and union type expressions">
@@ -291,11 +312,17 @@ property without redefining the type itself.</message>
               <message>Show a complete root Block with property types that use multiplicity brackets
 and a simple union of named ValueTypes.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Provide a complete Block so the type attributes sit on real properties in a valid definition.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Highlight one multiplicity form such as Integer[] and one union such as Boolean | Integer, keeping match order intentional.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
               <exclusions>
-                <sem:Exclusion />
+                <sem:Exclusion>
+                  <summary>Generics, configuration, and advanced match-order cases.</summary>
+                </sem:Exclusion>
               </exclusions>
             </dpage:CodeBlock>
             <dpage:Paragraph purpose="Interpret the multiplicity and union constructs in the example">
@@ -305,8 +332,12 @@ and a simple union of named ValueTypes.</message>
               <message>In the example, multiplicity brackets describe how many values a property
 expects, while the union lists alternatives that still resolve left to right.</message>
               <supportingPoints>
-                <sem:SupportingPoint />
-                <sem:SupportingPoint />
+                <sem:SupportingPoint>
+                  <summary>Notice that the brackets attach to a named ValueType; they do not introduce a separate Array type class.</summary>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>The left alternative in the union is the first match candidate, illustrating the match-order rule from the earlier section.</summary>
+                </sem:SupportingPoint>
               </supportingPoints>
             </dpage:Paragraph>
           </content>
