@@ -1,0 +1,49 @@
+<!--BlockML Documentation — BlockML language source set
+
+  FQN: org.blockml.bml.bmldocs.lib.source.BlockMLSourceSet-->
+<source:BlockMLSourceSet xmlns="http://blockml.org/bml"
+  xmlns:source="org.blockml.bml.bmldocs.lib.source"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    workflow:AuthorativeSourceSet
+  </baseType>
+  <is>
+    The authoritative BlockML language source set
+  </is>
+  <documentation>
+    Authoritative source whitelist for documentation tasks that must draw
+    domain content from the BlockML language model. includedTypes names the
+    core language and docgen packages that may supply SSOT. Other blocks may
+    still be used as structural templates, not as domain content.
+  </documentation>
+  <references>
+    <see type="workflow:AuthorativeSourceSet" relation="Extends">
+      Task source-set branch.
+    </see>
+  </references>
+  <aggregations>
+    <includedTypes override="true">
+      <composition>
+        <type:TypeSelectorEntity value="org.blockml.bml.docgen.annotation.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.docgen.capability.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.constraint.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.core.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.definition.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.documentation.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.exception.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.group.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.language.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.mapping.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.meta.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.relation.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.service.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.status.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.type.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.unit.**" />
+        <type:TypeSelectorEntity value="org.blockml.bml.validation.**" />
+      </composition>
+    </includedTypes>
+  </aggregations>
+</source:BlockMLSourceSet>

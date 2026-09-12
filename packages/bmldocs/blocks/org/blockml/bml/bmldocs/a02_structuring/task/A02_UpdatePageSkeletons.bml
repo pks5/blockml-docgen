@@ -3,6 +3,7 @@
 <task:A02_UpdatePageSkeletons xmlns="http://blockml.org/bml"
   xmlns:task="org.blockml.bml.bmldocs.a02_structuring.task"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:source="org.blockml.bml.bmldocs.lib.source"
   xmlns:type="org.blockml.bml.type">
 
   <baseType>
@@ -109,27 +110,7 @@
   <aggregations>
     <authorativeSources override="true">
       <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedPackages>
-            <type:TypeSelectorEntity value="org.blockml.bml.docgen.annotation.**" />
-            <type:TypeSelectorEntity value="org.blockml.bml.docgen.capability.**" />
-            <type:TypeSelectorEntity value="org.blockml.bml.constraint.**" />
-            <type:TypeSelectorEntity value="org.blockml.bml.core.**" />
-            <type:TypeSelectorEntity value="org.blockml.bml.definition.**" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.**" />
-            <type:TypeSelectorEntity value="org.blockml.bml.exception.**" />
-            <type:TypeSelectorEntity value="org.blockml.bml.group.**" />
-            <type:TypeSelectorEntity value="org.blockml.bml.language.**" />
-            <type:TypeSelectorEntity value="org.blockml.bml.mapping.**" />
-            <type:TypeSelectorEntity value="org.blockml.bml.meta.**" />
-            <type:TypeSelectorEntity value="org.blockml.bml.relation.**" />
-            <type:TypeSelectorEntity value="org.blockml.bml.service.**" />
-            <type:TypeSelectorEntity value="org.blockml.bml.status.**" />
-            <type:TypeSelectorEntity value="org.blockml.bml.type.**" />
-            <type:TypeSelectorEntity value="org.blockml.bml.unit.**" />
-            <type:TypeSelectorEntity value="org.blockml.bml.validation.**" />
-          </includedPackages>
-        </workflow:AuthorativeSourceSet>
+        <source:BlockMLSourceSet />
       </composition>
     </authorativeSources>
   </aggregations>
