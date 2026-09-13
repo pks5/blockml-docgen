@@ -61,8 +61,7 @@
 **Changed file** (unstaged, not committed):
 - `packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/BmlDocSet_A03.bml` (documentation text only)
 
-Note: as with the prior operation's report, I have not touched the running transform record (`_meta/transform/running/T00004_BuildA03_20260913T025709.bml`) or made any commit — flipping operation #1 to `Succeeded` and committing `transform(operation): T00004_BuildA03_20260913T025709 #1` appears to be a separate step outside this task's scope.
-</output>
+Note: as with the prior operation's report, I have not touched the running transform record (`_meta/transform/running/T00004_BuildA03_20260913T025709.bml`) or made any commit — flipping operation #1 to `Succeeded` and committing `transform(operation): T00004_BuildA03_20260913T025709 #1` appears to be a separate step outside this task's scope.</output>
           <completedAt>2026-09-13T03:01:22</completedAt>
           <task>
             <a03_task:A03_CopyDocSet />
@@ -71,7 +70,9 @@ Note: as with the prior operation's report, I have not touched the running trans
             <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/BmlDocSet_A03.bml" />
           </changedFiles>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Update A02 page skeletons" status="Pending" captureOutput="true">
+        <workflow:AgenticOperation name="Update A02 page skeletons" status="Running" captureOutput="true">
+          <startedAt>2026-09-13T03:01:23</startedAt>
+          <baseCommit>d5b1c59b717a928a6660bc85497e34e6f5bf18aa</baseCommit>
           <task>
             <a03_task:A03_CopyPageGroups />
           </task>
