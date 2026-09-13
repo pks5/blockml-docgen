@@ -1,0 +1,63 @@
+<!--Workspace program — BuildA03
+  FQN: org.blockml.bml.bmldocs.program.BuildA03-->
+<running:T00007_BuildA01_20260913T205718 xmlns="http://blockml.org/bml"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:program="org.blockml.bml.bmldocs.program"
+  xmlns:a01_task="org.blockml.bml.bmldocs.a01_planning.task"
+  xmlns:running="org.blockml.bml.bmldocs._meta.transform.running">
+
+  <baseType>
+    workflow:ModelTransformation(running:T00007_BuildA01_20260913T205718.Parameters, type:Text)
+  </baseType>
+  <is>
+    A pending ModelTransformation that creates the doc set plan.
+  </is>
+  <properties>
+    <description override="true">
+      <value>A transformation that creates the doc set plan.</value>
+    </description>
+    <status override="true" type="workflow:ExecutionStatus">
+      <value>Running</value>
+    </status>
+    <createdAt override="true" type="type:DateTime">
+      <value>2026-09-06T00:00:00</value>
+    </createdAt>
+    <template override="true" type="type:Boolean">
+      <value>false</value>
+    </template>
+    <executionId override="true" type="type:UUID">
+      <value>8c4d39c8-6bed-4bc9-9d30-66f4469421e9</value>
+    </executionId>
+    <sequence override="true" type="type:Integer">
+      <value>7</value>
+    </sequence>
+    <startedAt override="true" type="type:DateTime">
+      <value>2026-09-13T20:57:18</value>
+    </startedAt>
+    <baseCommit override="true" type="type:Text">
+      <value>14fcac55eac0574ba7eccb506e1d65ae830dbc63</value>
+    </baseCommit>
+  </properties>
+  <aggregations>
+    <operations override="true">
+      <composition>
+        <workflow:AgenticOperation name="Create A01 Plan" status="Pending" captureOutput="true">
+          <task>
+            <a01_task:A01_01_CreatePlan />
+          </task>
+        </workflow:AgenticOperation>
+      </composition>
+    </operations>
+  </aggregations>
+  <subBlocks>
+    <Parameters>
+      <baseType>
+        type:StructType
+      </baseType>
+      <is>
+        Run parameters for this transformation
+      </is>
+    </Parameters>
+  </subBlocks>
+</running:T00007_BuildA01_20260913T205718>
