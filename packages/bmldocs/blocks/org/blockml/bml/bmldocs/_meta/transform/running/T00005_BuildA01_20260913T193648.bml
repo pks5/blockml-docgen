@@ -42,7 +42,9 @@
   <aggregations>
     <operations override="true">
       <composition>
-        <workflow:AgenticOperation name="Create A01 Plan" status="Pending" captureOutput="true">
+        <workflow:AgenticOperation name="Create A01 Plan" status="Running" captureOutput="true">
+          <startedAt>2026-09-13T19:36:49</startedAt>
+          <baseCommit>4a20cb1e5d20706e68dcf621213d05f31ad39cda</baseCommit>
           <task>
             <a01_task:A01_CreatePlan />
           </task>
