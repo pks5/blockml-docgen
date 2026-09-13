@@ -1,6 +1,6 @@
 <!--BlockML Documentation — import A02 data into A03
-  FQN: org.blockml.bml.bmldocs.a03_authoring.task.A03_02_CopyData-->
-<task:A03_02_CopyData xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs.a03_authoring.task.A03_01_CopyData-->
+<task:A03_01_CopyData xmlns="http://blockml.org/bml"
   xmlns:task="org.blockml.bml.bmldocs.a03_authoring.task"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type">
@@ -131,4 +131,4 @@
       </value>
     </instructions>
   </properties>
-</task:A03_02_CopyData>
+</task:A03_01_CopyData>

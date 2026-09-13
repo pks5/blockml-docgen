@@ -1,4 +1,4 @@
-<!--BlockML Documentation — create or update the A02 DocSet
+<!--BlockML Documentation — create a new A02 DocSet
   FQN: org.blockml.bml.bmldocs.a02_structuring.task.A02_01_UpdateDocSet-->
 <task:A02_01_UpdateDocSet xmlns="http://blockml.org/bml"
   xmlns:task="org.blockml.bml.bmldocs.a02_structuring.task"
@@ -9,13 +9,16 @@
     workflow:InstructionTask
   </baseType>
   <is>
-    A task that creates or updates the A02 DocSet
+    A task that creates a new A02 DocSet
   </is>
   <documentation>
-    A02 structuring task: create or update BmlDocSet_A02 from BmlDocSetPlan.
+    A02 structuring task: wipe a02_structuring.data, then create a new
+    BmlDocSet_A02 from BmlDocSetPlan.
 
+    - **Wipe** — if the live A02 data package exists, delete it first.
+      Previous data contents are never input, even while they are deleted
     - **Identity** — title, version, and summary come only from the plan
-    - **Packages** — create a02 subpackages data, page, and pagegroup if missing
+    - **Packages** — recreate a02 subpackages data, page, and pagegroup
     - **Aggregations** — pages and pageGroups stay empty for later A02 tasks
     - **Sources** — this task has no authoritativeSources
   </documentation>
@@ -25,7 +28,12 @@
         <![CDATA[
           All information for this task comes from the plan. Do not read
           authoritativeSources on this task or on BmlDocSetPlan. Do not invent
-          title, version, or summary that the plan does not state.
+          title, version, or summary that the plan does not state. Do not
+          read, merge, or reuse any existing A02 data contents.
+
+          Live A02 data package: org.blockml.bml.bmldocs.a02_structuring.data
+          Live A02 data path:
+          packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/
 
           1. Read the plan
           Read org.blockml.bml.bmldocs.a01_planning.data.BmlDocSetPlan. Collect
@@ -34,35 +42,41 @@
           PageGroupPlan entries. Do not create or edit pages, PageGroups,
           or pageMapping.
 
-          2. Create A02 subpackages if they do not exist
-          Under org.blockml.bml.bmldocs.a02_structuring, create these packages
-          when they are missing:
+          2. Delete live A02 data if it exists
+          If the live A02 data tree exists, delete it entirely — the data
+          path above and every descendant package (data.page, data.pagegroup,
+          data.page.docs, and any other child). Delete every .bml file in
+          that tree. Remove those A02 data Blocks from
+          org.blockml.bml.bmldocs.Library. Do not remove A01 catalog
+          entries, task entries, or other sectors.
+
+          Existing contents in that tree are never input. Do not inspect
+          them, copy from them, or preserve pages, pageGroups, homePage,
+          or rootPageGroup from a previous BmlDocSet_A02. Ignore them
+          even while deleting them.
+
+          After this step A02 has no live data Blocks. Then continue.
+
+          3. Create A02 subpackages
+          Under org.blockml.bml.bmldocs.a02_structuring, create these
+          packages (they are missing after step 2):
           - data → org.blockml.bml.bmldocs.a02_structuring.data
           - page → org.blockml.bml.bmldocs.a02_structuring.data.page
           - pagegroup → org.blockml.bml.bmldocs.a02_structuring.data.pagegroup
 
           Create only the package directories (the filesystem homes for the
-          DocSet and for later A02 pages and PageGroups). If a package already
-          exists, leave it as is. Do not invent pages or PageGroups. Do not
-          create packages outside a02.
+          new DocSet and for later A02 pages and PageGroups). Do not invent
+          pages or PageGroups. Do not create packages outside a02.
 
-          3. Resolve the A02 DocSet FQN
+          4. Resolve the A02 DocSet FQN
           DocSet FQN =
           org.blockml.bml.bmldocs.a02_structuring.data.BmlDocSet_A02
           Write only this a02 DocSet, never a DocSet outside a02 (a03 or any
           later sector). Do not edit DocSets of other sectors.
 
-          4. Create or update BmlDocSet_A02
-          If BmlDocSet_A02 already exists, keep only the FQN / file path so
-          the same Block is overwritten. Refresh title, version, and summary
-          from the plan. Preserve existing pages, pageGroups, homePage, and
-          rootPageGroup — later A02 tasks fill those (A02_02_UpdatePageSkeletons
-          writes pages and homePage; A02_03_UpdatePageGroups writes pageGroups
-          and rootPageGroup). If a preserved pages or pageGroups entry is
-          outside a02, remove it. Do not invent pages or groups.
-
-          If BmlDocSet_A02 does not exist, create it as the A02 DocSet
-          container. Example of the target shape:
+          5. Create a new BmlDocSet_A02
+          Always create a new DocSet. After step 2 there is no previous
+          BmlDocSet_A02 to update. Example of the target path:
           packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/BmlDocSet_A02.bml
 
           Each DocSet must:
@@ -80,14 +94,12 @@
           - override summary from BmlDocSetPlan.summary
           - declare aggregations pages and pageGroups so later A02 tasks can
             register TypeReferenceEntity links there
-          - on create: leave pages and pageGroups as empty compositions;
-            omit homePage and rootPageGroup
-          - on update: do not empty pages or pageGroups; do not add children
-            to them here
+          - leave pages and pageGroups as empty compositions
+          - omit homePage and rootPageGroup
           - omit learningPaths
           - omit every other aggregation
 
-          5. Export BmlDocSet_A02 from the catalog
+          6. Export BmlDocSet_A02 from the catalog
           Export org.blockml.bml.bmldocs.a02_structuring.data.BmlDocSet_A02
           from org.blockml.bml.bmldocs.Library if it is not already in the
           catalog. Do not remove catalog entries of other sectors.

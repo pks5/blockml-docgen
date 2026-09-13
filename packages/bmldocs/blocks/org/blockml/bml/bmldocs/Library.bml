@@ -135,8 +135,8 @@
         <task:A02_01_UpdateDocSet />
         <task:A02_02_UpdatePageSkeletons />
         <task:A02_03_UpdatePageGroups />
-        <a03task:A03_01_AuthorPages />
-        <a03task:A03_02_CopyData />
+        <a03task:A03_01_CopyData />
+        <a03task:A03_02_AuthorPages />
         <a02data:BmlDocSet_A02 />
         <a02pgroup:RootPageGroup />
         <a02pgroup:DocsPageGroup />

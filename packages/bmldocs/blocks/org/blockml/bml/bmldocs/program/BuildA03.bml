@@ -31,12 +31,12 @@
       <composition>
         <workflow:AgenticOperation name="Copy A02 data into A03" status="Pending" captureOutput="true">
           <task>
-            <a03_task:A03_02_CopyData />
+            <a03_task:A03_01_CopyData />
           </task>
         </workflow:AgenticOperation>
         <workflow:AgenticOperation name="Author A03 pages" status="Pending" captureOutput="true">
           <task>
-            <a03_task:A03_01_AuthorPages />
+            <a03_task:A03_02_AuthorPages />
           </task>
         </workflow:AgenticOperation>
       </composition>

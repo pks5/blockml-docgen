@@ -1,6 +1,6 @@
 <!--BlockML Documentation — author semantic structure on imported A03 pages
-  FQN: org.blockml.bml.bmldocs.a03_authoring.task.A03_01_AuthorPages-->
-<task:A03_01_AuthorPages xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs.a03_authoring.task.A03_02_AuthorPages-->
+<task:A03_02_AuthorPages xmlns="http://blockml.org/bml"
   xmlns:task="org.blockml.bml.bmldocs.a03_authoring.task"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:source="org.blockml.bml.bmldocs.lib.source"
@@ -13,11 +13,11 @@
     A task that authors the semantic structure of imported A03 pages
   </is>
   <documentation>
-    A03 authoring task: enrich every page imported by A03_02_CopyData with
+    A03 authoring task: enrich every page imported by A03_01_CopyData with
     the semantic scaffold that A04 will render. This task does not copy
     or delete A03 data.
 
-    - **Import** — A03_02_CopyData already wiped A03 data and imported the
+    - **Import** — A03_01_CopyData already wiped A03 data and imported the
       full A02 data tree with packages and names remapped
     - **Identity** — title, purpose, detailLevel, pageType, is stay on
       the imported A03 page
@@ -41,7 +41,7 @@
           finished site. Sector 4 (A04_RenderingSector) renders prose,
           examples, and code from that specification.
 
-          A03_02_CopyData has already wiped live A03 data and imported the
+          A03_01_CopyData has already wiped live A03 data and imported the
           full A02 data tree with packages and names remapped. This task
           does not copy, delete, or recreate DocSet, Pages, or PageGroups.
           Do not read leftover trees such as data_IGNORE. Do not read
@@ -157,4 +157,4 @@
       </composition>
     </authorativeSources>
   </aggregations>
-</task:A03_01_AuthorPages>
+</task:A03_02_AuthorPages>
