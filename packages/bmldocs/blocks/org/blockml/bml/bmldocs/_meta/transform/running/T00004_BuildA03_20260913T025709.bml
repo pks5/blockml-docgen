@@ -42,7 +42,9 @@
   <aggregations>
     <operations override="true">
       <composition>
-        <workflow:AgenticOperation name="Update A02 doc set" status="Pending" captureOutput="true">
+        <workflow:AgenticOperation name="Update A02 doc set" status="Running" captureOutput="true">
+          <startedAt>2026-09-13T02:57:09</startedAt>
+          <baseCommit>72f19cec8af1689af7af40057c6f5516d3b4d7aa</baseCommit>
           <task>
             <a03_task:A03_CopyDocSet />
           </task>
