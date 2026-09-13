@@ -42,12 +42,31 @@
   <aggregations>
     <operations override="true">
       <composition>
-        <workflow:AgenticOperation name="Create A01 Plan" status="Running" captureOutput="true">
+        <workflow:AgenticOperation name="Create A01 Plan" status="Succeeded" captureOutput="true">
           <startedAt>2026-09-13T19:36:49</startedAt>
           <baseCommit>4a20cb1e5d20706e68dcf621213d05f31ad39cda</baseCommit>
+          <output>Task executed: `A01_CreatePlan.run` created/overwrote `org.blockml.bml.bmldocs.a01_planning.data.BmlDocSetPlan` at `packages/bmldocs/blocks/org/blockml/bml/bmldocs/a01_planning/data/BmlDocSetPlan.bml`, per the `InstructionTask` instructions embedded in the closed task instance.
+
+What I did, following the task's steps:
+1. Resolved `authorativeSources` → the whitelist on `BlockMLSourceSet` (`org.blockml.bml.{constraint,core,definition,documentation,exception,group,language,mapping,meta,relation,service,status,type,unit,validation}.**`) and scanned it.
+2. Inspected all 37 `org.blockml.bml.documentation.*` guides and 9 `org.blockml.bml.documentation.howto.*` blocks for their `is`/documentation, since instructions require grounding scopes in these, not guessing.
+3. Found the existing plan only covered 24 of the 45 concrete authoritative topics — 14 guides (`CoreUseCases`, `WOTFoundation`, `BlockNameConvention`, `BmlNamespace`, `ImplicitNamespaceResolution`, `ValueTypeParsing`, `ConstantValueType`, `TypeIdentityDerivation`, `PseudoCode`, `FunctionMappingModel`, `MemberAuthoring`, `DocumentationModel`, `RendererFreedom`, `HowToModel`) and 7 how-to guides were missing entirely.
+4. Per the explicit instruction that existing plan content is never authoritative, redesigned the TOC: same `Documentation` top-level area, but 8 section groups (added a new &quot;Namespaces &amp; Packaging&quot; group, expanded Types/Authoring/How-to) covering all 45 topics across 46 pages, each within `maxGroupSize=30`, each with distinct comma-separated `scopes`.
+5. `homePage` kept as `page:TableOfContents` per the instructions' own example convention.
+6. Confirmed `BmlDocSetPlan` was already exported from `org.blockml.bml.bmldocs.Library` (no catalog change needed).
+7. Ran `blockml validate --all` — 0 errors (644 blocks checked).
+
+Note: the plan's page/group names now diverge from what `a02_structuring`/`a03_authoring` already materialized from the old plan — that's expected fallout of an a01 redesign and would need a follow-up run of the a02/a03 update tasks to reconcile, which is outside this task's scope (instructions explicitly say &quot;Do not write outside a01&quot;).
+
+The change is unstaged/uncommitted — let me know if you'd like it committed.
+</output>
+          <completedAt>2026-09-13T19:42:05</completedAt>
           <task>
             <a01_task:A01_CreatePlan />
           </task>
+          <changedFiles>
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a01_planning/data/BmlDocSetPlan.bml" />
+          </changedFiles>
         </workflow:AgenticOperation>
       </composition>
     </operations>
