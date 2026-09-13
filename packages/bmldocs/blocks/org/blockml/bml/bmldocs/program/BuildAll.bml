@@ -1,13 +1,13 @@
-<!--Workspace program — BmlDocsBuilder
-  FQN: org.blockml.bml.bmldocs.program.BmlDocsBuilder-->
-<program:BmlDocsBuilder xmlns="http://blockml.org/bml"
+<!--Workspace program — BuildAll
+  FQN: org.blockml.bml.bmldocs.program.BuildAll-->
+<program:BuildAll xmlns="http://blockml.org/bml"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type"
   xmlns:program="org.blockml.bml.bmldocs.program"
   xmlns:a02_task="org.blockml.bml.bmldocs.a02_structuring.task">
 
   <baseType>
-    workflow:ModelTransformation(program:BmlDocsBuilder.Parameters, type:Text)
+    workflow:ModelTransformation(program:BuildAll.Parameters, type:Text)
   </baseType>
   <is>
     A pending ModelTransformation that creates skeletons for all planned pages.
@@ -25,7 +25,7 @@
     <template override="true" type="type:Boolean">
       <value>true</value>
     </template>
-    <parameters override="true" type="program:BmlDocsBuilder.Parameters">
+    <parameters override="true" type="program:BuildAll.Parameters">
       <value>{targetBlock:"org.blockml.bml.workspace.program.RandomBlock"}</value>
     </parameters>
   </properties>
@@ -63,4 +63,4 @@
       </properties>
     </Parameters>
   </subBlocks>
-</program:BmlDocsBuilder>
+</program:BuildAll>

@@ -1,0 +1,63 @@
+<!--Workspace program — BuildA3
+  FQN: org.blockml.bml.bmldocs.program.BuildA3-->
+<program:BuildA3 xmlns="http://blockml.org/bml"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:program="org.blockml.bml.bmldocs.program"
+  xmlns:a03_task="org.blockml.bml.bmldocs.a03_authoring.task">
+
+  <baseType>
+    workflow:ModelTransformation(program:BuildA3.Parameters, type:Text)
+  </baseType>
+  <is>
+    A pending ModelTransformation that creates skeletons for all planned pages.
+  </is>
+  <properties>
+    <description override="true">
+      <value>A transformation that creates skeletons for all planned pages.</value>
+    </description>
+    <status override="true" type="workflow:ExecutionStatus">
+      <value>Pending</value>
+    </status>
+    <createdAt override="true" type="type:DateTime">
+      <value>2026-09-06T00:00:00</value>
+    </createdAt>
+    <template override="true" type="type:Boolean">
+      <value>true</value>
+    </template>
+  </properties>
+  <aggregations>
+    <operations override="true">
+      <composition>
+        <workflow:AgenticOperation name="Update A02 doc set" status="Pending" captureOutput="true">
+          <task>
+            <a03_task:A03_CopyDocSet />
+          </task>
+        </workflow:AgenticOperation>
+        <workflow:AgenticOperation name="Update A02 page skeletons" status="Pending" captureOutput="true">
+          <task>
+            <a03_task:A03_CopyPageGroups />
+          </task>
+        </workflow:AgenticOperation>
+        <workflow:AgenticOperation name="Update A02 page groups" status="Pending" captureOutput="true">
+          <task>
+            <a03_task:A03_AuthorPages />
+          </task>
+        </workflow:AgenticOperation>
+      </composition>
+    </operations>
+  </aggregations>
+  <subBlocks>
+    <Parameters>
+      <baseType>
+        type:StructType
+      </baseType>
+      <is>
+        Run parameters for this transformation
+      </is>
+      <properties>
+       
+      </properties>
+    </Parameters>
+  </subBlocks>
+</program:BuildA3>
