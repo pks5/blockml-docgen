@@ -1,0 +1,73 @@
+<!--Workspace program — BuildA03
+  FQN: org.blockml.bml.bmldocs._meta.transform.running.T00004_BuildA03_20260913T025709-->
+<running:T00004_BuildA03_20260913T025709 xmlns="http://blockml.org/bml"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:program="org.blockml.bml.bmldocs.program"
+  xmlns:a03_task="org.blockml.bml.bmldocs.a03_authoring.task"
+  xmlns:running="org.blockml.bml.bmldocs._meta.transform.running">
+
+  <baseType>
+    workflow:ModelTransformation(running:T00004_BuildA03_20260913T025709.Parameters, type:Text)
+  </baseType>
+  <is>
+    A pending ModelTransformation that creates skeletons for all planned pages.
+  </is>
+  <properties>
+    <description override="true">
+      <value>A transformation that creates skeletons for all planned pages.</value>
+    </description>
+    <status override="true" type="workflow:ExecutionStatus">
+      <value>Running</value>
+    </status>
+    <createdAt override="true" type="type:DateTime">
+      <value>2026-09-06T00:00:00</value>
+    </createdAt>
+    <template override="true" type="type:Boolean">
+      <value>false</value>
+    </template>
+    <executionId override="true" type="type:UUID">
+      <value>a9b211b9-95bd-480d-8538-cf5946fd06de</value>
+    </executionId>
+    <sequence override="true" type="type:Integer">
+      <value>4</value>
+    </sequence>
+    <startedAt override="true" type="type:DateTime">
+      <value>2026-09-13T02:57:09</value>
+    </startedAt>
+    <baseCommit override="true" type="type:Text">
+      <value>f2eedea0d127309299a716e4e982459537a20b64</value>
+    </baseCommit>
+  </properties>
+  <aggregations>
+    <operations override="true">
+      <composition>
+        <workflow:AgenticOperation name="Update A02 doc set" status="Pending" captureOutput="true">
+          <task>
+            <a03_task:A03_CopyDocSet />
+          </task>
+        </workflow:AgenticOperation>
+        <workflow:AgenticOperation name="Update A02 page skeletons" status="Pending" captureOutput="true">
+          <task>
+            <a03_task:A03_CopyPageGroups />
+          </task>
+        </workflow:AgenticOperation>
+        <workflow:AgenticOperation name="Update A02 page groups" status="Pending" captureOutput="true">
+          <task>
+            <a03_task:A03_AuthorPages />
+          </task>
+        </workflow:AgenticOperation>
+      </composition>
+    </operations>
+  </aggregations>
+  <subBlocks>
+    <Parameters>
+      <baseType>
+        type:StructType
+      </baseType>
+      <is>
+        Run parameters for this transformation
+      </is>
+    </Parameters>
+  </subBlocks>
+</running:T00004_BuildA03_20260913T025709>
