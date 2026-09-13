@@ -1,14 +1,14 @@
 <!--Workspace program — BuildA03
   FQN: org.blockml.bml.bmldocs.program.BuildA03-->
-<running:T00006_BuildA01_20260913T202557 xmlns="http://blockml.org/bml"
+<succeeded:T00006_BuildA01_20260913T202557 xmlns="http://blockml.org/bml"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type"
   xmlns:program="org.blockml.bml.bmldocs.program"
   xmlns:a01_task="org.blockml.bml.bmldocs.a01_planning.task"
-  xmlns:running="org.blockml.bml.bmldocs._meta.transform.running">
+  xmlns:succeeded="org.blockml.bml.bmldocs._meta.transform.succeeded">
 
   <baseType>
-    workflow:ModelTransformation(running:T00006_BuildA01_20260913T202557.Parameters, type:Text)
+    workflow:ModelTransformation(succeeded:T00006_BuildA01_20260913T202557.Parameters, type:Text)
   </baseType>
   <is>
     A pending ModelTransformation that creates the doc set plan.
@@ -18,7 +18,7 @@
       <value>A transformation that creates the doc set plan.</value>
     </description>
     <status override="true" type="workflow:ExecutionStatus">
-      <value>Running</value>
+      <value>Succeeded</value>
     </status>
     <createdAt override="true" type="type:DateTime">
       <value>2026-09-06T00:00:00</value>
@@ -38,6 +38,12 @@
     <baseCommit override="true" type="type:Text">
       <value>4b6e6a46539da0ed85435e9b3a5fb98f55431158</value>
     </baseCommit>
+    <completedAt override="true" type="type:DateTime">
+      <value>2026-09-13T20:35:24</value>
+    </completedAt>
+    <duration override="true" type="type:Duration">
+      <value>PT9M28.552S</value>
+    </duration>
   </properties>
   <aggregations>
     <operations override="true">
@@ -54,8 +60,7 @@ New TOC (`RootPageGroup → DocsPageGroup`, 8 sub-groups, all ≤8 entries, with
 
 Every one of the 32 required concepts now has its own `PagePlan` with scopes grounded in the corresponding authoritative source Block (e.g. `docs.Inheritance` grounded in `ModelingGuidelines`/`StructuralDefinition`'s abstract/final/baseType semantics; `docs.Suggestions` grounded in `ConstraintsModel`'s suggestions section).
 
-`BmlDocSetPlan` was already exported in `Library.bml`, so no catalog change was needed. `npx blockml validate --all` shows no errors/warnings on the file (the pre-existing errors in the repo belong to unrelated future-sector task references, not this change).
-</output>
+`BmlDocSetPlan` was already exported in `Library.bml`, so no catalog change was needed. `npx blockml validate --all` shows no errors/warnings on the file (the pre-existing errors in the repo belong to unrelated future-sector task references, not this change).</output>
           <completedAt>2026-09-13T20:35:24</completedAt>
           <task>
             <a01_task:A01_01_CreatePlan />
@@ -77,4 +82,4 @@ Every one of the 32 required concepts now has its own `PagePlan` with scopes gro
       </is>
     </Parameters>
   </subBlocks>
-</running:T00006_BuildA01_20260913T202557>
+</succeeded:T00006_BuildA01_20260913T202557>
