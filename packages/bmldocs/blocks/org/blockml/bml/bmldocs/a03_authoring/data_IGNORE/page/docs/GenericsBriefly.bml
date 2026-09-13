@@ -13,7 +13,7 @@
     dpage:DocPage
   </baseType>
   <is>
-    A short website intro to generics
+    A short website introduction to generics
   </is>
   <documentation>
     Marker page: declare a type parameter, bind it on baseType, and see one inheritance example —
@@ -31,7 +31,7 @@
       <value>Generics briefly</value>
     </title>
     <purpose override="true">
-      <value>Introduce generics as parameters owned by the declaring Block.</value>
+      <value>Explain the ownership and bind-or-forward rule for generic parameters in a short page, sending readers who need more to the type-expression material.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>

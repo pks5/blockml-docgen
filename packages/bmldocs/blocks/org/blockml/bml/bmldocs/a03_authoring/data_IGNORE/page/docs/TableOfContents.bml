@@ -32,8 +32,7 @@
       <value>Documentation</value>
     </title>
     <purpose override="true">
-      <value>Present the structured documentation menu so readers can find entry points without
-introducing new conceptual content.</value>
+      <value>Render the site documentation menu as a Navigation tree of NavigationItems so readers can reach every section and page; this page must not introduce conceptual content of its own.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Overview</value>

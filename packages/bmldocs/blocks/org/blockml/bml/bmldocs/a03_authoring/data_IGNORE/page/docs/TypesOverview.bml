@@ -13,7 +13,7 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website overview of ValueTypes
+    A website overview of the BlockML type system
   </is>
   <documentation>
     Marker page: high-level map of the four ValueType kinds and where type expressions show up —
@@ -31,7 +31,7 @@
       <value>Types at a glance</value>
     </title>
     <purpose override="true">
-      <value>Introduce the four ValueType kinds as the type-system entry point.</value>
+      <value>Introduce the four ValueType kinds as the entry point to the type pages, making clear they are sibling branches rather than subtypes of one another.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>

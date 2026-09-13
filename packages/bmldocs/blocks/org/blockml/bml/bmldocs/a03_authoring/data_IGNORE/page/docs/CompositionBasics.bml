@@ -13,7 +13,7 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website intro to composition
+    A website introduction to composition
   </is>
   <documentation>
     Marker page: how aggregations get filled — definition composition vs instance fill — with a
@@ -32,7 +32,7 @@
       <value>Composition</value>
     </title>
     <purpose override="true">
-      <value>Explain how aggregations receive child Block instances through composition.</value>
+      <value>Show how an aggregation receives concrete child Block instances through composition, and contrast the definition-side and instance-side syntax so readers avoid the usual wrapper mistakes.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>

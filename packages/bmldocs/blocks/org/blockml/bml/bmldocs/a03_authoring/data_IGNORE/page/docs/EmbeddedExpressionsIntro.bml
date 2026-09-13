@@ -13,7 +13,7 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website intro to &lt;$ $> embeds
+    A website introduction to embedded expressions in Capability implementations
   </is>
   <documentation>
     Marker page: how &lt;$ $> embeds sit inside Capability implementations — contrast briefly
@@ -34,7 +34,7 @@
       <value>Embedded expressions</value>
     </title>
     <purpose override="true">
-      <value>Introduce &lt;$ $> embeds inside Capability implementation bodies.</value>
+      <value>Explain how embedded expression regions inside an implementation body are resolved by the renderer, and how that differs from a plain expression member value.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>

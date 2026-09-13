@@ -13,7 +13,7 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website page for README versus Bootstrap
+    A website page on README and bootstrap entry points
   </is>
   <documentation>
     Marker page: human/LLM ReadMe entry vs automation Bootstrap SPOE — when to use which and how
@@ -32,7 +32,7 @@
       <value>README and Bootstrap</value>
     </title>
     <purpose override="true">
-      <value>Distinguish human-facing README from compiler bootstrap entry points.</value>
+      <value>Distinguish the human reading entry (README) from the machine loading entry (bootstrap), and show that a Library carries both.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>

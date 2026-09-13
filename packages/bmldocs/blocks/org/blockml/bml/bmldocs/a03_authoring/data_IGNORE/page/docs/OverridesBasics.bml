@@ -13,7 +13,7 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website intro to partial member overrides
+    A website introduction to partial member overrides
   </is>
   <documentation>
     Marker page: abstract / final / override / readOnly in everyday authoring terms with one
@@ -32,7 +32,7 @@
       <value>Overrides</value>
     </title>
     <purpose override="true">
-      <value>Introduce partial member overrides with override="true".</value>
+      <value>Show what override="true" does to an inherited or contract member and when the flag must be present, so authors merge members deliberately.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>

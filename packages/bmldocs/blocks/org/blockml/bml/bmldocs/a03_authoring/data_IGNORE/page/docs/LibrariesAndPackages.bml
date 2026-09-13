@@ -13,7 +13,7 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website page for libraries and packages
+    A website page on libraries and packages
   </is>
   <documentation>
     Marker page: Library.bml membership, packages under &lt;domain>.bml.*, and namespace layout —
@@ -35,7 +35,7 @@
       <value>Libraries and packages</value>
     </title>
     <purpose override="true">
-      <value>Explain Library as the publishable unit and the domain bml package convention.</value>
+      <value>Explain the Library as the publishable unit defined by its blocks list, and the rule that every definition lives under a domain's bml namespace.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>

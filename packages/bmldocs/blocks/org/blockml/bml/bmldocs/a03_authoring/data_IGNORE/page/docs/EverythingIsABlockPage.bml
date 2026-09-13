@@ -13,7 +13,7 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website page for the everything-is-a-Block idea
+    A website page for the everything-is-a-Block principle
   </is>
   <documentation>
     Marker page: one-idea intro to BlockML's central principle — one root, one registry, one
@@ -32,7 +32,7 @@
       <value>Everything is a Block</value>
     </title>
     <purpose override="true">
-      <value>Establish Block as the universal abstraction of a World's grammar.</value>
+      <value>Establish the central mental model — every element of a World's grammar descends from one root Block — so that later pages can rely on it without re-explaining it.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>

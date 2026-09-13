@@ -13,7 +13,7 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website page for definition versus instance
+    A website page on the Block definition versus instance distinction
   </is>
   <documentation>
     Marker page: clarify definition vs Block instance with a small diagram-friendly explanation
@@ -32,7 +32,7 @@
       <value>Definition and instance</value>
     </title>
     <purpose override="true">
-      <value>Clarify the distinction between Block definitions and Block instances.</value>
+      <value>Make the definition/instance split precise and warn that it is a semantic analogy rather than a claim about runtime objects, so readers stop conflating the two.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>

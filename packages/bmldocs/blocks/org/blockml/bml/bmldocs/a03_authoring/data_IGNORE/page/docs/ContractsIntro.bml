@@ -13,7 +13,7 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website intro to contracts
+    A website introduction to contracts
   </is>
   <documentation>
     Marker page: when to use contracts vs baseType, and how member merge works — conceptual
@@ -32,7 +32,7 @@
       <value>Contracts</value>
     </title>
     <purpose override="true">
-      <value>Introduce contracts as reusable partial definitions that merge member fragments.</value>
+      <value>Introduce contracts as reusable partial definitions merged at the document root, and set them apart from the single-baseType inheritance readers already know.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>

@@ -13,7 +13,7 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website page of modeling guidelines
+    A website page of practical modeling guidelines
   </is>
   <documentation>
     Marker page: recommended patterns for baseType, contracts, capabilities, and constraints —
@@ -32,7 +32,7 @@
       <value>Modeling guidelines</value>
     </title>
     <purpose override="true">
-      <value>Offer practical modeling patterns without becoming a second language specification.</value>
+      <value>Collect practical, non-normative modeling patterns so authors have guidance without turning the page into a second language specification.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Practical</value>

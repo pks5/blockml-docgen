@@ -13,7 +13,7 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website intro to Sub-Blocks
+    A website introduction to Sub-Blocks
   </is>
   <documentation>
     Marker page: nested types under a root Block, FQN derivation, and how they differ from
@@ -35,7 +35,7 @@
       <value>Sub-Blocks</value>
     </title>
     <purpose override="true">
-      <value>Introduce Sub-Blocks as nested types under a parent Block.</value>
+      <value>Introduce Sub-Blocks as parent-nested definitions that share the parent's FQN prefix and have no enclosing-instance scope, and show how their identity is formed.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>

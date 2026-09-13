@@ -108,12 +108,59 @@ Note: as with the prior operation, I haven't touched the running transform recor
             <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/pagegroup/TypesPageGroup.bml" />
           </changedFiles>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Update A02 page groups" status="Running" captureOutput="true">
+        <workflow:AgenticOperation name="Update A02 page groups" status="Succeeded" captureOutput="true">
           <startedAt>2026-09-13T03:05:52</startedAt>
           <baseCommit>31e371af2b3e2842d40dc5bcc5e1aaca0ce9854c</baseCommit>
+          <output>`Task.run` on `A03_AuthorPages` executed. Summary:
+
+**What ran** — `A03_AuthorPages` is an `InstructionTask`, so `execute()` ran its `instructions` once.
+
+**Findings** — the corpus already had all 25 A02 pages copied into A03 (`page.docs.*`, physically under `a03_authoring/data_IGNORE/`), each already carrying a full semantic scaffold (`authoritativeSources`, `learningObjectives`, `readerOutcomes`, `scopes`, `exclusions`, `content`) that follows the `PageExample_A03` pattern. `BmlDocSet_A03.pages`/`homePage`, all 10 A03 `PageGroups`, and the `Library` catalog exports (pages, groups, DocSet, tasks) were also already correct from prior operations in this transform (#1, #2) — no additions/removals/exports needed.
+
+**Verification against A02** (script-compared all 25 pages):
+- `title`, `pageType`, `detailLevel`, `isNot` — already matched A02 exactly.
+- `is` (20/25 pages) and `purpose` (all 25 pages) — did **not** match A02 verbatim; the existing A03 content had paraphrased these instead of carrying them over as required by step 4 (&quot;set `is`/override `purpose` from the A02 page&quot;). Fixed all 25 by copying the exact A02 `&lt;is>` and `&lt;purpose>` blocks into the A03 files, leaving the already-authored semantic scaffold untouched.
+- `authoritativeSources` selectors across all pages resolve only to `org.blockml.bml.core.*` / `org.blockml.bml.documentation.*` — within the allowed whitelist, no cross-sector leakage.
+- No `&lt;code>` left on any `CodeBlock`; every content page has a `Requires` see-link; `TableOfContents` (Index page) has a pure `Navigation` tree targeting only A03 pages.
+- No A03 page references an A01/A02/A04 Block (the only a01/a02 mentions found are prose text in `PageGroup`/`BmlDocSet_A03` documentation, and a pre-existing `pdata:BmlDocSetPlan` see-link on `BmlDocSet_A03` — both owned by `A03_CopyDocSet`, outside this task's scope).
+
+**Validation** — `blockml validate --all`: 641 blocks, 0 errors (unchanged).
+
+**Changed files** (unstaged, not committed) — the 25 files under `packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/`, `is`/`purpose` text only.
+
+As with the prior two operations in this transform, I haven't touched the running transform record or made a commit — flipping operation #3 to `Succeeded` and committing appears to be a separate step outside this task's scope.
+</output>
+          <completedAt>2026-09-13T03:10:57</completedAt>
           <task>
             <a03_task:A03_AuthorPages />
           </task>
+          <changedFiles>
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/AnnotationsAndDirectives.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/AuthorNewBlockGuide.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/CapabilitiesIntro.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/CompilerOverview.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/CompositionBasics.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/ConfiguringTypes.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/ConstraintsBasics.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/ContractsIntro.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/DefinitionAndInstance.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/EmbeddedExpressionsIntro.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/EverythingIsABlockPage.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/ExpressionsIntro.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/FileAnatomy.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/FirstBlock.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/GenericsBriefly.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/Intro.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/LibrariesAndPackages.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/ModelingGuidelinesPage.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/OverridesBasics.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/ReadmeAndBootstrap.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/SubBlocksIntro.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/TableOfContents.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/TypeExpressionsBasics.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/TypesOverview.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/page/docs/VisibilityBasics.bml" />
+          </changedFiles>
         </workflow:AgenticOperation>
       </composition>
     </operations>

@@ -30,8 +30,7 @@
       <value>What is BlockML?</value>
     </title>
     <purpose override="true">
-      <value>Give new readers a clear first mental model of BlockML and prepare them for the
-more detailed concept pages that follow.</value>
+      <value>Give first-time readers BlockML's core idea and vocabulary, then orient them toward the concept pages that follow; keep it to a short introduction rather than a deep dive.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>

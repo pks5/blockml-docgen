@@ -13,7 +13,7 @@
     dpage:DocPage
   </baseType>
   <is>
-    A .bml file anatomy cheat-sheet
+    A cheat-sheet for the fields of a .bml root document
   </is>
   <documentation>
     Marker page: walk through the required identity fields, is/documentation, and naming
@@ -34,7 +34,7 @@
       <value>Anatomy of a .bml file</value>
     </title>
     <purpose override="true">
-      <value>Give readers a structural cheat-sheet for the ordered fields of a root Block document.</value>
+      <value>Give readers a compact structural map of a root Block document — identity fields, then is and documentation, then the ordered member sections — so they can read and lay out a .bml file with confidence.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>

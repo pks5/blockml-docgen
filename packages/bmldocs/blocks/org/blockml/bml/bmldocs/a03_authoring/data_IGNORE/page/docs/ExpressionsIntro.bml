@@ -13,7 +13,7 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website intro to \${ } expressions
+    A website introduction to the BlockML expression language
   </is>
   <documentation>
     Marker page: where \${ } appears, basic scope, and a few builtins — not the full
@@ -31,7 +31,7 @@
       <value>Expressions</value>
     </title>
     <purpose override="true">
-      <value>Introduce \${ } expressions for dynamic member values.</value>
+      <value>Introduce the dollar-brace expression language and the situations that call for a dynamic member value, keeping embedded implementations for the next page.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>

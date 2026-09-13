@@ -13,7 +13,7 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website cheat-sheet for type expressions
+    A cheat-sheet for BlockML type expressions
   </is>
   <documentation>
     Marker page: bite-sized type expression patterns — multiplicity, unions, match order — as a
@@ -31,7 +31,7 @@
       <value>Type expressions</value>
     </title>
     <purpose override="true">
-      <value>Cheat-sheet for combining named types into type expressions.</value>
+      <value>Give readers a quick reference for using and combining named types as expressions — not new type classes — with compact examples for each form.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>

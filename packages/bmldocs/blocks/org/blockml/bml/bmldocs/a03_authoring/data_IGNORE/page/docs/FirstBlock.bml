@@ -34,7 +34,7 @@
       <value>Your first Block</value>
     </title>
     <purpose override="true">
-      <value>Walk a new reader through their first Block definition and the definition/instance distinction.</value>
+      <value>Walk a newcomer through writing one small Block definition and seeing how a definition differs from an instance, using a minimal worked example rather than full theory.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>

@@ -13,7 +13,7 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website intro to constraints
+    A website introduction to constraints
   </is>
   <documentation>
     Marker page: attach a simple constraint, understand severity vs suggestions — one MinLength-
@@ -32,7 +32,7 @@
       <value>Constraints</value>
     </title>
     <purpose override="true">
-      <value>Introduce reusable validation rules on constrainable definition elements.</value>
+      <value>Introduce constraints as reusable, context-bound validation rules on constrainable definition elements, so authors know where they attach and how their type parameter is supplied.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>

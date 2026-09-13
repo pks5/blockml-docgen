@@ -13,7 +13,7 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website page for annotations and bml: directives
+    A website page on annotations and bml directives
   </is>
   <documentation>
     Marker page: annotation namespaces vs directives, then a short tour of bml:each, bml:if,
@@ -35,7 +35,7 @@
       <value>Annotations and directives</value>
     </title>
     <purpose override="true">
-      <value>Frame annotations as directive namespaces orthogonal to Definition members.</value>
+      <value>Frame annotations as directive namespaces that sit beside, not inside, the Definition meta-model, and present bml directives as their built-in concrete form.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>

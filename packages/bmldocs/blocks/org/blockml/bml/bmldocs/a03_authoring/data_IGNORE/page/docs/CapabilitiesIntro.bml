@@ -13,7 +13,7 @@
     dpage:DocPage
   </baseType>
   <is>
-    A website intro to Capabilities
+    A website introduction to Capabilities
   </is>
   <documentation>
     Marker page: behaviour as ordinary Capabilities plus how FunctionMapping passes arguments —
@@ -34,7 +34,7 @@
       <value>Capabilities</value>
     </title>
     <purpose override="true">
-      <value>Show that behaviour is expressed as ordinary Capabilities, not special language constructs.</value>
+      <value>Establish that every behaviour BlockML offers is expressed as an ordinary Capability, not a special language keyword, and preview the reading directions an implementation can serve.</value>
     </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
