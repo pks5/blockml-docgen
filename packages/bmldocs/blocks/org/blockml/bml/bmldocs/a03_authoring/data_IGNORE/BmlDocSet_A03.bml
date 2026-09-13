@@ -21,12 +21,10 @@
   </isNot>
   <documentation>
     The complete documentation set for BlockML core — syntax, rules, examples, best practices,
-    and use cases. Aimed at developers: some material targets junior readers, other parts serve
-    advanced and senior developers. The set follows a clear learning path: quick start, fast first
-    results, then deeper study when needed.
-    
-    pages and pageGroups list every publishable page and group.
-    homePage points at the TableOfContents menu page; rootPageGroup is RootPageGroup.
+    and use cases — with a learning path from quick start to deep study for junior through
+    senior developers.
+
+    pages / homePage and pageGroups / rootPageGroup list only A03 counterparts of the A02 slots.
   </documentation>
   <references>
     <see type="dcore:DocSet" relation="Extends">
