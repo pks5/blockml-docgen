@@ -42,12 +42,26 @@
   <aggregations>
     <operations override="true">
       <composition>
-        <workflow:AgenticOperation name="Create A01 Plan" status="Running" captureOutput="true">
+        <workflow:AgenticOperation name="Create A01 Plan" status="Succeeded" captureOutput="true">
           <startedAt>2026-09-13T20:57:18</startedAt>
           <baseCommit>faa260808d9a78cec92eb19bff2a7cb9439aa153</baseCommit>
+          <output>All 35 `PagePlan` entries have all five required fields (scope, readerOutcome, learningObjective, exclusion, supportingPoint), the 9 `PageGroupPlan` groups are all well under `maxGroupSize` 30, the file validates cleanly, and `BmlDocSetPlan` was already exported from the catalog.
+
+**Task run complete** — `A01_01_CreatePlan.run()`:
+- Prerequisites: none configured → skipped.
+- Rules: none configured → skipped.
+- `execute()`: read `instructions`, ground the design in the authoritative `BlockMLSourceSet` (inspected `core.**`, `type.**`, `definition.**`, `constraint.**`, `documentation.**` sources — including the existing per-concept guide Blocks like `EverythingIsABlock`, `ContractsModel`, `GenericsModel`, `MemberVisibility`, etc. — to ground every scope claim), then rewrote `BmlDocSetPlan` at `packages/bmldocs/blocks/org/blockml/bml/bmldocs/a01_planning/data/BmlDocSetPlan.bml`, keeping the FQN and overwriting the rest.
+- Success criteria: none configured → loop exits after one pass.
+
+Main change from the prior plan: every `PagePlan` previously had only `scope`; each of the 35 pages now also carries `readerOutcome`, `learningObjective`, `exclusion`, and `supportingPoint`, grounded in the real BlockML Core model rather than restated scope text.
+</output>
+          <completedAt>2026-09-13T21:04:05</completedAt>
           <task>
             <a01_task:A01_01_CreatePlan />
           </task>
+          <changedFiles>
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a01_planning/data/BmlDocSetPlan.bml" />
+          </changedFiles>
         </workflow:AgenticOperation>
       </composition>
     </operations>
