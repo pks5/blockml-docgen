@@ -1,13 +1,13 @@
-<!--Workspace program — BuildA3
-  FQN: org.blockml.bml.bmldocs.program.BuildA3-->
-<program:BuildA3 xmlns="http://blockml.org/bml"
+<!--Workspace program — BuildA03
+  FQN: org.blockml.bml.bmldocs.program.BuildA03-->
+<program:BuildA03 xmlns="http://blockml.org/bml"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type"
   xmlns:program="org.blockml.bml.bmldocs.program"
   xmlns:a03_task="org.blockml.bml.bmldocs.a03_authoring.task">
 
   <baseType>
-    workflow:ModelTransformation(program:BuildA3.Parameters, type:Text)
+    workflow:ModelTransformation(program:BuildA03.Parameters, type:Text)
   </baseType>
   <is>
     A pending ModelTransformation that creates skeletons for all planned pages.
@@ -60,4 +60,4 @@
       </properties>
     </Parameters>
   </subBlocks>
-</program:BuildA3>
+</program:BuildA03>
