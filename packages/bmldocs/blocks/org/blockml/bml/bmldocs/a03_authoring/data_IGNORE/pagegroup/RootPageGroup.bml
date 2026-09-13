@@ -9,11 +9,12 @@
     dcore:PageGroup
   </baseType>
   <is>
-    The top-level container for all blockml.org page groups and pages
+    The top-level container for all a03 page groups
   </is>
   <documentation>
-    Outermost page group for the BlockML site. Child PageGroups (for example DocsPageGroup) nest
-    under this group via parentGroup. Does not list pages yet.
+    Outermost A03 page group; this group is the A03 counterpart of a02_structuring's
+    RootPageGroup. pages / landingPage / parentGroup name only A03 Blocks. Has no direct pages
+    and no parentGroup. DocsPageGroup nests under this group via parentGroup.
   </documentation>
   <references>
     <see type="dcore:PageGroup" relation="Extends">

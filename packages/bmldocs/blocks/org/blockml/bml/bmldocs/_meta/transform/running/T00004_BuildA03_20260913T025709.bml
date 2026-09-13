@@ -70,12 +70,44 @@ Note: as with the prior operation's report, I have not touched the running trans
             <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/BmlDocSet_A03.bml" />
           </changedFiles>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Update A02 page skeletons" status="Running" captureOutput="true">
+        <workflow:AgenticOperation name="Update A02 page skeletons" status="Succeeded" captureOutput="true">
           <startedAt>2026-09-13T03:01:23</startedAt>
           <baseCommit>d5b1c59b717a928a6660bc85497e34e6f5bf18aa</baseCommit>
+          <output>All 10 changed files as expected. No BmlDocSet_A03, Library, or other files needed changes since their pageGroups/exports were already correct.
+
+`Task.run` on `A03_CopyPageGroups` executed. Summary:
+
+1. **Read A02** — walked all 10 `BmlDocSet_A02.pageGroups` in order (Root, Docs, GettingStarted, CoreIdeas, Types, Behaviour, Libraries, Authoring, DeeperTopics, HowTo), collecting `title`/`is`/`documentation`/`parentGroup`/`pages` from each (none have `isNot` or `landingPage`).
+2. **Correspondence** — all 10 A03 counterparts already exist in the corpus (physically under `a03_authoring/data_IGNORE/pagegroup/`, FQN `a03_authoring.data.pagegroup.*`), and all A02 pages already have A03 counterparts (situation B: A03 already has Pages).
+3. **Updated the 10 existing A03 PageGroup files** (kept FQN/path, overwrote content):
+   - `is`/`documentation` rewritten from each A02 counterpart, replacing A02-plan/TOC wording with the required fixed sentence (&quot;this group is the A03 counterpart …; pages / landingPage / parentGroup name only A03 Blocks&quot;).
+   - Removed `landingPage` from `DocsPageGroup` — A02's `DocsPageGroup` has no `landingPage`, but the existing A03 file incorrectly had one set to `page:TableOfContents`; also updated its stale `&lt;see>` comment.
+   - `parentGroup`, `pages`, and `title` were already correct A03 references in A02 order, so left unchanged.
+4. **Deletion** — no A03 PageGroup exists outside this set of 10, so nothing to delete.
+5. **BmlDocSet_A03 / Library** — `pageGroups` (same 10, same order) and `rootPageGroup` (`pgroup:RootPageGroup`) were already correct; all 10 groups were already exported from `Library`. No changes needed.
+
+**Validation** — `blockml validate --all`: 641 blocks, 0 errors (unchanged from before).
+
+**Changed files** (unstaged, not committed): the 10 files listed in `git status` above.
+
+Note: as with the prior operation, I haven't touched the running transform record or made a commit — flipping operation #2 to `Succeeded` and committing appears to be a separate step outside this task's scope.
+</output>
+          <completedAt>2026-09-13T03:05:51</completedAt>
           <task>
             <a03_task:A03_CopyPageGroups />
           </task>
+          <changedFiles>
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/pagegroup/AuthoringPageGroup.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/pagegroup/BehaviourPageGroup.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/pagegroup/CoreIdeasPageGroup.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/pagegroup/DeeperTopicsPageGroup.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/pagegroup/DocsPageGroup.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/pagegroup/GettingStartedPageGroup.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/pagegroup/HowToPageGroup.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/pagegroup/LibrariesPageGroup.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/pagegroup/RootPageGroup.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/pagegroup/TypesPageGroup.bml" />
+          </changedFiles>
         </workflow:AgenticOperation>
         <workflow:AgenticOperation name="Update A02 page groups" status="Pending" captureOutput="true">
           <task>

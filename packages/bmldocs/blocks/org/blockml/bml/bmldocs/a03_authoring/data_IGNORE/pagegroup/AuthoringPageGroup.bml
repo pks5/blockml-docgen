@@ -10,12 +10,13 @@
     dcore:PageGroup
   </baseType>
   <is>
-    A documentation page group for Authoring
+    The Authoring page group for the a03 documentation set
   </is>
   <documentation>
-    Page group corresponding to the “Authoring” TOC section on blockml.org. pages lists the
-    section’s leaf NavigationItem targets as page type references. parentGroup is
-    DocsPageGroup.
+    Section page group; this group is the A03 counterpart of a02_structuring's
+    AuthoringPageGroup. pages / landingPage / parentGroup name only A03 Blocks. Direct pages:
+    ModelingGuidelinesPage, VisibilityBasics, OverridesBasics, ConstraintsBasics,
+    AnnotationsAndDirectives. parentGroup is DocsPageGroup.
   </documentation>
   <references>
     <see type="dcore:PageGroup" relation="Extends">

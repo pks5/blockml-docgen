@@ -10,11 +10,12 @@
     dcore:PageGroup
   </baseType>
   <is>
-    A documentation page group for Core Ideas
+    The Core Ideas page group for the a03 documentation set
   </is>
   <documentation>
-    Page group corresponding to the “Core Ideas” TOC section on blockml.org. pages lists the
-    section’s leaf NavigationItem targets as page type references. parentGroup is
+    Section page group; this group is the A03 counterpart of a02_structuring's
+    CoreIdeasPageGroup. pages / landingPage / parentGroup name only A03 Blocks. Direct pages:
+    EverythingIsABlockPage, DefinitionAndInstance, CompositionBasics. parentGroup is
     DocsPageGroup.
   </documentation>
   <references>

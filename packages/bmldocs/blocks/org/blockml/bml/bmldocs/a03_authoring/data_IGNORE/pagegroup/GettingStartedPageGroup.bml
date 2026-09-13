@@ -10,12 +10,12 @@
     dcore:PageGroup
   </baseType>
   <is>
-    A documentation page group for Getting Started
+    The Getting Started page group for the a03 documentation set
   </is>
   <documentation>
-    Page group corresponding to the “Getting Started” TOC section on blockml.org. pages lists the
-    section’s leaf NavigationItem targets as page type references. parentGroup is
-    DocsPageGroup.
+    Section page group; this group is the A03 counterpart of a02_structuring's
+    GettingStartedPageGroup. pages / landingPage / parentGroup name only A03 Blocks. Direct
+    pages: Intro, FirstBlock, FileAnatomy. parentGroup is DocsPageGroup.
   </documentation>
   <references>
     <see type="dcore:PageGroup" relation="Extends">
