@@ -24,7 +24,7 @@
     pages nest in groups, and which group is the root.
 
     - **Pages** — PagePlan.name (relative path; base packages later) and
-      PagePlan.scopes (intended content, not body text)
+      PagePlan.scope (intended content, not body text)
     - **Nesting** — PageGroupPlan entries, each with a visible title
     - **Root** — rootPageGroupPlan, the TOC root PageGroupPlan
 
@@ -45,7 +45,7 @@
       TOC nesting and titles via rootPageGroupPlan.
     </see>
     <see type="dplan:PagePlan" relation="Requires">
-      Planned TOC pages — relative name and scopes.
+      Planned TOC pages — relative name and scope.
     </see>
     <see type="stage:DocSetPlanningStage" relation="SeeAlso">
       Stage that creates or updates this TOC plan.
@@ -80,7 +80,7 @@
     <rootPageGroupPlan type="dplan:PageGroupPlan">
       <documentation>
         TOC root. Nested PageGroupPlan and PagePlan entries under plans define
-        grouping, titles, pages, and scopes.
+        grouping, titles, pages, and scope.
       </documentation>
     </rootPageGroupPlan>
   </aggregations>

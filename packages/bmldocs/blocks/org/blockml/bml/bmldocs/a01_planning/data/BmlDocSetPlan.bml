@@ -23,7 +23,7 @@
 
     rootPageGroupPlan is that TOC: RootPageGroup → DocsPageGroup → section
     PageGroups (title + nesting), with PagePlan entries (relative name +
-    scopes) for each planned page. Later sectors materialize the planned
+    scope) for each planned page. Later sectors materialize the planned
     Pages and PageGroups from this plan.
   </documentation>
   <references>
@@ -34,7 +34,7 @@
       TOC groups — titles and nesting under rootPageGroupPlan.
     </see>
     <see type="dplan:PagePlan" relation="Requires">
-      TOC pages — relative name and scopes.
+      TOC pages — relative name and scope.
     </see>
   </references>
   <properties>
@@ -63,67 +63,67 @@ depth.</value>
           <plans>
             <dplan:PageGroupPlan name="DocsPageGroup" title="Documentation">
               <plans>
-                <dplan:PagePlan name="docs.TableOfContents" scopes="documentation menu, entry points, navigation overview" />
+                <dplan:PagePlan name="docs.TableOfContents" scope="documentation menu, entry points, navigation overview" />
                 <dplan:PageGroupPlan name="GettingStartedPageGroup" title="Getting Started">
                   <plans>
-                    <dplan:PagePlan name="docs.Introduction" scopes="what BlockML is, BML as human-authored format versus BOM as canonical model, who this handbook is for, how to read it" />
-                    <dplan:PagePlan name="docs.CoreUseCases" scopes="the three core BlockML use cases, structured semantic documentation, when to reach for BlockML, practical orientation" />
+                    <dplan:PagePlan name="docs.Introduction" scope="what BlockML is, BML as human-authored format versus BOM as canonical model, who this handbook is for, how to read it" />
+                    <dplan:PagePlan name="docs.CoreUseCases" scope="the three core BlockML use cases, structured semantic documentation, when to reach for BlockML, practical orientation" />
                   </plans>
                 </dplan:PageGroupPlan>
                 <dplan:PageGroupPlan name="FoundationsPageGroup" title="Foundations">
                   <plans>
-                    <dplan:PagePlan name="docs.EverythingIsABlockPage" scopes="Everything-is-a-Block mental model, single inheritance root, Block as universal abstraction, why one grammar covers domain and framework types" />
-                    <dplan:PagePlan name="docs.Blocks" scopes="what a Block is, defining a Block, identifying and referencing a Block, Block use and configuration versus its definition" />
-                    <dplan:PagePlan name="docs.BlockDefinitionsAndInstances" scopes="Block definition versus Block instance, class and object analogy, defining a reusable concept versus configuring an instance of it" />
-                    <dplan:PagePlan name="docs.Inheritance" scopes="specialization through baseType, single inheritance, effective definition, inherited members, abstract Blocks, final Blocks" />
-                    <dplan:PagePlan name="docs.Contracts" scopes="contracts as composable reusable definitions, contract member fragment merge, contracts versus inheritance, root-level contract declaration" />
-                    <dplan:PagePlan name="docs.NamespacesAndFullyQualifiedNames" scopes="packages, Libraries as publishable units, fully qualified names, namespace prefixes, name resolution" />
-                    <dplan:PagePlan name="docs.IdentifiersAndReferences" scopes="identifiers versus validated references, Type Identifier, Type Reference, abbreviated references through namespaces, implicit namespace resolution" />
+                    <dplan:PagePlan name="docs.EverythingIsABlockPage" scope="Everything-is-a-Block mental model, single inheritance root, Block as universal abstraction, why one grammar covers domain and framework types" />
+                    <dplan:PagePlan name="docs.Blocks" scope="what a Block is, defining a Block, identifying and referencing a Block, Block use and configuration versus its definition" />
+                    <dplan:PagePlan name="docs.BlockDefinitionsAndInstances" scope="Block definition versus Block instance, class and object analogy, defining a reusable concept versus configuring an instance of it" />
+                    <dplan:PagePlan name="docs.Inheritance" scope="specialization through baseType, single inheritance, effective definition, inherited members, abstract Blocks, final Blocks" />
+                    <dplan:PagePlan name="docs.Contracts" scope="contracts as composable reusable definitions, contract member fragment merge, contracts versus inheritance, root-level contract declaration" />
+                    <dplan:PagePlan name="docs.NamespacesAndFullyQualifiedNames" scope="packages, Libraries as publishable units, fully qualified names, namespace prefixes, name resolution" />
+                    <dplan:PagePlan name="docs.IdentifiersAndReferences" scope="identifiers versus validated references, Type Identifier, Type Reference, abbreviated references through namespaces, implicit namespace resolution" />
                   </plans>
                 </dplan:PageGroupPlan>
                 <dplan:PageGroupPlan name="TypeSystemPageGroup" title="Type System">
                   <plans>
-                    <dplan:PagePlan name="docs.TypeSystem" scopes="type system mental model, the four ValueType kinds, how PrimitiveType StructType EnumType and ConstantType relate to Blocks and members" />
-                    <dplan:PagePlan name="docs.PrimitiveTypes" scopes="atomic scalar ValueTypes, primitive value semantics, parsing authored text into a primitive value, built-in primitive branches" />
-                    <dplan:PagePlan name="docs.StructTypes" scopes="composite named-field ValueTypes, structured values, struct fields, struct configuration and use" />
-                    <dplan:PagePlan name="docs.EnumTypes" scopes="closed set of named literal values, enum ValueType branch, enum values, contrast with PrimitiveType and StructType" />
-                    <dplan:PagePlan name="docs.PrimitiveEntities" scopes="primitive values represented as Block instances, generic PrimitiveEntity wrapper, why aggregations of primitive values need entity wrappers" />
-                    <dplan:PagePlan name="docs.TypesAndValues" scopes="a type describing possible values versus an instance or member holding an actual value, ValueType definition versus configured type instance" />
-                    <dplan:PagePlan name="docs.GenericTypes" scopes="generic type parameters, declaring genericTypes on a Block, concrete generic type application, binding versus forwarding parameters" />
+                    <dplan:PagePlan name="docs.TypeSystem" scope="type system mental model, the four ValueType kinds, how PrimitiveType StructType EnumType and ConstantType relate to Blocks and members" />
+                    <dplan:PagePlan name="docs.PrimitiveTypes" scope="atomic scalar ValueTypes, primitive value semantics, parsing authored text into a primitive value, built-in primitive branches" />
+                    <dplan:PagePlan name="docs.StructTypes" scope="composite named-field ValueTypes, structured values, struct fields, struct configuration and use" />
+                    <dplan:PagePlan name="docs.EnumTypes" scope="closed set of named literal values, enum ValueType branch, enum values, contrast with PrimitiveType and StructType" />
+                    <dplan:PagePlan name="docs.PrimitiveEntities" scope="primitive values represented as Block instances, generic PrimitiveEntity wrapper, why aggregations of primitive values need entity wrappers" />
+                    <dplan:PagePlan name="docs.TypesAndValues" scope="a type describing possible values versus an instance or member holding an actual value, ValueType definition versus configured type instance" />
+                    <dplan:PagePlan name="docs.GenericTypes" scope="generic type parameters, declaring genericTypes on a Block, concrete generic type application, binding versus forwarding parameters" />
                   </plans>
                 </dplan:PageGroupPlan>
                 <dplan:PageGroupPlan name="MembersPageGroup" title="Members">
                   <plans>
-                    <dplan:PagePlan name="docs.Members" scopes="Block member model overview, how Properties Aggregations Associations and Capabilities relate to each other" />
-                    <dplan:PagePlan name="docs.Properties" scopes="typed value members, property definition, property configuration, property inheritance and override, common usage patterns" />
-                    <dplan:PagePlan name="docs.Aggregations" scopes="owned collection members, aggregation ownership, composition fill of aggregations, aggregations versus associations" />
-                    <dplan:PagePlan name="docs.Associations" scopes="non-owning instance-to-instance links, associations versus aggregation ownership, associations versus documentation references" />
-                    <dplan:PagePlan name="docs.Capabilities" scopes="Block behaviour as ordinary members, Capability members, capability implementation bodies, callable functionality" />
-                    <dplan:PagePlan name="docs.MemberInheritanceAndOverrides" scopes="combining inherited members, the override flag, refining restricting or finalizing inherited members, abstract member obligations" />
-                    <dplan:PagePlan name="docs.Visibility" scopes="member and Sub-Block visibility, public protected private naming convention, effect of visibility on access from other contexts" />
-                    <dplan:PagePlan name="docs.MultiplicityAndCollections" scopes="optional singular and multiple values, multiplicity brackets, collection semantics on properties and aggregations" />
+                    <dplan:PagePlan name="docs.Members" scope="Block member model overview, how Properties Aggregations Associations and Capabilities relate to each other" />
+                    <dplan:PagePlan name="docs.Properties" scope="typed value members, property definition, property configuration, property inheritance and override, common usage patterns" />
+                    <dplan:PagePlan name="docs.Aggregations" scope="owned collection members, aggregation ownership, composition fill of aggregations, aggregations versus associations" />
+                    <dplan:PagePlan name="docs.Associations" scope="non-owning instance-to-instance links, associations versus aggregation ownership, associations versus documentation references" />
+                    <dplan:PagePlan name="docs.Capabilities" scope="Block behaviour as ordinary members, Capability members, capability implementation bodies, callable functionality" />
+                    <dplan:PagePlan name="docs.MemberInheritanceAndOverrides" scope="combining inherited members, the override flag, refining restricting or finalizing inherited members, abstract member obligations" />
+                    <dplan:PagePlan name="docs.Visibility" scope="member and Sub-Block visibility, public protected private naming convention, effect of visibility on access from other contexts" />
+                    <dplan:PagePlan name="docs.MultiplicityAndCollections" scope="optional singular and multiple values, multiplicity brackets, collection semantics on properties and aggregations" />
                   </plans>
                 </dplan:PageGroupPlan>
                 <dplan:PageGroupPlan name="BehaviourAndValuesPageGroup" title="Behaviour &amp; Values">
                   <plans>
-                    <dplan:PagePlan name="docs.Constraints" scopes="declarative validation rules, the constraints container, constraint target binding, constraint branches, when constraints are evaluated" />
-                    <dplan:PagePlan name="docs.Suggestions" scopes="non-mandatory modeling guidance metadata, suggestions versus constraints, suggestions on properties for editors and renderers" />
-                    <dplan:PagePlan name="docs.Expressions" scopes="the BlockML expression language, dollar-brace expressions, evaluation context, interpolation versus whole-value expressions, use by other Core concepts" />
-                    <dplan:PagePlan name="docs.ValueConfiguration" scopes="configuring values and Block instances in BML, primitive structured collection enum reference and nested value configuration, curly-brace ValueType configuration" />
+                    <dplan:PagePlan name="docs.Constraints" scope="declarative validation rules, the constraints container, constraint target binding, constraint branches, when constraints are evaluated" />
+                    <dplan:PagePlan name="docs.Suggestions" scope="non-mandatory modeling guidance metadata, suggestions versus constraints, suggestions on properties for editors and renderers" />
+                    <dplan:PagePlan name="docs.Expressions" scope="the BlockML expression language, dollar-brace expressions, evaluation context, interpolation versus whole-value expressions, use by other Core concepts" />
+                    <dplan:PagePlan name="docs.ValueConfiguration" scope="configuring values and Block instances in BML, primitive structured collection enum reference and nested value configuration, curly-brace ValueType configuration" />
                   </plans>
                 </dplan:PageGroupPlan>
                 <dplan:PageGroupPlan name="CompositionAndStructurePageGroup" title="Composition &amp; Structure">
                   <plans>
-                    <dplan:PagePlan name="docs.Composition" scopes="composing Blocks through aggregations, composition fill syntax, how composition relates to inheritance and other reuse mechanisms" />
-                    <dplan:PagePlan name="docs.SubBlocks" scopes="nested or subordinate Block definitions, Sub-Block identity and scope, relationship to the containing Block, nesting depth" />
-                    <dplan:PagePlan name="docs.EmbeddedBlocks" scopes="embedded Block definitions and instances, embedded virtual documents, distinguishing embedded Blocks from referenced or independently defined Blocks" />
-                    <dplan:PagePlan name="docs.DocumentingBlocks" scopes="Block documentation model, is documentation summary and examples fields, documentation conventions and references" />
+                    <dplan:PagePlan name="docs.Composition" scope="composing Blocks through aggregations, composition fill syntax, how composition relates to inheritance and other reuse mechanisms" />
+                    <dplan:PagePlan name="docs.SubBlocks" scope="nested or subordinate Block definitions, Sub-Block identity and scope, relationship to the containing Block, nesting depth" />
+                    <dplan:PagePlan name="docs.EmbeddedBlocks" scope="embedded Block definitions and instances, embedded virtual documents, distinguishing embedded Blocks from referenced or independently defined Blocks" />
+                    <dplan:PagePlan name="docs.DocumentingBlocks" scope="Block documentation model, is documentation summary and examples fields, documentation conventions and references" />
                   </plans>
                 </dplan:PageGroupPlan>
                 <dplan:PageGroupPlan name="BmlFormatPageGroup" title="BML: The Authoring Format">
                   <plans>
-                    <dplan:PagePlan name="docs.Bml" scopes="BML as the human-authored representation of BlockML, relationship between the conceptual model and its XML representation, BOM as canonical representation" />
-                    <dplan:PagePlan name="docs.BmlNamespaces" scopes="XML namespace usage in BML, xmlns declarations and prefixes, BML namespace mechanics versus BlockML's conceptual naming and reference model" />
+                    <dplan:PagePlan name="docs.Bml" scope="BML as the human-authored representation of BlockML, relationship between the conceptual model and its XML representation, BOM as canonical representation" />
+                    <dplan:PagePlan name="docs.BmlNamespaces" scope="XML namespace usage in BML, xmlns declarations and prefixes, BML namespace mechanics versus BlockML's conceptual naming and reference model" />
                   </plans>
                 </dplan:PageGroupPlan>
               </plans>

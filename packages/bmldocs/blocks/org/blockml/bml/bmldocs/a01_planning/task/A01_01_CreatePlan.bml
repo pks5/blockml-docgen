@@ -22,7 +22,8 @@
       PageGroupPlan under Root (today: Documentation)
     - **maxGroupSize** — maximum entries in any one group, and thus
       the maximum number of pages per level
-    - **Pages** — every PagePlan must name comma-separated scopes
+    - **Pages** — every PagePlan must set scope, readerOutcome,
+      learningObjective, exclusion, and supportingPoint
   </documentation>
   <properties>
     <contents type="type:Text">
@@ -186,7 +187,7 @@ The result should enable a developer who is new to BlockML to build a coherent m
           Existing BmlDocSetPlan content is never authoritative. If the
           plan already exists, keep only the FQN / file path so the same
           Block is overwritten. Do not treat current titles, groups,
-          page names, or scopes as required. Redesign the TOC from the
+          page names, or planning fields as required. Redesign the TOC from the
           inputs above.
 
           1. Open the authoritative sources
@@ -221,13 +222,14 @@ The result should enable a developer who is new to BlockML to build a coherent m
           - RootPageGroup (title Root) owns one PageGroupPlan per
             top-level area
           - a Documentation area starts with an index / menu page
-            (relative name docs.TableOfContents, scopes that describe
+            (relative name docs.TableOfContents, scope that describes
             the documentation menu, entry points, and navigation
             overview) and then nested section PageGroups
           - section groups use a visible title and a stable *PageGroup
             name (for example GettingStartedPageGroup)
           - each PagePlan has a relative name (for example docs.Intro)
-            and comma-separated scopes
+            plus scope, readerOutcome, learningObjective, exclusion,
+            and supportingPoint
           - homePage points at the index / menu page when the area has
             one
 
@@ -243,14 +245,20 @@ The result should enable a developer who is new to BlockML to build a coherent m
           level. Split a group when it would exceed
           ${ #this.maxGroupSize }.
 
-          4. Write scopes on every PagePlan
-          Every PagePlan must set scopes to a comma-separated topic
-          list: what the page is about — the fundamental split of the
-          site goal in contents. scopes is intended content, not body
-          text and not a purpose sentence. Ground scopes in contents
-          and the bound sources. Distinct pages must have distinct
-          primary scopes. Cover the site goal without dumping the
-          whole handbook onto one page.
+          4. Write planning fields on every PagePlan
+          Every PagePlan must set these Text fields, grounded in contents
+          and the bound sources. They are planning intent, not body text
+          and not a purpose sentence. Distinct pages must have distinct
+          primary scope. Cover the site goal without dumping the whole
+          handbook onto one page.
+
+          - scope — what the page covers (topics, concepts, aspects)
+          - readerOutcome — what the reader should take away
+          - learningObjective — what the page intends to teach
+          - exclusion — what the page deliberately does not cover,
+            especially to avoid overlap with other pages
+          - supportingPoint — what supports the main message without
+            being the central subject
 
           5. Resolve the plan FQN
           Plan FQN =
@@ -277,7 +285,8 @@ The result should enable a developer who is new to BlockML to build a coherent m
             name a stable *PageGroup identifier, for example
             Documentation → DocsPageGroup) → nested PageGroupPlan
             and PagePlan entries
-          - each PagePlan: name + scopes
+          - each PagePlan: name + scope, readerOutcome,
+            learningObjective, exclusion, supportingPoint
           - each PageGroupPlan: name + title + plans
           - omit every other aggregation
 

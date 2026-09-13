@@ -13,10 +13,10 @@
     A task that updates A02 page skeletons
   </is>
   <documentation>
-    A02 structuring task: PagePlan.scopes name the topic only.
+    A02 structuring task: PagePlan.scope names the topic only.
 
     - **Sources** — read authorativeSources and select the SSOT Blocks that
-      cover each page's scopes
+      cover each page's scope
     - **Skeleton** — write a formulated purpose plus see links to those sources
     - **Overwrite** — an existing skeleton is replaced; its content is never
       used as input
@@ -26,10 +26,12 @@
     <instructions type="type:Text" override="true">
       <value>
         <![CDATA[
-          PagePlan carries only name and scopes. scopes is a topic list — what the page
-          is about — not a purpose, title, or outline. Structuring must open the
-          authoritative sources, choose the SSOT Blocks that cover those scopes, and
-          write a formulated purpose from what those Blocks actually say.
+          PagePlan carries name plus planning fields. scope is what the page
+          covers — not a purpose, title, or outline. readerOutcome,
+          learningObjective, exclusion, and supportingPoint refine the
+          intent. Structuring must open the authoritative sources, choose
+          the SSOT Blocks that cover scope, and write a formulated purpose
+          from what those Blocks actually say.
 
           1. Read the plan
           Read org.blockml.bml.bmldocs.a01_planning.data.BmlDocSetPlan. Walk every nested
@@ -39,14 +41,14 @@
           Resolve this task's authorativeSources TypeSelectors (scan type for each
           selector). Also read BmlDocSetPlan.authoritativeSources (the core Library and
           the Blocks it owns). For each candidate, inspect is, documentation, and
-          references — do not guess from the FQN or from scopes alone.
+          references — do not guess from the FQN or from scope alone.
 
-          3. Bind sources to scopes
+          3. Bind sources to scope
           For each PagePlan, select the source Blocks whose documented subject matches
-          that page's scopes. Those selected Blocks are the page's authoritative
+          that page's scope. Those selected Blocks are the page's authoritative
           sources. Every page must have at least one Requires source. If several
-          sources match, Requires = primary SSOT for the scopes; SeeAlso = supporting
-          background. Do not attach a source that does not serve the scopes.
+          sources match, Requires = primary SSOT for the scope; SeeAlso = supporting
+          background. Do not attach a source that does not serve the scope.
 
           4. Formulate the skeleton from the bound sources
           The a02 subpackages data, page, and pagegroup
@@ -74,14 +76,14 @@
 
           Write purpose as a finished renderer instruction: why this page exists and
           what it must accomplish, grounded in the bound sources (their is /
-          documentation / claims). Do not copy scopes into purpose and do not leave
+          documentation / claims). Do not copy scope into purpose and do not leave
           purpose as a topic list.
 
           Each skeleton must:
           - use baseType org.blockml.bml.docgen.page.DocPage
             (not org.blockml.bml.docgen.core.Page)
           - set is to one short identity sentence informed by the bound sources
-          - set documentation to name the scopes, name the bound source FQNs, and
+          - set documentation to name the scope, name the bound source FQNs, and
             state that body content is authored in a03 from those sources
           - override title, purpose, detailLevel (org.blockml.bml.docgen.level.*),
             and pageType (org.blockml.bml.docgen.pagetype.*) from the bound sources

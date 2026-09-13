@@ -4,7 +4,8 @@
 <dplan:PagePlan xmlns="http://blockml.org/bml"
   xmlns:dplan="org.blockml.bml.docgen.plan"
   xmlns:dcore="org.blockml.bml.docgen.core"
-  xmlns:page="org.blockml.bml.docgen.page">
+  xmlns:page="org.blockml.bml.docgen.page"
+  xmlns:constraint="org.blockml.bml.constraint">
 
   <baseType>
     dplan:StructurePlan
@@ -16,10 +17,20 @@
     A concrete documentation Page, PageMapping, or PageGroup
   </isNot>
   <documentation>
-    Planned page within a DocSetPlan. Used in DocSetPlanningStage to sketch structure before
-    concrete Pages exist. Inherits name from StructurePlan (relative Block path; completing
-    base package is defined later). scopes describes the intended page content; structuring maps scopes into
-    the concrete Page’s purpose and documentation while reusing existing content where possible.
+    Planned page within a DocSetPlan. Used in DocSetPlanningStage to sketch
+    structure before concrete Pages exist. Inherits name from StructurePlan
+    (relative Block path; completing base package is defined later).
+
+    Planning fields:
+
+    - **scope** — what the page covers
+    - **readerOutcome** — what the reader should take away
+    - **learningObjective** — what the page intends to teach
+    - **exclusion** — what the page deliberately does not cover
+    - **supportingPoint** — what supports the main message
+
+    Structuring maps those fields into the concrete Page’s purpose and
+    documentation while reusing existing content where possible.
   </documentation>
   <references>
     <see type="dplan:StructurePlan" relation="Extends">
@@ -36,12 +47,41 @@
     </see>
   </references>
   <properties>
-    <scopes type="org.blockml.bml.type.Text">
+    <scope type="org.blockml.bml.type.Text">
+      <abstract>true</abstract>
       <documentation>
-        Comma-separated scopes describing the intended page content (for example
-        Block overview, mental model, learning path). Structuring maps scopes into Page.purpose
-        and Page documentation.
+        What the page covers. The topical content extent: which topics, concepts,
+        and aspects this page should treat.
       </documentation>
-    </scopes>
+      <constraints>
+        <constraint:ValuePresent validation="Error" />
+      </constraints>
+    </scope>
+    <readerOutcome type="org.blockml.bml.type.Text">
+      <documentation>
+        What the reader should take away. What the reader should understand, know,
+        or be able to distinguish after reading the page.
+      </documentation>
+    </readerOutcome>
+    <learningObjective type="org.blockml.bml.type.Text">
+      <documentation>
+        What the page intends to teach. The didactic goal: which knowledge,
+        understanding, or skill the page is meant to convey.
+      </documentation>
+    </learningObjective>
+    <exclusion type="org.blockml.bml.type.Text">
+      <documentation>
+        What the page deliberately does not cover. Consciously bounds scope against
+        related topics, especially where overlap with other pages would otherwise
+        arise.
+      </documentation>
+    </exclusion>
+    <supportingPoint type="org.blockml.bml.type.Text">
+      <documentation>
+        What supports the page's main message. Complementary claims, arguments,
+        connections, or facts that help understand the main topic but are not
+        themselves the central subject of the page.
+      </documentation>
+    </supportingPoint>
   </properties>
 </dplan:PagePlan>
