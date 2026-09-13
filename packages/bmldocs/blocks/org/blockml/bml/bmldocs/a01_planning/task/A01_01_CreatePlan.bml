@@ -246,19 +246,68 @@ The result should enable a developer who is new to BlockML to build a coherent m
           ${ #this.maxGroupSize }.
 
           4. Write planning fields on every PagePlan
-          Every PagePlan must set these Text fields, grounded in contents
-          and the bound sources. They are planning intent, not body text
-          and not a purpose sentence. Distinct pages must have distinct
-          primary scope. Cover the site goal without dumping the whole
-          handbook onto one page.
+          Inspect org.blockml.bml.docgen.plan.PagePlan before writing.
+          Author each field as an attribute on the PagePlan instance
+          (for example scope="…"). Values are type:Text. They are
+          planning intent for later sectors — not body text, not a
+          purpose sentence, and not finished handbook prose. Ground
+          every field in contents and the bound sources. Distinct
+          pages must have a distinct primary scope. Cover the site
+          goal without dumping the whole handbook onto one page.
 
-          - scope — what the page covers (topics, concepts, aspects)
-          - readerOutcome — what the reader should take away
-          - learningObjective — what the page intends to teach
-          - exclusion — what the page deliberately does not cover,
-            especially to avoid overlap with other pages
-          - supportingPoint — what supports the main message without
-            being the central subject
+          Set the five fields as follows:
+
+          scope (required — ValuePresent)
+          What the page covers: the topical content extent. Name the
+          topics, concepts, and aspects this page must treat. This is
+          the fundamental split of the site goal. Write a concise
+          topic list or short extent sentence, not a lecture. Example:
+          "Block definition versus Block instance, class and object
+          analogy, defining a reusable concept versus configuring an
+          instance of it". Two pages must not share the same primary
+          scope. Omit this field only if the PagePlan is invalid.
+
+          readerOutcome
+          What the reader should take away after reading: what they
+          should understand, know, or be able to distinguish. Write
+          from the reader's side (capability after the page), not
+          from the author's side (what the page contains). Example:
+          "The reader can tell a Block definition from a Block
+          instance and knows which one they are authoring."
+
+          learningObjective
+          What the page intends to teach: the didactic goal — which
+          knowledge, understanding, or skill it must convey. Write
+          from the page's teaching intent. This is not the same as
+          readerOutcome: learningObjective is the lesson; readerOutcome
+          is the leftover competence. Example: "Teach the definition
+          versus instance distinction so the reader can apply it when
+          writing BML."
+
+          exclusion
+          What the page deliberately does not cover. Bound scope
+          against related topics, especially where another planned
+          page owns that topic. Name the neighbouring concepts and
+          leave them to those pages. Do not list the whole rest of
+          the handbook — only the overlaps that would otherwise
+          leak onto this page. Example: "Do not teach inheritance,
+          contracts, or member overrides; those belong on their own
+          pages."
+
+          supportingPoint
+          What supports the page's main message without being the
+          central subject. Complementary claims, arguments,
+          connections, or facts the later author needs in order to
+          make the main topic clear. Do not put a second primary
+          topic here — that belongs on another PagePlan. Example:
+          "The class/object analogy helps, but the page is about
+          BlockML definition versus instance, not OOP."
+
+          Every PagePlan must set all five. scope must be present.
+          If a field would only repeat scope, tighten it until each
+          field has its own job. Index / menu pages still need all
+          five: scope is the menu and entry points; exclusion is
+          conceptual body content.
 
           5. Resolve the plan FQN
           Plan FQN =
@@ -285,8 +334,13 @@ The result should enable a developer who is new to BlockML to build a coherent m
             name a stable *PageGroup identifier, for example
             Documentation → DocsPageGroup) → nested PageGroupPlan
             and PagePlan entries
-          - each PagePlan: name + scope, readerOutcome,
-            learningObjective, exclusion, supportingPoint
+          - each PagePlan: name plus the five Text attributes
+            scope, readerOutcome, learningObjective, exclusion,
+            supportingPoint (see step 4). Example:
+            <dplan:PagePlan name="docs.Blocks"
+              scope="…" readerOutcome="…"
+              learningObjective="…" exclusion="…"
+              supportingPoint="…" />
           - each PageGroupPlan: name + title + plans
           - omit every other aggregation
 
