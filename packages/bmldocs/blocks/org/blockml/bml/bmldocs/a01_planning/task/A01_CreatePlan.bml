@@ -1,0 +1,200 @@
+<!--BlockML Documentation — create or overwrite the A01 DocSetPlan
+  FQN: org.blockml.bml.bmldocs.a01_planning.task.A01_CreatePlan-->
+<task:A01_CreatePlan xmlns="http://blockml.org/bml"
+  xmlns:task="org.blockml.bml.bmldocs.a01_planning.task"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:source="org.blockml.bml.bmldocs.lib.source"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    workflow:InstructionTask
+  </baseType>
+  <is>
+    A task that creates or overwrites BmlDocSetPlan
+  </is>
+  <documentation>
+    A01 planning task: create BmlDocSetPlan as the TOC plan for the
+    documentation site. An existing plan is overwritten.
+
+    - **contents** — site-wide goal of the documentation
+    - **authorativeSources** — content basis (BlockMLSourceSet)
+    - **topLevelGroups** — coarse areas; each becomes the first
+      PageGroupPlan under Root (today: Documentation)
+    - **maxGroupSize** — maximum entries in any one group, and thus
+      the maximum number of pages per level
+    - **Pages** — every PagePlan must name comma-separated scopes
+  </documentation>
+  <properties>
+    <contents type="type:Text">
+      <documentation>
+        Intended content of the whole documentation site — the overall
+        goal that the TOC plan must cover.
+      </documentation>
+      <value>A technical documentation of BlockML Core: how to use it, what it is
+good for, examples, and how-tos. A developer handbook for BlockML Core,
+written in English.</value>
+    </contents>
+    <maxGroupSize type="type:Integer">
+      <documentation>
+        Maximum number of direct entries a PageGroupPlan may have
+        (PagePlan and nested PageGroupPlan counted together). Also the
+        maximum number of pages per level.
+      </documentation>
+      <value>30</value>
+    </maxGroupSize>
+    <instructions type="type:Text" override="true">
+      <value>
+        <![CDATA[
+          Create or overwrite org.blockml.bml.bmldocs.a01_planning.data.BmlDocSetPlan
+          as the TOC plan for the documentation site. Do not create or edit
+          DocSets, Pages, or PageGroups. Do not write outside a01.
+
+          Inputs that produce the plan:
+
+          contents describes the intended content of the whole site:
+
+          ${ #this.contents }
+
+          authorativeSources on this task are the content basis. Domain
+          claims about what BlockML Core is and how it is used may come
+          only from those sources. Other Blocks may be used as structural
+          templates (DocSetPlan / PageGroupPlan / PagePlan member shape
+          and nesting), not as domain content.
+
+          topLevelGroups is the coarse split of the site into top-level
+          areas. Read this task's topLevelGroups aggregation. Each
+          TextEntity.value is one top-level menu area and becomes the
+          first PageGroupPlan under Root. Today that is typically
+          Documentation. Later this list may grow; later specialized
+          Blocks may replace TextEntity with richer area descriptions.
+          Use the authored values. Do not invent extra top-level areas.
+
+          maxGroupSize is the maximum number of direct entries any one
+          group may have, and therefore the maximum number of pages per
+          level: ${ #this.maxGroupSize }.
+
+          Existing BmlDocSetPlan content is never authoritative. If the
+          plan already exists, keep only the FQN / file path so the same
+          Block is overwritten. Do not treat current titles, groups,
+          page names, or scopes as required. Redesign the TOC from the
+          inputs above.
+
+          1. Open the authoritative sources
+          Resolve this task's authorativeSources TypeSelectors (scan type
+          for each selector on org.blockml.bml.bmldocs.lib.source.BlockMLSourceSet).
+          That whitelist is:
+          org.blockml.bml.constraint.**, org.blockml.bml.core.**,
+          org.blockml.bml.definition.**, org.blockml.bml.documentation.**,
+          org.blockml.bml.exception.**, org.blockml.bml.group.**,
+          org.blockml.bml.language.**, org.blockml.bml.mapping.**,
+          org.blockml.bml.meta.**, org.blockml.bml.relation.**,
+          org.blockml.bml.service.**, org.blockml.bml.status.**,
+          org.blockml.bml.type.**, org.blockml.bml.unit.**,
+          org.blockml.bml.validation.**.
+
+          For each candidate, inspect is, documentation, and references —
+          do not guess from the FQN alone. These Blocks decide which
+          topics the handbook must cover.
+
+          2. Design the TOC from contents, sources, and topLevelGroups
+          contents is the overall site goal. authorativeSources supply
+          what is true about BlockML Core. topLevelGroups partition the
+          site into coarse areas.
+
+          For each topLevelGroups value, decide how that area should be
+          structured as a TOC: which pages the documentation needs, how
+          they group, and the learning path. Design a developer handbook
+          — how to use BlockML Core, what it is for, examples, and
+          how-tos — in English.
+
+          Use the current BmlDocSetPlan only as a structural template:
+          - RootPageGroup (title Root) owns one PageGroupPlan per
+            top-level area
+          - a Documentation area starts with an index / menu page
+            (relative name docs.TableOfContents, scopes that describe
+            the documentation menu, entry points, and navigation
+            overview) and then nested section PageGroups
+          - section groups use a visible title and a stable *PageGroup
+            name (for example GettingStartedPageGroup)
+          - each PagePlan has a relative name (for example docs.Intro)
+            and comma-separated scopes
+          - homePage points at the index / menu page when the area has
+            one
+
+          Typical section titles in a handbook (Getting Started, Core
+          Ideas, Types, Behaviour, Libraries, Authoring, Deeper Topics,
+          How-to) are hints, not a required list. Invent, merge, split,
+          or drop sections as contents and the sources require.
+
+          3. Apply maxGroupSize
+          No PageGroupPlan.plans may contain more than maxGroupSize
+          direct children (PagePlan and nested PageGroupPlan counted
+          together). That is also the maximum number of pages at one
+          level. Split a group when it would exceed
+          ${ #this.maxGroupSize }.
+
+          4. Write scopes on every PagePlan
+          Every PagePlan must set scopes to a comma-separated topic
+          list: what the page is about — the fundamental split of the
+          site goal in contents. scopes is intended content, not body
+          text and not a purpose sentence. Ground scopes in contents
+          and the bound sources. Distinct pages must have distinct
+          primary scopes. Cover the site goal without dumping the
+          whole handbook onto one page.
+
+          5. Resolve the plan FQN
+          Plan FQN =
+          org.blockml.bml.bmldocs.a01_planning.data.BmlDocSetPlan
+          Write only this a01 plan. Example of the target path:
+          packages/bmldocs/blocks/org/blockml/bml/bmldocs/a01_planning/data/BmlDocSetPlan.bml
+
+          6. Write BmlDocSetPlan
+          Each plan must:
+          - use baseType org.blockml.bml.docgen.plan.DocSetPlan
+          - use BmlDocSetPlan as the Block name
+          - set is to one short identity sentence from contents
+          - set isNot to contrast with a concrete DocSet and with a
+            documentation Page
+          - set documentation to restate the site goal and to name
+            that later sectors materialize Pages and PageGroups
+          - override title, summary, and version from contents and
+            the designed TOC
+          - override homePage to the planned index / menu page when
+            one exists (for example page:TableOfContents)
+          - fill rootPageGroupPlan as:
+            RootPageGroup (title Root) → one PageGroupPlan per
+            topLevelGroups entry (title = that TextEntity.value;
+            name a stable *PageGroup identifier, for example
+            Documentation → DocsPageGroup) → nested PageGroupPlan
+            and PagePlan entries
+          - each PagePlan: name + scopes
+          - each PageGroupPlan: name + title + plans
+          - omit every other aggregation
+
+          7. Export BmlDocSetPlan from the catalog
+          Export org.blockml.bml.bmldocs.a01_planning.data.BmlDocSetPlan
+          from org.blockml.bml.bmldocs.Library if it is not already in
+          the catalog. Do not remove catalog entries of other sectors.
+        ]]>
+      </value>
+    </instructions>
+  </properties>
+  <aggregations>
+    <topLevelGroups type="type:TextEntity[]">
+      <documentation>
+        Coarse top-level documentation areas. Each entry becomes the
+        first PageGroupPlan under Root (today: Documentation). Later
+        specialized Blocks may replace TextEntity with richer area
+        descriptions.
+      </documentation>
+      <composition>
+        <type:TextEntity value="Documentation" />
+      </composition>
+    </topLevelGroups>
+    <authorativeSources override="true">
+      <composition>
+        <source:BlockMLSourceSet />
+      </composition>
+    </authorativeSources>
+  </aggregations>
+</task:A01_CreatePlan>

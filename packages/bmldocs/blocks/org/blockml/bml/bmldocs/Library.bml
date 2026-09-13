@@ -11,6 +11,7 @@
   xmlns:bmldocs="org.blockml.bml.bmldocs"
   xmlns:a01_planning="org.blockml.bml.bmldocs.a01_planning"
   xmlns:pdata="org.blockml.bml.bmldocs.a01_planning.data"
+  xmlns:a01task="org.blockml.bml.bmldocs.a01_planning.task"
   xmlns:a02_structuring="org.blockml.bml.bmldocs.a02_structuring"
   xmlns:a02data="org.blockml.bml.bmldocs.a02_structuring.data"
   xmlns:docs="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
@@ -130,6 +131,7 @@
         <pgroup:AuthoringPageGroup />
         <pgroup:DeeperTopicsPageGroup />
         <pgroup:HowToPageGroup />
+        <a01task:A01_CreatePlan />
         <task:A02_UpdateDocSet />
         <task:A02_UpdatePageSkeletons />
         <task:A02_UpdatePageGroups />
