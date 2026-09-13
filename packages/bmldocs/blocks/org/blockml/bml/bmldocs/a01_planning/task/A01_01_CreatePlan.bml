@@ -30,9 +30,119 @@
         Intended content of the whole documentation site — the overall
         goal that the TOC plan must cover.
       </documentation>
-      <value>A technical documentation of BlockML Core: how to use it, what it is
-good for, examples, and how-tos. A developer handbook for BlockML Core,
-written in English.</value>
+      <value>
+      A developer handbook for BlockML Core, written in English.
+
+The documentation should teach the fundamental mental models required to understand BlockML and use it correctly. It should not merely enumerate language features. Important concepts must be explained individually, even when they are technically sub-concepts of another topic.
+
+Each concept listed below should receive a dedicated page. Overview pages should explain how related concepts fit together, while dedicated pages should explain the individual concept in depth.
+
+The handbook should be practical and example-driven. Concept pages should explain what a concept is, why it exists, how it relates to the rest of BlockML, how it is expressed in BML, and how it is used in practice.
+
+The following concepts must be covered on dedicated pages:
+
+* **Everything is a Block**
+  Explain the fundamental BlockML mental model: the concepts of a domain are modeled as Blocks.
+
+* **Blocks**
+  Explain what a Block is, how Blocks are defined, identified, referenced, and used, and distinguish Block definitions from their concrete use or configuration.
+
+* **Block Definitions and Instances**
+  Explain the distinction between defining a reusable concept and creating/configuring an instance of that concept.
+
+* **Inheritance**
+  Explain specialization through base types, inherited definitions and members, effective definitions, and the role of abstract and final Blocks.
+
+* **Contracts**
+  Explain Contracts as a mechanism for composing reusable definitions and behavior, and distinguish Contracts from inheritance.
+
+* **Namespaces and Fully Qualified Names**
+  Explain how Blocks are organized and uniquely identified, including packages, namespaces, FQNs, namespace prefixes, and name resolution.
+
+* **Identifiers and References**
+  Explain the distinction between identifiers and validated references, including Type Identifiers, Type References, and abbreviated references through namespaces.
+
+* **Type System**
+  Provide the mental model of BlockML's type system and explain how the different kinds of types relate to Blocks, members, and values.
+
+* **Primitive Types**
+  Explain primitive value types and their role in the type system.
+
+* **Struct Types**
+  Explain structured values, their fields, configuration, and use.
+
+* **Enum Types**
+  Explain enumerated value types and enum values.
+
+* **Primitive Entities**
+  Explain how primitive values can represent identifiable entities and why this concept exists.
+
+* **Types and Values**
+  Explain the fundamental distinction between a type describing possible values and an instance or member holding/configuring an actual value.
+
+* **Generic Types**
+  Explain generic type definitions, type parameters, and concrete generic type applications.
+
+* **Members**
+  Provide an overview of the Block member model and explain how Properties, Aggregations, Associations, and Capabilities relate to each other.
+
+* **Properties**
+  Explain typed values owned by a Block, including their definition, configuration, inheritance, and common usage patterns.
+
+* **Aggregations**
+  Explain ownership and containment relationships between Blocks.
+
+* **Associations**
+  Explain non-owning references and relationships between Blocks, and contrast them with Aggregations.
+
+* **Capabilities**
+  Explain how Blocks describe behavior and callable functionality.
+
+* **Member Inheritance and Overrides**
+  Explain how inherited members are combined, refined, overridden, restricted, or finalized.
+
+* **Visibility**
+  Explain visibility of Blocks and members and how visibility affects their use from other contexts.
+
+* **Multiplicity and Collections**
+  Explain optional, singular, and multiple values and relationships, and how collection semantics are represented throughout BlockML.
+
+* **Constraints**
+  Explain declarative restrictions on valid models and values, when constraints are evaluated, and how they differ from ordinary type information.
+
+* **Suggestions**
+  Explain non-mandatory modeling guidance and clearly distinguish Suggestions from Constraints.
+
+* **Expressions**
+  Explain BlockML expressions, references inside expressions, evaluation context, and how expressions are used by other Core concepts.
+
+* **Value Configuration**
+  Explain how values and Block instances are configured in BML, including primitive, structured, collection, enum, reference, and nested values.
+
+* **Composition**
+  Explain composition of Blocks and how composition relates to Aggregations, inheritance, and other reuse mechanisms.
+
+* **Sub-Blocks**
+  Explain nested or subordinate Block definitions, their identity, scope, and relationship to their containing Block.
+
+* **Embedded Blocks**
+  Explain embedded Block definitions or instances and distinguish them from referenced or independently defined Blocks.
+
+* **Documenting Blocks**
+  Explain the documentation facilities that are part of Block definitions, including descriptions, examples, and references where applicable.
+
+* **BML**
+  Explain BML as the human-authored representation of BlockML models and establish the relationship between the conceptual BlockML model and its XML representation.
+
+* **BML Namespaces**
+  Explain XML namespace usage in BML, namespace declarations and prefixes, and distinguish XML namespace mechanics from BlockML's conceptual naming and reference model.
+
+The handbook should prioritize conceptual understanding over implementation details. Compiler internals, BOM implementation classes, renderer-specific behavior, and application-specific Block libraries should only be introduced when they are necessary to understand the public BlockML Core model.
+
+The result should enable a developer who is new to BlockML to build a coherent mental model of the language rather than merely learn its syntax.
+
+
+      </value>
     </contents>
     <maxGroupSize type="type:Integer">
       <documentation>
