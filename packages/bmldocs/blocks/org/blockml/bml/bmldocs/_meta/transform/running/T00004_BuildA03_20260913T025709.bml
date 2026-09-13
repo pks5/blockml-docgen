@@ -90,8 +90,7 @@ Note: as with the prior operation's report, I have not touched the running trans
 
 **Changed files** (unstaged, not committed): the 10 files listed in `git status` above.
 
-Note: as with the prior operation, I haven't touched the running transform record or made a commit — flipping operation #2 to `Succeeded` and committing appears to be a separate step outside this task's scope.
-</output>
+Note: as with the prior operation, I haven't touched the running transform record or made a commit — flipping operation #2 to `Succeeded` and committing appears to be a separate step outside this task's scope.</output>
           <completedAt>2026-09-13T03:05:51</completedAt>
           <task>
             <a03_task:A03_CopyPageGroups />
@@ -109,7 +108,9 @@ Note: as with the prior operation, I haven't touched the running transform recor
             <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data_IGNORE/pagegroup/TypesPageGroup.bml" />
           </changedFiles>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Update A02 page groups" status="Pending" captureOutput="true">
+        <workflow:AgenticOperation name="Update A02 page groups" status="Running" captureOutput="true">
+          <startedAt>2026-09-13T03:05:52</startedAt>
+          <baseCommit>31e371af2b3e2842d40dc5bcc5e1aaca0ce9854c</baseCommit>
           <task>
             <a03_task:A03_AuthorPages />
           </task>
