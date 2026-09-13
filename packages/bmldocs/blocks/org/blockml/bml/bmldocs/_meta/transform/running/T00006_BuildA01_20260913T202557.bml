@@ -42,12 +42,27 @@
   <aggregations>
     <operations override="true">
       <composition>
-        <workflow:AgenticOperation name="Create A01 Plan" status="Running" captureOutput="true">
+        <workflow:AgenticOperation name="Create A01 Plan" status="Succeeded" captureOutput="true">
           <startedAt>2026-09-13T20:25:57</startedAt>
           <baseCommit>863e306aabf3b32d2ad17f7bf5b61b4739b23b92</baseCommit>
+          <output>I executed the `A01_01_CreatePlan` task's instructions: resolved `authorativeSources` against the whitelisted Core packages, inspected `is`/`documentation`/`references` on the `org.blockml.bml.documentation.*` guides and the underlying `core`/`definition`/`type`/`constraint` Blocks they describe, and redesigned `org.blockml.bml.bmldocs.a01_planning.data.BmlDocSetPlan` from scratch (treating the previous plan as non-authoritative, per the task's own instructions).
+
+Key finding: the prior plan (from run T00005) omitted dedicated pages for roughly half of the 32 concepts mandated in `contents` (e.g. Blocks, Inheritance, Identifiers and References, Primitive/Struct/Enum Types, Primitive Entities, Types and Values, Members, Properties, Aggregations, Associations, Multiplicity and Collections, Suggestions, Embedded Blocks) — confirming it needed to be redesigned rather than reused.
+
+New TOC (`RootPageGroup → DocsPageGroup`, 8 sub-groups, all ≤8 entries, within `maxGroupSize=30`):
+- Getting Started (2), Foundations (7), Type System (7), Members (8), Behaviour &amp; Values (4), Composition &amp; Structure (4), BML: The Authoring Format (2), plus the `TableOfContents` index page.
+
+Every one of the 32 required concepts now has its own `PagePlan` with scopes grounded in the corresponding authoritative source Block (e.g. `docs.Inheritance` grounded in `ModelingGuidelines`/`StructuralDefinition`'s abstract/final/baseType semantics; `docs.Suggestions` grounded in `ConstraintsModel`'s suggestions section).
+
+`BmlDocSetPlan` was already exported in `Library.bml`, so no catalog change was needed. `npx blockml validate --all` shows no errors/warnings on the file (the pre-existing errors in the repo belong to unrelated future-sector task references, not this change).
+</output>
+          <completedAt>2026-09-13T20:35:24</completedAt>
           <task>
             <a01_task:A01_01_CreatePlan />
           </task>
+          <changedFiles>
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a01_planning/data/BmlDocSetPlan.bml" />
+          </changedFiles>
         </workflow:AgenticOperation>
       </composition>
     </operations>
