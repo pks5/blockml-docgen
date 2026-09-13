@@ -31,7 +31,7 @@
       <composition>
         <workflow:AgenticOperation name="Create A01 Plan" status="Pending" captureOutput="true">
           <task>
-            <a01_task:A01_CreatePlan />
+            <a01_task:A01_01_CreatePlan />
           </task>
         </workflow:AgenticOperation>
       </composition>

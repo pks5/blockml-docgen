@@ -4,7 +4,10 @@
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type"
   xmlns:program="org.blockml.bml.bmldocs.program"
-  xmlns:a02_task="org.blockml.bml.bmldocs.a02_structuring.task">
+  xmlns:a01_task="org.blockml.bml.bmldocs.a01_planning.task"
+  xmlns:a02_task="org.blockml.bml.bmldocs.a02_structuring.task"
+  xmlns:a03_task="org.blockml.bml.bmldocs.a03_authoring.task"
+  xmlns:a04_task="org.blockml.bml.bmldocs.a04_rendering.task">
 
   <baseType>
     workflow:ModelTransformation(program:BuildAll.Parameters, type:Text)
@@ -32,19 +35,34 @@
   <aggregations>
     <operations override="true">
       <composition>
+        <workflow:AgenticOperation name="Create A01 Plan" status="Pending" captureOutput="true">
+          <task>
+            <a01_task:A01_01_CreatePlan />
+          </task>
+        </workflow:AgenticOperation>
         <workflow:AgenticOperation name="Update A02 doc set" status="Pending" captureOutput="true">
           <task>
-            <a02_task:A02_UpdateDocSet />
+            <a02_task:A02_01_UpdateDocSet />
           </task>
         </workflow:AgenticOperation>
         <workflow:AgenticOperation name="Update A02 page skeletons" status="Pending" captureOutput="true">
           <task>
-            <a02_task:A02_UpdatePageSkeletons />
+            <a02_task:A02_02_UpdatePageSkeletons />
           </task>
         </workflow:AgenticOperation>
         <workflow:AgenticOperation name="Update A02 page groups" status="Pending" captureOutput="true">
           <task>
-            <a02_task:A02_UpdatePageGroups />
+            <a02_task:A02_03_UpdatePageGroups />
+          </task>
+        </workflow:AgenticOperation>
+        <workflow:AgenticOperation name="Copy A02 data into A03" status="Pending" captureOutput="true">
+          <task>
+            <a03_task:A03_02_CopyData />
+          </task>
+        </workflow:AgenticOperation>
+        <workflow:AgenticOperation name="Author A03 pages" status="Pending" captureOutput="true">
+          <task>
+            <a03_task:A03_01_AuthorPages />
           </task>
         </workflow:AgenticOperation>
       </composition>

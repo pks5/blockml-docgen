@@ -29,19 +29,14 @@
   <aggregations>
     <operations override="true">
       <composition>
-        <workflow:AgenticOperation name="Update A02 doc set" status="Pending" captureOutput="true">
+        <workflow:AgenticOperation name="Copy A02 data into A03" status="Pending" captureOutput="true">
           <task>
-            <a03_task:A03_CopyDocSet />
+            <a03_task:A03_02_CopyData />
           </task>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Update A02 page skeletons" status="Pending" captureOutput="true">
+        <workflow:AgenticOperation name="Author A03 pages" status="Pending" captureOutput="true">
           <task>
-            <a03_task:A03_CopyPageGroups />
-          </task>
-        </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Update A02 page groups" status="Pending" captureOutput="true">
-          <task>
-            <a03_task:A03_AuthorPages />
+            <a03_task:A03_01_AuthorPages />
           </task>
         </workflow:AgenticOperation>
       </composition>

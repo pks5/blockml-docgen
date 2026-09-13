@@ -1,6 +1,6 @@
 <!--BlockML Documentation — update A02 page skeletons
-  FQN: org.blockml.bml.bmldocs.a02_structuring.task.A02_UpdatePageSkeletons-->
-<task:A02_UpdatePageSkeletons xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs.a02_structuring.task.A02_02_UpdatePageSkeletons-->
+<task:A02_02_UpdatePageSkeletons xmlns="http://blockml.org/bml"
   xmlns:task="org.blockml.bml.bmldocs.a02_structuring.task"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:source="org.blockml.bml.bmldocs.lib.source"
@@ -53,7 +53,7 @@
           (org.blockml.bml.bmldocs.a02_structuring.data,
           org.blockml.bml.bmldocs.a02_structuring.data.page,
           org.blockml.bml.bmldocs.a02_structuring.data.pagegroup) are created
-          by A02_UpdateDocSet if they do not already exist. This task does not
+          by A02_01_UpdateDocSet if they do not already exist. This task does not
           create those packages.
 
           Resolve the A02 FQN as
@@ -121,4 +121,4 @@
       </composition>
     </authorativeSources>
   </aggregations>
-</task:A02_UpdatePageSkeletons>
+</task:A02_02_UpdatePageSkeletons>

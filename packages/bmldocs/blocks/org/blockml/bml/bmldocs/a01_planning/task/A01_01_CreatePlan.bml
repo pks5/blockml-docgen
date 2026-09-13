@@ -1,6 +1,6 @@
 <!--BlockML Documentation — create or overwrite the A01 DocSetPlan
-  FQN: org.blockml.bml.bmldocs.a01_planning.task.A01_CreatePlan-->
-<task:A01_CreatePlan xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs.a01_planning.task.A01_01_CreatePlan-->
+<task:A01_01_CreatePlan xmlns="http://blockml.org/bml"
   xmlns:task="org.blockml.bml.bmldocs.a01_planning.task"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:source="org.blockml.bml.bmldocs.lib.source"
@@ -197,4 +197,4 @@ written in English.</value>
       </composition>
     </authorativeSources>
   </aggregations>
-</task:A01_CreatePlan>
+</task:A01_01_CreatePlan>

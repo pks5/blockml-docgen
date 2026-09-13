@@ -38,7 +38,7 @@
     <see type="pdata:BmlDocSetPlan" relation="ReadFirst">
       a01_planning sector — autonomous DocSetPlan sub-model.
     </see>
-    <see type="task:A02_UpdatePageSkeletons" relation="SeeAlso">
+    <see type="task:A02_02_UpdatePageSkeletons" relation="SeeAlso">
       a02_structuring sector — task that updates page skeletons from earlier sectors.
     </see>
     <see type="adata:BmlDocSet_A03" relation="SeeAlso">

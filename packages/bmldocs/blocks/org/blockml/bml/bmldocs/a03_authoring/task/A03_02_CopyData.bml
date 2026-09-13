@@ -1,0 +1,134 @@
+<!--BlockML Documentation — import A02 data into A03
+  FQN: org.blockml.bml.bmldocs.a03_authoring.task.A03_02_CopyData-->
+<task:A03_02_CopyData xmlns="http://blockml.org/bml"
+  xmlns:task="org.blockml.bml.bmldocs.a03_authoring.task"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    workflow:InstructionTask
+  </baseType>
+  <is>
+    A task that imports A02 data into A03
+  </is>
+  <documentation>
+    A03 authoring task: wipe a03_authoring.data, copy the full
+    a02_structuring.data tree into it, then remap packages and names
+    so the imported Blocks live only in A03.
+
+    - **Wipe** — delete the live A03 data package before the copy.
+      Leftover ignored trees (for example data_IGNORE) are not input
+    - **Copy** — the whole A02 data package, not individual DocSet /
+      Page / PageGroup sync
+    - **Remap** — one pass after the copy: A02 packages and sector
+      names become A03; no A03 file may reference another sector
+    - **Sources** — this task has no authoritativeSources
+  </documentation>
+  <properties>
+    <instructions type="type:Text" override="true">
+      <value>
+        <![CDATA[
+          Import the complete A02 data package into A03. Do not sync
+          individual DocSets, Pages, or PageGroups. Do not read
+          authoritativeSources on this task. Do not read BmlDocSetPlan.
+          Do not edit A02. Do not write outside a03 data. Do not invent
+          files that are not in A02 data.
+
+          Source package: org.blockml.bml.bmldocs.a02_structuring.data
+          Source path:
+          packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/
+
+          Target package: org.blockml.bml.bmldocs.a03_authoring.data
+          Target path:
+          packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/
+
+          Leave a03_authoring/task, a03_authoring/example, and
+          A03_AuthoringSector untouched. PageExample_A03 is not data.
+
+          1. Delete live A03 data
+          Delete the entire live A03 data tree (the target path above)
+          including every descendant package (data.page, data.pagegroup,
+          data.page.docs, and any other child). Delete every .bml file
+          in that tree. Remove those A03 data Blocks from
+          org.blockml.bml.bmldocs.Library. Do not remove A02 catalog
+          entries, task entries, PageExample_A03, or other sectors.
+
+          Ignore leftover non-package trees such as
+          a03_authoring/data_IGNORE. They are not live A03 data. Do not
+          read them, copy from them, or merge them. If they still hold
+          old A03 files, do not treat those files as the current set.
+
+          After this step A03 has no live data Blocks.
+
+          2. Copy the full A02 data tree
+          Copy every file and subdirectory from the A02 data path into
+          the A03 data path, preserving relative paths. Example:
+          a02_structuring/data/page/docs/Intro.bml
+          → a03_authoring/data/page/docs/Intro.bml
+          a02_structuring/data/pagegroup/RootPageGroup.bml
+          → a03_authoring/data/pagegroup/RootPageGroup.bml
+          a02_structuring/data/BmlDocSet_A02.bml
+          → a03_authoring/data/BmlDocSet_A02.bml
+          (the DocSet file name is remapped in step 3).
+
+          Copy the complete tree once. Do not filter pages vs groups vs
+          the DocSet. Do not skip a file because an older A03 copy
+          existed. There is no older live A03 copy after step 1.
+
+          3. Remap packages and names (one pass)
+          After the copy, every imported file still names A02. Rewrite
+          each imported file so it is an A03 Block. Apply these
+          substitutions everywhere they appear — xmlns URIs, root
+          element names, FQN comments, see-links, property values,
+          TypeReference tokens, and prose that identifies this Block's
+          sector:
+
+          - package prefix
+            org.blockml.bml.bmldocs.a02_structuring.data
+            → org.blockml.bml.bmldocs.a03_authoring.data
+          - filesystem segment a02_structuring/data
+            → a03_authoring/data (comments / examples only)
+          - Block name BmlDocSet_A02 → BmlDocSet_A03
+          - file BmlDocSet_A02.bml → BmlDocSet_A03.bml
+            (rename the file; do not leave the A02 file name)
+          - wording that says this Block is A02 / a02 / structuring
+            data becomes A03 / a03 / authoring data
+
+          Page and PageGroup Block names stay the same (Intro,
+          RootPageGroup, …). Only the package and the DocSet name
+          change.
+
+          After the remap, an A03 file may reference only:
+          - other A03 data Blocks (the remapped counterparts)
+          - lib / docgen / core types (for example
+            org.blockml.bml.documentation.*, org.blockml.bml.docgen.*)
+
+          An A03 file must never reference a Block from another sector
+          (a01_planning, a02_structuring, a04_rendering, or any later
+          sector). Drop or remap such a reference. Do not keep an A02
+          FQN because "the A03 counterpart is missing" — the counterpart
+          is the remapped copy in this same import.
+
+          Do not change A02 files. Do not change files outside the
+          imported A03 data tree.
+
+          4. Confirm the imported set
+          The live A03 data package must contain the same relative
+          files as A02 data, with packages and the DocSet name remapped.
+          BmlDocSet_A03.pages, pageGroups, homePage, and rootPageGroup
+          list only A03 Blocks. Each PageGroup parentGroup, pages, and
+          landingPage list only A03 Blocks. See-links between imported
+          Blocks point at A03 counterparts.
+
+          5. Export imported A03 data from the catalog
+          Export every Block under
+          org.blockml.bml.bmldocs.a03_authoring.data (including
+          descendants) from org.blockml.bml.bmldocs.Library if it is
+          not already in the catalog. Do not remove catalog entries of
+          other sectors. Do not remove PageExample_A03 if it is
+          catalogued.
+        ]]>
+      </value>
+    </instructions>
+  </properties>
+</task:A03_02_CopyData>

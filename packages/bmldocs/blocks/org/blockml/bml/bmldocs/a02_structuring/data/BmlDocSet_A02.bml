@@ -21,8 +21,8 @@
     and use cases — with a learning path from quick start to deep study for junior through
     senior developers.
 
-    pages and homePage are filled by A02_UpdatePageSkeletons. pageGroups and rootPageGroup are
-    filled by A02_UpdatePageGroups.
+    pages and homePage are filled by A02_02_UpdatePageSkeletons. pageGroups and rootPageGroup are
+    filled by A02_03_UpdatePageGroups.
   </documentation>
   <references>
     <see type="dcore:DocSet" relation="Extends">
