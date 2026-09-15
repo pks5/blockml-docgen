@@ -54,8 +54,7 @@
 4. **Confirmed** — `blockml validate --all` shows the new A03 data tree and updated Library entries resolve cleanly; the only remaining errors are pre-existing, unrelated issues (stale A02 catalog entries in Library.bml and old archived `_meta/transform` history records) that predate this run and are out of scope (A02 is off-limits per instructions).
 5. **Exported** — `Library.bml`'s `blocks` catalog now lists the 35 `page:*` pages and 9 `pgroup:*` page groups with correct A03 names (previously it listed a mismatched, dangling set).
 
-No A02 files were touched. Changes are unstaged (`Library.bml` modified, `a03_authoring/data/` new) — let me know if you'd like this committed.
-</output>
+No A02 files were touched. Changes are unstaged (`Library.bml` modified, `a03_authoring/data/` new) — let me know if you'd like this committed.</output>
           <completedAt>2026-09-16T01:08:41</completedAt>
           <task>
             <a03_task:A03_01_CopyData />
@@ -65,7 +64,9 @@ No A02 files were touched. Changes are unstaged (`Library.bml` modified, `a03_au
             <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/" />
           </changedFiles>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Author A03 pages" status="Pending" captureOutput="true">
+        <workflow:AgenticOperation name="Author A03 pages" status="Running" captureOutput="true">
+          <startedAt>2026-09-16T01:08:42</startedAt>
+          <baseCommit>bf46403ce5f1445bb07a7e6da3d3670458c9924d</baseCommit>
           <task>
             <a03_task:A03_02_AuthorPages />
           </task>
