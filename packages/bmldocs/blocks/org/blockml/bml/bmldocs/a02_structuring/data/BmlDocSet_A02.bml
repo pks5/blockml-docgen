@@ -1,0 +1,64 @@
+<!--BlockML Documentation — the A02 DocSet for the BlockML website docs
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.BmlDocSet_A02-->
+<a02data:BmlDocSet_A02 xmlns="http://blockml.org/bml"
+  xmlns:a02data="org.blockml.bml.bmldocs.a02_structuring.data"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:page="org.blockml.bml.docgen.page"
+  xmlns:bmlcore="org.blockml.bml.core">
+
+  <baseType>
+    dcore:DocSet
+  </baseType>
+  <is>
+    The BlockML Documentation DocSet
+  </is>
+  <isNot>
+    A single DocPage (page:DocPage) or a bml-core narrative Documentation Block
+    (bmlcore:Documentation)
+  </isNot>
+  <documentation>
+    A developer handbook for BlockML Core: the fundamental mental models —
+    Blocks, definitions and instances, inheritance and contracts, namespaces and
+    identity, the type system, the member model, behaviour and values,
+    composition and structure, and the BML authoring format — explained
+    individually and example-driven, from first orientation to reference-level
+    depth.
+
+    pages and homePage are filled by A02_02_UpdatePageSkeletons. pageGroups and
+    rootPageGroup are filled by A02_03_UpdatePageGroups.
+  </documentation>
+  <references>
+    <see type="dcore:DocSet" relation="Extends">
+      Abstract DocSet container.
+    </see>
+    <see type="page:DocPage" relation="ContrastsWith">
+      A single documentation page, not a whole DocSet.
+    </see>
+    <see type="bmlcore:Documentation" relation="ContrastsWith">
+      A narrative bml-core documentation Block, not a structured DocSet.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>BlockML Documentation</value>
+    </title>
+    <summary override="true">
+      <value>A developer handbook for BlockML Core: the fundamental mental models —
+Blocks, definitions and instances, inheritance and contracts, namespaces and
+identity, the type system, the member model, behaviour and values,
+composition and structure, and the BML authoring format — explained
+individually and example-driven, from first orientation to reference-level
+depth.</value>
+    </summary>
+    <version override="true">
+      <value>0.1.0</value>
+    </version>
+  </properties>
+  <aggregations>
+    <pages override="true">
+    </pages>
+    <pageGroups override="true">
+    </pageGroups>
+  </aggregations>
+</a02data:BmlDocSet_A02>
