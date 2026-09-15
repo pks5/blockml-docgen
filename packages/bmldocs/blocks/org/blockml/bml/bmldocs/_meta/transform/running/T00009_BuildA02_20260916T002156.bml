@@ -53,8 +53,7 @@
 4. **Created** `packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/BmlDocSet_A02.bml`: baseType `docgen.core.DocSet`, title/summary/version overridden from the plan, `isNot` contrasting a single `DocPage` and `bmlcore:Documentation`, documentation naming that A02_02/A02_03 fill pages/homePage and pageGroups/rootPageGroup, `pages`/`pageGroups` declared empty, `homePage`/`rootPageGroup`/`learningPaths` omitted.
 5. **Catalog** — `a02data:BmlDocSet_A02` was already exported in `Library.bml`, no change needed there.
 
-Validated: same 6 pre-existing errors as baseline (unrelated stale catalog entries for later A02_02/A02_03 page/pagegroup work and old historical transform logs), no new errors introduced. Left git commits to the `transform apply` tooling, per the established `transform(operation-start)` → `transform(operation)` pattern seen in prior runs.
-</output>
+Validated: same 6 pre-existing errors as baseline (unrelated stale catalog entries for later A02_02/A02_03 page/pagegroup work and old historical transform logs), no new errors introduced. Left git commits to the `transform apply` tooling, per the established `transform(operation-start)` → `transform(operation)` pattern seen in prior runs.</output>
           <completedAt>2026-09-16T00:25:18</completedAt>
           <task>
             <a02_task:A02_01_UpdateDocSet />
@@ -63,7 +62,9 @@ Validated: same 6 pre-existing errors as baseline (unrelated stale catalog entri
             <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/" />
           </changedFiles>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Update A02 page skeletons" status="Pending" captureOutput="true">
+        <workflow:AgenticOperation name="Update A02 page skeletons" status="Running" captureOutput="true">
+          <startedAt>2026-09-16T00:25:19</startedAt>
+          <baseCommit>3b30d290cfa5c29a8c4517a7f8223179f1090a39</baseCommit>
           <task>
             <a02_task:A02_02_UpdatePageSkeletons />
           </task>
