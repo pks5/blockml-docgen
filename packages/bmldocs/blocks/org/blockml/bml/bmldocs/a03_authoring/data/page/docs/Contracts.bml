@@ -1,0 +1,97 @@
+<!--BlockML Documentation — a guide to contracts as composable member fragments
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.Contracts-->
+<docs:Contracts xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to contracts as composable member fragments
+  </is>
+  <documentation>
+    Scope: contracts as composable, reusable partial definitions, contracts versus inheritance,
+    and root-level declaration, grounded in org.blockml.bml.documentation.ContractsModel. Body
+    content is authored in a03 from that source.
+  </documentation>
+  <references>
+    <see type="doc:ContractsModel" relation="Requires">
+      Primary content source — contract merge order, partial members, and satisfiesTypeBound.
+    </see>
+    <see type="doc:ModelingGuidelines" relation="SeeAlso">
+      When to prefer baseType versus contracts.
+    </see>
+    <see type="doc:PartialMemberOverrides" relation="SeeAlso">
+      Shared override rule for completing partial contract members.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Contracts</value>
+    </title>
+    <purpose override="true">
+      <value>Teach contracts as composable, reusable member fragments distinct from single inheritance, so readers can choose baseType or a contract when they need to reuse behaviour across unrelated Blocks.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ContractsModel" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ModelingGuidelines" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.PartialMemberOverrides" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach contracts as composable member fragments distinct from single inheritance.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can choose baseType or a contract when they need to reuse a member fragment.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Contracts as composable, reusable partial Block definitions declared at root level, contrasted with baseType inheritance.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Re-teaching baseType mechanics or override syntax from scratch.</summary>
+          <reason>Those are covered on the Inheritance and member-override pages.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>Contract completion follows the same override rule as baseType refinement — a contract may declare partial members that the concrete Block completes with override="true".</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+  </aggregations>
+</docs:Contracts>

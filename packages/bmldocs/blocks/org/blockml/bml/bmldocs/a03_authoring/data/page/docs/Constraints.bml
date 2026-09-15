@@ -1,0 +1,100 @@
+<!--BlockML Documentation — a guide to declarative validation rules
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.Constraints-->
+<docs:Constraints xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:def="org.blockml.bml.definition"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to declarative validation rules
+  </is>
+  <documentation>
+    Scope: declarative validation rules, the constraints container, constraint branches, and when
+    a constraint is evaluated, grounded in org.blockml.bml.documentation.ConstraintsModel,
+    org.blockml.bml.core.Constraint, and org.blockml.bml.definition.ConstrainableDefinition. Body
+    content is authored in a03 from those sources.
+  </documentation>
+  <references>
+    <see type="doc:ConstraintsModel" relation="Requires">
+      Primary content source — branch-to-context binding, validation severity, and standard constraints.
+    </see>
+    <see type="core:Constraint" relation="Requires">
+      The semantic validation rule branch this page introduces.
+    </see>
+    <see type="def:ConstrainableDefinition" relation="Requires">
+      The shared constraints container on Blocks and members.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Constraints</value>
+    </title>
+    <purpose override="true">
+      <value>Teach the constraints container and its branch-to-member-kind mapping, so readers can attach the right constraint branch to a member and know when it is enforced.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ConstraintsModel" />
+            <type:TypeSelectorEntity value="org.blockml.bml.core.Constraint" />
+            <type:TypeSelectorEntity value="org.blockml.bml.definition.ConstrainableDefinition" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach the constraints container and its branch-to-member-kind mapping.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can attach the right constraint branch to a member.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Declarative validation rules, the constraints container, constraint branches, and when a constraint is evaluated.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Suggestions depth beyond the enforced-versus-non-enforced contrast.</summary>
+          <reason>Suggestions get their own page.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>Placing a constraint on the wrong branch for its embedding context is a checked error, not just a convention.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+  </aggregations>
+</docs:Constraints>

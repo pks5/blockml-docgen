@@ -1,0 +1,95 @@
+<!--BlockML Documentation — a guide to owned collection members
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.Aggregations-->
+<docs:Aggregations xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:def="org.blockml.bml.definition"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to owned collection members
+  </is>
+  <documentation>
+    Scope: owned collection members, ownership, composition fill, and aggregations versus
+    associations, grounded in org.blockml.bml.definition.AggregationDefinition and
+    org.blockml.bml.documentation.CompositionModel. Body content is authored in a03 from those
+    sources.
+  </documentation>
+  <references>
+    <see type="def:AggregationDefinition" relation="Requires">
+      The owned collection member this page introduces.
+    </see>
+    <see type="doc:CompositionModel" relation="Requires">
+      Primary content source — composition fill rules and instance-side aggregation opening.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Aggregations</value>
+    </title>
+    <purpose override="true">
+      <value>Teach Aggregation as an owned collection filled by Composition, so readers can declare and fill an owned collection member and open it correctly on an instance.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.definition.AggregationDefinition" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompositionModel" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach Aggregation as an owned collection filled by Composition.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can declare and fill an owned collection member.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Owned collection members, ownership, filling an aggregation with composition, and the contrast between aggregations and associations.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Association depth beyond the ownership contrast.</summary>
+          <reason>Associations get their own following page.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>On a Block instance, aggregation children sit directly inside the named aggregation element — there is no composition wrapper or default aggregation on instances.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+  </aggregations>
+</docs:Aggregations>

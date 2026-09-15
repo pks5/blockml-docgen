@@ -1,0 +1,49 @@
+<!--BlockML Documentation — Type System page group
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.pagegroup.TypeSystemPageGroup-->
+<a03pgroup:TypeSystemPageGroup xmlns="http://blockml.org/bml"
+  xmlns:a03pgroup="org.blockml.bml.bmldocs.a03_authoring.data.pagegroup"
+  xmlns:docs="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:dcore="org.blockml.bml.docgen.core">
+
+  <baseType>
+    dcore:PageGroup
+  </baseType>
+  <is>
+    The Type System page group for the A03 documentation set
+  </is>
+  <documentation>
+    Section page group under DocsPageGroup, from BmlDocSetPlan.rootPageGroupPlan
+    (TypeSystemPageGroup). Direct pages: TypeSystem, PrimitiveTypes, StructTypes, EnumTypes,
+    PrimitiveEntities, TypesAndValues, GenericTypes.
+  </documentation>
+  <references>
+    <see type="dcore:PageGroup" relation="Extends">
+      Docgen page group base.
+    </see>
+    <see type="a03pgroup:DocsPageGroup" relation="Requires">
+      Parent Documentation page group.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Type System</value>
+    </title>
+    <parentGroup override="true">
+      <value>a03pgroup:DocsPageGroup</value>
+    </parentGroup>
+  </properties>
+  <aggregations>
+    <pages override="true">
+      <composition>
+        <docs:TypeSystem />
+        <docs:PrimitiveTypes />
+        <docs:StructTypes />
+        <docs:EnumTypes />
+        <docs:PrimitiveEntities />
+        <docs:TypesAndValues />
+        <docs:GenericTypes />
+      </composition>
+    </pages>
+  </aggregations>
+</a03pgroup:TypeSystemPageGroup>

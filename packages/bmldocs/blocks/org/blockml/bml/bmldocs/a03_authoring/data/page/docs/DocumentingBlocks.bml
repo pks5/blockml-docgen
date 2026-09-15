@@ -1,0 +1,95 @@
+<!--BlockML Documentation — a guide to the Block documentation model
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.DocumentingBlocks-->
+<docs:DocumentingBlocks xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:def="org.blockml.bml.definition"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to the Block documentation model
+  </is>
+  <documentation>
+    Scope: the Block documentation model — is, documentation, and references fields, grounded in
+    org.blockml.bml.documentation.DocumentationModel and
+    org.blockml.bml.definition.StructuralDefinition. Body content is authored in a03 from those
+    sources.
+  </documentation>
+  <references>
+    <see type="doc:DocumentationModel" relation="Requires">
+      Primary content source — is, summary, documentation, and references authoring rules.
+    </see>
+    <see type="def:StructuralDefinition" relation="Requires">
+      Shared documentation model — Documentation, Change, Example, and Reference sub-blocks.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Documenting Blocks</value>
+    </title>
+    <purpose override="true">
+      <value>Teach the documentation model as the definition-site single source of truth, so readers can fill a Block's is, documentation, and references fields correctly.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentationModel" />
+            <type:TypeSelectorEntity value="org.blockml.bml.definition.StructuralDefinition" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach the documentation model as the definition-site single source of truth.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can fill a Block's is, documentation, and references fields correctly.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Block documentation model: the is, documentation, and references fields at the definition site.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>bml: directive namespace depth.</summary>
+          <reason>Directives are a separate authoring-format topic.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>documentation is Markdown(English) by default, and references carries every documentation cross-link — prose should not repeat those links.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+  </aggregations>
+</docs:DocumentingBlocks>

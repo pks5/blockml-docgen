@@ -1,0 +1,120 @@
+<!--BlockML Documentation — the A03 DocSet for the BlockML website docs
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.BmlDocSet_A03-->
+<a03data:BmlDocSet_A03 xmlns="http://blockml.org/bml"
+  xmlns:a03data="org.blockml.bml.bmldocs.a03_authoring.data"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:page="org.blockml.bml.docgen.page"
+  xmlns:bmlcore="org.blockml.bml.core"
+  xmlns:docs="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:a03pgroup="org.blockml.bml.bmldocs.a03_authoring.data.pagegroup">
+
+  <baseType>
+    dcore:DocSet
+  </baseType>
+  <is>
+    The BlockML Documentation DocSet
+  </is>
+  <isNot>
+    A single DocPage (page:DocPage) or a bml-core narrative Documentation Block
+    (bmlcore:Documentation)
+  </isNot>
+  <documentation>
+    A developer handbook for BlockML Core: the fundamental mental models —
+    Blocks, definitions and instances, inheritance and contracts, namespaces and
+    identity, the type system, the member model, behaviour and values,
+    composition and structure, and the BML authoring format — explained
+    individually and example-driven, from first orientation to reference-level
+    depth.
+
+    pages, pageGroups, homePage, and rootPageGroup are filled by A03_01_CopyData.
+    Page content is then authored by A03_02_AuthorPages.
+  </documentation>
+  <references>
+    <see type="dcore:DocSet" relation="Extends">
+      Abstract DocSet container.
+    </see>
+    <see type="page:DocPage" relation="ContrastsWith">
+      A single documentation page, not a whole DocSet.
+    </see>
+    <see type="bmlcore:Documentation" relation="ContrastsWith">
+      A narrative bml-core documentation Block, not a structured DocSet.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>BlockML Documentation</value>
+    </title>
+    <summary override="true">
+      <value>A developer handbook for BlockML Core: the fundamental mental models —
+Blocks, definitions and instances, inheritance and contracts, namespaces and
+identity, the type system, the member model, behaviour and values,
+composition and structure, and the BML authoring format — explained
+individually and example-driven, from first orientation to reference-level
+depth.</value>
+    </summary>
+    <version override="true">
+      <value>0.1.0</value>
+    </version>
+    <homePage override="true">
+      <value>org.blockml.bml.bmldocs.a03_authoring.data.page.docs.TableOfContents</value>
+    </homePage>
+    <rootPageGroup override="true">
+      <value>a03pgroup:RootPageGroup</value>
+    </rootPageGroup>
+  </properties>
+  <aggregations>
+    <pages override="true">
+      <composition>
+        <docs:TableOfContents />
+        <docs:Introduction />
+        <docs:CoreUseCases />
+        <docs:EverythingIsABlockPage />
+        <docs:Blocks />
+        <docs:BlockDefinitionsAndInstances />
+        <docs:Inheritance />
+        <docs:Contracts />
+        <docs:NamespacesAndFullyQualifiedNames />
+        <docs:IdentifiersAndReferences />
+        <docs:TypeSystem />
+        <docs:PrimitiveTypes />
+        <docs:StructTypes />
+        <docs:EnumTypes />
+        <docs:PrimitiveEntities />
+        <docs:TypesAndValues />
+        <docs:GenericTypes />
+        <docs:Members />
+        <docs:Properties />
+        <docs:Aggregations />
+        <docs:Associations />
+        <docs:Capabilities />
+        <docs:MemberInheritanceAndOverrides />
+        <docs:Visibility />
+        <docs:MultiplicityAndCollections />
+        <docs:Constraints />
+        <docs:Suggestions />
+        <docs:Expressions />
+        <docs:ValueConfiguration />
+        <docs:Composition />
+        <docs:SubBlocks />
+        <docs:EmbeddedBlocks />
+        <docs:DocumentingBlocks />
+        <docs:Bml />
+        <docs:BmlNamespaces />
+      </composition>
+    </pages>
+    <pageGroups override="true">
+      <composition>
+        <a03pgroup:RootPageGroup />
+        <a03pgroup:DocsPageGroup />
+        <a03pgroup:GettingStartedPageGroup />
+        <a03pgroup:FoundationsPageGroup />
+        <a03pgroup:TypeSystemPageGroup />
+        <a03pgroup:MembersPageGroup />
+        <a03pgroup:BehaviourAndValuesPageGroup />
+        <a03pgroup:CompositionAndStructurePageGroup />
+        <a03pgroup:BmlFormatPageGroup />
+      </composition>
+    </pageGroups>
+  </aggregations>
+</a03data:BmlDocSet_A03>

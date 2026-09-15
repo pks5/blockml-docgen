@@ -1,0 +1,96 @@
+<!--BlockML Documentation — a guide to BlockML's four ValueType kinds
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.TypeSystem-->
+<docs:TypeSystem xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to BlockML's four ValueType kinds
+  </is>
+  <documentation>
+    Scope: type system overview and the four ValueType kinds and how they relate to Blocks and
+    members, grounded in org.blockml.bml.documentation.TypeSystemOverview. Body content is
+    authored in a03 from that source.
+  </documentation>
+  <references>
+    <see type="doc:TypeSystemOverview" relation="Requires">
+      Primary content source — PrimitiveType, StructType, EnumType, ConstantType as sibling branches.
+    </see>
+    <see type="doc:TypeExpressions" relation="ReadNext">
+      Next reading step — multiplicity, unions, and other type-expression forms.
+    </see>
+    <see type="doc:ContractsModel" relation="SeeAlso">
+      baseType versus contracts in the wider type system.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>The Type System</value>
+    </title>
+    <purpose override="true">
+      <value>Give readers the type-system mental model as four sibling ValueType kinds, so each kind's own page can go deeper without re-explaining where it fits.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Overview</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Guide</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeSystemOverview" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeExpressions" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach the type-system mental model as four sibling kinds under ValueType, not a hierarchy.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can name the four ValueType kinds and classify a given type among them.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Type system overview: the four ValueType kinds, PrimitiveType, StructType, EnumType, and ConstantType, and how they relate to Blocks and members.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Depth on any one ValueType kind.</summary>
+          <reason>Each kind gets its own page next.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>The four kinds are sibling branches under ValueType, not a hierarchy of one another.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+  </aggregations>
+</docs:TypeSystem>

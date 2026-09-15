@@ -1,0 +1,31 @@
+<!--BlockML Documentation — top-level root page group
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.pagegroup.RootPageGroup-->
+<a03pgroup:RootPageGroup xmlns="http://blockml.org/bml"
+  xmlns:a03pgroup="org.blockml.bml.bmldocs.a03_authoring.data.pagegroup"
+  xmlns:dcore="org.blockml.bml.docgen.core">
+
+  <baseType>
+    dcore:PageGroup
+  </baseType>
+  <is>
+    The top-level container for all A03 page groups
+  </is>
+  <documentation>
+    Outermost A03 page group, from BmlDocSetPlan.rootPageGroupPlan (RootPageGroup). Has no
+    direct pages and no parentGroup. DocsPageGroup nests under this group via parentGroup.
+  </documentation>
+  <references>
+    <see type="dcore:PageGroup" relation="Extends">
+      Docgen page group base.
+    </see>
+    <see type="a03pgroup:DocsPageGroup" relation="Requires">
+      Documentation subtree nested under this root.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Root</value>
+    </title>
+  </properties>
+</a03pgroup:RootPageGroup>

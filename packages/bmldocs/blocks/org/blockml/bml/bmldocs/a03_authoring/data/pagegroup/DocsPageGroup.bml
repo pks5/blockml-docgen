@@ -1,0 +1,47 @@
+<!--BlockML Documentation — Documentation page group
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.pagegroup.DocsPageGroup-->
+<a03pgroup:DocsPageGroup xmlns="http://blockml.org/bml"
+  xmlns:a03pgroup="org.blockml.bml.bmldocs.a03_authoring.data.pagegroup"
+  xmlns:docs="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:dcore="org.blockml.bml.docgen.core">
+
+  <baseType>
+    dcore:PageGroup
+  </baseType>
+  <is>
+    The Documentation page group for the A03 documentation set
+  </is>
+  <documentation>
+    Documentation subtree under RootPageGroup, from BmlDocSetPlan.rootPageGroupPlan
+    (DocsPageGroup). Direct page: TableOfContents. Section page groups (Getting Started,
+    Foundations, Type System, Members, Behaviour &amp; Values, Composition &amp; Structure, BML
+    Format) nest under this group via parentGroup.
+  </documentation>
+  <references>
+    <see type="dcore:PageGroup" relation="Extends">
+      Docgen page group base.
+    </see>
+    <see type="a03pgroup:RootPageGroup" relation="Requires">
+      Top-level page group this group nests under.
+    </see>
+    <see type="docs:TableOfContents" relation="Requires">
+      Direct page of this group.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Documentation</value>
+    </title>
+    <parentGroup override="true">
+      <value>a03pgroup:RootPageGroup</value>
+    </parentGroup>
+  </properties>
+  <aggregations>
+    <pages override="true">
+      <composition>
+        <docs:TableOfContents />
+      </composition>
+    </pages>
+  </aggregations>
+</a03pgroup:DocsPageGroup>

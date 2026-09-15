@@ -111,40 +111,49 @@
         <lrule:SectionCompletenessRule />
         <lrule:StablePageIdentityRule />
         <page:TableOfContents />
-        <page:Intro />
-        <page:FirstBlock />
-        <page:FileAnatomy />
+        <page:Introduction />
+        <page:CoreUseCases />
         <page:EverythingIsABlockPage />
-        <page:DefinitionAndInstance />
-        <page:CompositionBasics />
-        <page:TypesOverview />
-        <page:TypeExpressionsBasics />
-        <page:GenericsBriefly />
-        <page:ConfiguringTypes />
-        <page:CapabilitiesIntro />
-        <page:ExpressionsIntro />
-        <page:EmbeddedExpressionsIntro />
-        <page:LibrariesAndPackages />
-        <page:ReadmeAndBootstrap />
-        <page:ModelingGuidelinesPage />
-        <page:VisibilityBasics />
-        <page:OverridesBasics />
-        <page:ConstraintsBasics />
-        <page:AnnotationsAndDirectives />
-        <page:SubBlocksIntro />
-        <page:ContractsIntro />
-        <page:CompilerOverview />
-        <page:AuthorNewBlockGuide />
+        <page:Blocks />
+        <page:BlockDefinitionsAndInstances />
+        <page:Inheritance />
+        <page:Contracts />
+        <page:NamespacesAndFullyQualifiedNames />
+        <page:IdentifiersAndReferences />
+        <page:TypeSystem />
+        <page:PrimitiveTypes />
+        <page:StructTypes />
+        <page:EnumTypes />
+        <page:PrimitiveEntities />
+        <page:TypesAndValues />
+        <page:GenericTypes />
+        <page:Members />
+        <page:Properties />
+        <page:Aggregations />
+        <page:Associations />
+        <page:Capabilities />
+        <page:MemberInheritanceAndOverrides />
+        <page:Visibility />
+        <page:MultiplicityAndCollections />
+        <page:Constraints />
+        <page:Suggestions />
+        <page:Expressions />
+        <page:ValueConfiguration />
+        <page:Composition />
+        <page:SubBlocks />
+        <page:EmbeddedBlocks />
+        <page:DocumentingBlocks />
+        <page:Bml />
+        <page:BmlNamespaces />
         <pgroup:RootPageGroup />
         <pgroup:DocsPageGroup />
         <pgroup:GettingStartedPageGroup />
-        <pgroup:CoreIdeasPageGroup />
-        <pgroup:TypesPageGroup />
-        <pgroup:BehaviourPageGroup />
-        <pgroup:LibrariesPageGroup />
-        <pgroup:AuthoringPageGroup />
-        <pgroup:DeeperTopicsPageGroup />
-        <pgroup:HowToPageGroup />
+        <pgroup:FoundationsPageGroup />
+        <pgroup:TypeSystemPageGroup />
+        <pgroup:MembersPageGroup />
+        <pgroup:BehaviourAndValuesPageGroup />
+        <pgroup:CompositionAndStructurePageGroup />
+        <pgroup:BmlFormatPageGroup />
         <a01task:A01_01_CreatePlan />
         <task:A02_01_UpdateDocSet />
         <task:A02_02_UpdatePageSkeletons />

@@ -1,0 +1,92 @@
+<!--BlockML Documentation — a first orientation to BlockML for handbook readers
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.Introduction-->
+<docs:Introduction xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A first orientation to BlockML for handbook readers
+  </is>
+  <documentation>
+    Scope: what BlockML is, the BML-versus-BOM distinction, and how this handbook is organized
+    for a first read, grounded in org.blockml.bml.documentation.Introduction. Body content is
+    authored in a03 from that source.
+  </documentation>
+  <references>
+    <see type="doc:Introduction" relation="Requires">
+      Primary content source — BlockML's goals, the BML/BOM split, and the domain-agnostic compiler.
+    </see>
+    <see type="doc:CoreUseCases" relation="ReadNext">
+      Next reading step, once BML and BOM are distinguished.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Introduction to BlockML</value>
+    </title>
+    <purpose override="true">
+      <value>Give new readers a first mental model of BlockML — what it is, how BML and BOM differ, and how to read the rest of the handbook — before any syntax or concept detail follows.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Introduction</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Establish the BML-versus-BOM distinction before any syntax is introduced.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader knows what BlockML is for and can distinguish BML, the authoring format, from BOM, its canonical representation.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>What BlockML is, the BML-versus-BOM distinction, and how this handbook is organized for a first read.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Block syntax, inheritance mechanics, and type-system detail.</summary>
+          <reason>Those concepts get their own pages later in the handbook.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>The compiler is domain-agnostic — domain-specific knowledge lives only in render targets, never in the compiler itself.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+  </aggregations>
+</docs:Introduction>

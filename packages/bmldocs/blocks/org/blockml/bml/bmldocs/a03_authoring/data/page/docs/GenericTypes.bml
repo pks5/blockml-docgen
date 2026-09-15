@@ -1,0 +1,99 @@
+<!--BlockML Documentation — a guide to generic type parameters
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.GenericTypes-->
+<docs:GenericTypes xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:def="org.blockml.bml.definition"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to generic type parameters
+  </is>
+  <documentation>
+    Scope: generic type parameters, declaring genericTypes, concrete application, and the
+    bind-or-forward rule, grounded in org.blockml.bml.documentation.GenericsModel and
+    org.blockml.bml.definition.GenericTypeDefinition. Body content is authored in a03 from those
+    sources.
+  </documentation>
+  <references>
+    <see type="doc:GenericsModel" relation="Requires">
+      Primary content source — declaration, binding, forwarding, and instance bml:generics.
+    </see>
+    <see type="def:GenericTypeDefinition" relation="Requires">
+      Meta-model for one genericTypes parameter entry.
+    </see>
+    <see type="doc:TypeExpressions" relation="SeeAlso">
+      Generic application as a type expression.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Generic Types</value>
+    </title>
+    <purpose override="true">
+      <value>Teach generic parameter declaration and the rule that every base parameter must be bound to a concrete type or forwarded, so readers can declare, bind, or forward a generic parameter correctly.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.GenericsModel" />
+            <type:TypeSelectorEntity value="org.blockml.bml.definition.GenericTypeDefinition" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeExpressions" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach generic parameter declaration and the rule that every base parameter must be bound or forwarded.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can declare, bind, or forward a generic parameter.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Generic type parameters, declaring genericTypes, concrete application, and binding versus forwarding when a generic Block is used as baseType.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Constraint generic binding depth.</summary>
+          <reason>Constraint generics bind automatically from context and are covered on the Constraints page.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>Resolution runs during inheritance: bound parameters are substituted throughout the inherited definition, so every parameter must ground to a concrete type.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+  </aggregations>
+</docs:GenericTypes>

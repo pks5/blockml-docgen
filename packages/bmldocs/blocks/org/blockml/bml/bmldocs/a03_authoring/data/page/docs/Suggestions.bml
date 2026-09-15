@@ -1,0 +1,90 @@
+<!--BlockML Documentation — a guide to non-mandatory modeling guidance
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.Suggestions-->
+<docs:Suggestions xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to non-mandatory modeling guidance
+  </is>
+  <documentation>
+    Scope: non-mandatory modeling guidance for editors and renderers, and suggestions versus
+    constraints, grounded in the Suggestions section of
+    org.blockml.bml.documentation.ConstraintsModel. Body content is authored in a03 from that
+    source.
+  </documentation>
+  <references>
+    <see type="doc:ConstraintsModel" relation="Requires">
+      Primary content source — Suggestions as Property-only, non-validation editor metadata.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Suggestions</value>
+    </title>
+    <purpose override="true">
+      <value>Teach suggestions as non-enforced editor and renderer guidance distinct from constraints, so readers do not mistake a suggestion for a validation rule.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ConstraintsModel" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach suggestions as non-enforced guidance, distinct from constraints.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader knows suggestions are hints for tooling, never validation.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Non-mandatory modeling guidance for editors and renderers, and how suggestions differ from constraints.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Repeat of constraint mechanics.</summary>
+          <reason>Constraint mechanics are covered on the Constraints page.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>A suggested value must still be type-compatible with the property, and suggestions are forbidden on EnumType properties.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+  </aggregations>
+</docs:Suggestions>

@@ -1,0 +1,98 @@
+<!--BlockML Documentation — a guide to BML as BlockML's human-authored format
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.Bml-->
+<docs:Bml xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to BML as BlockML's human-authored format
+  </is>
+  <documentation>
+    Scope: BML as the human-authored representation and its relationship to the canonical BOM,
+    grounded in org.blockml.bml.documentation.Introduction and
+    org.blockml.bml.documentation.DocumentFormat. Body content is authored in a03 from those
+    sources.
+  </documentation>
+  <references>
+    <see type="doc:Introduction" relation="Requires">
+      Primary content source — the BML-authoring versus BOM-canonical distinction.
+    </see>
+    <see type="doc:DocumentFormat" relation="Requires">
+      Document root, Sub-Block, and embedded Block authoring format.
+    </see>
+    <see type="doc:CompilerArchitecture" relation="SeeAlso">
+      BML to Parser to BOM pipeline context.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>BML: The Authoring Format</value>
+    </title>
+    <purpose override="true">
+      <value>Teach BML as the authoring format and the BOM as its canonical, lossless form, so readers can identify a Block document's root element and format before namespace and directive detail follows.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentFormat" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompilerArchitecture" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach BML as the authoring format and the BOM as its canonical form.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can identify a Block document's root element and authoring format.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>BML as the human-authored representation of a BlockML model, and its relationship to the canonical BOM.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Namespace declaration mechanics or bml: directives depth.</summary>
+          <reason>Those get the following BML Namespaces page and the earlier Namespaces page.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>The compiler is domain-agnostic — it understands only BML and the BOM, never domain-specific meaning.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+  </aggregations>
+</docs:Bml>

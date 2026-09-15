@@ -1,0 +1,89 @@
+<!--BlockML Documentation — documentation menu and navigation entry point
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.TableOfContents-->
+<docs:TableOfContents xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    The documentation menu and navigation entry point
+  </is>
+  <documentation>
+    Index/menu page for the BlockML Core handbook. Scope is documentation menu, entry points,
+    and navigation overview only — no BlockML concept is explained here. This page has no
+    domain-content authoritative sources; it links structurally to the handbook's page groups.
+    Body content (the link list) is authored in A03 from this DocSet's page and pageGroup structure.
+  </documentation>
+  <references>
+    <see type="dcore:DocSet" relation="SeeAlso">
+      DocSet this page belongs to; pageGroups supply the menu structure.
+    </see>
+    <see type="dcore:PageGroup" relation="SeeAlso">
+      Nested navigational groups this menu presents (structural template, not domain content).
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Documentation</value>
+    </title>
+    <purpose override="true">
+      <value>Give readers a single entry point that lists every handbook section and page, so they can find the right topic and start reading without teaching any concept here.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Overview</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Index</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Present the site structure as a navigable menu, not as a lesson on any single concept.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can locate the page for any handbook topic and knows where to start reading.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>The documentation menu, entry points, and navigation overview across all handbook groups.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Any BlockML concept explained in depth.</summary>
+          <reason>Concept depth lives on the linked pages, not on the navigation menu.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>Groups mirror the learning path from Getting Started through the BML authoring format section.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+  </aggregations>
+</docs:TableOfContents>

@@ -1,0 +1,98 @@
+<!--BlockML Documentation — a guide to specialization via baseType
+
+  FQN: org.blockml.bml.bmldocs.a03_authoring.data.page.docs.Inheritance-->
+<docs:Inheritance xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to specialization via baseType
+  </is>
+  <documentation>
+    Scope: specialization via baseType, single inheritance, the effective definition, and
+    abstract/final Blocks, grounded in org.blockml.bml.documentation.ModelingGuidelines
+    (Inheritance section) and org.blockml.bml.documentation.PartialMemberOverrides. Body content
+    is authored in a03 from those sources.
+  </documentation>
+  <references>
+    <see type="doc:ModelingGuidelines" relation="Requires">
+      Primary content source — single inheritance, branch membership, final baseType.
+    </see>
+    <see type="doc:PartialMemberOverrides" relation="Requires">
+      abstract, final, and override semantics that shape the effective definition.
+    </see>
+    <see type="doc:ContractsModel" relation="SeeAlso">
+      Contrasting composable member-fragment mechanism, covered next.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Inheritance</value>
+    </title>
+    <purpose override="true">
+      <value>Teach single inheritance via baseType and how a Block's effective definition is merged from its baseType chain, so readers can trace any Block back to what it actually inherits.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ModelingGuidelines" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.PartialMemberOverrides" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ContractsModel" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach single inheritance and how inherited members combine into an effective definition.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can trace a Block's effective definition through its baseType chain.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Specialization via baseType, single inheritance, the effective definition merged from a Block's baseType chain, and abstract and final Blocks.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Contracts and override-flag mechanics in depth.</summary>
+          <reason>Contracts get a contrasting page next; override-flag mechanics get their own member-inheritance page.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>Each Block has exactly one baseType, mandatory except for the root org.blockml.bml.core.Block, and a final Block or member cannot be overridden further.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+  </aggregations>
+</docs:Inheritance>
