@@ -1,0 +1,95 @@
+<!--BlockML Documentation — a guide to the Block member model
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.Members-->
+<docs:Members xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:def="org.blockml.bml.definition"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to the Block member model
+  </is>
+  <documentation>
+    Scope: Block member model overview and how Properties, Aggregations, Associations, and
+    Capabilities relate, grounded in org.blockml.bml.definition.MemberDefinition and
+    org.blockml.bml.documentation.DefinitionModel. Body content is authored in a03 from those
+    sources.
+  </documentation>
+  <references>
+    <see type="def:MemberDefinition" relation="Requires">
+      Abstract base for all four declared member kinds.
+    </see>
+    <see type="doc:DefinitionModel" relation="Requires">
+      Primary content source — Definition branch hierarchy including all member kinds.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Members</value>
+    </title>
+    <purpose override="true">
+      <value>Give readers an overview of the member model — Properties, Aggregations, Associations, and Capabilities — so each kind's own page can go deeper without re-explaining where it fits.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Overview</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Guide</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.definition.MemberDefinition" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.DefinitionModel" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Give an overview of the member model before each kind gets its own page.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can name the four member kinds and pick the right one for a given need.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Block member model overview: how Properties, Aggregations, Associations, and Capabilities relate as declared Block members.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Depth on any one member kind.</summary>
+          <reason>Each kind is taught on its own page next.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>All four member kinds share the same declared-member authoring pattern under MemberDefinition.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+  </aggregations>
+</docs:Members>

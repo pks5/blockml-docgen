@@ -1,0 +1,98 @@
+<!--BlockML Documentation — a guide to the Block-versus-instance distinction
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.BlockDefinitionsAndInstances-->
+<docs:BlockDefinitionsAndInstances xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:def="org.blockml.bml.definition"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to the Block-versus-instance distinction
+  </is>
+  <documentation>
+    Scope: Block definition versus Block instance and the class/object analogy, grounded in
+    org.blockml.bml.documentation.BlockAndInstance and org.blockml.bml.definition.BlockDefinition.
+    Body content is authored in a03 from those sources.
+  </documentation>
+  <references>
+    <see type="doc:BlockAndInstance" relation="Requires">
+      Primary content source — Block as declarative class, instance as object, composition as containment.
+    </see>
+    <see type="def:BlockDefinition" relation="Requires">
+      Meta-model shape of a Block definition document.
+    </see>
+    <see type="doc:MemberAuthoring" relation="SeeAlso">
+      Definition-field versus instance-payload syntax that follows from this distinction.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Block Definitions and Instances</value>
+    </title>
+    <purpose override="true">
+      <value>Teach the definition-versus-instance distinction as a semantic analogy — not a runtime OOP mandate — so readers can tell a Block definition from a Block instance in any piece of BML.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+            <type:TypeSelectorEntity value="org.blockml.bml.definition.BlockDefinition" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.MemberAuthoring" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach the definition-versus-instance distinction as a semantic analogy, not a runtime OOP mandate.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can tell a Block definition from a Block instance in a piece of BML.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Block definition versus Block instance: the class/object analogy, and the difference between defining a concept and configuring one.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Inheritance, contracts, and member overrides.</summary>
+          <reason>Those build on this distinction on their own following pages.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>The class/object analogy orients readers but is a semantic analogy — the compiler may represent both as plain data.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+  </aggregations>
+</docs:BlockDefinitionsAndInstances>

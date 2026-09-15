@@ -1,0 +1,95 @@
+<!--BlockML Documentation — a guide to combining inherited members
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.MemberInheritanceAndOverrides-->
+<docs:MemberInheritanceAndOverrides xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:def="org.blockml.bml.definition"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to combining inherited members
+  </is>
+  <documentation>
+    Scope: combining inherited members, the override flag, and refining or finalizing members,
+    grounded in org.blockml.bml.documentation.PartialMemberOverrides and
+    org.blockml.bml.definition.MemberDefinition. Body content is authored in a03 from those
+    sources.
+  </documentation>
+  <references>
+    <see type="doc:PartialMemberOverrides" relation="Requires">
+      Primary content source — override modes, partial authoring, and merge rules.
+    </see>
+    <see type="def:MemberDefinition" relation="Requires">
+      Declares abstract, final, override, and readOnly on every member kind.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Member Inheritance and Overrides</value>
+    </title>
+    <purpose override="true">
+      <value>Teach when a local member redeclaration must set override="true" versus introduce a new member, so readers can refine or finalize an inherited member correctly.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.PartialMemberOverrides" />
+            <type:TypeSelectorEntity value="org.blockml.bml.definition.MemberDefinition" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach when a local redeclaration must set override, versus introducing a new member.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader knows when a local member redeclaration must set override="true".</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Combining inherited members, the override flag, and refining or finalizing a member.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Re-teaching baseType or contracts from scratch.</summary>
+          <reason>Those are covered on their own earlier pages.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>Each redeclaration layer must set override="true" again — override is never inherited from a prior layer.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+  </aggregations>
+</docs:MemberInheritanceAndOverrides>

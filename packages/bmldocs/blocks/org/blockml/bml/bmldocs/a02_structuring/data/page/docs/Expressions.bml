@@ -1,0 +1,99 @@
+<!--BlockML Documentation — a guide to the BlockML expression language
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.Expressions-->
+<docs:Expressions xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:mapping="org.blockml.bml.mapping"
+  xmlns:service="org.blockml.bml.service"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to the BlockML expression language
+  </is>
+  <documentation>
+    Scope: the BlockML expression language, dollar-brace expressions, their evaluation context,
+    and Text interpolation holes, grounded in org.blockml.bml.documentation.Expressions. Body
+    content is authored in a03 from that source.
+  </documentation>
+  <references>
+    <see type="doc:Expressions" relation="Requires">
+      Primary content source — expression grammar, #this lookup, and interpolation classification.
+    </see>
+    <see type="mapping:FunctionMapping" relation="SeeAlso">
+      Call-argument mapping used at expression call sites.
+    </see>
+    <see type="service:Math" relation="SeeAlso">
+      Built-in #math.* service used inside expressions.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Expressions</value>
+    </title>
+    <purpose override="true">
+      <value>Teach the expression language as the mechanism for dynamic member values, so readers can recognize an expression and know its evaluation context, including Text interpolation.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.Expressions" />
+            <type:TypeSelectorEntity value="org.blockml.bml.mapping.FunctionMapping" />
+            <type:TypeSelectorEntity value="org.blockml.bml.service.Math" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach the expression language as the mechanism for dynamic member values.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can recognize an expression and knows its evaluation context.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>The BlockML expression language, dollar-brace expressions, their evaluation context, and interpolation holes inside Text values.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Capability implementation language tagging depth.</summary>
+          <reason>Embedded expressions inside implementation bodies are a separate, more technical topic.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>Text properties may hold restricted expression holes as interpolation, distinct from a whole dollar-brace expression value.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+  </aggregations>
+</docs:Expressions>

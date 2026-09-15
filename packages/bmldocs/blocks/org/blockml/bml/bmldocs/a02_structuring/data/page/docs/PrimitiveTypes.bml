@@ -1,0 +1,94 @@
+<!--BlockML Documentation — a guide to atomic scalar ValueTypes
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.PrimitiveTypes-->
+<docs:PrimitiveTypes xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to atomic scalar ValueTypes
+  </is>
+  <documentation>
+    Scope: atomic scalar ValueTypes, primitive value semantics, and the built-in primitive
+    branches, grounded in org.blockml.bml.type.PrimitiveType and the PrimitiveType section of
+    org.blockml.bml.documentation.TypeSystemOverview. Body content is authored in a03 from those
+    sources.
+  </documentation>
+  <references>
+    <see type="type:PrimitiveType" relation="Requires">
+      The atomic scalar ValueType branch this page introduces.
+    </see>
+    <see type="doc:TypeSystemOverview" relation="Requires">
+      Primary content source — PrimitiveType examples and branch role in the type system.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Primitive Types</value>
+    </title>
+    <purpose override="true">
+      <value>Teach that PrimitiveTypes describe atomic scalar semantics with no stored values on the type itself, so readers can list the built-in primitive branches before deeper parsing detail.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.type.PrimitiveType" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeSystemOverview" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach that PrimitiveTypes describe atomic scalar semantics only, with no stored values on the type itself.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can list the built-in primitive branches.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Atomic scalar ValueTypes, primitive value semantics, and the built-in primitive branches such as Boolean, Integer, Decimal, Text, and Date.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Parsing mechanics or PrimitiveEntity wrapping.</summary>
+          <reason>Those belong to later, more technical pages.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>Values live in Properties, never in the ValueType itself.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+  </aggregations>
+</docs:PrimitiveTypes>

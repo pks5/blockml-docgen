@@ -1,0 +1,94 @@
+<!--BlockML Documentation — a guide to the three problems BlockML is designed to solve
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.CoreUseCases-->
+<docs:CoreUseCases xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to the three problems BlockML is designed to solve
+  </is>
+  <documentation>
+    Scope: the three core BlockML use cases and when to reach for BlockML, grounded in
+    org.blockml.bml.documentation.CoreUseCases. Body content is authored in a03 from that source.
+  </documentation>
+  <references>
+    <see type="doc:CoreUseCases" relation="Requires">
+      Primary content source — structured project documentation, domain modeling, and AI workspaces.
+    </see>
+    <see type="doc:Introduction" relation="Prerequisite">
+      BlockML goals and the BML/BOM split, read before the use cases.
+    </see>
+    <see type="doc:EverythingIsABlock" relation="ReadNext">
+      Next reading step — the ontological principle these use cases rest on.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Core Use Cases</value>
+    </title>
+    <purpose override="true">
+      <value>Ground BlockML's purpose in the three problems it is designed to solve, so readers can recognize when BlockML fits their own problem before any feature-level detail follows.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Guide</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.CoreUseCases" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Ground BlockML's purpose in its core use cases rather than in a feature list.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can recognize a problem that fits one of BlockML's three core use cases.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>The three core BlockML use cases: structured project documentation, general-purpose domain modeling, and AI workspaces.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Block-authoring how-to steps.</summary>
+          <reason>This page explains why and when to reach for BlockML, not how to author a Block.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>All three use cases rest on one principle: representing information as a structured semantic model instead of unstructured text.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+  </aggregations>
+</docs:CoreUseCases>

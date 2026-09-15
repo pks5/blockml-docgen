@@ -1,0 +1,95 @@
+<!--BlockML Documentation — a guide to filling aggregations through composition
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.Composition-->
+<docs:Composition xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:def="org.blockml.bml.definition"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to filling aggregations through composition
+  </is>
+  <documentation>
+    Scope: composing Blocks through aggregations and the composition fill syntax on Block
+    definitions, grounded in org.blockml.bml.documentation.CompositionModel and
+    org.blockml.bml.definition.AggregationDefinition. Body content is authored in a03 from those
+    sources.
+  </documentation>
+  <references>
+    <see type="doc:CompositionModel" relation="Requires">
+      Primary content source — composition placement rules and instance-side aggregation fill.
+    </see>
+    <see type="def:AggregationDefinition" relation="Requires">
+      The aggregation member composition fills, including its nested Composition sub-type.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Composition</value>
+    </title>
+    <purpose override="true">
+      <value>Teach Composition as the mechanism that fills an Aggregation on a Block definition, so readers can fill an aggregation with the correct composition syntax and avoid standalone composition elements.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompositionModel" />
+            <type:TypeSelectorEntity value="org.blockml.bml.definition.AggregationDefinition" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach Composition as the mechanism that fills an Aggregation on a Block definition.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can fill an aggregation with the correct composition syntax.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Composing Blocks through aggregations, and the composition fill syntax on Block definitions.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Re-teaching Aggregation ownership.</summary>
+          <reason>Ownership itself is covered on the Aggregations page.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>Composition must always be nested inside an aggregation member — a standalone composition element is invalid.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+  </aggregations>
+</docs:Composition>

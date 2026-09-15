@@ -5,7 +5,8 @@
   xmlns:a02data="org.blockml.bml.bmldocs.a02_structuring.data"
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:page="org.blockml.bml.docgen.page"
-  xmlns:bmlcore="org.blockml.bml.core">
+  xmlns:bmlcore="org.blockml.bml.core"
+  xmlns:docs="org.blockml.bml.bmldocs.a02_structuring.data.page.docs">
 
   <baseType>
     dcore:DocSet
@@ -54,9 +55,49 @@ depth.</value>
     <version override="true">
       <value>0.1.0</value>
     </version>
+    <homePage override="true">
+      <value>org.blockml.bml.bmldocs.a02_structuring.data.page.docs.TableOfContents</value>
+    </homePage>
   </properties>
   <aggregations>
     <pages override="true">
+      <composition>
+        <docs:TableOfContents />
+        <docs:Introduction />
+        <docs:CoreUseCases />
+        <docs:EverythingIsABlockPage />
+        <docs:Blocks />
+        <docs:BlockDefinitionsAndInstances />
+        <docs:Inheritance />
+        <docs:Contracts />
+        <docs:NamespacesAndFullyQualifiedNames />
+        <docs:IdentifiersAndReferences />
+        <docs:TypeSystem />
+        <docs:PrimitiveTypes />
+        <docs:StructTypes />
+        <docs:EnumTypes />
+        <docs:PrimitiveEntities />
+        <docs:TypesAndValues />
+        <docs:GenericTypes />
+        <docs:Members />
+        <docs:Properties />
+        <docs:Aggregations />
+        <docs:Associations />
+        <docs:Capabilities />
+        <docs:MemberInheritanceAndOverrides />
+        <docs:Visibility />
+        <docs:MultiplicityAndCollections />
+        <docs:Constraints />
+        <docs:Suggestions />
+        <docs:Expressions />
+        <docs:ValueConfiguration />
+        <docs:Composition />
+        <docs:SubBlocks />
+        <docs:EmbeddedBlocks />
+        <docs:DocumentingBlocks />
+        <docs:Bml />
+        <docs:BmlNamespaces />
+      </composition>
     </pages>
     <pageGroups override="true">
     </pageGroups>

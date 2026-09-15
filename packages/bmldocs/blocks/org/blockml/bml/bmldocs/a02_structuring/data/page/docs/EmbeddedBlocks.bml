@@ -1,0 +1,95 @@
+<!--BlockML Documentation — a guide to embedded Block definitions
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.EmbeddedBlocks-->
+<docs:EmbeddedBlocks xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:def="org.blockml.bml.definition"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to embedded Block definitions
+  </is>
+  <documentation>
+    Scope: embedded Block definitions and instances as full virtual documents, grounded in the
+    Embedded Blocks section of org.blockml.bml.documentation.SubBlockModel and
+    org.blockml.bml.definition.EmbeddedBlockDefinition. Body content is authored in a03 from those
+    sources.
+  </documentation>
+  <references>
+    <see type="doc:SubBlockModel" relation="Requires">
+      Primary content source — embedded Blocks as virtual .bml files under root embeddedBlocks.
+    </see>
+    <see type="def:EmbeddedBlockDefinition" relation="Requires">
+      The virtual embedded Block document shape this page introduces.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Embedded Blocks</value>
+    </title>
+    <purpose override="true">
+      <value>Teach embedded Blocks as inlined full documents with their own independent FQN, so readers can author one without confusing it with a lightweight fragment or a Sub-Block.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.SubBlockModel" />
+            <type:TypeSelectorEntity value="org.blockml.bml.definition.EmbeddedBlockDefinition" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach embedded Blocks as inlined full documents, not lightweight fragments or Sub-Blocks.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can author an embedded Block as a full document with its own independent FQN.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Embedded Block definitions and instances: full virtual documents nested under a root Block's embeddedBlocks.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Repeat of Sub-Block nesting mechanics.</summary>
+          <reason>Sub-Block nesting itself is covered on the previous page.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>An embedded Block's FQN is resolve(type), not nested under the root's FQN, and embedding is allowed only at the document root.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+  </aggregations>
+</docs:EmbeddedBlocks>

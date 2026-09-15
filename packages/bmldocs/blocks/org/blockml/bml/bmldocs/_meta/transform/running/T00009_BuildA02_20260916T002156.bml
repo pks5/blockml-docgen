@@ -62,12 +62,29 @@ Validated: same 6 pre-existing errors as baseline (unrelated stale catalog entri
             <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/" />
           </changedFiles>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Update A02 page skeletons" status="Running" captureOutput="true">
+        <workflow:AgenticOperation name="Update A02 page skeletons" status="Succeeded" captureOutput="true">
           <startedAt>2026-09-16T00:25:19</startedAt>
           <baseCommit>3b30d290cfa5c29a8c4517a7f8223179f1090a39</baseCommit>
+          <output>`Task.run` on `A02_02_UpdatePageSkeletons` executed:
+
+1. **Plan** — read `BmlDocSetPlan`: walked all 35 `PagePlan` entries under `rootPageGroupPlan` (Docs, Getting Started, Foundations, Type System, Members, Behaviour &amp; Values, Composition &amp; Structure, BML Format groups), collecting name plus the five planning fields for each.
+2. **Sources** — opened this task's `authorativeSources` whitelist (`BlockMLSourceSet`: `core`, `type`, `definition`, `documentation`, `mapping`, `service`, and sibling `org.blockml.bml.*` packages) and read the relevant Blocks in full — the entire `org.blockml.bml.documentation.*` narrative set, plus `core.Block`, `core.ValueType`, `core.PrimitiveEntity`, `core.Constraint`, all `definition.*` member/shape types, and supporting `type.*` entries — to bind each page's scope to actual SSOT content rather than guessing from names.
+3. **Bound sources per page** — for each of the 35 pages, selected 1–4 primary/secondary Blocks from the whitelist and wrote a page-local `workflow:AuthorativeSourceSet` (exact FQNs, no package wildcards, no reuse of the task's own broad set). The index page (`TableOfContents`) has an empty `includedTypes` since no whitelist Block covers pure navigation, with structural `dcore:DocSet`/`dcore:PageGroup` links kept as SeeAlso only.
+4. **Wrote 35 page skeletons** under `a02_structuring/data/page/docs/`, each `page:DocPage`, with `is`, `documentation`, `references` (Requires/SeeAlso), `title`, a finished-instruction `purpose`, `detailLevel`, `pageType`, and the five semantic aggregations (`scopes`, `readerOutcomes`, `learningObjectives`, `exclusions`, `supportingPoints`) refined from the plan fields and tightened against the bound sources. `content`, `rules`, `audiences`, and `docset` were all omitted per instructions.
+5. **Registered pages** — added all 35 as `pages` composition on `BmlDocSet_A02` (plan order) and set `homePage` to `...page.docs.TableOfContents`.
+6. **Catalog** — exported all 33 newly-named pages from `Library.bml` (`TableOfContents` and `EverythingIsABlockPage` already matched pre-existing stale catalog entries with the same FQN, so those needed no new export — I removed the one resulting duplicate line, not any other pre-existing entry).
+
+Validated: fixed one self-introduced error along the way (a literal `\${ }` in a supporting-point summary was parsed as an empty interpolation hole — reworded it). Final state matches baseline: same 6 pre-existing error-bearing blocks (`Library.bml`'s remaining stale, out-of-plan `docs:*`/`a02pgroup:*` catalog entries — left untouched since those page names aren't in the current plan and A02_03 owns the page-group ones — plus 5 historical transform logs), no new errors, same 9 warnings, recommendations only grew from the new pages' longer prose (still just style suggestions). Left git commits to the `transform apply` tooling, per the established pattern.
+</output>
+          <completedAt>2026-09-16T00:44:42</completedAt>
           <task>
             <a02_task:A02_02_UpdatePageSkeletons />
           </task>
+          <changedFiles>
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/Library.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/BmlDocSet_A02.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/" />
+          </changedFiles>
         </workflow:AgenticOperation>
         <workflow:AgenticOperation name="Update A02 page groups" status="Pending" captureOutput="true">
           <task>

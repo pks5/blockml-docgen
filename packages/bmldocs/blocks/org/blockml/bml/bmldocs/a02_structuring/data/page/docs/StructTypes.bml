@@ -1,0 +1,98 @@
+<!--BlockML Documentation — a guide to composite named-field ValueTypes
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.page.docs.StructTypes-->
+<docs:StructTypes xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to composite named-field ValueTypes
+  </is>
+  <documentation>
+    Scope: composite named-field ValueTypes, struct fields, and configuration and use, grounded
+    in org.blockml.bml.type.StructType, org.blockml.bml.type.EmptyStruct, and the StructType
+    section of org.blockml.bml.documentation.TypeSystemOverview. Body content is authored in a03
+    from those sources.
+  </documentation>
+  <references>
+    <see type="type:StructType" relation="Requires">
+      The composite named-field ValueType branch this page introduces.
+    </see>
+    <see type="type:EmptyStruct" relation="Requires">
+      Named instantiable StructType with no fields — the counterpart of an empty anonymous struct.
+    </see>
+    <see type="doc:TypeSystemOverview" relation="Requires">
+      Primary content source — StructType examples and branch role in the type system.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Struct Types</value>
+    </title>
+    <purpose override="true">
+      <value>Teach StructType as the composite named-field branch of the type system, so readers can define a StructType and configure a struct value.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.type.StructType" />
+            <type:TypeSelectorEntity value="org.blockml.bml.type.EmptyStruct" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeSystemOverview" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach StructType as the composite named-field branch of the type system.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can define a StructType and configure a struct value.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Composite named-field ValueTypes, declaring struct fields, and configuring a struct value.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>EnumType or ConstantType depth.</summary>
+          <reason>Those are separate sibling branches with their own pages.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>StructType is a sibling branch of EnumType under ValueType, not a supertype of it.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+  </aggregations>
+</docs:StructTypes>
