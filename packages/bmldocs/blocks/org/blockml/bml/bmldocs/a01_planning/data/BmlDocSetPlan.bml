@@ -23,8 +23,8 @@
 
     rootPageGroupPlan is that TOC: RootPageGroup → DocsPageGroup → section
     PageGroups (title + nesting), with PagePlan entries (relative name +
-    scope) for each planned page. Later sectors materialize the planned
-    Pages and PageGroups from this plan.
+    planning fields) for each planned page. Later sectors materialize the
+    planned Pages and PageGroups from this plan.
   </documentation>
   <references>
     <see type="dplan:DocSetPlan" relation="Extends">
@@ -34,7 +34,7 @@
       TOC groups — titles and nesting under rootPageGroupPlan.
     </see>
     <see type="dplan:PagePlan" relation="Requires">
-      TOC pages — relative name and scope.
+      TOC pages — relative name and planning fields.
     </see>
   </references>
   <properties>
@@ -66,27 +66,27 @@ depth.</value>
 
                 <dplan:PagePlan name="docs.TableOfContents"
                   scope="documentation menu, entry points, navigation overview"
-                  readerOutcome="The reader can locate the page that covers any given topic and knows where to start reading first."
-                  learningObjective="Present the site's structure as a navigable menu, not teach any BlockML concept itself."
-                  exclusion="Does not explain any BlockML concept in depth; that lives on the pages it links to."
-                  supportingPoint="Groups pages by learning path (Getting Started, Foundations, Type System, Members, Behaviour and Values, Composition and Structure, BML) so the order itself teaches a dependency chain." />
+                  readerOutcome="The reader can locate the page for any topic and knows where to start."
+                  learningObjective="Present the site structure as a navigable menu, not teach a concept."
+                  exclusion="No BlockML concept in depth; that lives on the linked pages."
+                  supportingPoint="Groups mirror the learning path from Getting Started through BML." />
 
                 <dplan:PageGroupPlan name="GettingStartedPageGroup" title="Getting Started">
                   <plans>
 
                     <dplan:PagePlan name="docs.Introduction"
-                      scope="what BlockML is, BML as human-authored format versus BOM as canonical model, who this handbook is for, how to read it"
-                      readerOutcome="The reader knows what BlockML is for, the BML versus BOM distinction, and how the handbook is organized."
-                      learningObjective="Establish the BML (human-authored) versus BOM (canonical, immutable, lossless) distinction and the domain-agnostic Compiler versus domain-specific model split before any syntax is introduced."
-                      exclusion="Does not teach Block syntax, inheritance, or the type system; those are Foundations and Type System topics."
-                      supportingPoint="The Compiler understands only BML and the BOM; domain knowledge lives exclusively in Blocks — this framing recurs whenever a later page explains why something is modeled as a Block rather than hardcoded." />
+                      scope="what BlockML is, BML versus BOM, who the handbook is for, how to read it"
+                      readerOutcome="The reader knows what BlockML is for and how the handbook is organized."
+                      learningObjective="Establish the BML-versus-BOM distinction before any syntax."
+                      exclusion="No Block syntax, inheritance, or type system detail."
+                      supportingPoint="Domain knowledge lives in Blocks, not the compiler." />
 
                     <dplan:PagePlan name="docs.CoreUseCases"
-                      scope="the three core BlockML use cases, structured semantic documentation, when to reach for BlockML, practical orientation"
-                      readerOutcome="The reader can recognize a problem that fits one of BlockML's core use cases and decide whether to reach for it."
-                      learningObjective="Ground BlockML's purpose in its three core use cases (for example structured project documentation as a semantic alternative to Markdown) rather than an abstract feature list."
-                      exclusion="Does not teach how to author a Block; only why and when to use one."
-                      supportingPoint="Contrasts structured semantic models against unstructured text and implementation-specific data — the recurring motivation behind Everything-is-a-Block." />
+                      scope="the three core BlockML use cases, when to reach for BlockML"
+                      readerOutcome="The reader can recognize a problem that fits a core use case."
+                      learningObjective="Ground BlockML's purpose in its core use cases, not a feature list."
+                      exclusion="No Block-authoring how-to; only why and when."
+                      supportingPoint="Contrasts structured semantic models with unstructured text." />
 
                   </plans>
                 </dplan:PageGroupPlan>
@@ -95,53 +95,53 @@ depth.</value>
                   <plans>
 
                     <dplan:PagePlan name="docs.EverythingIsABlockPage"
-                      scope="Everything-is-a-Block mental model, single inheritance root, Block as universal abstraction, why one grammar covers domain and framework types"
-                      readerOutcome="The reader can explain why domain types, ValueTypes, Languages, Constraints, and Capabilities are all Blocks under one root."
-                      learningObjective="Teach the Everything-is-a-Block principle: one root (core:Block), one parser, one TypeRegistry bootstrap — branch-specific rules come from baseType, not parallel ontologies."
-                      exclusion="Does not enumerate the full Block member model (Properties, Aggregations, Associations, Capabilities) or inheritance mechanics; those are the Members and Inheritance topics."
-                      supportingPoint="Concrete examples (a domain type like Wall alongside a ValueType like Integer) make the abstraction land before Block-versus-instance is introduced." />
+                      scope="the Everything-is-a-Block model, single inheritance root, why one grammar covers domain and framework types"
+                      readerOutcome="The reader can explain why every BlockML concept is a Block."
+                      learningObjective="Teach Everything-is-a-Block as the language's unifying principle."
+                      exclusion="No full member model or inheritance mechanics; own pages."
+                      supportingPoint="A concrete domain example grounds the abstraction." />
 
                     <dplan:PagePlan name="docs.Blocks"
-                      scope="what a Block is, defining a Block, identifying and referencing a Block, Block use and configuration versus its definition"
-                      readerOutcome="The reader can point to a Block's FQN, its definition file, and a place it is used or configured."
-                      learningObjective="Introduce the Block as the semantic building block and separate defining a Block from referencing or using one."
-                      exclusion="Does not cover the definition-versus-instance duality in depth (own page) or inheritance."
-                      supportingPoint="Reuses the Everything-is-a-Block framing as the concrete starting example for what gets defined and referenced." />
+                      scope="what a Block is, defining, identifying, and referencing a Block, definition versus use"
+                      readerOutcome="The reader can point to a Block's FQN, its definition, and a use of it."
+                      learningObjective="Introduce the Block as the basic unit and separate defining from using one."
+                      exclusion="No definition-versus-instance depth or inheritance; own pages."
+                      supportingPoint="Reuses the Everything-is-a-Block framing as its starting example." />
 
                     <dplan:PagePlan name="docs.BlockDefinitionsAndInstances"
-                      scope="Block definition versus Block instance, class and object analogy, defining a reusable concept versus configuring an instance of it"
-                      readerOutcome="The reader can tell a Block definition from a Block instance and knows which one they are authoring."
-                      learningObjective="Teach the definition-versus-instance distinction, using the declarative-Class/Object analogy without implying runtime OOP semantics."
-                      exclusion="Does not teach inheritance, contracts, or member overrides; those belong to their own pages."
-                      supportingPoint="The class/object analogy helps orientation, but the page is about BlockML definition versus instance, not OOP — the parser still distinguishes block documents from composition children." />
+                      scope="Block definition versus instance, class/object analogy, defining a concept versus configuring one"
+                      readerOutcome="The reader can tell a Block definition from a Block instance."
+                      learningObjective="Teach the definition-versus-instance distinction."
+                      exclusion="No inheritance, contracts, or member overrides."
+                      supportingPoint="The class/object analogy aids orientation but is not the topic." />
 
                     <dplan:PagePlan name="docs.Inheritance"
-                      scope="specialization through baseType, single inheritance, effective definition, inherited members, abstract Blocks, final Blocks"
-                      readerOutcome="The reader can trace a Block's effective definition through its baseType chain and knows when a member must be overridden."
-                      learningObjective="Teach single inheritance via baseType, how inherited members combine into an effective definition, and the role of abstract and final Blocks."
-                      exclusion="Does not cover contracts (a separate composition mechanism) or override-flag mechanics in depth; those are the Contracts and Member Inheritance and Overrides pages."
-                      supportingPoint="baseType versus contracts is a recurring point of confusion; this page sets up the contrast that the Contracts page then completes." />
+                      scope="specialization via baseType, single inheritance, effective definition, abstract and final Blocks"
+                      readerOutcome="The reader can trace a Block's effective definition through baseType."
+                      learningObjective="Teach single inheritance and how members combine into an effective definition."
+                      exclusion="No contracts or override-flag mechanics in depth."
+                      supportingPoint="Sets up the baseType-versus-contracts contrast." />
 
                     <dplan:PagePlan name="docs.Contracts"
-                      scope="contracts as composable reusable definitions, contract member fragment merge, contracts versus inheritance, root-level contract declaration"
-                      readerOutcome="The reader can decide whether to reuse a definition via baseType or via a contract, and knows contracts are declared only at the document root."
-                      learningObjective="Teach contracts as composable, reusable partial definitions whose member fragments merge into the effective Block, distinct from single inheritance."
-                      exclusion="Does not re-teach baseType inheritance mechanics, which Inheritance already covers; does not cover override syntax in depth."
-                      supportingPoint="Contract completion follows the same override rule as baseType refinement — ties forward to Member Inheritance and Overrides." />
+                      scope="contracts as composable reusable definitions, contracts versus inheritance, root-level declaration"
+                      readerOutcome="The reader can choose baseType or a contract for reuse."
+                      learningObjective="Teach contracts as composable member fragments, distinct from inheritance."
+                      exclusion="No re-teaching of baseType mechanics or override syntax."
+                      supportingPoint="Contract completion follows the same override rule as baseType refinement." />
 
                     <dplan:PagePlan name="docs.NamespacesAndFullyQualifiedNames"
-                      scope="packages, Libraries as publishable units, fully qualified names, namespace prefixes, name resolution"
-                      readerOutcome="The reader can compute a Block's FQN from its package and file location and knows what a Library groups together."
-                      learningObjective="Teach how packages, Libraries (Library.bml, baseType BlockLibrary), and FQNs relate, and that Library.bml catalog membership — not directory layout — defines Library membership."
-                      exclusion="Does not cover unqualified or implicit reference resolution in depth (own page: Identifiers and References), or the bml: authoring namespace (BML Namespaces page)."
-                      supportingPoint="FQN equals {package}.Library derived from the file's package path — a concrete formula the reader can apply immediately." />
+                      scope="packages, Libraries, fully qualified names, namespace prefixes, name resolution"
+                      readerOutcome="The reader can compute a Block's FQN and knows what a Library groups."
+                      learningObjective="Teach how packages, Libraries, and FQNs relate."
+                      exclusion="No reference resolution depth or the bml: authoring namespace."
+                      supportingPoint="FQN follows a fixed formula from package and file location." />
 
                     <dplan:PagePlan name="docs.IdentifiersAndReferences"
-                      scope="identifiers versus validated references, Type Identifier, Type Reference, abbreviated references through namespaces, implicit namespace resolution"
-                      readerOutcome="The reader can distinguish an unvalidated identifier from a validated reference and knows the forms a type name may take in BML."
-                      learningObjective="Teach the identifier-versus-reference distinction and the normalization forms (fully qualified name, QName, unqualified fallback, Sub-Block-relative) that all resolve to a canonical FQN."
-                      exclusion="Does not cover Type Selectors (pattern matching over sets of types) in depth; only the identifier-versus-reference distinction."
-                      supportingPoint="Implicit namespace resolution is a single-stage, site-specific expansion — no global TypeRegistry fallback — which explains why context always determines an unqualified name's meaning." />
+                      scope="identifiers versus validated references, Type Identifier and Type Reference, abbreviated references"
+                      readerOutcome="The reader can distinguish an identifier from a validated reference."
+                      learningObjective="Teach the identifier-versus-reference distinction and its normalization forms."
+                      exclusion="No Type Selector pattern matching in depth."
+                      supportingPoint="Implicit namespace resolution is a single-stage, site-specific expansion." />
 
                   </plans>
                 </dplan:PageGroupPlan>
@@ -150,53 +150,53 @@ depth.</value>
                   <plans>
 
                     <dplan:PagePlan name="docs.TypeSystem"
-                      scope="type system mental model, the four ValueType kinds, how PrimitiveType StructType EnumType and ConstantType relate to Blocks and members"
-                      readerOutcome="The reader can name the four ValueType kinds and place any given type as a Primitive, Struct, Enum, or Constant."
-                      learningObjective="Teach the type-system mental model: four sibling ValueType kinds under ValueType, each a distinct semantic meaning, and how they relate to Blocks and members."
-                      exclusion="Does not go deep on any single kind; each kind gets its own following page."
-                      supportingPoint="Frames PrimitiveType, StructType, EnumType, and ConstantType as siblings, not a hierarchy — EnumType is not a StructType — preventing a common miscategorization." />
+                      scope="type system overview, the four ValueType kinds and how they relate to Blocks and members"
+                      readerOutcome="The reader can name the four ValueType kinds and classify a given type."
+                      learningObjective="Teach the type-system mental model as four sibling kinds."
+                      exclusion="No depth on any one kind; each gets its own page."
+                      supportingPoint="The four kinds are siblings, not a hierarchy." />
 
                     <dplan:PagePlan name="docs.PrimitiveTypes"
-                      scope="atomic scalar ValueTypes, primitive value semantics, parsing authored text into a primitive value, built-in primitive branches"
-                      readerOutcome="The reader can list the built-in primitive branches (boolean, numeric, textual, temporal, and identifier-like types) and knows primitives never store values themselves."
-                      learningObjective="Teach that PrimitiveTypes describe atomic scalar semantics only — values live exclusively in Properties — and survey the built-in branches."
-                      exclusion="Does not cover parseValue lexical-parsing mechanics in depth, or PrimitiveEntity wrapping (own page)."
-                      supportingPoint="Numeric (Integer, Decimal, Float) and textual (Text and its Identifier, Reference, and Selector subtypes) branches recur throughout the handbook as the concrete vocabulary for property types." />
+                      scope="atomic scalar ValueTypes, primitive value semantics, built-in primitive branches"
+                      readerOutcome="The reader can list the built-in primitive branches."
+                      learningObjective="Teach that PrimitiveTypes describe atomic scalar semantics only."
+                      exclusion="No parsing mechanics or PrimitiveEntity wrapping."
+                      supportingPoint="Values live in Properties, never in the type itself." />
 
                     <dplan:PagePlan name="docs.StructTypes"
-                      scope="composite named-field ValueTypes, structured values, struct fields, struct configuration and use"
-                      readerOutcome="The reader can define a StructType with named fields and configure a struct-typed value."
-                      learningObjective="Teach StructType as the composite named-field ValueType branch, described by ordinary Properties, and how struct values are configured."
-                      exclusion="Does not cover EnumType or ConstantType; contrasts only enough to place StructType among the four kinds."
-                      supportingPoint="StructType is a dedicated branch, not a supertype of EnumType — reinforces the sibling framing from the Type System overview page." />
+                      scope="composite named-field ValueTypes, struct fields, configuration and use"
+                      readerOutcome="The reader can define a StructType and configure a struct value."
+                      learningObjective="Teach StructType as the composite named-field branch."
+                      exclusion="No EnumType or ConstantType depth."
+                      supportingPoint="StructType is a sibling branch, not a supertype of EnumType." />
 
                     <dplan:PagePlan name="docs.EnumTypes"
-                      scope="closed set of named literal values, enum ValueType branch, enum values, contrast with PrimitiveType and StructType"
-                      readerOutcome="The reader can define a closed enum ValueType and use its named literal values."
-                      learningObjective="Teach EnumType as a finite, closed set of named literal values, distinct from both PrimitiveType's open value domain and StructType's composite fields."
-                      exclusion="Does not cover the suggestions aggregation, which is explicitly disallowed on enum-typed properties; that prohibition belongs on the Suggestions page."
-                      supportingPoint="The prohibition on suggestions for enum-typed properties is a concrete cross-reference that motivates reading the Suggestions page separately." />
+                      scope="closed set of named literal values, enum branch, contrast with Primitive and Struct"
+                      readerOutcome="The reader can define a closed enum and use its literal values."
+                      learningObjective="Teach EnumType as a finite, closed set of named values."
+                      exclusion="No suggestions mechanics; only the enum prohibition is noted."
+                      supportingPoint="Enum-typed properties cannot carry suggestions." />
 
                     <dplan:PagePlan name="docs.PrimitiveEntities"
-                      scope="primitive values represented as Block instances, generic PrimitiveEntity wrapper, why aggregations of primitive values need entity wrappers"
-                      readerOutcome="The reader knows when a primitive value must be wrapped in a PrimitiveEntity to appear inside a composition or aggregation."
-                      learningObjective="Teach PrimitiveEntity as the generic Block wrapper that lets primitive values appear as instances (for example TextEntity, IntegerEntity) where an aggregation requires Block children."
-                      exclusion="Does not re-teach generics mechanics in depth; only enough generic binding to explain PrimitiveEntity(T)."
-                      supportingPoint="Ties to the Suggestions page's *Entity wrapper rule (for example TextEntity for Text properties) as a concrete use of PrimitiveEntity." />
+                      scope="primitive values represented as Block instances, the PrimitiveEntity wrapper"
+                      readerOutcome="The reader knows when a primitive value needs a PrimitiveEntity wrapper."
+                      learningObjective="Teach PrimitiveEntity as the wrapper that lets primitives appear as instances."
+                      exclusion="No generics mechanics beyond the binding needed here."
+                      supportingPoint="Ties to the *Entity wrapper convention used elsewhere." />
 
                     <dplan:PagePlan name="docs.TypesAndValues"
-                      scope="a type describing possible values versus an instance or member holding an actual value, ValueType definition versus configured type instance"
-                      readerOutcome="The reader keeps the type-describes-possible-values versus instance-holds-an-actual-value distinction straight when reading any member declaration."
-                      learningObjective="Teach the general type-versus-value distinction that underlies ValueType definitions versus the configured type instance held on a Property."
-                      exclusion="Does not repeat per-kind detail from the four ValueType pages; states the distinction once at the right altitude."
-                      supportingPoint="Every Property behaves as Optional — a value or no value, never null — a small fact that only makes sense once type versus value is clear." />
+                      scope="type describing possible values versus instance holding an actual value"
+                      readerOutcome="The reader keeps type-versus-value straight when reading any member."
+                      learningObjective="Teach the general type-versus-value distinction."
+                      exclusion="No per-kind detail already covered on the four type pages."
+                      supportingPoint="Every Property is Optional — a value or none, never null." />
 
                     <dplan:PagePlan name="docs.GenericTypes"
-                      scope="generic type parameters, declaring genericTypes on a Block, concrete generic type application, binding versus forwarding parameters"
-                      readerOutcome="The reader can declare a generic parameter, bind it via baseType, or forward it to a derived Block's own parameter."
-                      learningObjective="Teach generic parameter declaration, exclusive non-inherited ownership by the declaring Block, and the bind-or-forward rule when a generic Block is used as baseType."
-                      exclusion="Does not cover constraint generic binding in depth; the Constraints page covers T binding from embedding context for constraints specifically."
-                      supportingPoint="A bound generic instance becomes a Sub-Block of that instance, not of the generic parent — a subtlety worth flagging before Sub-Blocks is read." />
+                      scope="generic type parameters, declaring genericTypes, concrete application, binding versus forwarding"
+                      readerOutcome="The reader can declare, bind, or forward a generic parameter."
+                      learningObjective="Teach generic parameter declaration and the bind-or-forward rule."
+                      exclusion="No constraint generic binding depth."
+                      supportingPoint="A bound generic instance becomes a Sub-Block of that instance." />
 
                   </plans>
                 </dplan:PageGroupPlan>
@@ -205,60 +205,60 @@ depth.</value>
                   <plans>
 
                     <dplan:PagePlan name="docs.Members"
-                      scope="Block member model overview, how Properties Aggregations Associations and Capabilities relate to each other"
-                      readerOutcome="The reader can name the four member kinds and pick the right one for a new Block member."
-                      learningObjective="Give an overview of the Block member model — Properties, Aggregations, Associations, Capabilities — as sibling member kinds, before each gets its own page."
-                      exclusion="Does not go deep on any one member kind; that is the job of the four following pages."
-                      supportingPoint="All four are rendered inside their own member container (properties, aggregations, associations, capabilities) with the XML element name equal to the member name — a shared authoring pattern worth stating once." />
+                      scope="Block member model overview, how Properties, Aggregations, Associations, Capabilities relate"
+                      readerOutcome="The reader can name the four member kinds and pick the right one."
+                      learningObjective="Give an overview of the member model before its own pages."
+                      exclusion="No depth on any one member kind."
+                      supportingPoint="All four share the same container-plus-member-name authoring pattern." />
 
                     <dplan:PagePlan name="docs.Properties"
-                      scope="typed value members, property definition, property configuration, property inheritance and override, common usage patterns"
-                      readerOutcome="The reader can declare a typed Property, give it a default value, and distinguish definition-site value from instance-site assignment."
-                      learningObjective="Teach Property as a scalar or structured value member, its declaration syntax, and the common definition-versus-instance authoring mistake of wrapping an instance value in a value element."
-                      exclusion="Does not cover suggestions or constraints on properties in depth; only enough to know they attach here."
-                      supportingPoint="Declaration order among properties matters for FunctionMapping positional parameters and StructType compatibility — a subtle ordering rule worth flagging." />
+                      scope="typed value members, definition, configuration, inheritance and override"
+                      readerOutcome="The reader can declare a typed Property with a default value."
+                      learningObjective="Teach Property as a scalar or structured value member."
+                      exclusion="No suggestions or constraints depth."
+                      supportingPoint="Declaration order among properties can matter elsewhere." />
 
                     <dplan:PagePlan name="docs.Aggregations"
-                      scope="owned collection members, aggregation ownership, composition fill of aggregations, aggregations versus associations"
-                      readerOutcome="The reader can declare an owned collection member and fill it via composition on an instance."
-                      learningObjective="Teach Aggregation as an owned-collection member and Composition as the mechanism that fills it with concrete Block instances."
-                      exclusion="Does not cover Associations (non-owning links) in depth; contrasts only enough to place ownership as the distinguishing feature."
-                      supportingPoint="On instances, aggregations are filled directly by member name with no composition wrapper — the opposite of definition-site syntax, and a frequent authoring error." />
+                      scope="owned collection members, ownership, composition fill, aggregations versus associations"
+                      readerOutcome="The reader can declare and fill an owned collection member."
+                      learningObjective="Teach Aggregation as an owned collection filled by Composition."
+                      exclusion="No Association depth beyond the ownership contrast."
+                      supportingPoint="Instance-side fill has no composition wrapper, unlike definitions." />
 
                     <dplan:PagePlan name="docs.Associations"
-                      scope="non-owning instance-to-instance links, associations versus aggregation ownership, associations versus documentation references"
-                      readerOutcome="The reader can add a non-owning link between instances without confusing it with either an Aggregation or a documentation reference."
-                      learningObjective="Teach Association as a non-owning instance-to-instance link, distinct from Aggregation ownership and from documentation see references."
-                      exclusion="Does not cover Aggregation ownership semantics, covered on the previous page, or the full documentation/references model, covered on Documenting Blocks."
-                      supportingPoint="Documentation references connect types to types or types to instances for documentation only — a deliberate three-way contrast between Aggregation, Association, and Reference that prevents mixing them up." />
+                      scope="non-owning instance links, associations versus aggregation, associations versus references"
+                      readerOutcome="The reader can add a non-owning link without confusing it with ownership."
+                      learningObjective="Teach Association as a non-owning instance-to-instance link."
+                      exclusion="No Aggregation ownership mechanics or full reference model."
+                      supportingPoint="A three-way contrast: Aggregation, Association, Reference." />
 
                     <dplan:PagePlan name="docs.Capabilities"
-                      scope="Block behaviour as ordinary members, Capability members, capability implementation bodies, callable functionality"
-                      readerOutcome="The reader can declare a Capability and knows there is no separate constructor, getter, setter, or render language feature — it is all Capabilities."
-                      learningObjective="Teach Capability as ordinary Block behaviour with a language-tagged implementation body, covering the common roles (init, getValue, setValue, render, parseValue)."
-                      exclusion="Does not cover embedded-expression syntax inside implementation bodies in depth; only that implementations are language-tagged bodies."
-                      supportingPoint="Domain-specific operations live in their own capability packages under the shared Capability branch, grounding the abstract member kind in real examples." />
+                      scope="Block behaviour as members, capability implementation bodies, common roles"
+                      readerOutcome="The reader can declare a Capability and knows there is no separate constructor."
+                      learningObjective="Teach Capability as ordinary behaviour with a language-tagged body."
+                      exclusion="No embedded-expression syntax depth."
+                      supportingPoint="Domain operations live in their own capability packages." />
 
                     <dplan:PagePlan name="docs.MemberInheritanceAndOverrides"
-                      scope="combining inherited members, the override flag, refining restricting or finalizing inherited members, abstract member obligations"
-                      readerOutcome="The reader knows when override=&quot;true&quot; is required and can satisfy an abstract member's implementation obligation."
-                      learningObjective="Teach that override=&quot;true&quot; is required whenever a local member redeclaration merges with an inherited member from baseType or from contracts, and that contract completion follows the same rule."
-                      exclusion="Does not re-teach baseType inheritance or contracts from scratch; assumes both are already read."
-                      supportingPoint="The same override rule applies uniformly to baseType refinement and contract completion — one rule, two sources — worth stating explicitly since it is easy to assume they differ." />
+                      scope="combining inherited members, the override flag, refining or finalizing members"
+                      readerOutcome="The reader knows when override must be set on a redeclared member."
+                      learningObjective="Teach when a local redeclaration must set override."
+                      exclusion="No re-teaching of baseType or contracts from scratch."
+                      supportingPoint="The same override rule applies to baseType and contract completion." />
 
                     <dplan:PagePlan name="docs.Visibility"
-                      scope="member and Sub-Block visibility, public protected private naming convention, effect of visibility on access from other contexts"
-                      readerOutcome="The reader can tell whether a member is public or protected/private by its name and knows this restricts authoring access, not what a renderer sees."
-                      learningObjective="Teach the naming-convention visibility model (myVar public, _myVar protected or private) and that renderers always see the full canonical BOM regardless of authoring visibility."
-                      exclusion="Does not cover Sub-Block visibility mechanics beyond the same naming convention, and does not cover renderer implementation."
-                      supportingPoint="Visibility controls BlockML authoring access only — worth stating plainly, since 'private' elsewhere often implies runtime hiding, which BlockML does not do." />
+                      scope="member and Sub-Block visibility, public/protected/private naming convention"
+                      readerOutcome="The reader can tell visibility from a member's name."
+                      learningObjective="Teach the naming-convention visibility model."
+                      exclusion="No renderer implementation detail."
+                      supportingPoint="Visibility restricts authoring access only, not renderer output." />
 
                     <dplan:PagePlan name="docs.MultiplicityAndCollections"
-                      scope="optional singular and multiple values, multiplicity brackets, collection semantics on properties and aggregations"
-                      readerOutcome="The reader can read a multiplicity bracket (for example [0..n] or [3]) and knows how it composes with type configuration."
-                      learningObjective="Teach multiplicity brackets as one axis of a type expression, applied after ValueType configuration (for example Text{maxLength: 50}[0..n]), and their effect on Properties and Aggregations."
-                      exclusion="Does not cover the MinItems and MaxItems constraint branches in depth; only that multiplicity and constraints are separate mechanisms."
-                      supportingPoint="Multiplicity brackets apply after curly-brace configuration, not before — a fixed ordering rule that avoids a common syntax mistake." />
+                      scope="optional, singular, and multiple values, multiplicity brackets, collection semantics"
+                      readerOutcome="The reader can read a multiplicity bracket and place it in a type expression."
+                      learningObjective="Teach multiplicity as one axis of a type expression."
+                      exclusion="No MinItems/MaxItems constraint depth."
+                      supportingPoint="Multiplicity brackets apply after type configuration." />
 
                   </plans>
                 </dplan:PageGroupPlan>
@@ -267,32 +267,32 @@ depth.</value>
                   <plans>
 
                     <dplan:PagePlan name="docs.Constraints"
-                      scope="declarative validation rules, the constraints container, constraint target binding, constraint branches, when constraints are evaluated"
-                      readerOutcome="The reader can attach a constraint to a Block or member and knows which constraint branch fits which member kind."
-                      learningObjective="Teach the single constraints container on ConstrainableDefinition elements, the generic-T-from-context binding rule, and the branch-to-member-kind mapping (ValueConstraint, PropertyConstraint, AggregationConstraint, and siblings)."
-                      exclusion="Does not cover Suggestions (non-enforced guidance) in depth; contrasts only enough to distinguish enforced from non-enforced."
-                      supportingPoint="Wrong-branch-for-context and unknown-constraint-type each raise a dedicated diagnostic, showing the compiler treats constraint placement as strictly checked." />
+                      scope="declarative validation rules, the constraints container, constraint branches, when evaluated"
+                      readerOutcome="The reader can attach the right constraint branch to a member."
+                      learningObjective="Teach the constraints container and its branch-to-member-kind mapping."
+                      exclusion="No Suggestions depth beyond the enforced/non-enforced contrast."
+                      supportingPoint="Wrong-branch placement is a checked error, not a convention." />
 
                     <dplan:PagePlan name="docs.Suggestions"
-                      scope="non-mandatory modeling guidance metadata, suggestions versus constraints, suggestions on properties for editors and renderers"
-                      readerOutcome="The reader knows suggestions are non-enforced editor and renderer hints, never validation, and cannot be placed on enum-typed properties."
-                      learningObjective="Teach the property-only suggestions aggregation as non-mandatory modeling guidance for editors and renderers, contrasted directly with enforced Constraints."
-                      exclusion="Does not repeat constraint mechanics; assumes Constraints is already read."
-                      supportingPoint="A suggested value must still be type-compatible with the property, even though the suggestion itself is not enforced — compatible does not mean mandatory." />
+                      scope="non-mandatory modeling guidance, suggestions versus constraints"
+                      readerOutcome="The reader knows suggestions are hints, never validation."
+                      learningObjective="Teach suggestions as non-enforced guidance for editors and renderers."
+                      exclusion="No repeat of constraint mechanics."
+                      supportingPoint="A suggested value must still be type-compatible." />
 
                     <dplan:PagePlan name="docs.Expressions"
-                      scope="the BlockML expression language, dollar-brace expressions, evaluation context, interpolation versus whole-value expressions, use by other Core concepts"
-                      readerOutcome="The reader can recognize a dollar-brace expression, know when it is a whole value versus an interpolation, and see how embedded expressions in implementations differ."
-                      learningObjective="Teach the BML Expression Language (extended JSON inside dollar-brace delimiters) as the mechanism for dynamic, computed, or service-bound member values, and its relationship to embedded expressions in Capability implementations."
-                      exclusion="Does not cover Capability implementation language tagging in depth; only the embedded-expression delimiter distinction."
-                      supportingPoint="On type:Text, restricted expression holes may appear inside running text as interpolation rather than a whole-value expression — a special case worth flagging." />
+                      scope="the BlockML expression language, dollar-brace expressions, evaluation context, interpolation"
+                      readerOutcome="The reader can recognize an expression and know its evaluation context."
+                      learningObjective="Teach the expression language as the mechanism for dynamic member values."
+                      exclusion="No Capability implementation language tagging depth."
+                      supportingPoint="Text properties may hold restricted expression holes as interpolation." />
 
                     <dplan:PagePlan name="docs.ValueConfiguration"
-                      scope="configuring values and Block instances in BML, primitive structured collection enum reference and nested value configuration, curly-brace ValueType configuration"
-                      readerOutcome="The reader can write curly-brace configuration on a Property and knows it is orthogonal to generic type binding."
-                      learningObjective="Teach curly-brace ValueType configuration as configuring the Property's owned type instance, distinct from generic parenthesis binding, and that both may coexist."
-                      exclusion="Does not cover multiplicity brackets in depth beyond noting they apply after configuration; that ordering is fully covered in Multiplicity and Collections."
-                      supportingPoint="Curly-brace configuration applies to the type instance associated with a Property, not to the ValueType definition block itself — the configuration is per-property, not global." />
+                      scope="configuring values and Block instances in BML, curly-brace ValueType configuration"
+                      readerOutcome="The reader can write curly-brace configuration on a Property."
+                      learningObjective="Teach ValueType configuration as distinct from generic binding."
+                      exclusion="No multiplicity depth beyond noting the ordering."
+                      supportingPoint="Configuration is per-property, not global to the type." />
 
                   </plans>
                 </dplan:PageGroupPlan>
@@ -301,32 +301,32 @@ depth.</value>
                   <plans>
 
                     <dplan:PagePlan name="docs.Composition"
-                      scope="composing Blocks through aggregations, composition fill syntax, how composition relates to inheritance and other reuse mechanisms"
-                      readerOutcome="The reader can fill an aggregation with concrete Block instances using the correct composition syntax for definitions versus instances."
-                      learningObjective="Teach Composition as the mechanism that fills an Aggregation with concrete children, and the syntactic difference between definition-site composition wrapping and instance-site direct fill."
-                      exclusion="Does not re-teach Aggregation ownership semantics from scratch; assumes Aggregations is already read."
-                      supportingPoint="Bare child instances placed directly under a parent instance, without opening the aggregation element, are invalid — a concrete error case worth naming." />
+                      scope="composing Blocks through aggregations, composition fill syntax"
+                      readerOutcome="The reader can fill an aggregation with the correct composition syntax."
+                      learningObjective="Teach Composition as the mechanism that fills an Aggregation."
+                      exclusion="No re-teaching of Aggregation ownership."
+                      supportingPoint="Bare children without the aggregation wrapper are invalid." />
 
                     <dplan:PagePlan name="docs.SubBlocks"
-                      scope="nested or subordinate Block definitions, Sub-Block identity and scope, relationship to the containing Block, nesting depth"
-                      readerOutcome="The reader can nest a Block definition inside a parent Block and knows Sub-Blocks share the parent's FQN prefix with no enclosing-instance scope."
-                      learningObjective="Teach Sub-Blocks as nested Block definitions (the static-nested-class analogy), declared under subBlocks, with their own optional generic parameters and explicit, not implicit, forwarding of outer type parameters."
-                      exclusion="Does not cover embedded Blocks in depth (own page) beyond noting both are declared as nested definitions."
-                      supportingPoint="Sub-Blocks may nest to arbitrary depth, and identity and FQN derivation follow the same rules documented for type identity generally — ties forward to Identifiers and References." />
+                      scope="nested Block definitions, Sub-Block identity and scope, nesting depth"
+                      readerOutcome="The reader can nest a Block definition inside a parent Block."
+                      learningObjective="Teach Sub-Blocks as nested definitions sharing the parent's FQN prefix."
+                      exclusion="No embedded Blocks depth beyond the nesting note."
+                      supportingPoint="Outer type parameters are forwarded explicitly, not implicitly." />
 
                     <dplan:PagePlan name="docs.EmbeddedBlocks"
-                      scope="embedded Block definitions and instances, embedded virtual documents, distinguishing embedded Blocks from referenced or independently defined Blocks"
-                      readerOutcome="The reader can author an embedded Block document under embeddedBlocks and knows it is a full Block document, not a lightweight fragment."
-                      learningObjective="Teach embedded Blocks as virtual, inlined documents under the document root's embeddedBlocks aggregation, extending the same block-definition shape as the document root."
-                      exclusion="Does not repeat Sub-Block nesting mechanics; contrasts only enough to distinguish a nested definition sharing the parent FQN from an inlined full document."
-                      supportingPoint="Authoring an embedded Block follows the same document-root conventions as any top-level Block file — nothing about embedding changes the authoring format." />
+                      scope="embedded Block definitions and instances, embedded virtual documents"
+                      readerOutcome="The reader can author an embedded Block as a full document."
+                      learningObjective="Teach embedded Blocks as inlined full documents, not lightweight fragments."
+                      exclusion="No repeat of Sub-Block nesting mechanics."
+                      supportingPoint="Embedding follows the same document-root conventions as top-level files." />
 
                     <dplan:PagePlan name="docs.DocumentingBlocks"
-                      scope="Block documentation model, is documentation summary and examples fields, documentation conventions and references"
-                      readerOutcome="The reader can fill in a Block's is, documentation, and references fields correctly and knows where documentation lives at the definition site."
-                      learningObjective="Teach the documentation model: identity first (name, type, baseType), then is, documentation, and references as the single source of truth at the definition site."
-                      exclusion="Does not cover the bml: language-directive namespace in depth; documentation fields and bml: directives are different mechanisms."
-                      supportingPoint="References connect types to types or types to instances for documentation only, distinct from Associations — reinforces the three-way contrast introduced on the Associations page." />
+                      scope="Block documentation model: is, documentation, and references fields"
+                      readerOutcome="The reader can fill a Block's is, documentation, and references correctly."
+                      learningObjective="Teach the documentation model as the definition-site source of truth."
+                      exclusion="No bml: directive namespace depth."
+                      supportingPoint="References connect types or instances for documentation only." />
 
                   </plans>
                 </dplan:PageGroupPlan>
@@ -335,18 +335,18 @@ depth.</value>
                   <plans>
 
                     <dplan:PagePlan name="docs.Bml"
-                      scope="BML as the human-authored representation of BlockML, relationship between the conceptual model and its XML representation, BOM as canonical representation"
-                      readerOutcome="The reader can identify a Block document's root element tag and knows which of the valid authoring formats a given file uses."
-                      learningObjective="Teach BML as the human- and editor-friendly authoring format and the BOM as its canonical, immutable, lossless representation; explain the type-or-name-as-tag authoring form and its legacy predecessor."
-                      exclusion="Does not cover XML namespace declaration mechanics in depth (BML Namespaces page) or the bml: directive namespace, which is out of scope for this handbook."
-                      supportingPoint="The BOM Compiler is domain-agnostic — it understands only BML and the BOM; all domain knowledge lives in Blocks — the same framing from the Introduction, now grounded in the concrete document format." />
+                      scope="BML as the human-authored representation, relationship to the BOM"
+                      readerOutcome="The reader can identify a Block document's root element and format."
+                      learningObjective="Teach BML as the authoring format and the BOM as its canonical form."
+                      exclusion="No namespace declaration mechanics or bml: directives depth."
+                      supportingPoint="The compiler is domain-agnostic; it understands only BML and the BOM." />
 
                     <dplan:PagePlan name="docs.BmlNamespaces"
-                      scope="XML namespace usage in BML, namespace declarations and prefixes, BML namespace mechanics versus BlockML's conceptual naming and reference model"
-                      readerOutcome="The reader can declare an xmlns prefix correctly and knows every BML definition must live under the owning domain's bml package."
-                      learningObjective="Teach XML namespace declarations and prefixes in BML authoring, and the bml-namespace placement rule that every Block, Library, Type, Language, Service, and Capability definition must satisfy."
-                      exclusion="Does not cover BlockML's conceptual naming and reference model (FQNs, packages, resolution) beyond the XML mechanics needed here; that is Namespaces and Fully Qualified Names and Identifiers and References."
-                      supportingPoint="No BML definition may exist outside the domain's bml namespace — a rule the compiler enforces, not a mere convention." />
+                      scope="XML namespace usage in BML, declarations and prefixes, the bml package placement rule"
+                      readerOutcome="The reader can declare an xmlns prefix and place a definition correctly."
+                      learningObjective="Teach namespace declarations and the bml-namespace placement rule."
+                      exclusion="No BlockML naming/reference model beyond the XML mechanics."
+                      supportingPoint="Every definition must live under the owning domain's bml namespace." />
 
                   </plans>
                 </dplan:PageGroupPlan>

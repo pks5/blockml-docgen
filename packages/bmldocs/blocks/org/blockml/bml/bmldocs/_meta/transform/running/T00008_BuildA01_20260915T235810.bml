@@ -42,12 +42,25 @@
   <aggregations>
     <operations override="true">
       <composition>
-        <workflow:AgenticOperation name="Create A01 Plan" status="Running" captureOutput="true">
+        <workflow:AgenticOperation name="Create A01 Plan" status="Succeeded" captureOutput="true">
           <startedAt>2026-09-15T23:58:10</startedAt>
           <baseCommit>d685df4d58ce25aa93d1cb5b5447d322768a84a3</baseCommit>
+          <output>Done. I executed `A01_01_CreatePlan.run` for the running `T00008_BuildA01` transform (operation &quot;Create A01 Plan&quot;):
+
+- Read the task's `instructions`, `rules`, and `authorativeSources`, and cross-checked the required 32 concepts against the actual `org.blockml.bml.documentation.**` source Blocks (e.g. `EverythingIsABlock`, `ContractsModel`, `TypeSystemOverview`, `MemberVisibility`) to confirm grounding.
+- Found the existing TOC structure (35 pages across 7 groups under `DocsPageGroup`) already satisfied `AppropriatePageGranularityRule`, `ProgressivePageOrderRule`, `CompleteTopicCoverageRule`, `DistinctPagePurposeRule`, and `StablePageIdentityRule`, and is already exported from `Library.bml` — so per `StablePageIdentityRule` I kept all names/titles/nesting stable rather than redesigning from scratch.
+- The actual gap was the newly added `PagePlanDirectionRule`: several `scope`/`readerOutcome`/`learningObjective`/`supportingPoint` fields had drifted into source-level detail and implementation trivia (e.g. &quot;TypeRegistry bootstrap&quot;, &quot;FunctionMapping positional parameters&quot;). I rewrote all five planning fields on every one of the 35 `PagePlan`s to be short, directional statements at planning altitude, per that rule's instructions.
+- Overwrote `packages/bmldocs/blocks/org/blockml/bml/bmldocs/a01_planning/data/BmlDocSetPlan.bml` and validated with `blockml validate --all` — no new errors/warnings introduced (the 5 pre-existing errors are unrelated stale type references in old `_meta/transform/succeeded` archives).
+
+I did not commit or touch git state — that's owned by the transform harness driving this operation.
+</output>
+          <completedAt>2026-09-16T00:04:15</completedAt>
           <task>
             <a01_task:A01_01_CreatePlan />
           </task>
+          <changedFiles>
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a01_planning/data/BmlDocSetPlan.bml" />
+          </changedFiles>
         </workflow:AgenticOperation>
       </composition>
     </operations>
