@@ -207,10 +207,6 @@
         <lrule:NoFragmentedEnumerationRule />
         <lrule:NoSourceDumpRule />
         <lrule:NoUnrequestedDiagnosticsRule />
-        <lrule:SectionCompletenessRule />
-        <lrule:CodeExampleRule />
-        <lrule:CodeExplanationRule />
-        <lrule:AudienceVocabularyRule />
       </composition>
     </rules>
     <authorativeSources override="true">

@@ -24,7 +24,8 @@
     - **maxGroupSize** — maximum entries in any one group, and thus
       the maximum number of pages per level
     - **Pages** — every PagePlan must set scope, readerOutcome,
-      learningObjective, exclusion, and supportingPoint
+      learningObjective, exclusion, and supportingPoint as short
+      directional fields (PagePlanDirectionRule); A02 refines them
   </documentation>
   <properties>
     <contents type="type:Text">
@@ -249,12 +250,15 @@ The result should enable a developer who is new to BlockML to build a coherent m
           4. Write planning fields on every PagePlan
           Inspect org.blockml.bml.docgen.plan.PagePlan before writing.
           Author each field as an attribute on the PagePlan instance
-          (for example scope="…"). Values are type:Text. They are
+          (for example scope="…"). Values are type:Text.           They are
           planning intent for later sectors — not body text, not a
-          purpose sentence, and not finished handbook prose. Ground
-          every field in contents and the bound sources. Distinct
-          pages must have a distinct primary scope. Cover the site
-          goal without dumping the whole handbook onto one page.
+          purpose sentence, and not finished handbook prose. Keep
+          them at planning altitude (PagePlanDirectionRule): they
+          name the direction of the page; A02 refines them against
+          bound sources. Ground every field in contents and the
+          bound sources. Distinct pages must have a distinct
+          primary scope. Cover the site goal without dumping the
+          whole handbook onto one page.
 
           Set the five fields as follows:
 
@@ -359,9 +363,9 @@ The result should enable a developer who is new to BlockML to build a coherent m
         <lrule:AppropriatePageGranularityRule />
         <lrule:ProgressivePageOrderRule />
         <lrule:StablePageIdentityRule />
-        <lrule:ClearPagePurposeRule />
         <lrule:DistinctPagePurposeRule />
         <lrule:CompleteTopicCoverageRule />
+        <lrule:PagePlanDirectionRule />
       </composition>
     </rules>
     <topLevelGroups type="type:TextEntity[]">

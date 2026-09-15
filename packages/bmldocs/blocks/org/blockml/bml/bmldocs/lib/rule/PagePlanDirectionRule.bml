@@ -1,0 +1,60 @@
+<!--BlockML Documentation — page-plan direction rule
+
+  FQN: org.blockml.bml.bmldocs.lib.rule.PagePlanDirectionRule-->
+<lrule:PagePlanDirectionRule xmlns="http://blockml.org/bml"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
+  xmlns:rule="org.blockml.bml.docgen.rule"
+  xmlns:dplan="org.blockml.bml.docgen.plan">
+
+  <baseType>
+    rule:ContentRule
+  </baseType>
+  <is>
+    A content rule requiring PagePlan fields to stay at planning altitude
+  </is>
+  <documentation>
+    Defines the altitude of PagePlan planning fields during documentation planning.
+
+    A PagePlan names the direction of a page — what it is for and how it differs from
+    neighbouring pages. The five Text fields (scope, readerOutcome, learningObjective,
+    exclusion, supportingPoint) state that direction. They are not a draft of the page,
+    not a section outline, and not a refined semantic specification.
+
+    Keep each field short and directional. Name the topic, the takeaway, the lesson,
+    the bound, or the supporting idea — enough for later sectors to know where the
+    page is heading. Do not enumerate source Blocks, formulate renderer-ready purpose,
+    split claims into multiple owned instances, or write handbook prose.
+
+    Refinement is the job of DocSetStructuringStage
+    (org.blockml.bml.bmldocs.a02_structuring.task.A02_02_UpdatePageSkeletons): that
+    task maps these fields onto Page aggregations and tightens them against bound
+    authoritative sources.
+  </documentation>
+  <references>
+    <see type="rule:ContentRule" relation="Extends">
+      Documentation content-rule branch.
+    </see>
+    <see type="dplan:PagePlan" relation="Requires">
+      Planned page whose Text fields this rule constrains.
+    </see>
+  </references>
+  <properties>
+    <name override="true">
+      <value>PagePlan direction only</value>
+    </name>
+    <summary override="true">
+      <value>Keep PagePlan fields directional and coarse; leave refinement to structuring.</value>
+    </summary>
+    <instructions override="true">
+      <value>Write PagePlan.scope, readerOutcome, learningObjective, exclusion, and
+supportingPoint as short directional statements. Each field must say where the page
+is heading, not how it will later be specified or rendered. Prefer a concise topic
+list or one short sentence per field. Do not list source FQNs, do not outline
+sections, do not author owned Scope / ReaderOutcome / LearningObjective /
+Exclusion / SupportingPoint instances, and do not write finished purpose or body
+prose. If a field starts to enumerate details, examples, or source-level claims,
+cut it back to the planning direction. Leave tightening against authoritative
+sources to A02_02_UpdatePageSkeletons.</value>
+    </instructions>
+  </properties>
+</lrule:PagePlanDirectionRule>

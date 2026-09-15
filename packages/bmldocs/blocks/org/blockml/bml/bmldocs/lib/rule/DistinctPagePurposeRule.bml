@@ -3,50 +3,60 @@
   FQN: org.blockml.bml.bmldocs.lib.rule.DistinctPagePurposeRule-->
 <lrule:DistinctPagePurposeRule xmlns="http://blockml.org/bml"
   xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule">
+  xmlns:rule="org.blockml.bml.docgen.rule"
+  xmlns:dplan="org.blockml.bml.docgen.plan"
+  xmlns:dcore="org.blockml.bml.docgen.core">
 
   <baseType>
     rule:ContentRule
   </baseType>
   <is>
-    A content rule requiring every planned Page to have a distinct purpose
+    A content rule requiring every page to have a distinct responsibility in the DocSet
   </is>
   <documentation>
-    Defines how the purposes of planned Pages relate to one another.
-    
-    Every planned Page must have a purpose that is clearly distinguishable from every other
-    Page in the same DocSet. A Page should have a unique responsibility within the overall
-    documentation rather than duplicating or only slightly rephrasing the purpose of another
-    Page.
-    
-    Closely related concepts may build upon one another, but each Page must contribute a
-    unique perspective, learning objective, or responsibility. When two planned Pages would
-    largely communicate the same purpose, they should either be merged into a single Page or
-    their responsibilities should be refined until the distinction is clear.
-    
-    The purpose of a Page should therefore describe its unique role within the learning path,
-    not merely the topic it mentions.
+    Defines how pages relate to one another so no two share essentially the same job.
+
+    During planning, distinctness is judged on PagePlan fields: each page needs a
+    distinct primary scope and a clearly different learningObjective (or readerOutcome
+    where that is the stronger distinguisher). Do not create two PagePlans that only
+    rephrase the same topical extent.
+
+    During structuring, distinctness is judged on Page.purpose: each concrete page's
+    formulated purpose must remain distinguishable from every other page in the DocSet.
+
+    Closely related concepts may span multiple pages when each contributes a unique
+    perspective or lesson. If two pages would largely communicate the same
+    responsibility, merge them or refine until the distinction is clear.
   </documentation>
   <references>
     <see type="rule:ContentRule" relation="Extends">
       Documentation content-rule branch.
     </see>
+    <see type="dplan:PagePlan" relation="Requires">
+      Planning fields used to judge distinctness in DocSetPlanningStage.
+    </see>
+    <see type="dcore:Page" relation="Requires">
+      Concrete purpose used to judge distinctness in DocSetStructuringStage.
+    </see>
+    <see type="lrule:PagePlanDirectionRule" relation="SeeAlso">
+      Planning altitude — distinctness still required at that coarse level.
+    </see>
   </references>
   <properties>
     <name override="true">
-      <value>Distinct page purposes</value>
+      <value>Distinct page responsibilities</value>
     </name>
     <summary override="true">
-      <value>Ensure that every planned Page fulfills a unique purpose within the DocSet.</value>
+      <value>Ensure every page has a unique responsibility — via plan fields or Page.purpose.</value>
     </summary>
     <instructions override="true">
-      <value>Define the purpose of every planned Page so that it has a clear and unique
-responsibility within the DocSet. Compare each Page purpose with the purposes of all
-other planned Pages and avoid unnecessary overlap or duplication. Closely related
-concepts may span multiple Pages only when each Page contributes a distinct learning
-objective or role. If two planned Pages serve essentially the same purpose, either
-merge them or redefine their purposes until each Page has a clearly distinguishable
-responsibility.</value>
+      <value>When planning, give each PagePlan a distinct primary scope and a clearly different
+learningObjective (or readerOutcome when that better marks the split). Do not create
+two plans that only rephrase the same topic. When structuring, formulate each
+Page.purpose so it remains distinguishable from every other page in the DocSet.
+Closely related concepts may span multiple pages only when each page contributes a
+unique lesson or role. If two pages serve essentially the same responsibility, merge
+them or refine until the distinction is clear.</value>
     </instructions>
   </properties>
 </lrule:DistinctPagePurposeRule>

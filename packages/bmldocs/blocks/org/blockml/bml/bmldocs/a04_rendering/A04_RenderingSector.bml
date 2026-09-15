@@ -17,7 +17,9 @@
   </isNot>
   <documentation>
     Fourth generation step: render the pages. This Block designates
-    `org.blockml.bml.bmldocs.a04_rendering` as a sector.
+    `org.blockml.bml.bmldocs.a04_rendering` as a sector. Task
+    A04_01_RenderPages turns authored A03 pages into the target
+    manifestation.
   </documentation>
   <references>
     <see type="workflow:Sector" relation="Extends">

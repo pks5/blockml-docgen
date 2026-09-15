@@ -190,9 +190,6 @@
         <lrule:StablePageIdentityRule />
         <lrule:ClearPagePurposeRule />
         <lrule:DistinctPagePurposeRule />
-        <lrule:RespectScopeRule />
-        <lrule:RespectExclusionsRule />
-        <lrule:MatchDetailLevelRule />
         <lrule:NoSourceDumpRule />
       </composition>
     </rules>

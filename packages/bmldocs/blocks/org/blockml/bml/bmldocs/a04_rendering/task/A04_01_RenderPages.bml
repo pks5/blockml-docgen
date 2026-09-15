@@ -1,0 +1,127 @@
+<!--BlockML Documentation — render A03 pages into the target manifestation
+  FQN: org.blockml.bml.bmldocs.a04_rendering.task.A04_01_RenderPages-->
+<task:A04_01_RenderPages xmlns="http://blockml.org/bml"
+  xmlns:task="org.blockml.bml.bmldocs.a04_rendering.task"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:source="org.blockml.bml.bmldocs.lib.source"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    workflow:InstructionTask
+  </baseType>
+  <is>
+    A task that renders A03 pages into the target manifestation
+  </is>
+  <documentation>
+    A04 rendering task: turn each authored A03 DocPage into the published
+    manifestation (prose, filled examples, code listings, presentation).
+
+    - **Input** — live A03 DocSet and pages from A03_02_AuthorPages
+      (semantic scaffold: purpose, message, roles, scopes, sources)
+    - **Output** — target manifestation for each page; do not redesign
+      page structure or invent pages absent from BmlDocSet_A03
+    - **Style** — CompleteSentenceRule and CodeStyleRule apply here
+    - **Sources** — authorativeSources is BlockMLSourceSet; page- and
+      element-level sets from A03 remain the content ceiling
+  </documentation>
+  <properties>
+    <instructions type="type:Text" override="true">
+      <value>
+        <![CDATA[
+          Render the published form of every A03 page. Sector 4 produces
+          finished explanatory prose, filled examples, and code listings
+          from the A03 semantic scaffold. Do not redesign DocPage.content
+          structure, invent pages, or edit A01 / A02 / A03 BML as the
+          source of truth for structure.
+
+          1. Read the authored A03 pages
+          Read org.blockml.bml.bmldocs.a03_authoring.data.BmlDocSet_A03.
+          Walk BmlDocSet_A03.pages in listed order. For each DocPage,
+          inspect purpose, title, detailLevel, pageType, page-level
+          authoritativeSources / scopes / readerOutcomes /
+          learningObjectives / exclusions / supportingPoints, and the
+          content tree (Section, Paragraph, List, CodeBlock, Navigation,
+          and their message / role / weight / element semantics).
+
+          Those fields are the specification. Render from them. Do not
+          invent claims outside page and element scopes. Do not dump
+          sources. Element authoritativeSources remain subsets of the
+          page set.
+
+          2. Open authoritative sources
+          Resolve this task's authorativeSources TypeSelectors (scan type
+          for each selector on org.blockml.bml.bmldocs.lib.source.BlockMLSourceSet).
+          For each Block named by a page or element source set, inspect
+          is, documentation, and references before writing prose or code.
+          Domain claims in the manifestation may come only from those
+          bound Blocks (and A03 pages for Navigation targets).
+
+          3. Render within the authored structure
+          Follow DocPage.content order. Elaborate each ContentElement
+          into finished reader-facing text (or code) according to its
+          purpose, message, role, detailLevel, weight, supportingPoints,
+          exclusions, and authoritativeSources.
+
+          - Respect Scope and Exclusion as hard bounds
+          - Match DetailLevel: omit internal FQNs, diagnostics, and
+            implementation notes at Introductory / Overview levels
+          - Prefer concept before implementation in the rendered flow
+          - One primary message per element — do not smuggle a second
+            topic into the same paragraph
+          - After every code listing, render the explanatory follow-up
+            the scaffold requires (CodeExplanationRule)
+          - Generate CodeBlock listings as complete Blocks with a
+            highlight comment (CodeExampleRule); omit nothing the
+            message and supportingPoints require
+          - Fill section depth so the subject is understandable
+            (SectionCompletenessRule) without filler or repetition
+            (AvoidContentRepetitionRule)
+          - Use vocabulary appropriate to the declared Audience when
+            audiences are set (AudienceVocabularyRule)
+          - Prose uses complete sentences (CompleteSentenceRule)
+          - Code presentation: preformatted, highlighted, read-only,
+            with copy control (CodeStyleRule)
+          - Index / Navigation pages: render the menu; do not invent
+            conceptual body
+
+          Do not independently add, remove, or reorder Sections to satisfy
+          taste. If the scaffold is insufficient, report the gap; do not
+          silently redesign A03.
+
+          4. Emit the target manifestation
+          Produce the configured target form for each page (for example
+          HTML, JSON, or another registered render target). Keep page
+          identity stable (same logical page as the A03 FQN / pageKey).
+          Export or publish artifacts only as the active render pipeline
+          requires. Do not remove A03 catalog entries.
+        ]]>
+      </value>
+    </instructions>
+  </properties>
+  <aggregations>
+    <rules override="true">
+      <composition>
+        <lrule:RespectScopeRule />
+        <lrule:RespectExclusionsRule />
+        <lrule:MatchDetailLevelRule />
+        <lrule:ConceptBeforeImplementationRule />
+        <lrule:NoSourceDumpRule />
+        <lrule:NoUnrequestedDiagnosticsRule />
+        <lrule:OnePrimaryMessageRule />
+        <lrule:SectionCompletenessRule />
+        <lrule:AvoidContentRepetitionRule />
+        <lrule:CodeExampleRule />
+        <lrule:CodeExplanationRule />
+        <lrule:AudienceVocabularyRule />
+        <lrule:CompleteSentenceRule />
+        <lrule:CodeStyleRule />
+      </composition>
+    </rules>
+    <authorativeSources override="true">
+      <composition>
+        <source:BlockMLSourceSet />
+      </composition>
+    </authorativeSources>
+  </aggregations>
+</task:A04_01_RenderPages>

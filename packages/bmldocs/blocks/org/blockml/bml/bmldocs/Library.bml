@@ -23,6 +23,7 @@
   xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.pagegroup"
   xmlns:a03task="org.blockml.bml.bmldocs.a03_authoring.task"
   xmlns:a04_rendering="org.blockml.bml.bmldocs.a04_rendering"
+  xmlns:a04task="org.blockml.bml.bmldocs.a04_rendering.task"
   xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:source="org.blockml.bml.bmldocs.lib.source"
   xmlns:program="org.blockml.bml.bmldocs.program"
@@ -86,17 +87,29 @@
         <bmldocs:README />
         <adata:BmlDocSet_A03 />
         <pdata:BmlDocSetPlan />
+        <lrule:AppropriatePageGranularityRule />
+        <lrule:AudienceVocabularyRule />
+        <lrule:AvoidContentRepetitionRule />
+        <lrule:ClearPagePurposeRule />
+        <lrule:CodeExampleRule />
+        <lrule:CodeExplanationRule />
         <lrule:CodeStyleRule />
         <lrule:CompleteSentenceRule />
-        <lrule:OnePrimaryMessageRule />
-        <lrule:RespectScopeRule />
-        <lrule:RespectExclusionsRule />
+        <lrule:CompleteTopicCoverageRule />
+        <lrule:ConceptBeforeImplementationRule />
+        <lrule:DistinctPagePurposeRule />
+        <lrule:MatchDetailLevelRule />
+        <lrule:NoFragmentedEnumerationRule />
         <lrule:NoSourceDumpRule />
         <lrule:NoUnrequestedDiagnosticsRule />
-        <lrule:MatchDetailLevelRule />
-        <lrule:ConceptBeforeImplementationRule />
-        <lrule:NoFragmentedEnumerationRule />
-        <lrule:AudienceVocabularyRule />
+        <lrule:OnePrimaryMessageRule />
+        <lrule:PagePlanDirectionRule />
+        <lrule:PageSectionCountRule />
+        <lrule:ProgressivePageOrderRule />
+        <lrule:RespectExclusionsRule />
+        <lrule:RespectScopeRule />
+        <lrule:SectionCompletenessRule />
+        <lrule:StablePageIdentityRule />
         <page:TableOfContents />
         <page:Intro />
         <page:FirstBlock />
@@ -138,6 +151,7 @@
         <task:A02_03_UpdatePageGroups />
         <a03task:A03_01_CopyData />
         <a03task:A03_02_AuthorPages />
+        <a04task:A04_01_RenderPages />
         <a02data:BmlDocSet_A02 />
         <a02pgroup:RootPageGroup />
         <a02pgroup:DocsPageGroup />
@@ -180,7 +194,11 @@
         <a03_authoring:A03_AuthoringSector />
         <a04_rendering:A04_RenderingSector />
         <bmldocs:BmlDocsSectorModel />
+        <program:BuildA01 />
         <program:BuildA02 />
+        <program:BuildA03 />
+        <program:BuildA04 />
+        <program:BuildAll />
       </composition>
     </blocks>
   </aggregations>

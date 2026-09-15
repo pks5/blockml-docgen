@@ -3,37 +3,40 @@
   FQN: org.blockml.bml.bmldocs.lib.rule.StablePageIdentityRule-->
 <lrule:StablePageIdentityRule xmlns="http://blockml.org/bml"
   xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
-  xmlns:rule="org.blockml.bml.docgen.rule">
+  xmlns:rule="org.blockml.bml.docgen.rule"
+  xmlns:dplan="org.blockml.bml.docgen.plan"
+  xmlns:dcore="org.blockml.bml.docgen.core">
 
   <baseType>
     rule:StructureRule
   </baseType>
   <is>
-    A structure rule requiring existing planned Pages to retain stable identity unless their conceptual role changes
+    A structure rule requiring page identity to stay stable unless the conceptual role changes
   </is>
   <documentation>
-    Defines how Page identity should be preserved when an existing DocSetPlan is updated.
-    
-    A planned Page that continues to represent the same conceptual Page should retain its
-    existing relative name. The PagePlan.name should not be changed merely
-    because wording, ordering, scopes, detail level, or supporting content evolves.
-    
-    Identity should change only when the Page itself has conceptually changed enough that it
-    should be treated as a different Page. Examples include replacing the Page with a different
-    responsibility, splitting one Page into multiple independent Pages, merging several Pages
-    into a new Page, or intentionally relocating the Page as part of a meaningful navigation
-    redesign.
-    
-    When refining an existing plan, prefer updating the Page’s scopes and surrounding plan
-    information while preserving its name. This allows DocSetStructuringStage to recognize and
-    reuse the corresponding existing Page instead of unnecessarily creating a replacement.
-    
-    Do not preserve identity when doing so would incorrectly imply that a fundamentally new Page
-    is the continuation of an old one.
+    Defines how page identity is preserved across planning and structuring updates.
+
+    Planning: a PagePlan that still represents the same conceptual page retains its
+    relative PagePlan.name. Do not rename merely because wording, ordering, scopes,
+    or supporting fields evolve.
+
+    Structuring: the concrete Page keeps the same FQN / file path derived from
+    PagePlan.name (a02 page package + name). When regenerating a skeleton, overwrite
+    content in place — do not invent a replacement Block for the same conceptual page.
+
+    Identity changes only when the page is conceptually replaced, split, merged, or
+    intentionally relocated as a different page. Prefer stable names so later sectors
+    can recognize and update the same Blocks.
   </documentation>
   <references>
     <see type="rule:StructureRule" relation="Extends">
       Documentation structure-rule branch.
+    </see>
+    <see type="dplan:PagePlan" relation="Requires">
+      Relative name preserved during plan updates.
+    </see>
+    <see type="dcore:Page" relation="Requires">
+      Concrete page FQN preserved when regenerating skeletons.
     </see>
   </references>
   <properties>
@@ -41,17 +44,15 @@
       <value>Stable page identity</value>
     </name>
     <summary override="true">
-      <value>Preserve the identity of existing planned Pages unless their conceptual role has
-fundamentally changed.</value>
+      <value>Preserve PagePlan.name and the derived Page FQN unless the conceptual role changed.</value>
     </summary>
     <instructions override="true">
-      <value>When updating an existing DocSetPlan, preserve the relative PagePlan.name
-of every Page that still represents the same conceptual Page. Do not
-assign a new name merely because scopes are refined, position changes, or later content is
-expected to change. Change the name only when the Page has been replaced by a
-fundamentally different responsibility, intentionally split or merged, or otherwise
-transformed into a genuinely different Page. Prefer stable names so DocSetStructuringStage
-can recognize and update existing Pages instead of creating unnecessary replacements.</value>
+      <value>When updating a DocSetPlan, preserve PagePlan.name for every page that still
+represents the same conceptual page. When regenerating page skeletons, keep the same
+FQN / file path and overwrite that Block — do not create a replacement under a new
+name for the same role. Change identity only when the page is replaced, split, merged,
+or intentionally relocated as a different page. Do not rename merely because scopes,
+wording, order, or later content evolve.</value>
     </instructions>
   </properties>
 </lrule:StablePageIdentityRule>

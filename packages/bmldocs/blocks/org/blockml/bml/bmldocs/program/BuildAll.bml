@@ -65,6 +65,11 @@
             <a03_task:A03_02_AuthorPages />
           </task>
         </workflow:AgenticOperation>
+        <workflow:AgenticOperation name="Render A03 pages" status="Pending" captureOutput="true">
+          <task>
+            <a04_task:A04_01_RenderPages />
+          </task>
+        </workflow:AgenticOperation>
       </composition>
     </operations>
   </aggregations>
