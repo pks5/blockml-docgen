@@ -1,14 +1,14 @@
 <!--Workspace program — BuildA02
-  FQN: org.blockml.bml.bmldocs._meta.transform.running.T00009_BuildA02_20260916T002156-->
-<running:T00009_BuildA02_20260916T002156 xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs._meta.transform.succeeded.T00009_BuildA02_20260916T002156-->
+<succeeded:T00009_BuildA02_20260916T002156 xmlns="http://blockml.org/bml"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type"
   xmlns:program="org.blockml.bml.bmldocs.program"
   xmlns:a02_task="org.blockml.bml.bmldocs.a02_structuring.task"
-  xmlns:running="org.blockml.bml.bmldocs._meta.transform.running">
+  xmlns:succeeded="org.blockml.bml.bmldocs._meta.transform.succeeded">
 
   <baseType>
-    workflow:ModelTransformation(running:T00009_BuildA02_20260916T002156.Parameters, type:Text)
+    workflow:ModelTransformation(succeeded:T00009_BuildA02_20260916T002156.Parameters, type:Text)
   </baseType>
   <is>
     A pending ModelTransformation that builds the A02 structuring data
@@ -18,7 +18,7 @@
       <value>A transformation that creates the A02 DocSet, page skeletons, and page groups.</value>
     </description>
     <status override="true" type="workflow:ExecutionStatus">
-      <value>Running</value>
+      <value>Succeeded</value>
     </status>
     <createdAt override="true" type="type:DateTime">
       <value>2026-09-06T00:00:00</value>
@@ -38,6 +38,12 @@
     <baseCommit override="true" type="type:Text">
       <value>97e6c6d9cb0b98bf6c518f400e5d9829ae1a01bb</value>
     </baseCommit>
+    <completedAt override="true" type="type:DateTime">
+      <value>2026-09-16T00:49:52</value>
+    </completedAt>
+    <duration override="true" type="type:Duration">
+      <value>PT27M56.331S</value>
+    </duration>
   </properties>
   <aggregations>
     <operations override="true">
@@ -98,8 +104,7 @@ Validated: fixed one self-introduced error along the way (a literal `\${ }` in a
 4. **Registered on `BmlDocSet_A02`** — added `pageGroups` (all 9, plan order) and set `rootPageGroup` to `a02pgroup:RootPageGroup`.
 5. **Catalog** — in `Library.bml`, corrected the pre-existing stale `a02pgroup:*` exports (`CoreIdeasPageGroup`, `TypesPageGroup`, `BehaviourPageGroup`, `LibrariesPageGroup`, `AuthoringPageGroup`, `DeeperTopicsPageGroup`, `HowToPageGroup` — leftover names from an earlier plan revision, never matching a real Block) to the 9 actual A02 group names; `RootPageGroup`/`DocsPageGroup`/`GettingStartedPageGroup` already matched and needed no change. Did not touch the unrelated stale `docs:*` page catalog entries (out of scope — owned by A02_02/its own plan mismatch) or any other sector's entries.
 
-Validated: fixed all 10 pre-existing `a02pgroup:*` unknown-type errors; same 6 remaining error-bearing blocks as baseline (unrelated stale `docs:*` page catalog entries and 5 historical transform logs), same 9 warnings, only 3 new style recommendations (markdown/CDATA suggestions on the new prose) — no new errors introduced. Left the working tree uncommitted for the `transform apply` tooling, per the established `transform(operation-start)` → `transform(operation)` pattern.
-</output>
+Validated: fixed all 10 pre-existing `a02pgroup:*` unknown-type errors; same 6 remaining error-bearing blocks as baseline (unrelated stale `docs:*` page catalog entries and 5 historical transform logs), same 9 warnings, only 3 new style recommendations (markdown/CDATA suggestions on the new prose) — no new errors introduced. Left the working tree uncommitted for the `transform apply` tooling, per the established `transform(operation-start)` → `transform(operation)` pattern.</output>
           <completedAt>2026-09-16T00:49:51</completedAt>
           <task>
             <a02_task:A02_03_UpdatePageGroups />
@@ -123,4 +128,4 @@ Validated: fixed all 10 pre-existing `a02pgroup:*` unknown-type errors; same 6 r
       </is>
     </Parameters>
   </subBlocks>
-</running:T00009_BuildA02_20260916T002156>
+</succeeded:T00009_BuildA02_20260916T002156>
