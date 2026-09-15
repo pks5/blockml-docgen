@@ -8,31 +8,33 @@
   xmlns:workflow="org.blockml.bml.transformer.workflow">
 
   <baseType>
-    workflow:InstructionTask
+    workflow:InstructionRule
   </baseType>
   <is>
     A documentation-generation rule
   </is>
   <documentation>
-    Named rule that guides how documentation is authored or generated. name identifies the rule;
-    summary states its intent briefly; instruction holds the actionable directive for authors and
-    generators. appliesToStages lists the ManifestationStages this rule targets — for example
-    authoring .bml sources versus rendering published forms. Concrete specializations live in
-    org.blockml.bml.docgen.rule (StructureRule, ContentRule, SourceRule, TerminologyRule,
-    LearningRule, StyleRule, QualityRule).
+    Named rule that guides how documentation is authored or generated. Extends
+    workflow:InstructionRule so instances may be composed into Task.rules and applied
+    during Task.run. name identifies the rule; summary states its intent briefly;
+    instructions holds the actionable directive for authors and generators. Concrete
+    specializations live in org.blockml.bml.docgen.rule (StructureRule, ContentRule,
+    SourceRule, TerminologyRule, LearningRule, StyleRule, QualityRule). Assign each
+    concrete rule to the Tasks of the manifestation phase where it constrains the work
+    (planning, structuring, authoring, or rendering).
   </documentation>
   <abstract>
     true
   </abstract>
   <references>
-    <see type="dcore:DocElement" relation="Extends">
-      Semantic base for all docgen domain Blocks (except Library / README).
+    <see type="workflow:InstructionRule" relation="Extends">
+      Workflow rule branch — apply() follows instructions during Task.run.
     </see>
     <see type="dcore:DocSet" relation="SeeAlso">
       DocSet that may own or apply rules.
     </see>
-    <see type="dcore:ManifestationStage" relation="Requires">
-      Stages this rule applies to via appliesToStages.
+    <see type="dcore:ManifestationStage" relation="SeeAlso">
+      Manifestation phases whose Tasks should compose the rules that apply there.
     </see>
     <see type="rule:StructureRule" relation="SeeAlso">
       Structural organization requirements.

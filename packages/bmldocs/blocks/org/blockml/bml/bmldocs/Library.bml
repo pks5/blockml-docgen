@@ -25,6 +25,7 @@
   xmlns:a04_rendering="org.blockml.bml.bmldocs.a04_rendering"
   xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:source="org.blockml.bml.bmldocs.lib.source"
+  xmlns:program="org.blockml.bml.bmldocs.program"
   xmlns:core="org.blockml.bml.core"
   xmlns:docgen="org.blockml.bml.docgen"
   xmlns:type="org.blockml.bml.type">
@@ -179,6 +180,7 @@
         <a03_authoring:A03_AuthoringSector />
         <a04_rendering:A04_RenderingSector />
         <bmldocs:BmlDocsSectorModel />
+        <program:BuildA02 />
       </composition>
     </blocks>
   </aggregations>

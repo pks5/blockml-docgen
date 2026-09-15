@@ -4,6 +4,7 @@
   xmlns:task="org.blockml.bml.bmldocs.a03_authoring.task"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:source="org.blockml.bml.bmldocs.lib.source"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:type="org.blockml.bml.type">
 
   <baseType>
@@ -195,6 +196,23 @@
     </instructions>
   </properties>
   <aggregations>
+    <rules override="true">
+      <composition>
+        <lrule:PageSectionCountRule />
+        <lrule:OnePrimaryMessageRule />
+        <lrule:RespectScopeRule />
+        <lrule:RespectExclusionsRule />
+        <lrule:MatchDetailLevelRule />
+        <lrule:ConceptBeforeImplementationRule />
+        <lrule:NoFragmentedEnumerationRule />
+        <lrule:NoSourceDumpRule />
+        <lrule:NoUnrequestedDiagnosticsRule />
+        <lrule:SectionCompletenessRule />
+        <lrule:CodeExampleRule />
+        <lrule:CodeExplanationRule />
+        <lrule:AudienceVocabularyRule />
+      </composition>
+    </rules>
     <authorativeSources override="true">
       <composition>
         <source:BlockMLSourceSet />

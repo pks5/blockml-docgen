@@ -4,6 +4,7 @@
   xmlns:task="org.blockml.bml.bmldocs.a01_planning.task"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:source="org.blockml.bml.bmldocs.lib.source"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:type="org.blockml.bml.type">
 
   <baseType>
@@ -353,6 +354,16 @@ The result should enable a developer who is new to BlockML to build a coherent m
     </instructions>
   </properties>
   <aggregations>
+    <rules override="true">
+      <composition>
+        <lrule:AppropriatePageGranularityRule />
+        <lrule:ProgressivePageOrderRule />
+        <lrule:StablePageIdentityRule />
+        <lrule:ClearPagePurposeRule />
+        <lrule:DistinctPagePurposeRule />
+        <lrule:CompleteTopicCoverageRule />
+      </composition>
+    </rules>
     <topLevelGroups type="type:TextEntity[]">
       <documentation>
         Coarse top-level documentation areas. Each entry becomes the

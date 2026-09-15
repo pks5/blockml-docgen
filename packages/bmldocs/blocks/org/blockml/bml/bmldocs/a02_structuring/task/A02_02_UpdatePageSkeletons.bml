@@ -4,6 +4,7 @@
   xmlns:task="org.blockml.bml.bmldocs.a02_structuring.task"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:source="org.blockml.bml.bmldocs.lib.source"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:type="org.blockml.bml.type">
 
   <baseType>
@@ -184,6 +185,17 @@
     </instructions>
   </properties>
   <aggregations>
+    <rules override="true">
+      <composition>
+        <lrule:StablePageIdentityRule />
+        <lrule:ClearPagePurposeRule />
+        <lrule:DistinctPagePurposeRule />
+        <lrule:RespectScopeRule />
+        <lrule:RespectExclusionsRule />
+        <lrule:MatchDetailLevelRule />
+        <lrule:NoSourceDumpRule />
+      </composition>
+    </rules>
     <authorativeSources override="true">
       <composition>
         <source:BlockMLSourceSet />
