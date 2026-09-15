@@ -1,14 +1,14 @@
 <!--Workspace program — BuildA03
-  FQN: org.blockml.bml.bmldocs._meta.transform.running.T00010_BuildA03_20260916T010225-->
-<running:T00010_BuildA03_20260916T010225 xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs._meta.transform.succeeded.T00010_BuildA03_20260916T010225-->
+<succeeded:T00010_BuildA03_20260916T010225 xmlns="http://blockml.org/bml"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type"
   xmlns:program="org.blockml.bml.bmldocs.program"
   xmlns:a03_task="org.blockml.bml.bmldocs.a03_authoring.task"
-  xmlns:running="org.blockml.bml.bmldocs._meta.transform.running">
+  xmlns:succeeded="org.blockml.bml.bmldocs._meta.transform.succeeded">
 
   <baseType>
-    workflow:ModelTransformation(running:T00010_BuildA03_20260916T010225.Parameters, type:Text)
+    workflow:ModelTransformation(succeeded:T00010_BuildA03_20260916T010225.Parameters, type:Text)
   </baseType>
   <is>
     A pending ModelTransformation that creates skeletons for all planned pages.
@@ -18,7 +18,7 @@
       <value>A transformation that creates skeletons for all planned pages.</value>
     </description>
     <status override="true" type="workflow:ExecutionStatus">
-      <value>Running</value>
+      <value>Succeeded</value>
     </status>
     <createdAt override="true" type="type:DateTime">
       <value>2026-09-06T00:00:00</value>
@@ -38,6 +38,12 @@
     <baseCommit override="true" type="type:Text">
       <value>774ef3de30cb31816e94321e9ad9cca94f1419e3</value>
     </baseCommit>
+    <completedAt override="true" type="type:DateTime">
+      <value>2026-09-16T01:26:53</value>
+    </completedAt>
+    <duration override="true" type="type:Duration">
+      <value>PT24M28.19S</value>
+    </duration>
   </properties>
   <aggregations>
     <operations override="true">
@@ -79,8 +85,7 @@ What was done:
 - No A02 data, other sectors, or `Library.bml` were touched; the catalog export A03_01 already performed still covers all 35 pages.
 - `npx blockml validate --all` shows the same 6 pre-existing error-blocks that existed before this task (stale a02 catalog entries and archived transform history) — zero new errors, warnings, or issues in any of the 35 authored files.
 
-This work was split across one page I authored directly (TableOfContents, Introduction, CoreUseCases) and six parallel background agents covering the remaining 32 pages by page group, each independently validated clean.
-</output>
+This work was split across one page I authored directly (TableOfContents, Introduction, CoreUseCases) and six parallel background agents covering the remaining 32 pages by page group, each independently validated clean.</output>
           <completedAt>2026-09-16T01:26:52</completedAt>
           <task>
             <a03_task:A03_02_AuthorPages />
@@ -136,4 +141,4 @@ This work was split across one page I authored directly (TableOfContents, Introd
       </is>
     </Parameters>
   </subBlocks>
-</running:T00010_BuildA03_20260916T010225>
+</succeeded:T00010_BuildA03_20260916T010225>
