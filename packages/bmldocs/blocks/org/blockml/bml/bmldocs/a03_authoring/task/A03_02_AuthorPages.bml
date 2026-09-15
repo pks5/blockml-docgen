@@ -14,19 +14,23 @@
   </is>
   <documentation>
     A03 authoring task: enrich every page imported by A03_01_CopyData with
-    the semantic scaffold that A04 will render. This task does not copy
+    a content scaffold that A04 will render. This task does not copy
     or delete A03 data.
 
     - **Import** — A03_01_CopyData already wiped A03 data and imported the
       full A02 data tree with packages and names remapped
     - **Identity** — title, purpose, detailLevel, pageType, is stay on
       the imported A03 page
+    - **Page semantics** — keep the page-level authoritativeSources,
+      scopes, readerOutcomes, learningObjectives, exclusions, and
+      supportingPoints from A02_02_UpdatePageSkeletons; refine them only
+      when the bound sources justify a tighter wording
+    - **Content** — author DocPage.content as Sections and ContentElements
+      that refine page semantics at element level — each element carries
+      subsets of the page's sources and semantic claims
     - **Links** — see / source / Navigation targets may name only A03
       Blocks or lib Blocks from authorativeSources; never a Block from
       another sector
-    - **Semantics** — author learningObjectives, readerOutcomes, scopes,
-      exclusions, authoritativeSources, and content as a specification
-      of what to show, not as finished rendered prose
     - **Template** — org.blockml.bml.bmldocs.a03_authoring.example.PageExample_A03
       is the structural pattern only, not a domain-content source
     - **Sources** — authorativeSources is BlockMLSourceSet, the same set as
@@ -36,7 +40,7 @@
     <instructions type="type:Text" override="true">
       <value>
         <![CDATA[
-          Author the semantic structure that specifies what each imported
+          Author the content scaffold that specifies what each imported
           A03 page must show. Sector 3 writes specification, not the
           finished site. Sector 4 (A04_RenderingSector) renders prose,
           examples, and code from that specification.
@@ -51,25 +55,42 @@
 
           Use org.blockml.bml.bmldocs.a03_authoring.example.PageExample_A03
           only as a structural template (member shape, content roles,
-          how sources bind to annotations). Do not copy its domain claims
-          onto other pages. Keep the imported page identity (is, isNot,
-          title, purpose, detailLevel, pageType, lib see-links). Existing
-          semantic scaffold on an imported page is never authoritative:
-          discard learningObjectives, readerOutcomes, scopes, exclusions,
-          page-level authoritativeSources, and content, then regenerate
-          them. Keep the FQN / file path so the same Block is updated.
+          how page and element semantics bind to sources). Do not copy
+          its domain claims onto other pages.
+
+          Keep the imported page identity (is, isNot, title, purpose,
+          detailLevel, pageType, lib see-links). Keep the page-level
+          semantic scaffold from A02_02_UpdatePageSkeletons:
+          authoritativeSources, scopes, readerOutcomes, learningObjectives,
+          exclusions, and supportingPoints. Those fields are the starting
+          point for structuring content — do not discard and regenerate
+          them from scratch. Refine a page-level instance only when the
+          bound sources justify tighter wording; do not contradict or
+          broaden what A02 already established.
+
+          Discard only DocPage.content. Regenerate content from the kept
+          page semantics, purpose, and see links. Keep the FQN / file path
+          so the same Block is updated.
 
           1. Read the imported A03 pages
           Read org.blockml.bml.bmldocs.a03_authoring.data.BmlDocSet_A03.
           Walk BmlDocSet_A03.pages in listed order. For each listed A03
           DocPage, inspect is, isNot, documentation, references/see, title,
-          purpose, detailLevel, and pageType. Those identity fields stay.
+          purpose, detailLevel, pageType, authoritativeSources, scopes,
+          readerOutcomes, learningObjectives, exclusions, and
+          supportingPoints. Identity and page-level semantics stay.
           Also note BmlDocSet_A03.homePage and, on each A03 PageGroup,
           pages and landingPage — this task does not rebuild those slots.
 
+          Resolve the page source set from Page.authoritativeSources
+          (AuthorativeSourceSet.includedTypes). Every lib FQN bound at
+          page level is the ceiling for this page. Element-level sources
+          must be subsets of that set — never introduce a lib Block the
+          page set does not already cover.
+
           2. Open the authoritative sources
           Resolve this task's authorativeSources TypeSelectors (scan type
-          for each selector on org.blockml.bml.bmldocs.lib.source.BlockMLSourceSet).
+          for each selector on org.blockml.bml.bml.bmldocs.lib.source.BlockMLSourceSet).
           That set is the same whitelist as A02_02_UpdatePageSkeletons:
           org.blockml.bml.constraint.**, org.blockml.bml.core.**,
           org.blockml.bml.definition.**, org.blockml.bml.documentation.**,
@@ -81,9 +102,10 @@
           org.blockml.bml.validation.**.
 
           Those lib Blocks are the only non-A03 Blocks an A03 page may
-          reference (see, authoritativeSources, annotation sources). Never
-          link a Block from another sector (a01, a02, a04, or any later
-          sector). Never keep an A02 page or PageGroup FQN on an A03 page.
+          reference (see, page authoritativeSources, element
+          authoritativeSources, annotation sources). Never link a Block
+          from another sector (a01, a02, a04, or any later sector). Never
+          keep an A02 page or PageGroup FQN on an A03 page.
           org.blockml.bml.bmldocs.lib.** (for example BlockMLSourceSet and
           lib rules) may also be referenced. Docgen types
           (org.blockml.bml.docgen.**) may appear as structural see-links
@@ -92,54 +114,76 @@
           For each candidate source, inspect is, documentation, and
           references — do not guess from the FQN alone.
 
-          3. Bind sources and author the semantic specification
-          For each A03 page, start from the imported purpose, title, and
-          see links. From the Blocks allowed by step 2, select the SSOT
-          Blocks that actually cover that purpose. Those selected Blocks
-          are the page's authoritative sources. Every content page must
-          have at least one Requires see-link to a lib SSOT Block. If
-          several match, Requires = primary SSOT; SeeAlso = supporting
-          background. Do not attach a source that does not serve the
-          purpose.
+          3. Author content that refines page semantics at element level
+          For each A03 page, start from the imported purpose, title, see
+          links, and the kept page-level semantics. The page aggregations
+          define what the page must cover overall; content distributes
+          and sharpens those claims across Sections and ContentElements.
 
-          Then enrich the page after the pattern of PageExample_A03.
-          Inspect that example, then inspect the DocPage / ContentElement /
-          semantic types. Each authored page must:
+          Inspect PageExample_A03, then inspect DocPage, Section,
+          ContentElement, and org.blockml.bml.docgen.semantic.* for member
+          shape. Section carries heading, purpose, and nested content.
+          ContentElement carries purpose, message, role, detailLevel,
+          weight, and the five semantic aggregations plus
+          authoritativeSources (TypeReferenceEntity links to lib Blocks).
 
-          - declare page-level authoritativeSources as an
-            AuthorativeSourceSet whose includedTypes are the bound lib
-            SSOT FQNs (not sector FQNs)
-          - author learningObjectives, readerOutcomes, scopes, and
-            exclusions as owned semantic instances (summary + optional
-            authoritativeSources / reason), grounded in the bound sources
-            and the imported purpose — not copied from PageExample_A03
-          - author content as an ordered semantic scaffold: Section
-            (heading + purpose + nested content) and ContentElements
-            (Paragraph, List, ListItem, CodeBlock, Navigation as needed)
+          Distribution rule — page semantics → element semantics:
+          - Every page-level scope, readerOutcome, learningObjective,
+            exclusion, and supportingPoint must be reflected somewhere
+            in the content tree — on a Section purpose, a ContentElement
+            message, or as owned semantic instances on that element.
+          - Split when it helps structure: five page scopes may become
+            five elements each carrying one refined Scope instance whose
+            summary narrows that page scope to what this element treats.
+            One page readerOutcome may split across several Paragraphs;
+            several page supportingPoints may merge onto one List.
+          - Element semantics are refinements, not copies: summary and
+            message state the element-local claim; they must stay within
+            the parent page instance they refine. Do not introduce topics,
+            outcomes, or sources the page semantics do not already cover.
+          - Element authoritativeSources are subsets of the page set:
+            TypeReferenceEntity links to lib FQNs already listed in the
+            page AuthorativeSourceSet. Pick the Blocks that ground this
+            element's claim — not necessarily all page sources on every
+            element. Semantic-instance authoritativeSources on elements
+            tighten further when a SupportingPoint or Scope names a
+            narrower claim.
+
+          Author content as an ordered semantic scaffold:
+          - Section (heading + purpose + nested content) for thematic
+            groupings aligned with page scopes or learning objectives
+          - ContentElements (Paragraph, List, ListItem, CodeBlock,
+            Navigation as needed) for the claims within each section
           - on each ContentElement set purpose, message, role
             (org.blockml.bml.docgen.role.*), detailLevel
             (org.blockml.bml.docgen.level.*), and weight
             (org.blockml.bml.docgen.weight.*)
-          - attach supportingPoints and exclusions on elements when they
-            sharpen the claim; bind their authoritativeSources to lib
-            Blocks from step 2
+          - attach scopes, readerOutcomes, learningObjectives,
+            supportingPoints, and exclusions on ContentElements when they
+            sharpen the element's claim; omit an aggregation when the
+            element inherits the claim implicitly from its Section purpose
+            alone and a duplicate instance would add no precision
           - omit CodeBlock.code — A04 generates the listing from message,
             supportingPoints, exclusions, and authoritativeSources
           - omit finished reader-facing article prose, HTML, and filled
             example bodies; message states the claim to convey, purpose
             states why the element exists for the renderer
-          - for pageType Index (for example TableOfContents): author a
-            Navigation tree whose NavigationItem targets are A03 pages
-            only (from BmlDocSet_A03 and the A03 PageGroups). Do not
-            invent conceptual body on an Index page
-          - NavigationItem.target and any in-page continuation link may
-            name only A03 pages listed on BmlDocSet_A03
-          - never list an A02, A01, or A04 Block in see,
-            authoritativeSources, annotation sources, or Navigation
 
-          The result is a page that specifies exactly which ideas,
-          sections, roles, and sources A04 must manifest — not the
-          manifested page itself.
+          Index / menu pages (pageType Index, for example TableOfContents):
+          keep the imported page semantics. Author DocPage.content as a
+          Navigation tree whose NavigationItem targets are A03 pages only
+          (from BmlDocSet_A03 and the A03 PageGroups). Do not invent
+          conceptual body on an Index page. NavigationItem.target and any
+          in-page continuation link may name only A03 pages listed on
+          BmlDocSet_A03.
+
+          Never list an A02, A01, or A04 Block in see,
+          authoritativeSources, annotation sources, or Navigation.
+
+          The result is a page whose kept page-level semantics are
+          decomposed into a content tree that specifies exactly which
+          ideas, sections, roles, and source subsets A04 must manifest —
+          not the manifested page itself.
 
           4. Export A03 pages from the catalog
           Export each A03 page authored here from

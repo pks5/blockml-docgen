@@ -15,8 +15,14 @@
   <documentation>
     A02 structuring task: PagePlan.scope names the topic only.
 
-    - **Sources** — read authorativeSources and select the SSOT Blocks that
-      cover each page's scope
+    - **Sources** — read this task's authorativeSources and select the SSOT
+      Blocks that cover each page's scope. Write a page-local
+      authoritativeSources set that tightens that task set — never copy
+      BlockMLSourceSet wholesale
+    - **Planning fields** — map PagePlan.scope, readerOutcome,
+      learningObjective, exclusion, and supportingPoint onto the page
+      aggregations scopes, readerOutcomes, learningObjectives, exclusions,
+      and supportingPoints. Refine each from the plan and the bound sources
     - **Skeleton** — write a formulated purpose plus see links to those sources
     - **Overwrite** — an existing skeleton is replaced; its content is never
       used as input
@@ -26,31 +32,57 @@
     <instructions type="type:Text" override="true">
       <value>
         <![CDATA[
-          PagePlan carries name plus planning fields. scope is what the page
-          covers — not a purpose, title, or outline. readerOutcome,
+          PagePlan carries name plus five Text planning fields. scope is what
+          the page covers — not a purpose, title, or outline. readerOutcome,
           learningObjective, exclusion, and supportingPoint refine the
-          intent. Structuring must open the authoritative sources, choose
-          the SSOT Blocks that cover scope, and write a formulated purpose
+          intent. Structuring must open this task's authorativeSources, choose
+          the SSOT Blocks that cover scope, write a page-local source set that
+          tightens the task set, map the five planning fields onto Page
+          aggregations (refined, not copied), and write a formulated purpose
           from what those Blocks actually say.
 
           1. Read the plan
           Read org.blockml.bml.bmldocs.a01_planning.data.BmlDocSetPlan. Walk every nested
-          PagePlan under rootPageGroupPlan. Ignore PageGroupPlan entries.
+          PagePlan under rootPageGroupPlan. Ignore PageGroupPlan entries. For each
+          PagePlan collect name plus the five Text fields: scope, readerOutcome,
+          learningObjective, exclusion, supportingPoint. BmlDocSetPlan has no
+          authoritativeSources; sources come from this task.
 
           2. Open the authoritative sources before writing a page
           Resolve this task's authorativeSources TypeSelectors (scan type for each
-          selector). Also read BmlDocSetPlan.authoritativeSources (the core Library and
-          the Blocks it owns). For each candidate, inspect is, documentation, and
-          references — do not guess from the FQN or from scope alone.
+          selector on org.blockml.bml.bmldocs.lib.source.BlockMLSourceSet). That
+          set is the whitelist this task may draw domain content from. For each
+          candidate, inspect is, documentation, and references — do not guess
+          from the FQN or from scope alone.
 
-          3. Bind sources to scope
-          For each PagePlan, select the source Blocks whose documented subject matches
-          that page's scope. Those selected Blocks are the page's authoritative
-          sources. Every page must have at least one Requires source. If several
-          sources match, Requires = primary SSOT for the scope; SeeAlso = supporting
+          3. Bind sources to scope and write a page-local source set
+          For each PagePlan, select the source Blocks whose documented subject
+          matches that page's scope. Those selected Blocks are the page's
+          authoritative sources. Every content page must have at least one
+          Requires source from the whitelist. If several sources match,
+          Requires = primary SSOT for the scope; SeeAlso = supporting
           background. Do not attach a source that does not serve the scope.
 
-          4. Formulate the skeleton from the bound sources
+          Do not copy this task's authorativeSources onto the page. Do not
+          compose source:BlockMLSourceSet on the page, and do not reuse its
+          package-wildcard includedTypes (org.blockml.bml.core.** and siblings).
+          Create an individual workflow:AuthorativeSourceSet for that page
+          whose includedTypes are a tightening of the task set: exact
+          TypeSelectors (FQNs) of the bound SSOT Blocks only. Every selector
+          must match the task whitelist and none of its blacklist. Two pages
+          share the same includedTypes only when their scopes actually bind
+          the same Blocks. Structural templates (docgen page elements, sector
+          Blocks) may appear as see-links; they must not appear in
+          includedTypes.
+
+          Write that set on Page.authoritativeSources as owned
+          AuthorativeSourceSet instances (override="true", composition), not
+          as a type reference to BlockMLSourceSet. Index / menu pages still
+          get a page-local set; if no whitelist Block covers that page's
+          scope, includedTypes may be empty, but see-links to structural
+          templates remain.
+
+          4. Formulate the skeleton from the plan and the bound sources
           The a02 subpackages data, page, and pagegroup
           (org.blockml.bml.bmldocs.a02_structuring.data,
           org.blockml.bml.bmldocs.a02_structuring.data.page,
@@ -71,13 +103,45 @@
           and regenerate the file from the plan and the bound authoritative sources.
           Existing skeleton content is never authoritative: do not treat it as true,
           and do not use it as input for generation (not is, documentation, purpose,
-          title, see links, or any other field). Keep only the FQN / file path so
-          the same Block is overwritten. Do not invent pages that are not in the plan.
+          title, see links, authoritativeSources, semantic aggregations, or any
+          other field). Keep only the FQN / file path so the same Block is
+          overwritten. Do not invent pages that are not in the plan.
 
           Write purpose as a finished renderer instruction: why this page exists and
           what it must accomplish, grounded in the bound sources (their is /
           documentation / claims). Do not copy scope into purpose and do not leave
           purpose as a topic list.
+
+          Map the five PagePlan Text properties onto Page aggregations as owned
+          semantic instances. Inspect org.blockml.bml.docgen.core.Page,
+          org.blockml.bml.docgen.core.SemanticAnnotation, and
+          org.blockml.bml.docgen.semantic.* for member shape. Inspect
+          org.blockml.bml.bmldocs.a03_authoring.example.PageExample_A03 only
+          for how page-level authoritativeSources and the five semantic lists
+          are filled — never copy its domain claims or its content tree.
+
+          Each planning field becomes one or more owned instances. summary is a
+          refined formulation of the plan text, grounded in what the bound
+          sources actually say — not a verbatim copy of the PagePlan attribute.
+          Split into several instances when the plan text contains distinct
+          claims. Tighten wording against the bound sources (names, distinctions,
+          bounds those Blocks actually document). Do not invent claims the plan
+          and sources do not support. Do not drop a planning field that the
+          PagePlan set. Index / menu pages still get all five aggregations.
+
+          Mapping (PagePlan Text property → Page aggregation / instance type):
+          - scope → scopes (org.blockml.bml.docgen.semantic.Scope)
+          - readerOutcome → readerOutcomes (org.blockml.bml.docgen.semantic.ReaderOutcome)
+          - learningObjective → learningObjectives (org.blockml.bml.docgen.semantic.LearningObjective)
+          - exclusion → exclusions (org.blockml.bml.docgen.semantic.Exclusion);
+            set reason when the plan or bound sources explain why the topic
+            is omitted
+          - supportingPoint → supportingPoints (org.blockml.bml.docgen.semantic.SupportingPoint)
+
+          On each semantic instance, authoritativeSources may further tighten
+          the page set to the Blocks that ground that claim. Do not expand
+          beyond the page set. Omit LearningObjective.priority and
+          prerequisites unless the plan clearly implies them.
 
           Each skeleton must:
           - use baseType org.blockml.bml.docgen.page.DocPage
@@ -88,8 +152,11 @@
           - override title, purpose, detailLevel (org.blockml.bml.docgen.level.*),
             and pageType (org.blockml.bml.docgen.pagetype.*) from the bound sources
           - list each bound source as references/see (Requires or SeeAlso)
-          - omit every aggregation, including DocPage.content and Page.rules /
-            authoritativeSources / audiences / semantic lists. Do not author
+          - fill authoritativeSources with the page-local AuthorativeSourceSet
+            from step 3
+          - fill scopes, readerOutcomes, learningObjectives, exclusions, and
+            supportingPoints from the PagePlan fields as refined in this step
+          - omit DocPage.content and Page.rules / audiences. Do not author
             sections, paragraphs, or other page body
           - omit docset
 
