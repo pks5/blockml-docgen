@@ -91,5 +91,113 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <content override="true">
+      <composition>
+        <dpage:Section heading="One member model, four kinds" purpose="State the shared premise before listing the four member kinds">
+          <content>
+            <dpage:Paragraph purpose="Introduce members as the four ways a Block declares structure and behaviour">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A Block declares everything about its structure and behaviour through exactly four
+kinds of members — Properties, Aggregations, Associations, and Capabilities — each
+with its own distinct purpose.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="The four member kinds" purpose="Give the four member kinds a name and a one-line description each">
+          <content>
+            <dpage:List purpose="List the four member kinds with a brief description of each">
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Every declared member belongs to exactly one of these four kinds.</message>
+              <items>
+                <dpage:ListItem text="Property" purpose="Describe Property as a typed value member">
+                  <message>A Property holds a single scalar or structured value.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Aggregation" purpose="Describe Aggregation as an owned collection member">
+                  <message>An Aggregation owns a collection of child Block instances.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Association" purpose="Describe Association as a non-owning link member">
+                  <message>An Association points to another Block instance without owning it.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Capability" purpose="Describe Capability as a behaviour member">
+                  <message>A Capability defines behaviour the Block exposes or performs.</message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Choosing the right kind for what you need" purpose="Help the reader map a modelling need onto one of the four member kinds">
+          <content>
+            <dpage:Paragraph purpose="Explain how to pick a member kind based on what the member must do">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>The right member kind follows from what the member needs to do: hold a value, own
+child instances, point to another instance without owning it, or expose behaviour.</message>
+              <readerOutcomes>
+                <sem:ReaderOutcome>
+                  <summary>The reader can match a modelling need to the correct one of the four member kinds.</summary>
+                </sem:ReaderOutcome>
+              </readerOutcomes>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="One shared authoring pattern" purpose="Show that all four member kinds are declared the same way">
+          <content>
+            <dpage:Paragraph purpose="Explain the shared new-versus-override declaration pattern common to all four kinds">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>All four member kinds are declared the same way: either as a new member, or as a
+deliberate override of one already inherited, following one shared base member model.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>All four member kinds share the same declared-member authoring pattern under MemberDefinition.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.definition.MemberDefinition" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Deeper treatment on its own page" purpose="Foreshadow that each member kind is taught in depth next, without duplicating that depth here">
+          <content>
+            <dpage:Paragraph purpose="Tell the reader that each kind gets its own following page">
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Each of these four kinds gets its own following page, going deeper into how it is
+declared and used.</message>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Depth on any one member kind.</summary>
+                  <reason>Each kind is taught on its own page next.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Continue with Properties" purpose="Direct the reader to the first member kind">
+          <content>
+            <dpage:Navigation purpose="Continue from the member overview into the first member kind">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Properties" summary="Learn Property as a scalar or structured value member.">
+                  <target>docs:Properties</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:Members>

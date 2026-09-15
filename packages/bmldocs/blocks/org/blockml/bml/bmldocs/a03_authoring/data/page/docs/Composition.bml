@@ -91,5 +91,133 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <content override="true">
+      <composition>
+        <!--1. Lead-->
+        <dpage:Section heading="Filling an aggregation" purpose="Introduce Composition as the mechanism that fills an Aggregation">
+          <content>
+            <dpage:Paragraph purpose="State what Composition is for in one sentence">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Composition is how a Block definition fills an Aggregation member with
+concrete child Block instances.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Composition must always be nested inside an aggregation member — a standalone composition element is invalid.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompositionModel" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--2. Definitions vs instances-->
+        <dpage:Section heading="Composition on definitions, no wrapper on instances" purpose="Contrast how a definition fills an aggregation with how an instance fills one">
+          <content>
+            <dpage:Paragraph purpose="Explain where composition is written on a Block definition">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>On a Block definition, a composition element is nested inside the aggregation
+member it fills, and it may only appear there — never standing alone.</message>
+              <authoritativeSources>
+                <doc:CompositionModel />
+              </authoritativeSources>
+            </dpage:Paragraph>
+            <dpage:Paragraph purpose="Explain why instances never repeat the composition wrapper">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>On a Block instance, an aggregation is filled directly by opening its member
+name, with no composition wrapper and no default aggregation — bare child
+instances placed directly under a parent instance are not valid.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Every aggregation on an instance must be opened by its member name before children are listed.</summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--3. What a composition child is-->
+        <dpage:Section heading="Composition children are Block instances" purpose="Explain the identity a composed child carries">
+          <content>
+            <dpage:Paragraph purpose="Explain that composition children are ordinary Block instances with their own identity">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Each child inside a composition is a Block instance identified by its type,
+optionally given a local identity, and filled with its own member values and
+nested aggregations.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Composition nests recursively: any Block instance may itself open further aggregations wherever instances appear.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompositionModel" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--4. Declaring the aggregation itself-->
+        <dpage:Section heading="Declaring the aggregation an instance goes into" purpose="Connect Composition back to the Aggregation member it fills">
+          <content>
+            <dpage:Paragraph purpose="Explain what an Aggregation member declares before it can be filled">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>An Aggregation member declares the payload type its children must satisfy, and
+its optional composition template fills that member on the Block definition
+where it is declared.</message>
+              <authoritativeSources>
+                <def:AggregationDefinition />
+              </authoritativeSources>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>A new aggregation declaration states its payload type; an inherited aggregation may be refilled without restating an identical type.</summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--5. Recap-->
+        <dpage:Section heading="What to remember about Composition" purpose="Anchor the outcome before moving to nested Block definitions">
+          <content>
+            <dpage:Paragraph purpose="State the outcome readers should retain about filling aggregations">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Filling an aggregation correctly means nesting composition inside the member on
+the definition, and opening the member by name directly on an instance —
+never the other way around.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with nested Block definitions" purpose="Direct the reader to Sub-Blocks">
+          <content>
+            <dpage:Navigation purpose="Continue from composing aggregations into nested Block definitions">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Sub-Blocks" summary="Learn how a Block definition can nest further Block definitions inside it.">
+                  <target>docs:SubBlocks</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:Composition>

@@ -92,5 +92,122 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <content override="true">
+      <composition>
+        <dpage:Section heading="Four sibling kinds under ValueType" purpose="Give readers an immediate orientation to the type system's shape">
+          <content>
+            <dpage:Paragraph purpose="Introduce the four ValueType kinds in one statement">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>BlockML's type system defines four sibling kinds of ValueType — PrimitiveType, StructType,
+EnumType, and ConstantType — each naming a distinct kind of semantic meaning that a Property
+or Capability type can carry.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>The four kinds sit side by side under ValueType rather than forming a chain of increasingly specific types.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeSystemOverview" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Every one of the four kinds only describes value semantics — none of them stores a concrete value itself.</summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Four ways to shape a value" purpose="Give each kind a one-line identity readers can recall">
+          <content>
+            <dpage:Paragraph purpose="Prepare the reader for the following summary list">
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Each kind shapes a value differently: an atomic scalar, a set of named fields, a closed
+set of named values, or a single fixed literal.</message>
+            </dpage:Paragraph>
+            <dpage:List purpose="Present the four kinds as a concise, recallable summary">
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>These four kinds cover every shape a value can take in BlockML.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeSystemOverview" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+              <items>
+                <dpage:ListItem text="PrimitiveType" purpose="Identify the atomic scalar kind">
+                  <message>Describes atomic scalar semantics with no internal structure, such as a whole
+number or a piece of text.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="StructType" purpose="Identify the composite named-field kind">
+                  <message>Describes a composite value built from named fields, each field itself typed.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="EnumType" purpose="Identify the closed named-value kind">
+                  <message>Describes a closed, finite set of named values that a Property may hold.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="ConstantType" purpose="Identify the single-literal kind">
+                  <message>Describes a single, fixed literal value, typically used as one alternative in a union.</message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="How the kinds relate to Blocks and members" purpose="Connect the four kinds to the wider Property and type model">
+          <content>
+            <dpage:Paragraph purpose="State the type-versus-Property relationship for all four kinds">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A Property or Capability type must always be one of these four ValueType kinds; the type
+describes what a value may look like, while the value itself always lives on the owning
+Property, never on the type.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>The type describes the nature of a value; the Property is what actually holds that value.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeSystemOverview" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Classifying a type you encounter" purpose="Give the reader a self-check before moving to a single kind">
+          <content>
+            <dpage:Paragraph purpose="State the recognition outcome this page should leave behind">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Given any type name, a reader should be able to ask which of the four sibling kinds it
+belongs to before asking anything more specific about that kind.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Continue with Primitive Types" purpose="Direct the reader to the first kind in depth">
+          <content>
+            <dpage:Navigation purpose="Continue from the overview into the first sibling kind">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Primitive Types" summary="Go deeper on the atomic scalar kind, the first of the four ValueType kinds.">
+                  <target>docs:PrimitiveTypes</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:TypeSystem>

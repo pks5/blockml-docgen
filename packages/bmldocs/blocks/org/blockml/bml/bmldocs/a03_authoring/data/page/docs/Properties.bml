@@ -91,5 +91,132 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <content override="true">
+      <composition>
+        <dpage:Section heading="What a Property is" purpose="Introduce Property as the member that carries a single value">
+          <content>
+            <dpage:Paragraph purpose="Introduce Property as a scalar or structured value member">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A Property is a Block member that carries a single scalar or structured value — the
+piece of data a Block holds, as opposed to owned children or behaviour.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Declaring a typed Property with a default value" purpose="Explain the concept of a Property declaration, then show a minimal example">
+          <content>
+            <dpage:Paragraph purpose="Explain that declaring a Property means naming its type and optionally a default">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Declaring a Property means naming the kind of value it holds and, optionally, giving
+it a default so that instances need not always supply one.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>A Property's default value lives in the value field of its declaration — never as an instance-side wrapper.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.definition.PropertyDefinition" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+            <dpage:CodeBlock purpose="Illustrate a minimal typed Property declaration with a default value">
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>A Property declaration names its type and may supply a default value directly on
+that same declaration.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Show the type and the default value together on one Property declaration.</summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Suggestions, constraints, and other optional declaration fields.</summary>
+                  <reason>Those are separate member-behaviour topics with their own pages.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:CodeBlock>
+            <dpage:Paragraph purpose="Interpret the declared type and default value shown in the example">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>In the example, the declared type names the kind of value the Property holds, and the
+default value is what an instance receives when it sets nothing itself.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Definition value versus instance payload" purpose="Distinguish the declaration's default value field from how an instance actually carries a Property">
+          <content>
+            <dpage:Paragraph purpose="Explain that a Property declaration's default and an instance's payload are two different things">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>The default value on a Property declaration and the value an instance carries are two
+different things: the declaration's default lives in its own value field, while an
+instance supplies the Property directly, as an attribute or as the member element's
+own content.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>An instance never wraps its Property payload in a value element — that wrapper belongs to the declaration only.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.MemberAuthoring" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <readerOutcomes>
+                <sem:ReaderOutcome>
+                  <summary>The reader can tell the definition-side default value field apart from the instance-side Property payload.</summary>
+                </sem:ReaderOutcome>
+              </readerOutcomes>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Every Property is optional" purpose="Explain that a Property either has a value or has none, with no separate null state">
+          <content>
+            <dpage:Paragraph purpose="State that a Property always behaves as optional">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>A Property always behaves as optional: it either holds a value or holds none at
+all — there is no separate null state to consider.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Inherited Properties and refining a default" purpose="Give a first, light look at refining an inherited Property's default value">
+          <content>
+            <dpage:Paragraph purpose="Explain that an inherited Property's default can be refined in a child Block">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>A Property inherited from a base Block can be refined in a child Block by
+redeclaring it and supplying a new default value.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Continue with Aggregations" purpose="Direct the reader to the next member kind">
+          <content>
+            <dpage:Navigation purpose="Continue from Property into the owned-collection member kind">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Aggregations" summary="Learn Aggregation as an owned collection filled by composition.">
+                  <target>docs:Aggregations</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:Properties>

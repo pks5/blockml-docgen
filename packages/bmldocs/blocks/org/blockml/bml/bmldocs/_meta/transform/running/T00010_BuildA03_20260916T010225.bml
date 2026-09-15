@@ -64,12 +64,64 @@ No A02 files were touched. Changes are unstaged (`Library.bml` modified, `a03_au
             <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/" />
           </changedFiles>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Author A03 pages" status="Running" captureOutput="true">
+        <workflow:AgenticOperation name="Author A03 pages" status="Succeeded" captureOutput="true">
           <startedAt>2026-09-16T01:08:42</startedAt>
           <baseCommit>bf46403ce5f1445bb07a7e6da3d3670458c9924d</baseCommit>
+          <output>**A03_02_AuthorPages is complete.**
+
+All 35 A03 DocPages (the full BlockML Core handbook: Getting Started → Foundations → Type System → Members → Behaviour &amp; Values → Composition &amp; Structure → BML Format, plus the TableOfContents index) now have an authored `content` scaffold — Sections and ContentElements with `message`/`role`/`detailLevel`/`weight` and semantic (SupportingPoint/Scope/Exclusion) grounding, following the `PageExample_A03` structural template.
+
+What was done:
+- Kept every page's existing identity (title, purpose, detailLevel, pageType) and page-level semantic scaffold (authoritativeSources, scopes, readerOutcomes, learningObjectives, exclusions, supportingPoints) untouched — only added `content` as directed.
+- Each concept page got ~4–5 substantive Sections plus a closing Navigation section chaining to the next page in reading order; the TableOfContents page got a Navigation tree grouped by page group; the final page (BmlNamespaces) links back to the menu instead of &quot;next.&quot;
+- Content was synthesized from each page's own bound lib sources (`org.blockml.bml.documentation.*`, `core.*`, `type.*`, etc.), respecting the nine composed rules (section count, one message per element, scope/exclusion boundaries, detail-level matching, concept-before-implementation, no fragmented enumeration, no source dumps, no unrequested diagnostics).
+- `CodeBlock.code` and `Paragraph.content` were deliberately left empty — that's A04's job.
+- No A02 data, other sectors, or `Library.bml` were touched; the catalog export A03_01 already performed still covers all 35 pages.
+- `npx blockml validate --all` shows the same 6 pre-existing error-blocks that existed before this task (stale a02 catalog entries and archived transform history) — zero new errors, warnings, or issues in any of the 35 authored files.
+
+This work was split across one page I authored directly (TableOfContents, Introduction, CoreUseCases) and six parallel background agents covering the remaining 32 pages by page group, each independently validated clean.
+</output>
+          <completedAt>2026-09-16T01:26:52</completedAt>
           <task>
             <a03_task:A03_02_AuthorPages />
           </task>
+          <changedFiles>
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/Aggregations.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/Associations.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/BlockDefinitionsAndInstances.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/Blocks.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/Bml.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/BmlNamespaces.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/Capabilities.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/Composition.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/Constraints.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/Contracts.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/CoreUseCases.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/DocumentingBlocks.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/EmbeddedBlocks.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/EnumTypes.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/EverythingIsABlockPage.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/Expressions.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/GenericTypes.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/IdentifiersAndReferences.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/Inheritance.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/Introduction.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/MemberInheritanceAndOverrides.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/Members.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/MultiplicityAndCollections.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/NamespacesAndFullyQualifiedNames.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/PrimitiveEntities.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/PrimitiveTypes.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/Properties.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/StructTypes.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/SubBlocks.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/Suggestions.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/TableOfContents.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/TypeSystem.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/TypesAndValues.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/ValueConfiguration.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/Visibility.bml" />
+          </changedFiles>
         </workflow:AgenticOperation>
       </composition>
     </operations>

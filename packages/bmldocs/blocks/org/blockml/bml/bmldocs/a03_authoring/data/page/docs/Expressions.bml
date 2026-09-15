@@ -95,5 +95,156 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <content override="true">
+      <composition>
+        <!--1. Lead-->
+        <dpage:Section heading="Expressions as dynamic member values" purpose="Introduce expressions as the mechanism for computed member values">
+          <content>
+            <dpage:Paragraph purpose="State what an expression is and why it exists">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>An expression is a small piece of syntax inside dollar-brace delimiters
+that lets a member's value be computed or derived instead of written as a fixed
+literal.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>An expression can appear on any member value that needs to be dynamic, computed, or bound rather than fixed.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.Expressions" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--2. What it can reference-->
+        <dpage:Section heading="What an expression can reference" purpose="Explain the additions an expression makes over a plain literal value">
+          <content>
+            <dpage:Paragraph purpose="Explain property references and built-in calls">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Beyond ordinary literal values, an expression can refer to another member
+of the same Block instance by name, or call a built-in utility such as the math
+service to compute a result.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>A call to a built-in or custom capability can pass its arguments either by position or by name, following the same declared order used elsewhere in BlockML.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.mapping.FunctionMapping" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>Built-in numeric utilities such as minimum, maximum, and rounding are available directly inside an expression.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.service.Math" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--3. Evaluation context-->
+        <dpage:Section heading="Evaluation context" purpose="Explain what an expression resolves against">
+          <content>
+            <dpage:Paragraph purpose="Explain that an expression resolves against its owning instance">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>An expression is always evaluated against the Block instance that owns
+it, so a property reference always resolves within that same instance rather than
+reaching into a parent or sibling.</message>
+              <authoritativeSources>
+                <doc:Expressions />
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--4. Interpolation-->
+        <dpage:Section heading="Interpolation inside text" purpose="Explain interpolation as a distinct case from a whole expression value">
+          <content>
+            <dpage:Paragraph purpose="Introduce interpolation holes inside text values">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A text value may also weave one or more restricted expression holes into
+ordinary running text, and BlockML treats that case as interpolation rather than as
+a single whole expression value.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Text properties may hold restricted expression holes as interpolation, distinct from a whole dollar-brace expression value.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.Expressions" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+            <dpage:Paragraph purpose="Explain that interpolation only allows a limited subset of the language">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Because an interpolation hole sits inside ordinary text, it allows only a
+limited subset of the expression language — enough to reference a value and combine
+it with surrounding words.</message>
+              <authoritativeSources>
+                <doc:Expressions />
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--5. Recap-->
+        <dpage:Section heading="Recognizing an expression at a glance" purpose="Give the reader a quick way to classify a member value">
+          <content>
+            <dpage:List purpose="Summarize the three ways a member value can appear">
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Every member value falls into one of these three cases.</message>
+              <items>
+                <dpage:ListItem text="Whole expression" purpose="Recap the whole-value expression case">
+                  <message>Dollar braces wrap the member's entire value.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Interpolated text" purpose="Recap the interpolation case">
+                  <message>Dollar-brace holes sit inside a longer text value.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Plain literal" purpose="Recap the plain literal case">
+                  <message>No dollar braces appear at all, and the value is a fixed literal.</message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+          </content>
+        </dpage:Section>
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with value configuration" purpose="Direct the reader to the next page">
+          <content>
+            <dpage:Navigation purpose="Continue from expressions into ValueType instance configuration">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Value Configuration" summary="Learn curly-brace configuration of a Property's owned type instance.">
+                  <target>docs:ValueConfiguration</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:Expressions>

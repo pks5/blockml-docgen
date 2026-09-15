@@ -91,5 +91,109 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <content override="true">
+      <composition>
+        <!--1. Lead-->
+        <dpage:Section heading="A full document, inlined" purpose="Introduce an embedded Block as a virtual document with its own identity">
+          <content>
+            <dpage:Paragraph purpose="State what an embedded Block is in one sentence">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>An embedded Block is a full Block document inlined under a root Block's
+embeddedBlocks, keeping its own independent fully qualified identity rather
+than extending the root's identity prefix.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>An embedded Block's FQN is resolve(type), not nested under the root's FQN, and embedding is allowed only at the document root.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.SubBlockModel" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--2. Full-document shape-->
+        <dpage:Section heading="Authored like any Block document" purpose="Explain that an embedded Block follows the same authoring shape as a root Block">
+          <content>
+            <dpage:Paragraph purpose="Explain that an embedded Block carries its own complete identity and members">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>An embedded Block is authored the same way as the document root, with its own
+required, fully qualified type, and it may declare Sub-Blocks and generic
+type parameters like any other Block.</message>
+              <authoritativeSources>
+                <def:EmbeddedBlockDefinition />
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--3. Where embedding is allowed-->
+        <dpage:Section heading="Embedding only at the document root" purpose="Explain the root-only placement rule for embeddedBlocks">
+          <content>
+            <dpage:Paragraph purpose="Explain that only the document root may hold embedded Blocks">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Only the document root owns embeddedBlocks; an embedded Block must not declare
+further embeddedBlocks of its own, so embedding does not nest.</message>
+              <authoritativeSources>
+                <doc:SubBlockModel />
+              </authoritativeSources>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Several embedded Blocks may be listed flat at the root of one document to compose a larger unit.</summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--4. Scope within the document-->
+        <dpage:Section heading="Where an embedded Block is visible" purpose="Explain the document-local shadowing behavior of embedded Blocks">
+          <content>
+            <dpage:Paragraph purpose="Explain that an embedded Block is only visible inside its own document">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Within its own document, an embedded Block's identity takes precedence over a
+library or file definition sharing that identity, but the embedded Block
+itself stays invisible outside that document.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--5. Recap-->
+        <dpage:Section heading="What to remember about embedded Blocks" purpose="Anchor the outcome and the distinction from a Sub-Block">
+          <content>
+            <dpage:Paragraph purpose="State the outcome readers should retain about authoring an embedded Block">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>An embedded Block reads like an ordinary Block document keeping its own
+identity, which is what distinguishes it from a Sub-Block, whose identity
+instead extends its parent's.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with documenting Blocks" purpose="Direct the reader to the Block documentation model">
+          <content>
+            <dpage:Navigation purpose="Continue from nested and embedded Block shapes into documenting a Block">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Documenting Blocks" summary="Learn how a Block definition carries its own documentation model.">
+                  <target>docs:DocumentingBlocks</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:EmbeddedBlocks>

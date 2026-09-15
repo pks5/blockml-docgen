@@ -94,5 +94,127 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <content override="true">
+      <composition>
+        <!--1. Lead-->
+        <dpage:Section heading="A definition is like a class; an instance is like an object" purpose="Give an immediate orientation to the definition-versus-instance distinction">
+          <content>
+            <dpage:Paragraph purpose="State the class/object analogy in one sentence">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A Block definition describes a concept the way a class describes a kind of
+thing; a Block instance is one concrete occurrence of that concept, the way an
+object is one concrete occurrence of a class.</message>
+              <authoritativeSources>
+                <doc:BlockAndInstance />
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--2. The definition-->
+        <dpage:Section heading="The Block definition" purpose="Explain what a Block definition declares">
+          <content>
+            <dpage:Paragraph purpose="Explain the role of a Block definition document">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A Block definition is a document that declares a concept's shape: its
+identity, and the members it offers, without yet holding any concrete
+values.</message>
+              <authoritativeSources>
+                <def:BlockDefinition />
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--3. The instance-->
+        <dpage:Section heading="The Block instance" purpose="Explain what a Block instance is">
+          <content>
+            <dpage:Paragraph purpose="Explain the role of a Block instance">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A Block instance is one concrete occurrence of a defined concept, appearing
+where a model is being configured, carrying its own identity and its own
+concrete member values.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>An instance is one concrete occurrence of a Block, distinct from the document that defines that Block's shape.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--4. Semantic analogy, not a mandate-->
+        <dpage:Section heading="A semantic analogy, not a runtime mandate" purpose="Qualify the class/object analogy so it is not overread">
+          <content>
+            <dpage:Paragraph purpose="Explain that the analogy is semantic rather than a literal runtime requirement">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>The class/object analogy orients a reader toward the right mental model, but
+it is a semantic analogy rather than a mandate that definitions and instances
+must be represented as distinct runtime object kinds.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>The class/object analogy orients readers but is a semantic analogy — the compiler may represent both as plain data.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--5. Telling them apart-->
+        <dpage:Section heading="Telling a definition from an instance" purpose="Give the reader concrete cues for distinguishing the two in BML">
+          <content>
+            <dpage:List purpose="Summarize the cues that distinguish a definition from an instance">
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>A short set of cues is usually enough to tell whether a piece of BML is
+defining a concept or configuring one.</message>
+              <items>
+                <dpage:ListItem text="Where it appears" purpose="Contrast a definition's own document with an instance nested inside another Block">
+                  <message>A definition is its own document; an instance appears nested inside another Block's content.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="What it declares" purpose="Contrast declared shape with concrete values">
+                  <message>A definition declares shape and member names; an instance supplies concrete values for those members.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Its identity" purpose="Contrast a definition's type identity with an instance's own occurrence identity">
+                  <message>A definition is identified by the type it names; an instance is identified as one particular occurrence of that type.</message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+          </content>
+        </dpage:Section>
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with inheritance" purpose="Direct the reader to the next page">
+          <content>
+            <dpage:Navigation purpose="Continue from the definition-versus-instance distinction into inheritance">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Inheritance" summary="Learn how a Block specializes another Block through baseType.">
+                  <target>docs:Inheritance</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:BlockDefinitionsAndInstances>

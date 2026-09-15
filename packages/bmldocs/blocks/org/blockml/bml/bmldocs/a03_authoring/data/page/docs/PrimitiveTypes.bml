@@ -90,5 +90,128 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <content override="true">
+      <composition>
+        <dpage:Section heading="What a PrimitiveType is" purpose="Give readers an immediate one-paragraph orientation to PrimitiveType">
+          <content>
+            <dpage:Paragraph purpose="Introduce PrimitiveType as atomic scalar semantics only">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A PrimitiveType names atomic scalar semantics, such as a whole number or a piece of
+text, and never carries a concrete value itself.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>A PrimitiveType names a semantic meaning — such as boolean truth, whole number, or text — never a concrete value.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.type.PrimitiveType" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="The built-in primitive branches" purpose="Let readers list the primitive branches grouped by meaning">
+          <content>
+            <dpage:Paragraph purpose="Prepare the reader for the following branch list">
+              <role>org.blockml.bml.docgen.role.Transition</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>The primitive branches group scalar values by the kind of meaning they carry —
+numeric, textual, temporal, or boolean.</message>
+            </dpage:Paragraph>
+            <dpage:List purpose="Summarize the built-in primitive branches readers should recognize">
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>These branches cover the primitive kinds a reader will meet most often.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeSystemOverview" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+              <items>
+                <dpage:ListItem text="Boolean" purpose="Identify the boolean branch">
+                  <message>Boolean describes truth values on its own, neither numeric nor textual.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Number" purpose="Identify the numeric branch">
+                  <message>The numeric branch covers whole numbers and decimal numbers as related primitive kinds.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Text" purpose="Identify the textual branch">
+                  <message>The textual branch covers plain text and specialized text-like values.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Date" purpose="Identify the temporal branch">
+                  <message>The temporal branch covers calendar and clock positions such as a date.</message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Values live in Properties" purpose="Explain where the concrete value actually lives">
+          <content>
+            <dpage:Paragraph purpose="State that the value belongs to the Property, never the type">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A PrimitiveType only names atomic scalar semantics; the concrete value always belongs
+to the Property that uses that type, never to the type definition itself.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Values live in Properties, never in the ValueType itself.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.type.PrimitiveType" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+            <dpage:CodeBlock purpose="Illustrate that a scalar value belongs to a Property, not to the PrimitiveType">
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>A Property declares a primitive type and carries the concrete value; the type name
+alone never carries a value.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Contrast a Property that owns a value against a bare primitive type reference that owns none.</summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:CodeBlock>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Why the distinction matters" purpose="Explain the reuse benefit of keeping semantics on the type">
+          <content>
+            <dpage:Paragraph purpose="State the practical benefit of keeping semantics on the type">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Keeping semantics on the type and values on the Property lets many different
+Properties across a model share exactly the same PrimitiveType definition.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Continue with Struct Types" purpose="Direct the reader to the next sibling kind">
+          <content>
+            <dpage:Navigation purpose="Continue from atomic scalars into composite named-field values">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Struct Types" summary="Learn the composite named-field kind, the next sibling under ValueType.">
+                  <target>docs:StructTypes</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:PrimitiveTypes>

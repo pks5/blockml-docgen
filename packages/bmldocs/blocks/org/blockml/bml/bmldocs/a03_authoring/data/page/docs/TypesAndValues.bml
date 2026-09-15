@@ -95,5 +95,109 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <content override="true">
+      <composition>
+        <dpage:Section heading="Type versus value" purpose="Give readers an immediate one-paragraph orientation to the distinction">
+          <content>
+            <dpage:Paragraph purpose="Introduce the type-versus-value distinction in one statement">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A type describes the space of possible values something may hold; an instance is the
+one concrete value actually chosen from that space, and BlockML keeps these two roles
+strictly apart.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>A type answers what kind of value is possible; an instance answers which value was actually chosen.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.core.ValueType" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Types never hold data" purpose="Explain that a ValueType only describes nature, never a value">
+          <content>
+            <dpage:Paragraph purpose="State that a ValueType only describes the nature of a value">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A ValueType only describes the nature of a value; it never stores one itself, since
+every concrete value is owned exclusively by the Property that declares that type.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>ValueTypes never store data — Properties own every concrete value.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.core.ValueType" />
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="A value or none, never null" purpose="Explain the optional-value shape every Property shares">
+          <content>
+            <dpage:Paragraph purpose="State that a Property either holds a value or holds none">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A Property either holds a value from its declared type or holds none at all, so there
+is no separate null state to account for beyond the type-versus-value distinction itself.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Every Property is Optional — a value or none, never null.</summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="One distinction, many member kinds" purpose="Show that the same separation underlies every member kind">
+          <content>
+            <dpage:Paragraph purpose="Generalize the type-versus-value separation beyond a single member kind">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>The same type-versus-value separation underlies every member kind — a Property's
+declared type, and any configuration applied to that Property's own type instance, both
+still describe nature rather than hold a value themselves.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Configuration applies to the Property's own type instance, never to the ValueType definition itself.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.ValueTypeConfiguration" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Continue with Generic Types" purpose="Direct the reader to the next page">
+          <content>
+            <dpage:Navigation purpose="Continue from the type-versus-value principle into generic type parameters">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Generic Types" summary="Learn how a type can leave part of its shape open as a generic parameter.">
+                  <target>docs:GenericTypes</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:TypesAndValues>
