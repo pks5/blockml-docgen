@@ -85,12 +85,30 @@ Validated: fixed one self-introduced error along the way (a literal `\${ }` in a
             <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/page/" />
           </changedFiles>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Update A02 page groups" status="Running" captureOutput="true">
+        <workflow:AgenticOperation name="Update A02 page groups" status="Succeeded" captureOutput="true">
           <startedAt>2026-09-16T00:44:43</startedAt>
           <baseCommit>fff5500ac50ad90b0dac0415e3c0160400535c04</baseCommit>
+          <output>This matches the pattern from the prior two operations (working tree left with changes for the `transform apply` tooling to commit). Task complete.
+
+`Task.run` on `A02_03_UpdatePageGroups` executed:
+
+1. **Plan** — read `BmlDocSetPlan.rootPageGroupPlan`: walked the full nested tree — `RootPageGroup` → `DocsPageGroup` (direct page `docs.TableOfContents`) → 7 section groups (`GettingStartedPageGroup`, `FoundationsPageGroup`, `TypeSystemPageGroup`, `MembersPageGroup`, `BehaviourAndValuesPageGroup`, `CompositionAndStructurePageGroup`, `BmlFormatPageGroup`), covering all 35 `PagePlan` entries.
+2. **Verified pages** — confirmed all 35 referenced a02 pages already exist under `a02_structuring/data/page/docs/` (created by A02_02); none missing, so no `ExecutionException`.
+3. **Wrote 9 PageGroups** under new `a02_structuring/data/pagegroup/`, each `baseType dcore:PageGroup`, with `title` from the plan, `parentGroup` set for all but `RootPageGroup`, and `pages` filled with `TypeReferenceEntity` links to that group's direct a02 pages in plan order (nested child groups are not flattened into the parent's pages).
+4. **Registered on `BmlDocSet_A02`** — added `pageGroups` (all 9, plan order) and set `rootPageGroup` to `a02pgroup:RootPageGroup`.
+5. **Catalog** — in `Library.bml`, corrected the pre-existing stale `a02pgroup:*` exports (`CoreIdeasPageGroup`, `TypesPageGroup`, `BehaviourPageGroup`, `LibrariesPageGroup`, `AuthoringPageGroup`, `DeeperTopicsPageGroup`, `HowToPageGroup` — leftover names from an earlier plan revision, never matching a real Block) to the 9 actual A02 group names; `RootPageGroup`/`DocsPageGroup`/`GettingStartedPageGroup` already matched and needed no change. Did not touch the unrelated stale `docs:*` page catalog entries (out of scope — owned by A02_02/its own plan mismatch) or any other sector's entries.
+
+Validated: fixed all 10 pre-existing `a02pgroup:*` unknown-type errors; same 6 remaining error-bearing blocks as baseline (unrelated stale `docs:*` page catalog entries and 5 historical transform logs), same 9 warnings, only 3 new style recommendations (markdown/CDATA suggestions on the new prose) — no new errors introduced. Left the working tree uncommitted for the `transform apply` tooling, per the established `transform(operation-start)` → `transform(operation)` pattern.
+</output>
+          <completedAt>2026-09-16T00:49:51</completedAt>
           <task>
             <a02_task:A02_03_UpdatePageGroups />
           </task>
+          <changedFiles>
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/Library.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/BmlDocSet_A02.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a02_structuring/data/pagegroup/" />
+          </changedFiles>
         </workflow:AgenticOperation>
       </composition>
     </operations>

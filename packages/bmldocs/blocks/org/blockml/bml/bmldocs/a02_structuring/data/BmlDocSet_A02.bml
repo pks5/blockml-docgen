@@ -6,7 +6,8 @@
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:page="org.blockml.bml.docgen.page"
   xmlns:bmlcore="org.blockml.bml.core"
-  xmlns:docs="org.blockml.bml.bmldocs.a02_structuring.data.page.docs">
+  xmlns:docs="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:a02pgroup="org.blockml.bml.bmldocs.a02_structuring.data.pagegroup">
 
   <baseType>
     dcore:DocSet
@@ -58,6 +59,9 @@ depth.</value>
     <homePage override="true">
       <value>org.blockml.bml.bmldocs.a02_structuring.data.page.docs.TableOfContents</value>
     </homePage>
+    <rootPageGroup override="true">
+      <value>a02pgroup:RootPageGroup</value>
+    </rootPageGroup>
   </properties>
   <aggregations>
     <pages override="true">
@@ -100,6 +104,17 @@ depth.</value>
       </composition>
     </pages>
     <pageGroups override="true">
+      <composition>
+        <a02pgroup:RootPageGroup />
+        <a02pgroup:DocsPageGroup />
+        <a02pgroup:GettingStartedPageGroup />
+        <a02pgroup:FoundationsPageGroup />
+        <a02pgroup:TypeSystemPageGroup />
+        <a02pgroup:MembersPageGroup />
+        <a02pgroup:BehaviourAndValuesPageGroup />
+        <a02pgroup:CompositionAndStructurePageGroup />
+        <a02pgroup:BmlFormatPageGroup />
+      </composition>
     </pageGroups>
   </aggregations>
 </a02data:BmlDocSet_A02>

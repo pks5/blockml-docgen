@@ -1,0 +1,50 @@
+<!--BlockML Documentation — Members page group
+
+  FQN: org.blockml.bml.bmldocs.a02_structuring.data.pagegroup.MembersPageGroup-->
+<a02pgroup:MembersPageGroup xmlns="http://blockml.org/bml"
+  xmlns:a02pgroup="org.blockml.bml.bmldocs.a02_structuring.data.pagegroup"
+  xmlns:docs="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
+  xmlns:dcore="org.blockml.bml.docgen.core">
+
+  <baseType>
+    dcore:PageGroup
+  </baseType>
+  <is>
+    The Members page group for the A02 documentation set
+  </is>
+  <documentation>
+    Section page group under DocsPageGroup, from BmlDocSetPlan.rootPageGroupPlan
+    (MembersPageGroup). Direct pages: Members, Properties, Aggregations, Associations,
+    Capabilities, MemberInheritanceAndOverrides, Visibility, MultiplicityAndCollections.
+  </documentation>
+  <references>
+    <see type="dcore:PageGroup" relation="Extends">
+      Docgen page group base.
+    </see>
+    <see type="a02pgroup:DocsPageGroup" relation="Requires">
+      Parent Documentation page group.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Members</value>
+    </title>
+    <parentGroup override="true">
+      <value>a02pgroup:DocsPageGroup</value>
+    </parentGroup>
+  </properties>
+  <aggregations>
+    <pages override="true">
+      <composition>
+        <docs:Members />
+        <docs:Properties />
+        <docs:Aggregations />
+        <docs:Associations />
+        <docs:Capabilities />
+        <docs:MemberInheritanceAndOverrides />
+        <docs:Visibility />
+        <docs:MultiplicityAndCollections />
+      </composition>
+    </pages>
+  </aggregations>
+</a02pgroup:MembersPageGroup>

@@ -156,13 +156,12 @@
         <a02pgroup:RootPageGroup />
         <a02pgroup:DocsPageGroup />
         <a02pgroup:GettingStartedPageGroup />
-        <a02pgroup:CoreIdeasPageGroup />
-        <a02pgroup:TypesPageGroup />
-        <a02pgroup:BehaviourPageGroup />
-        <a02pgroup:LibrariesPageGroup />
-        <a02pgroup:AuthoringPageGroup />
-        <a02pgroup:DeeperTopicsPageGroup />
-        <a02pgroup:HowToPageGroup />
+        <a02pgroup:FoundationsPageGroup />
+        <a02pgroup:TypeSystemPageGroup />
+        <a02pgroup:MembersPageGroup />
+        <a02pgroup:BehaviourAndValuesPageGroup />
+        <a02pgroup:CompositionAndStructurePageGroup />
+        <a02pgroup:BmlFormatPageGroup />
         <docs:TableOfContents />
         <docs:Introduction />
         <docs:CoreUseCases />
