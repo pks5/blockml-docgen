@@ -206,6 +206,7 @@
         <lrule:ConceptBeforeImplementationRule />
         <lrule:NoFragmentedEnumerationRule />
         <lrule:NoSourceDumpRule />
+        <lrule:CodeExampleRule />
         <lrule:NoUnrequestedDiagnosticsRule />
       </composition>
     </rules>
