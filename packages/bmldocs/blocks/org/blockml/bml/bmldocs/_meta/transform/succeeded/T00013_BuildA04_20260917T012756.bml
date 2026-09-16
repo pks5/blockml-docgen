@@ -1,14 +1,14 @@
 <!--Workspace program — BuildA04
-  FQN: org.blockml.bml.bmldocs._meta.transform.running.T00013_BuildA04_20260917T012756-->
-<running:T00013_BuildA04_20260917T012756 xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs._meta.transform.succeeded.T00013_BuildA04_20260917T012756-->
+<succeeded:T00013_BuildA04_20260917T012756 xmlns="http://blockml.org/bml"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type"
   xmlns:program="org.blockml.bml.bmldocs.program"
   xmlns:a04_task="org.blockml.bml.bmldocs.a04_rendering.task"
-  xmlns:running="org.blockml.bml.bmldocs._meta.transform.running">
+  xmlns:succeeded="org.blockml.bml.bmldocs._meta.transform.succeeded">
 
   <baseType>
-    workflow:ModelTransformation(running:T00013_BuildA04_20260917T012756.Parameters, type:Text)
+    workflow:ModelTransformation(succeeded:T00013_BuildA04_20260917T012756.Parameters, type:Text)
   </baseType>
   <is>
     A pending ModelTransformation that builds the A04 rendering data
@@ -18,7 +18,7 @@
       <value>A transformation that imports A03 data into A04 and renders the pages.</value>
     </description>
     <status override="true" type="workflow:ExecutionStatus">
-      <value>Running</value>
+      <value>Succeeded</value>
     </status>
     <createdAt override="true" type="type:DateTime">
       <value>2026-09-06T00:00:00</value>
@@ -38,6 +38,12 @@
     <baseCommit override="true" type="type:Text">
       <value>d97c39acff72c2d17e699613bd3080eb63ccf4f4</value>
     </baseCommit>
+    <completedAt override="true" type="type:DateTime">
+      <value>2026-09-17T01:45:23</value>
+    </completedAt>
+    <duration override="true" type="type:Duration">
+      <value>PT17M27.377S</value>
+    </duration>
   </properties>
   <aggregations>
     <operations override="true">
@@ -111,8 +117,7 @@ The A04_02_RenderPages task is complete:
 - **Validation**: `npx blockml validate --all` — 719 blocks, 5 errors / 13 warnings, all pre-existing and confined to frozen historical `_meta/transform` records and an unrelated `a03_authoring` example file. Zero errors, warnings, or gaps reported against any of the 35 rendered pages.
 - **No gaps** — every page's scaffold had enough `message`/`supportingPoints` plus a resolvable authoritative source to render responsibly.
 
-I did not commit and did not touch the running transform record (`_meta/transform/running/T00013_BuildA04_20260917T012756.bml`) — flipping the &quot;Render A04 pages&quot; operation to Succeeded and committing is a separate step, same as the prior A04 build.
-</output>
+I did not commit and did not touch the running transform record (`_meta/transform/running/T00013_BuildA04_20260917T012756.bml`) — flipping the &quot;Render A04 pages&quot; operation to Succeeded and committing is a separate step, same as the prior A04 build.</output>
           <completedAt>2026-09-17T01:45:22</completedAt>
           <task>
             <a04_task:A04_02_RenderPages />
@@ -168,4 +173,4 @@ I did not commit and did not touch the running transform record (`_meta/transfor
       </is>
     </Parameters>
   </subBlocks>
-</running:T00013_BuildA04_20260917T012756>
+</succeeded:T00013_BuildA04_20260917T012756>
