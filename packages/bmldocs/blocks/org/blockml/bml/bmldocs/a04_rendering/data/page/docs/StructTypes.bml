@@ -2,12 +2,10 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.StructTypes-->
 <docs:StructTypes xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:type="org.blockml.bml.type">
 
   <baseType>
     dpage:DocPage
@@ -36,9 +34,6 @@
     <title override="true">
       <value>Struct Types</value>
     </title>
-    <purpose override="true">
-      <value>Teach StructType as the composite named-field branch of the type system, so readers can define a StructType and configure a struct value.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -47,122 +42,56 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.type.StructType" />
-            <type:TypeSelectorEntity value="org.blockml.bml.type.EmptyStruct" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeSystemOverview" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach StructType as the composite named-field branch of the type system.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can define a StructType and configure a struct value.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Composite named-field ValueTypes, declaring struct fields, and configuring a struct value.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>EnumType or ConstantType depth.</summary>
-          <reason>Those are separate sibling branches with their own pages.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>StructType is a sibling branch of EnumType under ValueType, not a supertype of it.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <content override="true">
       <composition>
-        <dpage:Section heading="Composite named-field values" purpose="State what a StructType is">
+        <dpage:Section heading="Composite named-field values">
           <content>
-            <dpage:Paragraph purpose="Introduce StructType">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>StructType is the abstract ValueType branch for composite value objects — complex values described by ordinary Properties.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.type.StructType" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="StructType is the abstract ValueType branch for composite value objects — complex values described by ordinary Properties." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Declaring a StructType" purpose="Explain how a concrete StructType is declared">
+        <dpage:Section heading="Declaring a StructType">
           <content>
-            <dpage:Paragraph purpose="Explain that struct fields are ordinary properties">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A concrete StructType declares properties whose members become struct fields, with no special struct syntax; field declaration order remains significant.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A concrete StructType declares properties whose members become struct fields, with no special struct syntax; field declaration order remains significant." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="EmptyStruct" purpose="Introduce the named counterpart of an empty struct">
+        <dpage:Section heading="EmptyStruct">
           <content>
-            <dpage:Paragraph purpose="Introduce EmptyStruct">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>EmptyStruct is an instantiable StructType with no fields — the named, reusable counterpart of an anonymous empty struct.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.type.EmptyStruct" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="EmptyStruct is an instantiable StructType with no fields — the named, reusable counterpart of an anonymous empty struct." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="A sibling, not a supertype" purpose="Prevent confusing StructType with a supertype of EnumType">
+        <dpage:Section heading="A sibling, not a supertype">
           <content>
-            <dpage:Paragraph purpose="State the sibling relationship with EnumType">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>StructType is a sibling branch of EnumType under ValueType, not a supertype of it.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="StructType is a sibling branch of EnumType under ValueType, not a supertype of it." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before enum types are introduced">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the retained outcome">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Readers should now be able to define a StructType and configure a struct value.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Readers should now be able to define a StructType and configure a struct value." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Continue with enum types" purpose="Direct the reader to the next kind">
+        <dpage:Section heading="Continue with enum types">
           <content>
-            <dpage:Navigation purpose="Continue into the Type System section">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Enum Types" summary="Learn the closed-set-of-named-values ValueType kind.">

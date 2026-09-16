@@ -2,13 +2,10 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.MemberInheritanceAndOverrides-->
 <docs:MemberInheritanceAndOverrides xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
-  xmlns:def="org.blockml.bml.definition"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:def="org.blockml.bml.definition">
 
   <baseType>
     dpage:DocPage
@@ -34,9 +31,6 @@
     <title override="true">
       <value>Member Inheritance and Overrides</value>
     </title>
-    <purpose override="true">
-      <value>Teach when a local member redeclaration must set override="true" versus introduce a new member, so readers can refine or finalize an inherited member correctly.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -45,121 +39,56 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.PartialMemberOverrides" />
-            <type:TypeSelectorEntity value="org.blockml.bml.definition.MemberDefinition" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach when a local redeclaration must set override, versus introducing a new member.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader knows when a local member redeclaration must set override="true".</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Combining inherited members, the override flag, and refining or finalizing a member.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Re-teaching baseType or contracts from scratch.</summary>
-          <reason>Those are covered on their own earlier pages.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>Each redeclaration layer must set override="true" again — override is never inherited from a prior layer.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <content override="true">
       <composition>
-        <dpage:Section heading="Two orthogonal declaration modes" purpose="State the new-versus-override distinction">
+        <dpage:Section heading="Two orthogonal declaration modes">
           <content>
-            <dpage:Paragraph purpose="Introduce new versus override">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A local member redeclaration is either new, introducing a member, or override, refining an inherited member of the same identity.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.definition.MemberDefinition" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A local member redeclaration is either new, which introduces a member and must not set override, or override, which refines an inherited member of the same identity from the baseType chain or from a contract." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="When override is required" purpose="State the rule that triggers override=&quot;true&quot;">
+        <dpage:Section heading="When override is required">
           <content>
-            <dpage:Paragraph purpose="State when override is required">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>override="true" is required whenever a local redeclaration merges with an existing member from the baseType chain or from contracts, and each redeclaration layer must set it again.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.PartialMemberOverrides" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Setting override=&quot;true&quot; is required whenever a local redeclaration merges with an existing member from the baseType chain or from a contract; omitting it when such a parent member already exists is an error, and each redeclaration layer in the chain must repeat the flag." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="From abstract to implemented" purpose="Explain how an abstract member is completed">
+        <dpage:Section heading="From abstract to implemented">
           <content>
-            <dpage:Paragraph purpose="Explain abstract-to-implementation completion">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A member declared abstract creates an implementation obligation; a descendant satisfies it with override="true" and a locally complete declaration.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A member declared abstract=&quot;true&quot; is semantically incomplete and creates an implementation obligation for concrete descendants. A descendant satisfies that obligation by redeclaring the member with override=&quot;true&quot; and a declaration that is complete for the member kind — for example, a Capability override must supply a full implementation." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Local, not inherited" purpose="State that abstract, final, and override never inherit">
+        <dpage:Section heading="Local, not inherited">
           <content>
-            <dpage:Paragraph purpose="State that these flags are local declaration properties">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>abstract, final, and override are local declaration properties, never inherited — only their semantic effects propagate to descendants.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="abstract, final, and override are local declaration properties: each applies only to the specific declaration that sets it and is never itself inherited by a later layer. Only their semantic effects propagate to descendants — an implementation obligation from abstract, or a prohibition on further redeclaration from final." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before visibility is introduced">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the retained outcome">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Readers should now know when a local member redeclaration must set override="true".</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Readers should now know when a local member redeclaration must set override=&quot;true&quot;: whenever it refines a member already present from the baseType chain or a contract, and again at every subsequent redeclaration layer." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Continue with visibility" purpose="Direct the reader to the next page">
+        <dpage:Section heading="Continue with visibility">
           <content>
-            <dpage:Navigation purpose="Continue the Members sequence">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Visibility" summary="Learn the naming-convention visibility model.">

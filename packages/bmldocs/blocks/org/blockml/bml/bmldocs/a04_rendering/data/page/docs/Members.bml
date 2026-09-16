@@ -2,13 +2,10 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.Members-->
 <docs:Members xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
-  xmlns:def="org.blockml.bml.definition"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:def="org.blockml.bml.definition">
 
   <baseType>
     dpage:DocPage
@@ -34,9 +31,6 @@
     <title override="true">
       <value>Members</value>
     </title>
-    <purpose override="true">
-      <value>Give readers an overview of the member model — Properties, Aggregations, Associations, and Capabilities — so each kind's own page can go deeper without re-explaining where it fits.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Overview</value>
     </detailLevel>
@@ -45,125 +39,50 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.definition.MemberDefinition" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.DefinitionModel" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Give an overview of the member model before each kind gets its own page.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can name the four member kinds and pick the right one for a given need.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Block member model overview: how Properties, Aggregations, Associations, and Capabilities relate as declared Block members.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Depth on any one member kind.</summary>
-          <reason>Each kind is taught on its own page next.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>All four member kinds share the same declared-member authoring pattern under MemberDefinition.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <content override="true">
       <composition>
-        <dpage:Section heading="Four kinds of members" purpose="Introduce the member model overview">
+        <dpage:Section heading="Four kinds of members">
           <content>
-            <dpage:Paragraph purpose="Name the four member kinds">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A Block declares its members as Properties, Aggregations, Associations, and Capabilities.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.DefinitionModel" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A Block declares its members as one of four kinds: Properties, Aggregations, Associations, and Capabilities." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="What each kind is for" purpose="Give a one-line role for each member kind">
+        <dpage:Section heading="What each kind is for">
           <content>
-            <dpage:List purpose="List the four member kinds with their role">
-              <role>org.blockml.bml.docgen.role.Summary</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Each member kind plays a distinct role in a Block's shape.</message>
+            <dpage:List>
               <items>
-                <dpage:ListItem text="Property" purpose="Describe Property's role">
-                  <message>A Property carries a scalar or structured value.</message>
-                </dpage:ListItem>
-                <dpage:ListItem text="Aggregation" purpose="Describe Aggregation's role">
-                  <message>An Aggregation owns a collection of child Block instances.</message>
-                </dpage:ListItem>
-                <dpage:ListItem text="Association" purpose="Describe Association's role">
-                  <message>An Association links to other instances without owning them.</message>
-                </dpage:ListItem>
-                <dpage:ListItem text="Capability" purpose="Describe Capability's role">
-                  <message>A Capability declares how the Block communicates or behaves.</message>
-                </dpage:ListItem>
+                <dpage:ListItem text="Property — a Block member that carries a scalar or structured value." />
+                <dpage:ListItem text="Aggregation — a Block member that owns a collection of child Block instances." />
+                <dpage:ListItem text="Association — a Block member that links to other instances without owning them." />
+                <dpage:ListItem text="Capability — a Block member that declares how the Block communicates or behaves." />
               </items>
             </dpage:List>
           </content>
         </dpage:Section>
-        <dpage:Section heading="One shared authoring pattern" purpose="State that all four kinds share the same declaration base">
+        <dpage:Section heading="One shared authoring pattern">
           <content>
-            <dpage:Paragraph purpose="State the shared MemberDefinition pattern">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>All four member kinds share the same declared-member authoring pattern under MemberDefinition.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.definition.MemberDefinition" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="All four member kinds share the same declaration pattern: each is authored as a named child element inside its matching member container on a Block definition." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before each kind gets its own page">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the retained outcome">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Readers should now be able to name the four member kinds and pick the right one for a given need.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="With the four kinds in view, you should now be able to name each one — Property, Aggregation, Association, and Capability — and pick the right one for a given need." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Continue with Properties" purpose="Direct the reader to the first member kind">
+        <dpage:Section heading="Continue with Properties">
           <content>
-            <dpage:Navigation purpose="Continue into the Members section">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Properties" summary="Learn how a typed value member is declared.">

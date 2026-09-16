@@ -2,13 +2,10 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.EmbeddedBlocks-->
 <docs:EmbeddedBlocks xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
-  xmlns:def="org.blockml.bml.definition"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:def="org.blockml.bml.definition">
 
   <baseType>
     dpage:DocPage
@@ -34,9 +31,6 @@
     <title override="true">
       <value>Embedded Blocks</value>
     </title>
-    <purpose override="true">
-      <value>Teach embedded Blocks as inlined full documents with their own independent FQN, so readers can author one without confusing it with a lightweight fragment or a Sub-Block.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -45,121 +39,56 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.SubBlockModel" />
-            <type:TypeSelectorEntity value="org.blockml.bml.definition.EmbeddedBlockDefinition" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach embedded Blocks as inlined full documents, not lightweight fragments or Sub-Blocks.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can author an embedded Block as a full document with its own independent FQN.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Embedded Block definitions and instances: full virtual documents nested under a root Block's embeddedBlocks.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Repeat of Sub-Block nesting mechanics.</summary>
-          <reason>Sub-Block nesting itself is covered on the previous page.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>An embedded Block's FQN is resolve(type), not nested under the root's FQN, and embedding is allowed only at the document root.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <content override="true">
       <composition>
-        <dpage:Section heading="An inlined full document" purpose="State what an embedded Block is">
+        <dpage:Section heading="An inlined full document">
           <content>
-            <dpage:Paragraph purpose="Introduce embedded Blocks">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>An embedded Block is a virtual .bml file inlined under a root Block's embeddedBlocks — a full Block document, not a lightweight fragment.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.SubBlockModel" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="An embedded Block is a virtual .bml file inlined under a root Block's embeddedBlocks — a full Block document in its own right, not a lightweight fragment." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="An independent identity" purpose="Explain how an embedded Block's FQN is derived">
+        <dpage:Section heading="An independent identity">
           <content>
-            <dpage:Paragraph purpose="Explain that an embed's FQN is independent of the root">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>An embedded Block's FQN is resolve(type), not nested under the root's FQN, and it is authored the same way as the document root.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.definition.EmbeddedBlockDefinition" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="An embedded Block's fully qualified name is resolved from its own type rather than nested under the root's name, and it is authored the same way as a document root, with the element tag itself supplying the type." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Root-only" purpose="State where embeddedBlocks may be declared">
+        <dpage:Section heading="Root-only">
           <content>
-            <dpage:Paragraph purpose="State that only the document root may own embeddedBlocks">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Only the document root may own embeddedBlocks — Sub-Blocks and embedded Blocks themselves must not declare further embeds.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Only the document root may own embeddedBlocks — Sub-Blocks and embedded Blocks themselves must not declare further embeds." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Embedded Block versus Sub-Block" purpose="Contrast the two nesting mechanisms">
+        <dpage:Section heading="Embedded Block versus Sub-Block">
           <content>
-            <dpage:Paragraph purpose="Contrast embedded Blocks with Sub-Blocks">
-              <role>org.blockml.bml.docgen.role.Comparison</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A Sub-Block is a semantically nested type sharing the parent's FQN prefix, while an embedded Block is an independent, full document only inlined for convenience.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A Sub-Block is a semantically nested type sharing the parent's fully qualified name prefix, while an embedded Block is an independent, full document that is only inlined for convenience." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before documenting Blocks is introduced">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the retained outcome">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Readers should now be able to author an embedded Block without confusing it with a lightweight fragment or a Sub-Block.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="With this distinction in place, an embedded Block can now be authored as its own full document, without confusing it with a lightweight fragment or a Sub-Block." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Continue with documenting Blocks" purpose="Direct the reader to the next page">
+        <dpage:Section heading="Continue with documenting Blocks">
           <content>
-            <dpage:Navigation purpose="Continue the Composition and Structure sequence">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Documenting Blocks" summary="Learn the is, documentation, and references model.">

@@ -2,12 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.Inheritance-->
 <docs:Inheritance xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:doc="org.blockml.bml.documentation"
-  xmlns:workflow="org.blockml.bml.transformer.workflow"
-  xmlns:type="org.blockml.bml.type">
+  xmlns:doc="org.blockml.bml.documentation">
 
   <baseType>
     dpage:DocPage
@@ -36,9 +33,6 @@
     <title override="true">
       <value>Inheritance</value>
     </title>
-    <purpose override="true">
-      <value>Teach single inheritance via baseType and how a Block's effective definition is merged from its baseType chain, so readers can trace any Block back to what it actually inherits.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -47,122 +41,56 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ModelingGuidelines" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.PartialMemberOverrides" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ContractsModel" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach single inheritance and how inherited members combine into an effective definition.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can trace a Block's effective definition through its baseType chain.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Specialization via baseType, single inheritance, the effective definition merged from a Block's baseType chain, and abstract and final Blocks.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Contracts and override-flag mechanics in depth.</summary>
-          <reason>Contracts get a contrasting page next; override-flag mechanics get their own member-inheritance page.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>Each Block has exactly one baseType, mandatory except for the root org.blockml.bml.core.Block, and a final Block or member cannot be overridden further.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <content override="true">
       <composition>
-        <dpage:Section heading="Specialization via baseType" purpose="State the single-inheritance rule">
+        <dpage:Section heading="Specialization via baseType">
           <content>
-            <dpage:Paragraph purpose="Introduce single inheritance">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Each Block has exactly one baseType, mandatory for every definition except the root org.blockml.bml.core.Block.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.ModelingGuidelines" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Each Block has exactly one baseType, mandatory for every definition except the root org.blockml.bml.core.Block." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="The effective definition" purpose="Explain how inherited members combine">
+        <dpage:Section heading="The effective definition">
           <content>
-            <dpage:Paragraph purpose="Explain that the effective definition merges the baseType chain">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A Block's effective definition is merged from its baseType chain — every inherited member combines with the Block's own local declarations.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.PartialMemberOverrides" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A Block's effective definition is merged from its baseType chain — every inherited member combines with the Block's own local declarations." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Abstract and final Blocks" purpose="Explain the two modifiers that shape the effective definition">
+        <dpage:Section heading="Abstract and final Blocks">
           <content>
-            <dpage:Paragraph purpose="Explain abstract and final at the Block level">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>An abstract Block creates an implementation obligation for concrete descendants, while a final Block cannot be used as baseType by any other definition.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="An abstract Block creates an implementation obligation for concrete descendants, while a final Block cannot be used as baseType by any other definition." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Branch membership" purpose="Explain how framework branches use baseType">
+        <dpage:Section heading="Branch membership">
           <content>
-            <dpage:Paragraph purpose="Explain branch membership through baseType">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>Framework branches such as ValueType and Language inherit via their branch root, and every root Block in the core package must inherit directly from org.blockml.bml.core.Block.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Framework branches such as ValueType and Language inherit via their branch root, and every root Block in the core package must inherit directly from org.blockml.bml.core.Block." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before contracts are introduced">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the retained outcome">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Readers should now be able to trace a Block back to what it actually inherits through its baseType chain.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Readers should now be able to trace a Block back to what it actually inherits through its baseType chain." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Continue with contracts" purpose="Direct the reader to the contrasting reuse mechanism">
+        <dpage:Section heading="Continue with contracts">
           <content>
-            <dpage:Navigation purpose="Continue the Foundations sequence">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Contracts" summary="Learn the composable alternative to single inheritance.">

@@ -2,13 +2,10 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.BlockDefinitionsAndInstances-->
 <docs:BlockDefinitionsAndInstances xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
-  xmlns:def="org.blockml.bml.definition"
-  xmlns:workflow="org.blockml.bml.transformer.workflow"
-  xmlns:type="org.blockml.bml.type">
+  xmlns:def="org.blockml.bml.definition">
 
   <baseType>
     dpage:DocPage
@@ -36,9 +33,6 @@
     <title override="true">
       <value>Block Definitions and Instances</value>
     </title>
-    <purpose override="true">
-      <value>Teach the definition-versus-instance distinction as a semantic analogy — not a runtime OOP mandate — so readers can tell a Block definition from a Block instance in any piece of BML.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -47,122 +41,56 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
-            <type:TypeSelectorEntity value="org.blockml.bml.definition.BlockDefinition" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.MemberAuthoring" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach the definition-versus-instance distinction as a semantic analogy, not a runtime OOP mandate.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can tell a Block definition from a Block instance in a piece of BML.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Block definition versus Block instance: the class/object analogy, and the difference between defining a concept and configuring one.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Inheritance, contracts, and member overrides.</summary>
-          <reason>Those build on this distinction on their own following pages.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>The class/object analogy orients readers but is a semantic analogy — the compiler may represent both as plain data.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <content override="true">
       <composition>
-        <dpage:Section heading="A class-versus-object analogy" purpose="Introduce the analogy readers already know">
+        <dpage:Section heading="A class-versus-object analogy">
           <content>
-            <dpage:Paragraph purpose="State the closest familiar analogy">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>The closest familiar model is that a Block is a declarative semantic Class, and a Block Instance is an Object.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="The closest familiar model is that a Block is a declarative semantic Class, and a Block Instance is an Object." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="A semantic analogy, not a runtime mandate" purpose="Prevent readers from over-interpreting the analogy">
+        <dpage:Section heading="A semantic analogy, not a runtime mandate">
           <content>
-            <dpage:Paragraph purpose="Clarify that the analogy does not mandate runtime OOP">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>The class/object analogy is semantic, not a mandate for runtime object orientation — the compiler may represent both definitions and instances as plain data.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="The class/object analogy is semantic, not a mandate for runtime object orientation — the compiler may represent both definitions and instances as plain data." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="What a Block definition describes" purpose="Explain the definition side of the distinction">
+        <dpage:Section heading="What a Block definition describes">
           <content>
-            <dpage:Paragraph purpose="Describe a Block definition's role">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A Block definition is a .bml file whose meta-model shape describes an FQN, members, and a composition schema — the shape and behaviour of a concept, with no runtime and no address.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.definition.BlockDefinition" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A Block definition is a .bml file whose meta-model shape describes an FQN, members, and a composition schema — the shape and behaviour of a concept, with no runtime and no address." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="What a Block instance is" purpose="Explain the instance side of the distinction">
+        <dpage:Section heading="What a Block instance is">
           <content>
-            <dpage:Paragraph purpose="Describe a Block instance's role">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A Block Instance is one concrete occurrence in a composition, carrying a type FQN, an identity, and member values.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A Block Instance is one concrete occurrence in a composition, carrying a type FQN, an identity, and member values." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before inheritance is introduced">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the retained outcome">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Readers should now be able to tell a Block definition from a Block instance in any piece of BML.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Readers should now be able to tell a Block definition from a Block instance in any piece of BML." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Continue with inheritance" purpose="Direct the reader to the next page">
+        <dpage:Section heading="Continue with inheritance">
           <content>
-            <dpage:Navigation purpose="Continue the Foundations sequence">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Inheritance" summary="Learn how Blocks specialize one another via baseType.">

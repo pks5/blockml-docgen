@@ -2,14 +2,11 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.Constraints-->
 <docs:Constraints xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
   xmlns:core="org.blockml.bml.core"
-  xmlns:def="org.blockml.bml.definition"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:def="org.blockml.bml.definition">
 
   <baseType>
     dpage:DocPage
@@ -38,9 +35,6 @@
     <title override="true">
       <value>Constraints</value>
     </title>
-    <purpose override="true">
-      <value>Teach the constraints container and its branch-to-member-kind mapping, so readers can attach the right constraint branch to a member and know when it is enforced.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -49,129 +43,56 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ConstraintsModel" />
-            <type:TypeSelectorEntity value="org.blockml.bml.core.Constraint" />
-            <type:TypeSelectorEntity value="org.blockml.bml.definition.ConstrainableDefinition" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach the constraints container and its branch-to-member-kind mapping.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can attach the right constraint branch to a member.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Declarative validation rules, the constraints container, constraint branches, and when a constraint is evaluated.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Suggestions depth beyond the enforced-versus-non-enforced contrast.</summary>
-          <reason>Suggestions get their own page.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>Placing a constraint on the wrong branch for its embedding context is a checked error, not just a convention.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <content override="true">
       <composition>
-        <dpage:Section heading="Reusable validation rules" purpose="State what a constraint is">
+        <dpage:Section heading="Reusable validation rules">
           <content>
-            <dpage:Paragraph purpose="Introduce the constraints container">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Constraints are reusable validation rules attached via a single constraints container — there is no target property, since the embedding context binds the constraint automatically.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.ConstraintsModel" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Constraints are reusable validation rules attached to a Block or member through a single constraints container; there is no separate target property, because the embedding context binds the constraint automatically." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Branches bind to their context" purpose="Explain the automatic branch-to-context binding">
+        <dpage:Section heading="Branches bind to their context">
           <content>
-            <dpage:Paragraph purpose="Explain automatic generic binding by embedding context">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Each constraint branch binds to the context that embeds it — a value constraint on a Property binds to that Property's ValueType, and other branches bind to their corresponding member or Block definition.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.core.Constraint" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Each constraint branch binds to the context that embeds it: a value constraint on a Property binds to that Property's effective ValueType, while other branches bind to their corresponding member or Block definition. Placing a constraint on the wrong branch for its embedding context is a checked error, not just a modeling convention." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Enforcement is optional" purpose="Explain the validation property">
+        <dpage:Section heading="Enforcement is optional">
           <content>
-            <dpage:Paragraph purpose="Explain how enforcement severity is controlled">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A constraint's optional validation property controls whether and how strictly it is enforced; when omitted, the constraint remains metadata only.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A constraint's optional validation property controls whether and how strictly it is enforced; when the property is omitted, the constraint is not checked and remains part of the model as metadata only." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Attaching a constraint" purpose="Explain where the constraints container is available">
+        <dpage:Section heading="Attaching a constraint">
           <content>
-            <dpage:Paragraph purpose="Explain that constraints attach to Blocks and members alike">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>Any definition that supports constraints carries the same constraints container, whether it is a Block or one of its members.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.definition.ConstrainableDefinition" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Every definition that supports constraints — whether a Block or one of its members — carries the same constraints container, so the same attachment mechanism applies wherever a constraint is allowed." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before suggestions are contrasted">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the retained outcome">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Readers should now be able to attach the right constraint branch to a member.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Readers should now be able to attach the right constraint branch to a member and know when it takes effect." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Continue with suggestions" purpose="Direct the reader to the contrasting non-enforced mechanism">
+        <dpage:Section heading="Continue with suggestions">
           <content>
-            <dpage:Navigation purpose="Continue the Behaviour and Values sequence">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Suggestions" summary="Learn the non-enforced counterpart to constraints.">

@@ -2,12 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.NamespacesAndFullyQualifiedNames-->
 <docs:NamespacesAndFullyQualifiedNames xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:doc="org.blockml.bml.documentation"
-  xmlns:workflow="org.blockml.bml.transformer.workflow"
-  xmlns:type="org.blockml.bml.type">
+  xmlns:doc="org.blockml.bml.documentation">
 
   <baseType>
     dpage:DocPage
@@ -36,9 +33,6 @@
     <title override="true">
       <value>Namespaces and Fully Qualified Names</value>
     </title>
-    <purpose override="true">
-      <value>Teach how packages, Libraries, and fully qualified names relate, so readers can compute a Block's FQN and know what a Library groups before working with cross-Block references.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -47,122 +41,56 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.LibrarySystem" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeIdentityDerivation" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach how packages, Libraries, and FQNs relate to each other.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can compute a Block's FQN and knows what a Library groups.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Packages, Libraries, fully qualified names, namespace prefixes, and how a Block's FQN is computed from its package and file location.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Reference resolution depth and the bml: authoring namespace.</summary>
-          <reason>Those belong to the Identifiers and References page and the BML Namespaces page.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>Every BML definition must live under its owning domain's bml package, and physical source layout mirrors the FQN.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <content override="true">
       <composition>
-        <dpage:Section heading="The domain.bml namespace rule" purpose="State the mandatory namespace rule">
+        <dpage:Section heading="The domain.bml namespace rule">
           <content>
-            <dpage:Paragraph purpose="State that every definition lives under a domain's bml package">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Every BML definition must reside below the owning domain's bml package, in the general form domain.bml.*.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Every BML definition — Blocks, Libraries, Types, Languages, Services, Capabilities, and other BlockML definitions — must reside below its owning domain's bml package, in the general form domain.bml.* (for example org.blockml.bml.* or com.example.bml.*)." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Physical layout mirrors the FQN" purpose="Explain how source location and FQN correspond">
+        <dpage:Section heading="Physical layout mirrors the FQN">
           <content>
-            <dpage:Paragraph purpose="State that source layout mirrors the FQN">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Physical source layout mirrors the fully qualified name, so a Block's package path and file name determine its FQN.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Physical source layout mirrors the fully qualified name: a Block's package path and file name determine its FQN, so the file blocks/org/blockml/bml/core/Block.bml defines org.blockml.bml.core.Block." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="What a Library groups" purpose="Explain how Libraries organize Block and ValueType definitions">
+        <dpage:Section heading="What a Library groups">
           <content>
-            <dpage:Paragraph purpose="Explain Library membership">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A Library groups related Block and ValueType definitions into a publishable unit; membership is defined exclusively by what the Library.bml block lists, not by directory layout.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.LibrarySystem" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A Library groups related Block and ValueType definitions into a publishable unit. Membership is defined exclusively by what its Library.bml block lists, not by directory layout — without a Library block, every .bml source file in the directory is public." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Namespace prefixes" purpose="Explain the xmlns prefix convention">
+        <dpage:Section heading="Namespace prefixes">
           <content>
-            <dpage:Paragraph purpose="Explain the xmlns prefix convention">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>xmlns prefixes map to FQN package segments; a bare short prefix conventionally means BlockML core, and domain mirrors add a domain token in front.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="An xmlns prefix maps to a package segment of a Block's fully qualified name. By convention, a bare short prefix such as core or type always refers to BlockML itself, while a domain's mirror of the same segment adds a domain token in front." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before identifiers and references are introduced">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the retained outcome">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Readers should now be able to compute a Block's FQN and know what a Library groups.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Readers should now be able to compute a Block's fully qualified name from its package and file location, and know what a Library groups." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Continue with identifiers and references" purpose="Direct the reader to the next page">
+        <dpage:Section heading="Continue with identifiers and references">
           <content>
-            <dpage:Navigation purpose="Continue the Foundations sequence">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Identifiers and References" summary="Learn the identifier-versus-reference distinction.">

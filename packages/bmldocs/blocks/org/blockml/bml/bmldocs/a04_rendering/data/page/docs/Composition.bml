@@ -2,13 +2,10 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.Composition-->
 <docs:Composition xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
-  xmlns:def="org.blockml.bml.definition"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:def="org.blockml.bml.definition">
 
   <baseType>
     dpage:DocPage
@@ -34,9 +31,6 @@
     <title override="true">
       <value>Composition</value>
     </title>
-    <purpose override="true">
-      <value>Teach Composition as the mechanism that fills an Aggregation on a Block definition, so readers can fill an aggregation with the correct composition syntax and avoid standalone composition elements.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -45,121 +39,56 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompositionModel" />
-            <type:TypeSelectorEntity value="org.blockml.bml.definition.AggregationDefinition" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach Composition as the mechanism that fills an Aggregation on a Block definition.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can fill an aggregation with the correct composition syntax.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Composing Blocks through aggregations, and the composition fill syntax on Block definitions.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Re-teaching Aggregation ownership.</summary>
-          <reason>Ownership itself is covered on the Aggregations page.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>Composition must always be nested inside an aggregation member — a standalone composition element is invalid.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <content override="true">
       <composition>
-        <dpage:Section heading="Filling an aggregation" purpose="State what Composition does">
+        <dpage:Section heading="Filling an aggregation">
           <content>
-            <dpage:Paragraph purpose="Introduce Composition">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A Composition fills an Aggregation with concrete child Block instances.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompositionModel" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A composition fills an aggregation with concrete child Block instances, giving the aggregation its initial contents on a Block definition." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Never standalone" purpose="State the placement rule for composition">
+        <dpage:Section heading="Never standalone">
           <content>
-            <dpage:Paragraph purpose="State that composition must always nest inside an aggregation member">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Composition must always be nested inside an aggregation member — a standalone composition element is invalid.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.definition.AggregationDefinition" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A composition element must always be nested inside an aggregation member; a standalone composition, opened on its own outside an aggregation, is not valid." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Definition composition versus instance fill" purpose="Contrast the definition-side wrapper with instance-side filling">
+        <dpage:Section heading="Definition composition versus instance fill">
           <content>
-            <dpage:Paragraph purpose="Contrast definition-side composition with instance-side aggregation fill">
-              <role>org.blockml.bml.docgen.role.Comparison</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>On a Block definition, composition nested inside the aggregation member supplies its initial fill; on a Block instance, children fill the aggregation directly by member name, with no composition wrapper.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="On a Block definition, a composition nested inside the aggregation member supplies that aggregation's initial fill; on a Block instance, child Blocks fill the aggregation directly by member name, with no composition wrapper and no default aggregation to fall back on." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Composition recurses naturally" purpose="Explain that nested structures need no special recursion syntax">
+        <dpage:Section heading="Composition recurses naturally">
           <content>
-            <dpage:Paragraph purpose="State that recursive nested structure is first-class">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>Every Block instance inside a composition may itself contain aggregation members, so complex nested structures compose wherever instances appear.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Every Block instance inside a composition may itself open aggregation members of its own, so complex nested structures compose naturally wherever instances appear, with no special recursion syntax required." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before Sub-Blocks are introduced">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the retained outcome">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Readers should now be able to fill an aggregation with the correct composition syntax and avoid standalone composition elements.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="With composition understood, readers can fill an aggregation with the correct syntax, keeping composition nested inside its aggregation member rather than standing alone." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Continue with Sub-Blocks" purpose="Direct the reader to the next page">
+        <dpage:Section heading="Continue with Sub-Blocks">
           <content>
-            <dpage:Navigation purpose="Continue the Composition and Structure sequence">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Sub-Blocks" summary="Learn how a definition nests inside a parent Block.">

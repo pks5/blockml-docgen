@@ -2,13 +2,10 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.Capabilities-->
 <docs:Capabilities xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
-  xmlns:def="org.blockml.bml.definition"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:def="org.blockml.bml.definition">
 
   <baseType>
     dpage:DocPage
@@ -34,9 +31,6 @@
     <title override="true">
       <value>Capabilities</value>
     </title>
-    <purpose override="true">
-      <value>Teach Capability as ordinary behaviour with a language-tagged implementation body, so readers can declare a Capability and understand that BlockML has no separate constructor, getter, or setter concept.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -45,128 +39,59 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.definition.CapabilityDefinition" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.CapabilitySemantics" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach Capability as ordinary behaviour with a language-tagged implementation body.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can declare a Capability and knows there is no separate constructor concept.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Block behaviour expressed as members: Capability declaration, implementation bodies, and common behavioural roles such as init, getValue, and setValue.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Embedded-expression syntax depth.</summary>
-          <reason>The embedded-expression delimiter syntax inside implementations is a separate, more technical topic.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>A Capability implementation may be read as intent, a companion template, or a host-evaluable function — no single reading is mandatory.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <content override="true">
       <composition>
-        <dpage:Section heading="Behaviour as ordinary members" purpose="State that there are no special-cased behaviour concepts">
+        <dpage:Section heading="Behaviour as ordinary members">
           <content>
-            <dpage:Paragraph purpose="State that all behaviour is expressed as Capabilities">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>There are no special language concepts for constructor, getter, setter, or render — all behaviour is expressed as ordinary Capabilities.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.CapabilitySemantics" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="BlockML has no special language concepts for a constructor, getter, setter, or render step; every behaviour a Block exposes — such as init(), getValue(), setValue(), or render() — is written as an ordinary Capability." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Four capability kinds" purpose="Name the payload-shape kinds a Capability may declare">
+        <dpage:Section heading="Four capability kinds">
           <content>
-            <dpage:List purpose="List the four Capability kinds by their payload shape">
-              <role>org.blockml.bml.docgen.role.Summary</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A Capability's kind describes its payload shape.</message>
+            <dpage:List>
               <items>
-                <dpage:ListItem text="Inbound" purpose="Describe Inbound">
-                  <message>Inbound receives input from outside and requires an inputType.</message>
-                </dpage:ListItem>
-                <dpage:ListItem text="Outbound" purpose="Describe Outbound">
-                  <message>Outbound produces output to outside and requires an outputType.</message>
-                </dpage:ListItem>
-                <dpage:ListItem text="Transformation" purpose="Describe Transformation">
-                  <message>Transformation maps input to output and requires both types.</message>
-                </dpage:ListItem>
-                <dpage:ListItem text="Action" purpose="Describe Action">
-                  <message>Action performs a side effect and requires neither type.</message>
-                </dpage:ListItem>
+                <dpage:ListItem text="Inbound receives input from outside the Block, such as setValue or configure, and requires an inputType." />
+                <dpage:ListItem text="Outbound produces output to the outside, such as getValue or emit, and requires an outputType." />
+                <dpage:ListItem text="Transformation maps input to output, such as compute, format, or parse, and requires both an inputType and an outputType." />
+                <dpage:ListItem text="Action performs a side effect, such as trigger, reset, or refresh, and requires neither an inputType nor an outputType." />
               </items>
             </dpage:List>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Reading an implementation body" purpose="Explain the possible readings of a Capability implementation">
+        <dpage:Section heading="Reading an implementation body">
           <content>
-            <dpage:Paragraph purpose="Explain the three possible readings of an implementation">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A Capability implementation may serve as intent for humans and LLMs, as a companion template a renderer transpiles, or as a host-evaluable function — no reading is mandatory.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A Capability implementation may be read as intent for humans and language models, as a companion template that a renderer transpiles, or as a host-evaluable function that a toolchain executes — no single reading is mandatory, and one implementation may serve more than one of these at once." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Declaring exceptions" purpose="Explain the throws aggregation">
+        <dpage:Section heading="Declaring exceptions">
           <content>
-            <dpage:Paragraph purpose="Explain throws as the BlockML equivalent of a Java throws clause">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>throws lists the Exception types a Capability may raise, the BlockML equivalent of a Java method throws clause.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="The throws aggregation lists the Exception types a Capability may raise, serving the same purpose as a throws clause on a Java method." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before member overrides are introduced">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the retained outcome">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Readers should now be able to declare a Capability and know that BlockML has no separate constructor, getter, or setter concept.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Readers should now be able to declare a Capability and know that BlockML has no separate constructor, getter, or setter concept — that behaviour is expressed as an ordinary Capability instead." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Continue with member overrides" purpose="Direct the reader to the next page">
+        <dpage:Section heading="Continue with member overrides">
           <content>
-            <dpage:Navigation purpose="Continue the Members sequence">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Member Inheritance and Overrides" summary="Learn when a redeclaration must set override.">

@@ -2,12 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.MultiplicityAndCollections-->
 <docs:MultiplicityAndCollections xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:doc="org.blockml.bml.documentation"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:doc="org.blockml.bml.documentation">
 
   <baseType>
     dpage:DocPage
@@ -30,9 +27,6 @@
     <title override="true">
       <value>Multiplicity and Collections</value>
     </title>
-    <purpose override="true">
-      <value>Teach multiplicity as one axis of a type expression rather than a separate Array type, so readers can read a multiplicity bracket and place it correctly in a type expression.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -41,114 +35,49 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeExpressions" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach multiplicity as one axis of a type expression, not a separate Array type.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can read a multiplicity bracket and place it correctly in a type expression.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Optional, singular, and multiple values expressed through multiplicity brackets on a type expression.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>MinItems and MaxItems constraint depth.</summary>
-          <reason>Those are contextual Constraints, covered on the Constraints page.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>Multiplicity is a postfix operation on a type expression, so nested collections need explicit grouping — (Integer[])[], never Integer[][].</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <content override="true">
       <composition>
-        <dpage:Section heading="Multiplicity, not a separate Array type" purpose="State the core reframing of collection types">
+        <dpage:Section heading="Multiplicity, not a separate Array type">
           <content>
-            <dpage:Paragraph purpose="State that multiplicity is postfix on a type expression">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>BlockML has no separate Array type — multiplicity is a postfix bracket operation on a type expression.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeExpressions" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="BlockML has no separate Array type. Multiplicity — the number of values a type expression admits — is expressed as a postfix bracket operation on the type expression itself, not as a distinct type." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Bracket forms" purpose="Show the range of multiplicity bracket forms">
+        <dpage:Section heading="Bracket forms">
           <content>
-            <dpage:List purpose="List the multiplicity bracket forms">
-              <role>org.blockml.bml.docgen.role.Summary</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A multiplicity bracket may express exactly one value, an open collection, a fixed size, or a bounded range.</message>
+            <dpage:List>
               <items>
-                <dpage:ListItem text="Exactly one" purpose="Show the no-bracket case">
-                  <message>Integer names exactly one value.</message>
-                </dpage:ListItem>
-                <dpage:ListItem text="Open collection" purpose="Show the open-collection bracket">
-                  <message>Integer[] is equivalent to Integer[0..n] — zero or more values.</message>
-                </dpage:ListItem>
-                <dpage:ListItem text="Fixed and bounded" purpose="Show fixed-size and bounded-range brackets">
-                  <message>Integer[3] fixes the count; Integer[1..5] bounds it between one and five.</message>
-                </dpage:ListItem>
+                <dpage:ListItem text="A type written with no bracket at all, such as Integer, names exactly one value." />
+                <dpage:ListItem text="Integer[] is an open collection, equivalent to Integer[0..n]: zero or more values." />
+                <dpage:ListItem text="Integer[3] fixes the count at exactly three values, and Integer[1..5] bounds the count between one and five." />
               </items>
             </dpage:List>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Nesting requires explicit grouping" purpose="State the nested-multiplicity grouping rule">
+        <dpage:Section heading="Nesting requires explicit grouping">
           <content>
-            <dpage:Paragraph purpose="State the nested multiplicity grouping rule">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Multiplicity may apply to any type expression, including one that already carries multiplicity, but nested collections need explicit grouping — (Integer[])[], never Integer[][].</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Multiplicity may apply to any type expression, including one that already carries multiplicity of its own, but nested collections need explicit grouping to stay unambiguous: write (Integer[])[] for a collection of collections, never the ungrouped Integer[][]." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before constraints are introduced">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the retained outcome">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Readers should now be able to read a multiplicity bracket and place it correctly in a type expression.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Readers should now be able to read a multiplicity bracket and place it correctly within a type expression." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Continue with constraints" purpose="Direct the reader to the Behaviour and Values section">
+        <dpage:Section heading="Continue with constraints">
           <content>
-            <dpage:Navigation purpose="Continue into the Behaviour and Values section">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Constraints" summary="Learn how declarative validation rules attach to members.">

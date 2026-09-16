@@ -2,12 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.CoreUseCases-->
 <docs:CoreUseCases xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:doc="org.blockml.bml.documentation"
-  xmlns:workflow="org.blockml.bml.transformer.workflow"
-  xmlns:type="org.blockml.bml.type">
+  xmlns:doc="org.blockml.bml.documentation">
 
   <baseType>
     dpage:DocPage
@@ -34,9 +31,6 @@
     <title override="true">
       <value>Core Use Cases</value>
     </title>
-    <purpose override="true">
-      <value>Ground BlockML's purpose in the three problems it is designed to solve, so readers can recognize when BlockML fits their own problem before any feature-level detail follows.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -45,121 +39,56 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.CoreUseCases" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Ground BlockML's purpose in its core use cases rather than in a feature list.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can recognize a problem that fits one of BlockML's three core use cases.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>The three core BlockML use cases: structured project documentation, general-purpose domain modeling, and AI workspaces.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Block-authoring how-to steps.</summary>
-          <reason>This page explains why and when to reach for BlockML, not how to author a Block.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>All three use cases rest on one principle: representing information as a structured semantic model instead of unstructured text.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <content override="true">
       <composition>
-        <dpage:Section heading="Three problems, one principle" purpose="State the shared principle behind the three use cases">
+        <dpage:Section heading="Three problems, one principle">
           <content>
-            <dpage:Paragraph purpose="Introduce the three use cases as expressions of one principle">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>BlockML is designed around three core use cases that all build on one principle: information is represented as a structured semantic model instead of unstructured text.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="BlockML is designed around three core use cases that all build on one principle: information is represented as a structured semantic model instead of unstructured text." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Structured project documentation" purpose="Explain the first use case">
+        <dpage:Section heading="Structured project documentation">
           <content>
-            <dpage:Paragraph purpose="Contrast BlockML documentation with plain Markdown">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>BlockML can serve as a structured alternative to Markdown, making a project's documentation structure explicit while still carrying human-readable prose.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>The generated documentation is not the source of truth — the BlockML model is.</summary>
-                </sem:SupportingPoint>
-              </supportingPoints>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="BlockML can serve as a structured alternative to Markdown, making a project's documentation structure explicit while still carrying human-readable prose. The generated documentation is not the source of truth — the BlockML model is." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="General-purpose domain modeling" purpose="Explain the second use case">
+        <dpage:Section heading="General-purpose domain modeling">
           <content>
-            <dpage:Paragraph purpose="Explain that BlockML describes arbitrary domains and renderers interpret them">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>BlockML describes what something is; Renderers decide how that description manifests in a particular target.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>The same BlockML model may have multiple manifestations, since the model stays independent of any one target.</summary>
-                </sem:SupportingPoint>
-              </supportingPoints>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="BlockML describes what something is; Renderers decide how that description manifests in a particular target. The same BlockML model may have multiple manifestations, since the model stays independent of any one target." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="AI workspaces" purpose="Explain the third use case">
+        <dpage:Section heading="AI workspaces">
           <content>
-            <dpage:Paragraph purpose="Explain BlockML as the persistent model an AI works on">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Instead of repeatedly generating isolated text, an AI can inspect, validate, extend, and transform a persistent BlockML model while preserving explicit structure.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>The model is the workspace; the AI works on the model; Renderers manifest its current state.</summary>
-                </sem:SupportingPoint>
-              </supportingPoints>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Instead of repeatedly generating isolated text, an AI can inspect, validate, extend, and transform a persistent BlockML model while preserving explicit structure. The model is the workspace; the AI works on the model; Renderers manifest its current state." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the shared principle before the ontological foundation follows">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="Restate the shared principle as the takeaway">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Recognizing a problem as one of these three use cases means recognizing a need for a structured semantic model instead of unstructured text.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Recognizing a problem as one of these three use cases means recognizing a need for a structured semantic model instead of unstructured text." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Continue with the ontological principle" purpose="Direct the reader to the next page">
+        <dpage:Section heading="Continue with the ontological principle">
           <content>
-            <dpage:Navigation purpose="Continue the Getting Started sequence">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Everything Is a Block" summary="Learn the ontological principle these use cases rest on.">
