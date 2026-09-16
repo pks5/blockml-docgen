@@ -2,10 +2,13 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.TypesAndValues-->
 <docs:TypesAndValues xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
-  xmlns:core="org.blockml.bml.core">
+  xmlns:core="org.blockml.bml.core"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
 
   <baseType>
     dpage:DocPage
@@ -16,7 +19,7 @@
   <documentation>
     Scope: a type describing possible values versus an instance holding an actual value,
     grounded in org.blockml.bml.core.ValueType and
-    org.blockml.bml.documentation.EverythingIsABlock. Body content is authored in a03 from those
+    org.blockml.bml.documentation.EverythingIsABlock. Body content is authored in a04 from those
     sources.
   </documentation>
   <references>
@@ -34,6 +37,9 @@
     <title override="true">
       <value>Types and Values</value>
     </title>
+    <purpose override="true">
+      <value>Teach the general type-versus-value distinction that underlies every member kind, so readers keep type and value apart before reading any of the four ValueType kind pages.</value>
+    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -42,68 +48,122 @@
     </pageType>
   </properties>
   <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.core.ValueType" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ValueTypeConfiguration" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach the general type-versus-value distinction that underlies every member kind.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader keeps type-versus-value straight when reading any member declaration.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>A type describing possible values versus an instance holding an actual value.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Per-kind detail already covered on the four ValueType kind pages.</summary>
+          <reason>This page states the general principle only.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>ValueTypes never store data; every Property is Optional — a value or none, never null.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
     <content override="true">
       <composition>
-        <dpage:Section heading="Type versus value">
+        <dpage:Section heading="Type describes, instance holds" purpose="State the general type-versus-value distinction">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text>
-                  <text>A type describes the space of possible values something may hold; an instance is
-the one concrete value actually chosen from that space. BlockML keeps these two roles
-strictly apart everywhere: a type answers what kind of value is possible, and an
-instance answers which value was actually chosen.</text>
-                </dpage:Text>
-              </content>
+            <dpage:Paragraph purpose="State the general distinction">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A ValueType describes the nature of possible values; a Property holds the actual value — the distinction that underlies every member kind.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.core.ValueType" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Types never hold data">
+        <dpage:Section heading="ValueTypes never store data" purpose="Restate the ownership rule generally">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text>
-                  <text>A ValueType only describes the nature of a value; it never stores one itself. Every
-concrete value is owned exclusively by the Property that declares that type, so the
-type and the data it describes never mix.</text>
-                </dpage:Text>
-              </content>
+            <dpage:Paragraph purpose="State that ValueTypes never store data">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>ValueTypes never store data — Properties own all concrete values, and every Property is Optional: a value or none, never null.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="A value or none, never null">
+        <dpage:Section heading="Configuration lives on the Property, not the type" purpose="Extend the distinction to instance configuration">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text>
-                  <text>A Property either holds a value from its declared type or holds none at all, so
-there is no separate null state to account for beyond the type-versus-value
-distinction itself.</text>
-                </dpage:Text>
-              </content>
+            <dpage:Paragraph purpose="State that configuration applies to the owned type instance, not the ValueType definition">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Instance configuration applies to a Property's owned ValueType instance, never to the ValueType definition block itself.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.ValueTypeConfiguration" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="One distinction, many member kinds">
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before generic types are introduced">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text>
-                  <text>The same type-versus-value separation underlies every member kind. A Property's
-declared type, and any configuration applied to that Property's own type instance,
-both still describe nature rather than hold a value themselves — configuration
-applies to the instance's type, never to the ValueType definition itself.</text>
-                </dpage:Text>
-              </content>
+            <dpage:Paragraph purpose="State the retained outcome">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Readers should now keep type-versus-value straight when reading any member declaration.</message>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Continue with Generic Types">
+        <dpage:Section heading="Continue with generic types" purpose="Direct the reader to the next page">
           <content>
-            <dpage:Navigation>
+            <dpage:Navigation purpose="Continue into the Type System section">
               <title>Next</title>
               <items>
-                <dpage:NavigationItem label="Generic Types" summary="Learn how a type can leave part of its shape open as a generic parameter.">
+                <dpage:NavigationItem label="Generic Types" summary="Learn how a Block declares and binds generic type parameters.">
                   <target>docs:GenericTypes</target>
                 </dpage:NavigationItem>
               </items>

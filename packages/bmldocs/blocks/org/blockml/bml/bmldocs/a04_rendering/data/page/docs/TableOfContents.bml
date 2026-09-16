@@ -2,9 +2,11 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.TableOfContents-->
 <docs:TableOfContents xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dcore="org.blockml.bml.docgen.core">
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
 
   <baseType>
     dpage:DocPage
@@ -16,7 +18,7 @@
     Index/menu page for the BlockML Core handbook. Scope is documentation menu, entry points,
     and navigation overview only — no BlockML concept is explained here. This page has no
     domain-content authoritative sources; it links structurally to the handbook's page groups.
-    Body content (the link list) is authored in A03 from this DocSet's page and pageGroup structure.
+    Body content (the link list) is authored in A04 from this DocSet's page and pageGroup structure.
   </documentation>
   <references>
     <see type="dcore:DocSet" relation="SeeAlso">
@@ -30,6 +32,9 @@
     <title override="true">
       <value>Documentation</value>
     </title>
+    <purpose override="true">
+      <value>Give readers a single entry point that lists every handbook section and page, so they can find the right topic and start reading without teaching any concept here.</value>
+    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Overview</value>
     </detailLevel>
@@ -38,173 +43,185 @@
     </pageType>
   </properties>
   <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Present the site structure as a navigable menu, not as a lesson on any single concept.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can locate the page for any handbook topic and knows where to start reading.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>The documentation menu, entry points, and navigation overview across all handbook groups.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Any BlockML concept explained in depth.</summary>
+          <reason>Concept depth lives on the linked pages, not on the navigation menu.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>Groups mirror the learning path from Getting Started through the BML authoring format section.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
     <content override="true">
       <composition>
-        <dpage:Section heading="Getting Started">
-          <content>
-            <dpage:Navigation>
-              <title>Getting Started</title>
+        <dpage:Navigation purpose="Present every handbook section and page as a navigable menu, in learning order">
+          <title>Documentation</title>
+          <items>
+            <dpage:NavigationItem label="Getting Started" summary="A first orientation to BlockML before any syntax or concept detail.">
               <items>
-                <dpage:NavigationItem label="Introduction to BlockML" summary="A first mental model of BlockML and how this handbook is organized.">
+                <dpage:NavigationItem label="Introduction to BlockML" summary="What BlockML is, and how BML and BOM differ.">
                   <target>docs:Introduction</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Core Use Cases" summary="The kinds of problems BlockML is meant to describe.">
+                <dpage:NavigationItem label="Core Use Cases" summary="The three problems BlockML is designed to solve.">
                   <target>docs:CoreUseCases</target>
                 </dpage:NavigationItem>
               </items>
-            </dpage:Navigation>
-          </content>
-        </dpage:Section>
-        <dpage:Section heading="Foundations">
-          <content>
-            <dpage:Navigation>
-              <title>Foundations</title>
+            </dpage:NavigationItem>
+            <dpage:NavigationItem label="Foundations" summary="The Block, its identity, inheritance, and namespaces.">
               <items>
-                <dpage:NavigationItem label="Everything Is a Block" summary="Why Block is the universal abstraction at the heart of BlockML.">
+                <dpage:NavigationItem label="Everything Is a Block" summary="The unifying ontological principle behind BlockML.">
                   <target>docs:EverythingIsABlockPage</target>
                 </dpage:NavigationItem>
                 <dpage:NavigationItem label="Blocks" summary="Defining, naming, and referencing a Block.">
                   <target>docs:Blocks</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Block Definitions and Instances" summary="The difference between defining a Block and using one.">
+                <dpage:NavigationItem label="Block Definitions and Instances" summary="The Block-versus-instance distinction.">
                   <target>docs:BlockDefinitionsAndInstances</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Inheritance" summary="How a Block extends and specializes a base type.">
+                <dpage:NavigationItem label="Inheritance" summary="Specialization via baseType.">
                   <target>docs:Inheritance</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Contracts" summary="How capabilities and behaviour are declared and honored.">
+                <dpage:NavigationItem label="Contracts" summary="Composable member fragments as an alternative to inheritance.">
                   <target>docs:Contracts</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Namespaces and Fully Qualified Names" summary="How packages give every Block a unique identity.">
+                <dpage:NavigationItem label="Namespaces and Fully Qualified Names" summary="Packages, Libraries, and fully qualified names.">
                   <target>docs:NamespacesAndFullyQualifiedNames</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Identifiers and References" summary="How one Block refers to another by name.">
+                <dpage:NavigationItem label="Identifiers and References" summary="Identifiers versus validated references.">
                   <target>docs:IdentifiersAndReferences</target>
                 </dpage:NavigationItem>
               </items>
-            </dpage:Navigation>
-          </content>
-        </dpage:Section>
-        <dpage:Section heading="Type System">
-          <content>
-            <dpage:Navigation>
-              <title>Type System</title>
+            </dpage:NavigationItem>
+            <dpage:NavigationItem label="Type System" summary="The four ValueType kinds and how they relate to Blocks and members.">
               <items>
-                <dpage:NavigationItem label="Type System" summary="An overview of the kinds of types BlockML defines.">
+                <dpage:NavigationItem label="The Type System" summary="An overview of the four ValueType kinds.">
                   <target>docs:TypeSystem</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Primitive Types" summary="The built-in scalar types available to every model.">
+                <dpage:NavigationItem label="Primitive Types" summary="Atomic scalar ValueTypes.">
                   <target>docs:PrimitiveTypes</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Struct Types" summary="Composite value types built from named fields.">
+                <dpage:NavigationItem label="Struct Types" summary="Composite named-field ValueTypes.">
                   <target>docs:StructTypes</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Enum Types" summary="Types restricted to a fixed set of named values.">
+                <dpage:NavigationItem label="Enum Types" summary="Closed sets of named values.">
                   <target>docs:EnumTypes</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Primitive Entities" summary="Wrapping a primitive value with semantic type identity.">
+                <dpage:NavigationItem label="Primitive Entities" summary="Wrapping a primitive value as a Block instance.">
                   <target>docs:PrimitiveEntities</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Types and Values" summary="How declared types constrain and describe authored values.">
+                <dpage:NavigationItem label="Types and Values" summary="The general type-versus-value distinction.">
                   <target>docs:TypesAndValues</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Generic Types" summary="Parameterizing a type definition over other types.">
+                <dpage:NavigationItem label="Generic Types" summary="Declaring and binding generic type parameters.">
                   <target>docs:GenericTypes</target>
                 </dpage:NavigationItem>
               </items>
-            </dpage:Navigation>
-          </content>
-        </dpage:Section>
-        <dpage:Section heading="Members">
-          <content>
-            <dpage:Navigation>
-              <title>Members</title>
+            </dpage:NavigationItem>
+            <dpage:NavigationItem label="Members" summary="Properties, Aggregations, Associations, and Capabilities.">
               <items>
-                <dpage:NavigationItem label="Members" summary="The overall member model shared by every Block.">
+                <dpage:NavigationItem label="Members" summary="An overview of the Block member model.">
                   <target>docs:Members</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Properties" summary="Single-valued members that hold a Block's own data.">
+                <dpage:NavigationItem label="Properties" summary="Typed value members.">
                   <target>docs:Properties</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Aggregations" summary="Members that compose or associate collections of other Blocks.">
+                <dpage:NavigationItem label="Aggregations" summary="Owned collection members.">
                   <target>docs:Aggregations</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Associations" summary="Referencing other Blocks without owning them.">
+                <dpage:NavigationItem label="Associations" summary="Non-owning instance-to-instance links.">
                   <target>docs:Associations</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Capabilities" summary="Declaring the behaviour a Block exposes.">
+                <dpage:NavigationItem label="Capabilities" summary="Block behaviour as declared members.">
                   <target>docs:Capabilities</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Member Inheritance and Overrides" summary="How a subtype refines members it inherits.">
+                <dpage:NavigationItem label="Member Inheritance and Overrides" summary="Combining inherited members with override.">
                   <target>docs:MemberInheritanceAndOverrides</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Visibility" summary="Controlling where a member may be seen or changed.">
+                <dpage:NavigationItem label="Visibility" summary="Member and Sub-Block visibility.">
                   <target>docs:Visibility</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Multiplicity and Collections" summary="How many values a member may hold.">
+                <dpage:NavigationItem label="Multiplicity and Collections" summary="Optional, singular, and multiple values.">
                   <target>docs:MultiplicityAndCollections</target>
                 </dpage:NavigationItem>
               </items>
-            </dpage:Navigation>
-          </content>
-        </dpage:Section>
-        <dpage:Section heading="Behaviour &amp; Values">
-          <content>
-            <dpage:Navigation>
-              <title>Behaviour &amp; Values</title>
+            </dpage:NavigationItem>
+            <dpage:NavigationItem label="Behaviour &amp; Values" summary="Constraints, suggestions, expressions, and value configuration.">
               <items>
-                <dpage:NavigationItem label="Constraints" summary="Rules that limit which values a member may hold.">
+                <dpage:NavigationItem label="Constraints" summary="Declarative validation rules.">
                   <target>docs:Constraints</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Suggestions" summary="Non-binding guidance offered to an author.">
+                <dpage:NavigationItem label="Suggestions" summary="Non-mandatory modeling guidance.">
                   <target>docs:Suggestions</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Expressions" summary="Computing a value from other parts of the model.">
+                <dpage:NavigationItem label="Expressions" summary="The BlockML expression language.">
                   <target>docs:Expressions</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Value Configuration" summary="How a member's actual value is authored and resolved.">
+                <dpage:NavigationItem label="Value Configuration" summary="Configuring ValueType instances.">
                   <target>docs:ValueConfiguration</target>
                 </dpage:NavigationItem>
               </items>
-            </dpage:Navigation>
-          </content>
-        </dpage:Section>
-        <dpage:Section heading="Composition &amp; Structure">
-          <content>
-            <dpage:Navigation>
-              <title>Composition &amp; Structure</title>
+            </dpage:NavigationItem>
+            <dpage:NavigationItem label="Composition &amp; Structure" summary="Filling aggregations, nesting Blocks, and documenting them.">
               <items>
-                <dpage:NavigationItem label="Composition" summary="Building larger Blocks out of smaller ones.">
+                <dpage:NavigationItem label="Composition" summary="Filling aggregations through composition.">
                   <target>docs:Composition</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Sub-Blocks" summary="Declaring a nested Block type inside a Block.">
+                <dpage:NavigationItem label="Sub-Blocks" summary="Nested Block definitions.">
                   <target>docs:SubBlocks</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Embedded Blocks" summary="Composing a Block instance directly inside another.">
+                <dpage:NavigationItem label="Embedded Blocks" summary="Full documents inlined as virtual files.">
                   <target>docs:EmbeddedBlocks</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="Documenting Blocks" summary="Attaching narrative documentation to a Block.">
+                <dpage:NavigationItem label="Documenting Blocks" summary="The Block documentation model.">
                   <target>docs:DocumentingBlocks</target>
                 </dpage:NavigationItem>
               </items>
-            </dpage:Navigation>
-          </content>
-        </dpage:Section>
-        <dpage:Section heading="BML: The Authoring Format">
-          <content>
-            <dpage:Navigation>
-              <title>BML: The Authoring Format</title>
+            </dpage:NavigationItem>
+            <dpage:NavigationItem label="BML: The Authoring Format" summary="BML as BlockML's human-authored format, and its namespaces.">
               <items>
-                <dpage:NavigationItem label="BML" summary="The XML-based authoring format used to write BlockML models.">
+                <dpage:NavigationItem label="BML: The Authoring Format" summary="BML as the authoring format and the BOM as its canonical form.">
                   <target>docs:Bml</target>
                 </dpage:NavigationItem>
-                <dpage:NavigationItem label="BML Namespaces" summary="How XML namespaces map BML element tags to types.">
+                <dpage:NavigationItem label="BML Namespaces" summary="XML namespace usage in BML.">
                   <target>docs:BmlNamespaces</target>
                 </dpage:NavigationItem>
               </items>
-            </dpage:Navigation>
-          </content>
-        </dpage:Section>
+            </dpage:NavigationItem>
+          </items>
+        </dpage:Navigation>
       </composition>
     </content>
   </aggregations>

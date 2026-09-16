@@ -2,11 +2,13 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.PrimitiveEntities-->
 <docs:PrimitiveEntities xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
   xmlns:core="org.blockml.bml.core"
-  xmlns:type="org.blockml.bml.type">
+  xmlns:type="org.blockml.bml.type"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
 
   <baseType>
     dpage:DocPage
@@ -17,7 +19,7 @@
   <documentation>
     Scope: primitive values represented as Block instances via the PrimitiveEntity wrapper,
     grounded in org.blockml.bml.core.PrimitiveEntity and its authoring rules in
-    org.blockml.bml.documentation.MemberAuthoring. Body content is authored in a03 from those
+    org.blockml.bml.documentation.MemberAuthoring. Body content is authored in a04 from those
     sources.
   </documentation>
   <references>
@@ -35,6 +37,9 @@
     <title override="true">
       <value>Primitive Entities</value>
     </title>
+    <purpose override="true">
+      <value>Teach PrimitiveEntity as the wrapper that lets a primitive value appear as a Block instance, so readers know when a bare Property value is not enough — for example, inside an aggregation.</value>
+    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -43,71 +48,132 @@
     </pageType>
   </properties>
   <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.core.PrimitiveEntity" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.MemberAuthoring" />
+            <type:TypeSelectorEntity value="org.blockml.bml.type.TextEntity" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach PrimitiveEntity as the wrapper that lets primitive values appear as Block instances, such as aggregation children.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader knows when a primitive value needs a PrimitiveEntity wrapper instead of a bare Property value.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Primitive values represented as Block instances via the PrimitiveEntity wrapper.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Generics mechanics beyond the binding needed here.</summary>
+          <reason>Full generic binding rules belong to the Generic Types page.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>PrimitiveEntity types declare a Property named value, so value="…" on the instance is ordinary instance syntax, not a PropertyDefinition wrapper.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
     <content override="true">
       <composition>
-        <dpage:Section heading="What a PrimitiveEntity is">
+        <dpage:Section heading="A primitive value as a Block instance" purpose="State what PrimitiveEntity is for">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text>
-                  <text>A PrimitiveEntity wraps an ordinary primitive value so that value can appear as a
-Block instance in its own right, carrying its own identity, documentation, or metadata,
-wherever a bare Property value is not enough. The wrapper exists only for that
-situation — most primitive values never need it.</text>
-                </dpage:Text>
-              </content>
+            <dpage:Paragraph purpose="Introduce PrimitiveEntity">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>PrimitiveEntity is the abstract generic Block that lets a primitive value appear as an instance inside a composition or aggregation.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.core.PrimitiveEntity" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="When a wrapper is needed">
+        <dpage:Section heading="Binding the generic parameter" purpose="Explain how concrete specializations bind the wrapped type">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text>
-                  <text>Properties normally store primitive values directly, and that remains the ordinary
-case throughout a BlockML model. A PrimitiveEntity becomes necessary only when a
-primitive value itself must become an aggregation child — for example, when several
-tagged values need to be collected as individually addressable instances rather than
-folded into a single Property.</text>
-                </dpage:Text>
-              </content>
+            <dpage:Paragraph purpose="Explain generic binding on PrimitiveEntity">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A derived Block binds PrimitiveEntity's generic parameter through baseType — for example TextEntity binds it to Text and thereby inherits a value property of that type.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.type.TextEntity" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Concrete wrappers bind a primitive type">
+        <dpage:Section heading="The value member exception" purpose="Explain the instance syntax exception for a member named value">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text>
-                  <text>PrimitiveEntity itself is a generic, uninstantiable wrapper. A concrete
-specialization, such as TextEntity, binds one primitive type and becomes an ordinary,
-instantiable Block, so every instance of that specialization already carries the
-bound type.</text>
-                </dpage:Text>
-              </content>
+            <dpage:Paragraph purpose="Explain the value member syntax exception">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Because a PrimitiveEntity's member is actually named value, value="…" on the instance is ordinary instance syntax for that member, not a PropertyDefinition value wrapper.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.MemberAuthoring" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Setting the wrapped value">
+        <dpage:Section heading="When a wrapper is needed" purpose="Explain when PrimitiveEntity is required instead of a bare Property">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text>
-                  <text>On a PrimitiveEntity instance, the wrapped value is set using ordinary instance
-syntax — an attribute or a direct element — because the wrapper's Property happens to
-be named value, not because of any special wrapping mechanism.</text>
-                </dpage:Text>
-              </content>
+            <dpage:Paragraph purpose="Explain when a bare Property is not enough">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Properties continue to store primitive values directly; PrimitiveEntity exists only when the primitive value itself must become a Block instance with identity, for example as an aggregation child.</message>
             </dpage:Paragraph>
-            <dpage:CodeBlock code="&lt;type:TextEntity value=&quot;Release notes&quot; /&gt;" />
           </content>
         </dpage:Section>
-        <dpage:Section heading="Continue with Types and Values">
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before types and values in general are contrasted">
           <content>
-            <dpage:Navigation>
+            <dpage:Paragraph purpose="State the retained outcome">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Readers should now know when a bare Property value is not enough and a PrimitiveEntity wrapper is needed.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Continue with types and values" purpose="Direct the reader to the next page">
+          <content>
+            <dpage:Navigation purpose="Continue into the Type System section">
               <title>Next</title>
               <items>
-                <dpage:NavigationItem label="Types and Values" summary="Step back to the general principle underlying every member kind, including this wrapper.">
+                <dpage:NavigationItem label="Types and Values" summary="See the general type-versus-value distinction behind every member kind.">
                   <target>docs:TypesAndValues</target>
                 </dpage:NavigationItem>
               </items>

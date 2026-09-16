@@ -2,11 +2,14 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.Constraints-->
 <docs:Constraints xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
   xmlns:core="org.blockml.bml.core"
-  xmlns:def="org.blockml.bml.definition">
+  xmlns:def="org.blockml.bml.definition"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
 
   <baseType>
     dpage:DocPage
@@ -18,7 +21,7 @@
     Scope: declarative validation rules, the constraints container, constraint branches, and when
     a constraint is evaluated, grounded in org.blockml.bml.documentation.ConstraintsModel,
     org.blockml.bml.core.Constraint, and org.blockml.bml.definition.ConstrainableDefinition. Body
-    content is authored in a03 from those sources.
+    content is authored in a04 from those sources.
   </documentation>
   <references>
     <see type="doc:ConstraintsModel" relation="Requires">
@@ -35,6 +38,9 @@
     <title override="true">
       <value>Constraints</value>
     </title>
+    <purpose override="true">
+      <value>Teach the constraints container and its branch-to-member-kind mapping, so readers can attach the right constraint branch to a member and know when it is enforced.</value>
+    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -43,125 +49,132 @@
     </pageType>
   </properties>
   <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ConstraintsModel" />
+            <type:TypeSelectorEntity value="org.blockml.bml.core.Constraint" />
+            <type:TypeSelectorEntity value="org.blockml.bml.definition.ConstrainableDefinition" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach the constraints container and its branch-to-member-kind mapping.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can attach the right constraint branch to a member.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Declarative validation rules, the constraints container, constraint branches, and when a constraint is evaluated.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Suggestions depth beyond the enforced-versus-non-enforced contrast.</summary>
+          <reason>Suggestions get their own page.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>Placing a constraint on the wrong branch for its embedding context is a checked error, not just a convention.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
     <content override="true">
       <composition>
-        <!--1. What a constraint is-->
-        <dpage:Section heading="Constraints as declarative rules">
+        <dpage:Section heading="Reusable validation rules" purpose="State what a constraint is">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text>
-                  <text>A constraint is a declarative rule that states a condition a Block or
-member must satisfy, so BlockML can check that condition consistently instead of
-relying on ad hoc validation code. BlockML always validates a constraint instance
-itself — its type, properties, and generic binding — regardless of whether the
-rule it describes is ever enforced.</text>
-                </dpage:Text>
-              </content>
-            </dpage:Paragraph>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text>
-                  <text>Where a constraint is attached determines what it checks: a constraint
-carries no separate target, because the surrounding definition — a Block, a
-property, an aggregation, an association, or a capability — supplies that
-context automatically.</text>
-                </dpage:Text>
-              </content>
+            <dpage:Paragraph purpose="Introduce the constraints container">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Constraints are reusable validation rules attached via a single constraints container — there is no target property, since the embedding context binds the constraint automatically.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.ConstraintsModel" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <!--2. The shared container-->
-        <dpage:Section heading="One shared container on Blocks and members">
+        <dpage:Section heading="Branches bind to their context" purpose="Explain the automatic branch-to-context binding">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text>
-                  <text>Every Block definition and every member definition capable of carrying a
-constraint exposes the same single constraints container, so a constraint is
-declared the same way no matter what kind of definition it is attached to. The
-container itself carries no information about what kind of definition it belongs
-to; the position where it is embedded determines the constraint's target and
-generic binding.</text>
-                </dpage:Text>
-              </content>
+            <dpage:Paragraph purpose="Explain automatic generic binding by embedding context">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Each constraint branch binds to the context that embeds it — a value constraint on a Property binds to that Property's ValueType, and other branches bind to their corresponding member or Block definition.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.core.Constraint" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <!--3. Branches-->
-        <dpage:Section heading="Matching a constraint to its member kind">
+        <dpage:Section heading="Enforcement is optional" purpose="Explain the validation property">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text>
-                  <text>Constraints are organized into branches, and each branch is compatible
-with only certain kinds of definitions: a value constraint checks the value
-assigned to a property, while structural constraints check the shape of a
-Block definition or of another member such as an aggregation, association, or
-capability.</text>
-                </dpage:Text>
-              </content>
-            </dpage:Paragraph>
-            <dpage:List>
-              <items>
-                <dpage:ListItem text="A value constraint checks the value assigned to a single property." />
-                <dpage:ListItem text="A block constraint checks the structure of a Block definition itself." />
-                <dpage:ListItem text="A member constraint checks the structure of an aggregation, association, or capability defined on a Block." />
-              </items>
-            </dpage:List>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text>
-                  <text>Placing a constraint on the wrong branch for its embedding context is a
-checked error, not just a naming convention that BlockML leaves to the author's
-discipline.</text>
-                </dpage:Text>
-              </content>
+            <dpage:Paragraph purpose="Explain how enforcement severity is controlled">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A constraint's optional validation property controls whether and how strictly it is enforced; when omitted, the constraint remains metadata only.</message>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <!--4. Enforcement-->
-        <dpage:Section heading="Whether a constraint is enforced">
+        <dpage:Section heading="Attaching a constraint" purpose="Explain where the constraints container is available">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text>
-                  <text>A constraint always describes its condition, but only an explicit
-enforcement setting tells BlockML to reject a model that violates it; without
-that setting the constraint stays descriptive, remaining part of the model as
-metadata for renderers, editors, and other tools.</text>
-                </dpage:Text>
-              </content>
-            </dpage:Paragraph>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text>
-                  <text>This optional enforcement is different from a suggestion, which never
-participates in validation at all regardless of any setting.</text>
-                </dpage:Text>
-              </content>
+            <dpage:Paragraph purpose="Explain that constraints attach to Blocks and members alike">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Any definition that supports constraints carries the same constraints container, whether it is a Block or one of its members.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.definition.ConstrainableDefinition" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <!--5. Recap-->
-        <dpage:Section heading="Attaching a constraint">
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before suggestions are contrasted">
           <content>
-            <dpage:List>
-              <items>
-                <dpage:ListItem text="Identify the Block or member definition the rule should apply to." />
-                <dpage:ListItem text="Choose the constraint branch compatible with that kind of definition." />
-                <dpage:ListItem text="Add an enforcement setting only if the rule should fail validation, and leave it out when the constraint should stay descriptive." />
-              </items>
-            </dpage:List>
+            <dpage:Paragraph purpose="State the retained outcome">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Readers should now be able to attach the right constraint branch to a member.</message>
+            </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <!--6. Continuation-->
-        <dpage:Section heading="Continue with non-mandatory guidance">
+        <dpage:Section heading="Continue with suggestions" purpose="Direct the reader to the contrasting non-enforced mechanism">
           <content>
-            <dpage:Navigation>
+            <dpage:Navigation purpose="Continue the Behaviour and Values sequence">
               <title>Next</title>
               <items>
-                <dpage:NavigationItem label="Suggestions" summary="Learn how non-mandatory guidance for editors and renderers differs from a constraint.">
+                <dpage:NavigationItem label="Suggestions" summary="Learn the non-enforced counterpart to constraints.">
                   <target>docs:Suggestions</target>
                 </dpage:NavigationItem>
               </items>

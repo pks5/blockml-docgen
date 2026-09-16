@@ -2,10 +2,13 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.EverythingIsABlockPage-->
 <docs:EverythingIsABlockPage xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
-  xmlns:core="org.blockml.bml.core">
+  xmlns:core="org.blockml.bml.core"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type">
 
   <baseType>
     dpage:DocPage
@@ -16,7 +19,7 @@
   <documentation>
     Scope: the Everything-is-a-Block model, single inheritance root, and why one grammar covers
     domain and framework types, grounded in org.blockml.bml.documentation.EverythingIsABlock and
-    org.blockml.bml.core.Block. Body content is authored in a03 from those sources.
+    org.blockml.bml.core.Block. Body content is authored in a04 from those sources.
   </documentation>
   <references>
     <see type="doc:EverythingIsABlock" relation="Requires">
@@ -36,6 +39,9 @@
     <title override="true">
       <value>Everything Is a Block</value>
     </title>
+    <purpose override="true">
+      <value>Teach Everything-is-a-Block as BlockML's unifying principle, so readers see domain types, ValueTypes, Languages, and even documentation as the same kind of thing before any member-level detail follows.</value>
+    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -44,95 +50,134 @@
     </pageType>
   </properties>
   <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+            <type:TypeSelectorEntity value="org.blockml.bml.core.Block" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach Everything-is-a-Block as the language's unifying principle, distinguishing the authoring ontology from free compiler internals.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can explain why domain types, ValueTypes, Languages, and documentation blocks are all Blocks.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>The Everything-is-a-Block model: one inheritance root, one parser, and one TypeRegistry bootstrap path for domain types, ValueTypes, Languages, and Definitions alike.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>The full member model and inheritance mechanics.</summary>
+          <reason>Those get dedicated pages; this page only establishes the unifying principle.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>A concrete domain example grounds the abstraction: composable domain types, ValueTypes such as Integer, and Languages such as TypeScript are all Blocks under the same root.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
     <content override="true">
       <composition>
-        <!--1. Lead-->
-        <dpage:Section heading="One idea underlies everything">
+        <dpage:Section heading="One root, one grammar" purpose="State the unifying principle">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text>
-                  <text>Every concept BlockML's grammar can express — a domain type, a value type, a
-language, or a piece of documentation — is a Block, described the same way and traced
-back to the same root.</text>
-                </dpage:Text>
-              </content>
+            <dpage:Paragraph purpose="Introduce Everything-is-a-Block as the unifying principle">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>BlockML describes everything that belongs to a grammar as Blocks — there is one root, org.blockml.bml.core.Block, one parser, and one TypeRegistry bootstrap path.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.core.Block" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <!--2. Single root-->
-        <dpage:Section heading="A single root, one parser, one TypeRegistry">
+        <dpage:Section heading="Two layers of the same idea" purpose="Distinguish the authoring ontology from compiler internals">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text>
-                  <text>Every Block ultimately extends the same sole inheritance root, is read by the
-same parser, and is registered through the same bootstrap path, so branch-specific
-behavior comes from that root's chain of specialization rather than from separate
-parallel systems. This one root, one parser, one registry model applies uniformly,
-whatever kind of Block is being described.</text>
-                </dpage:Text>
-              </content>
+            <dpage:Paragraph purpose="Separate authoring ontology from free compiler internals">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>The authoring ontology treats a Block as a named, definable unit with an FQN and a baseType chain, while the compiler internally remains free to use plain data and split indexes rather than a mandatory uniform runtime class hierarchy.</message>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <!--3. Same grammar, many kinds-->
-        <dpage:Section heading="The same grammar covers domain and framework concepts">
+        <dpage:Section heading="A concrete domain example" purpose="Ground the abstraction in recognizable kinds of Blocks">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text>
-                  <text>Several very different-looking things in BlockML all turn out to be Blocks
-under this one principle.</text>
-                </dpage:Text>
-              </content>
-            </dpage:Paragraph>
-            <dpage:List>
+            <dpage:List purpose="List the kinds of things that are all Blocks">
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Everything is a Block means composable domain types, ValueTypes, Languages, Definition meta-model types, documentation, and framework branches are all the same kind of thing.</message>
               <items>
-                <dpage:ListItem text="A composable domain type describing something in a modeled world is a Block." />
-                <dpage:ListItem text="A value type that describes the nature of a value, such as an integer or a size, is a Block." />
-                <dpage:ListItem text="An implementation language binding used to express behavior is a Block." />
-                <dpage:ListItem text="The definitions that describe a Block's own structure are themselves Blocks." />
+                <dpage:ListItem text="Composable domain types" purpose="Give the domain-type example">
+                  <message>Composable domain types are Blocks, just like every other concept in the grammar.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="ValueTypes" purpose="Give the ValueType example">
+                  <message>ValueTypes such as Integer are Blocks — type definitions, not runtime values.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Languages" purpose="Give the Language example">
+                  <message>Languages such as TypeScript are Blocks — capability implementation contracts.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Definition meta-model types" purpose="Give the Definition example">
+                  <message>Definition meta-model types describe block structure in BlockML's own language and are themselves Blocks.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Documentation and framework branches" purpose="Give the remaining framework examples">
+                  <message>Documentation blocks, Libraries, Services, Constraints, Capabilities, and Exceptions are all Blocks too.</message>
+                </dpage:ListItem>
               </items>
             </dpage:List>
           </content>
         </dpage:Section>
-        <!--4. Authoring ontology vs compiler internals-->
-        <dpage:Section heading="Authoring ontology versus compiler internals">
+        <dpage:Section heading="Types describe, Properties hold" purpose="State the value-ownership rule that follows from the unifying principle">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text>
-                  <text>Treating everything as a named, identifiable Block with its own place in a
-chain of specialization is a property of the authoring model, not a requirement on
-how the compiler must represent things internally. The authoring ontology gives
-every Block a fully qualified name and a chain of specialization, while compiler
-internals remain free to use whatever representation is convenient.</text>
-                </dpage:Text>
-              </content>
+            <dpage:Paragraph purpose="State that ValueTypes never store data">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>ValueTypes never store data — the type describes the nature of a value, and Properties own all concrete values.</message>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <!--5. Looking ahead-->
-        <dpage:Section heading="What this principle sets up">
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before Blocks are introduced in depth">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text>
-                  <text>Because every concept is a Block, learning how one Block is defined, named,
-and referenced is enough to start reading any part of a BlockML model.</text>
-                </dpage:Text>
-              </content>
+            <dpage:Paragraph purpose="State the retained outcome">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Readers should now be able to explain why domain types, ValueTypes, Languages, and documentation blocks are all Blocks under one root.</message>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <!--6. Continuation-->
-        <dpage:Section heading="Continue with a single Block">
+        <dpage:Section heading="Continue with defining a Block" purpose="Direct the reader to the next page">
           <content>
-            <dpage:Navigation>
+            <dpage:Navigation purpose="Continue the Foundations sequence">
               <title>Next</title>
               <items>
-                <dpage:NavigationItem label="Blocks" summary="Learn how a single Block is defined, named, and referenced.">
+                <dpage:NavigationItem label="Blocks" summary="Learn how to define, name, and reference a Block.">
                   <target>docs:Blocks</target>
                 </dpage:NavigationItem>
               </items>
