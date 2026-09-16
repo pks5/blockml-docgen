@@ -1,0 +1,66 @@
+<!--DocGen Render Target Library
+  FQN: org.blockml.bml.target.docgen.Library-->
+<docgen:Library xmlns="http://blockml.org/bml"
+  xmlns:blockml="org.blockml.bml"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:docgenlib="org.blockml.bml.docgen"
+  xmlns:docgen="org.blockml.bml.target.docgen"
+  xmlns:dgapi="org.blockml.bml.target.docgen.api"
+  xmlns:dgcap="org.blockml.bml.target.docgen.capability"
+  xmlns:dgconfig="org.blockml.bml.target.docgen.config"
+  xmlns:dgdocumentation="org.blockml.bml.target.docgen.documentation">
+
+  <baseType>
+    core:BlockLibrary
+  </baseType>
+  <is>
+    The DocGen HTML render target library catalog
+  </is>
+  <version>
+    0.1.0
+  </version>
+  <documentation>
+    Canonical DocGen HTML target specification — registry name docgen, DocSet host,
+    publish-ready gate, DefaultMainLayout / DefaultTheme. TypeScript in
+    packages/docgen-target/src/ implements this library.
+  </documentation>
+  <language>
+    <blockml:language.English />
+  </language>
+  <properties>
+    <description override="true">
+      <value>DocGen HTML render target library</value>
+    </description>
+  </properties>
+  <aggregations>
+    <readMe override="true">
+      <composition>
+        <docgen:README />
+      </composition>
+    </readMe>
+    <dependencies override="true">
+      <composition>
+        <blockml:Library />
+        <docgenlib:Library />
+      </composition>
+    </dependencies>
+    <blocks override="true">
+      <composition>
+        <docgen:DocgenType />
+        <dgapi:DocgenOptions />
+        <dgapi:DocgenRenderOutput />
+        <dgconfig:DocgenConstants />
+        <dgconfig:DefaultMainLayout />
+        <dgconfig:DefaultTheme />
+        <dgcap:Render />
+        <dgcap:ValidatePublishReady />
+        <dgcap:AssembleSite />
+        <dgcap:RenderPageBody />
+        <dgcap:WrapMainLayout />
+        <dgdocumentation:ArchitectureOverview />
+        <dgdocumentation:V1Scope />
+        <dgdocumentation:PublicApi />
+      </composition>
+    </blocks>
+  </aggregations>
+</docgen:Library>

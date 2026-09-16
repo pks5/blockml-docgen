@@ -1,0 +1,40 @@
+<!--DocGen Capability — WrapMainLayout
+  FQN: org.blockml.bml.target.docgen.capability.WrapMainLayout-->
+<dgcap:WrapMainLayout xmlns="http://blockml.org/bml"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:dgcap="org.blockml.bml.target.docgen.capability"
+  xmlns:dgconfig="org.blockml.bml.target.docgen.config"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    core:Capability
+  </baseType>
+  <is>
+    Wrap a page body in DefaultMainLayout with DefaultTheme CSS
+  </is>
+  <documentation>
+    Produces a full HTML document: doctype, head with inline theme CSS, header
+    nav, main content slot. V1 always uses DefaultMainLayout and DefaultTheme.
+  </documentation>
+  <references>
+    <see type="dgconfig:DefaultMainLayout" relation="Requires" />
+    <see type="dgconfig:DefaultTheme" relation="Requires" />
+  </references>
+  <properties>
+    <title type="type:Text">
+      <documentation>
+        Document title (required).
+      </documentation>
+    </title>
+    <bodyInner type="type:Text">
+      <documentation>
+        Page body HTML fragment (required).
+      </documentation>
+    </bodyInner>
+    <result type="type:Text">
+      <documentation>
+        Full HTML document (required).
+      </documentation>
+    </result>
+  </properties>
+</dgcap:WrapMainLayout>

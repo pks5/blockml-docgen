@@ -1,0 +1,36 @@
+<!--DocGen Capability — RenderPageBody
+  FQN: org.blockml.bml.target.docgen.capability.RenderPageBody-->
+<dgcap:RenderPageBody xmlns="http://blockml.org/bml"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:dgcap="org.blockml.bml.target.docgen.capability"
+  xmlns:page="org.blockml.bml.docgen.page"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    core:Capability
+  </baseType>
+  <is>
+    Dispatch DocPage content tree to HTML fragment
+  </is>
+  <documentation>
+    Walks DocPage.content BOM compositions. Dispatches Section, Paragraph,
+    Text, CodeBlock, List, ListItem, Image, Navigation, NavigationItem to HTML.
+    Independent of MainLayout and Theme.
+  </documentation>
+  <references>
+    <see type="page:DocPage" relation="Requires" />
+    <see type="dgcap:AssembleSite" relation="SeeAlso" />
+  </references>
+  <properties>
+    <pageFqn type="type:Text">
+      <documentation>
+        Page FQN (required).
+      </documentation>
+    </pageFqn>
+    <result type="type:Text">
+      <documentation>
+        HTML body fragment (required).
+      </documentation>
+    </result>
+  </properties>
+</dgcap:RenderPageBody>

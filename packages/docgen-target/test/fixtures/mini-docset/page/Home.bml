@@ -1,0 +1,58 @@
+<!--Mini fixture home page
+  FQN: org.blockml.bml.target.docgen.fixture.page.Home-->
+<page:Home xmlns="http://blockml.org/bml"
+  xmlns:page="org.blockml.bml.target.docgen.fixture.page"
+  xmlns:dpage="org.blockml.bml.docgen.page">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    Mini DocSet home page
+  </is>
+  <documentation>
+    Publish-ready home page for docgen-target fixture.
+  </documentation>
+  <properties>
+    <title override="true">
+      <value>Home</value>
+    </title>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Overview</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <content override="true">
+      <composition>
+        <dpage:Section heading="Welcome">
+          <content>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>This is the home page of the mini documentation set.</text>
+                </dpage:Text>
+              </content>
+            </dpage:Paragraph>
+            <dpage:CodeBlock>
+              <code>block Hello {
+}</code>
+            </dpage:CodeBlock>
+            <dpage:List>
+              <items>
+                <dpage:ListItem>
+                  <text>First item</text>
+                </dpage:ListItem>
+                <dpage:ListItem>
+                  <text>Second item</text>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
+  </aggregations>
+</page:Home>

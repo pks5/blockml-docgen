@@ -1,0 +1,35 @@
+<!--DocGen documentation — V1Scope
+  FQN: org.blockml.bml.target.docgen.documentation.V1Scope-->
+<dgdocumentation:V1Scope xmlns="http://blockml.org/bml"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:dgdocumentation="org.blockml.bml.target.docgen.documentation">
+
+  <baseType>
+    core:Documentation
+  </baseType>
+  <is>
+    What DocGen HTML target v1 includes and excludes
+  </is>
+  <documentation>
+    # V1 scope
+    
+    In scope:
+    - Document-scope host: DocSet .bml file
+    - Publish-ready gate (abort on semantic/claim altitude)
+    - HTML for Section, Paragraph, Text, CodeBlock, List, ListItem, Image,
+      Navigation, NavigationItem
+    - One DefaultMainLayout and one DefaultTheme (inline CSS)
+    - Paths from DocSet.pageMapping or FQN simpleName fallback; homePage → index.html
+    - Registration via targetPackages (not CLI builtin)
+    
+    Out of scope:
+    - Multiple layouts/themes, search, syntax-highlight libraries
+    - Sector/pipeline knowledge (a04, tasks)
+    - Host by FQN without a file
+    - Soft-pass on remaining semantics
+  </documentation>
+  <references>
+    <see type="dgdocumentation:PublicApi" relation="ReadNext" />
+    <see type="dgdocumentation:ArchitectureOverview" relation="SeeAlso" />
+  </references>
+</dgdocumentation:V1Scope>

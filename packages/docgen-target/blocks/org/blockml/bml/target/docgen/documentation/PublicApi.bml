@@ -1,0 +1,36 @@
+<!--DocGen documentation — PublicApi
+  FQN: org.blockml.bml.target.docgen.documentation.PublicApi-->
+<dgdocumentation:PublicApi xmlns="http://blockml.org/bml"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:dgdocumentation="org.blockml.bml.target.docgen.documentation"
+  xmlns:dgapi="org.blockml.bml.target.docgen.api"
+  xmlns:dgcap="org.blockml.bml.target.docgen.capability">
+
+  <baseType>
+    core:Documentation
+  </baseType>
+  <is>
+    Public compile surface for the DocGen HTML target
+  </is>
+  <documentation>
+    # Public API
+    
+    CLI: `blockml compile &lt;DocSet.bml&gt; docgen [--out docs-site]`
+    
+    Package export: DocgenTarget (RenderTarget name docgen).
+    
+    Options: DocgenOptions (optional rootDir).
+    
+    Output: DocgenRenderOutput / RenderOutput files[].
+    
+    Requires project bootstrap so all DocSet pages are on the TypeRegistry.
+    Fixture DocSets under test/ need `--src` pointing at the fixture folder.
+    Project DocSets under packages/*/blocks load via the default project bootstrap.
+  </documentation>
+  <references>
+    <see type="dgapi:DocgenOptions" relation="SeeAlso" />
+    <see type="dgapi:DocgenRenderOutput" relation="SeeAlso" />
+    <see type="dgcap:Render" relation="SeeAlso" />
+    <see type="dgdocumentation:ArchitectureOverview" relation="SeeAlso" />
+  </references>
+</dgdocumentation:PublicApi>

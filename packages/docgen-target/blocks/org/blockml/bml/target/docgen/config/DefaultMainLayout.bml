@@ -1,0 +1,27 @@
+<!--DocGen config — DefaultMainLayout
+  FQN: org.blockml.bml.target.docgen.config.DefaultMainLayout-->
+<dgconfig:DefaultMainLayout xmlns="http://blockml.org/bml"
+  xmlns:docgen="org.blockml.bml.target.docgen"
+  xmlns:dgconfig="org.blockml.bml.target.docgen.config"
+  xmlns:dgcap="org.blockml.bml.target.docgen.capability">
+
+  <baseType>
+    docgen:DocgenType
+  </baseType>
+  <is>
+    The v1 default HTML chrome: site header, nav, and content slot
+  </is>
+  <documentation>
+    V1 MainLayout seam. TypeScript WrapMainLayout implements this layout only.
+    Future MainLayout variants can be added without changing content dispatch.
+    Chrome includes DocSet title, a flat or grouped page nav, and the page body slot.
+  </documentation>
+  <references>
+    <see type="dgconfig:DefaultTheme" relation="Requires">
+      CSS theme applied inside this layout shell.
+    </see>
+    <see type="dgcap:WrapMainLayout" relation="SeeAlso">
+      Capability that applies this layout.
+    </see>
+  </references>
+</dgconfig:DefaultMainLayout>

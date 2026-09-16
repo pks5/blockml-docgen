@@ -1,0 +1,30 @@
+<!--DocGen API — DocgenRenderOutput
+  FQN: org.blockml.bml.target.docgen.api.DocgenRenderOutput-->
+<dgapi:DocgenRenderOutput xmlns="http://blockml.org/bml"
+  xmlns:docgen="org.blockml.bml.target.docgen"
+  xmlns:dgapi="org.blockml.bml.target.docgen.api"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    docgen:DocgenType
+  </baseType>
+  <is>
+    Multi-file HTML site output from the docgen render target
+  </is>
+  <documentation>
+    Mirrors RenderOutput: files[] of relative path + HTML content, optional
+    diagnostics. The CLI writes files; the target does not touch disk.
+  </documentation>
+  <properties>
+    <files type="type:Text">
+      <documentation>
+        Opaque files array description (path + content per HTML page).
+      </documentation>
+    </files>
+    <diagnostics type="type:Text">
+      <documentation>
+        Optional diagnostics from validate/assemble (opaque list).
+      </documentation>
+    </diagnostics>
+  </properties>
+</dgapi:DocgenRenderOutput>

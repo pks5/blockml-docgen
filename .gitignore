@@ -3,5 +3,8 @@ node_modules
 .npmrc
 /blockdoc
 /schemas
+/docs-site
 *.fat.bml
 .blockml/
+packages/docgen-target/dist
+packages/docgen-target/package-lock.json

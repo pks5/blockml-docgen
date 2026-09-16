@@ -1,0 +1,22 @@
+<!--DocGen config — DefaultTheme
+  FQN: org.blockml.bml.target.docgen.config.DefaultTheme-->
+<dgconfig:DefaultTheme xmlns="http://blockml.org/bml"
+  xmlns:docgen="org.blockml.bml.target.docgen"
+  xmlns:dgconfig="org.blockml.bml.target.docgen.config">
+
+  <baseType>
+    docgen:DocgenType
+  </baseType>
+  <is>
+    The v1 default inline CSS theme for DocGen HTML pages
+  </is>
+  <documentation>
+    V1 Theme seam. TypeScript embeds one CSS string in each HTML document.
+    Future themes swap this constant without changing MainLayout or content dispatch.
+  </documentation>
+  <references>
+    <see type="dgconfig:DefaultMainLayout" relation="SeeAlso">
+      Layout shell that embeds this theme.
+    </see>
+  </references>
+</dgconfig:DefaultTheme>

@@ -15,7 +15,8 @@
   "devDependencies": {
     "@blockml/bmldocs": "workspace:*",
     "@blockml/cli": "^0.9.11",
-    "@blockml/docgen": "workspace:*"
+    "@blockml/docgen": "workspace:*",
+    "@blockml/docgen-target": "*"
   },
   "scripts": {
     "validate": "blockml validate",

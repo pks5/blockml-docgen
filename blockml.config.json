@@ -1,0 +1,5 @@
+{
+  "targetPackages": {
+    "docgen": "@blockml/docgen-target"
+  }
+}

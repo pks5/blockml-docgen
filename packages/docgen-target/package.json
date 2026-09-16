@@ -1,0 +1,50 @@
+{
+  "name": "@blockml/docgen-target",
+  "version": "0.1.0",
+  "description": "BlockML DocGen render target — self-contained HTML from a DocSet host",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "blockml": {
+    "library": "./blocks/org/blockml/bml/target/docgen/Library.bml",
+    "target": "./dist/index.js",
+    "targetName": "docgen",
+    "cliHints": {
+      "requiresHostFile": true,
+      "defaultOutDir": "docs-site",
+      "documentBootstrap": "project"
+    }
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "blocks"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run --config vitest.config.ts"
+  },
+  "dependencies": {
+    "@blockml/bom": "^0.9.11",
+    "@blockml/compiler": "^0.9.11",
+    "@blockml/core": "^1.4.1",
+    "@blockml/docgen": "file:../docgen",
+    "@blockml/framework": "^0.9.11"
+  },
+  "devDependencies": {
+    "@blockml/parser": "^0.9.11",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,41 @@
+<!--Dirty fixture page with message still present
+  FQN: org.blockml.bml.target.docgen.fixture.dirty.DirtyPage-->
+<dirty:DirtyPage xmlns="http://blockml.org/bml"
+  xmlns:dirty="org.blockml.bml.target.docgen.fixture.dirty"
+  xmlns:dpage="org.blockml.bml.docgen.page">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A page that still has ContentElement message altitude
+  </is>
+  <documentation>
+    Gate should reject this page.
+  </documentation>
+  <properties>
+    <title override="true">
+      <value>Dirty</value>
+    </title>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Overview</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <content override="true">
+      <composition>
+        <dpage:Paragraph>
+          <message>This claim should block HTML render.</message>
+          <content>
+            <dpage:Text>
+              <text>Body text is present but message remains.</text>
+            </dpage:Text>
+          </content>
+        </dpage:Paragraph>
+      </composition>
+    </content>
+  </aggregations>
+</dirty:DirtyPage>

@@ -1,0 +1,32 @@
+<!--DocGen config — shared constants
+  FQN: org.blockml.bml.target.docgen.config.DocgenConstants-->
+<dgconfig:DocgenConstants xmlns="http://blockml.org/bml"
+  xmlns:docgen="org.blockml.bml.target.docgen"
+  xmlns:dgconfig="org.blockml.bml.target.docgen.config"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    docgen:DocgenType
+  </baseType>
+  <is>
+    Named constants for the DocGen HTML render target
+  </is>
+  <documentation>
+    Holds registry name, DocSet base type FQN, diagnostic codes, and related
+    string constants implemented in TypeScript.
+  </documentation>
+  <properties>
+    <registryName type="type:Text">
+      <value>docgen</value>
+      <documentation>
+        Compile target registry name.
+      </documentation>
+    </registryName>
+    <docSetBaseType type="type:Text">
+      <value>org.blockml.bml.docgen.core.DocSet</value>
+      <documentation>
+        Required base type (or ancestor) of the host document root.
+      </documentation>
+    </docSetBaseType>
+  </properties>
+</dgconfig:DocgenConstants>

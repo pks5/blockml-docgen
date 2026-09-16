@@ -1,0 +1,39 @@
+<!--Mini fixture DocSet for docgen-target tests
+  FQN: org.blockml.bml.target.docgen.fixture.MiniDocSet-->
+<fixture:MiniDocSet xmlns="http://blockml.org/bml"
+  xmlns:fixture="org.blockml.bml.target.docgen.fixture"
+  xmlns:fixpage="org.blockml.bml.target.docgen.fixture.page"
+  xmlns:dcore="org.blockml.bml.docgen.core">
+
+  <baseType>
+    dcore:DocSet
+  </baseType>
+  <is>
+    A minimal publish-ready DocSet for DocGen HTML target tests
+  </is>
+  <documentation>
+    Fixture only — not part of the published target library catalog.
+  </documentation>
+  <properties>
+    <title override="true">
+      <value>Mini Docs</value>
+    </title>
+    <summary override="true">
+      <value>Tiny handbook used by @blockml/docgen-target tests.</value>
+    </summary>
+    <version override="true">
+      <value>0.0.1</value>
+    </version>
+    <homePage override="true">
+      <value>org.blockml.bml.target.docgen.fixture.page.Home</value>
+    </homePage>
+  </properties>
+  <aggregations>
+    <pages override="true">
+      <composition>
+        <fixpage:Home />
+        <fixpage:About />
+      </composition>
+    </pages>
+  </aggregations>
+</fixture:MiniDocSet>

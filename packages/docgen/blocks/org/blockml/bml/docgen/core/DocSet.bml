@@ -107,6 +107,14 @@
         List of all page groups in this DocSet.
       </documentation>
     </pageGroups>
+    <pageMapping type="dcore:PageMapping[]">
+      <documentation>
+        Owned mappings from each publishable Page to its stable pageKey and
+        site-relative path. Used by HTML and other site render targets for
+        routing; when omitted, targets may fall back to a derived path from
+        the page FQN.
+      </documentation>
+    </pageMapping>
     <learningPaths type="type:TypeReferenceEntity(sem:LearningPath)[]">
       <documentation>
         List of all available and active learning paths for this DocSet.

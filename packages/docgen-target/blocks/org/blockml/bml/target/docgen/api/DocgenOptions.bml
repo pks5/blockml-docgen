@@ -1,0 +1,32 @@
+<!--DocGen API — DocgenOptions
+  FQN: org.blockml.bml.target.docgen.api.DocgenOptions-->
+<dgapi:DocgenOptions xmlns="http://blockml.org/bml"
+  xmlns:docgen="org.blockml.bml.target.docgen"
+  xmlns:dgapi="org.blockml.bml.target.docgen.api"
+  xmlns:dgcap="org.blockml.bml.target.docgen.capability"
+  xmlns:dgdocumentation="org.blockml.bml.target.docgen.documentation"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    docgen:DocgenType
+  </baseType>
+  <is>
+    Opaque targetOptions payload for registry name docgen
+  </is>
+  <documentation>
+    V1 options are minimal. rootDir is optional (default process.cwd()).
+    Layout and theme selection is reserved; v1 always uses DefaultMainLayout
+    and DefaultTheme.
+  </documentation>
+  <references>
+    <see type="dgdocumentation:PublicApi" relation="SeeAlso" />
+    <see type="dgcap:Render" relation="SeeAlso" />
+  </references>
+  <properties>
+    <rootDir type="type:Text">
+      <documentation>
+        Project root for diagnostics paths. Default process.cwd() in render.
+      </documentation>
+    </rootDir>
+  </properties>
+</dgapi:DocgenOptions>

@@ -1,0 +1,53 @@
+<!--Mini fixture about page
+  FQN: org.blockml.bml.target.docgen.fixture.page.About-->
+<page:About xmlns="http://blockml.org/bml"
+  xmlns:page="org.blockml.bml.target.docgen.fixture.page"
+  xmlns:dpage="org.blockml.bml.docgen.page">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    Mini DocSet about page
+  </is>
+  <documentation>
+    Publish-ready about page for docgen-target fixture.
+  </documentation>
+  <properties>
+    <title override="true">
+      <value>About</value>
+    </title>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Overview</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <content override="true">
+      <composition>
+        <dpage:Section heading="About this set">
+          <content>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>About explains the purpose of the mini documentation set.</text>
+                </dpage:Text>
+              </content>
+            </dpage:Paragraph>
+            <dpage:Navigation title="Also read">
+              <items>
+                <dpage:NavigationItem>
+                  <label>Home</label>
+                  <summary>Start here</summary>
+                  <target>org.blockml.bml.target.docgen.fixture.page.Home</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
+  </aggregations>
+</page:About>

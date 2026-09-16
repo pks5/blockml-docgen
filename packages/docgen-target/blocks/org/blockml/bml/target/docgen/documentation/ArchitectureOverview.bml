@@ -1,0 +1,32 @@
+<!--DocGen documentation — ArchitectureOverview
+  FQN: org.blockml.bml.target.docgen.documentation.ArchitectureOverview-->
+<dgdocumentation:ArchitectureOverview xmlns="http://blockml.org/bml"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:dgdocumentation="org.blockml.bml.target.docgen.documentation"
+  xmlns:dgcap="org.blockml.bml.target.docgen.capability">
+
+  <baseType>
+    core:Documentation
+  </baseType>
+  <is>
+    Architecture of the DocGen HTML render target
+  </is>
+  <documentation>
+    # Architecture
+    
+    Layers:
+    - org.blockml.bml.docgen.* — DocSet / DocPage content model (input)
+    - org.blockml.bml.target.docgen.* — this library (options, gate, layout/theme seams)
+    - @blockml/compiler RenderTarget — TypeScript entry
+    - @blockml/cli — host file, targetPackages plugin load, write files
+    
+    Pipeline: host DocSet → ValidatePublishReady → AssembleSite
+    (RenderPageBody + WrapMainLayout + DefaultTheme) → files[].
+    
+    Content dispatch is independent of chrome (MainLayout) and CSS (Theme).
+  </documentation>
+  <references>
+    <see type="dgdocumentation:V1Scope" relation="ReadNext" />
+    <see type="dgcap:Render" relation="SeeAlso" />
+  </references>
+</dgdocumentation:ArchitectureOverview>

@@ -1,0 +1,20 @@
+<!--DocGen Render Target — package root type marker
+  FQN: org.blockml.bml.target.docgen.DocgenType-->
+<docgen:DocgenType xmlns="http://blockml.org/bml"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:docgen="org.blockml.bml.target.docgen">
+
+  <baseType>
+    core:Block
+  </baseType>
+  <is>
+    Abstract marker for DocGen HTML render target implementation blocks
+  </is>
+  <documentation>
+    All org.blockml.bml.target.docgen.api|config.* types extend this marker.
+    Distinct from docgen domain Blocks under org.blockml.bml.docgen.*.
+  </documentation>
+  <abstract>
+    true
+  </abstract>
+</docgen:DocgenType>

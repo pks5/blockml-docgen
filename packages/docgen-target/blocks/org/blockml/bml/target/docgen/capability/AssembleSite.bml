@@ -1,0 +1,36 @@
+<!--DocGen Capability — AssembleSite
+  FQN: org.blockml.bml.target.docgen.capability.AssembleSite-->
+<dgcap:AssembleSite xmlns="http://blockml.org/bml"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:dgapi="org.blockml.bml.target.docgen.api"
+  xmlns:dgcap="org.blockml.bml.target.docgen.capability"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    core:Capability
+  </baseType>
+  <is>
+    Build HTML files for every page in a publish-ready DocSet
+  </is>
+  <documentation>
+    Resolves page HTML paths (pageMapping or FQN fallback), builds site nav from
+    rootPageGroup / pages, renders each page body via RenderPageBody, wraps with
+    WrapMainLayout + DefaultTheme. Emits index.html for homePage.
+  </documentation>
+  <references>
+    <see type="dgcap:RenderPageBody" relation="Requires" />
+    <see type="dgcap:WrapMainLayout" relation="Requires" />
+  </references>
+  <properties>
+    <docSetFqn type="type:Text">
+      <documentation>
+        Host DocSet FQN (required).
+      </documentation>
+    </docSetFqn>
+    <result type="dgapi:DocgenRenderOutput">
+      <documentation>
+        Assembled site files (required).
+      </documentation>
+    </result>
+  </properties>
+</dgcap:AssembleSite>

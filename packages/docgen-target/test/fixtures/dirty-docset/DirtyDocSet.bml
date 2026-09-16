@@ -1,0 +1,37 @@
+<!--Dirty fixture DocSet — still has semantic altitude
+  FQN: org.blockml.bml.target.docgen.fixture.dirty.DirtyDocSet-->
+<dirty:DirtyDocSet xmlns="http://blockml.org/bml"
+  xmlns:dirty="org.blockml.bml.target.docgen.fixture.dirty"
+  xmlns:dcore="org.blockml.bml.docgen.core">
+
+  <baseType>
+    dcore:DocSet
+  </baseType>
+  <is>
+    A DocSet whose pages still carry claim altitude
+  </is>
+  <documentation>
+    Fixture for publish-ready gate failure tests.
+  </documentation>
+  <properties>
+    <title override="true">
+      <value>Dirty Docs</value>
+    </title>
+    <summary override="true">
+      <value>Should fail ValidatePublishReady.</value>
+    </summary>
+    <version override="true">
+      <value>0.0.1</value>
+    </version>
+    <homePage override="true">
+      <value>org.blockml.bml.target.docgen.fixture.dirty.DirtyPage</value>
+    </homePage>
+  </properties>
+  <aggregations>
+    <pages override="true">
+      <composition>
+        <dirty:DirtyPage />
+      </composition>
+    </pages>
+  </aggregations>
+</dirty:DirtyDocSet>

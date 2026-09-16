@@ -1,0 +1,32 @@
+<!--DocGen Render Target — README
+  FQN: org.blockml.bml.target.docgen.README-->
+<docgen:README xmlns="http://blockml.org/bml"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:docgen="org.blockml.bml.target.docgen"
+  xmlns:dgcap="org.blockml.bml.target.docgen.capability"
+  xmlns:dgdocumentation="org.blockml.bml.target.docgen.documentation">
+
+  <baseType>
+    core:ReadMe
+  </baseType>
+  <is>
+    Reading entry for the DocGen HTML render target library
+  </is>
+  <documentation>
+    The @blockml/docgen-target package implements RenderTarget name docgen.
+    This library (org.blockml.bml.target.docgen.*) is the SSOT; TypeScript in
+    packages/docgen-target/src/ implements it.
+    
+    Start at org.blockml.bml.target.docgen.documentation.ArchitectureOverview.
+    
+    V1: document-scope host is a dcore:DocSet (or subtype). Publish-ready pages
+    (no semantic/claim altitude) become a self-contained HTML site. One
+    DefaultMainLayout and one DefaultTheme; content dispatch is separate from chrome.
+  </documentation>
+  <references>
+    <see type="dgdocumentation:ArchitectureOverview" relation="ReadFirst" />
+    <see type="dgdocumentation:V1Scope" relation="SeeAlso" />
+    <see type="dgdocumentation:PublicApi" relation="SeeAlso" />
+    <see type="dgcap:Render" relation="SeeAlso" />
+  </references>
+</docgen:README>

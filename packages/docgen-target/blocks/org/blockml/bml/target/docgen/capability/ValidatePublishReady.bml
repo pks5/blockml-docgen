@@ -1,0 +1,42 @@
+<!--DocGen Capability — ValidatePublishReady
+  FQN: org.blockml.bml.target.docgen.capability.ValidatePublishReady-->
+<dgcap:ValidatePublishReady xmlns="http://blockml.org/bml"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:dgcap="org.blockml.bml.target.docgen.capability"
+  xmlns:dcore="org.blockml.bml.docgen.core"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    core:Capability
+  </baseType>
+  <is>
+    Gate that rejects DocSets still carrying semantic or claim altitude
+  </is>
+  <documentation>
+    Walks every Page listed on DocSet.pages. Errors when page- or element-level
+    authoritativeSources, scopes, readerOutcomes, learningObjectives, exclusions,
+    supportingPoints, audiences, purpose, or ContentElement message / role /
+    weight / detailLevel remain. Page title, docset, pageType, page detailLevel,
+    rules, and body slots are allowed. Diagnostic code BML_DOCGEN_PUBLISH_NOT_READY.
+  </documentation>
+  <references>
+    <see type="dcore:DocSet" relation="Requires">
+      Host DocSet whose pages are checked.
+    </see>
+    <see type="dgcap:Render" relation="SeeAlso">
+      Entry that runs this gate before AssembleSite.
+    </see>
+  </references>
+  <properties>
+    <docSetFqn type="type:Text">
+      <documentation>
+        Host DocSet FQN (required).
+      </documentation>
+    </docSetFqn>
+    <result type="type:Text">
+      <documentation>
+        Diagnostics list (required).
+      </documentation>
+    </result>
+  </properties>
+</dgcap:ValidatePublishReady>

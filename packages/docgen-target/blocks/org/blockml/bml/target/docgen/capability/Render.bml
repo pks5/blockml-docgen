@@ -1,0 +1,44 @@
+<!--DocGen Capability — Render
+  FQN: org.blockml.bml.target.docgen.capability.Render-->
+<dgcap:Render xmlns="http://blockml.org/bml"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:dgapi="org.blockml.bml.target.docgen.api"
+  xmlns:dgcap="org.blockml.bml.target.docgen.capability"
+  xmlns:dgdocumentation="org.blockml.bml.target.docgen.documentation"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    core:Capability
+  </baseType>
+  <is>
+    Public RenderTarget entry: DocSet host document to HTML site
+  </is>
+  <documentation>
+    Registry name docgen. accepts: document only. Host root must be
+    org.blockml.bml.docgen.core.DocSet or a subtype. Orchestrates
+    ValidatePublishReady then AssembleSite. Empty files when gate or assemble
+    errors.
+  </documentation>
+  <references>
+    <see type="dgdocumentation:PublicApi" relation="SeeAlso" />
+    <see type="dgcap:ValidatePublishReady" relation="SeeAlso" />
+    <see type="dgcap:AssembleSite" relation="SeeAlso" />
+  </references>
+  <properties>
+    <request type="type:Text">
+      <documentation>
+        CompileRequest (required).
+      </documentation>
+    </request>
+    <renderContext type="type:Text">
+      <documentation>
+        RenderContext / session (required).
+      </documentation>
+    </renderContext>
+    <result type="dgapi:DocgenRenderOutput">
+      <documentation>
+        Multi-file HTML output (required).
+      </documentation>
+    </result>
+  </properties>
+</dgcap:Render>
