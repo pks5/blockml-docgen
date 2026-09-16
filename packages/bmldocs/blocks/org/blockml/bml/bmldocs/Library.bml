@@ -160,7 +160,8 @@
         <task:A02_03_UpdatePageGroups />
         <a03task:A03_01_CopyData />
         <a03task:A03_02_AuthorPages />
-        <a04task:A04_01_RenderPages />
+        <a04task:A04_01_CopyData />
+        <a04task:A04_02_RenderPages />
         <a02data:BmlDocSet_A02 />
         <a02pgroup:RootPageGroup />
         <a02pgroup:DocsPageGroup />
@@ -206,29 +207,6 @@
         <docs:DocumentingBlocks />
         <docs:Bml />
         <docs:BmlNamespaces />
-        <docs:Intro />
-        <docs:FirstBlock />
-        <docs:FileAnatomy />
-        <docs:DefinitionAndInstance />
-        <docs:CompositionBasics />
-        <docs:TypesOverview />
-        <docs:TypeExpressionsBasics />
-        <docs:GenericsBriefly />
-        <docs:ConfiguringTypes />
-        <docs:CapabilitiesIntro />
-        <docs:ExpressionsIntro />
-        <docs:EmbeddedExpressionsIntro />
-        <docs:LibrariesAndPackages />
-        <docs:ReadmeAndBootstrap />
-        <docs:ModelingGuidelinesPage />
-        <docs:VisibilityBasics />
-        <docs:OverridesBasics />
-        <docs:ConstraintsBasics />
-        <docs:AnnotationsAndDirectives />
-        <docs:SubBlocksIntro />
-        <docs:ContractsIntro />
-        <docs:CompilerOverview />
-        <docs:AuthorNewBlockGuide />
         <source:BlockMLSourceSet />
         <a01_planning:A01_PlanningSector />
         <a02_structuring:A02_StructuringSector />

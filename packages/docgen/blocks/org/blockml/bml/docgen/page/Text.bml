@@ -22,7 +22,7 @@
     </see>
   </references>
   <properties>
-    <text type="page:Text">
+    <text type="org.blockml.bml.type.Text">
       <documentation>
         Optional character content of this inline run. When omitted, generate the text
         from the provided semantic information and authoritative sources in context (purpose and

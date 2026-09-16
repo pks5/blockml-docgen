@@ -10,11 +10,11 @@
     workflow:ModelTransformation(program:BuildA04.Parameters, type:Text)
   </baseType>
   <is>
-    A pending ModelTransformation that renders A03 pages
+    A pending ModelTransformation that builds the A04 rendering data
   </is>
   <properties>
     <description override="true">
-      <value>A transformation that renders authored A03 pages into the target manifestation.</value>
+      <value>A transformation that imports A03 data into A04 and renders the pages.</value>
     </description>
     <status override="true" type="workflow:ExecutionStatus">
       <value>Pending</value>
@@ -29,9 +29,14 @@
   <aggregations>
     <operations override="true">
       <composition>
-        <workflow:AgenticOperation name="Render A03 pages" status="Pending" captureOutput="true">
+        <workflow:AgenticOperation name="Copy A03 data into A04" status="Pending" captureOutput="true">
           <task>
-            <a04_task:A04_01_RenderPages />
+            <a04_task:A04_01_CopyData />
+          </task>
+        </workflow:AgenticOperation>
+        <workflow:AgenticOperation name="Render A04 pages" status="Pending" captureOutput="true">
+          <task>
+            <a04_task:A04_02_RenderPages />
           </task>
         </workflow:AgenticOperation>
       </composition>

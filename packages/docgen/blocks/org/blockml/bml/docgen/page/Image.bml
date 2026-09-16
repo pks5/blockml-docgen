@@ -11,8 +11,9 @@
     A block-level image in documentation content
   </is>
   <documentation>
-    Block-level image referenced by src. Placed among other ContentElements in Section.content
-    or DocPage.content — not as an inline run inside Paragraph.
+    Block-level image referenced by src, with optional alt text. Placed among other
+    ContentElements in Section.content or DocPage.content — not as an inline run inside
+    Paragraph.
   </documentation>
   <references>
     <see type="page:ContentElement" relation="Extends">
@@ -25,5 +26,12 @@
         Image URL or site-relative path.
       </documentation>
     </src>
+    <alt type="org.blockml.bml.type.Text">
+      <documentation>
+        Optional accessible alternative text for the image. When omitted during
+        rendering, generate a short description from this element’s message,
+        purpose, and authoritative sources instead of leaving alt empty.
+      </documentation>
+    </alt>
   </properties>
 </page:Image>

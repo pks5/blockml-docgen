@@ -1,0 +1,132 @@
+<!--BlockML Documentation — import A03 data into A04
+  FQN: org.blockml.bml.bmldocs.a04_rendering.task.A04_01_CopyData-->
+<task:A04_01_CopyData xmlns="http://blockml.org/bml"
+  xmlns:task="org.blockml.bml.bmldocs.a04_rendering.task"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    workflow:InstructionTask
+  </baseType>
+  <is>
+    A task that imports A03 data into A04
+  </is>
+  <documentation>
+    A04 rendering task: wipe a04_rendering.data, copy the full
+    a03_authoring.data tree into it, then remap packages and names
+    so the imported Blocks live only in A04.
+
+    - **Wipe** — delete the live A04 data package before the copy.
+      Leftover ignored trees (for example data_IGNORE) are not input
+    - **Copy** — the whole A03 data package, not individual DocSet /
+      Page / PageGroup sync
+    - **Remap** — one pass after the copy: A03 packages and sector
+      names become A04; no A04 file may reference another sector
+    - **Sources** — this task has no authoritativeSources
+  </documentation>
+  <properties>
+    <instructions type="type:Text" override="true">
+      <value>
+        <![CDATA[
+          Import the complete A03 data package into A04. Do not sync
+          individual DocSets, Pages, or PageGroups. Do not read
+          authoritativeSources on this task. Do not read BmlDocSetPlan.
+          Do not edit A03. Do not write outside a04 data. Do not invent
+          files that are not in A03 data.
+
+          Source package: org.blockml.bml.bmldocs.a03_authoring.data
+          Source path:
+          packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/
+
+          Target package: org.blockml.bml.bmldocs.a04_rendering.data
+          Target path:
+          packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/
+
+          Leave a04_rendering/task and A04_RenderingSector untouched.
+
+          1. Delete live A04 data
+          Delete the entire live A04 data tree (the target path above)
+          including every descendant package (data.page, data.pagegroup,
+          data.page.docs, and any other child). Delete every .bml file
+          in that tree. Remove those A04 data Blocks from
+          org.blockml.bml.bmldocs.Library. Do not remove A03 catalog
+          entries, task entries, or other sectors.
+
+          Ignore leftover non-package trees such as
+          a04_rendering/data_IGNORE. They are not live A04 data. Do not
+          read them, copy from them, or merge them. If they still hold
+          old A04 files, do not treat those files as the current set.
+
+          After this step A04 has no live data Blocks.
+
+          2. Copy the full A03 data tree
+          Copy every file and subdirectory from the A03 data path into
+          the A04 data path, preserving relative paths. Example:
+          a03_authoring/data/page/docs/Intro.bml
+          → a04_rendering/data/page/docs/Intro.bml
+          a03_authoring/data/pagegroup/RootPageGroup.bml
+          → a04_rendering/data/pagegroup/RootPageGroup.bml
+          a03_authoring/data/BmlDocSet_A03.bml
+          → a04_rendering/data/BmlDocSet_A03.bml
+          (the DocSet file name is remapped in step 3).
+
+          Copy the complete tree once. Do not filter pages vs groups vs
+          the DocSet. Do not skip a file because an older A04 copy
+          existed. There is no older live A04 copy after step 1.
+
+          3. Remap packages and names (one pass)
+          After the copy, every imported file still names A03. Rewrite
+          each imported file so it is an A04 Block. Apply these
+          substitutions everywhere they appear — xmlns URIs, root
+          element names, FQN comments, see-links, property values,
+          TypeReference tokens, and prose that identifies this Block's
+          sector:
+
+          - package prefix
+            org.blockml.bml.bmldocs.a03_authoring.data
+            → org.blockml.bml.bmldocs.a04_rendering.data
+          - filesystem segment a03_authoring/data
+            → a04_rendering/data (comments / examples only)
+          - Block name BmlDocSet_A03 → BmlDocSet_A04
+          - file BmlDocSet_A03.bml → BmlDocSet_A04.bml
+            (rename the file; do not leave the A03 file name)
+          - wording that says this Block is A03 / a03 / authoring
+            data becomes A04 / a04 / rendering data
+
+          Page and PageGroup Block names stay the same (Intro,
+          RootPageGroup, …). Only the package and the DocSet name
+          change.
+
+          After the remap, an A04 file may reference only:
+          - other A04 data Blocks (the remapped counterparts)
+          - lib / docgen / core types (for example
+            org.blockml.bml.documentation.*, org.blockml.bml.docgen.*)
+
+          An A04 file must never reference a Block from another sector
+          (a01_planning, a02_structuring, a03_authoring, or any later
+          sector). Drop or remap such a reference. Do not keep an A03
+          FQN because "the A04 counterpart is missing" — the counterpart
+          is the remapped copy in this same import.
+
+          Do not change A03 files. Do not change files outside the
+          imported A04 data tree.
+
+          4. Confirm the imported set
+          The live A04 data package must contain the same relative
+          files as A03 data, with packages and the DocSet name remapped.
+          BmlDocSet_A04.pages, pageGroups, homePage, and rootPageGroup
+          list only A04 Blocks. Each PageGroup parentGroup, pages, and
+          landingPage list only A04 Blocks. See-links between imported
+          Blocks point at A04 counterparts.
+
+          5. Export imported A04 data from the catalog
+          Export every Block under
+          org.blockml.bml.bmldocs.a04_rendering.data (including
+          descendants) from org.blockml.bml.bmldocs.Library if it is
+          not already in the catalog. Do not remove catalog entries of
+          other sectors.
+        ]]>
+      </value>
+    </instructions>
+  </properties>
+</task:A04_01_CopyData>
