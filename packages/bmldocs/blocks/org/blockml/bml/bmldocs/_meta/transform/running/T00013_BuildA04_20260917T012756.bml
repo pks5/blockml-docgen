@@ -55,8 +55,7 @@
 
 Since A03's data content had changed since the last A04 build, this re-copy replaced the previously *rendered* A04 pages with fresh (unrendered) copies from A03 — 35 page files show as modified in `git status`; the 9 PageGroup files and the DocSet came out byte-identical to before. `npx blockml validate --all` shows no errors introduced in `a04_rendering/data` (the 5 pre-existing errors are unrelated, in historical `_meta/transform/succeeded` snapshot files referencing old task types).
 
-The pipeline's next step, `A04_02_RenderPages`, is what will turn these copied pages back into rendered content — not part of this task.
-</output>
+The pipeline's next step, `A04_02_RenderPages`, is what will turn these copied pages back into rendered content — not part of this task.</output>
           <completedAt>2026-09-17T01:31:47</completedAt>
           <task>
             <a04_task:A04_01_CopyData />
@@ -99,7 +98,9 @@ The pipeline's next step, `A04_02_RenderPages`, is what will turn these copied p
             <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Visibility.bml" />
           </changedFiles>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Render A04 pages" status="Pending" captureOutput="true">
+        <workflow:AgenticOperation name="Render A04 pages" status="Running" captureOutput="true">
+          <startedAt>2026-09-17T01:31:47</startedAt>
+          <baseCommit>7ffd941d69cb5bcb727a06426f32dba77b8cac6f</baseCommit>
           <task>
             <a04_task:A04_02_RenderPages />
           </task>
