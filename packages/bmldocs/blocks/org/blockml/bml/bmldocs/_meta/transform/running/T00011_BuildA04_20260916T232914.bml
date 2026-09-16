@@ -55,8 +55,7 @@
 - Ran `npx blockml validate --all`: no new errors; the only errors present are 5 pre-existing ones in frozen historical `_meta/transform/succeeded` records, unrelated to this change.
 - `inspect`ed `BmlDocSet_A04` — fully resolved, zero unresolved references, pages/pageGroups/homePage/rootPageGroup all point at A04 Blocks.
 
-I did not commit — the working tree changes are `Library.bml` (modified) and the new `a04_rendering/data/` tree, ready for the transform tool to commit as `transform(operation)`.
-</output>
+I did not commit — the working tree changes are `Library.bml` (modified) and the new `a04_rendering/data/` tree, ready for the transform tool to commit as `transform(operation)`.</output>
           <completedAt>2026-09-16T23:35:32</completedAt>
           <task>
             <a04_task:A04_01_CopyData />
@@ -66,7 +65,9 @@ I did not commit — the working tree changes are `Library.bml` (modified) and t
             <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/" />
           </changedFiles>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Render A04 pages" status="Pending" captureOutput="true">
+        <workflow:AgenticOperation name="Render A04 pages" status="Running" captureOutput="true">
+          <startedAt>2026-09-16T23:35:33</startedAt>
+          <baseCommit>1ad652e18608ef0d835daecaa151fe3e00e9fe2e</baseCommit>
           <task>
             <a04_task:A04_02_RenderPages />
           </task>
