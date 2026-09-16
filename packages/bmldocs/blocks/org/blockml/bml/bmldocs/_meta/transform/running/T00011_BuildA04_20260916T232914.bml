@@ -42,7 +42,9 @@
   <aggregations>
     <operations override="true">
       <composition>
-        <workflow:AgenticOperation name="Copy A03 data into A04" status="Pending" captureOutput="true">
+        <workflow:AgenticOperation name="Copy A03 data into A04" status="Running" captureOutput="true">
+          <startedAt>2026-09-16T23:29:14</startedAt>
+          <baseCommit>bc34b0f8ab8cfd0bc44ef6ce3b964a07f0a32c18</baseCommit>
           <task>
             <a04_task:A04_01_CopyData />
           </task>
