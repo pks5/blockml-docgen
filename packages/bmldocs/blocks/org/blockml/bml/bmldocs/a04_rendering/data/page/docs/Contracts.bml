@@ -1,0 +1,217 @@
+<!--BlockML Documentation — a guide to contracts as composable member fragments
+
+  FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.Contracts-->
+<docs:Contracts xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to contracts as composable member fragments
+  </is>
+  <documentation>
+    Scope: contracts as composable, reusable partial definitions, contracts versus inheritance,
+    and root-level declaration, grounded in org.blockml.bml.documentation.ContractsModel. Body
+    content is authored in a03 from that source.
+  </documentation>
+  <references>
+    <see type="doc:ContractsModel" relation="Requires">
+      Primary content source — contract merge order, partial members, and satisfiesTypeBound.
+    </see>
+    <see type="doc:ModelingGuidelines" relation="SeeAlso">
+      When to prefer baseType versus contracts.
+    </see>
+    <see type="doc:PartialMemberOverrides" relation="SeeAlso">
+      Shared override rule for completing partial contract members.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Contracts</value>
+    </title>
+    <purpose override="true">
+      <value>Teach contracts as composable, reusable member fragments distinct from single inheritance, so readers can choose baseType or a contract when they need to reuse behaviour across unrelated Blocks.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ContractsModel" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ModelingGuidelines" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.PartialMemberOverrides" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach contracts as composable member fragments distinct from single inheritance.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can choose baseType or a contract when they need to reuse a member fragment.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Contracts as composable, reusable partial Block definitions declared at root level, contrasted with baseType inheritance.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Re-teaching baseType mechanics or override syntax from scratch.</summary>
+          <reason>Those are covered on the Inheritance and member-override pages.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>Contract completion follows the same override rule as baseType refinement — a contract may declare partial members that the concrete Block completes with override="true".</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+    <content override="true">
+      <composition>
+        <!--1. Lead-->
+        <dpage:Section heading="A contract shares behavior across unrelated Blocks" purpose="Give an immediate orientation to what a contract is for">
+          <content>
+            <dpage:Paragraph purpose="State the purpose of a contract in one sentence">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A contract is a reusable, composable fragment of a Block definition that
+several unrelated Blocks can share, independently of single inheritance.</message>
+              <authoritativeSources>
+                <doc:ContractsModel />
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--2. What a contract provides-->
+        <dpage:Section heading="What a contract provides" purpose="Explain the kind of content a contract may supply">
+          <content>
+            <dpage:Paragraph purpose="Explain that a contract supplies reusable partial member declarations">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A contract declares a fragment of a Block definition — such as a handful of
+members and their default behavior — that a concrete Block pulls in alongside
+whatever it already inherits.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>A contract is a reusable partial Block definition, declared once and pulled in by any Block that needs its member fragment.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.ContractsModel" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--3. Contracts versus baseType-->
+        <dpage:Section heading="Contracts versus baseType" purpose="Contrast contracts with single inheritance without re-teaching baseType">
+          <content>
+            <dpage:Paragraph purpose="Explain when a contract is chosen instead of a shared baseType">
+              <role>org.blockml.bml.docgen.role.Comparison</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Where baseType links Blocks that already share a common ancestor, a contract
+lets Blocks with no such ancestor still share a member fragment, and a single
+Block may draw on more than one contract at once.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Contracts as composable, reusable partial Block definitions declared at root level, contrasted with baseType inheritance.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.ModelingGuidelines" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--4. Completing a partial member-->
+        <dpage:Section heading="Completing a partial contract member" purpose="Explain how a concrete Block finishes a member a contract leaves incomplete">
+          <content>
+            <dpage:Paragraph purpose="Explain that contract completion follows the same rule as baseType refinement">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>When a contract leaves a member only partially declared, the concrete Block
+completes it the same way it would complete an inherited member from its
+baseType.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Contract completion follows the same override rule as baseType refinement — a contract may declare partial members that the concrete Block completes.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.PartialMemberOverrides" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--5. Choosing between the two-->
+        <dpage:Section heading="Choosing between baseType and a contract" purpose="Help the reader decide which mechanism fits a given reuse need">
+          <content>
+            <dpage:Paragraph purpose="Give the reader a decision rule for baseType versus a contract">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Reach for baseType when the Blocks involved already form one natural family;
+reach for a contract when the shared fragment cuts across Blocks that otherwise
+have nothing else in common.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with namespaces and fully qualified names" purpose="Direct the reader to the next page">
+          <content>
+            <dpage:Navigation purpose="Continue from contracts into how Blocks are named and located">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Namespaces and Fully Qualified Names" summary="Learn how packages, Libraries, and fully qualified names relate.">
+                  <target>docs:NamespacesAndFullyQualifiedNames</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
+  </aggregations>
+</docs:Contracts>

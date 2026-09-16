@@ -23,6 +23,9 @@
   xmlns:pgroup="org.blockml.bml.bmldocs.a03_authoring.data.pagegroup"
   xmlns:a03task="org.blockml.bml.bmldocs.a03_authoring.task"
   xmlns:a04_rendering="org.blockml.bml.bmldocs.a04_rendering"
+  xmlns:a04data="org.blockml.bml.bmldocs.a04_rendering.data"
+  xmlns:a04docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
+  xmlns:a04pgroup="org.blockml.bml.bmldocs.a04_rendering.data.pagegroup"
   xmlns:a04task="org.blockml.bml.bmldocs.a04_rendering.task"
   xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:source="org.blockml.bml.bmldocs.lib.source"
@@ -207,6 +210,51 @@
         <docs:DocumentingBlocks />
         <docs:Bml />
         <docs:BmlNamespaces />
+        <a04data:BmlDocSet_A04 />
+        <a04pgroup:RootPageGroup />
+        <a04pgroup:DocsPageGroup />
+        <a04pgroup:GettingStartedPageGroup />
+        <a04pgroup:FoundationsPageGroup />
+        <a04pgroup:TypeSystemPageGroup />
+        <a04pgroup:MembersPageGroup />
+        <a04pgroup:BehaviourAndValuesPageGroup />
+        <a04pgroup:CompositionAndStructurePageGroup />
+        <a04pgroup:BmlFormatPageGroup />
+        <a04docs:TableOfContents />
+        <a04docs:Introduction />
+        <a04docs:CoreUseCases />
+        <a04docs:EverythingIsABlockPage />
+        <a04docs:Blocks />
+        <a04docs:BlockDefinitionsAndInstances />
+        <a04docs:Inheritance />
+        <a04docs:Contracts />
+        <a04docs:NamespacesAndFullyQualifiedNames />
+        <a04docs:IdentifiersAndReferences />
+        <a04docs:TypeSystem />
+        <a04docs:PrimitiveTypes />
+        <a04docs:StructTypes />
+        <a04docs:EnumTypes />
+        <a04docs:PrimitiveEntities />
+        <a04docs:TypesAndValues />
+        <a04docs:GenericTypes />
+        <a04docs:Members />
+        <a04docs:Properties />
+        <a04docs:Aggregations />
+        <a04docs:Associations />
+        <a04docs:Capabilities />
+        <a04docs:MemberInheritanceAndOverrides />
+        <a04docs:Visibility />
+        <a04docs:MultiplicityAndCollections />
+        <a04docs:Constraints />
+        <a04docs:Suggestions />
+        <a04docs:Expressions />
+        <a04docs:ValueConfiguration />
+        <a04docs:Composition />
+        <a04docs:SubBlocks />
+        <a04docs:EmbeddedBlocks />
+        <a04docs:DocumentingBlocks />
+        <a04docs:Bml />
+        <a04docs:BmlNamespaces />
         <source:BlockMLSourceSet />
         <a01_planning:A01_PlanningSector />
         <a02_structuring:A02_StructuringSector />

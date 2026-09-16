@@ -42,12 +42,29 @@
   <aggregations>
     <operations override="true">
       <composition>
-        <workflow:AgenticOperation name="Copy A03 data into A04" status="Running" captureOutput="true">
+        <workflow:AgenticOperation name="Copy A03 data into A04" status="Succeeded" captureOutput="true">
           <startedAt>2026-09-16T23:29:14</startedAt>
           <baseCommit>bc34b0f8ab8cfd0bc44ef6ce3b964a07f0a32c18</baseCommit>
+          <output>**A04_01_CopyData executed.** Summary:
+
+- Copied the full `a03_authoring/data` tree (1 DocSet, 34 pages, 9 page groups) into `a04_rendering/data`, remapping package `a03_authoring.data` → `a04_rendering.data`, prefixes `a03pgroup`/`a03data` → `a04pgroup`/`a04data`, and `BmlDocSet_A03` → `BmlDocSet_A04` (file renamed too).
+- Updated self-identifying sector prose (&quot;A03 page group&quot;, &quot;A03 documentation set&quot;, etc.) to A04, while leaving historical provenance text (&quot;Body content is authored in a03/A03 …&quot;) untouched since that's still factually true and matches the precedent from the prior A02→A03 copy.
+- Rewrote the DocSet's pipeline-provenance sentence to describe A04's actual process (copied by `A04_01_CopyData`, then rendered by `A04_02_RenderPages`) instead of a blind numeric substitution that would have wrongly referenced a nonexistent `A04_02_AuthorPages`.
+- Left `a04_rendering/task` and `A04_RenderingSector` untouched; made no changes to A03 or any other sector.
+- Added new `xmlns` prefixes (`a04data`, `a04docs`, `a04pgroup`) and catalogued every imported A04 Block in `Library.bml`.
+- Ran `npx blockml validate --all`: no new errors; the only errors present are 5 pre-existing ones in frozen historical `_meta/transform/succeeded` records, unrelated to this change.
+- `inspect`ed `BmlDocSet_A04` — fully resolved, zero unresolved references, pages/pageGroups/homePage/rootPageGroup all point at A04 Blocks.
+
+I did not commit — the working tree changes are `Library.bml` (modified) and the new `a04_rendering/data/` tree, ready for the transform tool to commit as `transform(operation)`.
+</output>
+          <completedAt>2026-09-16T23:35:32</completedAt>
           <task>
             <a04_task:A04_01_CopyData />
           </task>
+          <changedFiles>
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/Library.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/" />
+          </changedFiles>
         </workflow:AgenticOperation>
         <workflow:AgenticOperation name="Render A04 pages" status="Pending" captureOutput="true">
           <task>

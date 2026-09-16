@@ -1,0 +1,206 @@
+<!--BlockML Documentation — a guide to member and Sub-Block visibility
+
+  FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.Visibility-->
+<docs:Visibility xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:def="org.blockml.bml.definition"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to member and Sub-Block visibility
+  </is>
+  <documentation>
+    Scope: member and Sub-Block visibility and the public/protected/private naming convention,
+    grounded in org.blockml.bml.documentation.MemberVisibility and
+    org.blockml.bml.definition.SubBlockDefinition. Body content is authored in a03 from those
+    sources.
+  </documentation>
+  <references>
+    <see type="doc:MemberVisibility" relation="Requires">
+      Primary content source — naming convention, formal access, and visibility diagnostics.
+    </see>
+    <see type="def:SubBlockDefinition" relation="Requires">
+      Sub-Blocks share the same naming-convention visibility rules as members.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Visibility</value>
+    </title>
+    <purpose override="true">
+      <value>Teach the naming-convention visibility model, so readers can tell a member's visibility from its name and understand what public, protected, and private actually restrict.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.MemberVisibility" />
+            <type:TypeSelectorEntity value="org.blockml.bml.definition.SubBlockDefinition" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach the naming-convention visibility model.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can tell a member's visibility from its name.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Member and Sub-Block visibility, and the public, protected, and private naming convention.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Renderer implementation detail.</summary>
+          <reason>Visibility restricts authoring access only; it is not a renderer concern.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>Visibility restricts authoring access only — renderers always see the entire Canonical BOM regardless of visibility.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+    <content override="true">
+      <composition>
+        <dpage:Section heading="Visibility is a naming convention" purpose="Introduce visibility as something signalled by a member's own name">
+          <content>
+            <dpage:Paragraph purpose="Introduce visibility as read directly from a member's name">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A member's visibility — public, protected, or private — is signalled directly by
+how its name is written, without any separate visibility declaration required.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Reading visibility from a member's name" purpose="Present the three naming forms as a summary list">
+          <content>
+            <dpage:List purpose="List the three naming forms and the visibility each signals">
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A member's name alone tells a reader which of the three visibilities it has.</message>
+              <items>
+                <dpage:ListItem text="Public" purpose="Describe the public naming form">
+                  <message>An ordinary name with no leading underscore is public.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Protected" purpose="Describe the protected naming form">
+                  <message>A name with a single leading underscore is protected.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Private" purpose="Describe the private naming form">
+                  <message>A name with two leading underscores is private.</message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+            <dpage:Paragraph purpose="State the reader outcome directly after the naming forms">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Once these three forms are known, a member's visibility can always be read directly
+from how it is named, without consulting anything else.</message>
+              <readerOutcomes>
+                <sem:ReaderOutcome>
+                  <summary>The reader can tell a member's visibility from its name.</summary>
+                </sem:ReaderOutcome>
+              </readerOutcomes>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="What visibility actually restricts" purpose="Explain that visibility controls authoring access, not manifestation">
+          <content>
+            <dpage:Paragraph purpose="Explain that visibility governs which definitions may reference or set a member">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Visibility controls BlockML authoring access — which definitions may reference,
+read, or set a given member or Sub-Block.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Renderers see everything" purpose="Contrast authoring-time visibility with what a renderer can see">
+          <content>
+            <dpage:Paragraph purpose="State that renderers always see the full canonical model regardless of visibility">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Visibility restricts authoring access only — renderers always see the entire
+canonical model regardless of a member's visibility.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Visibility restricts authoring access only — renderers always see the entire Canonical BOM regardless of visibility.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.MemberVisibility" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Renderer implementation detail.</summary>
+                  <reason>Visibility restricts authoring access only; it is not a renderer concern.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Sub-Blocks follow the same convention" purpose="Extend the naming convention from members to Sub-Blocks">
+          <content>
+            <dpage:Paragraph purpose="Explain that Sub-Blocks use the same public, protected, and private naming convention as members">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>A Sub-Block's visibility is read from its own name the same way a member's is — the
+same public, protected, and private naming convention applies to both.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Continue with Multiplicity and Collections" purpose="Direct the reader to the next topic">
+          <content>
+            <dpage:Navigation purpose="Continue from visibility into optional, singular, and multiple values">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Multiplicity and Collections" summary="Learn multiplicity as one axis of a type expression.">
+                  <target>docs:MultiplicityAndCollections</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
+  </aggregations>
+</docs:Visibility>

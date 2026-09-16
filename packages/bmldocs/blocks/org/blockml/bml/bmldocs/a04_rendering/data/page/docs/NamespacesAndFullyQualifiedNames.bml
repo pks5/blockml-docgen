@@ -1,0 +1,218 @@
+<!--BlockML Documentation — a guide to packages, Libraries, and fully qualified names
+
+  FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.NamespacesAndFullyQualifiedNames-->
+<docs:NamespacesAndFullyQualifiedNames xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to packages, Libraries, and fully qualified names
+  </is>
+  <documentation>
+    Scope: packages, Libraries, fully qualified names, namespace prefixes, and name resolution,
+    grounded in org.blockml.bml.documentation.BmlNamespace and
+    org.blockml.bml.documentation.LibrarySystem. Body content is authored in a03 from those
+    sources.
+  </documentation>
+  <references>
+    <see type="doc:BmlNamespace" relation="Requires">
+      Primary content source — mandatory domain.bml namespace and xmlns prefix conventions.
+    </see>
+    <see type="doc:LibrarySystem" relation="Requires">
+      Primary content source — Library grouping, membership, and FQN derivation from package path.
+    </see>
+    <see type="doc:TypeIdentityDerivation" relation="SeeAlso">
+      Deeper FQN and identity derivation rules.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Namespaces and Fully Qualified Names</value>
+    </title>
+    <purpose override="true">
+      <value>Teach how packages, Libraries, and fully qualified names relate, so readers can compute a Block's FQN and know what a Library groups before working with cross-Block references.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.LibrarySystem" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeIdentityDerivation" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach how packages, Libraries, and FQNs relate to each other.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can compute a Block's FQN and knows what a Library groups.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Packages, Libraries, fully qualified names, namespace prefixes, and how a Block's FQN is computed from its package and file location.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Reference resolution depth and the bml: authoring namespace.</summary>
+          <reason>Those belong to the Identifiers and References page and the BML Namespaces page.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>Every BML definition must live under its owning domain's bml package, and physical source layout mirrors the FQN.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+    <content override="true">
+      <composition>
+        <!--1. Lead-->
+        <dpage:Section heading="Every Block lives at a fully qualified address" purpose="Give an immediate orientation to how a Block is located">
+          <content>
+            <dpage:Paragraph purpose="State that a Block's FQN is computed from its package and name">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Every Block has one fully qualified name, built from the package it lives in
+and its own name, and that single address is how the rest of a model points
+back to it.</message>
+              <authoritativeSources>
+                <doc:BmlNamespace />
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--2. Packages and the domain namespace-->
+        <dpage:Section heading="Packages and the domain namespace" purpose="Explain that every definition lives under its owning domain's bml package">
+          <content>
+            <dpage:Paragraph purpose="Explain the mandatory domain bml package">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Every BML definition lives under a package dedicated to its owning domain,
+so that domain's whole vocabulary of Blocks stays gathered under one
+namespace.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Every BML definition must live under its owning domain's bml package.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--3. Fully qualified names-->
+        <dpage:Section heading="Fully qualified names" purpose="Explain how a Block's FQN is computed and mirrored on disk">
+          <content>
+            <dpage:Paragraph purpose="Explain that the FQN combines package and name, mirrored by file layout">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A Block's fully qualified name combines its package with its own name, and
+the physical location of its source file mirrors that same address.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Physical source layout mirrors the FQN, so a Block's file location can be found from its fully qualified name alone.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--4. Namespace prefixes-->
+        <dpage:Section heading="Namespace prefixes" purpose="Explain the role of a short xmlns prefix bound to a package">
+          <content>
+            <dpage:Paragraph purpose="Explain that a namespace prefix is a short alias for a package">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A namespace prefix is a short alias bound to one package, letting an author
+write a brief prefixed name instead of repeating the full package path every
+time a Block from that package is named.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--5. What a Library groups-->
+        <dpage:Section heading="What a Library groups" purpose="Explain what a Library is and how its membership is defined">
+          <content>
+            <dpage:Paragraph purpose="Explain that a Library is an explicitly declared publishable grouping">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A Library groups a set of Block and value type definitions into one
+publishable unit, with membership stated explicitly by the Library itself
+rather than assumed from where the files happen to sit.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Library membership is defined exclusively by the Library's own declared list of exported definitions, not by directory layout.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.LibrarySystem" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with identifiers and references" purpose="Direct the reader to the next page">
+          <content>
+            <dpage:Navigation purpose="Continue from naming and location into how names are checked">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Identifiers and References" summary="Learn the difference between a name that is only checked for syntax and one that must resolve.">
+                  <target>docs:IdentifiersAndReferences</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
+  </aggregations>
+</docs:NamespacesAndFullyQualifiedNames>
