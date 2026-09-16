@@ -2,12 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.Inheritance-->
 <docs:Inheritance xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:doc="org.blockml.bml.documentation"
-  xmlns:workflow="org.blockml.bml.transformer.workflow"
-  xmlns:type="org.blockml.bml.type">
+  xmlns:doc="org.blockml.bml.documentation">
 
   <baseType>
     dpage:DocPage
@@ -36,9 +33,6 @@
     <title override="true">
       <value>Inheritance</value>
     </title>
-    <purpose override="true">
-      <value>Teach single inheritance via baseType and how a Block's effective definition is merged from its baseType chain, so readers can trace any Block back to what it actually inherits.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -47,161 +41,80 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ModelingGuidelines" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.PartialMemberOverrides" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ContractsModel" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach single inheritance and how inherited members combine into an effective definition.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can trace a Block's effective definition through its baseType chain.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Specialization via baseType, single inheritance, the effective definition merged from a Block's baseType chain, and abstract and final Blocks.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Contracts and override-flag mechanics in depth.</summary>
-          <reason>Contracts get a contrasting page next; override-flag mechanics get their own member-inheritance page.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>Each Block has exactly one baseType, mandatory except for the root org.blockml.bml.core.Block, and a final Block or member cannot be overridden further.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <content override="true">
       <composition>
         <!--1. Lead-->
-        <dpage:Section heading="Specialization happens through baseType" purpose="Give an immediate orientation to inheritance in BlockML">
+        <dpage:Section heading="Specialization happens through baseType">
           <content>
-            <dpage:Paragraph purpose="State the role of baseType in one sentence">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A Block specializes another Block by declaring it as its baseType, inheriting
-that parent's members and refining them for its own, narrower concept.</message>
-              <authoritativeSources>
-                <doc:ModelingGuidelines />
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>A Block specializes another Block by declaring it as its baseType, inheriting
+that parent's members and refining them for its own, narrower concept.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--2. Single inheritance-->
-        <dpage:Section heading="Single inheritance" purpose="Explain that every Block has exactly one baseType">
+        <dpage:Section heading="Single inheritance">
           <content>
-            <dpage:Paragraph purpose="State the single-baseType rule">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Every Block declares exactly one baseType, mandatory for every Block except
-the single root all Blocks ultimately trace back to.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>Each Block has exactly one baseType, mandatory except for the root org.blockml.bml.core.Block.</summary>
-                  <authoritativeSources>
-                    <workflow:AuthorativeSourceSet>
-                      <includedTypes>
-                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.ModelingGuidelines" />
-                      </includedTypes>
-                    </workflow:AuthorativeSourceSet>
-                  </authoritativeSources>
-                </sem:SupportingPoint>
-              </supportingPoints>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>Every Block declares exactly one baseType, mandatory for every Block except
+the single root all Blocks ultimately trace back to.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--3. The effective definition-->
-        <dpage:Section heading="The effective definition" purpose="Explain how inherited members combine with local declarations">
+        <dpage:Section heading="The effective definition">
           <content>
-            <dpage:Paragraph purpose="Explain that a Block's usable definition is merged from its baseType chain">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A Block's effective, usable definition is formed by merging everything it
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>A Block's effective, usable definition is formed by merging everything it
 inherits along its baseType chain with what it declares itself, so tracing that
-chain shows exactly what the Block actually has.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>Following a Block's baseType chain shows everything it inherits, combined with its own local declarations, as one effective definition.</summary>
-                  <authoritativeSources>
-                    <workflow:AuthorativeSourceSet>
-                      <includedTypes>
-                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.PartialMemberOverrides" />
-                      </includedTypes>
-                    </workflow:AuthorativeSourceSet>
-                  </authoritativeSources>
-                </sem:SupportingPoint>
-              </supportingPoints>
+chain shows exactly what the Block actually has.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--4. Abstract and final-->
-        <dpage:Section heading="Abstract and final Blocks" purpose="Explain the two modifiers that shape how a Block's chain may continue">
+        <dpage:Section heading="Abstract and final Blocks">
           <content>
-            <dpage:Paragraph purpose="Explain abstract and final as opposite modifiers on a Block or member">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Marking a Block or member abstract leaves it incomplete, expecting a later
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>Marking a Block or member abstract leaves it incomplete, expecting a later
 specialization to finish it; marking it final seals it so no further
-specialization can override it.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>A final Block or member cannot be overridden further by any later specialization.</summary>
-                  <authoritativeSources>
-                    <workflow:AuthorativeSourceSet>
-                      <includedTypes>
-                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.PartialMemberOverrides" />
-                      </includedTypes>
-                    </workflow:AuthorativeSourceSet>
-                  </authoritativeSources>
-                </sem:SupportingPoint>
-              </supportingPoints>
+specialization can override it.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--5. Looking ahead-->
-        <dpage:Section heading="Another way to share behavior" purpose="Acknowledge that inheritance is not the only reuse mechanism, without teaching it here">
+        <dpage:Section heading="Another way to share behavior">
           <content>
-            <dpage:Paragraph purpose="Transition toward contracts as a contrasting reuse mechanism">
-              <role>org.blockml.bml.docgen.role.Transition</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>Single inheritance is the main way a Block specializes another, but BlockML
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>Single inheritance is the main way a Block specializes another, but BlockML
 also offers a separate mechanism for sharing member fragments across Blocks
-that have no common ancestor to inherit from.</message>
+that have no common ancestor to inherit from.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--6. Continuation-->
-        <dpage:Section heading="Continue with contracts" purpose="Direct the reader to the next page">
+        <dpage:Section heading="Continue with contracts">
           <content>
-            <dpage:Navigation purpose="Continue from single inheritance into contracts">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Contracts" summary="Learn how contracts share member fragments across unrelated Blocks.">

@@ -2,12 +2,10 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.IdentifiersAndReferences-->
 <docs:IdentifiersAndReferences xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:type="org.blockml.bml.type">
 
   <baseType>
     dpage:DocPage
@@ -39,9 +37,6 @@
     <title override="true">
       <value>Identifiers and References</value>
     </title>
-    <purpose override="true">
-      <value>Teach the identifier-versus-reference distinction and its abbreviated forms, so readers can predict whether an unresolved name is a syntax error or a validator error.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -50,172 +45,73 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeIdentityDerivation" />
-            <type:TypeSelectorEntity value="org.blockml.bml.type.TypeIdentifier" />
-            <type:TypeSelectorEntity value="org.blockml.bml.type.TypeReference" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ImplicitNamespaceResolution" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach the identifier-versus-reference distinction and its normalization forms.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can distinguish an identifier, checked for syntax only, from a validated reference, which must resolve.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Identifiers versus validated references, the Type Identifier and Type Reference distinction, and abbreviated xmlns-prefixed forms of a reference.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Type Selector wildcard pattern matching in depth.</summary>
-          <reason>Wildcard selector matching is a separate, more advanced topic.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>A TypeIdentifier checks syntax only, while a TypeReference must resolve in the TypeRegistry or the compiler reports an unknown-type error.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <content override="true">
       <composition>
-        <!--1. Lead-->
-        <dpage:Section heading="Not every type name is checked the same way" purpose="Give an immediate orientation to the identifier-versus-reference distinction">
+        <dpage:Section heading="Not every type name is checked the same way">
           <content>
-            <dpage:Paragraph purpose="State the identifier-versus-reference distinction in one sentence">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A type name in BML is treated in one of two ways: as an identifier, checked
-only for well-formed syntax, or as a reference, which must actually resolve to
-a Block that exists.</message>
-              <authoritativeSources>
-                <doc:TypeIdentityDerivation />
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>A type name in BML is treated in one of two ways: as an identifier,
+checked only for well-formed syntax, or as a reference, which must actually
+resolve to a Block that exists.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <!--2. Identifiers-->
-        <dpage:Section heading="Identifiers: syntax only" purpose="Explain what an identifier checks and does not check">
+        <dpage:Section heading="Identifiers: syntax only">
           <content>
-            <dpage:Paragraph purpose="Explain that an identifier only needs well-formed syntax">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A type identifier only needs to be well-formed; the name it names does not
-need to already exist, which fits a site such as the very name being given to
-a new Block.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>A TypeIdentifier checks syntax only — the named type need not already exist.</summary>
-                  <authoritativeSources>
-                    <workflow:AuthorativeSourceSet>
-                      <includedTypes>
-                        <type:TypeSelectorEntity value="org.blockml.bml.type.TypeIdentifier" />
-                      </includedTypes>
-                    </workflow:AuthorativeSourceSet>
-                  </authoritativeSources>
-                </sem:SupportingPoint>
-              </supportingPoints>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>A type identifier only needs to be well-formed; the name it names does
+not need to already exist. This fits a site such as the very name being given
+to a new Block, where the name is being minted rather than looked up.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <!--3. References-->
-        <dpage:Section heading="References: must resolve" purpose="Explain that a reference must resolve to an existing Block">
+        <dpage:Section heading="References: must resolve">
           <content>
-            <dpage:Paragraph purpose="Explain that a reference must resolve or the compiler reports an error">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A type reference must actually name a Block that exists; when it does not,
-the compiler reports an error rather than silently accepting the name.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>A TypeReference must resolve in the TypeRegistry or the compiler reports an unknown-type error.</summary>
-                  <authoritativeSources>
-                    <workflow:AuthorativeSourceSet>
-                      <includedTypes>
-                        <type:TypeSelectorEntity value="org.blockml.bml.type.TypeReference" />
-                      </includedTypes>
-                    </workflow:AuthorativeSourceSet>
-                  </authoritativeSources>
-                </sem:SupportingPoint>
-              </supportingPoints>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>A type reference must actually name a Block that exists. When it does
+not, the compiler reports an error rather than silently accepting the name.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <!--4. Abbreviated forms-->
-        <dpage:Section heading="Abbreviated reference forms" purpose="Explain that a namespace prefix can stand in for a full name">
+        <dpage:Section heading="Abbreviated reference forms">
           <content>
-            <dpage:Paragraph purpose="Explain the abbreviated xmlns-prefixed reference form">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Wherever a full name would be accepted, a shorter prefixed form bound to the
-same package is accepted as well, so an author rarely has to spell out the
-whole name.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>An abbreviated, prefix-bound form of a name is accepted wherever a full name is accepted.</summary>
-                  <authoritativeSources>
-                    <workflow:AuthorativeSourceSet>
-                      <includedTypes>
-                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.ImplicitNamespaceResolution" />
-                      </includedTypes>
-                    </workflow:AuthorativeSourceSet>
-                  </authoritativeSources>
-                </sem:SupportingPoint>
-              </supportingPoints>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>Wherever a full name would be accepted, a shorter prefixed form bound to
+the same package is accepted as well, so an author rarely has to spell out the
+whole name.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <!--5. Telling which check applies-->
-        <dpage:Section heading="Telling which check applies" purpose="Give the reader concrete examples of identifier sites versus reference sites">
+        <dpage:Section heading="Telling which check applies">
           <content>
-            <dpage:List purpose="Contrast concrete sites that are identifiers with sites that are references">
-              <role>org.blockml.bml.docgen.role.Summary</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>A few familiar sites illustrate which check a given name goes through.</message>
+            <dpage:List>
               <items>
-                <dpage:ListItem text="A Block's own declared name" purpose="Give an identifier example">
-                  <message>The type name a new Block declares for itself is an identifier — it need not already exist.</message>
-                </dpage:ListItem>
-                <dpage:ListItem text="What a Block extends" purpose="Give a reference example">
-                  <message>The parent a Block declares it specializes must resolve, so it is a reference.</message>
-                </dpage:ListItem>
-                <dpage:ListItem text="A named contract" purpose="Give a second reference example">
-                  <message>A contract a Block pulls in must also resolve to an existing Block, so it too is a reference.</message>
-                </dpage:ListItem>
+                <dpage:ListItem text="The type name a new Block declares for itself is an identifier — it need not already exist." />
+                <dpage:ListItem text="The parent a Block declares it specializes must resolve, so it is a reference." />
+                <dpage:ListItem text="A contract a Block pulls in must also resolve to an existing Block, so it too is a reference." />
               </items>
             </dpage:List>
           </content>
         </dpage:Section>
-        <!--6. Continuation-->
-        <dpage:Section heading="Continue with the type system" purpose="Direct the reader to the next page group">
+        <dpage:Section heading="Continue with the type system">
           <content>
-            <dpage:Navigation purpose="Continue from identifiers and references into the type system">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Type System" summary="Start the next part of the handbook, on BlockML's type system.">

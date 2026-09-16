@@ -2,12 +2,10 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.StructTypes-->
 <docs:StructTypes xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:type="org.blockml.bml.type">
 
   <baseType>
     dpage:DocPage
@@ -36,9 +34,6 @@
     <title override="true">
       <value>Struct Types</value>
     </title>
-    <purpose override="true">
-      <value>Teach StructType as the composite named-field branch of the type system, so readers can define a StructType and configure a struct value.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -47,165 +42,73 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.type.StructType" />
-            <type:TypeSelectorEntity value="org.blockml.bml.type.EmptyStruct" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeSystemOverview" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach StructType as the composite named-field branch of the type system.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can define a StructType and configure a struct value.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Composite named-field ValueTypes, declaring struct fields, and configuring a struct value.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>EnumType or ConstantType depth.</summary>
-          <reason>Those are separate sibling branches with their own pages.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>StructType is a sibling branch of EnumType under ValueType, not a supertype of it.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <content override="true">
       <composition>
-        <dpage:Section heading="What a StructType is" purpose="Give readers an immediate one-paragraph orientation to StructType">
+        <dpage:Section heading="What a StructType is">
           <content>
-            <dpage:Paragraph purpose="Introduce StructType as a composite named-field value">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A StructType names a composite value made of named fields, each an ordinary Property,
-so a single Property can carry a structured object instead of one scalar.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>StructType properties define the field layout of the composite value, such as a size or an address.</summary>
-                  <authoritativeSources>
-                    <workflow:AuthorativeSourceSet>
-                      <includedTypes>
-                        <type:TypeSelectorEntity value="org.blockml.bml.type.StructType" />
-                      </includedTypes>
-                    </workflow:AuthorativeSourceSet>
-                  </authoritativeSources>
-                </sem:SupportingPoint>
-                <sem:SupportingPoint>
-                  <summary>StructType is a sibling branch of EnumType under ValueType, not a supertype of it.</summary>
-                </sem:SupportingPoint>
-              </supportingPoints>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>A StructType names a composite value made of named fields, each an
+ordinary Property, so a single Property can carry a structured object instead
+of one scalar. StructType is a sibling branch of EnumType under ValueType, not
+a supertype of it.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Declaring a StructType's fields" purpose="Explain how a concrete StructType declares its fields">
+        <dpage:Section heading="Declaring a StructType's fields">
           <content>
-            <dpage:Paragraph purpose="State that struct fields are ordinary Properties">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A concrete StructType declares its fields as ordinary Properties — there is no
-special struct syntax; each Property becomes one named field of the struct.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>Field declaration order stays significant once declared, so new fields are only ever added at the end.</summary>
-                  <authoritativeSources>
-                    <workflow:AuthorativeSourceSet>
-                      <includedTypes>
-                        <type:TypeSelectorEntity value="org.blockml.bml.type.StructType" />
-                      </includedTypes>
-                    </workflow:AuthorativeSourceSet>
-                  </authoritativeSources>
-                </sem:SupportingPoint>
-              </supportingPoints>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>A concrete StructType declares its fields as ordinary Properties — there
+is no special struct syntax; each Property becomes one named field of the
+struct. Field declaration order stays significant once declared, so new
+fields are only ever added at the end.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Configuring a struct value" purpose="Connect the field declaration to how a struct value is written">
+        <dpage:Section heading="Configuring a struct value">
           <content>
-            <dpage:Paragraph purpose="State that a struct value is a named-field map only">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A struct value is always a named-field map — its fields are always accessed and
-configured by name, never by position.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>An array of values is never treated as a struct value by declaration order alone.</summary>
-                  <authoritativeSources>
-                    <workflow:AuthorativeSourceSet>
-                      <includedTypes>
-                        <type:TypeSelectorEntity value="org.blockml.bml.type.StructType" />
-                      </includedTypes>
-                    </workflow:AuthorativeSourceSet>
-                  </authoritativeSources>
-                </sem:SupportingPoint>
-              </supportingPoints>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>A struct value is always a named-field map — its fields are always
+accessed and configured by name, never by position. An array of values is
+never treated as a struct value by declaration order alone.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
-            <dpage:CodeBlock purpose="Illustrate configuring a small StructType value by named fields">
-              <role>org.blockml.bml.docgen.role.Example</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>A small struct value is written by naming each field explicitly, matching the fields
-declared on its StructType.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>Show a struct value with two or three named fields set by name.</summary>
-                </sem:SupportingPoint>
-              </supportingPoints>
+            <dpage:CodeBlock>
+              <code><![CDATA[<property name="size" type="Size3d">
+  <value>
+    <Size3d x="4" y="2" z="3" />
+  </value>
+</property>]]></code>
             </dpage:CodeBlock>
           </content>
         </dpage:Section>
-        <dpage:Section heading="EmptyStruct: a struct with no fields" purpose="Introduce EmptyStruct as the named counterpart of an empty struct value">
+        <dpage:Section heading="EmptyStruct: a struct with no fields">
           <content>
-            <dpage:Paragraph purpose="Explain EmptyStruct as a ready-to-use instantiable StructType with no fields">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>EmptyStruct is the named, instantiable StructType with no fields at all, so its only
-compatible value is an empty struct.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>EmptyStruct is a concrete, ready-to-use StructType wherever a StructType is required and no fields are needed.</summary>
-                  <authoritativeSources>
-                    <workflow:AuthorativeSourceSet>
-                      <includedTypes>
-                        <type:TypeSelectorEntity value="org.blockml.bml.type.EmptyStruct" />
-                      </includedTypes>
-                    </workflow:AuthorativeSourceSet>
-                  </authoritativeSources>
-                </sem:SupportingPoint>
-              </supportingPoints>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>EmptyStruct is the named, instantiable StructType with no fields at all,
+so its only compatible value is an empty struct. It is a concrete,
+ready-to-use StructType wherever a StructType is required and no fields are
+needed.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Continue with Enum Types" purpose="Direct the reader to the next sibling kind">
+        <dpage:Section heading="Continue with Enum Types">
           <content>
-            <dpage:Navigation purpose="Continue from composite named-field values into closed named-value sets">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Enum Types" summary="Learn the closed named-value kind, the next sibling under ValueType.">

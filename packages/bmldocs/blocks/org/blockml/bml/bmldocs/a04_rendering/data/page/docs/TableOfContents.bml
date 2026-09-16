@@ -2,11 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.TableOfContents-->
 <docs:TableOfContents xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:dcore="org.blockml.bml.docgen.core"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:dcore="org.blockml.bml.docgen.core">
 
   <baseType>
     dpage:DocPage
@@ -32,9 +30,6 @@
     <title override="true">
       <value>Documentation</value>
     </title>
-    <purpose override="true">
-      <value>Give readers a single entry point that lists every handbook section and page, so they can find the right topic and start reading without teaching any concept here.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Overview</value>
     </detailLevel>
@@ -43,53 +38,11 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Present the site structure as a navigable menu, not as a lesson on any single concept.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can locate the page for any handbook topic and knows where to start reading.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>The documentation menu, entry points, and navigation overview across all handbook groups.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Any BlockML concept explained in depth.</summary>
-          <reason>Concept depth lives on the linked pages, not on the navigation menu.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>Groups mirror the learning path from Getting Started through the BML authoring format section.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <content override="true">
       <composition>
-        <dpage:Section heading="Getting Started" purpose="Orient a new reader before any concept detail">
+        <dpage:Section heading="Getting Started">
           <content>
-            <dpage:Navigation purpose="List the first pages a new reader should open">
+            <dpage:Navigation>
               <title>Getting Started</title>
               <items>
                 <dpage:NavigationItem label="Introduction to BlockML" summary="A first mental model of BlockML and how this handbook is organized.">
@@ -102,9 +55,9 @@
             </dpage:Navigation>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Foundations" purpose="List the pages that establish Blocks, identity, and inheritance">
+        <dpage:Section heading="Foundations">
           <content>
-            <dpage:Navigation purpose="List the foundational concept pages">
+            <dpage:Navigation>
               <title>Foundations</title>
               <items>
                 <dpage:NavigationItem label="Everything Is a Block" summary="Why Block is the universal abstraction at the heart of BlockML.">
@@ -132,9 +85,9 @@
             </dpage:Navigation>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Type System" purpose="List the pages that explain BlockML's type kinds">
+        <dpage:Section heading="Type System">
           <content>
-            <dpage:Navigation purpose="List the type-system concept pages">
+            <dpage:Navigation>
               <title>Type System</title>
               <items>
                 <dpage:NavigationItem label="Type System" summary="An overview of the kinds of types BlockML defines.">
@@ -162,9 +115,9 @@
             </dpage:Navigation>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Members" purpose="List the pages that explain how a Block's members are declared">
+        <dpage:Section heading="Members">
           <content>
-            <dpage:Navigation purpose="List the member-model concept pages">
+            <dpage:Navigation>
               <title>Members</title>
               <items>
                 <dpage:NavigationItem label="Members" summary="The overall member model shared by every Block.">
@@ -195,9 +148,9 @@
             </dpage:Navigation>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Behaviour &amp; Values" purpose="List the pages that explain constraints, suggestions, and configured values">
+        <dpage:Section heading="Behaviour &amp; Values">
           <content>
-            <dpage:Navigation purpose="List the behaviour-and-values concept pages">
+            <dpage:Navigation>
               <title>Behaviour &amp; Values</title>
               <items>
                 <dpage:NavigationItem label="Constraints" summary="Rules that limit which values a member may hold.">
@@ -216,9 +169,9 @@
             </dpage:Navigation>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Composition &amp; Structure" purpose="List the pages that explain nested and embedded Blocks">
+        <dpage:Section heading="Composition &amp; Structure">
           <content>
-            <dpage:Navigation purpose="List the composition-and-structure concept pages">
+            <dpage:Navigation>
               <title>Composition &amp; Structure</title>
               <items>
                 <dpage:NavigationItem label="Composition" summary="Building larger Blocks out of smaller ones.">
@@ -237,9 +190,9 @@
             </dpage:Navigation>
           </content>
         </dpage:Section>
-        <dpage:Section heading="BML: The Authoring Format" purpose="List the pages that explain the BML file format itself">
+        <dpage:Section heading="BML: The Authoring Format">
           <content>
-            <dpage:Navigation purpose="List the BML authoring-format concept pages">
+            <dpage:Navigation>
               <title>BML: The Authoring Format</title>
               <items>
                 <dpage:NavigationItem label="BML" summary="The XML-based authoring format used to write BlockML models.">

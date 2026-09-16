@@ -2,13 +2,10 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.Capabilities-->
 <docs:Capabilities xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
-  xmlns:def="org.blockml.bml.definition"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:def="org.blockml.bml.definition">
 
   <baseType>
     dpage:DocPage
@@ -34,9 +31,6 @@
     <title override="true">
       <value>Capabilities</value>
     </title>
-    <purpose override="true">
-      <value>Teach Capability as ordinary behaviour with a language-tagged implementation body, so readers can declare a Capability and understand that BlockML has no separate constructor, getter, or setter concept.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -45,164 +39,87 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.definition.CapabilityDefinition" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.CapabilitySemantics" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach Capability as ordinary behaviour with a language-tagged implementation body.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can declare a Capability and knows there is no separate constructor concept.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Block behaviour expressed as members: Capability declaration, implementation bodies, and common behavioural roles such as init, getValue, and setValue.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Embedded-expression syntax depth.</summary>
-          <reason>The embedded-expression delimiter syntax inside implementations is a separate, more technical topic.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>A Capability implementation may be read as intent, a companion template, or a host-evaluable function — no single reading is mandatory.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <content override="true">
       <composition>
-        <dpage:Section heading="Behaviour is just another kind of member" purpose="Introduce Capability as ordinary behaviour, not a special language concept">
+        <dpage:Section heading="Behaviour is just another kind of member">
           <content>
-            <dpage:Paragraph purpose="Introduce Capability as the member kind that expresses Block behaviour">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A Capability is an ordinary Block member that expresses behaviour — there are no
-separate constructor, getter, or setter concepts in BlockML, only Capabilities.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>A Capability is an ordinary Block member that expresses behaviour. BlockML has
+no separate constructor, getter, or setter concepts — every behaviour a Block exposes is
+declared as a Capability.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Declaring a Capability" purpose="Explain what declaring a Capability names, then show a minimal example">
+        <dpage:Section heading="Declaring a Capability">
           <content>
-            <dpage:Paragraph purpose="Explain that a Capability declaration names its kind and carries a language-tagged body">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Declaring a Capability means naming what it does and, optionally, giving it an
-implementation body tagged with the language that body is written in.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>Declaring a Capability means naming what it does and, optionally, giving it an
+implementation body tagged with the language that body is written in.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
-            <dpage:CodeBlock purpose="Illustrate a minimal Capability declaration with a language-tagged implementation">
-              <role>org.blockml.bml.docgen.role.Example</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>A Capability declaration carries an implementation body whose language attribute
-names the language that body is written in.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>Show one Capability with a single language-tagged implementation body.</summary>
-                </sem:SupportingPoint>
-              </supportingPoints>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Embedded-expression syntax inside the implementation body.</summary>
-                  <reason>The embedded-expression delimiter syntax is a separate, more technical topic.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:CodeBlock>
+              <code><![CDATA[<capabilities>
+  <getValue type="Outbound" outputType="Integer">
+    <implementation language="PseudoCode">
+      Return the current value of the Property this Capability exposes.
+    </implementation>
+  </getValue>
+</capabilities>]]></code>
             </dpage:CodeBlock>
-            <dpage:Paragraph purpose="Interpret the language-tagged implementation shown in the example">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>In the example, the implementation body is the Capability's declared behaviour, and
-its language attribute tells readers and tools which language that body is written in.</message>
-              <readerOutcomes>
-                <sem:ReaderOutcome>
-                  <summary>The reader can declare a Capability with a language-tagged implementation body.</summary>
-                </sem:ReaderOutcome>
-              </readerOutcomes>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>In the example, the implementation body is the Capability's declared behaviour,
+and its language attribute tells readers and tools which language that body is written in.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="What an implementation body can mean" purpose="Present the possible readings of a Capability implementation as a summary list">
+        <dpage:Section heading="What an implementation body can mean">
           <content>
-            <dpage:List purpose="Summarize the readings a Capability implementation body may carry">
-              <role>org.blockml.bml.docgen.role.Summary</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A Capability implementation may be read as intent, a companion template, or a
-host-evaluable function — no single reading is mandatory.</message>
+            <dpage:List>
               <items>
-                <dpage:ListItem text="Intent" purpose="Describe the intent reading of an implementation body">
-                  <message>The body may be read as intent, describing what the Capability does for humans and language models.</message>
-                </dpage:ListItem>
-                <dpage:ListItem text="Companion template" purpose="Describe the companion-template reading of an implementation body">
-                  <message>The body may be a companion template that a renderer transpiles or emits into another form.</message>
-                </dpage:ListItem>
-                <dpage:ListItem text="Host-evaluable function" purpose="Describe the host-evaluable reading of an implementation body">
-                  <message>The body may be a deterministic function that a toolchain executes directly.</message>
-                </dpage:ListItem>
+                <dpage:ListItem text="An implementation body may be read as intent, describing what the Capability does for humans and language models." />
+                <dpage:ListItem text="An implementation body may serve as a companion template that a renderer transpiles or emits into another form." />
+                <dpage:ListItem text="An implementation body may be a deterministic, host-evaluable function that a toolchain executes directly." />
               </items>
             </dpage:List>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Common behavioural roles" purpose="Name the common behavioural roles a Capability commonly fills">
+        <dpage:Section heading="Common behavioural roles">
           <content>
-            <dpage:List purpose="List common behavioural roles that stand in for constructor, getter, and setter">
-              <role>org.blockml.bml.docgen.role.Summary</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>These are common behavioural roles a Capability may fill, named by ordinary
-Capability names rather than special syntax.</message>
+            <dpage:List>
               <items>
-                <dpage:ListItem text="init" purpose="Describe the init behavioural role">
-                  <message>A Capability named init commonly plays the role a constructor would play elsewhere.</message>
-                </dpage:ListItem>
-                <dpage:ListItem text="getValue" purpose="Describe the getValue behavioural role">
-                  <message>A Capability named getValue commonly plays the role a getter would play elsewhere.</message>
-                </dpage:ListItem>
-                <dpage:ListItem text="setValue" purpose="Describe the setValue behavioural role">
-                  <message>A Capability named setValue commonly plays the role a setter would play elsewhere.</message>
-                </dpage:ListItem>
+                <dpage:ListItem text="A Capability named init commonly plays the role a constructor would play elsewhere." />
+                <dpage:ListItem text="A Capability named getValue commonly plays the role a getter would play elsewhere." />
+                <dpage:ListItem text="A Capability named setValue commonly plays the role a setter would play elsewhere." />
               </items>
             </dpage:List>
           </content>
         </dpage:Section>
-        <dpage:Section heading="No separate constructor, getter, or setter concept" purpose="Tie the behavioural roles back to the one-Capability mental model">
+        <dpage:Section heading="No separate constructor, getter, or setter concept">
           <content>
-            <dpage:Paragraph purpose="Reinforce that init, getValue, and setValue are ordinary Capabilities, not special syntax">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>BlockML has no dedicated constructor, getter, or setter syntax; these roles are
-modelled as ordinary Capabilities identified only by their conventional names.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>BlockML has no dedicated constructor, getter, or setter syntax; these roles are
+modelled as ordinary Capabilities identified only by their conventional names.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Continue with Member Inheritance and Overrides" purpose="Direct the reader to the next topic">
+        <dpage:Section heading="Continue with Member Inheritance and Overrides">
           <content>
-            <dpage:Navigation purpose="Continue from the member kinds into combining inherited members">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Member Inheritance and Overrides" summary="Learn when a local redeclaration must set override versus introduce a new member.">

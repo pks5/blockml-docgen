@@ -65,12 +65,64 @@ I did not commit — the working tree changes are `Library.bml` (modified) and t
             <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/" />
           </changedFiles>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Render A04 pages" status="Running" captureOutput="true">
+        <workflow:AgenticOperation name="Render A04 pages" status="Succeeded" captureOutput="true">
           <startedAt>2026-09-16T23:35:33</startedAt>
           <baseCommit>1ad652e18608ef0d835daecaa151fe3e00e9fe2e</baseCommit>
+          <output>This looks correct and well-formed — no XML issues, matches the reference pattern. All 35 A04 pages are rendered, validated, and boundaries respected (only `page/docs/*.bml` files touched — no changes to `BmlDocSet_A04`, `PageGroup`, `Library.bml`, task files, or the running transform record).
+
+## Summary
+
+`Task.run` on `org.blockml.bml.bmldocs.a04_rendering.task.A04_02_RenderPages` executed. All 35 A04 DocPages were rewritten in place, turning the semantic scaffold (copied from A03 by the prior operation) into finished reader-facing prose, then stripped of scaffold metadata:
+
+- **What changed on every page**: `dpage:Paragraph` elements got `&lt;content>` filled with `dpage:Text` runs holding complete-sentence prose derived from each element's `message`/`supportingPoints`; `ListItem.text` was rewritten as a finished sentence lead; a few `CodeBlock`s got real BML listings (e.g. property declarations, struct/enum values, generic bindings). `Navigation`/`NavigationItem` titles, labels, summaries, and targets were kept as-authored. Every page then had its `purpose` property and the `authoritativeSources`/`learningObjectives`/`readerOutcomes`/`scopes`/`exclusions`/`supportingPoints` aggregations (page- and element-level) removed, keeping `title`/`detailLevel`/`pageType`/`content` and the original `&lt;references>` blocks.
+- **Sourcing**: every page's prose came only from its bound `org.blockml.bml.documentation.*`/`core`/`type`/`definition` authoritative Block(s) — resolved via `blockml inspect`, falling back to reading the dependency file directly when `inspect` truncated long documentation. No a01/a02/a03 content or FQNs were introduced anywhere.
+- **Process**: I rendered the first 3 pages (TableOfContents, Introduction, CoreUseCases) myself to establish the pattern, then split the remaining 32 pages across 8 parallel agents by topic group (Foundations, Type System, Members, Behaviour &amp; Values, Composition/Structure/BML).
+- **Validation**: `npx blockml validate --all` — 717 blocks, 5 errors (all pre-existing `BML_UNKNOWN_TYPE` in frozen `_meta/transform/succeeded/*.bml` historical records, unchanged from before this task started, unrelated to A04). Zero new errors, warnings, or recommendations from the rendered pages.
+- **No gaps reported** — every page's scaffold had enough `message`/`supportingPoints` plus a resolvable authoritative source to render responsibly without inventing content.
+
+I did not commit, and did not touch the running transform record (`_meta/transform/running/T00011_BuildA04_20260916T232914.bml`) — flipping this operation to `Succeeded` and committing is a separate step, consistent with how prior operations in this pipeline were left for a follow-up step.
+</output>
+          <completedAt>2026-09-16T23:50:23</completedAt>
           <task>
             <a04_task:A04_02_RenderPages />
           </task>
+          <changedFiles>
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Aggregations.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Associations.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/BlockDefinitionsAndInstances.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Blocks.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Bml.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/BmlNamespaces.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Capabilities.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Composition.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Constraints.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Contracts.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/CoreUseCases.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/DocumentingBlocks.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/EmbeddedBlocks.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/EnumTypes.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/EverythingIsABlockPage.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Expressions.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/GenericTypes.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/IdentifiersAndReferences.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Inheritance.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Introduction.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/MemberInheritanceAndOverrides.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Members.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/MultiplicityAndCollections.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/NamespacesAndFullyQualifiedNames.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/PrimitiveEntities.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/PrimitiveTypes.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Properties.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/StructTypes.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/SubBlocks.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Suggestions.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/TableOfContents.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/TypeSystem.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/TypesAndValues.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/ValueConfiguration.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Visibility.bml" />
+          </changedFiles>
         </workflow:AgenticOperation>
       </composition>
     </operations>

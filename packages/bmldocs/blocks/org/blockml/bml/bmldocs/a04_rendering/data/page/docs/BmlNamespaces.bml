@@ -2,12 +2,9 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.BmlNamespaces-->
 <docs:BmlNamespaces xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
-  xmlns:doc="org.blockml.bml.documentation"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:doc="org.blockml.bml.documentation">
 
   <baseType>
     dpage:DocPage
@@ -32,9 +29,6 @@
     <title override="true">
       <value>BML Namespaces</value>
     </title>
-    <purpose override="true">
-      <value>Teach xmlns namespace declarations and the bml-namespace placement rule, so readers can declare a prefix and place a new definition under the correct package.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -43,180 +37,78 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.LibrarySystem" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach namespace declarations and the bml-namespace placement rule.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can declare an xmlns prefix and place a new definition under the correct package.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>XML namespace usage in BML: xmlns declarations and prefixes, and the rule that every BML definition lives under its domain's bml package.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>BlockML naming and reference model beyond the XML mechanics.</summary>
-          <reason>FQNs and references are covered on the earlier Namespaces and Identifiers pages.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>A bare short xmlns prefix conventionally means BlockML core; domain mirrors add a domain token in front, such as mb for MachineBlocks.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <content override="true">
       <composition>
-        <dpage:Section heading="What an xmlns declaration does" purpose="Introduce namespace declarations as prefix-to-package bindings">
+        <dpage:Section heading="What an xmlns declaration does">
           <content>
-            <dpage:Paragraph purpose="Introduce xmlns declarations in one concise statement">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>An xmlns declaration on a BML root element binds a short prefix to a package
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>An xmlns declaration on a BML root element binds a short prefix to a package
 identifier, so type references throughout that document can use the prefix
-instead of repeating the full package name.</message>
-              <authoritativeSources>
-                <doc:BmlNamespace />
-              </authoritativeSources>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>A prefix is BML-semantic only when it targets a Package or an Annotation.</summary>
-                  <authoritativeSources>
-                    <workflow:AuthorativeSourceSet>
-                      <includedTypes>
-                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
-                      </includedTypes>
-                    </workflow:AuthorativeSourceSet>
-                  </authoritativeSources>
-                </sem:SupportingPoint>
-              </supportingPoints>
+instead of repeating the full package name. A prefix is BML-semantic only
+when it targets a Package or an Annotation.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="The bare-prefix convention" purpose="Explain the naming convention for short xmlns prefixes">
+        <dpage:Section heading="The bare-prefix convention">
           <content>
-            <dpage:Paragraph purpose="State the bare-versus-domain-token prefix convention">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>By convention a bare short prefix such as core or type always names a
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>By convention a bare short prefix such as core or type always names a
 BlockML core package; a domain mirroring the same segment adds its own token
-in front, such as mb for MachineBlocks, instead of reusing the bare prefix.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>Reusing a bare BlockML prefix for a domain's own package is a naming collision to avoid, not a shortcut.</summary>
-                  <authoritativeSources>
-                    <workflow:AuthorativeSourceSet>
-                      <includedTypes>
-                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
-                      </includedTypes>
-                    </workflow:AuthorativeSourceSet>
-                  </authoritativeSources>
-                </sem:SupportingPoint>
-              </supportingPoints>
+in front, such as mb for MachineBlocks, instead of reusing the bare prefix.
+Reusing a bare BlockML prefix for a domain's own package is a naming
+collision to avoid, not a shortcut.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Every definition lives under a bml package" purpose="Establish the domain.bml placement rule before file-layout mechanics">
+        <dpage:Section heading="Every definition lives under a bml package">
           <content>
-            <dpage:Paragraph purpose="Explain that every BML definition must reside under its domain's bml package">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Every BML definition must reside beneath its owning domain's bml package, so a
-new Block, Type, or other definition always has one correct place to belong.</message>
-              <authoritativeSources>
-                <doc:BmlNamespace />
-              </authoritativeSources>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>No BML definition may exist outside its domain's bml namespace.</summary>
-                  <authoritativeSources>
-                    <workflow:AuthorativeSourceSet>
-                      <includedTypes>
-                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
-                      </includedTypes>
-                    </workflow:AuthorativeSourceSet>
-                  </authoritativeSources>
-                </sem:SupportingPoint>
-              </supportingPoints>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>Every BML definition must reside beneath its owning domain's bml package, so a
+new Block, Type, or other definition always has one correct place to belong.
+No BML definition may exist outside its domain's bml namespace.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Source layout mirrors the namespace" purpose="Connect the package placement rule to where a definition's file lives">
+        <dpage:Section heading="Source layout mirrors the namespace">
           <content>
-            <dpage:Paragraph purpose="Explain that file layout mirrors the fully qualified package">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>A definition's file path mirrors its fully qualified package, so placing a
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text>
+                  <text>A definition's file path mirrors its fully qualified package, so placing a
 new definition under the correct package also determines where its source
-file lives.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>Physical source layout mirrors the fully qualified package, segment by segment.</summary>
-                  <authoritativeSources>
-                    <workflow:AuthorativeSourceSet>
-                      <includedTypes>
-                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
-                      </includedTypes>
-                    </workflow:AuthorativeSourceSet>
-                  </authoritativeSources>
-                </sem:SupportingPoint>
-              </supportingPoints>
+file lives. Physical source layout mirrors the fully qualified package,
+segment by segment.</text>
+                </dpage:Text>
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Recognizing correct placement" purpose="Give readers a quick self-check for namespace and placement">
+        <dpage:Section heading="Recognizing correct placement">
           <content>
-            <dpage:List purpose="Summarize the checks that confirm correct namespace usage and placement">
-              <role>org.blockml.bml.docgen.role.Summary</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>These checks confirm that a definition's namespace declarations and package
-placement are both correct.</message>
+            <dpage:List>
               <items>
-                <dpage:ListItem text="Prefix declared" purpose="Recap the prefix-declaration check">
-                  <message>Every package or Annotation used by a qualified tag has a matching xmlns declaration.</message>
-                </dpage:ListItem>
-                <dpage:ListItem text="Convention followed" purpose="Recap the bare-versus-domain-token convention">
-                  <message>A bare prefix names a BlockML core package; a domain mirror adds that domain's own token.</message>
-                </dpage:ListItem>
-                <dpage:ListItem text="Correct package" purpose="Recap the domain.bml placement check">
-                  <message>The new definition's file sits beneath its domain's bml package, matching its fully qualified name.</message>
-                </dpage:ListItem>
+                <dpage:ListItem text="Prefix declared: every package or Annotation used by a qualified tag has a matching xmlns declaration." />
+                <dpage:ListItem text="Convention followed: a bare prefix names a BlockML core package; a domain mirror adds that domain's own token." />
+                <dpage:ListItem text="Correct package: the new definition's file sits beneath its domain's bml package, matching its fully qualified name." />
               </items>
             </dpage:List>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Back to the menu" purpose="Close the handbook by returning the reader to the documentation menu">
+        <dpage:Section heading="Back to the menu">
           <content>
-            <dpage:Navigation purpose="Return to the handbook menu now that the final page is complete">
+            <dpage:Navigation>
               <title>Back to the menu</title>
               <items>
                 <dpage:NavigationItem label="Documentation" summary="Return to the handbook menu.">
