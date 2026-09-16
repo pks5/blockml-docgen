@@ -95,5 +95,92 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <content override="true">
+      <composition>
+        <dpage:Section heading="A closed set of named values" purpose="State what an EnumType is">
+          <content>
+            <dpage:Paragraph purpose="Introduce EnumType">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>EnumType is its own ValueType branch for closed enums — finite sets of named literal values.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.type.EnumType" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Declaring enum members" purpose="Explain how allowed members are declared">
+          <content>
+            <dpage:Paragraph purpose="Explain that members are declared as Block instances">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A concrete EnumType declares its allowed members as Block instances in a values aggregation, with no special enum syntax.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Not a PrimitiveType, not a StructType" purpose="Contrast EnumType with the other two kinds">
+          <content>
+            <dpage:Paragraph purpose="Contrast EnumType with PrimitiveType and StructType">
+              <role>org.blockml.bml.docgen.role.Comparison</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A PrimitiveType defines an open value domain and a StructType shapes a value via properties, while an EnumType stores only the identity of one closed named member.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeSystemOverview" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="No suggestions on enum properties" purpose="State the restriction that follows from a closed value set">
+          <content>
+            <dpage:Paragraph purpose="State that suggestions are forbidden on EnumType properties">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>A Property typed with an EnumType must not carry suggestions — valid values come exclusively from the type's declared values.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.ConstraintsModel" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before primitive entities are introduced">
+          <content>
+            <dpage:Paragraph purpose="State the retained outcome">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Readers should now be able to define a closed enum and use its literal values.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Continue with primitive entities" purpose="Direct the reader to the next page">
+          <content>
+            <dpage:Navigation purpose="Continue into the Type System section">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Primitive Entities" summary="Learn how a primitive value becomes a Block instance.">
+                  <target>docs:PrimitiveEntities</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:EnumTypes>

@@ -91,5 +91,92 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <content override="true">
+      <composition>
+        <dpage:Section heading="Behaviour as ordinary members" purpose="State that there are no special-cased behaviour concepts">
+          <content>
+            <dpage:Paragraph purpose="State that all behaviour is expressed as Capabilities">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>There are no special language concepts for constructor, getter, setter, or render — all behaviour is expressed as ordinary Capabilities.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.CapabilitySemantics" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Four capability kinds" purpose="Name the payload-shape kinds a Capability may declare">
+          <content>
+            <dpage:List purpose="List the four Capability kinds by their payload shape">
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A Capability's kind describes its payload shape.</message>
+              <items>
+                <dpage:ListItem text="Inbound" purpose="Describe Inbound">
+                  <message>Inbound receives input from outside and requires an inputType.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Outbound" purpose="Describe Outbound">
+                  <message>Outbound produces output to outside and requires an outputType.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Transformation" purpose="Describe Transformation">
+                  <message>Transformation maps input to output and requires both types.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Action" purpose="Describe Action">
+                  <message>Action performs a side effect and requires neither type.</message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Reading an implementation body" purpose="Explain the possible readings of a Capability implementation">
+          <content>
+            <dpage:Paragraph purpose="Explain the three possible readings of an implementation">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A Capability implementation may serve as intent for humans and LLMs, as a companion template a renderer transpiles, or as a host-evaluable function — no reading is mandatory.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Declaring exceptions" purpose="Explain the throws aggregation">
+          <content>
+            <dpage:Paragraph purpose="Explain throws as the BlockML equivalent of a Java throws clause">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>throws lists the Exception types a Capability may raise, the BlockML equivalent of a Java method throws clause.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before member overrides are introduced">
+          <content>
+            <dpage:Paragraph purpose="State the retained outcome">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Readers should now be able to declare a Capability and know that BlockML has no separate constructor, getter, or setter concept.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Continue with member overrides" purpose="Direct the reader to the next page">
+          <content>
+            <dpage:Navigation purpose="Continue the Members sequence">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Member Inheritance and Overrides" summary="Learn when a redeclaration must set override.">
+                  <target>docs:MemberInheritanceAndOverrides</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:Capabilities>

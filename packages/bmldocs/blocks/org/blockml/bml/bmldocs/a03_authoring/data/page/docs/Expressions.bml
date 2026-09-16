@@ -95,5 +95,85 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <content override="true">
+      <composition>
+        <dpage:Section heading="Dynamic values inside dollar-brace delimiters" purpose="Introduce the expression language">
+          <content>
+            <dpage:Paragraph purpose="Introduce the expression language">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>The BML expression language appears inside dollar-brace delimiters wherever a Block member value needs to be dynamic — derived, computed, or bound to a service.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.Expressions" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="#this — one lookup everywhere" purpose="Explain the #this binding">
+          <content>
+            <dpage:Paragraph purpose="Explain #this as the single instance lookup">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>#this is the magic bean of the outer Block instance, used the same way in a whole expression value and inside an interpolation hole.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Text interpolation" purpose="Explain restricted holes inside running text">
+          <content>
+            <dpage:Paragraph purpose="Explain interpolation as distinct from a whole expression value">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A Text property may hold restricted dollar-brace holes as interpolation inside running text, distinct from a whole value that is itself one expression.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Built-in calls" purpose="Point to built-in expression services">
+          <content>
+            <dpage:Paragraph purpose="Mention built-in service calls as one expression building block">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Built-in calls such as the numeric #math.* service supply ready-made utilities usable directly inside an expression.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.service.Math" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before value configuration is introduced">
+          <content>
+            <dpage:Paragraph purpose="State the retained outcome">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Readers should now be able to recognize an expression and know its evaluation context, including Text interpolation.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Continue with value configuration" purpose="Direct the reader to the next page">
+          <content>
+            <dpage:Navigation purpose="Continue the Behaviour and Values sequence">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Value Configuration" summary="Learn curly-brace ValueType instance configuration.">
+                  <target>docs:ValueConfiguration</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:Expressions>

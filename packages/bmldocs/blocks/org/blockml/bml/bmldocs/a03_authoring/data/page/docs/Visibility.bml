@@ -91,5 +91,85 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <content override="true">
+      <composition>
+        <dpage:Section heading="Visibility by naming convention" purpose="State the primary visibility signal">
+          <content>
+            <dpage:Paragraph purpose="State the naming convention">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A member's name signals its visibility: myVar is public, _myVar is protected, and __myVar is private.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.MemberVisibility" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="What visibility restricts" purpose="State that visibility is an authoring-access control, not a renderer control">
+          <content>
+            <dpage:Paragraph purpose="State that visibility controls authoring access only">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Visibility controls which definitions may reference, read, or set a member — it restricts authoring access only, and renderers always see the entire Canonical BOM.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Widening on override" purpose="State the override-time visibility rule">
+          <content>
+            <dpage:Paragraph purpose="State that visibility may widen but not narrow on override">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A child may redeclare a member with wider visibility, such as protected to public, but never narrower.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Sub-Blocks share the same rule" purpose="Extend the naming convention to Sub-Blocks">
+          <content>
+            <dpage:Paragraph purpose="State that Sub-Blocks share the member visibility convention">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Sub-Blocks use the same naming-convention visibility rules as members.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.definition.SubBlockDefinition" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before multiplicity is introduced">
+          <content>
+            <dpage:Paragraph purpose="State the retained outcome">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Readers should now be able to tell a member's visibility from its name.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Continue with multiplicity and collections" purpose="Direct the reader to the next page">
+          <content>
+            <dpage:Navigation purpose="Continue the Members sequence">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Multiplicity and Collections" summary="Learn how optional, singular, and multiple values are expressed.">
+                  <target>docs:MultiplicityAndCollections</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:Visibility>

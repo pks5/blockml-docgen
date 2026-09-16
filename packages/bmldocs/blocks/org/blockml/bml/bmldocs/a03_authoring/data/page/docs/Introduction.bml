@@ -88,5 +88,100 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <content override="true">
+      <composition>
+        <dpage:Section heading="A universal language for semantic Blocks" purpose="Give readers an immediate first sentence of what BlockML is">
+          <content>
+            <dpage:Paragraph purpose="State what BlockML is in one sentence before any distinction follows">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>BlockML is a universal declarative language for describing parametric, composable semantic units called Blocks.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="BML and BOM" purpose="Establish the authoring-format versus canonical-representation distinction">
+          <content>
+            <dpage:Paragraph purpose="Distinguish BML from BOM by role">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>BML (Block Markup Language) is the human- and editor-friendly authoring format; the BOM (Block Object Model) is its canonical, immutable, lossless representation.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="A domain-agnostic compiler" purpose="Explain where domain knowledge lives relative to the compiler">
+          <content>
+            <dpage:Paragraph purpose="State that the compiler understands only BML and the BOM">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>The compiler is domain-agnostic — domain-specific knowledge lives only in Render Targets, never in the compiler itself.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>MachineBlocks (SCAD) is the reference render target implementation, not the only possible target.</summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="What BlockML is designed to achieve" purpose="Summarize the key goals readers should retain">
+          <content>
+            <dpage:List purpose="Present BlockML's key goals as a concise summary">
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>These five goals define the character of BlockML as a language.</message>
+              <items>
+                <dpage:ListItem text="One grammar" purpose="State that all domains share one grammar">
+                  <message>Types, domain blocks, languages, services, and documentation all use the same grammar.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Semantics in BML" purpose="State that behaviour is expressed in BML, not compiler special cases">
+                  <message>Behaviour is expressed as Capabilities in BML, not as special cases hard-coded in the compiler.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Lossless BML to BOM" purpose="State the round-trip guarantee">
+                  <message>The parser makes no semantic decisions, so BML and BOM remain losslessly convertible.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Renderer freedom" purpose="State that each target decides its own manifestation">
+                  <message>Each render target decides how to manifest Blocks in its own output.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Self-hosting bootstrap" purpose="State that the compiler loads its own framework first">
+                  <message>The compiler loads framework BML before it processes any user content.</message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the introductory outcomes readers should retain">
+          <content>
+            <dpage:Paragraph purpose="State the mental-model outcome this introduction should leave behind">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>After this introduction, readers should know what BlockML is for and be able to distinguish BML, the authoring format, from BOM, its canonical representation.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Continue with the core use cases" purpose="Direct the reader to the next page in the Getting Started sequence">
+          <content>
+            <dpage:Navigation purpose="Continue the Getting Started sequence">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Core Use Cases" summary="See the three problems BlockML is designed to solve.">
+                  <target>docs:CoreUseCases</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:Introduction>

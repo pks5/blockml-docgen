@@ -91,5 +91,85 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <content override="true">
+      <composition>
+        <dpage:Section heading="Documentation at the definition site" purpose="State where a Block's documentation model lives">
+          <content>
+            <dpage:Paragraph purpose="Introduce the definition-site documentation model">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Every root Block carries a documentation model at the definition site — the single source of truth inside the BML file itself.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentationModel" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="is and documentation" purpose="Explain the two required prose fields">
+          <content>
+            <dpage:Paragraph purpose="Explain is and documentation">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>is names what a Block semantically represents in a short noun phrase, while documentation is the required technical description, written as Markdown(English) by default.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="isNot" purpose="Explain the disambiguation field">
+          <content>
+            <dpage:Paragraph purpose="Explain when isNot is required">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>isNot is required when confusion risk exists, disambiguating a Block from an easily confused nearby concept.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.definition.StructuralDefinition" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="references carries the cross-links" purpose="Explain the role of the references container">
+          <content>
+            <dpage:Paragraph purpose="State that references carries all documentation cross-links">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>references carries every documentation cross-link, so prose in documentation should not repeat those links.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before the BML authoring format is introduced">
+          <content>
+            <dpage:Paragraph purpose="State the retained outcome">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Readers should now be able to fill a Block's is, documentation, and references fields correctly.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Continue with BML" purpose="Direct the reader to the BML authoring format section">
+          <content>
+            <dpage:Navigation purpose="Continue into the BML authoring format section">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="BML: The Authoring Format" summary="See how BML relates to the canonical BOM.">
+                  <target>docs:Bml</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:DocumentingBlocks>

@@ -89,5 +89,85 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <content override="true">
+      <composition>
+        <dpage:Section heading="xmlns prefixes address packages" purpose="State what an xmlns prefix means in BML">
+          <content>
+            <dpage:Paragraph purpose="Introduce xmlns as package addressing">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>An xmlns prefix in BML is BML-semantic only when it targets a Package for type addressing or an Annotation for directives.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Declaring a prefix" purpose="Explain how a prefix is declared and used">
+          <content>
+            <dpage:Paragraph purpose="Explain xmlns prefix declaration">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A prefix declaration such as xmlns:core="org.blockml.bml.core" binds a short prefix to a package, so it can qualify type names throughout the document.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="The bml-namespace placement rule" purpose="Restate the mandatory namespace rule from the definition's own perspective">
+          <content>
+            <dpage:Paragraph purpose="Restate the mandatory bml namespace rule">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Every BML definition must reside under its owning domain's bml package — no definition may exist outside that namespace.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.LibrarySystem" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="A naming convention for prefixes" purpose="State the short-prefix convention">
+          <content>
+            <dpage:Paragraph purpose="State the short-prefix naming convention">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>A bare short prefix conventionally means BlockML core, while domain mirrors add a domain token in front, such as mb for MachineBlocks.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="What to carry forward" purpose="Anchor the final reader outcome of the handbook">
+          <content>
+            <dpage:Paragraph purpose="State the retained outcome">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Readers should now be able to declare an xmlns prefix and place a new definition under the correct package.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Return to the documentation menu" purpose="Close the handbook sequence by returning to the entry point">
+          <content>
+            <dpage:Navigation purpose="Return to the documentation menu at the end of the handbook">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Documentation" summary="Return to the handbook's table of contents.">
+                  <target>docs:TableOfContents</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:BmlNamespaces>

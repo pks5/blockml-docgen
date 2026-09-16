@@ -100,5 +100,92 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <content override="true">
+      <composition>
+        <dpage:Section heading="The basic unit of BlockML" purpose="Introduce the Block as the basic unit">
+          <content>
+            <dpage:Paragraph purpose="State what a Block is">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A Block is BlockML's basic unit — a semantic building block, and the sole inheritance root for all Block definitions is org.blockml.bml.core.Block.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.core.Block" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Defining a Block" purpose="Explain how a Block definition is identified">
+          <content>
+            <dpage:Paragraph purpose="Explain that the element tag identifies the type being defined">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A Block definition's document root uses its type as the element tag, identifying the Block being defined before any member is declared.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentFormat" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Naming a Block" purpose="Explain the name convention and its relationship to type identity">
+          <content>
+            <dpage:Paragraph purpose="State the PascalCase naming convention">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A Block's name is a PascalCase class name — letters and digits only, starting with an uppercase letter.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockNameConvention" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Referencing a Block" purpose="Separate defining a Block from referencing one">
+          <content>
+            <dpage:Paragraph purpose="Distinguish a Block's definition from a use of it">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A Block is defined once in its own file, then referenced elsewhere by its fully qualified name — defining and referencing are separate acts.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before definitions and instances are distinguished">
+          <content>
+            <dpage:Paragraph purpose="State the retained outcome">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Readers should now be able to point to a Block's FQN, its definition file, and a use of it.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Continue with definitions and instances" purpose="Direct the reader to the next page">
+          <content>
+            <dpage:Navigation purpose="Continue the Foundations sequence">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Block Definitions and Instances" summary="Learn the Block-versus-instance distinction.">
+                  <target>docs:BlockDefinitionsAndInstances</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:Blocks>

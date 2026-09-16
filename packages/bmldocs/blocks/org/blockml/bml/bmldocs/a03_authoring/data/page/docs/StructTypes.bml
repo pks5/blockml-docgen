@@ -94,5 +94,85 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <content override="true">
+      <composition>
+        <dpage:Section heading="Composite named-field values" purpose="State what a StructType is">
+          <content>
+            <dpage:Paragraph purpose="Introduce StructType">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>StructType is the abstract ValueType branch for composite value objects — complex values described by ordinary Properties.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.type.StructType" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Declaring a StructType" purpose="Explain how a concrete StructType is declared">
+          <content>
+            <dpage:Paragraph purpose="Explain that struct fields are ordinary properties">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A concrete StructType declares properties whose members become struct fields, with no special struct syntax; field declaration order remains significant.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="EmptyStruct" purpose="Introduce the named counterpart of an empty struct">
+          <content>
+            <dpage:Paragraph purpose="Introduce EmptyStruct">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>EmptyStruct is an instantiable StructType with no fields — the named, reusable counterpart of an anonymous empty struct.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.type.EmptyStruct" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="A sibling, not a supertype" purpose="Prevent confusing StructType with a supertype of EnumType">
+          <content>
+            <dpage:Paragraph purpose="State the sibling relationship with EnumType">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>StructType is a sibling branch of EnumType under ValueType, not a supertype of it.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the reader outcome before enum types are introduced">
+          <content>
+            <dpage:Paragraph purpose="State the retained outcome">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Readers should now be able to define a StructType and configure a struct value.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <dpage:Section heading="Continue with enum types" purpose="Direct the reader to the next kind">
+          <content>
+            <dpage:Navigation purpose="Continue into the Type System section">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Enum Types" summary="Learn the closed-set-of-named-values ValueType kind.">
+                  <target>docs:EnumTypes</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:StructTypes>
