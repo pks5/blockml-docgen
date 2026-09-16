@@ -1,14 +1,14 @@
 <!--Workspace program — BuildA04
-  FQN: org.blockml.bml.bmldocs._meta.transform.running.T00011_BuildA04_20260916T232914-->
-<running:T00011_BuildA04_20260916T232914 xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs._meta.transform.succeeded.T00011_BuildA04_20260916T232914-->
+<succeeded:T00011_BuildA04_20260916T232914 xmlns="http://blockml.org/bml"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type"
   xmlns:program="org.blockml.bml.bmldocs.program"
   xmlns:a04_task="org.blockml.bml.bmldocs.a04_rendering.task"
-  xmlns:running="org.blockml.bml.bmldocs._meta.transform.running">
+  xmlns:succeeded="org.blockml.bml.bmldocs._meta.transform.succeeded">
 
   <baseType>
-    workflow:ModelTransformation(running:T00011_BuildA04_20260916T232914.Parameters, type:Text)
+    workflow:ModelTransformation(succeeded:T00011_BuildA04_20260916T232914.Parameters, type:Text)
   </baseType>
   <is>
     A pending ModelTransformation that builds the A04 rendering data
@@ -18,7 +18,7 @@
       <value>A transformation that imports A03 data into A04 and renders the pages.</value>
     </description>
     <status override="true" type="workflow:ExecutionStatus">
-      <value>Running</value>
+      <value>Succeeded</value>
     </status>
     <createdAt override="true" type="type:DateTime">
       <value>2026-09-06T00:00:00</value>
@@ -38,6 +38,12 @@
     <baseCommit override="true" type="type:Text">
       <value>30aff2498b54d9a40074bcf222a686e96cef0007</value>
     </baseCommit>
+    <completedAt override="true" type="type:DateTime">
+      <value>2026-09-16T23:50:24</value>
+    </completedAt>
+    <duration override="true" type="type:Duration">
+      <value>PT21M10.133S</value>
+    </duration>
   </properties>
   <aggregations>
     <operations override="true">
@@ -80,8 +86,7 @@ I did not commit — the working tree changes are `Library.bml` (modified) and t
 - **Validation**: `npx blockml validate --all` — 717 blocks, 5 errors (all pre-existing `BML_UNKNOWN_TYPE` in frozen `_meta/transform/succeeded/*.bml` historical records, unchanged from before this task started, unrelated to A04). Zero new errors, warnings, or recommendations from the rendered pages.
 - **No gaps reported** — every page's scaffold had enough `message`/`supportingPoints` plus a resolvable authoritative source to render responsibly without inventing content.
 
-I did not commit, and did not touch the running transform record (`_meta/transform/running/T00011_BuildA04_20260916T232914.bml`) — flipping this operation to `Succeeded` and committing is a separate step, consistent with how prior operations in this pipeline were left for a follow-up step.
-</output>
+I did not commit, and did not touch the running transform record (`_meta/transform/running/T00011_BuildA04_20260916T232914.bml`) — flipping this operation to `Succeeded` and committing is a separate step, consistent with how prior operations in this pipeline were left for a follow-up step.</output>
           <completedAt>2026-09-16T23:50:23</completedAt>
           <task>
             <a04_task:A04_02_RenderPages />
@@ -137,4 +142,4 @@ I did not commit, and did not touch the running transform record (`_meta/transfo
       </is>
     </Parameters>
   </subBlocks>
-</running:T00011_BuildA04_20260916T232914>
+</succeeded:T00011_BuildA04_20260916T232914>
