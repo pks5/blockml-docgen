@@ -1,0 +1,68 @@
+<!--Workspace program — BuildA03
+  FQN: org.blockml.bml.bmldocs._meta.transform.running.T00014_BuildA03_20260917T165728-->
+<running:T00014_BuildA03_20260917T165728 xmlns="http://blockml.org/bml"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:program="org.blockml.bml.bmldocs.program"
+  xmlns:a03_task="org.blockml.bml.bmldocs.a03_authoring.task"
+  xmlns:running="org.blockml.bml.bmldocs._meta.transform.running">
+
+  <baseType>
+    workflow:ModelTransformation(running:T00014_BuildA03_20260917T165728.Parameters, type:Text)
+  </baseType>
+  <is>
+    A pending ModelTransformation that creates skeletons for all planned pages.
+  </is>
+  <properties>
+    <description override="true">
+      <value>A transformation that creates skeletons for all planned pages.</value>
+    </description>
+    <status override="true" type="workflow:ExecutionStatus">
+      <value>Running</value>
+    </status>
+    <createdAt override="true" type="type:DateTime">
+      <value>2026-09-06T00:00:00</value>
+    </createdAt>
+    <template override="true" type="type:Boolean">
+      <value>false</value>
+    </template>
+    <executionId override="true" type="type:UUID">
+      <value>c9b8330d-defc-49af-a25d-7440aba7f572</value>
+    </executionId>
+    <sequence override="true" type="type:Integer">
+      <value>14</value>
+    </sequence>
+    <startedAt override="true" type="type:DateTime">
+      <value>2026-09-17T16:57:28</value>
+    </startedAt>
+    <baseCommit override="true" type="type:Text">
+      <value>96bc3f11e90a1454932e993aea8cd675dc2e4232</value>
+    </baseCommit>
+  </properties>
+  <aggregations>
+    <operations override="true">
+      <composition>
+        <workflow:AgenticOperation name="Copy A02 data into A03" status="Pending" captureOutput="true">
+          <task>
+            <a03_task:A03_01_CopyData />
+          </task>
+        </workflow:AgenticOperation>
+        <workflow:AgenticOperation name="Author A03 pages" status="Pending" captureOutput="true">
+          <task>
+            <a03_task:A03_02_AuthorPages />
+          </task>
+        </workflow:AgenticOperation>
+      </composition>
+    </operations>
+  </aggregations>
+  <subBlocks>
+    <Parameters>
+      <baseType>
+        type:StructType
+      </baseType>
+      <is>
+        Run parameters for this transformation
+      </is>
+    </Parameters>
+  </subBlocks>
+</running:T00014_BuildA03_20260917T165728>
