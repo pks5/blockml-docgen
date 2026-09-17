@@ -98,6 +98,8 @@ describe("DocgenTarget render", () => {
     expect(home?.content).toContain("dg-toc-page");
     expect(about?.content).toContain("About explains");
     expect(about?.content).toContain("Also read");
+    expect(about?.content).toContain('href="./home.html"');
+    expect(about?.content).not.toContain('href="#"');
     expect(index?.content).toContain("This is the home page");
 
     const highlightCore = result.output?.files.find(

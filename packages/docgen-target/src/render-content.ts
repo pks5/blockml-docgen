@@ -2,7 +2,7 @@ import type { BlockInstance, CompositionNode, CompositionTemplate } from "@block
 import type { TypeRegistry } from "@blockml/framework";
 import { getInstanceComposition, getPropertyText, registryHasDoc } from "./bom-walk.js";
 import { highlightLanguageId } from "./highlight-assets.js";
-import { escapeHtml, memberValueAsText, relativePath } from "./html.js";
+import { escapeHtml, lookupByTypeRef, memberValueAsText, relativePath } from "./html.js";
 import { PAGE_FQNS } from "./options.js";
 
 export interface RenderContentContext {
@@ -89,7 +89,7 @@ function renderNavigationItem(instance: BlockInstance, ctx: RenderContentContext
   const label = memberValueAsText(instance.memberValues.label) ?? "Untitled";
   const summary = memberValueAsText(instance.memberValues.summary);
   const target = memberValueAsText(instance.memberValues.target);
-  const hrefPath = target ? ctx.pathByPageFqn.get(target) : undefined;
+  const hrefPath = lookupByTypeRef(target, ctx.pathByPageFqn);
   const href = hrefPath ? relativePath(ctx.pagePath, hrefPath) : "#";
   const summaryHtml = summary
     ? ` <span class="dg-muted">— ${escapeHtml(summary)}</span>`

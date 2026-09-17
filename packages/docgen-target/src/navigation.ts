@@ -6,7 +6,7 @@ import {
   getPropertyText,
   registryHasDoc,
 } from "./bom-walk.js";
-import { simpleName } from "./html.js";
+import { lookupByTypeRef, matchesTypeRef } from "./html.js";
 import { docSetRootPageGroup } from "./host.js";
 
 export interface NavLink {
@@ -31,18 +31,7 @@ export interface SiteNavModel {
 
 /** Match TypeReference / QName / FQN to a known group FQN. */
 export function refsGroup(ref: string | undefined, groupFqn: string): boolean {
-  if (!ref) {
-    return false;
-  }
-  if (ref === groupFqn) {
-    return true;
-  }
-  const simple = simpleName(groupFqn);
-  return (
-    ref === simple ||
-    ref.endsWith(`:${simple}`) ||
-    ref.endsWith(`.${simple}`)
-  );
+  return matchesTypeRef(ref, groupFqn);
 }
 
 function groupParentRef(group: BlockDefinition): string | undefined {
@@ -50,13 +39,10 @@ function groupParentRef(group: BlockDefinition): string | undefined {
 }
 
 function resolvePageHref(
-  pageFqn: string | undefined,
+  pageRef: string | undefined,
   pathByPageFqn: Map<string, string>,
 ): string | undefined {
-  if (!pageFqn) {
-    return undefined;
-  }
-  return pathByPageFqn.get(pageFqn);
+  return lookupByTypeRef(pageRef, pathByPageFqn);
 }
 
 /** First reachable page path in a group subtree (landingPage, then pages, then children). */

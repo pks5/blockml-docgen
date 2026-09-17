@@ -8,6 +8,7 @@ import {
   getPropertyText,
   registryHasDoc,
 } from "./bom-walk.js";
+import { lookupByTypeRef } from "./html.js";
 import { docSetHomePage, docSetTitle } from "./host.js";
 import { highlightSiteFiles } from "./highlight-assets.js";
 import { wrapMainLayout } from "./layout/default-main-layout.js";
@@ -76,7 +77,7 @@ export function assembleSite(
   }
 
   if (homePage) {
-    const homePath = pathByPageFqn.get(homePage);
+    const homePath = lookupByTypeRef(homePage, pathByPageFqn);
     const homeFile = homePath ? files.find((f) => f.path === homePath) : undefined;
     if (homeFile && homePath !== "index.html" && !files.some((f) => f.path === "index.html")) {
       files.push({ path: "index.html", content: homeFile.content });

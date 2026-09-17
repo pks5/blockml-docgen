@@ -9,7 +9,7 @@ import type {
 } from "@blockml/bom";
 import type { TypeRegistry } from "@blockml/framework";
 import { TYPE_REF_ENTITY } from "./options.js";
-import { memberValueAsText, kebabCase, simpleName } from "./html.js";
+import { memberValueAsText, kebabCase, matchesTypeRef, simpleName } from "./html.js";
 
 export function getBlockLevelComposition(
   block: BlockDefinition,
@@ -119,7 +119,8 @@ export function buildPagePathMap(
       const pageRef = memberValueAsText(node.instance.memberValues.page);
       const path = memberValueAsText(node.instance.memberValues.path);
       if (pageRef && path) {
-        map.set(pageRef, normalizeSitePath(path));
+        const fqn = pageFqns.find((candidate) => matchesTypeRef(pageRef, candidate)) ?? pageRef;
+        map.set(fqn, normalizeSitePath(path));
       }
     }
   }

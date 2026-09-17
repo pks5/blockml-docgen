@@ -49,3 +49,39 @@ export function simpleName(fqn: string): string {
   const parts = fqn.split(".");
   return parts[parts.length - 1] ?? fqn;
 }
+
+/** Match a TypeReference / QName / simple name to a known type FQN. */
+export function matchesTypeRef(ref: string | undefined, fqn: string): boolean {
+  if (!ref) {
+    return false;
+  }
+  if (ref === fqn) {
+    return true;
+  }
+  const simple = simpleName(fqn);
+  return (
+    ref === simple ||
+    ref.endsWith(`:${simple}`) ||
+    ref.endsWith(`.${simple}`)
+  );
+}
+
+/** Look up a map keyed by FQN using FQN, QName, or simple name. */
+export function lookupByTypeRef<T>(
+  ref: string | undefined,
+  byFqn: Map<string, T>,
+): T | undefined {
+  if (!ref) {
+    return undefined;
+  }
+  const direct = byFqn.get(ref);
+  if (direct !== undefined) {
+    return direct;
+  }
+  for (const [fqn, value] of byFqn) {
+    if (matchesTypeRef(ref, fqn)) {
+      return value;
+    }
+  }
+  return undefined;
+}

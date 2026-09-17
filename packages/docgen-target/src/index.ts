@@ -11,6 +11,7 @@ export { renderPageBody } from "./render-content.js";
 export { buildSiteNav, type SiteNavModel, type NavLink, type NavTreeNode } from "./navigation.js";
 export { wrapMainLayout } from "./layout/default-main-layout.js";
 export { DEFAULT_THEME_CSS } from "./theme/default-theme.js";
+export { lookupByTypeRef, matchesTypeRef } from "./html.js";
 export {
   DEFAULT_CODE_LANGUAGE,
   HIGHLIGHT_BLOCKML_GRAMMAR,

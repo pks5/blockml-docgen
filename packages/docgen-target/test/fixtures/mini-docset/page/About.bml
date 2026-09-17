@@ -41,7 +41,7 @@
                 <dpage:NavigationItem>
                   <label>Home</label>
                   <summary>Start here</summary>
-                  <target>org.blockml.bml.target.docgen.fixture.page.Home</target>
+                  <target>page:Home</target>
                 </dpage:NavigationItem>
               </items>
             </dpage:Navigation>

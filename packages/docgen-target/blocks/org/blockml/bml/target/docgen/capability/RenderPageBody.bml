@@ -19,6 +19,8 @@
     Independent of MainLayout and Theme. CodeBlock emits
     `<pre><code class="language-{id}">` using CodeBlock.language, or
     HighlightJs.defaultLanguage (blockml) when language is omitted.
+    NavigationItem.target is a TypeReference: resolve FQN, QName, or simple
+    name against DocSet pages (same matching as site nav parentGroup refs).
   ]]></documentation>
   <references>
     <see type="page:DocPage" relation="Requires" />
