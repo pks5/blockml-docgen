@@ -1,0 +1,23 @@
+<acme:Direction xmlns="http://blockml.org/bml"
+  xmlns:acme="com.acme.example"
+  xmlns:bml="org.blockml.bml.annotation.BmlAnnotation"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    type:EnumType
+  </baseType>
+  <is>
+    A closed set of travel directions
+  </is>
+  <documentation>
+    The directions a part may travel.
+  </documentation>
+  <aggregations>
+    <values override="true">
+      <composition>
+        <acme:Direction bml:id="North" />
+        <acme:Direction bml:id="South" />
+      </composition>
+    </values>
+  </aggregations>
+</acme:Direction>

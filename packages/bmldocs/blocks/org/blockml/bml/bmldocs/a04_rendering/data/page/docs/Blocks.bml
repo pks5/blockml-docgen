@@ -2,14 +2,11 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.Blocks-->
 <docs:Blocks xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
   xmlns:core="org.blockml.bml.core"
-  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
-  xmlns:workflow="org.blockml.bml.transformer.workflow"
-  xmlns:type="org.blockml.bml.type">
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule">
 
   <baseType>
     dpage:DocPage
@@ -42,9 +39,6 @@
     <title override="true">
       <value>Blocks</value>
     </title>
-    <purpose override="true">
-      <value>Introduce the Block as BlockML's basic unit and separate defining a Block from referencing one, so readers can locate a Block's FQN and its definition before deeper member or inheritance detail follows.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -53,54 +47,6 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.core.Block" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockNameConvention" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentFormat" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeIdentityDerivation" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Introduce the Block as the basic unit of BlockML and separate defining a Block from using one.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can point to a Block's FQN, its definition file, and a use of it.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>What a Block is, how to define one, how its name and identity are formed, and the difference between defining a Block and referencing it.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Definition-versus-instance depth and inheritance mechanics.</summary>
-          <reason>Those are the subjects of the next two pages.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>A Block's name is a PascalCase class name, and its canonical type identity comes from the element tag or an explicit type field.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <rules override="true">
       <composition>
         <lrule:CodeExamplePlacementRule />
@@ -110,134 +56,84 @@
     <content override="true">
       <composition>
         <!--1. Lead-->
-        <dpage:Section heading="A Block is BlockML's basic unit" purpose="Introduce the Block as the thing every page from here on describes">
+        <dpage:Section heading="A Block is BlockML's basic unit">
           <content>
-            <dpage:Paragraph purpose="Introduce a Block as a named, typed, semantic unit">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A Block is BlockML's basic unit: a named, typed definition with an explicit
-identity that other Blocks can extend, reference, or compose.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A Block is BlockML's basic unit: a named, typed definition with an explicit identity that other Blocks can extend, reference, or compose." />
+                <dpage:Text text="Every concept this handbook covers, from a simple domain type to a documentation page like this one, is authored as a Block." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--2. Naming a Block-->
-        <dpage:Section heading="Naming a Block" purpose="Explain the PascalCase naming convention and its relationship to type identity">
+        <dpage:Section heading="Naming a Block">
           <content>
-            <dpage:Paragraph purpose="State the PascalCase naming rule for a Block's name">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A Block's name is a PascalCase class name — letters and digits only,
-starting with an uppercase letter — which keeps composition instance tags with
-xmlns prefixes unambiguous against camelCase member names.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>On a root Block, name is optional and, when present, must equal the last segment of the resolved type.</summary>
-                  <authoritativeSources>
-                    <workflow:AuthorativeSourceSet>
-                      <includedTypes>
-                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockNameConvention" />
-                      </includedTypes>
-                    </workflow:AuthorativeSourceSet>
-                  </authoritativeSources>
-                </sem:SupportingPoint>
-              </supportingPoints>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Visibility prefixes on Sub-Block names.</summary>
-                  <reason>Visibility naming is a separate topic covered on its own page.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A Block's name is a PascalCase class name — letters and digits only, starting with an uppercase letter, as in Wall or StandardBrick." />
+                <dpage:Text text="That convention keeps composition instance tags, which carry an xmlns prefix, visually unambiguous against camelCase member names such as a Property or an Aggregation." />
+                <dpage:Text text="On a root Block, an explicit name is optional; when it is present it must equal the last segment of the Block's resolved type, so name never contradicts identity." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--3. Defining versus referencing-->
-        <dpage:Section heading="Defining a Block versus referencing one" purpose="Separate authoring a Block document from pointing at an existing Block">
+        <dpage:Section heading="Defining a Block versus referencing one">
           <content>
-            <dpage:Paragraph purpose="Distinguish the document that defines a Block from a reference to it elsewhere">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Defining a Block means authoring its root document, where the element tag
-supplies its type; referencing a Block elsewhere means writing its FQN or an
-xmlns-qualified name at a member type or baseType site — the two are never
-confused because only one document can define a given FQN.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>The preferred document root tag is the type itself, such as acme:MyBlock, rather than a generic block wrapper.</summary>
-                  <authoritativeSources>
-                    <workflow:AuthorativeSourceSet>
-                      <includedTypes>
-                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentFormat" />
-                      </includedTypes>
-                    </workflow:AuthorativeSourceSet>
-                  </authoritativeSources>
-                </sem:SupportingPoint>
-              </supportingPoints>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Defining a Block means authoring its root document, where the element tag itself supplies the Block's type — the preferred root tag is the type itself, such as acme:MyBlock, rather than a generic wrapper." />
+                <dpage:Text text="Referencing a Block means writing its FQN or an xmlns-qualified name somewhere else, such as at a member type or a baseType site." />
+                <dpage:Text text="The two are never confused, because only one document can define a given FQN — every other mention of that name is necessarily a reference to it." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--4. Minimal example-->
-        <dpage:Section heading="Defining a small Block" purpose="Ground the naming and identity rules in a concrete definition">
+        <dpage:Section heading="Defining a small Block">
           <content>
-            <dpage:Paragraph purpose="Set up a small Block definition to be read closely">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>Defining a Block requires only a type identity and a baseType — everything
-else, including documentation and members, may follow once identity is
-established.</message>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Properties, aggregations, and capabilities.</summary>
-                  <reason>The example isolates identity and naming, not the full member model.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Defining a Block requires only a type identity and a baseType — everything else, including documentation and members, may follow once identity is established." />
+              </content>
             </dpage:Paragraph>
-            <dpage:CodeBlock purpose="Show a Block definition whose root tag supplies its type and matches its name">
-              <role>org.blockml.bml.docgen.role.Example</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>A qualified root tag supplies the type; an optional name must match the tag's last segment.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>Show a qualified root tag as the type, with baseType and an optional matching name.</summary>
-                </sem:SupportingPoint>
-              </supportingPoints>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Documentation fields and any members.</summary>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:CodeBlock>
+              <code><![CDATA[<!-- The qualified root tag supplies the type; an optional name must match the tag's last segment -->
+<acme:Calibrator xmlns="http://blockml.org/bml"
+  xmlns:acme="com.acme.example"
+  xmlns:core="org.blockml.bml.core">
+
+  <name>
+    Calibrator
+  </name>
+  <baseType>
+    core:Block
+  </baseType>
+</acme:Calibrator>]]></code>
             </dpage:CodeBlock>
-            <dpage:Paragraph purpose="Interpret the example's identity fields">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>The root tag in the example is both the Block's type and, by the PascalCase
-rule, the basis of its name — an explicit name element would only need to repeat
-that same last segment.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="The root tag acme:Calibrator in the example is both the Block's type and, by the PascalCase rule, the basis of its name." />
+                <dpage:Text text="The explicit name element only repeats that same last segment, Calibrator, which is why it stays optional rather than required." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--5. What to carry forward-->
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcome this page should leave behind">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the outcome this page should leave behind">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>After this page, readers should be able to point at a Block's FQN, its
-definition file, and a place where it is used — the distinction the next page
-deepens into definitions and instances.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="After this page, readers should be able to point at a Block's FQN, its definition file, and a place where it is used — the distinction the next page deepens into definitions and instances." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--6. Continuation-->
-        <dpage:Section heading="Continue with definitions and instances" purpose="Direct the reader to the next page">
+        <dpage:Section heading="Continue with definitions and instances">
           <content>
-            <dpage:Navigation purpose="Continue the foundations learning sequence">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Block Definitions and Instances" summary="Learn the Block-versus-instance distinction.">

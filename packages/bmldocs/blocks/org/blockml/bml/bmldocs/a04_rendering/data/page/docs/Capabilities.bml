@@ -2,14 +2,11 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.Capabilities-->
 <docs:Capabilities xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
   xmlns:def="org.blockml.bml.definition"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule">
 
   <baseType>
     dpage:DocPage
@@ -35,9 +32,6 @@
     <title override="true">
       <value>Capabilities</value>
     </title>
-    <purpose override="true">
-      <value>Teach Capability as ordinary behaviour with a language-tagged implementation body, so readers can declare a Capability and understand that BlockML has no separate constructor, getter, or setter concept.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -46,52 +40,6 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.definition.CapabilityDefinition" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.CapabilitySemantics" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach Capability as ordinary behaviour with a language-tagged implementation body.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can declare a Capability and knows there is no separate constructor concept.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Block behaviour expressed as members: Capability declaration, implementation bodies, and common behavioural roles such as init, getValue, and setValue.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Embedded-expression syntax depth.</summary>
-          <reason>The embedded-expression delimiter syntax inside implementations is a separate, more technical topic.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>A Capability implementation may be read as intent, a companion template, or a host-evaluable function — no single reading is mandatory.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <rules override="true">
       <composition>
         <lrule:CodeExamplePlacementRule />
@@ -101,131 +49,85 @@
     <content override="true">
       <composition>
         <!--1. Lead-->
-        <dpage:Section heading="Behaviour, expressed as a member" purpose="Introduce Capability as the member kind for behaviour, with no special constructs">
+        <dpage:Section heading="Behaviour, expressed as a member">
           <content>
-            <dpage:Paragraph purpose="Introduce Capability as ordinary behaviour with no special language concepts">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>There are no special language concepts for constructor, getter, setter, or
-render — all behaviour is expressed as ordinary Capabilities, declared like any
-other member.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.CapabilitySemantics" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="There are no special language concepts for a constructor, a getter, a setter, or a render step — all Block behaviour is expressed as ordinary Capabilities, declared like any other member." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--2. Four kinds of communication shape-->
-        <dpage:Section heading="Four communication shapes" purpose="Name the Capability kinds by input/output shape">
+        <dpage:Section heading="Four communication shapes">
           <content>
-            <dpage:Paragraph purpose="Introduce Inbound, Outbound, Transformation, and Action as payload-shape kinds">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A Capability's kind describes its payload shape: Inbound requires only
-inputType, Outbound requires only outputType, Transformation requires both, and
-Action requires neither.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.definition.CapabilityDefinition" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Async reply patterns and runtime message semantics.</summary>
-                  <reason>Those are runtime concerns beyond the declared shape this page covers.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A Capability's kind describes its payload shape: Inbound requires only an inputType, Outbound requires only an outputType, Transformation requires both, and Action requires neither." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--3. What an implementation body means-->
-        <dpage:Section heading="What an implementation body means" purpose="Explain the multiple valid readings of a Capability implementation">
+        <dpage:Section heading="What an implementation body means">
           <content>
-            <dpage:Paragraph purpose="Explain the three readings a Capability implementation body may carry">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A Capability implementation is a language-tagged body that may serve as
-intent for humans and LLMs, as a companion template a renderer transpiles, or as
-a deterministic function a host evaluates — with no ranking among these
-readings.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.CapabilitySemantics" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A Capability implementation is a language-tagged body that may be read as intent for a human or an LLM, as a companion template a renderer transpiles, or as a deterministic function a host evaluates — no single reading is mandatory, and a Capability may serve more than one of them at once." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--4. Minimal example-->
-        <dpage:Section heading="Declaring a Transformation capability" purpose="Ground the payload-shape rule in one small capability">
+        <dpage:Section heading="Declaring a Transformation capability">
           <content>
-            <dpage:Paragraph purpose="Set up a Transformation capability requiring both an input and an output">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>A Transformation capability declares both inputType and outputType,
-alongside an implementation body tagged with its language.</message>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>throws and exception handling.</summary>
-                  <reason>The example isolates the input/output shape and the implementation body.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A Transformation capability declares both an inputType and an outputType, alongside an implementation body tagged with its language." />
+              </content>
             </dpage:Paragraph>
-            <dpage:CodeBlock purpose="Show a Transformation capability with inputType, outputType, and a PseudoCode implementation">
-              <role>org.blockml.bml.docgen.role.Example</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>The capability declares Transformation with both types and a language-tagged implementation body.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>Show a capability with type Transformation, an inputType, an outputType, and an implementation element.</summary>
-                </sem:SupportingPoint>
-              </supportingPoints>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>A throws aggregation.</summary>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:CodeBlock>
+              <code><![CDATA[<!-- format is a Transformation capability: it declares both inputType and outputType -->
+<acme:Greeter xmlns="http://blockml.org/bml"
+  xmlns:acme="com.acme.example"
+  xmlns:cap="org.blockml.bml.capability"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:lang="org.blockml.bml.language"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    core:Block
+  </baseType>
+  <capabilities>
+    <format type="cap:Transformation" inputType="type:Text" outputType="type:Text">
+      <implementation language="lang:PseudoCode">
+        Uppercase the first letter of the input text and return it.
+      </implementation>
+    </format>
+  </capabilities>
+</acme:Greeter>]]></code>
             </dpage:CodeBlock>
-            <dpage:Paragraph purpose="Interpret the implementation body as intent rather than a mandatory execution recipe">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>The implementation body in the example states intent for a human or LLM
-reader; a renderer or host is free to read it as a template to transpile or a
-function to evaluate, but neither reading is mandatory.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="The format capability in the example commits only to its shape — one Text in, one Text out — and its PseudoCode implementation states that shape's intent for a human or LLM reader; a renderer or host remains free to read the same body as a template to transpile or a function to evaluate, but neither reading is required." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--5. What to carry forward-->
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcome this page should leave behind">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the outcome this page should leave behind">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>After this page, readers should be able to declare a Capability and know
-there is no separate constructor concept, closing out the four member kinds
-before override mechanics get their own page.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="After this page, readers should be able to declare a Capability and know there is no separate constructor concept, closing out the four member kinds before override mechanics get their own page." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--6. Continuation-->
-        <dpage:Section heading="Continue with member inheritance and overrides" purpose="Direct the reader to the next page">
+        <dpage:Section heading="Continue with member inheritance and overrides">
           <content>
-            <dpage:Navigation purpose="Continue the member-model learning sequence">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Member Inheritance and Overrides" summary="Learn how to refine or finalize an inherited member.">

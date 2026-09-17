@@ -1,0 +1,18 @@
+<acme:Point xmlns="http://blockml.org/bml"
+  xmlns:acme="com.acme.example"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    type:StructType
+  </baseType>
+  <is>
+    A two-dimensional point
+  </is>
+  <documentation>
+    A point with x and y coordinates.
+  </documentation>
+  <properties>
+    <x type="type:Integer" />
+    <y type="type:Integer" />
+  </properties>
+</acme:Point>

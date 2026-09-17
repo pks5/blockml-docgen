@@ -2,13 +2,10 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.Bml-->
 <docs:Bml xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule">
 
   <baseType>
     dpage:DocPage
@@ -37,9 +34,6 @@
     <title override="true">
       <value>BML: The Authoring Format</value>
     </title>
-    <purpose override="true">
-      <value>Teach BML as the authoring format and the BOM as its canonical, lossless form, so readers can identify a Block document's root element and format before namespace and directive detail follows.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -48,53 +42,6 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentFormat" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompilerArchitecture" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach BML as the authoring format and the BOM as its canonical form.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can identify a Block document's root element and authoring format.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>BML as the human-authored representation of a BlockML model, and its relationship to the canonical BOM.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Namespace declaration mechanics or bml: directives depth.</summary>
-          <reason>Those get the following BML Namespaces page and the earlier Namespaces page.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>The compiler is domain-agnostic — it understands only BML and the BOM, never domain-specific meaning.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <rules override="true">
       <composition>
         <lrule:CodeExamplePlacementRule />
@@ -104,131 +51,88 @@
     <content override="true">
       <composition>
         <!--1. Lead-->
-        <dpage:Section heading="What authors actually write" purpose="Return to BML as the concrete authoring format after a handbook of concepts">
+        <dpage:Section heading="What authors actually write">
           <content>
-            <dpage:Paragraph purpose="Restate BML as the human- and editor-friendly authoring format, now that every concept it expresses is known">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>BML is what authors actually write — the human- and editor-friendly
-representation of a BlockML model, with the .bml extension and XML as its sole
-current serialization.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="BML is what authors actually write — the human- and editor-friendly representation of a BlockML model, with the .bml extension and XML as its sole current serialization." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--2. Root, Sub-Block, and embed authoring-->
-        <dpage:Section heading="Root, Sub-Block, and embed authoring" purpose="Summarize the tag-as-identity authoring format across the three document shapes">
+        <dpage:Section heading="Root, Sub-Block, and embed authoring">
           <content>
-            <dpage:Paragraph purpose="Summarize the preferred element-tag-as-identity authoring format across roots, Sub-Blocks, and embeds">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A document root or embedded Block uses its qualified type as the element
-tag; a Sub-Block uses its unqualified name as the tag — the same identity-as-tag
-principle this handbook has used in every earlier example.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentFormat" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>The legacy block-wrapper form.</summary>
-                  <reason>This handbook teaches only the preferred tag-as-identity form.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A document root or an embedded Block uses its qualified type as the element tag; a Sub-Block uses its unqualified name as the tag — the same identity-as-tag principle this handbook has used in every earlier example." />
+                <dpage:Text text="A legacy wrapper form still parses during the ongoing transition, but every example in this handbook uses the preferred tag-as-identity form." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--3. BML to BOM, once more-->
-        <dpage:Section heading="BML to BOM, and the domain-agnostic compiler" purpose="Restate the BML-to-BOM pipeline now that the full member model is known">
+        <dpage:Section heading="BML to BOM, and the domain-agnostic compiler">
           <content>
-            <dpage:Paragraph purpose="Restate that the compiler reading BML into the BOM is domain-agnostic">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>The compiler that reads BML and produces the BOM understands only BML and
-the BOM object model — every domain-specific meaning this handbook has covered
-lives in the authored Blocks themselves, never in the compiler.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompilerArchitecture" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="The compiler that reads BML and produces the BOM understands only BML and the BOM object model — every domain-specific meaning this handbook has covered lives in the authored Blocks themselves, never in the compiler." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--4. Minimal example-->
-        <dpage:Section heading="A complete small BML document" purpose="Ground the authoring format in one small but complete document">
+        <dpage:Section heading="A complete small BML document">
           <content>
-            <dpage:Paragraph purpose="Set up a complete small Block document combining identity, documentation, and one member">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>A complete BML document combines identity, required documentation fields,
-and at least one member — everything this handbook has introduced, in one small
-file.</message>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Sub-Blocks, contracts, and generics.</summary>
-                  <reason>The example stays small enough to read as one whole document.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A complete BML document combines identity, the required documentation fields, and at least one member — everything this handbook has introduced, in one small file." />
+              </content>
             </dpage:Paragraph>
-            <dpage:CodeBlock purpose="Show one small but complete BML document with identity, documentation, and one property">
-              <role>org.blockml.bml.docgen.role.Example</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>A qualified root tag, baseType, is, documentation, and one property together form a complete document.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>Show a qualified root tag with baseType, is, documentation, and one property declaration.</summary>
-                </sem:SupportingPoint>
-              </supportingPoints>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Aggregations, capabilities, and references.</summary>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:CodeBlock>
+              <code><![CDATA[<!-- A qualified root tag, baseType, is, documentation, and one property together form a complete document -->
+<acme:Greeter xmlns="http://blockml.org/bml"
+  xmlns:acme="com.acme.example"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    core:Block
+  </baseType>
+  <is>
+    A friendly greeter
+  </is>
+  <documentation>
+    Greets whoever reads its message.
+  </documentation>
+  <properties>
+    <message type="type:Text">
+      <value>Hello, BlockML.</value>
+    </message>
+  </properties>
+</acme:Greeter>]]></code>
             </dpage:CodeBlock>
-            <dpage:Paragraph purpose="Interpret the document as an instance of every concept the handbook covered">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>Every field in the example traces back to an earlier page — identity from
-Blocks, is and documentation from Documenting Blocks, and the property
-declaration from Properties — brought together as one authored BML file.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Every field in the example traces back to an earlier page — identity from Blocks, is and documentation from Documenting Blocks, and the message property declaration from Properties — brought together as one authored BML file." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--5. What to carry forward-->
-        <dpage:Section heading="What to carry into the next page" purpose="Anchor the outcome this page should leave behind">
+        <dpage:Section heading="What to carry into the next page">
           <content>
-            <dpage:Paragraph purpose="State the outcome this page should leave behind">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>After this page, readers should be able to identify a Block document's
-root element and format, before BML Namespaces covers the xmlns declarations
-every one of this handbook's examples has relied on.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="After this page, readers should be able to identify a Block document's root element and format, before BML Namespaces covers the xmlns declarations every one of this handbook's examples has relied on." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--6. Continuation-->
-        <dpage:Section heading="Continue with BML namespaces" purpose="Direct the reader to the final page">
+        <dpage:Section heading="Continue with BML namespaces">
           <content>
-            <dpage:Navigation purpose="Continue the BML-format learning sequence">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="BML Namespaces" summary="Learn XML namespace usage in BML.">

@@ -2,14 +2,11 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.Aggregations-->
 <docs:Aggregations xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
   xmlns:def="org.blockml.bml.definition"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule">
 
   <baseType>
     dpage:DocPage
@@ -35,9 +32,6 @@
     <title override="true">
       <value>Aggregations</value>
     </title>
-    <purpose override="true">
-      <value>Teach Aggregation as an owned collection filled by Composition, so readers can declare and fill an owned collection member and open it correctly on an instance.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -46,52 +40,6 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.definition.AggregationDefinition" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompositionModel" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach Aggregation as an owned collection filled by Composition.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can declare and fill an owned collection member.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Owned collection members, ownership, filling an aggregation with composition, and the contrast between aggregations and associations.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Association depth beyond the ownership contrast.</summary>
-          <reason>Associations get their own following page.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>On a Block instance, aggregation children sit directly inside the named aggregation element — there is no composition wrapper or default aggregation on instances.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <rules override="true">
       <composition>
         <lrule:CodeExamplePlacementRule />
@@ -101,130 +49,83 @@
     <content override="true">
       <composition>
         <!--1. Lead-->
-        <dpage:Section heading="An owned collection member" purpose="Introduce Aggregation as the member kind for owned children">
+        <dpage:Section heading="An owned collection member">
           <content>
-            <dpage:Paragraph purpose="Introduce Aggregation as a Block member representing an owned collection">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>An Aggregation describes a Block member that owns a collection of Block
-instances — its children are always Block instances, and its type attribute
-selects what kind of Block the collection may hold.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.definition.AggregationDefinition" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="An Aggregation describes a Block member that owns a collection of Block instances — its children are always Block instances, and the aggregation's type attribute selects what kind of Block the collection may hold." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--2. No default aggregation-->
-        <dpage:Section heading="There is no default aggregation" purpose="Warn against bare child instances and require the aggregation to be opened by name">
+        <dpage:Section heading="There is no default aggregation">
           <content>
-            <dpage:Paragraph purpose="Explain that a Block instance must always open an aggregation by member name">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>On a Block instance, aggregation children always sit directly inside the
-named aggregation element — there is no default aggregation, so a bare child
-instance directly under the parent instance is invalid.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompositionModel" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="On a Block instance, aggregation children always sit directly inside the named aggregation element — there is no default aggregation, so a bare child instance placed directly under the parent instance, outside any named aggregation, is invalid." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--3. Filling with composition versus opening on an instance-->
-        <dpage:Section heading="Filling the definition, opening on the instance" purpose="Contrast the definition-time composition wrapper with instance-time opening">
+        <dpage:Section heading="Filling the definition, opening on the instance">
           <content>
-            <dpage:Paragraph purpose="Contrast composition on the definition with directly opening the aggregation on an instance">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>An initial fill on the Block definition nests inside composition, but a
-Block instance opens the same aggregation directly by name with no composition
-wrapper — the two contexts never mix.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.CompositionModel" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>bml:each, bml:if, and bml:with directives on composition.</summary>
-                  <reason>Composition mechanics beyond this contrast belong to the Composition page.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="An initial fill on the Block definition nests its child instances inside a composition element on the aggregation declaration, but a Block instance opens that same aggregation directly by name with no composition wrapper at all — the two contexts are never mixed." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--4. Minimal example-->
-        <dpage:Section heading="Declaring and filling an aggregation" purpose="Ground the ownership model in one small aggregation">
+        <dpage:Section heading="Declaring and filling an aggregation">
           <content>
-            <dpage:Paragraph purpose="Set up an aggregation declaration with one composition-filled child">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>An aggregation declaration states its payload type and, optionally, an
-initial composition fill with one child instance.</message>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Association members and multiple nested aggregation levels.</summary>
-                  <reason>The example isolates one aggregation with one child.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="An aggregation declaration states its payload type and, optionally, an initial composition fill with one or more child instances." />
+              </content>
             </dpage:Paragraph>
-            <dpage:CodeBlock purpose="Show an aggregation declaration with one composition-filled child instance">
-              <role>org.blockml.bml.docgen.role.Example</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>The aggregation declares its type, and composition supplies one initial child instance.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>Show an aggregation with a Block type and a composition child instance with bml:id.</summary>
-                </sem:SupportingPoint>
-              </supportingPoints>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>An instance opening the same aggregation.</summary>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:CodeBlock>
+              <code><![CDATA[<!-- The tools aggregation declares its payload type and an initial composition fill -->
+<acme:AssemblyStation xmlns="http://blockml.org/bml"
+  xmlns:acme="com.acme.example"
+  xmlns:bml="org.blockml.bml.annotation.BmlAnnotation"
+  xmlns:core="org.blockml.bml.core">
+
+  <baseType>
+    core:Block
+  </baseType>
+  <aggregations>
+    <tools type="acme:Tool[]">
+      <composition>
+        <acme:Tool bml:id="wrench" />
+      </composition>
+    </tools>
+  </aggregations>
+</acme:AssemblyStation>]]></code>
             </dpage:CodeBlock>
-            <dpage:Paragraph purpose="Interpret the composition child as owned by the aggregation">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>The child instance inside composition belongs entirely to this aggregation
-— it has no separate existence outside it, which is the ownership the example is
-meant to illustrate.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="The Tool instance nested inside composition belongs entirely to this AssemblyStation's tools aggregation — it has no separate existence outside it, which is the ownership the example illustrates; wrench is simply its bml:id, the identity used to refer back to it inside this Block." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--5. What to carry forward-->
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcome this page should leave behind">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the outcome this page should leave behind">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>After this page, readers should be able to declare and fill an owned
-collection member and open it correctly on an instance, before contrasting
-ownership with the non-owning links Associations describe next.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="After this page, readers should be able to declare and fill an owned collection member and open it correctly on an instance, before contrasting ownership with the non-owning links Associations describe next." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--6. Continuation-->
-        <dpage:Section heading="Continue with associations" purpose="Direct the reader to the next page">
+        <dpage:Section heading="Continue with associations">
           <content>
-            <dpage:Navigation purpose="Continue the member-model learning sequence">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Associations" summary="Learn non-owning instance-to-instance links.">

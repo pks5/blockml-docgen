@@ -1,0 +1,8 @@
+<acme:Widget xmlns="http://blockml.org/bml"
+  xmlns:acme="com.acme.example"
+  xmlns:core="org.blockml.bml.core">
+
+  <baseType>
+    core:Block
+  </baseType>
+</acme:Widget>

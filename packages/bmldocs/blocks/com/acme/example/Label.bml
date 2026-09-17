@@ -1,0 +1,19 @@
+<acme:Label xmlns="http://blockml.org/bml"
+  xmlns:acme="com.acme.example"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    core:Block
+  </baseType>
+  <is>
+    A labeled rectangle
+  </is>
+  <documentation>
+    A rectangle with a caption and a size.
+  </documentation>
+  <properties>
+    <caption type="type:Text" />
+    <size type="{ width: type:Integer, height: type:Integer }" />
+  </properties>
+</acme:Label>

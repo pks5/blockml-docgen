@@ -1,0 +1,20 @@
+<acme:Basket xmlns="http://blockml.org/bml"
+  xmlns:acme="com.acme.example"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    core:Block
+  </baseType>
+  <is>
+    A basket with a counted quantity
+  </is>
+  <documentation>
+    Holds a count of items.
+  </documentation>
+  <properties>
+    <count type="type:Integer">
+      <value>3</value>
+    </count>
+  </properties>
+</acme:Basket>

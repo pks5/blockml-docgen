@@ -2,13 +2,10 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.MultiplicityAndCollections-->
 <docs:MultiplicityAndCollections xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule">
 
   <baseType>
     dpage:DocPage
@@ -31,9 +28,6 @@
     <title override="true">
       <value>Multiplicity and Collections</value>
     </title>
-    <purpose override="true">
-      <value>Teach multiplicity as one axis of a type expression rather than a separate Array type, so readers can read a multiplicity bracket and place it correctly in a type expression.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -42,51 +36,6 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeExpressions" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach multiplicity as one axis of a type expression, not a separate Array type.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can read a multiplicity bracket and place it correctly in a type expression.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Optional, singular, and multiple values expressed through multiplicity brackets on a type expression.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>MinItems and MaxItems constraint depth.</summary>
-          <reason>Those are contextual Constraints, covered on the Constraints page.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>Multiplicity is a postfix operation on a type expression, so nested collections need explicit grouping — (Integer[])[], never Integer[][].</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <rules override="true">
       <composition>
         <lrule:CodeExamplePlacementRule />
@@ -96,131 +45,78 @@
     <content override="true">
       <composition>
         <!--1. Lead-->
-        <dpage:Section heading="Multiplicity is a bracket, not a type" purpose="Introduce multiplicity as a postfix operation rather than a separate Array type">
+        <dpage:Section heading="Multiplicity is a bracket, not a type">
           <content>
-            <dpage:Paragraph purpose="State that multiplicity is a postfix bracket operation, not a separate Array type">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>BlockML has no separate Array type — bracket notation such as Integer[] is a
-postfix operation on a type expression, metadata on the reference rather than an
-intrinsic property of the named ValueType.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeExpressions" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="BlockML has no separate Array type — bracket notation such as Integer[] is a postfix operation on a type expression, metadata carried on the reference itself rather than an intrinsic property of the named ValueType." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--2. Reading the bracket forms-->
-        <dpage:Section heading="Reading the bracket forms" purpose="Explain the available multiplicity notations and their meaning">
+        <dpage:Section heading="Reading the bracket forms">
           <content>
-            <dpage:Paragraph purpose="Explain exactly-one, unbounded, fixed-size, and ranged multiplicity notations">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A bare type such as Integer means exactly one; Integer[] means zero to n,
-equivalent to Integer[0..n]; and forms such as Integer[3] or Integer[1..5] fix or
-bound the count explicitly.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeExpressions" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A bare type such as Integer means exactly one value; Integer[] means zero to n and is equivalent to Integer[0..n]; and forms such as Integer[3] or Integer[1..5] fix or bound the count explicitly." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--3. Nesting requires explicit grouping-->
-        <dpage:Section heading="Nesting requires explicit grouping" purpose="Explain why nested collections must be parenthesized">
+        <dpage:Section heading="Nesting requires explicit grouping">
           <content>
-            <dpage:Paragraph purpose="Explain that nested multiplicities must be grouped with parentheses, never stacked">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Because multiplicity applies to any type expression including one that
-already carries multiplicity, a collection of collections needs explicit grouping
-— (Integer[])[] — since Integer[][] leaves the binding of each bracket
-ambiguous and is not supported.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeExpressions" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Collection compatibility and covariance rules across supertypes.</summary>
-                  <reason>Those rules build on this page but belong to a more advanced treatment.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Because multiplicity can apply to any type expression, including one that already carries multiplicity, a collection of collections needs explicit grouping — (Integer[])[] — since the ungrouped form Integer[][] leaves the binding of each bracket ambiguous and is not supported." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--4. Minimal example-->
-        <dpage:Section heading="An aggregation of a bounded collection" purpose="Ground bracket notation in one aggregation type">
+        <dpage:Section heading="An aggregation of a bounded collection">
           <content>
-            <dpage:Paragraph purpose="Set up an aggregation type using a ranged multiplicity bracket">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>An aggregation's type attribute can bound how many children it holds using a
-ranged multiplicity bracket, directly on the Block type it aggregates.</message>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Nested collection brackets.</summary>
-                  <reason>The example isolates one ranged bracket to keep the notation legible.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="An aggregation's type attribute can bound how many children it holds using a ranged multiplicity bracket, directly on the Block type it aggregates." />
+              </content>
             </dpage:Paragraph>
-            <dpage:CodeBlock purpose="Show an aggregation type bounded with a ranged multiplicity bracket">
-              <role>org.blockml.bml.docgen.role.Example</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>The aggregation type names a Block FQN with a ranged multiplicity bracket bounding its size.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>Show an aggregation typed with a Block FQN and a 1..5 range.</summary>
-                </sem:SupportingPoint>
-              </supportingPoints>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>A nested collection type.</summary>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:CodeBlock>
+              <code><![CDATA[<!-- The tools aggregation is bounded to between one and five Tool instances -->
+<acme:Toolbox xmlns="http://blockml.org/bml"
+  xmlns:acme="com.acme.example"
+  xmlns:core="org.blockml.bml.core">
+
+  <baseType>
+    core:Block
+  </baseType>
+  <aggregations>
+    <tools type="acme:Tool[1..5]" />
+  </aggregations>
+</acme:Toolbox>]]></code>
             </dpage:CodeBlock>
-            <dpage:Paragraph purpose="Interpret the range as a bound on the aggregation's cardinality">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>The 1..5 range in the example is metadata on the type reference itself — the
-aggregated Block's own definition is unaffected by how many instances any
-particular aggregation happens to bound.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="The 1..5 range on tools is metadata on this aggregation's type reference alone — Tool's own definition is unaffected by how many instances any particular aggregation happens to bound, and a different aggregation elsewhere could reference Tool with a different range or none at all." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--5. What to carry forward-->
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcome this page should leave behind">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the outcome this page should leave behind">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>After this page, readers should be able to read a multiplicity bracket and
-place it correctly in a type expression, closing out the member model before
-Constraints introduces declarative validation rules.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="After this page, readers should be able to read a multiplicity bracket and place it correctly in a type expression, closing out the member model before Constraints introduces declarative validation rules." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--6. Continuation-->
-        <dpage:Section heading="Continue with constraints" purpose="Direct the reader to the next page">
+        <dpage:Section heading="Continue with constraints">
           <content>
-            <dpage:Navigation purpose="Continue into the behaviour-and-values learning sequence">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Constraints" summary="Learn declarative validation rules.">
