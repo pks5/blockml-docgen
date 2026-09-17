@@ -53,8 +53,7 @@
 4. **Confirm** — diffed against source; file set, `pages`/`pageGroups`/`homePage`/`rootPageGroup`, and `parentGroup`/`see`-links all resolve only to A04 counterparts. No leftover A03 tokens remain.
 5. **Export** — `Library.bml` already carried the correct A04 catalog entries from an earlier run, so nothing needed there.
 
-`npx blockml validate --all` shows no new errors from this change (the 10 pre-existing errors are unrelated: stale historical `_meta/transform` snapshots and `com/acme/example` sample files). Changes are left uncommitted for the transform harness to commit as part of its own operation bookkeeping.
-</output>
+`npx blockml validate --all` shows no new errors from this change (the 10 pre-existing errors are unrelated: stale historical `_meta/transform` snapshots and `com/acme/example` sample files). Changes are left uncommitted for the transform harness to commit as part of its own operation bookkeeping.</output>
           <completedAt>2026-09-17T22:03:22</completedAt>
           <task>
             <a04_task:A04_01_CopyData />
@@ -63,7 +62,9 @@
             <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/" />
           </changedFiles>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Render A04 pages" status="Pending" captureOutput="true">
+        <workflow:AgenticOperation name="Render A04 pages" status="Running" captureOutput="true">
+          <startedAt>2026-09-17T22:03:23</startedAt>
+          <baseCommit>c35e6e3b09a558d694b2f66131f90ff18b7e2b26</baseCommit>
           <task>
             <a04_task:A04_02_RenderPages />
           </task>
