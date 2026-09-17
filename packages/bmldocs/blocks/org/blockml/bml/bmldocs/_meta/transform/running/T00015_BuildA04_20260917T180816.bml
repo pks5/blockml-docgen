@@ -1,0 +1,68 @@
+<!--Workspace program — BuildA04
+  FQN: org.blockml.bml.bmldocs._meta.transform.running.T00015_BuildA04_20260917T180816-->
+<running:T00015_BuildA04_20260917T180816 xmlns="http://blockml.org/bml"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:program="org.blockml.bml.bmldocs.program"
+  xmlns:a04_task="org.blockml.bml.bmldocs.a04_rendering.task"
+  xmlns:running="org.blockml.bml.bmldocs._meta.transform.running">
+
+  <baseType>
+    workflow:ModelTransformation(running:T00015_BuildA04_20260917T180816.Parameters, type:Text)
+  </baseType>
+  <is>
+    A pending ModelTransformation that builds the A04 rendering data
+  </is>
+  <properties>
+    <description override="true">
+      <value>A transformation that imports A03 data into A04 and renders the pages.</value>
+    </description>
+    <status override="true" type="workflow:ExecutionStatus">
+      <value>Running</value>
+    </status>
+    <createdAt override="true" type="type:DateTime">
+      <value>2026-09-06T00:00:00</value>
+    </createdAt>
+    <template override="true" type="type:Boolean">
+      <value>false</value>
+    </template>
+    <executionId override="true" type="type:UUID">
+      <value>80bcd13d-2aa5-4d34-a24e-e4b9adb9d6b6</value>
+    </executionId>
+    <sequence override="true" type="type:Integer">
+      <value>15</value>
+    </sequence>
+    <startedAt override="true" type="type:DateTime">
+      <value>2026-09-17T18:08:16</value>
+    </startedAt>
+    <baseCommit override="true" type="type:Text">
+      <value>3b6fb4b5898a8a2035b748e9a6ae3373c717f5dd</value>
+    </baseCommit>
+  </properties>
+  <aggregations>
+    <operations override="true">
+      <composition>
+        <workflow:AgenticOperation name="Copy A03 data into A04" status="Pending" captureOutput="true">
+          <task>
+            <a04_task:A04_01_CopyData />
+          </task>
+        </workflow:AgenticOperation>
+        <workflow:AgenticOperation name="Render A04 pages" status="Pending" captureOutput="true">
+          <task>
+            <a04_task:A04_02_RenderPages />
+          </task>
+        </workflow:AgenticOperation>
+      </composition>
+    </operations>
+  </aggregations>
+  <subBlocks>
+    <Parameters>
+      <baseType>
+        type:StructType
+      </baseType>
+      <is>
+        Run parameters for this transformation
+      </is>
+    </Parameters>
+  </subBlocks>
+</running:T00015_BuildA04_20260917T180816>
