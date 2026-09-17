@@ -59,8 +59,7 @@ Task instructions for `A04_01_CopyData` executed:
 
 A03's data changed since the last A04 build (T00014_BuildA03 re-authored page content), so this re-copy replaced the previously *rendered* A04 pages with fresh unrendered copies: **35 page files** modified in `git status`; the DocSet and all 9 PageGroup files came out byte-identical to before. `npx blockml validate --all` shows no new errors in `a04_rendering/data` — the 5 pre-existing errors are unrelated, confined to frozen historical `_meta/transform/succeeded` snapshot files.
 
-Nothing was committed. `A04_02_RenderPages` (next step) is what turns these copied pages back into rendered content.
-</output>
+Nothing was committed. `A04_02_RenderPages` (next step) is what turns these copied pages back into rendered content.</output>
           <completedAt>2026-09-17T18:11:47</completedAt>
           <task>
             <a04_task:A04_01_CopyData />
@@ -103,7 +102,9 @@ Nothing was committed. `A04_02_RenderPages` (next step) is what turns these copi
             <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Visibility.bml" />
           </changedFiles>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Render A04 pages" status="Pending" captureOutput="true">
+        <workflow:AgenticOperation name="Render A04 pages" status="Running" captureOutput="true">
+          <startedAt>2026-09-17T18:11:48</startedAt>
+          <baseCommit>42d5356ab4e7185664c55298b11804642f82a606</baseCommit>
           <task>
             <a04_task:A04_02_RenderPages />
           </task>
