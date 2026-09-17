@@ -2,14 +2,11 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.ValueConfiguration-->
 <docs:ValueConfiguration xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
   xmlns:mapping="org.blockml.bml.mapping"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule">
 
   <baseType>
     dpage:DocPage
@@ -34,9 +31,6 @@
     <title override="true">
       <value>Value Configuration</value>
     </title>
-    <purpose override="true">
-      <value>Teach ValueType instance configuration as distinct from generic binding, so readers can write curly-brace configuration on a Property's type reference.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -45,52 +39,6 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ValueTypeConfiguration" />
-            <type:TypeSelectorEntity value="org.blockml.bml.mapping.FunctionMapping" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach ValueType configuration as distinct from generic (...) binding.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can write curly-brace configuration on a Property's type reference.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Configuring values and Block instances in BML: curly-brace ValueType instance configuration.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Multiplicity depth beyond noting the ordering.</summary>
-          <reason>Multiplicity has its own page; here only that configuration precedes multiplicity matters.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>Configuration is per-property on the owned type instance, never on the ValueType definition block itself.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <rules override="true">
       <composition>
         <lrule:CodeExamplePlacementRule />
@@ -100,144 +48,84 @@
     <content override="true">
       <composition>
         <!--1. Lead-->
-        <dpage:Section heading="Curly braces configure an owned type instance" purpose="Introduce ValueType configuration as orthogonal to generic binding">
+        <dpage:Section heading="Curly braces configure an owned type instance">
           <content>
-            <dpage:Paragraph purpose="Introduce curly-brace configuration as applying to a Property's owned type instance">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Curly braces configure the type instance a Property owns — orthogonal to
-generic parenthesis binding — and the configuration applies to that owned
-instance, never to the ValueType definition block itself.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.ValueTypeConfiguration" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Curly braces configure the type instance a Property owns — orthogonal to generic parenthesis binding — and the configuration applies to that owned instance, never to the ValueType definition block itself." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--2. Named versus positional-->
-        <dpage:Section heading="Named and positional configuration" purpose="Explain the two configuration syntaxes and why they cannot mix">
+        <dpage:Section heading="Named and positional configuration">
           <content>
-            <dpage:Paragraph purpose="Explain named configuration as JSON-like key-value pairs">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Named configuration writes JSON-like key-value pairs inside curly braces,
-naming each configuration property on the ValueType being configured.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.ValueTypeConfiguration" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Named configuration writes JSON-like key-value pairs inside curly braces, naming each configuration property on the ValueType being configured." />
+              </content>
             </dpage:Paragraph>
-            <dpage:Paragraph purpose="Explain positional configuration and the rule against mixing the two forms">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Positional configuration supplies values in the ValueType's own property
-declaration order instead of naming them, but named and positional forms must
-never be mixed inside the same curly-brace block.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.ValueTypeConfiguration" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>FunctionMapping's own positional-parameter rules for capability calls.</summary>
-                  <reason>That is a related but separate mapping mechanism.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Positional configuration supplies values in the ValueType's own property declaration order instead of naming them, but named and positional forms must never be mixed inside the same curly-brace block." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--3. Configuration versus generic binding-->
-        <dpage:Section heading="Configuration is not generic binding" purpose="Contrast curly-brace configuration with parenthesis generic application">
+        <dpage:Section heading="Configuration is not generic binding">
           <content>
-            <dpage:Paragraph purpose="Contrast curly-brace configuration with round-parenthesis generic binding, noting both may coexist">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Generic application uses round parentheses to bind a type parameter to a
-concrete type, while curly braces configure the resulting instance — the two are
-orthogonal and may appear together on the same type reference.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.ValueTypeConfiguration" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Generic application uses round parentheses to bind a type parameter to a concrete type, while curly braces configure the resulting instance — the two are orthogonal and may appear together on the same type reference." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--4. Minimal example-->
-        <dpage:Section heading="Configuring a Text property's length" purpose="Ground named configuration in one small type-intrinsic bound">
+        <dpage:Section heading="Configuring a Text property's length">
           <content>
-            <dpage:Paragraph purpose="Set up a Text property configured with a maximum length">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>A Text property can bound its own length using named curly-brace
-configuration directly on its type, rather than a separate Constraint.</message>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Positional configuration and nested object literals.</summary>
-                  <reason>The example isolates named configuration to keep the syntax simple.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A Text property can bound its own length using named curly-brace configuration directly on its type, rather than a separate Constraint." />
+              </content>
             </dpage:Paragraph>
-            <dpage:CodeBlock purpose="Show a Text property whose type carries a named maxLength configuration">
-              <role>org.blockml.bml.docgen.role.Example</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>The property type is Text with a named maxLength configuration in curly braces.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>Show a property typed Text with maxLength configured in curly braces on the type.</summary>
-                </sem:SupportingPoint>
-              </supportingPoints>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>A separate Constraint declaring the same bound.</summary>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:CodeBlock>
+              <code><![CDATA[<!-- "caption" bounds its own length with named curly-brace configuration -->
+<acme:Label xmlns="http://blockml.org/bml"
+  xmlns:acme="com.acme.example"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    core:Block
+  </baseType>
+  <properties>
+    <caption type="type:Text{maxLength: 40}" />
+  </properties>
+</acme:Label>]]></code>
             </dpage:CodeBlock>
-            <dpage:Paragraph purpose="Interpret the configuration as owned by this Property's type instance">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>The maxLength bound in the example belongs entirely to this property's own
-type instance — the Text ValueType definition itself remains unaffected and
-other Text properties elsewhere may configure a different bound or none at all.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="The maxLength: 40 bound belongs entirely to caption's own type instance — the Text ValueType definition itself remains unaffected, and other Text properties elsewhere may configure a different bound, such as maxLength: 100, or none at all." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--5. What to carry forward-->
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcome this page should leave behind">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the outcome this page should leave behind">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>After this page, readers should be able to write curly-brace configuration
-on a Property's type reference, closing out the behaviour-and-values group before
-Composition shows how aggregations get filled with actual children.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="After this page, readers should be able to write curly-brace configuration on a Property's type reference, closing out the behaviour-and-values group before Composition shows how aggregations get filled with actual children." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--6. Continuation-->
-        <dpage:Section heading="Continue with composition" purpose="Direct the reader to the next page">
+        <dpage:Section heading="Continue with composition">
           <content>
-            <dpage:Navigation purpose="Continue into the composition-and-structure learning sequence">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Composition" summary="Learn how to fill an aggregation through composition.">

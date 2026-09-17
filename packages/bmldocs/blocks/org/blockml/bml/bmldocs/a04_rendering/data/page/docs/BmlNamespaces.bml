@@ -2,13 +2,10 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.BmlNamespaces-->
 <docs:BmlNamespaces xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule">
 
   <baseType>
     dpage:DocPage
@@ -33,9 +30,6 @@
     <title override="true">
       <value>BML Namespaces</value>
     </title>
-    <purpose override="true">
-      <value>Teach xmlns namespace declarations and the bml-namespace placement rule, so readers can declare a prefix and place a new definition under the correct package.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -44,52 +38,6 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.LibrarySystem" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach namespace declarations and the bml-namespace placement rule.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can declare an xmlns prefix and place a new definition under the correct package.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>XML namespace usage in BML: xmlns declarations and prefixes, and the rule that every BML definition lives under its domain's bml package.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>BlockML naming and reference model beyond the XML mechanics.</summary>
-          <reason>FQNs and references are covered on the earlier Namespaces and Identifiers pages.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>A bare short xmlns prefix conventionally means BlockML core; domain mirrors add a domain token in front, such as mb for MachineBlocks.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <rules override="true">
       <composition>
         <lrule:CodeExamplePlacementRule />
@@ -99,134 +47,75 @@
     <content override="true">
       <composition>
         <!--1. Lead-->
-        <dpage:Section heading="Prefixes that resolve to packages" purpose="Introduce xmlns declarations as the mechanism behind every prefix used so far">
+        <dpage:Section heading="Prefixes that resolve to packages">
           <content>
-            <dpage:Paragraph purpose="Introduce xmlns declarations as bindings from a short prefix to a full package">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>An xmlns declaration binds a short authoring prefix to a full package —
-the mechanism behind every qualified reference this handbook's examples have
-used, from core:Block onward.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="An xmlns declaration binds a short authoring prefix to a full package — the mechanism behind every qualified reference this handbook's examples have used, from core:Block onward." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--2. The bml-namespace placement rule-->
-        <dpage:Section heading="Every definition lives under a bml package" purpose="Restate the mandatory bml namespace placement rule">
+        <dpage:Section heading="Every definition lives under a bml package">
           <content>
-            <dpage:Paragraph purpose="Restate that every BML definition must live under its domain's bml package">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Every BML definition must reside below its owning domain's bml package, in
-the general form domain.bml.* — the same rule this handbook's Namespaces and
-FQNs page introduced, now tied directly to the xmlns prefixes that address
-it.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Every BML definition must reside below its owning domain's bml package, in the general form domain.bml.* — the same rule this handbook's Namespaces and FQNs page introduced, now tied directly to the xmlns prefixes that address it." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--3. Bare prefix versus domain-mirrored prefix-->
-        <dpage:Section heading="A bare prefix means BlockML core" purpose="Explain the convention distinguishing core prefixes from domain-mirrored ones">
+        <dpage:Section heading="A bare prefix means BlockML core">
           <content>
-            <dpage:Paragraph purpose="Explain the rule of thumb that a bare short prefix always names BlockML core">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A bare short prefix such as core or type conventionally names BlockML
-itself, while a domain mirroring the same segment adds its own token in front —
-mb for MachineBlocks core, for example — so authors never steal a framework
-alias for domain use.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.BmlNamespace" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Annotation xmlns targets and member QName namespaces.</summary>
-                  <reason>Those are a distinct xmlns use beyond package addressing.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A bare short prefix such as core or type conventionally names BlockML itself, while a domain mirroring the same segment adds its own token in front — mb for MachineBlocks core, for example — so authors never steal a framework alias for domain use." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--4. Minimal example-->
-        <dpage:Section heading="Declaring a prefix for a new package" purpose="Ground the placement and naming rules in one small declaration">
+        <dpage:Section heading="Declaring a prefix for a new package">
           <content>
-            <dpage:Paragraph purpose="Set up a new domain Block document declaring its own package prefix">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>A new Block document declares an xmlns prefix for its own domain package,
-placed under that domain's bml namespace, alongside a core prefix for anything it
-extends from BlockML itself.</message>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Annotation namespace bindings.</summary>
-                  <reason>The example isolates ordinary Package prefix declarations.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A new Block document declares an xmlns prefix for its own domain package, placed under that domain's bml namespace, alongside a core prefix for anything it extends from BlockML itself." />
+              </content>
             </dpage:Paragraph>
-            <dpage:CodeBlock purpose="Show a domain Block document declaring its own package prefix and a core prefix it extends">
-              <role>org.blockml.bml.docgen.role.Example</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>The document declares its own domain prefix and a core prefix, then uses core only for its baseType.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>Show a Block document with two xmlns declarations — its own domain package and org.blockml.bml.core — and baseType using the core prefix.</summary>
-                </sem:SupportingPoint>
-              </supportingPoints>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>An Annotation xmlns binding.</summary>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:CodeBlock>
+              <code><![CDATA[<!-- "acme" names this document's own domain package; "core" names BlockML core -->
+<acme:Widget xmlns="http://blockml.org/bml"
+  xmlns:acme="com.acme.example"
+  xmlns:core="org.blockml.bml.core">
+
+  <baseType>
+    core:Block
+  </baseType>
+</acme:Widget>]]></code>
             </dpage:CodeBlock>
-            <dpage:Paragraph purpose="Interpret the two prefixes as one convenience layer over two package FQNs">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>Both prefixes in the example are pure authoring convenience over the two
-package FQNs they name — exactly the mechanism this handbook's examples have
-relied on from the very first page.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="acme resolves to com.acme.example, the domain package this document's own definitions live under, while core resolves to org.blockml.bml.core and is used only for baseType. Both prefixes in the example are pure authoring convenience over the two package FQNs they name — exactly the mechanism this handbook's examples have relied on from the very first page." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--5. What this handbook has covered-->
-        <dpage:Section heading="What this handbook has covered" purpose="Close the handbook by naming the ground it covered, from Introduction to here">
+        <dpage:Section heading="What this handbook has covered">
           <content>
-            <dpage:Paragraph purpose="Summarize the arc from Introduction's first mental model to this page's namespace mechanics">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Readers can now declare an xmlns prefix and place a new definition under
-the correct package — the last piece of a path that began with BlockML's basic
-purpose and moved through Blocks, the type system, the member model, and
-behaviour and values, to this handbook's own authoring format.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Readers can now declare an xmlns prefix and place a new definition under the correct package — the last piece of a path that began with BlockML's basic purpose and moved through Blocks, the type system, the member model, and behaviour and values, to this handbook's own authoring format." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--6. Continuation-->
-        <dpage:Section heading="Back to the handbook contents" purpose="Return the reader to the navigable menu now that the handbook is complete">
+        <dpage:Section heading="Back to the handbook contents">
           <content>
-            <dpage:Navigation purpose="Return to the documentation menu at the end of the handbook">
+            <dpage:Navigation>
               <title>Back to contents</title>
               <items>
                 <dpage:NavigationItem label="Documentation" summary="Return to the handbook's full table of contents.">

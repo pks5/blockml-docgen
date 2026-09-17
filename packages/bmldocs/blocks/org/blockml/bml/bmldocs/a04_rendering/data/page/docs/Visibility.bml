@@ -2,14 +2,11 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.Visibility-->
 <docs:Visibility xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
   xmlns:def="org.blockml.bml.definition"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule">
 
   <baseType>
     dpage:DocPage
@@ -35,9 +32,6 @@
     <title override="true">
       <value>Visibility</value>
     </title>
-    <purpose override="true">
-      <value>Teach the naming-convention visibility model, so readers can tell a member's visibility from its name and understand what public, protected, and private actually restrict.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -46,52 +40,6 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.MemberVisibility" />
-            <type:TypeSelectorEntity value="org.blockml.bml.definition.SubBlockDefinition" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach the naming-convention visibility model.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can tell a member's visibility from its name.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Member and Sub-Block visibility, and the public, protected, and private naming convention.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Renderer implementation detail.</summary>
-          <reason>Visibility restricts authoring access only; it is not a renderer concern.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>Visibility restricts authoring access only — renderers always see the entire Canonical BOM regardless of visibility.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <rules override="true">
       <composition>
         <lrule:CodeExamplePlacementRule />
@@ -101,129 +49,81 @@
     <content override="true">
       <composition>
         <!--1. Lead-->
-        <dpage:Section heading="Visibility lives in the name" purpose="Introduce the naming-convention visibility model">
+        <dpage:Section heading="Visibility lives in the name">
           <content>
-            <dpage:Paragraph purpose="State the naming-convention prefixes that carry a member's visibility">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A member or Sub-Block's visibility is primarily signaled by its name: myVar
-is public, _myVar is protected, and __myVar is private.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.MemberVisibility" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A member or Sub-Block's visibility is primarily signaled by its name: myVar is public, _myVar is protected, and __myVar is private." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--2. What visibility actually restricts-->
-        <dpage:Section heading="What visibility actually restricts" purpose="Clarify that visibility governs authoring access, not renderer BOM access">
+        <dpage:Section heading="What visibility actually restricts">
           <content>
-            <dpage:Paragraph purpose="Clarify that visibility restricts BlockML authoring access, not renderer access to the BOM">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Visibility controls which definitions may reference, read, or set a member —
-it does not prescribe how a renderer manifests it, since renderers always see the
-entire Canonical BOM regardless of declared visibility.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.MemberVisibility" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Visibility controls which definitions may reference, read, or set a member — it does not prescribe how a renderer manifests it, since renderers always see the entire Canonical BOM regardless of declared visibility." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--3. Widening on override-->
-        <dpage:Section heading="Visibility may widen, never narrow" purpose="Explain the override-time visibility widening rule">
+        <dpage:Section heading="Visibility may widen, never narrow">
           <content>
-            <dpage:Paragraph purpose="Explain that visibility may widen on override but never narrow">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A child redeclaration may widen a member's visibility, such as protected to
-public, but never narrow it — collision checks always use the normalized logical
-name with visibility prefixes stripped.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.MemberVisibility" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Formal access rules for protected across composition ownership.</summary>
-                  <reason>That reference-level detail goes beyond the naming-convention model this page teaches.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A child redeclaration may widen a member's visibility, such as protected to public, but never narrow it — collision checks always use the normalized logical name with visibility prefixes stripped." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--4. Minimal example-->
-        <dpage:Section heading="Three visibilities on one Block" purpose="Ground the naming convention in three sibling members">
+        <dpage:Section heading="Three visibilities on one Block">
           <content>
-            <dpage:Paragraph purpose="Set up a Block declaring one public, one protected, and one private member">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>A single Block can declare properties at all three visibilities side by side,
-distinguished purely by their names.</message>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>An explicit visibility property alongside the naming convention.</summary>
-                  <reason>The example relies on the naming convention alone to keep the contrast clear.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A single Block can declare properties at all three visibilities side by side, distinguished purely by their names." />
+              </content>
             </dpage:Paragraph>
-            <dpage:CodeBlock purpose="Show one public, one protected, and one private property on the same Block">
-              <role>org.blockml.bml.docgen.role.Example</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>Three properties named title, _internalNote, and __cache demonstrate the three visibility prefixes.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>Show title (public), _internalNote (protected), and __cache (private) as sibling property declarations.</summary>
-                </sem:SupportingPoint>
-              </supportingPoints>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>An explicit visibility element on any of the three.</summary>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:CodeBlock>
+              <code><![CDATA[<!-- title is public, _internalNote is protected, __cache is private -->
+<acme:Widget xmlns="http://blockml.org/bml"
+  xmlns:acme="com.acme.example"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    core:Block
+  </baseType>
+  <properties>
+    <title type="type:Text" />
+    <_internalNote type="type:Text" />
+    <__cache type="type:Text" />
+  </properties>
+</acme:Widget>]]></code>
             </dpage:CodeBlock>
-            <dpage:Paragraph purpose="Interpret each name as the sole signal of that property's visibility">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>Nothing but the name distinguishes these three properties' visibility —
-title, _internalNote, and __cache read as public, protected, and private purely
-from their prefixes.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Nothing but the name distinguishes these three properties' visibility — title, _internalNote, and __cache read as public, protected, and private purely from their prefixes." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--5. What to carry forward-->
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcome this page should leave behind">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the outcome this page should leave behind">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>After this page, readers should be able to tell a member's visibility from
-its name, before multiplicity closes out the member model with how many values a
-member may hold.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="After this page, readers should be able to tell a member's visibility from its name, before multiplicity closes out the member model with how many values a member may hold." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--6. Continuation-->
-        <dpage:Section heading="Continue with multiplicity and collections" purpose="Direct the reader to the next page">
+        <dpage:Section heading="Continue with multiplicity and collections">
           <content>
-            <dpage:Navigation purpose="Continue the member-model learning sequence">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Multiplicity and Collections" summary="Learn optional, singular, and multiple values.">

@@ -2,15 +2,12 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.Constraints-->
 <docs:Constraints xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
   xmlns:core="org.blockml.bml.core"
   xmlns:def="org.blockml.bml.definition"
-  xmlns:type="org.blockml.bml.type"
-  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule">
 
   <baseType>
     dpage:DocPage
@@ -39,9 +36,6 @@
     <title override="true">
       <value>Constraints</value>
     </title>
-    <purpose override="true">
-      <value>Teach the constraints container and its branch-to-member-kind mapping, so readers can attach the right constraint branch to a member and know when it is enforced.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -50,53 +44,6 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ConstraintsModel" />
-            <type:TypeSelectorEntity value="org.blockml.bml.core.Constraint" />
-            <type:TypeSelectorEntity value="org.blockml.bml.definition.ConstrainableDefinition" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach the constraints container and its branch-to-member-kind mapping.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can attach the right constraint branch to a member.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Declarative validation rules, the constraints container, constraint branches, and when a constraint is evaluated.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Suggestions depth beyond the enforced-versus-non-enforced contrast.</summary>
-          <reason>Suggestions get their own page.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>Placing a constraint on the wrong branch for its embedding context is a checked error, not just a convention.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <rules override="true">
       <composition>
         <lrule:CodeExamplePlacementRule />
@@ -106,133 +53,86 @@
     <content override="true">
       <composition>
         <!--1. Lead-->
-        <dpage:Section heading="One container, automatic binding" purpose="Introduce the constraints container and its context-bound generic binding">
+        <dpage:Section heading="One container, automatic binding">
           <content>
-            <dpage:Paragraph purpose="Introduce constraints as reusable validation rules with no target property">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Constraints are reusable validation rules attached through a single
-constraints container on Blocks and members — there is no target property,
-because the embedding context binds the constraint automatically.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.definition.ConstrainableDefinition" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Constraints are reusable validation rules attached through a single constraints container on Blocks and members — there is no target property, because the embedding context binds the constraint automatically." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--2. Branch-to-context mapping-->
-        <dpage:Section heading="Which branch fits which context" purpose="Explain how a constraint's branch must match its embedding member kind">
+        <dpage:Section heading="Which branch fits which context">
           <content>
-            <dpage:Paragraph purpose="Explain the constraint-branch-to-member-kind mapping">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A constraint's branch must match the definition it is attached to — a value
-constraint binds to a Property's effective ValueType, while structural constraint
-branches bind to the Aggregation, Association, Capability, or Block definition
-that embeds them, and a mismatch is a checked error.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.ConstraintsModel" />
-                    <type:TypeSelectorEntity value="org.blockml.bml.core.Constraint" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A constraint's branch must match the definition it is attached to — a value constraint binds to a Property's effective ValueType, while structural constraint branches bind to the Aggregation, Association, Capability, or Block definition that embeds them, and a mismatch is a checked error." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--3. When a constraint is enforced-->
-        <dpage:Section heading="When a constraint is enforced" purpose="Explain the optional validation property that controls enforcement">
+        <dpage:Section heading="When a constraint is enforced">
           <content>
-            <dpage:Paragraph purpose="Explain that the optional validation property controls whether a constraint is enforced">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A constraint's optional validation property decides how a violation is
-reported — omitted, the constraint remains metadata for renderers and editors
-rather than a rule the BlockML validator enforces.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.core.Constraint" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>The full validation severity catalogue and diagnostic codes.</summary>
-                  <reason>Diagnostic detail belongs to reference-level material, not this introductory page.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A constraint's optional validation property decides how a violation is reported — omitted, the constraint remains metadata for renderers and editors rather than a rule the BlockML validator enforces." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--4. Minimal example-->
-        <dpage:Section heading="Constraining a Property's value" purpose="Ground the branch-and-binding model in one enforced constraint">
+        <dpage:Section heading="Constraining a Property's value">
           <content>
-            <dpage:Paragraph purpose="Set up a Property with one value constraint whose generic binds automatically">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>A Property can attach a value constraint whose generic type parameter binds
-automatically from the Property's own type — no target or type argument is
-authored explicitly.</message>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Structural constraints on Blocks or Aggregations.</summary>
-                  <reason>The example isolates one value constraint on a Property.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A Property can attach a value constraint whose generic type parameter binds automatically from the Property's own type — no target or type argument is authored explicitly." />
+              </content>
             </dpage:Paragraph>
-            <dpage:CodeBlock purpose="Show a Property with a constraints container holding one enforced value constraint">
-              <role>org.blockml.bml.docgen.role.Example</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>The property declares constraints holding one value constraint with validation set to Error.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>Show an Integer property with a constraints container holding one Min-like constraint with validation.</summary>
-                </sem:SupportingPoint>
-              </supportingPoints>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>An explicit target or generic argument on the constraint.</summary>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:CodeBlock>
+              <code><![CDATA[<!-- Min's generic parameter T binds to Integer purely from context -->
+<acme:Basket xmlns="http://blockml.org/bml"
+  xmlns:acme="com.acme.example"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:constraint="org.blockml.bml.constraint"
+  xmlns:validation="org.blockml.bml.validation">
+
+  <baseType>
+    core:Block
+  </baseType>
+  <properties>
+    <count type="type:Integer">
+      <value>3</value>
+      <constraints>
+        <constraint:Min value="0" validation="validation:Error" />
+      </constraints>
+    </count>
+  </properties>
+</acme:Basket>]]></code>
             </dpage:CodeBlock>
-            <dpage:Paragraph purpose="Interpret the constraint's automatic binding and enforcement">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>The constraint in the example binds to the enclosing property's type purely
-from context, and its validation setting is what turns it from metadata into a
-rule the validator actually enforces.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="constraint:Min's generic parameter T binds to count's own type, Integer, purely from context — no target or type argument is written on Min itself. Its validation attribute, validation:Error, is what turns it from metadata into a rule the validator actually enforces, rejecting any count below 0." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--5. What to carry forward-->
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcome this page should leave behind">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the outcome this page should leave behind">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>After this page, readers should be able to attach the right constraint
-branch to a member and know when it is enforced, before Suggestions contrasts
-non-enforced guidance with what this page just covered.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="After this page, readers should be able to attach the right constraint branch to a member and know when it is enforced, before Suggestions contrasts non-enforced guidance with what this page just covered." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--6. Continuation-->
-        <dpage:Section heading="Continue with suggestions" purpose="Direct the reader to the next page">
+        <dpage:Section heading="Continue with suggestions">
           <content>
-            <dpage:Navigation purpose="Continue the behaviour-and-values learning sequence">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Suggestions" summary="Learn non-mandatory modeling guidance.">

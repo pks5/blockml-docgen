@@ -2,14 +2,12 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.PrimitiveEntities-->
 <docs:PrimitiveEntities xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
   xmlns:core="org.blockml.bml.core"
   xmlns:type="org.blockml.bml.type"
-  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule">
 
   <baseType>
     dpage:DocPage
@@ -38,9 +36,6 @@
     <title override="true">
       <value>Primitive Entities</value>
     </title>
-    <purpose override="true">
-      <value>Teach PrimitiveEntity as the wrapper that lets a primitive value appear as a Block instance, so readers know when a bare Property value is not enough — for example, inside an aggregation.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -49,53 +44,6 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.core.PrimitiveEntity" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.MemberAuthoring" />
-            <type:TypeSelectorEntity value="org.blockml.bml.type.TextEntity" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach PrimitiveEntity as the wrapper that lets primitive values appear as Block instances, such as aggregation children.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader knows when a primitive value needs a PrimitiveEntity wrapper instead of a bare Property value.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Primitive values represented as Block instances via the PrimitiveEntity wrapper.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Generics mechanics beyond the binding needed here.</summary>
-          <reason>Full generic binding rules belong to the Generic Types page.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>PrimitiveEntity types declare a Property named value, so value="…" on the instance is ordinary instance syntax, not a PropertyDefinition wrapper.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <rules override="true">
       <composition>
         <lrule:CodeExamplePlacementRule />
@@ -105,146 +53,89 @@
     <content override="true">
       <composition>
         <!--1. Lead-->
-        <dpage:Section heading="When a primitive value needs to be an instance" purpose="Introduce PrimitiveEntity as the wrapper for that specific case">
+        <dpage:Section heading="When a primitive value needs to be an instance">
           <content>
-            <dpage:Paragraph purpose="State when a primitive value must be wrapped as a PrimitiveEntity">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>core:PrimitiveEntity is the abstract wrapper that lets a primitive value
-appear as a Block instance — needed only where an instance is required, such as
-inside an aggregation, not wherever a primitive value merely needs to exist.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.core.PrimitiveEntity" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="core:PrimitiveEntity is the abstract wrapper that lets a primitive value appear as a Block instance — needed only where an instance is required, such as inside an aggregation, not wherever a primitive value merely needs to exist." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--2. Binding T and the value member-->
-        <dpage:Section heading="Binding T and the value member" purpose="Explain how a concrete PrimitiveEntity specialization is built">
+        <dpage:Section heading="Binding T and the value member">
           <content>
-            <dpage:Paragraph purpose="Explain that a concrete PrimitiveEntity binds T through baseType">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A concrete specialization such as type:TextEntity binds PrimitiveEntity's
-generic parameter T through baseType, which yields a normal, instantiable Block
-carrying a single property named value.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.core.PrimitiveEntity" />
-                    <type:TypeSelectorEntity value="org.blockml.bml.type.TextEntity" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A concrete specialization such as type:TextEntity binds PrimitiveEntity's generic parameter T through baseType, which yields a normal, instantiable Block carrying a single property named value." />
+              </content>
             </dpage:Paragraph>
-            <dpage:Paragraph purpose="Explain that value on the instance is ordinary syntax, not the PropertyDefinition value wrapper">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Because the member's name genuinely is value, an instance writes
-value="…" directly — this is ordinary instance syntax for that member, not the
-definition-only value wrapper that other Properties must never use.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.MemberAuthoring" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Comma-separated value sugar on PrimitiveEntity aggregations.</summary>
-                  <reason>That shorthand is a separate authoring convenience beyond this page's scope.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Because the member's name genuinely is value, an instance writes value=&quot;…&quot; directly — this is ordinary instance syntax for that member, not the definition-only value wrapper that other Properties must never use." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--3. Why an aggregation needs the wrapper-->
-        <dpage:Section heading="Why an aggregation needs the wrapper" purpose="Contrast a bare Property value with an aggregation child">
+        <dpage:Section heading="Why an aggregation needs the wrapper">
           <content>
-            <dpage:Paragraph purpose="Contrast a bare Property value with a primitive value needed as an aggregation child">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A bare Property already stores a primitive value directly; a PrimitiveEntity
-is needed only when that same kind of value must appear as a child inside an
-aggregation, which requires a Block instance rather than a scalar value.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.core.PrimitiveEntity" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A bare Property already stores a primitive value directly; a PrimitiveEntity is needed only when that same kind of value must appear as a child inside an aggregation, which requires a Block instance rather than a scalar value." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--4. Minimal example-->
-        <dpage:Section heading="Collecting keywords as PrimitiveEntity instances" purpose="Ground the wrapper in a small aggregation of text values">
+        <dpage:Section heading="Collecting keywords as PrimitiveEntity instances">
           <content>
-            <dpage:Paragraph purpose="Set up an aggregation whose payload type is a concrete PrimitiveEntity">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>An aggregation whose payload type is a concrete PrimitiveEntity holds each
-value as one child instance, each with its own value attribute.</message>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Comma-separated value sugar.</summary>
-                  <reason>The example writes each instance out explicitly to keep the wrapper visible.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="An aggregation whose payload type is a concrete PrimitiveEntity holds each value as one child instance, each with its own value attribute." />
+              </content>
             </dpage:Paragraph>
-            <dpage:CodeBlock purpose="Show an aggregation of TextEntity instances each carrying one value">
-              <role>org.blockml.bml.docgen.role.Example</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>Each aggregation child is a TextEntity instance whose value attribute carries one string.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>Show two TextEntity instances inside one aggregation, each with a distinct value attribute.</summary>
-                </sem:SupportingPoint>
-              </supportingPoints>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Comma-separated character-content sugar.</summary>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:CodeBlock>
+              <code><![CDATA[<!-- Widget declares "keywords" as an aggregation of TextEntity instances -->
+<acme:Widget xmlns="http://blockml.org/bml"
+  xmlns:acme="com.acme.example"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    core:Block
+  </baseType>
+  <aggregations>
+    <keywords type="type:TextEntity">
+      <composition>
+        <type:TextEntity value="fastener" />
+        <type:TextEntity value="hardware" />
+      </composition>
+    </keywords>
+  </aggregations>
+</acme:Widget>]]></code>
             </dpage:CodeBlock>
-            <dpage:Paragraph purpose="Interpret why each value needed a TextEntity wrapper here">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>Each string in the example needed to become an aggregation child, so each
-one is wrapped as a TextEntity instance whose value attribute carries it — a bare
-Property could not hold more than one such value at all.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Each of the two strings, fastener and hardware, needed to become an aggregation child, so each one is wrapped as a TextEntity instance whose value attribute carries it — a bare Property could not hold more than one such value at all." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--5. What to carry forward-->
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcome this page should leave behind">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the outcome this page should leave behind">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>After this page, readers should know when a bare Property value is not
-enough and a PrimitiveEntity wrapper is needed instead, before the next page
-states the type-versus-value principle these first four pages all rest on.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="After this page, readers should know when a bare Property value is not enough and a PrimitiveEntity wrapper is needed instead, before the next page states the type-versus-value principle these first four pages all rest on." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--6. Continuation-->
-        <dpage:Section heading="Continue with types and values" purpose="Direct the reader to the next page">
+        <dpage:Section heading="Continue with types and values">
           <content>
-            <dpage:Navigation purpose="Continue the type-system learning sequence">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Types and Values" summary="Learn the general type-versus-value distinction.">

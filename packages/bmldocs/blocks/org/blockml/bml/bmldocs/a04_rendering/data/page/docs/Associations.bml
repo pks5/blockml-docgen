@@ -2,14 +2,12 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.Associations-->
 <docs:Associations xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
   xmlns:def="org.blockml.bml.definition"
   xmlns:type="org.blockml.bml.type"
-  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule">
 
   <baseType>
     dpage:DocPage
@@ -39,9 +37,6 @@
     <title override="true">
       <value>Associations</value>
     </title>
-    <purpose override="true">
-      <value>Teach Association as a non-owning instance-to-instance link typed via InstanceReference, so readers can add such a link without confusing it with aggregation ownership.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -50,53 +45,6 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.definition.AssociationDefinition" />
-            <type:TypeSelectorEntity value="org.blockml.bml.type.InstanceReference" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.DefinitionModel" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach Association as a non-owning instance-to-instance link, typed via InstanceReference.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can add a non-owning link without confusing it with ownership.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>Non-owning instance-to-instance links, associations versus aggregation ownership, and associations versus documentation references.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Aggregation ownership mechanics or the full documentation-reference model.</summary>
-          <reason>Those are covered on the Aggregations page and the Documenting Blocks page.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>Association member types must be InstanceReference(T) or InstanceReference(T)[] — a bare Block FQN is invalid there.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <rules override="true">
       <composition>
         <lrule:CodeExamplePlacementRule />
@@ -106,130 +54,86 @@
     <content override="true">
       <composition>
         <!--1. Lead-->
-        <dpage:Section heading="A non-owning link between instances" purpose="Introduce Association as the member kind for non-owning links">
+        <dpage:Section heading="A non-owning link between instances">
           <content>
-            <dpage:Paragraph purpose="Introduce Association as a non-owning instance-to-instance link">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>An Association connects concrete Block instances to one another without any
-lifecycle ownership — a non-owning model link, distinct from the ownership an
-Aggregation carries.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.definition.AssociationDefinition" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="An Association connects concrete Block instances to one another without any lifecycle ownership — a non-owning model link, distinct from the ownership an Aggregation carries." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--2. InstanceReference is required-->
-        <dpage:Section heading="Association type must be InstanceReference" purpose="State the required type shape for an Association member">
+        <dpage:Section heading="Association type must be InstanceReference">
           <content>
-            <dpage:Paragraph purpose="State that Association type must be InstanceReference(T) or InstanceReference(T)[]">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>An Association's type must be InstanceReference(T) or
-InstanceReference(T)[] with T extending core:Block — a bare Block FQN such as
-core:Block is invalid there, unlike on an Aggregation.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.type.InstanceReference" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="An Association's type must be InstanceReference(T) or InstanceReference(T)[] with T extending core:Block — a bare Block FQN such as core:Block is invalid there, unlike on an Aggregation." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--3. Associations versus documentation references-->
-        <dpage:Section heading="Associations versus documentation references" purpose="Prevent confusing model links with documentation cross-links">
+        <dpage:Section heading="Associations versus documentation references">
           <content>
-            <dpage:Paragraph purpose="Distinguish Association model links from documentation References">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Associations form the instance graph between concrete Block instances;
-documentation References connect types to types or types to instances for
-narrative purposes only and never form that instance graph themselves.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.DefinitionModel" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>The full documentation Reference target-attribute catalogue.</summary>
-                  <reason>Documentation references get their own treatment on the Documenting Blocks page.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Associations form the instance graph between concrete Block instances; documentation References connect types to types or types to instances for narrative purposes only and never form that instance graph themselves." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--4. Minimal example-->
-        <dpage:Section heading="Linking one instance to another" purpose="Ground the InstanceReference type shape in one small example">
+        <dpage:Section heading="Linking one instance to another">
           <content>
-            <dpage:Paragraph purpose="Set up an Association declaration whose type wraps a target Block in InstanceReference">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>An Association declaration wraps its target Block in InstanceReference, and
-an instance sets it to the id of an existing composition child.</message>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Cross-document qualified instance references.</summary>
-                  <reason>The example isolates a single local instance link.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="An Association declaration wraps its target Block in InstanceReference, and an instance sets it to the id of an existing composition child." />
+              </content>
             </dpage:Paragraph>
-            <dpage:CodeBlock purpose="Show an Association declaration and an instance value pointing at a local bml:id">
-              <role>org.blockml.bml.docgen.role.Example</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>The association type is InstanceReference of the target Block; the instance value names an existing bml:id.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>Show an association declaration typed InstanceReference(core:Block) and an instance value referencing a local id.</summary>
-                </sem:SupportingPoint>
-              </supportingPoints>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>A qualified cross-document reference form.</summary>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:CodeBlock>
+              <code><![CDATA[<!-- Definition: "primaryItem" is an Association typed InstanceReference(acme:Widget) -->
+<acme:Basket xmlns="http://blockml.org/bml"
+  xmlns:acme="com.acme.example"
+  xmlns:core="org.blockml.bml.core"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    core:Block
+  </baseType>
+  <associations>
+    <primaryItem type="type:InstanceReference(acme:Widget)" />
+  </associations>
+</acme:Basket>
+
+<!-- Instance: primaryItem points at the bml:id of an existing composition child -->
+<acme:Basket bml:id="myBasket" primaryItem="firstWidget">
+  <items>
+    <acme:Widget bml:id="firstWidget" />
+  </items>
+</acme:Basket>]]></code>
             </dpage:CodeBlock>
-            <dpage:Paragraph purpose="Interpret the link as non-owning, unlike an aggregation child">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>The referenced instance in the example continues to exist independently of
-this Association — the link merely points at it, unlike an aggregation child that
-this Block would own.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="myBasket's primaryItem does not create firstWidget — it merely points at the id of the Widget already owned by items. firstWidget continues to exist independently of primaryItem, unlike the ownership items itself carries; if items were ever emptied, primaryItem would simply be left pointing at nothing." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--5. What to carry forward-->
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcome this page should leave behind">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the outcome this page should leave behind">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>After this page, readers should be able to add a non-owning link without
-confusing it with aggregation ownership, before Capabilities introduce behaviour
-as the fourth member kind.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="After this page, readers should be able to add a non-owning link without confusing it with aggregation ownership, before Capabilities introduce behaviour as the fourth member kind." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--6. Continuation-->
-        <dpage:Section heading="Continue with capabilities" purpose="Direct the reader to the next page">
+        <dpage:Section heading="Continue with capabilities">
           <content>
-            <dpage:Navigation purpose="Continue the member-model learning sequence">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Capabilities" summary="Learn Block behaviour expressed as members.">

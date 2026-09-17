@@ -2,13 +2,11 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.EnumTypes-->
 <docs:EnumTypes xmlns="http://blockml.org/bml"
-  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
   xmlns:type="org.blockml.bml.type"
-  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
-  xmlns:workflow="org.blockml.bml.transformer.workflow">
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule">
 
   <baseType>
     dpage:DocPage
@@ -38,9 +36,6 @@
     <title override="true">
       <value>Enum Types</value>
     </title>
-    <purpose override="true">
-      <value>Teach EnumType as a finite, closed set of named values and its own ValueType branch, so readers can define a closed enum and use its literal values.</value>
-    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -49,53 +44,6 @@
     </pageType>
   </properties>
   <aggregations>
-    <authoritativeSources override="true">
-      <composition>
-        <workflow:AuthorativeSourceSet>
-          <includedTypes>
-            <type:TypeSelectorEntity value="org.blockml.bml.type.EnumType" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeSystemOverview" />
-            <type:TypeSelectorEntity value="org.blockml.bml.documentation.ConstraintsModel" />
-          </includedTypes>
-        </workflow:AuthorativeSourceSet>
-      </composition>
-    </authoritativeSources>
-    <learningObjectives override="true">
-      <composition>
-        <sem:LearningObjective>
-          <summary>Teach EnumType as a finite, closed set of named values and its own ValueType branch.</summary>
-        </sem:LearningObjective>
-      </composition>
-    </learningObjectives>
-    <readerOutcomes override="true">
-      <composition>
-        <sem:ReaderOutcome>
-          <summary>The reader can define a closed enum and use its literal values.</summary>
-        </sem:ReaderOutcome>
-      </composition>
-    </readerOutcomes>
-    <scopes override="true">
-      <composition>
-        <sem:Scope>
-          <summary>A closed set of named literal values, the EnumType branch, and its contrast with PrimitiveType and StructType.</summary>
-        </sem:Scope>
-      </composition>
-    </scopes>
-    <exclusions override="true">
-      <composition>
-        <sem:Exclusion>
-          <summary>Suggestions mechanics, beyond noting the enum prohibition.</summary>
-          <reason>Suggestions get their own page; here only the restriction on enum properties matters.</reason>
-        </sem:Exclusion>
-      </composition>
-    </exclusions>
-    <supportingPoints override="true">
-      <composition>
-        <sem:SupportingPoint>
-          <summary>Suggestions are forbidden on EnumType properties.</summary>
-        </sem:SupportingPoint>
-      </composition>
-    </supportingPoints>
     <rules override="true">
       <composition>
         <lrule:CodeExamplePlacementRule />
@@ -105,131 +53,79 @@
     <content override="true">
       <composition>
         <!--1. Lead-->
-        <dpage:Section heading="A closed set of named members" purpose="Introduce EnumType as its own branch, not a StructType or PrimitiveType">
+        <dpage:Section heading="A closed set of named members">
           <content>
-            <dpage:Paragraph purpose="State that EnumType defines a closed set of named members">
-              <role>org.blockml.bml.docgen.role.Lead</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>EnumType is its own ValueType branch for closed enum types — a finite set
-of named literal values whose stored property value is member identity, not a
-struct payload.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.type.EnumType" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="EnumType is its own ValueType branch for closed enum types — a finite set of named literal values whose stored property value is member identity, not a struct payload." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--2. Why EnumType is its own branch-->
-        <dpage:Section heading="Why EnumType is not a StructType" purpose="Contrast the three kinds by what they store as a property value">
+        <dpage:Section heading="Why EnumType is not a StructType">
           <content>
-            <dpage:Paragraph purpose="Contrast PrimitiveType, StructType, and EnumType by what the property value actually is">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>A PrimitiveType defines an open value domain, a StructType defines shape
-through its properties, and an EnumType defines a closed set of members whose
-property value is the member's id plus its EnumType — never a struct payload.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.type.EnumType" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A PrimitiveType defines an open value domain, a StructType defines shape through its properties, and an EnumType defines a closed set of members whose property value is the member's id plus its EnumType — never a struct payload." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--3. Members and catalog metadata-->
-        <dpage:Section heading="Members as catalog Block instances" purpose="Explain how enum members are declared and what per-member data they may carry">
+        <dpage:Section heading="Members as catalog Block instances">
           <content>
-            <dpage:Paragraph purpose="Explain that enum members are Block instances with a mandatory bml:id">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>Each allowed member is a Block instance of the EnumType in its values
-aggregation, carrying a mandatory bml:id as the reference token — an EnumType may
-also declare its own properties, filled per member as catalog metadata, analogous
-to fields on a Java enum constant.</message>
-              <authoritativeSources>
-                <workflow:AuthorativeSourceSet>
-                  <includedTypes>
-                    <type:TypeSelectorEntity value="org.blockml.bml.type.EnumType" />
-                  </includedTypes>
-                </workflow:AuthorativeSourceSet>
-              </authoritativeSources>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Suggestions mechanics beyond the enum prohibition.</summary>
-                  <reason>Suggestions get their own page next.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="Each allowed member is a Block instance of the EnumType in its values aggregation, carrying a mandatory bml:id as the reference token — an EnumType may also declare its own properties, filled per member as catalog metadata, analogous to fields on a Java enum constant." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--4. Minimal example-->
-        <dpage:Section heading="Declaring a small closed enum" purpose="Ground the catalog-member model in one concrete EnumType">
+        <dpage:Section heading="Declaring a small closed enum">
           <content>
-            <dpage:Paragraph purpose="Set up a small EnumType with two catalog members">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>A small EnumType declares its allowed members in values, each identified by
-a distinct bml:id.</message>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Extra catalog properties on the enum members.</summary>
-                  <reason>The example isolates member identity to keep the shape minimal.</reason>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A small EnumType declares its allowed members in values, each identified by a distinct bml:id." />
+              </content>
             </dpage:Paragraph>
-            <dpage:CodeBlock purpose="Show a closed EnumType with two catalog members declared in values">
-              <role>org.blockml.bml.docgen.role.Example</role>
-              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>The EnumType Block declares its member set as instances inside values, each with its own bml:id.</message>
-              <supportingPoints>
-                <sem:SupportingPoint>
-                  <summary>Show an EnumType Block with two member instances, each identified by bml:id.</summary>
-                </sem:SupportingPoint>
-              </supportingPoints>
-              <exclusions>
-                <sem:Exclusion>
-                  <summary>Additional per-member catalog properties.</summary>
-                </sem:Exclusion>
-              </exclusions>
+            <dpage:CodeBlock>
+              <code><![CDATA[<!-- Direction is a closed EnumType with two catalog members, North and South -->
+<acme:Direction xmlns="http://blockml.org/bml"
+  xmlns:acme="com.acme.example"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    type:EnumType
+  </baseType>
+  <values>
+    <acme:Direction bml:id="North" />
+    <acme:Direction bml:id="South" />
+  </values>
+</acme:Direction>]]></code>
             </dpage:CodeBlock>
-            <dpage:Paragraph purpose="Interpret the members as the closed set a property of this type may take">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
-              <message>A Property typed with this EnumType may take only one of the two ids shown
-in values — any other token fails validation, since the closed set is defined
-entirely by this catalog.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="A Property typed with acme:Direction may take only one of the two ids shown in values, North or South — any other token fails validation, since the closed set is defined entirely by this catalog." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--5. What to carry forward-->
-        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcome this page should leave behind">
+        <dpage:Section heading="What to carry into the next pages">
           <content>
-            <dpage:Paragraph purpose="State the outcome this page should leave behind">
-              <role>org.blockml.bml.docgen.role.Explanation</role>
-              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
-              <weight>org.blockml.bml.docgen.weight.Primary</weight>
-              <message>After this page, readers should be able to define a closed enum and use its
-literal values, keeping in mind that suggestions never apply to EnumType
-properties.</message>
+            <dpage:Paragraph>
+              <content>
+                <dpage:Text text="After this page, readers should be able to define a closed enum and use its literal values, keeping in mind that suggestions never apply to EnumType properties." />
+              </content>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
         <!--6. Continuation-->
-        <dpage:Section heading="Continue with primitive entities" purpose="Direct the reader to the next page">
+        <dpage:Section heading="Continue with primitive entities">
           <content>
-            <dpage:Navigation purpose="Continue the type-system learning sequence">
+            <dpage:Navigation>
               <title>Next</title>
               <items>
                 <dpage:NavigationItem label="Primitive Entities" summary="Learn how a primitive value can appear as a Block instance.">
