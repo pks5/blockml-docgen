@@ -1,0 +1,55 @@
+<!--BlockML Documentation — instruction task that inspects composed rules
+  FQN: org.blockml.bml.bmldocs.lib.task.RuleAwareInstructionTask-->
+<ltask:RuleAwareInstructionTask xmlns="http://blockml.org/bml"
+  xmlns:ltask="org.blockml.bml.bmldocs.lib.task"
+  xmlns:cap="org.blockml.bml.capability"
+  xmlns:lang="org.blockml.bml.language"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    workflow:InstructionTask
+  </baseType>
+  <is>
+    An instruction task that inspects composed rules before following its instructions
+  </is>
+  <documentation>
+    InstructionTask whose execute inspects composed rules before following Task.instructions.
+
+    - **Task.rules** — inspect each rule; flatten CompositeRule.subRules
+    - **DocSet.globalRules** — apply when this task writes a DocSet
+    - **Page.rules** — apply when this task writes Pages
+    - Rule instructions stay active for the whole run
+    - Task.instructions state operational steps only; they must not paraphrase composed rules
+  </documentation>
+  <abstract>
+    true
+  </abstract>
+  <references>
+    <see type="workflow:InstructionTask" relation="Extends" />
+    <see type="workflow:CompositeRule" relation="SeeAlso" />
+    <see type="workflow:InstructionRule" relation="SeeAlso" />
+  </references>
+  <capabilities>
+    <_execute override="true" type="cap:Action">
+      <documentation>
+        Inspect composed rules, then read and follow this task's instructions under those constraints.
+      </documentation>
+      <implementation language="lang:English">
+        <![CDATA[
+        Inspect #this.rules. For each rule, inspect that Block (name, summary, instructions).
+        If the rule is a CompositeRule, inspect every subRule the same way — do not stop at
+        the composite type name. apply on each inspected rule and keep its instructions as
+        constraints until this run ends; apply is not a completed preamble.
+
+        If this task writes a DocSet, inspect that DocSet.globalRules and apply each linked
+        rule. If this task writes Pages, inspect each Page.rules and apply those as well.
+
+        Then read #this.instructions and follow them while observing every inspected rule.
+        Do not treat Task.instructions as a substitute for rule text. After execute, Task.run
+        evaluates successCriteria; if any criterion fails, repeat this execute under the same
+        rule constraints.
+        ]]>
+      </implementation>
+    </_execute>
+  </capabilities>
+</ltask:RuleAwareInstructionTask>

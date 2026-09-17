@@ -19,6 +19,9 @@
     that connects the example back to the concept introduced by the surrounding section. The
     explanation must make explicit how the concrete elements shown in the example represent the
     concepts being taught.
+
+    At authoring, CodeExamplePlacementRule places the Explanation sibling. This rule
+    constrains how that explanation is written (authoring message, or rendered prose).
     
     Refer to the actual names and constructs used in the example whenever this improves
     understanding. For example, identify which concrete Block is the definition, which nested
@@ -32,6 +35,14 @@
     Keep the explanation focused on the purpose of the example. It does not need to describe
     every line of code unless those details are necessary for understanding the concept.
   </documentation>
+  <references>
+    <see type="rule:ContentRule" relation="Extends">
+      Documentation content-rule branch.
+    </see>
+    <see type="lrule:CodeExamplePlacementRule" relation="SeeAlso">
+      Authoring-stage placement of the Explanation sibling this rule fills.
+    </see>
+  </references>
   <properties>
     <name override="true">
       <value>Code explanation</value>

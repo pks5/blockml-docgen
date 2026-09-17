@@ -1,0 +1,34 @@
+<!--BlockML Documentation — every CodeBlock is followed by an explanation element
+  FQN: org.blockml.bml.bmldocs.lib.criterion.CodeBlockFollowedByExplanation-->
+<lcrit:CodeBlockFollowedByExplanation xmlns="http://blockml.org/bml"
+  xmlns:lcrit="org.blockml.bml.bmldocs.lib.criterion">
+
+  <baseType>
+    lcrit:InstructionCriterion
+  </baseType>
+  <is>
+    A criterion that every CodeBlock is followed by an explanation element
+  </is>
+  <documentation>
+    After authoring or rendering, each CodeBlock must be followed by a sibling that
+    explains the listing. A CodeBlock as the last child of a Section, or followed
+    only by Navigation, fails this criterion.
+  </documentation>
+  <references>
+    <see type="lcrit:InstructionCriterion" relation="Extends" />
+  </references>
+  <properties>
+    <name override="true">
+      <value>Code block explained</value>
+    </name>
+    <summary override="true">
+      <value>Every CodeBlock is followed by an explanation sibling, not by Navigation or the end of the section.</value>
+    </summary>
+    <instructions override="true">
+      <value>In every content tree this task wrote, each CodeBlock must be immediately
+followed by a sibling ContentElement whose role is org.blockml.bml.docgen.role.Explanation
+— or, after rendering, the filled element that was that sibling. A CodeBlock that is the
+last child of a Section, or that is followed only by Navigation, fails this criterion.</value>
+    </instructions>
+  </properties>
+</lcrit:CodeBlockFollowedByExplanation>

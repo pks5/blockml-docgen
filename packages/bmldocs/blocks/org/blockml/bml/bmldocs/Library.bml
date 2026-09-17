@@ -28,6 +28,8 @@
   xmlns:a04pgroup="org.blockml.bml.bmldocs.a04_rendering.data.pagegroup"
   xmlns:a04task="org.blockml.bml.bmldocs.a04_rendering.task"
   xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
+  xmlns:lcrit="org.blockml.bml.bmldocs.lib.criterion"
+  xmlns:ltask="org.blockml.bml.bmldocs.lib.task"
   xmlns:source="org.blockml.bml.bmldocs.lib.source"
   xmlns:program="org.blockml.bml.bmldocs.program"
   xmlns:core="org.blockml.bml.core"
@@ -92,15 +94,19 @@
         <pdata:BmlDocSetPlan />
         <lrule:AppropriatePageGranularityRule />
         <lrule:AudienceVocabularyRule />
+        <lrule:AuthoringRules />
         <lrule:AvoidContentRepetitionRule />
         <lrule:ClearPagePurposeRule />
+        <lrule:CodeExamplePlacementRule />
         <lrule:CodeExampleRule />
         <lrule:CodeExplanationRule />
         <lrule:CodeStyleRule />
         <lrule:CompleteSentenceRule />
         <lrule:CompleteTopicCoverageRule />
         <lrule:ConceptBeforeImplementationRule />
+        <lrule:CrossCuttingRules />
         <lrule:DistinctPagePurposeRule />
+        <lrule:FollowPageExampleFormRule />
         <lrule:MatchDetailLevelRule />
         <lrule:NoFragmentedEnumerationRule />
         <lrule:NoSourceDumpRule />
@@ -109,10 +115,17 @@
         <lrule:PagePlanDirectionRule />
         <lrule:PageSectionCountRule />
         <lrule:ProgressivePageOrderRule />
+        <lrule:RenderingRules />
         <lrule:RespectExclusionsRule />
         <lrule:RespectScopeRule />
         <lrule:SectionCompletenessRule />
         <lrule:StablePageIdentityRule />
+        <lcrit:InstructionCriterion />
+        <lcrit:HasCodeExampleWhereApplicable />
+        <lcrit:CodeBlockFollowedByExplanation />
+        <lcrit:CodeBlockOmitsLiteralCode />
+        <lcrit:CodeBlockHasListing />
+        <ltask:RuleAwareInstructionTask />
         <page:TableOfContents />
         <page:Introduction />
         <page:CoreUseCases />

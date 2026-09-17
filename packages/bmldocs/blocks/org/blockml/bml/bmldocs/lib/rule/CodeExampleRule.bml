@@ -12,18 +12,20 @@
     A content rule for complete and focused BlockML code examples
   </is>
   <documentation>
-    Defines how BlockML code examples must be constructed. Every example must show a complete,
-    valid Block rather than an isolated snippet. The example must provide enough surrounding
-    structure to make the illustrated construct understandable in its real BlockML context.
-    
-    The part of the example that demonstrates the concept currently being explained must be
-    explicitly highlighted using an XML comment immediately before the relevant section. The
-    comment should briefly identify why the following section is important without duplicating
-    the surrounding documentation.
+    Page-rendering obligation: how to fill CodeBlock.code once a CodeBlock already exists.
+    Every listing must be a complete, valid Block rather than an isolated snippet, with
+    enough surrounding structure to make the illustrated construct understandable. Highlight
+    the demonstrated section with an XML comment immediately before it.
+
+    Placing the CodeBlock element belongs to CodeExamplePlacementRule at authoring.
+    This rule does not add CodeBlocks to a page that has none.
   </documentation>
   <references>
     <see type="rule:ContentRule" relation="Extends">
       Documentation content-rule branch.
+    </see>
+    <see type="lrule:CodeExamplePlacementRule" relation="SeeAlso">
+      Authoring-stage placement of the CodeBlock this rule fills.
     </see>
   </references>
   <properties>
@@ -35,12 +37,13 @@
 comment.</value>
     </summary>
     <instructions override="true">
-      <value>Generate every BlockML code example as a complete Block, never as an isolated
-snippet. Include the surrounding Block structure necessary to understand the example
-in context. Immediately before the section that demonstrates the concept being
-explained, add a concise XML comment that highlights the relevant section. Keep
-unrelated parts of the Block simple so that they provide context without distracting
-from the concept being demonstrated.</value>
+      <value>When filling CodeBlock.code, generate every BlockML listing as a complete Block,
+never as an isolated snippet. Include the surrounding Block structure necessary to
+understand the example in context. Immediately before the section that demonstrates
+the concept being explained, add a concise XML comment that highlights the relevant
+section. Keep unrelated parts of the Block simple so that they provide context without
+distracting from the concept being demonstrated. Do not add, remove, or reorder
+CodeBlock elements to satisfy this rule.</value>
     </instructions>
   </properties>
 </lrule:CodeExampleRule>

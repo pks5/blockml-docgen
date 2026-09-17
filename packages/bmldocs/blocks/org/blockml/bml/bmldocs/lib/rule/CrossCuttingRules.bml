@@ -1,0 +1,38 @@
+<!--BlockML Documentation — cross-cutting DocSet global rules
+  FQN: org.blockml.bml.bmldocs.lib.rule.CrossCuttingRules-->
+<lrule:CrossCuttingRules xmlns="http://blockml.org/bml"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    workflow:CompositeRule
+  </baseType>
+  <is>
+    The composite rule set copied onto DocSet.globalRules
+  </is>
+  <documentation>
+    Cross-cutting documentation rules that apply in every manifestation stage.
+    A02_01_UpdateDocSet writes TypeReferenceEntity links on DocSet.globalRules for
+    each subRule here. Stage-specific rules (placing versus filling CodeBlocks)
+    stay on the Task of that stage, not on this set.
+  </documentation>
+  <references>
+    <see type="workflow:CompositeRule" relation="Extends" />
+    <see type="lrule:AuthoringRules" relation="SeeAlso" />
+    <see type="lrule:RenderingRules" relation="SeeAlso" />
+  </references>
+  <aggregations>
+    <subRules override="true">
+      <composition>
+        <lrule:RespectScopeRule />
+        <lrule:RespectExclusionsRule />
+        <lrule:MatchDetailLevelRule />
+        <lrule:OnePrimaryMessageRule />
+        <lrule:NoSourceDumpRule />
+        <lrule:NoUnrequestedDiagnosticsRule />
+        <lrule:ConceptBeforeImplementationRule />
+        <lrule:PageSectionCountRule />
+      </composition>
+    </subRules>
+  </aggregations>
+</lrule:CrossCuttingRules>

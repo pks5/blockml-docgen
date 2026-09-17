@@ -1,0 +1,60 @@
+<!--BlockML Documentation — place CodeBlock specification elements while authoring
+  FQN: org.blockml.bml.bmldocs.lib.rule.CodeExamplePlacementRule-->
+<lrule:CodeExamplePlacementRule xmlns="http://blockml.org/bml"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
+  xmlns:rule="org.blockml.bml.docgen.rule">
+
+  <baseType>
+    rule:StructureRule
+  </baseType>
+  <is>
+    A structure rule that places CodeBlock specification elements on authored pages
+  </is>
+  <documentation>
+    Page-authoring obligation: put CodeBlock elements into the content tree.
+
+    - Does not fill CodeBlock.code — that is CodeExampleRule at rendering
+    - Every non-Index page specifies at least one listing as a CodeBlock with message, supportingPoints, and exclusions
+    - A following Explanation sibling interprets the listing
+    - Attach this rule and CodeExplanationRule on Page.rules of each page that received a CodeBlock
+  </documentation>
+  <references>
+    <see type="rule:StructureRule" relation="Extends">
+      Documentation structure-rule branch.
+    </see>
+    <see type="lrule:CodeExampleRule" relation="SeeAlso">
+      Rendering-stage listing construction — fills code on the elements this rule places.
+    </see>
+    <see type="lrule:CodeExplanationRule" relation="SeeAlso">
+      How the following explanation must interpret the listing.
+    </see>
+    <see type="lrule:FollowPageExampleFormRule" relation="SeeAlso">
+      Element-pattern template that includes the CodeBlock plus Explanation pair.
+    </see>
+  </references>
+  <properties>
+    <name override="true">
+      <value>Place code examples</value>
+    </name>
+    <summary override="true">
+      <value>On every non-Index page, place at least one CodeBlock (omit code) followed by an Explanation.</value>
+    </summary>
+    <instructions override="true">
+      <value>On every authored page whose pageType is not org.blockml.bml.docgen.pagetype.Index,
+place at least one org.blockml.bml.docgen.page.CodeBlock in the content tree. Prefer a
+teaching pair: the CodeBlock with role org.blockml.bml.docgen.role.Example, then a
+following sibling ContentElement with role org.blockml.bml.docgen.role.Explanation.
+
+On the CodeBlock set purpose, message (what the listing must show), role Example,
+detailLevel, weight, supportingPoints (what to highlight), exclusions (what the listing
+must omit), and authoritativeSources as a subset of the page set. Omit CodeBlock.code —
+the renderer generates the listing from those fields. Do not skip the CodeBlock because
+the listing is generated later; the element is the specification the renderer fills.
+
+On each page that received a CodeBlock, add TypeReferenceEntity links on Page.rules to
+this rule and to org.blockml.bml.bmldocs.lib.rule.CodeExplanationRule.
+
+Index and menu pages must not receive CodeBlocks or conceptual example body.</value>
+    </instructions>
+  </properties>
+</lrule:CodeExamplePlacementRule>

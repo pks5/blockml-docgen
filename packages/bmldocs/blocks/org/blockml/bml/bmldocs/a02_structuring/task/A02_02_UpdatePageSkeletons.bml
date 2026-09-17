@@ -2,13 +2,13 @@
   FQN: org.blockml.bml.bmldocs.a02_structuring.task.A02_02_UpdatePageSkeletons-->
 <task:A02_02_UpdatePageSkeletons xmlns="http://blockml.org/bml"
   xmlns:task="org.blockml.bml.bmldocs.a02_structuring.task"
-  xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:source="org.blockml.bml.bmldocs.lib.source"
   xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
+  xmlns:ltask="org.blockml.bml.bmldocs.lib.task"
   xmlns:type="org.blockml.bml.type">
 
   <baseType>
-    workflow:InstructionTask
+    ltask:RuleAwareInstructionTask
   </baseType>
   <is>
     A task that updates A02 page skeletons

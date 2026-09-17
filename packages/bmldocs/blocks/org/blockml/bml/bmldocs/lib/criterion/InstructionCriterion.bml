@@ -1,0 +1,61 @@
+<!--BlockML Documentation — acceptance criterion described by instruction prose
+  FQN: org.blockml.bml.bmldocs.lib.criterion.InstructionCriterion-->
+<lcrit:InstructionCriterion xmlns="http://blockml.org/bml"
+  xmlns:lcrit="org.blockml.bml.bmldocs.lib.criterion"
+  xmlns:cap="org.blockml.bml.capability"
+  xmlns:lang="org.blockml.bml.language"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    workflow:Criterion
+  </baseType>
+  <is>
+    An acceptance criterion described by instruction prose
+  </is>
+  <documentation>
+    Criterion whose check is stated as free-form instructions.
+
+    - **isSatisfied** — inspects those instructions against the Blocks the enclosing Task just wrote
+    - **Composition** — concrete subtypes go on Task.successCriteria so Task.run retries execute until they hold
+    - **Not** a Rule (obligation during the run) or a Prerequisite (precondition before the run)
+  </documentation>
+  <abstract>
+    true
+  </abstract>
+  <references>
+    <see type="workflow:Criterion" relation="Extends" />
+    <see type="workflow:InstructionRule" relation="SeeAlso" />
+    <see type="workflow:Task" relation="SeeAlso" />
+  </references>
+  <properties>
+    <name type="type:Text">
+      <documentation>
+        Stable name of this criterion.
+      </documentation>
+    </name>
+    <summary type="type:Text">
+      <documentation>
+        Short statement of what must hold after execute.
+      </documentation>
+    </summary>
+    <instructions type="type:Text">
+      <documentation>
+        Prose that states how to decide whether this criterion currently holds.
+      </documentation>
+    </instructions>
+  </properties>
+  <capabilities>
+    <isSatisfied override="true" type="cap:Outbound" outputType="type:Boolean">
+      <throws>
+        <workflow:ExecutionException />
+      </throws>
+      <documentation>
+        Inspect this criterion's instructions against the work the enclosing Task just produced.
+      </documentation>
+      <implementation language="lang:English">
+        <![CDATA[Inspect this criterion. Read name, summary, and instructions in full. Inspect the Blocks this Task just wrote. Return true only when the instructions currently hold. Return false if they do not, so Task.run repeats execute.]]>
+      </implementation>
+    </isSatisfied>
+  </capabilities>
+</lcrit:InstructionCriterion>

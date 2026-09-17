@@ -1,0 +1,34 @@
+<!--BlockML Documentation — A04 CodeBlocks hold a complete listing
+  FQN: org.blockml.bml.bmldocs.lib.criterion.CodeBlockHasListing-->
+<lcrit:CodeBlockHasListing xmlns="http://blockml.org/bml"
+  xmlns:lcrit="org.blockml.bml.bmldocs.lib.criterion">
+
+  <baseType>
+    lcrit:InstructionCriterion
+  </baseType>
+  <is>
+    A criterion that rendered CodeBlocks hold a complete listing
+  </is>
+  <documentation>
+    At the rendering stage, every CodeBlock must have a non-empty code property
+    holding a complete BlockML Block listing. Vacuously true when the tree has
+    no CodeBlocks — placing CodeBlocks is an authoring-stage criterion.
+  </documentation>
+  <references>
+    <see type="lcrit:InstructionCriterion" relation="Extends" />
+  </references>
+  <properties>
+    <name override="true">
+      <value>Code listing filled</value>
+    </name>
+    <summary override="true">
+      <value>Every rendered CodeBlock has a non-empty complete Block listing.</value>
+    </summary>
+    <instructions override="true">
+      <value>Every CodeBlock this task wrote must have a non-empty code property holding
+a complete BlockML Block listing, not an isolated snippet. If the tree has no
+CodeBlocks, this criterion holds. Do not add CodeBlocks here to satisfy it —
+placement belongs to the authoring stage.</value>
+    </instructions>
+  </properties>
+</lcrit:CodeBlockHasListing>

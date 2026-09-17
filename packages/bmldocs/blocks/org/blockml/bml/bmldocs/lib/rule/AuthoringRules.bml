@@ -1,0 +1,40 @@
+<!--BlockML Documentation — composite authoring-stage rules
+  FQN: org.blockml.bml.bmldocs.lib.rule.AuthoringRules-->
+<lrule:AuthoringRules xmlns="http://blockml.org/bml"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    workflow:CompositeRule
+  </baseType>
+  <is>
+    The composite rule set for the page-authoring manifestation stage
+  </is>
+  <documentation>
+    Groups the rules A03 authoring Tasks must apply. apply walks subRules in order.
+    Inspect this Block once, then inspect each subRule's name, summary, and
+    instructions. Do not paraphrase these children in Task.instructions.
+  </documentation>
+  <references>
+    <see type="workflow:CompositeRule" relation="Extends" />
+    <see type="lrule:RenderingRules" relation="SeeAlso" />
+    <see type="lrule:CrossCuttingRules" relation="SeeAlso" />
+  </references>
+  <aggregations>
+    <subRules override="true">
+      <composition>
+        <lrule:PageSectionCountRule />
+        <lrule:FollowPageExampleFormRule />
+        <lrule:CodeExamplePlacementRule />
+        <lrule:OnePrimaryMessageRule />
+        <lrule:RespectScopeRule />
+        <lrule:RespectExclusionsRule />
+        <lrule:MatchDetailLevelRule />
+        <lrule:ConceptBeforeImplementationRule />
+        <lrule:NoFragmentedEnumerationRule />
+        <lrule:NoSourceDumpRule />
+        <lrule:NoUnrequestedDiagnosticsRule />
+      </composition>
+    </subRules>
+  </aggregations>
+</lrule:AuthoringRules>

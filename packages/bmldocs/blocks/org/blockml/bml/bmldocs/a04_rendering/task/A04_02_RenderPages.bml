@@ -2,13 +2,14 @@
   FQN: org.blockml.bml.bmldocs.a04_rendering.task.A04_02_RenderPages-->
 <task:A04_02_RenderPages xmlns="http://blockml.org/bml"
   xmlns:task="org.blockml.bml.bmldocs.a04_rendering.task"
-  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:ltask="org.blockml.bml.bmldocs.lib.task"
   xmlns:source="org.blockml.bml.bmldocs.lib.source"
   xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
+  xmlns:lcrit="org.blockml.bml.bmldocs.lib.criterion"
   xmlns:type="org.blockml.bml.type">
 
   <baseType>
-    workflow:InstructionTask
+    ltask:RuleAwareInstructionTask
   </baseType>
   <is>
     A task that renders A04 pages in place from semantic scaffold to real content
@@ -20,15 +21,12 @@
 
     - **Import** — A04_01_CopyData already wiped A04 data and imported the
       full A03 data tree with packages and names remapped
-    - **Input** — live A04 DocSet and pages (purpose, message, roles, scopes,
-      sources, supportingPoints, and the content tree)
+    - **Input** — live A04 DocSet and pages
     - **Output** — the same A04 page Files, with real body slots filled and
-      semantic / claim metadata removed; do not redesign structure or invent
-      pages absent from BmlDocSet_A04
-    - **Style** — CompleteSentenceRule and CodeStyleRule apply here
-    - **Sources** — authorativeSources is BlockMLSourceSet; page- and
-      element-level sets on the imported pages are the content ceiling while
-      rendering, then are stripped from the written pages
+      semantic / claim metadata removed; do not redesign structure
+    - **Rules** — RenderingRules (inspect each subRule); do not paraphrase
+      them in instructions
+    - **Sources** — authorativeSources is BlockMLSourceSet
   </documentation>
   <properties>
     <instructions type="type:Text" override="true">
@@ -37,107 +35,41 @@
           Render every A04 page in place: turn the imported semantic scaffold
           into finished reader-facing BML content on the same DocPages. Do not
           export to HTML, JSON, Markdown, or any other manifestation. Do not
-          redesign DocPage.content structure, invent pages, or edit A01 / A02 /
-          A03 BML.
+          add, remove, or reorder content elements. Do not invent pages or
+          edit A01 / A02 / A03.
 
           A04_01_CopyData has already wiped live A04 data and imported the
-          full A03 data tree with packages and names remapped. This task does
-          not copy or delete A04 data. Do not invent pages that are not in
-          BmlDocSet_A04.pages. Do not edit A03.
+          full A03 data tree with packages and names remapped.
 
-          1. Read the imported A04 pages (specification)
-          Read org.blockml.bml.bmldocs.a04_rendering.data.BmlDocSet_A04.
-          Walk BmlDocSet_A04.pages in listed order. For each DocPage, inspect
-          title, purpose, detailLevel, pageType, page-level
-          authoritativeSources / scopes / readerOutcomes /
-          learningObjectives / exclusions / supportingPoints / audiences, and
-          the content tree (Section, Paragraph, List, ListItem, CodeBlock,
-          Image, Navigation, and their message / role / weight / detailLevel /
-          element semantics / authoritativeSources).
+          1. Read org.blockml.bml.bmldocs.a04_rendering.data.BmlDocSet_A04.
+          Walk BmlDocSet_A04.pages in listed order. The imported fields are
+          the specification.
 
-          Those fields are the specification for this render. Do not invent
-          claims outside page and element scopes. Do not dump sources.
-          Element authoritativeSources remain subsets of the page set while
-          reading.
+          2. Resolve this task's authorativeSources (inspect
+          BlockMLSourceSet). For each Block named by a page or element
+          source set, inspect is, documentation, and references before
+          writing. Never link a Block from another sector. Never keep an
+          A03 FQN on an A04 page.
 
-          2. Open authoritative sources
-          Resolve this task's authorativeSources TypeSelectors (scan type
-          for each selector on org.blockml.bml.bmldocs.lib.source.BlockMLSourceSet).
-          For each Block named by a page or element source set, inspect
-          is, documentation, and references before writing prose or code.
-          Domain claims in the rendered body may come only from those bound
-          Blocks (and A04 pages for Navigation targets).
+          3. Follow DocPage.content order. Fill each element's real body
+          slot from its purpose, message, role, detailLevel, weight, and
+          element semantics. Inspect the element type (Paragraph, CodeBlock,
+          ListItem, Image, Navigation, Section) for which slot to fill.
 
-          Never link a Block from another sector (a01, a02, a03, or any
-          later sector). Never keep an A03 page or PageGroup FQN on an
-          A04 page.
-
-          3. Fill real content slots (same tree)
-          Follow DocPage.content order. Keep Section nesting, List/ListItem
-          structure, Navigation items, and element order. Do not independently
-          add, remove, or reorder Sections to satisfy taste. If the scaffold
-          is insufficient, report the gap; do not silently redesign A04 data
-          or edit A03.
-
-          Derive finished content from purpose, message, role, detailLevel,
-          weight, supportingPoints, exclusions, scopes, outcomes, and
-          authoritativeSources, then write it into the real body slots:
-
-          - Section — keep or generate heading (type:Text); leave content
-            children in place
-          - Paragraph — fill content with one or more page:Text runs whose
-            text property holds the finished prose (complete sentences).
-            Prefer one primary idea per paragraph (OnePrimaryMessageRule)
-          - page:Text — set text to the literal character content
-          - CodeBlock — set code to the complete listing (CodeExampleRule);
-            after every listing, the following explanatory element must
-            already exist in the tree or be the next scaffolded element
-            (CodeExplanationRule) — do not invent a new Section for it
-          - List — keep items; do not rely on List.message as body
-          - ListItem — set text to the finished item lead; nest further
-            BlockElements in content only when the scaffold already has them
-          - Image — keep or fill src; set alt from message / purpose /
-            sources when alt is missing
-          - Navigation / NavigationItem — keep title, label, summary, target;
-            target may name only A04 pages listed on BmlDocSet_A04; do not
-            invent conceptual body on index / menu pages
-
-          Apply while writing:
-          - Respect Scope and Exclusion as hard bounds
-          - Match DetailLevel: omit internal FQNs, diagnostics, and
-            implementation notes at Introductory / Overview levels
-          - Prefer concept before implementation in the rendered flow
-          - Fill section depth so the subject is understandable
-            (SectionCompletenessRule) without filler or repetition
-            (AvoidContentRepetitionRule)
-          - Use vocabulary appropriate to the declared Audience when
-            audiences are set (AudienceVocabularyRule)
-          - Prose uses complete sentences (CompleteSentenceRule)
-          - Code presentation intent: preformatted, highlighted, read-only,
-            with copy control (CodeStyleRule) — express that in the filled
-            code / surrounding prose, not by exporting another format
-
-          4. Strip semantic and claim metadata
-          After body slots are filled, remove specification altitude from
-          each written A04 page so the page carries real content only:
+          4. Strip specification altitude from each written A04 page.
 
           On DocPage: remove authoritativeSources, scopes, readerOutcomes,
           learningObjectives, exclusions, supportingPoints, audiences, and
-          purpose. Keep title, docset, pageType, detailLevel, rules (if any),
-          and the content tree.
+          purpose. Keep title, docset, pageType, detailLevel, rules, and
+          the content tree.
 
-          On every Section, Navigation, NavigationItem, and page:Text: remove
-          purpose once heading / labels / text are filled.
+          On every Section, Navigation, NavigationItem, and page:Text:
+          remove purpose once heading / labels / text are filled.
 
-          On every ContentElement (Paragraph, List, ListItem, CodeBlock,
-          Image): remove message, role, weight, detailLevel,
-          authoritativeSources, audiences, supportingPoints, readerOutcomes,
-          learningObjectives, scopes, exclusions, and purpose. Keep the real
-          body slots (Paragraph.content, CodeBlock.code, ListItem.text,
-          Image.src / alt, List.items, nested content).
-
-          Do not leave empty semantic aggregations. Do not reintroduce A03
-          package names. Do not remove A03 catalog entries.
+          On every ContentElement: remove message, role, weight,
+          detailLevel, authoritativeSources, audiences, supportingPoints,
+          readerOutcomes, learningObjectives, scopes, exclusions, and
+          purpose. Keep the real body slots.
         ]]>
       </value>
     </instructions>
@@ -145,22 +77,15 @@
   <aggregations>
     <rules override="true">
       <composition>
-        <lrule:RespectScopeRule />
-        <lrule:RespectExclusionsRule />
-        <lrule:MatchDetailLevelRule />
-        <lrule:ConceptBeforeImplementationRule />
-        <lrule:NoSourceDumpRule />
-        <lrule:NoUnrequestedDiagnosticsRule />
-        <lrule:OnePrimaryMessageRule />
-        <lrule:SectionCompletenessRule />
-        <lrule:AvoidContentRepetitionRule />
-        <lrule:CodeExampleRule />
-        <lrule:CodeExplanationRule />
-        <lrule:AudienceVocabularyRule />
-        <lrule:CompleteSentenceRule />
-        <lrule:CodeStyleRule />
+        <lrule:RenderingRules />
       </composition>
     </rules>
+    <successCriteria override="true">
+      <composition>
+        <lcrit:CodeBlockHasListing />
+        <lcrit:CodeBlockFollowedByExplanation />
+      </composition>
+    </successCriteria>
     <authorativeSources override="true">
       <composition>
         <source:BlockMLSourceSet />

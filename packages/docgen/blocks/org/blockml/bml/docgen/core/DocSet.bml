@@ -65,6 +65,9 @@
     <see type="dplan:DocSetPlan" relation="Requires">
       Preliminary plan referenced by plan — may precede or guide this DocSet.
     </see>
+    <see type="dcore:Rule" relation="Requires">
+      Set-wide rules via globalRules; Page.rules apply in addition.
+    </see>
   </references>
   <properties>
     <title type="type:Text">
@@ -120,5 +123,13 @@
         List of all available and active learning paths for this DocSet.
       </documentation>
     </learningPaths>
+    <globalRules type="type:TypeReferenceEntity(dcore:Rule)[]">
+      <documentation>
+        Rules that apply to every page in this DocSet. Page.rules and
+        ContentElement.rules apply in addition. Stage-specific obligations
+        (for example placing versus filling CodeBlocks) stay on the Task
+        of that manifestation stage; this catalogue is the cross-cutting set.
+      </documentation>
+    </globalRules>
   </aggregations>
 </dcore:DocSet>

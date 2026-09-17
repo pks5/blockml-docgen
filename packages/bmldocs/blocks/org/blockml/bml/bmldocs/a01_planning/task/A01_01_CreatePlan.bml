@@ -2,13 +2,13 @@
   FQN: org.blockml.bml.bmldocs.a01_planning.task.A01_01_CreatePlan-->
 <task:A01_01_CreatePlan xmlns="http://blockml.org/bml"
   xmlns:task="org.blockml.bml.bmldocs.a01_planning.task"
-  xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:source="org.blockml.bml.bmldocs.lib.source"
   xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
+  xmlns:ltask="org.blockml.bml.bmldocs.lib.task"
   xmlns:type="org.blockml.bml.type">
 
   <baseType>
-    workflow:InstructionTask
+    ltask:RuleAwareInstructionTask
   </baseType>
   <is>
     A task that creates or overwrites BmlDocSetPlan

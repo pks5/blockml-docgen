@@ -5,6 +5,8 @@
   xmlns:dcore="org.blockml.bml.docgen.core"
   xmlns:rule="org.blockml.bml.docgen.rule"
   xmlns:type="org.blockml.bml.type"
+  xmlns:cap="org.blockml.bml.capability"
+  xmlns:lang="org.blockml.bml.language"
   xmlns:workflow="org.blockml.bml.transformer.workflow">
 
   <baseType>
@@ -22,6 +24,10 @@
     SourceRule, TerminologyRule, LearningRule, StyleRule, QualityRule). Assign each
     concrete rule to the Tasks of the manifestation phase where it constrains the work
     (planning, structuring, authoring, or rendering).
+
+    apply inspects this rule's name, summary, and instructions and keeps them as
+    constraints for the rest of Task.run — it is not a completed preamble.
+    Task.instructions must not paraphrase composed rules; inspect and apply them.
   </documentation>
   <abstract>
     true
@@ -55,4 +61,17 @@
       </documentation>
     </summary>
   </properties>
+  <capabilities>
+    <apply override="true" type="cap:Action">
+      <throws>
+        <workflow:ExecutionException />
+      </throws>
+      <documentation>
+        Inspect this rule and keep its instructions as constraints until Task.run ends.
+      </documentation>
+      <implementation language="lang:English">
+        <![CDATA[Inspect this rule (search / inspect the FQN). Read name, summary, and instructions in full — do not stop at the type name. Keep those instructions as constraints for the rest of this Task.run, including execute and every success-criterion retry. apply is not a completed preamble; the obligation stays active until the run ends. If this rule is reached as a CompositeRule child, inspect that child the same way.]]>
+      </implementation>
+    </apply>
+  </capabilities>
 </dcore:Rule>

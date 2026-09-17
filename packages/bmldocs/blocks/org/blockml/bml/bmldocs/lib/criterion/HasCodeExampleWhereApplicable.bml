@@ -1,0 +1,33 @@
+<!--BlockML Documentation — every non-Index page has a CodeBlock scaffold
+  FQN: org.blockml.bml.bmldocs.lib.criterion.HasCodeExampleWhereApplicable-->
+<lcrit:HasCodeExampleWhereApplicable xmlns="http://blockml.org/bml"
+  xmlns:lcrit="org.blockml.bml.bmldocs.lib.criterion">
+
+  <baseType>
+    lcrit:InstructionCriterion
+  </baseType>
+  <is>
+    A criterion that every non-Index page has at least one CodeBlock
+  </is>
+  <documentation>
+    After authoring, every DocPage whose pageType is not Index must contain at least
+    one CodeBlock in its content tree. Index and menu pages must contain none.
+  </documentation>
+  <references>
+    <see type="lcrit:InstructionCriterion" relation="Extends" />
+  </references>
+  <properties>
+    <name override="true">
+      <value>Code example present</value>
+    </name>
+    <summary override="true">
+      <value>Every non-Index page has at least one CodeBlock; Index pages have none.</value>
+    </summary>
+    <instructions override="true">
+      <value>For each DocPage this task authored or updated whose pageType is not
+org.blockml.bml.docgen.pagetype.Index, the content tree must contain at least one
+org.blockml.bml.docgen.page.CodeBlock. Index and menu pages must contain none. If any
+applicable page has zero CodeBlocks, this criterion is not satisfied.</value>
+    </instructions>
+  </properties>
+</lcrit:HasCodeExampleWhereApplicable>

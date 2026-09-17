@@ -1,0 +1,33 @@
+<!--BlockML Documentation — A03 CodeBlocks omit the literal listing
+  FQN: org.blockml.bml.bmldocs.lib.criterion.CodeBlockOmitsLiteralCode-->
+<lcrit:CodeBlockOmitsLiteralCode xmlns="http://blockml.org/bml"
+  xmlns:lcrit="org.blockml.bml.bmldocs.lib.criterion">
+
+  <baseType>
+    lcrit:InstructionCriterion
+  </baseType>
+  <is>
+    A criterion that authored CodeBlocks omit the code property
+  </is>
+  <documentation>
+    At the authoring stage, CodeBlock is a specification. The code property stays
+    empty so the rendering stage can generate the listing from message,
+    supportingPoints, exclusions, and authoritativeSources.
+  </documentation>
+  <references>
+    <see type="lcrit:InstructionCriterion" relation="Extends" />
+  </references>
+  <properties>
+    <name override="true">
+      <value>Code omitted at authoring</value>
+    </name>
+    <summary override="true">
+      <value>Every authored CodeBlock omits the code property.</value>
+    </summary>
+    <instructions override="true">
+      <value>Every CodeBlock this task wrote must omit the code property. Listings are
+filled in the rendering stage from message, supportingPoints, exclusions, and
+authoritativeSources. A non-empty code property fails this criterion.</value>
+    </instructions>
+  </properties>
+</lcrit:CodeBlockOmitsLiteralCode>

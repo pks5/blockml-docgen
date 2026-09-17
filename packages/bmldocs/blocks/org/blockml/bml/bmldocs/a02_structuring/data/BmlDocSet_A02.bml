@@ -7,7 +7,8 @@
   xmlns:page="org.blockml.bml.docgen.page"
   xmlns:bmlcore="org.blockml.bml.core"
   xmlns:docs="org.blockml.bml.bmldocs.a02_structuring.data.page.docs"
-  xmlns:a02pgroup="org.blockml.bml.bmldocs.a02_structuring.data.pagegroup">
+  xmlns:a02pgroup="org.blockml.bml.bmldocs.a02_structuring.data.pagegroup"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule">
 
   <baseType>
     dcore:DocSet
@@ -116,5 +117,17 @@ depth.</value>
         <a02pgroup:BmlFormatPageGroup />
       </composition>
     </pageGroups>
+    <globalRules override="true">
+      <composition>
+        <lrule:RespectScopeRule />
+        <lrule:RespectExclusionsRule />
+        <lrule:MatchDetailLevelRule />
+        <lrule:OnePrimaryMessageRule />
+        <lrule:NoSourceDumpRule />
+        <lrule:NoUnrequestedDiagnosticsRule />
+        <lrule:ConceptBeforeImplementationRule />
+        <lrule:PageSectionCountRule />
+      </composition>
+    </globalRules>
   </aggregations>
 </a02data:BmlDocSet_A02>

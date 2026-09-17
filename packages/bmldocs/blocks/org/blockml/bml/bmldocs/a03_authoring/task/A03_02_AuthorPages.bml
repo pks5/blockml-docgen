@@ -2,13 +2,14 @@
   FQN: org.blockml.bml.bmldocs.a03_authoring.task.A03_02_AuthorPages-->
 <task:A03_02_AuthorPages xmlns="http://blockml.org/bml"
   xmlns:task="org.blockml.bml.bmldocs.a03_authoring.task"
-  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:ltask="org.blockml.bml.bmldocs.lib.task"
   xmlns:source="org.blockml.bml.bmldocs.lib.source"
   xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
+  xmlns:lcrit="org.blockml.bml.bmldocs.lib.criterion"
   xmlns:type="org.blockml.bml.type">
 
   <baseType>
-    workflow:InstructionTask
+    ltask:RuleAwareInstructionTask
   </baseType>
   <is>
     A task that authors the semantic structure of imported A03 pages
@@ -27,15 +28,10 @@
       supportingPoints from A02_02_UpdatePageSkeletons; refine them only
       when the bound sources justify a tighter wording
     - **Content** — author DocPage.content as Sections and ContentElements
-      that refine page semantics at element level — each element carries
-      subsets of the page's sources and semantic claims
-    - **Links** — see / source / Navigation targets may name only A03
-      Blocks or lib Blocks from authorativeSources; never a Block from
-      another sector
-    - **Template** — org.blockml.bml.bmldocs.a03_authoring.example.PageExample_A03
-      is the structural pattern only, not a domain-content source
-    - **Sources** — authorativeSources is BlockMLSourceSet, the same set as
-      A02_02_UpdatePageSkeletons
+      that refine page semantics at element level
+    - **Rules** — AuthoringRules (inspect each subRule); do not paraphrase
+      them in instructions
+    - **Sources** — authorativeSources is BlockMLSourceSet
   </documentation>
   <properties>
     <instructions type="type:Text" override="true">
@@ -43,151 +39,46 @@
         <![CDATA[
           Author the content scaffold that specifies what each imported
           A03 page must show. Sector 3 writes specification, not the
-          finished site. Sector 4 (A04_RenderingSector) renders prose,
-          examples, and code from that specification.
+          finished site. Sector 4 renders prose and listings from that
+          specification.
 
           A03_01_CopyData has already wiped live A03 data and imported the
           full A02 data tree with packages and names remapped. This task
           does not copy, delete, or recreate DocSet, Pages, or PageGroups.
-          Do not read leftover trees such as data_IGNORE. Do not read
-          BmlDocSetPlan as the identity source. Do not invent pages that
-          are not in BmlDocSet_A03.pages. Do not edit A02. Do not write
-          Pages outside a03.
-
-          Use org.blockml.bml.bmldocs.a03_authoring.example.PageExample_A03
-          only as a structural template (member shape, content roles,
-          how page and element semantics bind to sources). Do not copy
-          its domain claims onto other pages.
+          Do not invent pages that are not in BmlDocSet_A03.pages. Do not
+          edit A02. Do not write Pages outside a03.
 
           Keep the imported page identity (is, isNot, title, purpose,
-          detailLevel, pageType, lib see-links). Keep the page-level
-          semantic scaffold from A02_02_UpdatePageSkeletons:
-          authoritativeSources, scopes, readerOutcomes, learningObjectives,
-          exclusions, and supportingPoints. Those fields are the starting
-          point for structuring content — do not discard and regenerate
-          them from scratch. Refine a page-level instance only when the
-          bound sources justify tighter wording; do not contradict or
-          broaden what A02 already established.
+          detailLevel, pageType, lib see-links) and the page-level
+          semantic scaffold from A02_02_UpdatePageSkeletons. Refine a
+          page-level instance only when the bound sources justify tighter
+          wording.
 
-          Discard only DocPage.content. Regenerate content from the kept
-          page semantics, purpose, and see links. Keep the FQN / file path
-          so the same Block is updated.
+          Discard only DocPage.content. Keep the FQN / file path.
 
-          1. Read the imported A03 pages
-          Read org.blockml.bml.bmldocs.a03_authoring.data.BmlDocSet_A03.
-          Walk BmlDocSet_A03.pages in listed order. For each listed A03
-          DocPage, inspect is, isNot, documentation, references/see, title,
-          purpose, detailLevel, pageType, authoritativeSources, scopes,
-          readerOutcomes, learningObjectives, exclusions, and
-          supportingPoints. Identity and page-level semantics stay.
-          Also note BmlDocSet_A03.homePage and, on each A03 PageGroup,
-          pages and landingPage — this task does not rebuild those slots.
+          1. Read org.blockml.bml.bmldocs.a03_authoring.data.BmlDocSet_A03.
+          Walk BmlDocSet_A03.pages in listed order. Inspect each page's
+          identity and page-level semantics. Element-level sources must be
+          subsets of that page's AuthorativeSourceSet.
 
-          Resolve the page source set from Page.authoritativeSources
-          (AuthorativeSourceSet.includedTypes). Every lib FQN bound at
-          page level is the ceiling for this page. Element-level sources
-          must be subsets of that set — never introduce a lib Block the
-          page set does not already cover.
+          2. Resolve this task's authorativeSources (inspect
+          BlockMLSourceSet.includedTypes, then scan / inspect matching
+          Blocks). Domain claims and links may name only A03 Blocks, that
+          source set, or org.blockml.bml.bmldocs.lib.**. Never link a Block
+          from another sector. Docgen types may appear as structural
+          see-links.
 
-          2. Open the authoritative sources
-          Resolve this task's authorativeSources TypeSelectors (scan type
-          for each selector on org.blockml.bml.bml.bmldocs.lib.source.BlockMLSourceSet).
-          That set is the same whitelist as A02_02_UpdatePageSkeletons:
-          org.blockml.bml.constraint.**, org.blockml.bml.core.**,
-          org.blockml.bml.definition.**, org.blockml.bml.documentation.**,
-          org.blockml.bml.exception.**, org.blockml.bml.group.**,
-          org.blockml.bml.language.**, org.blockml.bml.mapping.**,
-          org.blockml.bml.meta.**, org.blockml.bml.relation.**,
-          org.blockml.bml.service.**, org.blockml.bml.status.**,
-          org.blockml.bml.type.**, org.blockml.bml.unit.**,
-          org.blockml.bml.validation.**.
+          3. Author DocPage.content as Sections and ContentElements.
+          Inspect DocPage, Section, ContentElement, and
+          org.blockml.bml.docgen.semantic.* for member shape. Distribute
+          kept page semantics onto the content tree as refinements, not
+          copies. Set purpose, message, role, detailLevel, and weight on
+          each ContentElement.
 
-          Those lib Blocks are the only non-A03 Blocks an A03 page may
-          reference (see, page authoritativeSources, element
-          authoritativeSources, annotation sources). Never link a Block
-          from another sector (a01, a02, a04, or any later sector). Never
-          keep an A02 page or PageGroup FQN on an A03 page.
-          org.blockml.bml.bmldocs.lib.** (for example BlockMLSourceSet and
-          lib rules) may also be referenced. Docgen types
-          (org.blockml.bml.docgen.**) may appear as structural see-links
-          (for example Navigation on an Index page), not as sector content.
+          Index pages: Navigation tree of A03 pages only; no conceptual
+          body.
 
-          For each candidate source, inspect is, documentation, and
-          references — do not guess from the FQN alone.
-
-          3. Author content that refines page semantics at element level
-          For each A03 page, start from the imported purpose, title, see
-          links, and the kept page-level semantics. The page aggregations
-          define what the page must cover overall; content distributes
-          and sharpens those claims across Sections and ContentElements.
-
-          Inspect PageExample_A03, then inspect DocPage, Section,
-          ContentElement, and org.blockml.bml.docgen.semantic.* for member
-          shape. Section carries heading, purpose, and nested content.
-          ContentElement carries purpose, message, role, detailLevel,
-          weight, and the five semantic aggregations plus
-          authoritativeSources (TypeReferenceEntity links to lib Blocks).
-
-          Distribution rule — page semantics → element semantics:
-          - Every page-level scope, readerOutcome, learningObjective,
-            exclusion, and supportingPoint must be reflected somewhere
-            in the content tree — on a Section purpose, a ContentElement
-            message, or as owned semantic instances on that element.
-          - Split when it helps structure: five page scopes may become
-            five elements each carrying one refined Scope instance whose
-            summary narrows that page scope to what this element treats.
-            One page readerOutcome may split across several Paragraphs;
-            several page supportingPoints may merge onto one List.
-          - Element semantics are refinements, not copies: summary and
-            message state the element-local claim; they must stay within
-            the parent page instance they refine. Do not introduce topics,
-            outcomes, or sources the page semantics do not already cover.
-          - Element authoritativeSources are subsets of the page set:
-            TypeReferenceEntity links to lib FQNs already listed in the
-            page AuthorativeSourceSet. Pick the Blocks that ground this
-            element's claim — not necessarily all page sources on every
-            element. Semantic-instance authoritativeSources on elements
-            tighten further when a SupportingPoint or Scope names a
-            narrower claim.
-
-          Author content as an ordered semantic scaffold:
-          - Section (heading + purpose + nested content) for thematic
-            groupings aligned with page scopes or learning objectives
-          - ContentElements (Paragraph, List, ListItem, CodeBlock,
-            Navigation as needed) for the claims within each section
-          - on each ContentElement set purpose, message, role
-            (org.blockml.bml.docgen.role.*), detailLevel
-            (org.blockml.bml.docgen.level.*), and weight
-            (org.blockml.bml.docgen.weight.*)
-          - attach scopes, readerOutcomes, learningObjectives,
-            supportingPoints, and exclusions on ContentElements when they
-            sharpen the element's claim; omit an aggregation when the
-            element inherits the claim implicitly from its Section purpose
-            alone and a duplicate instance would add no precision
-          - omit CodeBlock.code — A04 generates the listing from message,
-            supportingPoints, exclusions, and authoritativeSources
-          - omit finished reader-facing article prose, HTML, and filled
-            example bodies; message states the claim to convey, purpose
-            states why the element exists for the renderer
-
-          Index / menu pages (pageType Index, for example TableOfContents):
-          keep the imported page semantics. Author DocPage.content as a
-          Navigation tree whose NavigationItem targets are A03 pages only
-          (from BmlDocSet_A03 and the A03 PageGroups). Do not invent
-          conceptual body on an Index page. NavigationItem.target and any
-          in-page continuation link may name only A03 pages listed on
-          BmlDocSet_A03.
-
-          Never list an A02, A01, or A04 Block in see,
-          authoritativeSources, annotation sources, or Navigation.
-
-          The result is a page whose kept page-level semantics are
-          decomposed into a content tree that specifies exactly which
-          ideas, sections, roles, and source subsets A04 must manifest —
-          not the manifested page itself.
-
-          4. Export A03 pages from the catalog
-          Export each A03 page authored here from
+          4. Export each authored A03 page from
           org.blockml.bml.bmldocs.Library if it is not already in the
           catalog. Do not remove catalog entries of other sectors. Do not
           remove PageExample_A03 if it is catalogued.
@@ -198,18 +89,16 @@
   <aggregations>
     <rules override="true">
       <composition>
-        <lrule:PageSectionCountRule />
-        <lrule:OnePrimaryMessageRule />
-        <lrule:RespectScopeRule />
-        <lrule:RespectExclusionsRule />
-        <lrule:MatchDetailLevelRule />
-        <lrule:ConceptBeforeImplementationRule />
-        <lrule:NoFragmentedEnumerationRule />
-        <lrule:NoSourceDumpRule />
-        <lrule:CodeExampleRule />
-        <lrule:NoUnrequestedDiagnosticsRule />
+        <lrule:AuthoringRules />
       </composition>
     </rules>
+    <successCriteria override="true">
+      <composition>
+        <lcrit:HasCodeExampleWhereApplicable />
+        <lcrit:CodeBlockFollowedByExplanation />
+        <lcrit:CodeBlockOmitsLiteralCode />
+      </composition>
+    </successCriteria>
     <authorativeSources override="true">
       <composition>
         <source:BlockMLSourceSet />

@@ -1,0 +1,44 @@
+<!--BlockML Documentation — composite rendering-stage rules
+  FQN: org.blockml.bml.bmldocs.lib.rule.RenderingRules-->
+<lrule:RenderingRules xmlns="http://blockml.org/bml"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    workflow:CompositeRule
+  </baseType>
+  <is>
+    The composite rule set for the page-rendering manifestation stage
+  </is>
+  <documentation>
+    Groups the rules A04 rendering Tasks must apply. apply walks subRules in order.
+    Inspect this Block once, then inspect each subRule's name, summary, and
+    instructions. CodeExampleRule fills listings on CodeBlocks the authoring stage
+    already placed; do not add CodeBlocks here.
+  </documentation>
+  <references>
+    <see type="workflow:CompositeRule" relation="Extends" />
+    <see type="lrule:AuthoringRules" relation="SeeAlso" />
+    <see type="lrule:CrossCuttingRules" relation="SeeAlso" />
+  </references>
+  <aggregations>
+    <subRules override="true">
+      <composition>
+        <lrule:RespectScopeRule />
+        <lrule:RespectExclusionsRule />
+        <lrule:MatchDetailLevelRule />
+        <lrule:ConceptBeforeImplementationRule />
+        <lrule:NoSourceDumpRule />
+        <lrule:NoUnrequestedDiagnosticsRule />
+        <lrule:OnePrimaryMessageRule />
+        <lrule:SectionCompletenessRule />
+        <lrule:AvoidContentRepetitionRule />
+        <lrule:CodeExampleRule />
+        <lrule:CodeExplanationRule />
+        <lrule:AudienceVocabularyRule />
+        <lrule:CompleteSentenceRule />
+        <lrule:CodeStyleRule />
+      </composition>
+    </subRules>
+  </aggregations>
+</lrule:RenderingRules>

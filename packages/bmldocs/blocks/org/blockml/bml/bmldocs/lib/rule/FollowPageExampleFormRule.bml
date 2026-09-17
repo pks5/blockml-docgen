@@ -1,0 +1,52 @@
+<!--BlockML Documentation — follow the A03 page example element pattern
+  FQN: org.blockml.bml.bmldocs.lib.rule.FollowPageExampleFormRule-->
+<lrule:FollowPageExampleFormRule xmlns="http://blockml.org/bml"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
+  xmlns:rule="org.blockml.bml.docgen.rule">
+
+  <baseType>
+    rule:StructureRule
+  </baseType>
+  <is>
+    A structure rule requiring the PageExample element pattern, including a CodeBlock pair
+  </is>
+  <documentation>
+    The sector PageExample is the bindable element-pattern template.
+
+    - Section nesting, Lead then explanation
+    - A CodeBlock with role Example
+    - A following Explanation
+    - A closing Navigation section
+
+    Reproduce that pattern on Concept, Guide, and Introduction pages. Do not copy
+    the example's domain claims onto other pages. Index pages stay Navigation trees.
+  </documentation>
+  <references>
+    <see type="rule:StructureRule" relation="Extends">
+      Documentation structure-rule branch.
+    </see>
+    <see type="lrule:CodeExamplePlacementRule" relation="SeeAlso">
+      Obligation to place the CodeBlock element the pattern contains.
+    </see>
+    <see type="lrule:PageSectionCountRule" relation="SeeAlso">
+      Preferred count of substantive sections in that pattern.
+    </see>
+  </references>
+  <properties>
+    <name override="true">
+      <value>Follow page example form</value>
+    </name>
+    <summary override="true">
+      <value>Reproduce PageExample_A03's element pattern, including CodeBlock plus Explanation, not only its section count.</value>
+    </summary>
+    <instructions override="true">
+      <value>Inspect org.blockml.bml.bmldocs.a03_authoring.example.PageExample_A03 as the
+element-pattern template (Section nesting, a Lead, explanations, a CodeBlock with role
+Example and no code property, a following Explanation, a closing Navigation section).
+Reproduce that element pattern on Concept, Guide, and Introduction pages. Do not copy
+its domain claims, titles, or source FQNs onto other pages. Do not reduce the pattern
+to section count alone. Index and menu pages stay Navigation trees and do not copy the
+conceptual body.</value>
+    </instructions>
+  </properties>
+</lrule:FollowPageExampleFormRule>

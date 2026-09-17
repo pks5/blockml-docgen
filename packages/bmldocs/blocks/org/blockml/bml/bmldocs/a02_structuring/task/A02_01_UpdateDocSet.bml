@@ -95,6 +95,10 @@
           - declare aggregations pages and pageGroups so later A02 tasks can
             register TypeReferenceEntity links there
           - leave pages and pageGroups as empty compositions
+          - set globalRules to TypeReferenceEntity links of every subRule
+            on org.blockml.bml.bmldocs.lib.rule.CrossCuttingRules (inspect
+            that composite, then list each child). Those are set-wide
+            rules; do not copy AuthoringRules or RenderingRules here
           - omit homePage and rootPageGroup
           - omit learningPaths
           - omit every other aggregation
