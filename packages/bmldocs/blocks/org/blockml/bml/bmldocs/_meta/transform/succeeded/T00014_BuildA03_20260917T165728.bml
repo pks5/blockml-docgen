@@ -1,14 +1,14 @@
 <!--Workspace program — BuildA03
-  FQN: org.blockml.bml.bmldocs._meta.transform.running.T00014_BuildA03_20260917T165728-->
-<running:T00014_BuildA03_20260917T165728 xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs._meta.transform.succeeded.T00014_BuildA03_20260917T165728-->
+<succeeded:T00014_BuildA03_20260917T165728 xmlns="http://blockml.org/bml"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type"
   xmlns:program="org.blockml.bml.bmldocs.program"
   xmlns:a03_task="org.blockml.bml.bmldocs.a03_authoring.task"
-  xmlns:running="org.blockml.bml.bmldocs._meta.transform.running">
+  xmlns:succeeded="org.blockml.bml.bmldocs._meta.transform.succeeded">
 
   <baseType>
-    workflow:ModelTransformation(running:T00014_BuildA03_20260917T165728.Parameters, type:Text)
+    workflow:ModelTransformation(succeeded:T00014_BuildA03_20260917T165728.Parameters, type:Text)
   </baseType>
   <is>
     A pending ModelTransformation that creates skeletons for all planned pages.
@@ -18,7 +18,7 @@
       <value>A transformation that creates skeletons for all planned pages.</value>
     </description>
     <status override="true" type="workflow:ExecutionStatus">
-      <value>Running</value>
+      <value>Succeeded</value>
     </status>
     <createdAt override="true" type="type:DateTime">
       <value>2026-09-06T00:00:00</value>
@@ -38,6 +38,12 @@
     <baseCommit override="true" type="type:Text">
       <value>96bc3f11e90a1454932e993aea8cd675dc2e4232</value>
     </baseCommit>
+    <completedAt override="true" type="type:DateTime">
+      <value>2026-09-17T17:28:43</value>
+    </completedAt>
+    <duration override="true" type="type:Duration">
+      <value>PT31M15.443S</value>
+    </duration>
   </properties>
   <aggregations>
     <operations override="true">
@@ -111,8 +117,7 @@ Net effect: the diff is 35 files with only deletions — the previously authored
 6. **Validated** — `npx blockml validate --all`: zero errors/warnings in `a03_authoring/data`; the 5 remaining errors are pre-existing, unrelated stale-type references in archived `_meta/transform/succeeded/` history, out of scope.
 7. **Verified success criteria programmatically**: every non-Index page has exactly one `CodeBlock` (Index has zero), every `CodeBlock` is immediately followed by an `Explanation` sibling, and no `CodeBlock` carries a `code` value.
 
-Net effect: 35 files changed, 5401 insertions, 0 deletions — pure `content` additions. Per the `ExecuteTask` contract, I made no changes under `_meta/transform/` and did not commit — the operation envelope owns that.
-</output>
+Net effect: 35 files changed, 5401 insertions, 0 deletions — pure `content` additions. Per the `ExecuteTask` contract, I made no changes under `_meta/transform/` and did not commit — the operation envelope owns that.</output>
           <completedAt>2026-09-17T17:28:42</completedAt>
           <task>
             <a03_task:A03_02_AuthorPages />
@@ -168,4 +173,4 @@ Net effect: 35 files changed, 5401 insertions, 0 deletions — pure `content` ad
       </is>
     </Parameters>
   </subBlocks>
-</running:T00014_BuildA03_20260917T165728>
+</succeeded:T00014_BuildA03_20260917T165728>
