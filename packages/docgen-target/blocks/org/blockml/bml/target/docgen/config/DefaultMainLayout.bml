@@ -14,7 +14,9 @@
   <documentation>
     V1 MainLayout seam. TypeScript WrapMainLayout implements this layout only.
     Future MainLayout variants can be added without changing content dispatch.
-    Chrome includes DocSet title, a flat or grouped page nav, and the page body slot.
+    Chrome: DocSet title, top main menu from direct child PageGroups of
+    rootPageGroup, left side TOC tree for the active main section (nested
+    groups and pages), and the page body slot.
   </documentation>
   <references>
     <see type="dgconfig:DefaultTheme" relation="Requires">

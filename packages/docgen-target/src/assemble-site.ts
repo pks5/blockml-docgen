@@ -8,57 +8,10 @@ import {
   getPropertyText,
   registryHasDoc,
 } from "./bom-walk.js";
-import { docSetHomePage, docSetRootPageGroup, docSetTitle } from "./host.js";
-import { wrapMainLayout, type NavLink } from "./layout/default-main-layout.js";
+import { docSetHomePage, docSetTitle } from "./host.js";
+import { wrapMainLayout } from "./layout/default-main-layout.js";
+import { buildSiteNav } from "./navigation.js";
 import { renderPageBody } from "./render-content.js";
-
-function buildNav(
-  registry: TypeRegistry,
-  docSetFqn: string,
-  pathByPageFqn: Map<string, string>,
-  currentPageFqn: string,
-): NavLink[] {
-  const docSet = registryHasDoc(registry, docSetFqn)!;
-  const rootGroupFqn = docSetRootPageGroup(docSet);
-  const links: NavLink[] = [];
-
-  if (rootGroupFqn) {
-    const group = registryHasDoc(registry, rootGroupFqn);
-    if (group) {
-      const pageFqns = compositionInstanceFqns(getBlockLevelComposition(group, "pages"));
-      for (const fqn of pageFqns) {
-        const page = registryHasDoc(registry, fqn);
-        const href = pathByPageFqn.get(fqn);
-        if (!page || !href) {
-          continue;
-        }
-        links.push({
-          label: getPropertyText(page, "title") ?? page.name,
-          href,
-          current: fqn === currentPageFqn,
-        });
-      }
-    }
-  }
-
-  if (links.length === 0) {
-    const pageFqns = compositionInstanceFqns(getBlockLevelComposition(docSet, "pages"));
-    for (const fqn of pageFqns) {
-      const page = registryHasDoc(registry, fqn);
-      const href = pathByPageFqn.get(fqn);
-      if (!page || !href) {
-        continue;
-      }
-      links.push({
-        label: getPropertyText(page, "title") ?? page.name,
-        href,
-        current: fqn === currentPageFqn,
-      });
-    }
-  }
-
-  return links;
-}
 
 export function assembleSite(
   registry: TypeRegistry,
@@ -104,12 +57,18 @@ export function assembleSite(
       pagePath,
       pathByPageFqn,
     });
-    const nav = buildNav(registry, docSetFqn, pathByPageFqn, pageFqn);
+    const { mainMenu, sideTree } = buildSiteNav(
+      registry,
+      docSetFqn,
+      pathByPageFqn,
+      pageFqn,
+    );
     const html = wrapMainLayout({
       documentTitle: `${pageTitle} — ${siteTitle}`,
       siteTitle,
       pagePath,
-      nav,
+      mainMenu,
+      sideTree,
       bodyInner,
     });
     files.push({ path: pagePath, content: html });

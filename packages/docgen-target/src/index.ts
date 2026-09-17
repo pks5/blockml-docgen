@@ -8,6 +8,7 @@ export {
 export { validatePublishReady } from "./validate-publish-ready.js";
 export { assembleSite } from "./assemble-site.js";
 export { renderPageBody } from "./render-content.js";
+export { buildSiteNav, type SiteNavModel, type NavLink, type NavTreeNode } from "./navigation.js";
 export { wrapMainLayout } from "./layout/default-main-layout.js";
 export { DEFAULT_THEME_CSS } from "./theme/default-theme.js";
 export { resolveHostDocSetFqn, isDocSetType } from "./host.js";

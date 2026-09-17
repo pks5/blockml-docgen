@@ -87,6 +87,8 @@ describe("DocgenTarget render", () => {
     expect(home?.content).toContain("This is the home page");
     expect(home?.content).toContain("<pre><code>");
     expect(home?.content).toContain("First item");
+    expect(home?.content).toContain('class="dg-sidebar"');
+    expect(home?.content).toContain("dg-toc-page");
     expect(about?.content).toContain("About explains");
     expect(about?.content).toContain("Also read");
     expect(index?.content).toContain("This is the home page");
