@@ -7,6 +7,7 @@
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
   xmlns:core="org.blockml.bml.core"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type">
 
@@ -96,5 +97,174 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <rules override="true">
+      <composition>
+        <lrule:CodeExamplePlacementRule />
+        <lrule:CodeExplanationRule />
+      </composition>
+    </rules>
+    <content override="true">
+      <composition>
+        <!--1. Lead-->
+        <dpage:Section heading="One root, one grammar" purpose="Introduce Everything-is-a-Block as BlockML's unifying principle">
+          <content>
+            <dpage:Paragraph purpose="State the Everything-is-a-Block principle">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>BlockML describes everything that belongs to its grammar as Blocks — there
+is one inheritance root, one parser, and one TypeRegistry bootstrap path, and
+branch-specific rules come from the baseType chain rather than from parallel
+ontologies.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>org.blockml.bml.core.Block is the sole inheritance root for every Block definition.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.core.Block" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--2. What counts as a Block-->
+        <dpage:Section heading="What counts as a Block" purpose="Show the breadth of things that share the same Block grammar">
+          <content>
+            <dpage:Paragraph purpose="Enumerate the kinds of things that are Blocks">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Composable domain types, ValueTypes, Languages, Definition meta-model types,
+and documentation blocks are all Blocks — none of them needs a separate grammar
+or a parallel type system.</message>
+            </dpage:Paragraph>
+            <dpage:List purpose="List representative kinds of Blocks under the shared root">
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Every one of these extends org.blockml.bml.core.Block, directly or through a branch.</message>
+              <items>
+                <dpage:ListItem text="Composable domain types" purpose="Name domain Blocks as an example">
+                  <message>Domain-specific building blocks such as a Wall or a StandardBrick.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="ValueTypes" purpose="Name ValueTypes as Blocks, not runtime values">
+                  <message>Type definitions such as Integer or Decimal — Blocks that describe a value's nature, not the value itself.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Languages" purpose="Name Languages as capability implementation contracts">
+                  <message>Implementation language bindings such as TypeScript or OpenSCAD.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Documentation blocks" purpose="Name documentation blocks as Blocks">
+                  <message>Narrative documentation, including this handbook's own pages, are Blocks like any other.</message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+          </content>
+        </dpage:Section>
+        <!--3. Two layers-->
+        <dpage:Section heading="Authoring ontology versus compiler internals" purpose="Distinguish the authored model from free compiler representation">
+          <content>
+            <dpage:Paragraph purpose="Distinguish the authoring ontology from compiler-internal representation">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>In the authoring ontology a Block is a named, definable unit with an FQN and
+a baseType chain; internally the compiler is free to represent that information
+however is convenient, with no mandatory uniform runtime class hierarchy.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>ValueTypes never store data — Properties own all concrete values, while the type itself only describes nature.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.EverythingIsABlock" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Compiler internals such as plain data representations or split indexes.</summary>
+                  <reason>Those are implementation freedom, not part of the authoring mental model.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--4. Minimal example-->
+        <dpage:Section heading="A domain Block and a ValueType, side by side" purpose="Show two different-looking Blocks that share the same root">
+          <content>
+            <dpage:Paragraph purpose="Set up a contrast between a domain Block and a ValueType Block">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>A domain Block and a ValueType look different in what they describe, but
+identically in how they are declared — both are root Block documents with a name,
+a type, and a baseType.</message>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Members, capabilities, and constraints on either Block.</summary>
+                  <reason>The example should isolate the shared identity shape, not member-level detail.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+            <dpage:CodeBlock purpose="Show a domain Block and a ValueType Block using the identical identity shape">
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Two Block documents with different subject matter share the same name/type/baseType skeleton.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Show one composable domain Block and one ValueType Block, each with only its identity fields.</summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Any member declarations on either Block.</summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:CodeBlock>
+            <dpage:Paragraph purpose="Interpret the two Blocks as instances of the same grammar">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Nothing in the identity shape tells them apart as domain Block versus
+ValueType — that distinction lives entirely in the baseType chain each one
+declares, not in a separate syntax.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--5. What to carry forward-->
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcome this page should leave behind">
+          <content>
+            <dpage:Paragraph purpose="State the outcome this page should leave behind">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>After this page, readers should be able to explain why domain types,
+ValueTypes, Languages, and documentation blocks are all Blocks, and expect every
+later page's syntax to build on that one shared grammar.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with defining a Block" purpose="Direct the reader to the next page">
+          <content>
+            <dpage:Navigation purpose="Continue the foundations learning sequence">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Blocks" summary="Learn how to define, name, and reference a Block.">
+                  <target>docs:Blocks</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:EverythingIsABlockPage>

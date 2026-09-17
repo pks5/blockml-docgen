@@ -8,6 +8,7 @@
   xmlns:doc="org.blockml.bml.documentation"
   xmlns:core="org.blockml.bml.core"
   xmlns:type="org.blockml.bml.type"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:workflow="org.blockml.bml.transformer.workflow">
 
   <baseType>
@@ -95,5 +96,150 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <rules override="true">
+      <composition>
+        <lrule:CodeExamplePlacementRule />
+        <lrule:CodeExplanationRule />
+      </composition>
+    </rules>
+    <content override="true">
+      <composition>
+        <!--1. Lead-->
+        <dpage:Section heading="What a type describes versus what a value holds" purpose="State the general principle underlying every ValueType kind">
+          <content>
+            <dpage:Paragraph purpose="State the general type-versus-value distinction">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A ValueType describes the nature of possible values; a Property holds one
+actual value of that nature — the type never stores data, and every concrete
+value lives exclusively on the Property.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.core.ValueType" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--2. ValueType at the top of the hierarchy-->
+        <dpage:Section heading="ValueType at the top of the value hierarchy" purpose="Explain ValueType's assignability role across all four kinds">
+          <content>
+            <dpage:Paragraph purpose="Explain that every PrimitiveType, StructType, EnumType, and ConstantType is assignable to ValueType">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>ValueType sits at the top of the value assignability hierarchy — every
+PrimitiveType, StructType, EnumType, and ConstantType is assignable to it, which
+is why only ValueTypes may appear as a Property type or a Capability
+input or output type.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.core.ValueType" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Collection compatibility and heterogeneous collection rules.</summary>
+                  <reason>Those build on this principle but belong to the multiplicity page.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--3. Optional, never null-->
+        <dpage:Section heading="Every Property is Optional" purpose="Explain the absent-value model as a consequence of the type-versus-value split">
+          <content>
+            <dpage:Paragraph purpose="Explain that a Property either holds a value or holds none, with no null value">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Every Property behaves as Optional — it has a value or it has none — because
+the ValueType only describes what a value could be, and there is no null state
+for a type that never itself stores anything.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.ValueTypeConfiguration" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--4. Minimal example-->
+        <dpage:Section heading="One ValueType, two Properties" purpose="Ground the distinction in two Properties of the same type with different values">
+          <content>
+            <dpage:Paragraph purpose="Set up two properties of the same ValueType holding different states">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Two properties of the same ValueType can hold entirely different states —
+one with a value present, one with none — because the type itself carries
+nothing.</message>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Instance configuration or constraints on either property.</summary>
+                  <reason>The example isolates presence versus absence of a value, not configuration.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+            <dpage:CodeBlock purpose="Show two Integer-typed properties, one with a default value and one without">
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Both properties share the same type Integer; only one of them carries a value.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Show two Integer-typed property declarations, one with a value child and one without.</summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Constraints such as Min or Max on either property.</summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:CodeBlock>
+            <dpage:Paragraph purpose="Interpret the absent value as Optional.empty, not a stored null">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>The property without a value is simply absent — Integer, the type, never
+held anything either way, so there is nothing to represent as null.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--5. What to carry forward-->
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcome this page should leave behind">
+          <content>
+            <dpage:Paragraph purpose="State the outcome this page should leave behind">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>After this page, readers should keep type and value apart when reading any
+member declaration, before generic type parameters extend that same type
+vocabulary on the next page.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with generic types" purpose="Direct the reader to the next page">
+          <content>
+            <dpage:Navigation purpose="Continue the type-system learning sequence">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Generic Types" summary="Learn generic type parameters, binding, and forwarding.">
+                  <target>docs:GenericTypes</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:TypesAndValues>

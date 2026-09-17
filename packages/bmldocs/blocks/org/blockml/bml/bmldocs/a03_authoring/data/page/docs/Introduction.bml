@@ -6,6 +6,7 @@
   xmlns:docs="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type">
 
@@ -88,5 +89,203 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <rules override="true">
+      <composition>
+        <lrule:CodeExamplePlacementRule />
+        <lrule:CodeExplanationRule />
+      </composition>
+    </rules>
+    <content override="true">
+      <composition>
+        <!--1. Lead-->
+        <dpage:Section heading="A universal language for describing Blocks" purpose="Give new readers an immediate mental model of what BlockML is">
+          <content>
+            <dpage:Paragraph purpose="Introduce BlockML as a universal declarative language for semantic Blocks">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>BlockML is a universal declarative language for describing parametric,
+composable semantic units called Blocks, independently of how a domain later
+manifests them.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>BML is the human- and editor-friendly authoring format; the BOM is its canonical, immutable, lossless representation.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>The compiler that reads BML and produces the BOM is domain-agnostic; domain knowledge lives exclusively in render targets.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--2. BML vs BOM-->
+        <dpage:Section heading="BML and BOM" purpose="Establish the authoring-versus-canonical distinction before any syntax follows">
+          <content>
+            <dpage:Paragraph purpose="Explain the relationship between BML and BOM">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>BML (Block Markup Language) is what authors write and edit; the BOM (Block
+Object Model) is the canonical, immutable model the parser produces from it, and the
+two must remain losslessly convertible into one another.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>BML file extension is .bml; XML is currently its sole serialization.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+                <sem:SupportingPoint>
+                  <summary>The parser makes no semantic decisions, which keeps the BML-to-BOM-to-BML round trip lossless.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.Introduction" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Parser internals, TypeScript interfaces, and BOM data-structure detail.</summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--3. How to read this handbook-->
+        <dpage:Section heading="How to read this handbook" purpose="Orient the reader to the handbook's progression before the first concept page">
+          <content>
+            <dpage:Paragraph purpose="Describe the handbook's progression from orientation to reference-level depth">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>The handbook moves from a first orientation, through the foundational
+Block concepts, to the type and member model, and finally to the BML authoring
+format itself — each page building on the mental model the previous one
+established.</message>
+            </dpage:Paragraph>
+            <dpage:List purpose="Summarize the handbook's section groups in reading order">
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Each group deepens the model established by the group before it.</message>
+              <items>
+                <dpage:ListItem text="Getting Started" purpose="Name the current group">
+                  <message>What BlockML is and why it exists.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Foundations" purpose="Name the next group">
+                  <message>Blocks, definitions and instances, inheritance, and identity.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="The Type System and Members" purpose="Name the following groups">
+                  <message>The four ValueType kinds and the Property, Aggregation, Association, and Capability member model.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="BML: The Authoring Format" purpose="Name the final group">
+                  <message>The authoring format itself, once every concept it expresses is known.</message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+          </content>
+        </dpage:Section>
+        <!--4. Minimal example-->
+        <dpage:Section heading="A first look at BML" purpose="Ground the conceptual explanation in a small piece of BML">
+          <content>
+            <dpage:Paragraph purpose="Introduce the smallest visible structure of a BML document">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Every BML document opens with a root Block that states its own name, its
+type identity, and the type it extends, before any documentation or members
+follow.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Identity comes first in a Block document — name, type, and baseType before is and documentation.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.core.Block" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Properties, aggregations, capabilities, and validation.</summary>
+                  <reason>The example should show only the minimal document skeleton.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+            <dpage:CodeBlock purpose="Illustrate the minimal shape of a BML document">
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>A minimal BML document names its Block, states its type, and declares what it extends, and nothing more.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Show a root Block element carrying name, type, and baseType only.</summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Documentation fields, members, and any deeper structure.</summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:CodeBlock>
+            <dpage:Paragraph purpose="Interpret the minimal document for a first-time reader">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Reading the example, the document identity is fully stated before anything
+else is added — this is the pattern every later page in the handbook builds on.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--5. What to carry forward-->
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcomes this introduction should leave behind">
+          <content>
+            <dpage:Paragraph purpose="State the mental-model outcomes readers should retain">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>After this page, readers should be able to say what BlockML is for and keep
+BML, the authoring format, distinct from BOM, its canonical representation.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with the core use cases" purpose="Direct the reader to the next page">
+          <content>
+            <dpage:Navigation purpose="Continue the getting-started learning sequence">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Core Use Cases" summary="Learn the three problems BlockML is designed to solve.">
+                  <target>docs:CoreUseCases</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:Introduction>

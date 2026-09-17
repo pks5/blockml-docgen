@@ -7,6 +7,7 @@
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
   xmlns:type="org.blockml.bml.type"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:workflow="org.blockml.bml.transformer.workflow">
 
   <baseType>
@@ -94,5 +95,163 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <rules override="true">
+      <composition>
+        <lrule:CodeExamplePlacementRule />
+        <lrule:CodeExplanationRule />
+      </composition>
+    </rules>
+    <content override="true">
+      <composition>
+        <!--1. Lead-->
+        <dpage:Section heading="Shape described by ordinary properties" purpose="Introduce StructType as the composite named-field branch">
+          <content>
+            <dpage:Paragraph purpose="State that StructType describes composite values via declared properties">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>StructType is the abstract branch for composite value objects — its
+properties define the value's data layout, with no special struct syntax beyond
+ordinary Property declarations.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.type.StructType" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--2. Named field access and order-->
+        <dpage:Section heading="Named access and significant field order" purpose="Explain how a struct value's fields are read and why their order matters">
+          <content>
+            <dpage:Paragraph purpose="Explain that struct property access is exclusively by name">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A struct field is read exclusively by name, such as size.x — numeric index
+access on a StructType is not valid, because a StructType is a typed object with
+named properties only.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.type.StructType" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+            <dpage:Paragraph purpose="Explain that field declaration order matters for compatibility">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Field declaration order remains significant for capability call mapping and
+for compatibility across versions — existing field order must not change, and new
+fields may only be appended at the end.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.type.StructType" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>FunctionMapping positional call syntax in depth.</summary>
+                  <reason>That mapping mechanism is a separate, more technical topic.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--3. EmptyStruct-->
+        <dpage:Section heading="EmptyStruct — the named counterpart of {}" purpose="Explain EmptyStruct as the instantiable zero-field StructType">
+          <content>
+            <dpage:Paragraph purpose="Explain EmptyStruct as a concrete, instantiable StructType with no fields">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>type:EmptyStruct is a named, reusable StructType with no fields — usable
+anywhere a StructType is required and no fields are needed, and not itself
+abstract.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.type.EmptyStruct" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--4. Minimal example-->
+        <dpage:Section heading="Declaring and configuring a struct value" purpose="Ground the composite-field model in one small StructType">
+          <content>
+            <dpage:Paragraph purpose="Set up a small StructType Block with two named fields">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>A StructType Block declares its fields as ordinary properties, and a Property
+of that type is configured with a named object literal.</message>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Generic type parameters on the StructType.</summary>
+                  <reason>The example isolates two concrete fields to keep the shape simple.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+            <dpage:CodeBlock purpose="Show a two-field StructType Block and a Property configured with matching values">
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>The StructType declares x and y as properties; a Property of that type is configured with a matching object literal.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Show a StructType Block with two Integer properties, then a Property of that type configured by name.</summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Positional configuration syntax.</summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:CodeBlock>
+            <dpage:Paragraph purpose="Interpret the field order and named access shown in the example">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>The declaration order of x then y in the StructType is what a positional
+configuration would rely on, while the named configuration shown here reads each
+field by its declared name regardless of order.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--5. What to carry forward-->
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcome this page should leave behind">
+          <content>
+            <dpage:Paragraph purpose="State the outcome this page should leave behind">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>After this page, readers should be able to define a StructType and configure
+a struct value, before contrasting it with the closed-set EnumType branch next.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with enum types" purpose="Direct the reader to the next page">
+          <content>
+            <dpage:Navigation purpose="Continue the type-system learning sequence">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Enum Types" summary="Learn closed sets of named values.">
+                  <target>docs:EnumTypes</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:StructTypes>

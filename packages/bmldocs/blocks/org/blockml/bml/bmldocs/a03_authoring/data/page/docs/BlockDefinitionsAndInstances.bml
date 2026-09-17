@@ -7,6 +7,7 @@
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
   xmlns:def="org.blockml.bml.definition"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type">
 
@@ -94,5 +95,174 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <rules override="true">
+      <composition>
+        <lrule:CodeExamplePlacementRule />
+        <lrule:CodeExplanationRule />
+      </composition>
+    </rules>
+    <content override="true">
+      <composition>
+        <!--1. Lead-->
+        <dpage:Section heading="Class and object, semantically" purpose="Introduce the definition-versus-instance distinction as an analogy, not a runtime mandate">
+          <content>
+            <dpage:Paragraph purpose="State the closest familiar model for a Block versus a Block Instance">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>The closest familiar model is that a Block is a declarative semantic Class,
+and a Block Instance is an Object — a semantic analogy, not a mandate that the
+compiler must represent them as runtime objects.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>The compiler may represent both definitions and instances as plain data; the parser nonetheless distinguishes block documents from composition children.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--2. Two contexts-->
+        <dpage:Section heading="Two contexts, never mixed" purpose="Contrast definition context with instance context">
+          <content>
+            <dpage:Paragraph purpose="Describe a Block definition as shape and behaviour with no runtime address">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A Block definition is a .bml file describing shape and behaviour — its FQN,
+members, and composition schema — with no runtime and no address of its own.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+            <dpage:Paragraph purpose="Describe a Block instance as one concrete occurrence identified by bml:id">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A Block instance is one concrete occurrence inside composition, identified
+by bml:id rather than by its type FQN, carrying its own member values.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Nested-path composition syntax using :: for deeper instance addressing.</summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--3. The most common confusion-->
+        <dpage:Section heading="The most common authoring confusion" purpose="Warn against wrapping instance payloads in definition-only fields">
+          <content>
+            <dpage:Paragraph purpose="Warn against wrapping instance Property or Aggregation payloads in definition fields">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>value and composition belong only to member declarations on a Block
+definition; on a Block instance the Property element is already the value and the
+Aggregation element already holds its children, so wrapping an instance payload in
+either one is a category error.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>A member actually named value, such as on PrimitiveEntity, is the one exception — that is ordinary instance syntax, not a definition wrapper.</summary>
+                  <authoritativeSources>
+                    <workflow:AuthorativeSourceSet>
+                      <includedTypes>
+                        <type:TypeSelectorEntity value="org.blockml.bml.documentation.BlockAndInstance" />
+                      </includedTypes>
+                    </workflow:AuthorativeSourceSet>
+                  </authoritativeSources>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--4. Minimal example-->
+        <dpage:Section heading="A definition and one instance of it" purpose="Ground the analogy in a small definition and a matching instance">
+          <content>
+            <dpage:Paragraph purpose="Set up a definition alongside a single instance of it">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Placing a Block's definition beside one instance of it makes the class/object
+analogy concrete: the definition declares a property, and the instance supplies a
+value for it.</message>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Inheritance, contracts, and aggregation members.</summary>
+                  <reason>The example isolates one Property to keep the definition/instance contrast clear.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+            <dpage:CodeBlock purpose="Show a Block definition with one Property alongside an instance that sets it">
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>The definition declares a property; the instance supplies its value directly, with no value wrapper.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Show the PropertyDefinition inside properties on the definition, then the same property as an attribute on the instance.</summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>A value wrapper around the instance's property.</summary>
+                  <reason>Demonstrating the incorrect form is out of scope for this teaching example.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:CodeBlock>
+            <dpage:Paragraph purpose="Interpret the definition and instance side by side">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>The definition's property declaration exists once; the instance's attribute
+supplies a concrete value for that one occurrence — exactly the class-declares,
+object-holds relationship the analogy describes.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--5. What to carry forward-->
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcome this page should leave behind">
+          <content>
+            <dpage:Paragraph purpose="State the outcome this page should leave behind">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>After this page, readers should be able to tell a Block definition from a
+Block instance in any piece of BML, and keep definition-only fields like value out
+of instance payloads.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with inheritance" purpose="Direct the reader to the next page">
+          <content>
+            <dpage:Navigation purpose="Continue the foundations learning sequence">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Inheritance" summary="Learn specialization via baseType.">
+                  <target>docs:Inheritance</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:BlockDefinitionsAndInstances>

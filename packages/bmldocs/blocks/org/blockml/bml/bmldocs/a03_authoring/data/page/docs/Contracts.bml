@@ -6,6 +6,7 @@
   xmlns:docs="org.blockml.bml.bmldocs.a03_authoring.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type">
 
@@ -93,5 +94,164 @@
         </sem:SupportingPoint>
       </composition>
     </supportingPoints>
+    <rules override="true">
+      <composition>
+        <lrule:CodeExamplePlacementRule />
+        <lrule:CodeExplanationRule />
+      </composition>
+    </rules>
+    <content override="true">
+      <composition>
+        <!--1. Lead-->
+        <dpage:Section heading="Reusable member fragments" purpose="Introduce contracts as a second, complementary reuse mechanism">
+          <content>
+            <dpage:Paragraph purpose="Introduce contracts as composable partial definitions">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A Block may declare contracts at root level to compose one or more contract
+Blocks — reusable partial definitions whose member fragments merge into the
+Block's effective definition alongside its baseType chain.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.ContractsModel" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--2. Contracts versus baseType-->
+        <dpage:Section heading="Contracts versus baseType" purpose="Contrast the two reuse mechanisms and when to reach for each">
+          <content>
+            <dpage:Paragraph purpose="Contrast baseType's taxonomy role with contracts' cross-cutting role">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>baseType establishes framework taxonomy and branch membership through single
+inheritance, while contracts mix in member fragments across Blocks that share no
+common baseType ancestor.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.ContractsModel" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Contracts are declared only on the document root, never on nested Sub-Blocks.</summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+            </dpage:Paragraph>
+            <dpage:Paragraph purpose="State the merge order between baseType, contracts, and local declarations">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>The effective definition merges the baseType chain first, then contracts in
+declaration order, then local Block declarations — later contracts override
+earlier ones, and the Block itself overrides every contract.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.ContractsModel" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--3. Completing a partial contract member-->
+        <dpage:Section heading="Completing a partial contract member" purpose="Explain how a concrete Block finishes an incomplete contract member">
+          <content>
+            <dpage:Paragraph purpose="Explain that contract members may be partial and require override to complete">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A contract may declare an incomplete member — for example an identifier
+property without a type — and the concrete Block completes it with
+override="true", the same rule used to refine an inherited baseType member.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.ContractsModel" />
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.PartialMemberOverrides" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--4. Minimal example-->
+        <dpage:Section heading="Mixing in a contract" purpose="Ground contract composition in a small worked example">
+          <content>
+            <dpage:Paragraph purpose="Set up a Block that mixes in one contract alongside its baseType">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>A Block can declare both a baseType and a contracts list, mixing in a member
+fragment that its baseType chain does not otherwise provide.</message>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Multiple contracts and conflict resolution across them.</summary>
+                  <reason>The example isolates one contract mixed into one Block.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+            <dpage:CodeBlock purpose="Show a Block declaring baseType and one contract that supplies an extra member">
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>The Block declares baseType as usual and lists one contract in contracts.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Show baseType and a single contracts entry as a direct Block reference.</summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Local override of the contract's members.</summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:CodeBlock>
+            <dpage:Paragraph purpose="Interpret the contract entry in terms of the effective definition">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>The contract entry in the example contributes its member fragment to the
+Block's effective definition after the baseType chain — the Block gains that
+fragment without needing a common ancestor with the contract.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--5. What to carry forward-->
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcome this page should leave behind">
+          <content>
+            <dpage:Paragraph purpose="State the outcome this page should leave behind">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>After this page, readers should be able to choose baseType or a contract
+when they need to reuse a member fragment, before moving on to how Blocks are
+named and located.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with namespaces and FQNs" purpose="Direct the reader to the next page">
+          <content>
+            <dpage:Navigation purpose="Continue the foundations learning sequence">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Namespaces and Fully Qualified Names" summary="Learn how packages, Libraries, and FQNs relate.">
+                  <target>docs:NamespacesAndFullyQualifiedNames</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
   </aggregations>
 </docs:Contracts>
