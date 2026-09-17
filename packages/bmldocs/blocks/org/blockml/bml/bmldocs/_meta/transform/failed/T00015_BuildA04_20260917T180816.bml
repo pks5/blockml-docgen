@@ -1,14 +1,14 @@
 <!--Workspace program — BuildA04
-  FQN: org.blockml.bml.bmldocs._meta.transform.running.T00015_BuildA04_20260917T180816-->
-<running:T00015_BuildA04_20260917T180816 xmlns="http://blockml.org/bml"
+  FQN: org.blockml.bml.bmldocs._meta.transform.failed.T00015_BuildA04_20260917T180816-->
+<failed:T00015_BuildA04_20260917T180816 xmlns="http://blockml.org/bml"
   xmlns:workflow="org.blockml.bml.transformer.workflow"
   xmlns:type="org.blockml.bml.type"
   xmlns:program="org.blockml.bml.bmldocs.program"
   xmlns:a04_task="org.blockml.bml.bmldocs.a04_rendering.task"
-  xmlns:running="org.blockml.bml.bmldocs._meta.transform.running">
+  xmlns:failed="org.blockml.bml.bmldocs._meta.transform.failed">
 
   <baseType>
-    workflow:ModelTransformation(running:T00015_BuildA04_20260917T180816.Parameters, type:Text)
+    workflow:ModelTransformation(failed:T00015_BuildA04_20260917T180816.Parameters, type:Text)
   </baseType>
   <is>
     A pending ModelTransformation that builds the A04 rendering data
@@ -18,7 +18,7 @@
       <value>A transformation that imports A03 data into A04 and renders the pages.</value>
     </description>
     <status override="true" type="workflow:ExecutionStatus">
-      <value>Running</value>
+      <value>Failed</value>
     </status>
     <createdAt override="true" type="type:DateTime">
       <value>2026-09-06T00:00:00</value>
@@ -38,6 +38,12 @@
     <baseCommit override="true" type="type:Text">
       <value>3b6fb4b5898a8a2035b748e9a6ae3373c717f5dd</value>
     </baseCommit>
+    <completedAt override="true" type="type:DateTime">
+      <value>2026-09-17T18:27:38</value>
+    </completedAt>
+    <duration override="true" type="type:Duration">
+      <value>PT19M22.733S</value>
+    </duration>
   </properties>
   <aggregations>
     <operations override="true">
@@ -159,4 +165,4 @@ Nothing was committed. `A04_02_RenderPages` (next step) is what turns these copi
       </is>
     </Parameters>
   </subBlocks>
-</running:T00015_BuildA04_20260917T180816>
+</failed:T00015_BuildA04_20260917T180816>
