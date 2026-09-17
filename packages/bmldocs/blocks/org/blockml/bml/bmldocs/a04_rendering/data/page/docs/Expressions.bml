@@ -2,11 +2,15 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.Expressions-->
 <docs:Expressions xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
   xmlns:mapping="org.blockml.bml.mapping"
-  xmlns:service="org.blockml.bml.service">
+  xmlns:service="org.blockml.bml.service"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
 
   <baseType>
     dpage:DocPage
@@ -34,6 +38,9 @@
     <title override="true">
       <value>Expressions</value>
     </title>
+    <purpose override="true">
+      <value>Teach the expression language as the mechanism for dynamic member values, so readers can recognize an expression and know its evaluation context, including Text interpolation.</value>
+    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -42,59 +49,207 @@
     </pageType>
   </properties>
   <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.Expressions" />
+            <type:TypeSelectorEntity value="org.blockml.bml.mapping.FunctionMapping" />
+            <type:TypeSelectorEntity value="org.blockml.bml.service.Math" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach the expression language as the mechanism for dynamic member values.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can recognize an expression and knows its evaluation context.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>The BlockML expression language, dollar-brace expressions, their evaluation context, and interpolation holes inside Text values.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Capability implementation language tagging depth.</summary>
+          <reason>Embedded expressions inside implementation bodies are a separate, more technical topic.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>Text properties may hold restricted expression holes as interpolation, distinct from a whole dollar-brace expression value.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+    <rules override="true">
+      <composition>
+        <lrule:CodeExamplePlacementRule />
+        <lrule:CodeExplanationRule />
+      </composition>
+    </rules>
     <content override="true">
       <composition>
-        <dpage:Section heading="Dynamic values inside dollar-brace delimiters">
+        <!--1. Lead-->
+        <dpage:Section heading="Extended JSON inside dollar-brace delimiters" purpose="Introduce the expression language as the mechanism for dynamic values">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text text="The BML expression language appears inside \${ } delimiters wherever a Block member's value needs to be dynamic — derived, computed, or bound to a service." />
-              </content>
+            <dpage:Paragraph purpose="Introduce the BML expression language as extended JSON inside dollar-brace delimiters">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>The BML expression language is extended JSON written inside dollar-brace
+delimiters, appearing wherever a member value needs to be dynamic — derived,
+computed, or bound to a service.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.Expressions" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="#this — one lookup everywhere">
+        <!--2. What an expression can reference-->
+        <dpage:Section heading="What an expression can reference" purpose="Explain property access, #this, and built-in service calls">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text text="#this refers to the outer Block instance and is the single lookup used the same way inside a whole expression value and inside an interpolation hole." />
-              </content>
+            <dpage:Paragraph purpose="Explain #this as the one property-access lookup available everywhere">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>#this is the magic bean of the outer Block instance and the one lookup that
+works everywhere — a bare property name such as size is shorthand for
+#this.size, and the binding does not change inside nested compositions.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.Expressions" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+            <dpage:Paragraph purpose="Explain built-in service calls as one of the four additions beyond plain JSON">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Built-in calls such as #math.min(a, b) reach a Capability on a built-in
+service Block — one of the four additions the expression language layers on top
+of an ordinary JSON subset.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.service.Math" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Bean calls, model bindings, and their scope rules.</summary>
+                  <reason>Those additions are more advanced and not needed to recognize an expression.</reason>
+                </sem:Exclusion>
+              </exclusions>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Text interpolation">
+        <!--3. Text interpolation-->
+        <dpage:Section heading="Interpolation holes inside Text" purpose="Contrast a whole expression value with restricted holes inside running text">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text text="A Text property may hold restricted \${ } holes as interpolation inside running text, which is classified differently from a member value that is itself a single, whole expression." />
-              </content>
+            <dpage:Paragraph purpose="Contrast a whole dollar-brace expression value with restricted interpolation holes on Text">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A member value that is entirely one dollar-brace expression classifies as
+a full expression, while a Text value that only contains one or more dollar-brace
+holes among ordinary characters classifies as interpolated text under a
+restricted grammar profile — distinct classifications on the same delimiter
+syntax.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.Expressions" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Built-in calls">
+        <!--4. Minimal example-->
+        <dpage:Section heading="A property referencing another property" purpose="Ground #this and property access in one small expression">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text text="Built-in calls such as the numeric #math.* service supply ready-made utilities, for example minimum, maximum, and rounding, that can be used directly inside an expression." />
-              </content>
+            <dpage:Paragraph purpose="Set up a Property whose value expression reads another property on the same instance">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>A Property's value can be a whole expression that reads another property
+on the same Block instance, written as a bare property name inside dollar-brace
+delimiters.</message>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Built-in service calls and Text interpolation.</summary>
+                  <reason>The example isolates plain property access to keep the expression legible.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+            <dpage:CodeBlock purpose="Show a property whose value expression reads a sibling property by name">
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>One property's value is a literal; a second property's value is a whole expression reading the first by name.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Show a width property with a literal value and a second property whose value expression references width.</summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Built-in calls or Text interpolation holes.</summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:CodeBlock>
+            <dpage:Paragraph purpose="Interpret the expression as an implicit #this lookup on the enclosing instance">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>The bare property name in the second property's expression is shorthand
+for #this.width — the same enclosing Block instance the first property belongs
+to.</message>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="What to carry into the next pages">
+        <!--5. What to carry forward-->
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcome this page should leave behind">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text text="Readers should now be able to recognize an expression and know its evaluation context, including Text interpolation." />
-              </content>
+            <dpage:Paragraph purpose="State the outcome this page should leave behind">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>After this page, readers should be able to recognize an expression and know
+its evaluation context, before Value Configuration shows the related but
+orthogonal curly-brace instance configuration syntax.</message>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Continue with value configuration">
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with value configuration" purpose="Direct the reader to the next page">
           <content>
-            <dpage:Navigation>
+            <dpage:Navigation purpose="Continue the behaviour-and-values learning sequence">
               <title>Next</title>
               <items>
-                <dpage:NavigationItem label="Value Configuration" summary="Learn curly-brace ValueType instance configuration.">
+                <dpage:NavigationItem label="Value Configuration" summary="Learn how to configure ValueType instances.">
                   <target>docs:ValueConfiguration</target>
                 </dpage:NavigationItem>
               </items>

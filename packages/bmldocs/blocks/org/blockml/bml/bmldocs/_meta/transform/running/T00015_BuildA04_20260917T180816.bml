@@ -42,12 +42,66 @@
   <aggregations>
     <operations override="true">
       <composition>
-        <workflow:AgenticOperation name="Copy A03 data into A04" status="Running" captureOutput="true">
+        <workflow:AgenticOperation name="Copy A03 data into A04" status="Succeeded" captureOutput="true">
           <startedAt>2026-09-17T18:08:16</startedAt>
           <baseCommit>4a952eb3969396463d0d8d8a4f2eaabe949c3f9a</baseCommit>
+          <output>The `_meta/transform/running/` directory is write-protected from this session — consistent with the established pattern where the agent executes the task's actual instructions but leaves the transform-record bookkeeping (flipping operation status, capturing output, committing) to the surrounding orchestration. That matches what the prior A04 build's own report explicitly noted. So my work here is done at the data level; I won't force that edit.
+
+## Summary
+
+Task instructions for `A04_01_CopyData` executed:
+
+1. **Wiped** the live `a04_rendering/data` tree (45 files) and removed it entirely.
+2. **Copied** the full `a03_authoring/data` tree back in — same 45 files (1 DocSet, 9 PageGroups, 35 Pages), 1:1 path parity confirmed.
+3. **Remapped** every file: package `a03_authoring.data` → `a04_rendering.data`, xmlns prefixes `a03data`/`a03pgroup` → `a04data`/`a04pgroup`, `BmlDocSet_A03` → `BmlDocSet_A04` (incl. file rename), and stray `a03`/`A03` prose tokens → `a04`/`A04`. The one special case — `BmlDocSet_A04.bml`'s provenance sentence naming A03's own tasks (`A03_01_CopyData`/`A03_02_AuthorPages`) — was hand-rewritten to `A04_01_CopyData`/`A04_02_RenderPages`, matching the established convention (verified against T00013's prior copy: my rewritten sentence came out byte-identical to the version already committed).
+4. **Confirmed** no leftover `a03`/`A03`/cross-sector references remain (grep-verified, aside from the intentional &quot;copied from A03 by&quot; provenance wording), and pages/pageGroups/homePage/rootPageGroup lists resolve only to A04 Blocks.
+5. **Catalog**: `Library.bml` already exports every current A04 data Block — no changes needed.
+
+A03's data changed since the last A04 build (T00014_BuildA03 re-authored page content), so this re-copy replaced the previously *rendered* A04 pages with fresh unrendered copies: **35 page files** modified in `git status`; the DocSet and all 9 PageGroup files came out byte-identical to before. `npx blockml validate --all` shows no new errors in `a04_rendering/data` — the 5 pre-existing errors are unrelated, confined to frozen historical `_meta/transform/succeeded` snapshot files.
+
+Nothing was committed. `A04_02_RenderPages` (next step) is what turns these copied pages back into rendered content.
+</output>
+          <completedAt>2026-09-17T18:11:47</completedAt>
           <task>
             <a04_task:A04_01_CopyData />
           </task>
+          <changedFiles>
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Aggregations.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Associations.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/BlockDefinitionsAndInstances.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Blocks.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Bml.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/BmlNamespaces.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Capabilities.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Composition.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Constraints.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Contracts.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/CoreUseCases.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/DocumentingBlocks.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/EmbeddedBlocks.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/EnumTypes.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/EverythingIsABlockPage.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Expressions.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/GenericTypes.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/IdentifiersAndReferences.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Inheritance.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Introduction.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/MemberInheritanceAndOverrides.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Members.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/MultiplicityAndCollections.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/NamespacesAndFullyQualifiedNames.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/PrimitiveEntities.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/PrimitiveTypes.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Properties.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/StructTypes.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/SubBlocks.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Suggestions.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/TableOfContents.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/TypeSystem.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/TypesAndValues.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/ValueConfiguration.bml" />
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/page/docs/Visibility.bml" />
+          </changedFiles>
         </workflow:AgenticOperation>
         <workflow:AgenticOperation name="Render A04 pages" status="Pending" captureOutput="true">
           <task>

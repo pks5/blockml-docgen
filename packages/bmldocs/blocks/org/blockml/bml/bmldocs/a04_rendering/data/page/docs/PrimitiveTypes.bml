@@ -2,10 +2,13 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.PrimitiveTypes-->
 <docs:PrimitiveTypes xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
-  xmlns:type="org.blockml.bml.type">
+  xmlns:type="org.blockml.bml.type"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
 
   <baseType>
     dpage:DocPage
@@ -31,6 +34,9 @@
     <title override="true">
       <value>Primitive Types</value>
     </title>
+    <purpose override="true">
+      <value>Teach that PrimitiveTypes describe atomic scalar semantics with no stored values on the type itself, so readers can list the built-in primitive branches before deeper parsing detail.</value>
+    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -39,53 +45,208 @@
     </pageType>
   </properties>
   <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.type.PrimitiveType" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeSystemOverview" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach that PrimitiveTypes describe atomic scalar semantics only, with no stored values on the type itself.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can list the built-in primitive branches.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Atomic scalar ValueTypes, primitive value semantics, and the built-in primitive branches such as Boolean, Integer, Decimal, Text, and Date.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Parsing mechanics or PrimitiveEntity wrapping.</summary>
+          <reason>Those belong to later, more technical pages.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>Values live in Properties, never in the ValueType itself.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+    <rules override="true">
+      <composition>
+        <lrule:CodeExamplePlacementRule />
+        <lrule:CodeExplanationRule />
+      </composition>
+    </rules>
     <content override="true">
       <composition>
-        <dpage:Section heading="Atomic scalar semantics">
+        <!--1. Lead-->
+        <dpage:Section heading="Atomic scalar semantics" purpose="Introduce PrimitiveType as the branch for atomic scalar meaning">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text text="PrimitiveType is the abstract branch for built-in scalar ValueTypes — it describes semantics only and never stores concrete values on the type itself." />
-              </content>
+            <dpage:Paragraph purpose="State that PrimitiveTypes describe atomic scalar semantics only">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>PrimitiveType is the abstract branch for built-in scalar ValueTypes —
+PrimitiveTypes describe semantics only and never store concrete values
+themselves.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.type.PrimitiveType" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="The built-in primitive branches">
+        <!--2. The built-in branches-->
+        <dpage:Section heading="The built-in primitive branches" purpose="Name the sub-branches under PrimitiveType">
           <content>
-            <dpage:List>
+            <dpage:Paragraph purpose="Introduce the numeric, textual, temporal, and standalone primitive branches">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>PrimitiveType organizes into a numeric branch, a textual branch, a temporal
+branch, and two standalone branches for Boolean and Duration that belong to
+neither.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.type.PrimitiveType" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+            <dpage:List purpose="List the primitive branches with a representative member each">
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Every built-in primitive belongs to exactly one of these branches.</message>
               <items>
-                <dpage:ListItem text="Numeric — the numeric branch covers Integer, Decimal, and Float." />
-                <dpage:ListItem text="Textual — the textual branch covers Text and text-based specializations." />
-                <dpage:ListItem text="Temporal — the temporal branch covers Date, Time, and DateTime as calendar or clock positions." />
-                <dpage:ListItem text="Boolean and Duration — Boolean and Duration are each their own branch; Duration is an elapsed-time magnitude, not a Temporal subtype." />
+                <dpage:ListItem text="Number" purpose="Name the numeric branch">
+                  <message>Integer, Decimal, and Float.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Text" purpose="Name the textual branch">
+                  <message>Text and its subtypes such as Color, URL, and Version.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Temporal" purpose="Name the temporal branch">
+                  <message>Date, Time, and DateTime.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="Boolean and Duration" purpose="Name the two standalone branches">
+                  <message>Boolean is neither textual nor numeric; Duration is a sibling of Temporal, not one of its subtypes.</message>
+                </dpage:ListItem>
               </items>
             </dpage:List>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Values live in Properties">
+        <!--3. No stored values on the type-->
+        <dpage:Section heading="Values live only in Properties" purpose="Prevent the common mistake of writing a value on a PrimitiveType itself">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text text="A PrimitiveType cannot itself carry a value — all values are stored exclusively in the Properties that reference it." />
-              </content>
+            <dpage:Paragraph purpose="State that a PrimitiveType never carries a value; only a Property does">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A PrimitiveType such as Integer describes what a value may be, but never
+carries one — an authored value belongs exclusively to a Property whose type is
+that PrimitiveType.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.type.PrimitiveType" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>parseValue mechanics and diagnostic behavior.</summary>
+                  <reason>Parsing detail belongs to a more technical, reference-level treatment.</reason>
+                </sem:Exclusion>
+              </exclusions>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="What to carry into the next pages">
+        <!--4. Minimal example-->
+        <dpage:Section heading="A property with a primitive value" purpose="Ground the branch model in one correctly authored value">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text text="Readers should now be able to list the built-in primitive branches." />
-              </content>
+            <dpage:Paragraph purpose="Set up a Property typed with a numeric primitive holding a default value">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>A Property typed Integer carries its default value in the Property's own
+value field — never as an attribute on the Integer type itself.</message>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Instance configuration such as min or max bounds.</summary>
+                  <reason>The example isolates the correct place to put a value, not configuration.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+            <dpage:CodeBlock purpose="Show a Property declaration typed Integer with a default value">
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>The property declaration carries type Integer and a value — the type itself carries neither.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Show a property element with type Integer and a value child.</summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>An invalid value directly on the type element.</summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:CodeBlock>
+            <dpage:Paragraph purpose="Interpret where the value lives relative to the type">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>In the example, Integer only names the branch; the concrete number is
+carried entirely by the Property's value field, matching the rule that
+PrimitiveTypes never store values themselves.</message>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Continue with struct types">
+        <!--5. What to carry forward-->
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcome this page should leave behind">
           <content>
-            <dpage:Navigation>
+            <dpage:Paragraph purpose="State the outcome this page should leave behind">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>After this page, readers should be able to list the built-in primitive
+branches and place a value correctly on the owning Property, before moving to the
+composite StructType branch.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with struct types" purpose="Direct the reader to the next page">
+          <content>
+            <dpage:Navigation purpose="Continue the type-system learning sequence">
               <title>Next</title>
               <items>
-                <dpage:NavigationItem label="Struct Types" summary="Learn the composite named-field ValueType kind.">
+                <dpage:NavigationItem label="Struct Types" summary="Learn composite named-field ValueTypes.">
                   <target>docs:StructTypes</target>
                 </dpage:NavigationItem>
               </items>

@@ -2,10 +2,14 @@
 
   FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.GenericTypes-->
 <docs:GenericTypes xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
   xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
   xmlns:dpage="org.blockml.bml.docgen.page"
   xmlns:doc="org.blockml.bml.documentation"
-  xmlns:def="org.blockml.bml.definition">
+  xmlns:def="org.blockml.bml.definition"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
 
   <baseType>
     dpage:DocPage
@@ -34,6 +38,9 @@
     <title override="true">
       <value>Generic Types</value>
     </title>
+    <purpose override="true">
+      <value>Teach generic parameter declaration and the rule that every base parameter must be bound to a concrete type or forwarded, so readers can declare, bind, or forward a generic parameter correctly.</value>
+    </purpose>
     <detailLevel override="true">
       <value>org.blockml.bml.docgen.level.Introductory</value>
     </detailLevel>
@@ -42,59 +49,190 @@
     </pageType>
   </properties>
   <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.GenericsModel" />
+            <type:TypeSelectorEntity value="org.blockml.bml.definition.GenericTypeDefinition" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeExpressions" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach generic parameter declaration and the rule that every base parameter must be bound or forwarded.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can declare, bind, or forward a generic parameter.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Generic type parameters, declaring genericTypes, concrete application, and binding versus forwarding when a generic Block is used as baseType.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Constraint generic binding depth.</summary>
+          <reason>Constraint generics bind automatically from context and are covered on the Constraints page.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>Resolution runs during inheritance: bound parameters are substituted throughout the inherited definition, so every parameter must ground to a concrete type.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+    <rules override="true">
+      <composition>
+        <lrule:CodeExamplePlacementRule />
+        <lrule:CodeExplanationRule />
+      </composition>
+    </rules>
     <content override="true">
       <composition>
-        <dpage:Section heading="Parameters belong to their declaring Block">
+        <!--1. Lead-->
+        <dpage:Section heading="Parameters that belong to their declaring Block" purpose="Introduce generic type parameters and the rule that they are never implicitly inherited">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text text="Generic parameters belong exclusively to the Block that declares them; a derived Block never inherits them implicitly." />
-              </content>
+            <dpage:Paragraph purpose="State that generic parameters belong exclusively to their declaring Block">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Generic parameters belong exclusively to the Block that declares them — never
+inherited implicitly — so a derived Block using a generic Block as baseType must
+account for every one of its parameters explicitly.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.GenericsModel" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Declaring a parameter">
+        <!--2. Declaring a parameter-->
+        <dpage:Section heading="Declaring a generic parameter" purpose="Explain genericTypes declaration and the optional baseType constraint">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text text="A generic parameter is declared inside genericTypes as an element whose local name becomes the parameter's identifier, carrying a baseType constraint that every concrete type argument supplied for it must satisfy." />
-              </content>
+            <dpage:Paragraph purpose="Explain how a generic parameter is declared with a name and a baseType constraint">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>A generic parameter is declared inside genericTypes as an element whose
+local name is the parameter itself, carrying a baseType constraint that every
+concrete argument at a reference site must satisfy.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.definition.GenericTypeDefinition" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>defaultType and sibling-parameter defaulting.</summary>
+                  <reason>Defaulting is an additional refinement beyond the core bind-or-forward rule.</reason>
+                </sem:Exclusion>
+              </exclusions>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Bind or forward every base parameter">
+        <!--3. Bind or forward-->
+        <dpage:Section heading="Bind or forward — every base parameter must ground out" purpose="State the central rule for using a generic Block as a baseType">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text text="When a derived Block uses a generic Block as its baseType, it must account for every one of that Block's base parameters — either binding each to a concrete type expression or forwarding it to a parameter the derived Block declares itself." />
-              </content>
+            <dpage:Paragraph purpose="State the bind-or-forward rule for every parameter on a generic baseType application">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>When a generic Block is used as baseType, the derived Block must bind each
+base parameter to a concrete type expression or forward it to a parameter
+declared locally — every parameter must eventually ground to a concrete type
+somewhere in the chain.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.GenericsModel" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Concrete application syntax">
+        <!--4. Minimal example-->
+        <dpage:Section heading="Binding a generic parameter through baseType" purpose="Ground bind-or-forward in a small concrete specialization">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text text="Generic applications in BML attributes use round parentheses rather than angle brackets, which keeps the syntax valid XML; resolution then runs during inheritance, substituting each bound parameter throughout the inherited definition." />
-              </content>
+            <dpage:Paragraph purpose="Set up a generic Block and one concrete specialization that binds its parameter">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>A generic Block declares one open parameter; a concrete specialization binds
+that parameter to a specific type through its baseType application.</message>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Instance-level bml:generics binding.</summary>
+                  <reason>The example isolates type-level binding through baseType.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+            <dpage:CodeBlock purpose="Show a generic Block with one parameter and a specialization that binds it via baseType">
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>The generic Block declares T; the specialization's baseType applies a concrete type argument for T.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Show a Block with a T parameter and a second Block whose baseType binds T to a concrete type.</summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Forwarding to a locally declared parameter.</summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:CodeBlock>
+            <dpage:Paragraph purpose="Interpret the binding as substitution through the inherited definition">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Binding T in the specialization's baseType substitutes that concrete type
+everywhere T appeared in the generic Block's definition — the specialization ends
+up with no open parameters left.</message>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="What to carry into the next pages">
+        <!--5. What to carry forward-->
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcome this page should leave behind">
           <content>
-            <dpage:Paragraph>
-              <content>
-                <dpage:Text text="Readers can now declare a generic parameter on a Block, bind it to a concrete type when using that Block as a baseType, or forward it to a parameter of their own." />
-              </content>
+            <dpage:Paragraph purpose="State the outcome this page should leave behind">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>After this page, readers should be able to declare, bind, or forward a
+generic parameter, closing out the type system group before the member model
+begins.</message>
             </dpage:Paragraph>
           </content>
         </dpage:Section>
-        <dpage:Section heading="Continue with the member model">
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with members" purpose="Direct the reader to the next page">
           <content>
-            <dpage:Navigation>
+            <dpage:Navigation purpose="Continue into the member-model learning sequence">
               <title>Next</title>
               <items>
-                <dpage:NavigationItem label="Members" summary="See how Properties, Aggregations, Associations, and Capabilities relate.">
+                <dpage:NavigationItem label="Members" summary="Learn the Block member model overview.">
                   <target>docs:Members</target>
                 </dpage:NavigationItem>
               </items>
