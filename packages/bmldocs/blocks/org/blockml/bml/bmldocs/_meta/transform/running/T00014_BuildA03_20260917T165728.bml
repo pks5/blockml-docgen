@@ -53,8 +53,7 @@
 4. `npx blockml validate` shows zero errors/warnings introduced in `a03_authoring/data` (only pre-existing style recommendations, same as A02's originals).
 5. `org.blockml.bml.bmldocs.Library` catalog already exported every A03 data Block from the prior run, so no export changes were needed.
 
-Net effect: the diff is 35 files with only deletions — the previously authored `&lt;content>` page bodies from the last `A03_02_AuthorPages` run are gone, which is correct: this task wipes and rebuilds A03 skeletons fresh from A02 every run, and content is re-authored by the next operation in the transformation. Per the `ExecuteTask` contract, I made no changes under `_meta/transform/` and did not commit — the operation envelope owns that.
-</output>
+Net effect: the diff is 35 files with only deletions — the previously authored `&lt;content>` page bodies from the last `A03_02_AuthorPages` run are gone, which is correct: this task wipes and rebuilds A03 skeletons fresh from A02 every run, and content is re-authored by the next operation in the transformation. Per the `ExecuteTask` contract, I made no changes under `_meta/transform/` and did not commit — the operation envelope owns that.</output>
           <completedAt>2026-09-17T17:01:52</completedAt>
           <task>
             <a03_task:A03_01_CopyData />
@@ -97,7 +96,9 @@ Net effect: the diff is 35 files with only deletions — the previously authored
             <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a03_authoring/data/page/docs/Visibility.bml" />
           </changedFiles>
         </workflow:AgenticOperation>
-        <workflow:AgenticOperation name="Author A03 pages" status="Pending" captureOutput="true">
+        <workflow:AgenticOperation name="Author A03 pages" status="Running" captureOutput="true">
+          <startedAt>2026-09-17T17:01:52</startedAt>
+          <baseCommit>ff44cb603204eb95c29548ce632179f96c6ba8ee</baseCommit>
           <task>
             <a03_task:A03_02_AuthorPages />
           </task>
