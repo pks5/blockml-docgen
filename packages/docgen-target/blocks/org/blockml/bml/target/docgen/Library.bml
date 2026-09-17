@@ -52,6 +52,7 @@
         <dgconfig:DocgenConstants />
         <dgconfig:DefaultMainLayout />
         <dgconfig:DefaultTheme />
+        <dgconfig:HighlightJs />
         <dgcap:Render />
         <dgcap:ValidatePublishReady />
         <dgcap:AssembleSite />

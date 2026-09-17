@@ -13,10 +13,16 @@
   <documentation>
     V1 Theme seam. TypeScript embeds one CSS string in each HTML document.
     Future themes swap this constant without changing MainLayout or content dispatch.
+    Code listings use highlight.js a11y-dark plus BlockML token-color overrides
+    (title, keyword, meta, built_in, name, tag) defined in this CSS after the
+    highlight stylesheet.
   </documentation>
   <references>
     <see type="dgconfig:DefaultMainLayout" relation="SeeAlso">
       Layout shell that embeds this theme.
+    </see>
+    <see type="dgconfig:HighlightJs" relation="SeeAlso">
+      Vendored highlight.js assets and BlockML grammar loaded by the layout.
     </see>
   </references>
 </dgconfig:DefaultTheme>

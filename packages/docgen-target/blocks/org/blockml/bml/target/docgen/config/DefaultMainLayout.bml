@@ -16,11 +16,16 @@
     Future MainLayout variants can be added without changing content dispatch.
     Chrome: DocSet title, top main menu from direct child PageGroups of
     rootPageGroup, left side TOC tree for the active main section (nested
-    groups and pages), and the page body slot.
+    groups and pages), and the page body slot. Head also loads HighlightJs
+    (a11y-dark stylesheet, highlight.min.js, BlockML grammar) so CodeBlock
+    listings are syntax-highlighted.
   </documentation>
   <references>
     <see type="dgconfig:DefaultTheme" relation="Requires">
       CSS theme applied inside this layout shell.
+    </see>
+    <see type="dgconfig:HighlightJs" relation="Requires">
+      highlight.js assets and BlockML grammar loaded by this layout.
     </see>
     <see type="dgcap:WrapMainLayout" relation="SeeAlso">
       Capability that applies this layout.

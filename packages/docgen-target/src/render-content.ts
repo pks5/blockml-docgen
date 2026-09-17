@@ -1,9 +1,9 @@
 import type { BlockInstance, CompositionNode, CompositionTemplate } from "@blockml/bom";
 import type { TypeRegistry } from "@blockml/framework";
-import { getInstanceComposition, registryHasDoc } from "./bom-walk.js";
+import { getInstanceComposition, getPropertyText, registryHasDoc } from "./bom-walk.js";
+import { highlightLanguageId } from "./highlight-assets.js";
 import { escapeHtml, memberValueAsText, relativePath } from "./html.js";
 import { PAGE_FQNS } from "./options.js";
-import { getPropertyText } from "./bom-walk.js";
 
 export interface RenderContentContext {
   registry: TypeRegistry;
@@ -48,7 +48,10 @@ function renderInstance(instance: BlockInstance, ctx: RenderContentContext): str
     }
     case PAGE_FQNS.codeBlock: {
       const code = memberValueAsText(instance.memberValues.code) ?? "";
-      return `<pre><code>${escapeHtml(code)}</code></pre>`;
+      const language = highlightLanguageId(
+        memberValueAsText(instance.memberValues.language),
+      );
+      return `<pre><code class="language-${escapeHtml(language)}">${escapeHtml(code)}</code></pre>`;
     }
     case PAGE_FQNS.list: {
       return `<ul>\n${nested(instance, "items", ctx)}\n</ul>`;

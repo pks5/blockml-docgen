@@ -1,0 +1,223 @@
+/*! `blockml` grammar compiled for Highlight.js 11.11.1 */
+(function () {
+  var hljsGrammar = (function () {
+    'use strict';
+
+    /*
+    Language: BlockML (BML)
+    Requires: xml.js
+    Description: Block Markup Language — XML authoring form for BlockML.
+
+      Highlight roles (stage B):
+        title     — root element <block>
+        keyword   — identity fields (name, type, baseType, is, …)
+        meta      — member containers (properties, aggregations, …)
+        built_in  — framework facets (value, documentation, …)
+        name      — everything else via xml (= user / domain member names)
+
+      Keyword lists are derived from org.blockml.bml.definition
+      (BlockDefinition, StructuralDefinition, MemberDefinition, …).
+    Website: https://blockml.org
+    Category: common, markup
+    */
+
+    /** @type LanguageFn */
+    function blockml(hljs) {
+      // Root
+      const ROOT = 'block';
+
+      // Identity — definition identity / flags (BlockDefinition + StructuralDefinition)
+      const IDENTITY =
+        'name type baseType is isnot version abstract final definition language';
+
+      // Containers — aggregation / catalogue wrappers
+      const CONTAINERS =
+        'properties aggregations associations capabilities constraints contracts ' +
+        'subBlocks embeddedBlocks composition genericTypes groups aliases keywords ' +
+        'references blocks readMe library';
+
+      // Facets — framework keys on members / documentation model
+      const FACETS =
+        'value documentation summary implementation inputType outputType suggestions ' +
+        'override readOnly visibility status since changelog examples relation see ' +
+        'content default description title bml:xml bml:container';
+
+      const FRAMEWORK_TAG_RE = new RegExp(
+        '(?:' +
+          [ ROOT, IDENTITY, CONTAINERS, FACETS ]
+            .join(' ')
+            .trim()
+            .split(/\s+/)
+            .map(function (t) { return t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); })
+            .join('|') +
+        ')'
+      );
+
+      const XML_IDENT_RE = /[\p{L}0-9._:-]+/u;
+      const XML_ENTITIES = {
+        className: 'symbol',
+        begin: /&[a-z]+;|&#[0-9]+;|&#x[a-f0-9]+;/
+      };
+
+      const EXPRESSION_BODY = [
+        {
+          className: 'string',
+          variants: [
+            { begin: /'/, end: /'/ },
+            { begin: /"/, end: /"/ }
+          ]
+        },
+        {
+          className: 'number',
+          begin: /\b\d+(\.\d+)?\b/,
+          relevance: 0
+        },
+        {
+          className: 'keyword',
+          begin: /\b(?:true|false|null|self|Self)\b/
+        },
+        {
+          className: 'built_in',
+          begin: /#[A-Za-z_][\w.-]*|\bbml:[A-Za-z_][\w.-]*/
+        }
+      ];
+
+      const EXPRESSION = {
+        className: 'subst',
+        begin: /\$\{/,
+        end: /\}/,
+        relevance: 5,
+        contains: EXPRESSION_BODY
+      };
+
+      const EMBEDDED = {
+        className: 'subst',
+        begin: /<\$/,
+        end: /\$>/,
+        relevance: 5,
+        contains: EXPRESSION_BODY
+      };
+
+      const STRING_WITH_EXPRESSION = {
+        className: 'string',
+        relevance: 5,
+        variants: [
+          {
+            begin: /"(?=[^"\n]*\$\{)/,
+            end: /"/,
+            contains: [ EXPRESSION ]
+          },
+          {
+            begin: /'(?=[^'\n]*\$\{)/,
+            end: /'/,
+            contains: [ EXPRESSION ]
+          }
+        ]
+      };
+
+      const TAG_INTERNALS = {
+        endsWithParent: true,
+        illegal: /</,
+        relevance: 0,
+        contains: [
+          {
+            className: 'attr',
+            begin: XML_IDENT_RE,
+            relevance: 0
+          },
+          {
+            begin: /=\s*/,
+            relevance: 0,
+            contains: [
+              {
+                className: 'string',
+                endsParent: true,
+                variants: [
+                  {
+                    begin: /"/,
+                    end: /"/,
+                    contains: [ XML_ENTITIES, EXPRESSION ]
+                  },
+                  {
+                    begin: /'/,
+                    end: /'/,
+                    contains: [ XML_ENTITIES, EXPRESSION ]
+                  },
+                  { begin: /[^\s"'=<>`]+/ }
+                ]
+              }
+            ]
+          }
+        ]
+      };
+
+      const FRAMEWORK_KEYWORDS = {
+        title: ROOT,
+        keyword: IDENTITY,
+        meta: CONTAINERS,
+        built_in: FACETS
+      };
+
+      // One open/close mode for all framework tags; keyword group selects the colour.
+      const FRAMEWORK_OPEN = {
+        className: 'tag',
+        begin: hljs.regex.concat(
+          /</,
+          FRAMEWORK_TAG_RE,
+          hljs.regex.lookahead(/(?:\/>|>|\s)/)
+        ),
+        end: /\/?>/,
+        relevance: 5,
+        keywords: FRAMEWORK_KEYWORDS,
+        contains: [ TAG_INTERNALS ]
+      };
+
+      const FRAMEWORK_CLOSE = {
+        className: 'tag',
+        // Use RegExp('</') so naive minifiers do not treat // as a line comment.
+        begin: hljs.regex.concat(
+          RegExp('</'),
+          FRAMEWORK_TAG_RE,
+          hljs.regex.lookahead(/>/)
+        ),
+        relevance: 5,
+        keywords: FRAMEWORK_KEYWORDS,
+        contains: [
+          {
+            begin: />/,
+            relevance: 0,
+            endsParent: true
+          }
+        ]
+      };
+
+      return {
+        name: 'BlockML',
+        aliases: [ 'bml' ],
+        unicodeRegex: true,
+        contains: [
+          FRAMEWORK_OPEN,
+          FRAMEWORK_CLOSE,
+          {
+            begin: /xmlns(?::[\w.-]+)?\s*=\s*["']http:\/\/blockml\.org\/bml["']/,
+            relevance: 10,
+            skip: true
+          },
+          {
+            begin: /\bbml:(?:id|version|each|if|unless|with)\b/,
+            relevance: 3,
+            skip: true
+          },
+          STRING_WITH_EXPRESSION,
+          EXPRESSION,
+          EMBEDDED
+        ],
+        subLanguage: 'xml'
+      };
+    }
+
+    return blockml;
+  })();
+
+  hljs.registerLanguage('blockml', hljsGrammar);
+})();

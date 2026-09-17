@@ -1,3 +1,8 @@
+import {
+  HIGHLIGHT_BLOCKML_GRAMMAR,
+  HIGHLIGHT_CORE_SCRIPT,
+  HIGHLIGHT_STYLESHEET,
+} from "../highlight-assets.js";
 import { escapeHtml, relativePath } from "../html.js";
 import type { NavLink, NavTreeNode } from "../navigation.js";
 import { DEFAULT_THEME_CSS } from "../theme/default-theme.js";
@@ -57,12 +62,17 @@ ${sideHtml}
   </aside>`
       : "";
 
+  const highlightCssHref = relativePath(args.pagePath, HIGHLIGHT_STYLESHEET);
+  const highlightCoreSrc = relativePath(args.pagePath, HIGHLIGHT_CORE_SCRIPT);
+  const highlightBlockmlSrc = relativePath(args.pagePath, HIGHLIGHT_BLOCKML_GRAMMAR);
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(args.documentTitle)}</title>
+  <link rel="stylesheet" href="${escapeHtml(highlightCssHref)}">
   <style>${DEFAULT_THEME_CSS}</style>
 </head>
 <body>
@@ -82,6 +92,26 @@ ${sidebar}
 ${args.bodyInner}
   </main>
   </div>
+  <script src="${escapeHtml(highlightCoreSrc)}"></script>
+  <script src="${escapeHtml(highlightBlockmlSrc)}"></script>
+  <script>
+    (function () {
+      if (!window.hljs) {
+        return;
+      }
+      if (!hljs.getLanguage("blockml")) {
+        document.querySelectorAll("code.language-blockml, code.language-bml").forEach(function (el) {
+          el.classList.remove("language-blockml", "language-bml");
+          el.classList.add("language-xml");
+        });
+      }
+      try {
+        hljs.highlightAll();
+      } catch (err) {
+        console.error("highlight.js failed", err);
+      }
+    })();
+  </script>
 </body>
 </html>
 `;

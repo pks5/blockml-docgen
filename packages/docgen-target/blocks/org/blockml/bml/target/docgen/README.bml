@@ -22,6 +22,7 @@
     V1: document-scope host is a dcore:DocSet (or subtype). Publish-ready pages
     (no semantic/claim altitude) become a self-contained HTML site. One
     DefaultMainLayout and one DefaultTheme; content dispatch is separate from chrome.
+    Code listings use vendored highlight.js plus the custom BlockML grammar.
   </documentation>
   <references>
     <see type="dgdocumentation:ArchitectureOverview" relation="ReadFirst" />

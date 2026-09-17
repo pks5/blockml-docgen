@@ -15,6 +15,7 @@ const EXPECTED = [
   "DocgenConstants",
   "DefaultMainLayout",
   "DefaultTheme",
+  "HighlightJs",
   "Render",
   "ValidatePublishReady",
   "AssembleSite",

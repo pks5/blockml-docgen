@@ -8,6 +8,8 @@ import {
 import { clearTargets, compileToOutput, registerTarget } from "@blockml/compiler";
 import { readFileSync } from "node:fs";
 import { DocgenTarget } from "../src/docgen-target.js";
+import { wrapMainLayout } from "../src/layout/default-main-layout.js";
+import { highlightLanguageId } from "../src/highlight-assets.js";
 import { validatePublishReady } from "../src/validate-publish-ready.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -85,13 +87,48 @@ describe("DocgenTarget render", () => {
     const about = result.output?.files.find((f) => f.path === "about.html");
     const index = result.output?.files.find((f) => f.path === "index.html");
     expect(home?.content).toContain("This is the home page");
-    expect(home?.content).toContain("<pre><code>");
+    expect(home?.content).toContain('<pre><code class="language-blockml">');
+    expect(home?.content).toContain('<pre><code class="language-javascript">');
+    expect(home?.content).toContain("./js/highlight/highlight.min.js");
+    expect(home?.content).toContain("./js/highlight/languages/blockml.min.js");
+    expect(home?.content).toContain("./js/highlight/styles/a11y-dark.min.css");
+    expect(home?.content).toContain("hljs.highlightAll()");
     expect(home?.content).toContain("First item");
     expect(home?.content).toContain('class="dg-sidebar"');
     expect(home?.content).toContain("dg-toc-page");
     expect(about?.content).toContain("About explains");
     expect(about?.content).toContain("Also read");
     expect(index?.content).toContain("This is the home page");
+
+    const highlightCore = result.output?.files.find(
+      (f) => f.path === "js/highlight/highlight.min.js",
+    );
+    const highlightBlockml = result.output?.files.find(
+      (f) => f.path === "js/highlight/languages/blockml.min.js",
+    );
+    const highlightCss = result.output?.files.find(
+      (f) => f.path === "js/highlight/styles/a11y-dark.min.css",
+    );
+    expect(highlightCore?.content).toContain("highlight");
+    expect(highlightBlockml?.content).toContain("registerLanguage('blockml'");
+    expect(highlightCss?.content).toContain(".hljs");
+  });
+
+  it("resolves highlight assets relative to nested page paths", () => {
+    const html = wrapMainLayout({
+      documentTitle: "Nested",
+      siteTitle: "Docs",
+      pagePath: "docs/intro.html",
+      mainMenu: [],
+      sideTree: [],
+      bodyInner: "<p>body</p>",
+    });
+    expect(html).toContain("../js/highlight/highlight.min.js");
+    expect(html).toContain("../js/highlight/languages/blockml.min.js");
+    expect(html).toContain("../js/highlight/styles/a11y-dark.min.css");
+    expect(highlightLanguageId(undefined)).toBe("blockml");
+    expect(highlightLanguageId("javascript")).toBe("javascript");
+    expect(highlightLanguageId("not a lang")).toBe("blockml");
   });
 
   it("returns gate diagnostics for dirty DocSet", () => {

@@ -9,6 +9,7 @@ import {
   registryHasDoc,
 } from "./bom-walk.js";
 import { docSetHomePage, docSetTitle } from "./host.js";
+import { highlightSiteFiles } from "./highlight-assets.js";
 import { wrapMainLayout } from "./layout/default-main-layout.js";
 import { buildSiteNav } from "./navigation.js";
 import { renderPageBody } from "./render-content.js";
@@ -83,6 +84,8 @@ export function assembleSite(
   } else if (files.length > 0 && !files.some((f) => f.path === "index.html")) {
     files.push({ path: "index.html", content: files[0]!.content });
   }
+
+  files.push(...highlightSiteFiles());
 
   return { files, diagnostics };
 }

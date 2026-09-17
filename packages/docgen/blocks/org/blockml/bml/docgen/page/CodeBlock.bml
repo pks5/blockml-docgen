@@ -29,5 +29,12 @@
         (and its page context) instead of leaving the listing empty.
       </documentation>
     </code>
+    <language type="org.blockml.bml.type.Text">
+      <documentation>
+        Optional highlight.js language id for this listing (blockml, bml, xml,
+        javascript, typescript, …). When omitted, the renderer chooses a default
+        appropriate to the site.
+      </documentation>
+    </language>
   </properties>
 </page:CodeBlock>

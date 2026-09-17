@@ -1,0 +1,68 @@
+<!--DocGen config — HighlightJs
+  FQN: org.blockml.bml.target.docgen.config.HighlightJs-->
+<dgconfig:HighlightJs xmlns="http://blockml.org/bml"
+  xmlns:docgen="org.blockml.bml.target.docgen"
+  xmlns:dgconfig="org.blockml.bml.target.docgen.config"
+  xmlns:dgcap="org.blockml.bml.target.docgen.capability"
+  xmlns:page="org.blockml.bml.docgen.page"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    docgen:DocgenType
+  </baseType>
+  <is>
+    Vendored highlight.js plus the custom BlockML grammar for DocGen code listings
+  </is>
+  <documentation><![CDATA[
+    # Highlight.js
+
+    V1 syntax-highlight seam. AssembleSite copies vendored highlight.js 11.11.1
+    assets into the site (core bundle, custom BlockML language, a11y-dark style).
+    WrapMainLayout links those files and runs highlightAll after load.
+
+    The BlockML grammar (aliases blockml and bml) must load after highlight.min.js
+    because it uses xml as subLanguage. When the grammar is missing, language-blockml
+    listings fall back to xml. RenderPageBody writes class="language-{id}" on each
+    CodeBlock; omitted language defaults to blockml.
+  ]]></documentation>
+  <references>
+    <see type="page:CodeBlock" relation="Requires">
+      Listings that receive the language-* class for highlight.js.
+    </see>
+    <see type="dgcap:AssembleSite" relation="Requires">
+      Emits the vendored highlight.js files into the site output.
+    </see>
+    <see type="dgcap:WrapMainLayout" relation="Requires">
+      Loads highlight.js, the BlockML grammar, and the a11y-dark stylesheet.
+    </see>
+    <see type="dgconfig:DefaultTheme" relation="SeeAlso">
+      Token-color overrides for BlockML highlight roles on top of a11y-dark.
+    </see>
+  </references>
+  <properties>
+    <coreScript type="type:Text">
+      <value>js/highlight/highlight.min.js</value>
+      <documentation>
+        Site-relative path of the highlight.js 11.11.1 common bundle (includes xml).
+      </documentation>
+    </coreScript>
+    <blockmlGrammar type="type:Text">
+      <value>js/highlight/languages/blockml.min.js</value>
+      <documentation>
+        Site-relative path of the custom BlockML grammar. Load after coreScript.
+      </documentation>
+    </blockmlGrammar>
+    <stylesheet type="type:Text">
+      <value>js/highlight/styles/a11y-dark.min.css</value>
+      <documentation>
+        Site-relative path of the a11y-dark highlight.js theme.
+      </documentation>
+    </stylesheet>
+    <defaultLanguage type="type:Text">
+      <value>blockml</value>
+      <documentation>
+        Language id used when CodeBlock.language is omitted.
+      </documentation>
+    </defaultLanguage>
+  </properties>
+</dgconfig:HighlightJs>

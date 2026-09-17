@@ -3,7 +3,8 @@
 <dgdocumentation:ArchitectureOverview xmlns="http://blockml.org/bml"
   xmlns:core="org.blockml.bml.core"
   xmlns:dgdocumentation="org.blockml.bml.target.docgen.documentation"
-  xmlns:dgcap="org.blockml.bml.target.docgen.capability">
+  xmlns:dgcap="org.blockml.bml.target.docgen.capability"
+  xmlns:dgconfig="org.blockml.bml.target.docgen.config">
 
   <baseType>
     core:Documentation
@@ -21,12 +22,15 @@
     - @blockml/cli — host file, targetPackages plugin load, write files
     
     Pipeline: host DocSet → ValidatePublishReady → AssembleSite
-    (RenderPageBody + WrapMainLayout + DefaultTheme) → files[].
+    (RenderPageBody + WrapMainLayout + DefaultTheme + HighlightJs assets) → files[].
     
     Content dispatch is independent of chrome (MainLayout) and CSS (Theme).
+    Code listings are highlighted client-side by vendored highlight.js and the
+    custom BlockML grammar.
   </documentation>
   <references>
     <see type="dgdocumentation:V1Scope" relation="ReadNext" />
     <see type="dgcap:Render" relation="SeeAlso" />
+    <see type="dgconfig:HighlightJs" relation="SeeAlso" />
   </references>
 </dgdocumentation:ArchitectureOverview>

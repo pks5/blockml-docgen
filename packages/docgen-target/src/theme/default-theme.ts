@@ -95,15 +95,32 @@ body {
 .dg-main ul { margin: 0 0 1rem; padding-left: 1.25rem; }
 .dg-main li { margin: 0.25rem 0; }
 .dg-main pre {
-  background: var(--dg-code-bg);
+  background: #2b2b2b;
   border: 1px solid var(--dg-border);
-  padding: 0.85rem 1rem;
+  padding: 0;
   overflow-x: auto;
   font-family: var(--dg-mono);
   font-size: 0.88rem;
   margin: 0 0 1rem;
+  border-radius: 0.25rem;
+}
+.dg-main pre code {
+  display: block;
+  padding: 0.85rem 1rem;
+  font-family: var(--dg-mono);
+  font-size: 0.88rem;
 }
 .dg-main code { font-family: var(--dg-mono); font-size: 0.9em; }
+/*
+ * BlockML highlight roles — high contrast between tiers on a11y-dark.
+ * title=root, keyword=identity, meta=containers, built_in=facets, name=user.
+ */
+.dg-main .hljs-title { color: #00e0e0; }
+.dg-main .hljs-keyword { color: #dcc6e0; }
+.dg-main .hljs-meta { color: #9cdcfe; }
+.dg-main .hljs-built_in { color: #f5ab35; }
+.dg-main .hljs-name { color: #c5c8c6; }
+.dg-main .hljs-tag { color: #8a8a8a; }
 .dg-main img { max-width: 100%; height: auto; }
 .dg-nav-block { margin: 1rem 0 1.5rem; padding: 0.75rem 1rem; border: 1px solid var(--dg-border); background: #fff; }
 .dg-nav-block h2 { margin-top: 0; font-size: 1.1rem; }

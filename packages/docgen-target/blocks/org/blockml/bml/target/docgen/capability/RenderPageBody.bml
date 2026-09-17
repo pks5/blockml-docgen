@@ -3,6 +3,7 @@
 <dgcap:RenderPageBody xmlns="http://blockml.org/bml"
   xmlns:core="org.blockml.bml.core"
   xmlns:dgcap="org.blockml.bml.target.docgen.capability"
+  xmlns:dgconfig="org.blockml.bml.target.docgen.config"
   xmlns:page="org.blockml.bml.docgen.page"
   xmlns:type="org.blockml.bml.type">
 
@@ -12,13 +13,17 @@
   <is>
     Dispatch DocPage content tree to HTML fragment
   </is>
-  <documentation>
+  <documentation><![CDATA[
     Walks DocPage.content BOM compositions. Dispatches Section, Paragraph,
     Text, CodeBlock, List, ListItem, Image, Navigation, NavigationItem to HTML.
-    Independent of MainLayout and Theme.
-  </documentation>
+    Independent of MainLayout and Theme. CodeBlock emits
+    `<pre><code class="language-{id}">` using CodeBlock.language, or
+    HighlightJs.defaultLanguage (blockml) when language is omitted.
+  ]]></documentation>
   <references>
     <see type="page:DocPage" relation="Requires" />
+    <see type="page:CodeBlock" relation="SeeAlso" />
+    <see type="dgconfig:HighlightJs" relation="SeeAlso" />
     <see type="dgcap:AssembleSite" relation="SeeAlso" />
   </references>
   <properties>

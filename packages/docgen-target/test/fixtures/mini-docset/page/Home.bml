@@ -40,6 +40,10 @@
               <code>block Hello {
 }</code>
             </dpage:CodeBlock>
+            <dpage:CodeBlock>
+              <language>javascript</language>
+              <code>const n = 1;</code>
+            </dpage:CodeBlock>
             <dpage:List>
               <items>
                 <dpage:ListItem>

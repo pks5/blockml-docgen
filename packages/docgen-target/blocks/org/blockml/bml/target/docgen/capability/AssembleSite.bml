@@ -4,6 +4,7 @@
   xmlns:core="org.blockml.bml.core"
   xmlns:dgapi="org.blockml.bml.target.docgen.api"
   xmlns:dgcap="org.blockml.bml.target.docgen.capability"
+  xmlns:dgconfig="org.blockml.bml.target.docgen.config"
   xmlns:type="org.blockml.bml.type">
 
   <baseType>
@@ -15,11 +16,14 @@
   <documentation>
     Resolves page HTML paths (pageMapping or FQN fallback), builds site nav from
     rootPageGroup / pages, renders each page body via RenderPageBody, wraps with
-    WrapMainLayout + DefaultTheme. Emits index.html for homePage.
+    WrapMainLayout + DefaultTheme. Emits index.html for homePage. Also copies
+    HighlightJs static files (highlight.min.js, BlockML grammar, a11y-dark CSS)
+    into the site so pages can load them.
   </documentation>
   <references>
     <see type="dgcap:RenderPageBody" relation="Requires" />
     <see type="dgcap:WrapMainLayout" relation="Requires" />
+    <see type="dgconfig:HighlightJs" relation="Requires" />
   </references>
   <properties>
     <docSetFqn type="type:Text">

@@ -10,15 +10,18 @@
     core:Capability
   </baseType>
   <is>
-    Wrap a page body in DefaultMainLayout with DefaultTheme CSS
+    Wrap a page body in DefaultMainLayout with DefaultTheme CSS and HighlightJs
   </is>
   <documentation>
-    Produces a full HTML document: doctype, head with inline theme CSS, header
-    nav, main content slot. V1 always uses DefaultMainLayout and DefaultTheme.
+    Produces a full HTML document: doctype, head with HighlightJs stylesheet
+    then inline DefaultTheme CSS, header nav, main content slot, then
+    highlight.min.js, the BlockML grammar, and highlightAll(). V1 always uses
+    DefaultMainLayout, DefaultTheme, and HighlightJs.
   </documentation>
   <references>
     <see type="dgconfig:DefaultMainLayout" relation="Requires" />
     <see type="dgconfig:DefaultTheme" relation="Requires" />
+    <see type="dgconfig:HighlightJs" relation="Requires" />
   </references>
   <properties>
     <title type="type:Text">
