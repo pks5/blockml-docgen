@@ -1,0 +1,256 @@
+<!--BlockML Documentation — a guide to the Block documentation model
+
+  FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.DocumentingBlocks-->
+<docs:DocumentingBlocks xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:def="org.blockml.bml.definition"
+  xmlns:type="org.blockml.bml.type"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
+  xmlns:workflow="org.blockml.bml.transformer.workflow">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to the Block documentation model
+  </is>
+  <documentation>
+    Scope: the Block documentation model — is, documentation, and references fields, grounded in
+    org.blockml.bml.documentation.DocumentationModel and
+    org.blockml.bml.definition.StructuralDefinition. Body content is rendered in a04 from those
+    sources.
+  </documentation>
+  <references>
+    <see type="doc:DocumentationModel" relation="Requires">
+      Primary content source — is, summary, documentation, and references authoring rules.
+    </see>
+    <see type="def:StructuralDefinition" relation="Requires">
+      Shared documentation model — Documentation, Change, Example, and Reference sub-blocks.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>Documenting Blocks</value>
+    </title>
+    <purpose override="true">
+      <value>Teach the documentation model as the definition-site single source of truth, so readers can fill a Block's is, documentation, and references fields correctly.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Introductory</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Concept</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentationModel" />
+            <type:TypeSelectorEntity value="org.blockml.bml.definition.StructuralDefinition" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach the documentation model as the definition-site single source of truth.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can fill a Block's is, documentation, and references fields correctly.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Block documentation model: the is, documentation, and references fields at the definition site.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>bml: directive namespace depth.</summary>
+          <reason>Directives are a separate authoring-format topic.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>documentation is Markdown(English) by default, and references carries every documentation cross-link — prose should not repeat those links.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+    <rules override="true">
+      <composition>
+        <lrule:CodeExamplePlacementRule />
+        <lrule:CodeExplanationRule />
+      </composition>
+    </rules>
+    <content override="true">
+      <composition>
+        <!--1. Lead-->
+        <dpage:Section heading="The definition site is the single source of truth" purpose="Introduce the documentation model as authored at the definition, not elsewhere">
+          <content>
+            <dpage:Paragraph purpose="Introduce is, documentation, and references as the core definition-site documentation fields">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Every Block definition carries its documentation at the definition
+site — is, documentation, and references are the single source of truth inside
+the BML file itself, not scattered across external documents.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentationModel" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--2. is names the Idea, documentation explains it-->
+        <dpage:Section heading="is names the idea; documentation explains it" purpose="Distinguish the short is designation from the fuller documentation prose">
+          <content>
+            <dpage:Paragraph purpose="Explain is as a short noun phrase naming what the Block represents">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>is is a required, ultra-short noun phrase naming what a Block semantically
+represents — not a purpose statement and not full technical detail, both of
+which belong in documentation instead.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentationModel" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+            <dpage:Paragraph purpose="Explain documentation as Markdown(English) by default, formatted for readability">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>documentation is always required and defaults to Markdown in English —
+longer prose should use headings, paragraphs, and lists, since human-friendly
+formatting is part of BlockML, not decoration.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentationModel" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>CDATA serialization rules and language-attribute i18n forms.</summary>
+                  <reason>Those are serialization details beyond what an author needs to write documentation.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--3. references carries every cross-link-->
+        <dpage:Section heading="references carries every cross-link" purpose="Explain references as the single place cross-links live, distinct from prose">
+          <content>
+            <dpage:Paragraph purpose="Explain that references holds every documentation cross-link and prose should not repeat them">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>references is the single place every documentation cross-link lives — each
+with an explicit relationship note — so documentation prose should describe
+concepts rather than repeat links that references already carries.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.DocumentationModel" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--4. Minimal example-->
+        <dpage:Section heading="Filling is, documentation, and references" purpose="Ground the documentation model in one small filled-out example">
+          <content>
+            <dpage:Paragraph purpose="Set up a small Block with is, documentation, and one reference filled in">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>A Block fills is with a short noun phrase, documentation with fuller
+Markdown prose, and references with one cross-link carrying its own relationship
+note.</message>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>isNot, summary, and examples.</summary>
+                  <reason>The example isolates the three fields this page centers on.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+            <dpage:CodeBlock purpose="Show a Block with is, documentation, and one references entry filled in">
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>The Block carries a short is, Markdown documentation, and one references entry with a relationship note.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Show is, documentation, and a references container with one see entry and relation.</summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>isNot and examples entries.</summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:CodeBlock>
+            <dpage:Paragraph purpose="Interpret why the cross-link sits in references rather than in the documentation prose">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>The reference in the example carries its own relationship note precisely so
+the documentation prose above it can stay focused on describing the Block, not on
+repeating that same link inline.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--5. What to carry forward-->
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcome this page should leave behind">
+          <content>
+            <dpage:Paragraph purpose="State the outcome this page should leave behind">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>After this page, readers should be able to fill a Block's is,
+documentation, and references fields correctly, closing out this handbook's
+concept pages before the BML authoring format itself is described directly.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with BML, the authoring format" purpose="Direct the reader to the next page">
+          <content>
+            <dpage:Navigation purpose="Continue into the BML-format learning sequence">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="BML: The Authoring Format" summary="Learn BML as BlockML's human-authored format.">
+                  <target>docs:Bml</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
+  </aggregations>
+</docs:DocumentingBlocks>

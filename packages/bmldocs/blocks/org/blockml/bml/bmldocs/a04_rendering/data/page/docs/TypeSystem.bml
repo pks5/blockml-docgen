@@ -1,0 +1,251 @@
+<!--BlockML Documentation — a guide to BlockML's four ValueType kinds
+
+  FQN: org.blockml.bml.bmldocs.a04_rendering.data.page.docs.TypeSystem-->
+<docs:TypeSystem xmlns="http://blockml.org/bml"
+  xmlns:sem="org.blockml.bml.docgen.semantic"
+  xmlns:docs="org.blockml.bml.bmldocs.a04_rendering.data.page.docs"
+  xmlns:dpage="org.blockml.bml.docgen.page"
+  xmlns:doc="org.blockml.bml.documentation"
+  xmlns:lrule="org.blockml.bml.bmldocs.lib.rule"
+  xmlns:workflow="org.blockml.bml.transformer.workflow"
+  xmlns:type="org.blockml.bml.type">
+
+  <baseType>
+    dpage:DocPage
+  </baseType>
+  <is>
+    A guide to BlockML's four ValueType kinds
+  </is>
+  <documentation>
+    Scope: type system overview and the four ValueType kinds and how they relate to Blocks and
+    members, grounded in org.blockml.bml.documentation.TypeSystemOverview. Body content is
+    rendered in a04 from that source.
+  </documentation>
+  <references>
+    <see type="doc:TypeSystemOverview" relation="Requires">
+      Primary content source — PrimitiveType, StructType, EnumType, ConstantType as sibling branches.
+    </see>
+    <see type="doc:TypeExpressions" relation="ReadNext">
+      Next reading step — multiplicity, unions, and other type-expression forms.
+    </see>
+    <see type="doc:ContractsModel" relation="SeeAlso">
+      baseType versus contracts in the wider type system.
+    </see>
+  </references>
+  <properties>
+    <title override="true">
+      <value>The Type System</value>
+    </title>
+    <purpose override="true">
+      <value>Give readers the type-system mental model as four sibling ValueType kinds, so each kind's own page can go deeper without re-explaining where it fits.</value>
+    </purpose>
+    <detailLevel override="true">
+      <value>org.blockml.bml.docgen.level.Overview</value>
+    </detailLevel>
+    <pageType override="true">
+      <value>org.blockml.bml.docgen.pagetype.Guide</value>
+    </pageType>
+  </properties>
+  <aggregations>
+    <authoritativeSources override="true">
+      <composition>
+        <workflow:AuthorativeSourceSet>
+          <includedTypes>
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeSystemOverview" />
+            <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeExpressions" />
+          </includedTypes>
+        </workflow:AuthorativeSourceSet>
+      </composition>
+    </authoritativeSources>
+    <learningObjectives override="true">
+      <composition>
+        <sem:LearningObjective>
+          <summary>Teach the type-system mental model as four sibling kinds under ValueType, not a hierarchy.</summary>
+        </sem:LearningObjective>
+      </composition>
+    </learningObjectives>
+    <readerOutcomes override="true">
+      <composition>
+        <sem:ReaderOutcome>
+          <summary>The reader can name the four ValueType kinds and classify a given type among them.</summary>
+        </sem:ReaderOutcome>
+      </composition>
+    </readerOutcomes>
+    <scopes override="true">
+      <composition>
+        <sem:Scope>
+          <summary>Type system overview: the four ValueType kinds, PrimitiveType, StructType, EnumType, and ConstantType, and how they relate to Blocks and members.</summary>
+        </sem:Scope>
+      </composition>
+    </scopes>
+    <exclusions override="true">
+      <composition>
+        <sem:Exclusion>
+          <summary>Depth on any one ValueType kind.</summary>
+          <reason>Each kind gets its own page next.</reason>
+        </sem:Exclusion>
+      </composition>
+    </exclusions>
+    <supportingPoints override="true">
+      <composition>
+        <sem:SupportingPoint>
+          <summary>The four kinds are sibling branches under ValueType, not a hierarchy of one another.</summary>
+        </sem:SupportingPoint>
+      </composition>
+    </supportingPoints>
+    <rules override="true">
+      <composition>
+        <lrule:CodeExamplePlacementRule />
+        <lrule:CodeExplanationRule />
+      </composition>
+    </rules>
+    <content override="true">
+      <composition>
+        <!--1. Lead-->
+        <dpage:Section heading="Four sibling kinds under ValueType" purpose="Give the map of the type system before any single kind is explained">
+          <content>
+            <dpage:Paragraph purpose="State that BlockML knows four ValueType kinds as sibling branches">
+              <role>org.blockml.bml.docgen.role.Lead</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>BlockML knows four ValueType kinds at language level — PrimitiveType,
+StructType, EnumType, and ConstantType — each naming a distinct semantic meaning
+as a sibling branch under ValueType, not a subtype of one another.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeSystemOverview" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--2. The four kinds-->
+        <dpage:Section heading="The four kinds at a glance" purpose="Name each kind's semantic meaning without going into per-kind depth">
+          <content>
+            <dpage:Paragraph purpose="Introduce the four kinds as a checklist to place any given type against">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Every ValueType a reader encounters classifies into exactly one of these four kinds.</message>
+            </dpage:Paragraph>
+            <dpage:List purpose="Name each ValueType kind and its one-line meaning">
+              <role>org.blockml.bml.docgen.role.Summary</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Each kind gets a dedicated page next; this list is the map to keep while reading them.</message>
+              <items>
+                <dpage:ListItem text="PrimitiveType" purpose="Name the atomic scalar kind">
+                  <message>Atomic scalar semantics with no stored values on the type itself — Boolean, Integer, Text, and similar.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="StructType" purpose="Name the composite named-field kind">
+                  <message>Composite value objects whose shape comes from ordinary declared properties.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="EnumType" purpose="Name the closed named-set kind">
+                  <message>A closed set of named members, own branch — not a StructType and not a PrimitiveType.</message>
+                </dpage:ListItem>
+                <dpage:ListItem text="ConstantType" purpose="Name the singleton kind">
+                  <message>A singleton value domain — one configured literal, useful as a union alternative.</message>
+                </dpage:ListItem>
+              </items>
+            </dpage:List>
+          </content>
+        </dpage:Section>
+        <!--3. Type expressions are not a fifth kind-->
+        <dpage:Section heading="Type expressions are not a fifth kind" purpose="Prevent readers from mistaking usage patterns for new type classes">
+          <content>
+            <dpage:Paragraph purpose="Clarify that multiplicity, unions, and generics are usages of the four kinds, not new kinds">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>Multiplicity brackets, unions, generic application, and instance
+configuration combine named types — they are type expressions, not additional
+BlockML type classes beyond the four ValueType kinds.</message>
+              <authoritativeSources>
+                <workflow:AuthorativeSourceSet>
+                  <includedTypes>
+                    <type:TypeSelectorEntity value="org.blockml.bml.documentation.TypeExpressions" />
+                  </includedTypes>
+                </workflow:AuthorativeSourceSet>
+              </authoritativeSources>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>The full type-expression grammar and its diagnostics.</summary>
+                  <reason>This overview only needs the fact that expressions are not a fifth kind.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--4. Minimal example-->
+        <dpage:Section heading="Classifying a Property's type" purpose="Ground the four-kind map in one Property declaration">
+          <content>
+            <dpage:Paragraph purpose="Set up a Property declaration whose type is one of the four kinds">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>A Property's type attribute always names one of the four ValueType kinds,
+directly or through a type expression built from it.</message>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>Aggregation and Association member types.</summary>
+                  <reason>The example isolates a Property to keep the classification exercise simple.</reason>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:Paragraph>
+            <dpage:CodeBlock purpose="Show one Property typed with a PrimitiveType and one typed with a StructType">
+              <role>org.blockml.bml.docgen.role.Example</role>
+              <detailLevel>org.blockml.bml.docgen.level.Overview</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>Two Property declarations, one typed with a PrimitiveType and one with a named StructType.</message>
+              <supportingPoints>
+                <sem:SupportingPoint>
+                  <summary>Show a Text-typed property and a StructType-typed property side by side.</summary>
+                </sem:SupportingPoint>
+              </supportingPoints>
+              <exclusions>
+                <sem:Exclusion>
+                  <summary>EnumType and ConstantType examples.</summary>
+                </sem:Exclusion>
+              </exclusions>
+            </dpage:CodeBlock>
+            <dpage:Paragraph purpose="Interpret each Property's type against the four-kind map">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Supporting</weight>
+              <message>The Text-typed property classifies as PrimitiveType; the named struct-typed
+property classifies as StructType — the same classification exercise applies to
+any type a reader meets later.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--5. What to carry forward-->
+        <dpage:Section heading="What to carry into the next pages" purpose="Anchor the outcome this page should leave behind">
+          <content>
+            <dpage:Paragraph purpose="State the outcome this page should leave behind">
+              <role>org.blockml.bml.docgen.role.Explanation</role>
+              <detailLevel>org.blockml.bml.docgen.level.Introductory</detailLevel>
+              <weight>org.blockml.bml.docgen.weight.Primary</weight>
+              <message>After this page, readers should be able to name the four ValueType kinds and
+classify a given type among them, before each kind gets its own page in turn.</message>
+            </dpage:Paragraph>
+          </content>
+        </dpage:Section>
+        <!--6. Continuation-->
+        <dpage:Section heading="Continue with primitive types" purpose="Direct the reader to the next page">
+          <content>
+            <dpage:Navigation purpose="Continue the type-system learning sequence">
+              <title>Next</title>
+              <items>
+                <dpage:NavigationItem label="Primitive Types" summary="Learn atomic scalar ValueTypes.">
+                  <target>docs:PrimitiveTypes</target>
+                </dpage:NavigationItem>
+              </items>
+            </dpage:Navigation>
+          </content>
+        </dpage:Section>
+      </composition>
+    </content>
+  </aggregations>
+</docs:TypeSystem>

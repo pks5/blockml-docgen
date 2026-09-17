@@ -42,12 +42,26 @@
   <aggregations>
     <operations override="true">
       <composition>
-        <workflow:AgenticOperation name="Copy A03 data into A04" status="Running" captureOutput="true">
+        <workflow:AgenticOperation name="Copy A03 data into A04" status="Succeeded" captureOutput="true">
           <startedAt>2026-09-17T21:57:40</startedAt>
           <baseCommit>37fac8ef7e9b72030ad92a4c696e489b7e71f10f</baseCommit>
+          <output>Task complete. `A04_01_CopyData` has been executed:
+
+1. **Wipe** — already satisfied (A04 data was empty at the start of this operation, per the `0827a9d` commit).
+2. **Copy** — all 45 files from `a03_authoring/data` (1 DocSet, 9 PageGroups, 35 DocPages) copied into `a04_rendering/data`, preserving structure.
+3. **Remap** — package/xmlns URIs, aliases (`a03data`→`a04data`, `a03pgroup`→`a04pgroup`), `BmlDocSet_A03`→`BmlDocSet_A04` (with file rename), and sector-identity prose (`A03`→`A04`) applied throughout. The DocSet's pipeline description was adapted to name A04's actual sibling task (`filled by A04_01_CopyData. Page content is then rendered by A04_02_RenderPages.`, since A04's second task renders rather than authors) — same for the ~30 per-page &quot;authored in a03&quot; → &quot;rendered in a04&quot; mentions.
+4. **Confirm** — diffed against source; file set, `pages`/`pageGroups`/`homePage`/`rootPageGroup`, and `parentGroup`/`see`-links all resolve only to A04 counterparts. No leftover A03 tokens remain.
+5. **Export** — `Library.bml` already carried the correct A04 catalog entries from an earlier run, so nothing needed there.
+
+`npx blockml validate --all` shows no new errors from this change (the 10 pre-existing errors are unrelated: stale historical `_meta/transform` snapshots and `com/acme/example` sample files). Changes are left uncommitted for the transform harness to commit as part of its own operation bookkeeping.
+</output>
+          <completedAt>2026-09-17T22:03:22</completedAt>
           <task>
             <a04_task:A04_01_CopyData />
           </task>
+          <changedFiles>
+            <type:FilePathEntity value="packages/bmldocs/blocks/org/blockml/bml/bmldocs/a04_rendering/data/" />
+          </changedFiles>
         </workflow:AgenticOperation>
         <workflow:AgenticOperation name="Render A04 pages" status="Pending" captureOutput="true">
           <task>
